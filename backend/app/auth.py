@@ -16,6 +16,7 @@ from .main_dependencies import get_db
 from .models import AccountToken, RefreshToken, User
 
 passwords = PasswordHash.recommended()
+DUMMY_PASSWORD_HASH = passwords.hash("not-a-real-eklavya-account-password")
 bearer = HTTPBearer(auto_error=False)
 
 

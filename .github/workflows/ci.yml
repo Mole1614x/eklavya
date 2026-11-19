@@ -1,4 +1,4 @@
-name: Phase 1 checks
+name: EKLAVYA verification
 on:
   push:
     branches: [main]
@@ -7,9 +7,14 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 35
     services:
       postgres:
         image: postgres:17-alpine
@@ -21,6 +26,15 @@ jobs:
           - 5432:5432
         options: >-
           --health-cmd "pg_isready -U eklavya -d eklavya"
+          --health-interval 3s
+          --health-timeout 3s
+          --health-retries 15
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
           --health-interval 3s
           --health-timeout 3s
           --health-retries 15
@@ -36,38 +50,63 @@ jobs:
           node-version: "24"
           cache: npm
           cache-dependency-path: frontend/package-lock.json
-      - name: Check API, models and migrations
+
+      - name: Check API, judge, and migrations
         working-directory: backend
+        env:
+          READINESS_CHECK_REDIS: "true"
         run: |
           pip install -r requirements-dev.txt
+          python -m pip check
           PYTHONPATH=.. pytest tests ../judge/tests
           alembic upgrade head
           alembic check
           alembic downgrade base
           alembic upgrade head
           python -m app.seed
+          python -m app.seed
           uvicorn app.main:app --host 127.0.0.1 --port 8000 > "${RUNNER_TEMP}/eklavya-api.log" 2>&1 &
-          curl --fail --silent --retry 10 --retry-connrefused http://127.0.0.1:8000/api/v1/health
+          curl --fail --silent --retry 10 --retry-connrefused http://127.0.0.1:8000/api/v1/health/ready
+          curl --fail --silent http://127.0.0.1:8000/api/v1/metrics | grep -F eklavya_http_requests_total
+
       - name: Check frontend and live API integration
         working-directory: frontend
         run: |
           npm ci
+          npm audit --omit=dev --audit-level=high
           npm run typecheck
           npm run build
           npx playwright install chromium
           npm test
 
-      - name: Smoke test the Docker Compose stack
+      - name: Validate container definitions
+        run: |
+          docker compose config --quiet
+          docker build --check -f backend/Dockerfile .
+          docker build --check -f judge/Dockerfile .
+          docker build --check -f judge/images/data.Dockerfile .
+          docker build --check -f judge/images/bigdata.Dockerfile .
+          docker build --check -f judge/images/ml.Dockerfile .
+          docker build --check -f judge/images/deep-learning.Dockerfile .
+
+      - name: Smoke test the core Compose stack
         env:
           POSTGRES_PORT: "5433"
           BACKEND_PORT: "8011"
           FRONTEND_PORT: "3011"
         run: |
-          docker compose up --build -d --wait --wait-timeout 90 db redis backend frontend
-          curl --fail --silent --show-error http://127.0.0.1:8011/api/v1/health
+          docker compose up --build -d --wait --wait-timeout 120 db redis migrate backend frontend
+          curl --fail --silent --show-error http://127.0.0.1:8011/api/v1/health/ready
           curl --fail --silent --show-error 'http://127.0.0.1:8011/api/v1/problems?limit=1' | jq -e '.total == 20'
           curl --fail --silent --show-error http://127.0.0.1:3011/problems/parity-check | grep -F 'Parity Check' > /dev/null
           curl --fail --silent --show-error -o /dev/null http://127.0.0.1:3011/monaco/vs/loader.js
-      - name: Show Compose logs on failure
+
+      - name: Show service logs on failure
         if: failure()
-        run: docker compose logs --no-color
+        run: |
+          cat "${RUNNER_TEMP}/eklavya-api.log" 2>/dev/null || true
+          docker compose logs --no-color
+
+      - name: Stop test containers
+        if: always()
+        run: docker compose down --volumes --remove-orphans

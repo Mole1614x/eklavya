@@ -1,8 +1,13 @@
+# syntax=docker/dockerfile:1.7
 FROM node:24-bookworm-slim AS build
 WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY . .
-RUN npm ci --no-audit --no-fund && npm run build && rm -rf node_modules .next/cache /root/.npm
+RUN --mount=type=secret,id=build_ca,required=false \
+    if [ -f /run/secrets/build_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/build_ca; fi \
+    && npm ci --no-audit --no-fund \
+    && npm run build \
+    && rm -rf node_modules .next/cache /root/.npm
 
 FROM node:24-bookworm-slim
 WORKDIR /app

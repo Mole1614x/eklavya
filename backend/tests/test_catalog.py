@@ -37,7 +37,7 @@ def client(db):
 
 
 def test_health_without_database():
-    assert TestClient(app).get("/api/v1/health").json() == {"status": "ok"}
+    assert TestClient(app).get("/api/v1/health").json() == {"status": "ok", "service": "eklavya-api"}
 
 
 def test_catalog_preserves_domain_coverage(client):
@@ -96,6 +96,7 @@ def test_database_outage_returns_generic_error():
     try:
         response = TestClient(app).get("/api/v1/problems")
         assert response.status_code == 503
-        assert response.json() == {"detail": "Catalog is temporarily unavailable"}
+        assert response.json()["detail"] == "The service is temporarily unavailable"
+        assert response.json()["request_id"] == response.headers["x-request-id"]
     finally:
         app.dependency_overrides.pop(get_db)

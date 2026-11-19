@@ -15,10 +15,19 @@ function clearSession(response: NextResponse) {
   response.cookies.set("eklavya_refresh", "", { ...refreshCookie, maxAge: 0 });
 }
 
-async function apiJson(path: string, body: unknown, authorization?: string) {
+function clientIp(request: NextRequest) {
+  return request.headers.get("x-forwarded-for")?.split(",").at(-1)?.trim();
+}
+
+async function apiJson(path: string, body: unknown, request: NextRequest, authorization?: string) {
+  const forwardedFor = clientIp(request);
   return backend(path, {
     method: "POST",
-    headers: { "Content-Type": "application/json", ...(authorization ? { Authorization: authorization } : {}) },
+    headers: {
+      "Content-Type": "application/json",
+      ...(authorization ? { Authorization: authorization } : {}),
+      ...(forwardedFor ? { "X-Forwarded-For": forwardedFor } : {}),
+    },
     body: JSON.stringify(body),
   });
 }
@@ -34,11 +43,11 @@ async function tokenResponse(upstream: Response) {
 export async function POST(request: NextRequest, context: { params: Promise<{ action: string }> }) {
   const { action } = await context.params;
   if (action === "register" || action === "login") {
-    return tokenResponse(await apiJson(`/auth/${action}`, await request.json()));
+    return tokenResponse(await apiJson(`/auth/${action}`, await request.json(), request));
   }
   if (action === "logout") {
     const refresh = request.cookies.get("eklavya_refresh")?.value;
-    if (refresh) await apiJson("/auth/logout", { refresh_token: refresh });
+    if (refresh) await apiJson("/auth/logout", { refresh_token: refresh }, request);
     const response = NextResponse.json({ authenticated: false });
     clearSession(response);
     return response;
@@ -49,7 +58,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ ac
 async function refreshSession(request: NextRequest) {
   const refresh = request.cookies.get("eklavya_refresh")?.value;
   if (!refresh) return null;
-  const upstream = await apiJson("/auth/refresh", { refresh_token: refresh });
+  const upstream = await apiJson("/auth/refresh", { refresh_token: refresh }, request);
   if (!upstream.ok) return null;
   return upstream.json() as Promise<{ access_token: string; refresh_token: string }>;
 }

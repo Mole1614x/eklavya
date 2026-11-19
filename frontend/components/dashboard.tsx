@@ -4,6 +4,7 @@ import { modules } from "@/lib/navigation";
 import { ModuleIcon } from "./icons";
 import { PracticeChart } from "./practice-chart";
 import { LiveProgress } from "./live-progress";
+import { DashboardSchedule } from "./dashboard-schedule";
 
 const stats = [
   { label: "Problems solved", value: "24", icon: CheckCircle2, color: "green" },
@@ -57,7 +58,7 @@ export function Dashboard() {
             <div className="rank-name"><span className="tile orange"><Star size={23} fill="currentColor" /></span><div><strong>Shishya</strong><p>Next rank · Sadhak</p></div></div>
             <progress aria-label="XP towards Sadhak" value={350} max={500} /><p className="progress-caption"><span>350 / 500 XP</span><span>70%</span></p>
           </section>
-          <section className="card daily-card"><div className="section-heading"><h2><Flame size={17} /> Daily Sadhana</h2><span className="pill">Featured</span></div><p>Build a star staircase with loops.</p><Link href="/problems/star-staircase">Try Star Staircase <ArrowRight size={15} /></Link></section>
+          <DashboardSchedule />
         </div>
       </div>
       <section className="skills">
@@ -66,7 +67,7 @@ export function Dashboard() {
       </section>
       <div className="skills-grid extra">
         <Link className="card skill-card" href="/vidya-paths"><div><h3>Learning paths</h3><p>Preview the Foundations path</p></div><ArrowRight size={16} /></Link>
-        <Link className="card skill-card" href="/arena"><div><h3>Upcoming contests</h3><p>Contest scheduling is planned</p></div><ArrowRight size={16} /></Link>
+        <Link className="card skill-card" href="/arena"><div><h3>Upcoming contests</h3><p>Register, compete, and build your rating</p></div><ArrowRight size={16} /></Link>
       </div>
     </>
   );

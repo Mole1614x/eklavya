@@ -1,6 +1,6 @@
 from datetime import date, datetime, timezone
 
-from sqlalchemy import Boolean, CheckConstraint, Date, DateTime, Float, ForeignKey, Integer, String, Text, JSON, UniqueConstraint
+from sqlalchemy import Boolean, CheckConstraint, Date, DateTime, Float, ForeignKey, Index, Integer, String, Text, JSON, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .database import Base
@@ -122,6 +122,7 @@ class Submission(Base):
     __table_args__ = (
         CheckConstraint("mode IN ('RUN', 'SUBMIT')", name="submission_mode"),
         CheckConstraint("status IN ('QUEUED', 'RUNNING', 'FINISHED', 'SYSTEM_ERROR')", name="submission_status"),
+        Index("ix_submissions_user_created_at", "user_id", "created_at"),
     )
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True)
@@ -165,7 +166,10 @@ class UserProgress(Base):
 
 class XPTransaction(Base):
     __tablename__ = "xp_transactions"
-    __table_args__ = (UniqueConstraint("user_id", "source_type", "source_id", name="uq_xp_source"),)
+    __table_args__ = (
+        UniqueConstraint("user_id", "source_type", "source_id", name="uq_xp_source"),
+        Index("ix_xp_transactions_user_created_at", "user_id", "created_at"),
+    )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
@@ -287,6 +291,9 @@ class ContestRegistration(Base):
 
 class ContestSubmission(Base):
     __tablename__ = "contest_submissions"
+    __table_args__ = (
+        Index("ix_contest_submissions_standings", "contest_id", "user_id", "problem_slug", "submitted_at"),
+    )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     contest_id: Mapped[int] = mapped_column(ForeignKey("contests.id", ondelete="CASCADE"), index=True)
