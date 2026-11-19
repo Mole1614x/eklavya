@@ -1,0 +1,7 @@
+{
+  "city-totals": {"kind": "sql", "config": {"ordered": true}},
+  "department-pay-rank": {"kind": "sql", "config": {"ordered": true}},
+  "filter-students": {"kind": "pandas_expression", "config": {"variable": "df", "output": "dataframe_split"}},
+  "monthly-orders": {"kind": "pandas_function", "config": {"function": "monthly_orders", "output": "dataframe_split"}},
+  "row-centering": {"kind": "numpy_expression", "config": {"variable": "x", "output": "array", "tolerance": 1e-8}}
+}

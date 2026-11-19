@@ -53,6 +53,14 @@ class TestCase(Base):
     tolerance: Mapped[float | None] = mapped_column(Float, nullable=True)
 
 
+class ProblemEvaluator(Base):
+    __tablename__ = "problem_evaluators"
+
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="CASCADE"), primary_key=True)
+    kind: Mapped[str] = mapped_column(String(32))
+    config: Mapped[dict] = mapped_column(JSON, default=dict)
+
+
 def utcnow() -> datetime:
     return datetime.now(timezone.utc)
 

@@ -1,11 +1,13 @@
+import json
 from datetime import datetime, timedelta, timezone
 
 from sqlalchemy import select
 
 from backend.app.database import Session
-from backend.app.models import Submission, TestCase
+from backend.app.models import ProblemEvaluator, Submission, TestCase
 from judge.celery_app import app
 from judge.executor import execute, outputs_match
+from judge.specialized import execute_data, execute_sql, extract_result, structured_match
 
 
 @app.task(name="judge.evaluate")
@@ -34,14 +36,30 @@ def evaluate(submission_id: str) -> None:
                 db.commit()
                 return
             total_ms = 0
+            evaluator = db.get(ProblemEvaluator, submission.problem_slug)
             for case in cases:
-                result = execute(submission.language, submission.source_code, case.input_data)
+                if evaluator is None:
+                    result = execute(submission.language, submission.source_code, case.input_data)
+                elif evaluator.kind == "sql":
+                    result = execute_sql(submission.source_code, case.input_data)
+                else:
+                    result = execute_data(evaluator.kind, submission.source_code, case.input_data, evaluator.config)
                 total_ms += result.execution_ms
                 if result.verdict != "COMPLETED":
                     _finish(submission, result.verdict, result.output, total_ms)
                     db.commit()
                     return
-                if not outputs_match(result.output, case.expected_output, case.tolerance):
+                if evaluator is None:
+                    matched = outputs_match(result.output, case.expected_output, case.tolerance)
+                else:
+                    try:
+                        matched = structured_match(
+                            extract_result(result.output), json.loads(case.expected_output),
+                            case.tolerance or evaluator.config.get("tolerance"),
+                        )
+                    except (ValueError, json.JSONDecodeError):
+                        matched = False
+                if not matched:
                     output = result.output if not case.is_hidden else "A hidden test case did not match the expected output."
                     _finish(submission, "WRONG_ANSWER", output, total_ms)
                     db.commit()
