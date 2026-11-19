@@ -6,6 +6,7 @@ from sqlalchemy import select
 from backend.app.database import Session
 from backend.app.models import ProblemEvaluator, Submission, TestCase
 from backend.app.gamification import award_submission
+from backend.app.learning import record_daily_completion
 from judge.celery_app import app
 from judge.executor import execute, outputs_match
 from judge.specialized import evaluate_answer, execute_ai, execute_bigdata, execute_data, execute_sql, extract_result, structured_match
@@ -74,6 +75,7 @@ def evaluate(submission_id: str) -> None:
                 submission.passed_tests += 1
             _finish(submission, "ACCEPTED", "All selected test cases passed.", total_ms)
             award_submission(db, submission)
+            record_daily_completion(db, submission)
             db.commit()
         except Exception:
             submission.status = "SYSTEM_ERROR"

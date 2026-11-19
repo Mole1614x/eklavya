@@ -1,6 +1,6 @@
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
-from sqlalchemy import Boolean, CheckConstraint, DateTime, Float, ForeignKey, Integer, String, Text, JSON, UniqueConstraint
+from sqlalchemy import Boolean, CheckConstraint, Date, DateTime, Float, ForeignKey, Integer, String, Text, JSON, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .database import Base
@@ -202,3 +202,52 @@ class UserAchievement(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
     achievement_slug: Mapped[str] = mapped_column(ForeignKey("achievements.slug"))
     awarded_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class DailyChallenge(Base):
+    __tablename__ = "daily_challenges"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    challenge_date: Mapped[date] = mapped_column(Date, unique=True, index=True)
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="RESTRICT"))
+    xp_reward: Mapped[int] = mapped_column(Integer, default=20)
+
+
+class DailyChallengeCompletion(Base):
+    __tablename__ = "daily_challenge_completions"
+    __table_args__ = (UniqueConstraint("user_id", "daily_challenge_id", name="uq_daily_completion"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    daily_challenge_id: Mapped[int] = mapped_column(ForeignKey("daily_challenges.id", ondelete="CASCADE"))
+    submission_id: Mapped[str] = mapped_column(ForeignKey("submissions.id", ondelete="RESTRICT"), unique=True)
+    completed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class LearningPath(Base):
+    __tablename__ = "learning_paths"
+
+    slug: Mapped[str] = mapped_column(String(64), primary_key=True)
+    title: Mapped[str] = mapped_column(String(120), unique=True)
+    description: Mapped[str] = mapped_column(String(500))
+    prerequisites: Mapped[list[str]] = mapped_column(JSON, default=list)
+
+
+class LearningPathProblem(Base):
+    __tablename__ = "learning_path_problems"
+
+    path_slug: Mapped[str] = mapped_column(ForeignKey("learning_paths.slug", ondelete="CASCADE"), primary_key=True)
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="CASCADE"), primary_key=True)
+    position: Mapped[int] = mapped_column(Integer)
+    milestone: Mapped[str | None] = mapped_column(String(120), nullable=True)
+
+
+class LearningPathProgress(Base):
+    __tablename__ = "learning_path_progress"
+    __table_args__ = (UniqueConstraint("user_id", "path_slug", name="uq_learning_path_progress"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    path_slug: Mapped[str] = mapped_column(ForeignKey("learning_paths.slug", ondelete="CASCADE"))
+    enrolled_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)

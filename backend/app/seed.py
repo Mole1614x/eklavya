@@ -1,10 +1,11 @@
 import json
 
+from sqlalchemy import select
 from sqlalchemy.orm import Session as DatabaseSession
 
 from .config import settings
 from .database import Session
-from .models import Achievement, Problem, ProblemEvaluator, RankLevel, StarterCode, TestCase
+from .models import Achievement, DailyChallenge, LearningPath, LearningPathProblem, Problem, ProblemEvaluator, RankLevel, StarterCode, TestCase
 from .schemas import ProblemDetail
 
 
@@ -26,6 +27,17 @@ def seed(db: DatabaseSession) -> int:
             problem.test_cases = [TestCase(**case) for case in test_cases[entry.slug]]
         if entry.slug in evaluators:
             db.merge(ProblemEvaluator(problem_slug=entry.slug, **evaluators[entry.slug]))
+    paths = json.loads(settings().learning_paths_seed_file.read_text()) if settings().learning_paths_seed_file.exists() else []
+    for path in paths:
+        problems = path.pop("problems")
+        db.merge(LearningPath(**path))
+        for position, problem_slug in enumerate(problems, 1):
+            db.merge(LearningPathProblem(path_slug=path["slug"], problem_slug=problem_slug, position=position, milestone="Path complete" if position == len(problems) else None))
+    from datetime import datetime, timezone
+    today = datetime.now(timezone.utc).date()
+    if db.scalar(select(DailyChallenge).where(DailyChallenge.challenge_date == today)) is None:
+        slugs = [entry.slug for entry in entries]
+        db.add(DailyChallenge(challenge_date=today, problem_slug=slugs[today.toordinal() % len(slugs)]))
     db.commit()
     return len(entries)
 
