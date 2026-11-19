@@ -238,3 +238,31 @@ select { max-width: 100%; min-height: 40px; border: 1px solid #36405a; border-ra
 .path-steps span { display: grid; }
 .path-steps small { color: var(--accent); }
 .path-steps a { color: #ffc16a; }
+.contest-grid { display: grid; gap: 11px; }
+.contest-card { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px; }
+.contest-card h2 { margin-top: 9px; font-size: 19px; }
+.contest-card p { margin-top: 5px; }
+.contest-card small { display: block; margin-top: 9px; color: #7f8ba7; }
+.contest-status { display: inline-flex; padding: 4px 8px; border: 1px solid #56617b; border-radius: 999px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.contest-status.active { color: #69e8bd; border-color: #255e52; }
+.contest-status.upcoming { color: #ffcb79; border-color: #75522f; }
+.contest-hero { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.contest-clock { min-width: 170px; padding: 15px; border: 1px solid #76582e; border-radius: 11px; background: #251f25; text-align: center; }
+.contest-clock small { display: block; color: var(--muted); letter-spacing: .11em; }
+.contest-clock strong { display: block; margin-top: 5px; color: #ffc16a; font-size: 24px; font-variant-numeric: tabular-nums; }
+.contest-actions { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 16px; }
+.contest-actions p { margin-top: 4px; font-size: 13px; }
+.contest-message { margin: 10px 0; color: #69e8bd; }
+.contest-heading { margin: 24px 0 9px; }
+.contest-problems, .contest-board { padding: 0; list-style: none; }
+.contest-problems li, .contest-board li { display: grid; align-items: center; gap: 12px; padding: 14px 16px; }
+.contest-problems li { grid-template-columns: 36px 1fr auto; }
+.contest-board li { grid-template-columns: 52px 1fr auto; }
+.contest-problems li + li, .contest-board li + li { border-top: 1px solid var(--border); }
+.contest-problems li > strong { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: var(--surface-raised); }
+.contest-problems span, .contest-board span { display: grid; }
+.contest-problems small, .contest-board small { margin-top: 3px; color: var(--muted); font-size: 11px; }
+.contest-problems a { color: #ffc16a; font-weight: 700; font-size: 13px; }
+.contest-board li > span:last-child { text-align: right; }
+.contest-workspace { padding: 8px 12px; border-bottom: 1px solid #76582e; background: #251f25; color: #ffc16a; font-size: 12px; }
+@media (max-width: 640px) { .contest-card, .contest-hero, .contest-actions { align-items: stretch; flex-direction: column; } .contest-clock { width: 100%; } }

@@ -8,12 +8,12 @@ export const modules = [
 ] as const;
 
 export const community = [
-  { slug: "daily-sadhana", label: "Daily Sadhana", icon: "flame", title: "Make practice a daily habit", description: "Start with the featured Foundations exercise. Rotating challenges and streak tracking are planned.", topics: ["Featured exercise", "Daily rotation planned", "Streak history planned"] },
-  { slug: "arena", label: "Arena", icon: "trophy", title: "Prepare for the Arena", description: "Practice with the Code catalog while timed contests, registration, and ratings are in development.", topics: ["Algorithm practice", "Timed contests planned", "Contest ratings planned"] },
-  { slug: "rankings", label: "Maharathi Rankings", icon: "target", title: "The Maharathi rank ladder", description: "Explore the six ranks and their initial XP thresholds. XP awards and ranked accounts are planned.", topics: [] },
-  { slug: "badges", label: "Veer Badges", icon: "award", title: "Milestones worth earning", description: "Preview the first milestones. Badge awards will go live with verified progress tracking.", topics: ["First solve", "Seven-day streak", "First contest"] },
-  { slug: "vidya-paths", label: "Vidya Paths", icon: "route", title: "Learn in a deliberate order", description: "Preview the Foundations path from conditionals to loops and patterns. Enrollment and saved progress are planned.", topics: ["1. Conditionals", "2. Loops", "3. Patterns"] },
-  { slug: "progress-insights", label: "Progress Insights", icon: "activity", title: "See your practice over time", description: "This preview uses demo activity. Personal history will appear when submissions and account tracking are available.", topics: [] },
+  { slug: "daily-sadhana", label: "Daily Sadhana", icon: "flame", title: "Make practice a daily habit", description: "Solve today’s UTC challenge, earn bonus XP, and build a verified practice streak.", topics: ["Daily rotation", "Bonus XP", "Streak history"] },
+  { slug: "arena", label: "Arena", icon: "trophy", title: "Compete in the Arena", description: "Register for timed contests, solve under pressure, and build your contest rating.", topics: [] },
+  { slug: "rankings", label: "Maharathi Rankings", icon: "target", title: "The Maharathi rank ladder", description: "See the live leaderboard and progress through six ranks using verified XP.", topics: [] },
+  { slug: "badges", label: "Veer Badges", icon: "award", title: "Milestones worth earning", description: "Earn badges for first solves, specialist tracks, streaks, and Arena participation.", topics: ["First solve", "Seven-day streak", "First contest"] },
+  { slug: "vidya-paths", label: "Vidya Paths", icon: "route", title: "Learn in a deliberate order", description: "Enroll in structured paths and advance as the judge verifies each required solution.", topics: ["Structured sequences", "Milestones", "Verified progress"] },
+  { slug: "progress-insights", label: "Progress Insights", icon: "activity", title: "See your practice over time", description: "Review verified activity, solved topics, and recent XP progress.", topics: [] },
 ] as const;
 
 export const ranks = [
