@@ -41,9 +41,9 @@ test("catalog filtering opens a working Monaco editor and honest statuses", asyn
   await page.getByLabel("Language").selectOption("python");
   await expect(page.locator(".monaco-editor .view-lines")).toContainText("My draft");
   await page.getByRole("button", { name: "Run" }).click();
-  await expect(page.getByRole("status")).toHaveText("Execution is unavailable in Phase 1.");
+  await expect(page.getByRole("status")).toContainText("Sign in to run or submit solutions.");
   await page.getByRole("button", { name: "Submit" }).click();
-  await expect(page.getByRole("status")).toHaveText("Submissions are unavailable in Phase 1.");
+  await expect(page.getByRole("status")).toContainText("Sign in to run or submit solutions.");
 });
 
 test("mobile menu and missing problem recovery", async ({ page }) => {

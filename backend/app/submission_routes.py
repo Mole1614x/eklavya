@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 
 from .auth import CurrentUser, require_admin
 from .main_dependencies import get_db
+from .judge_client import Enqueuer
 from .models import Problem, StarterCode, Submission, TestCase, User
 from .schemas_submissions import ProblemAdminWrite, SubmissionCreate, SubmissionRead
 
@@ -15,7 +16,7 @@ DB = Annotated[Session, Depends(get_db)]
 
 
 @router.post("/problems/{slug}/submissions", response_model=SubmissionRead, status_code=status.HTTP_202_ACCEPTED)
-def create_submission(slug: str, payload: SubmissionCreate, user: CurrentUser, db: DB) -> Submission:
+def create_submission(slug: str, payload: SubmissionCreate, user: CurrentUser, db: DB, enqueue: Enqueuer) -> Submission:
     problem = db.get(Problem, slug)
     if problem is None:
         raise HTTPException(status_code=404, detail="Problem not found")
@@ -29,6 +30,14 @@ def create_submission(slug: str, payload: SubmissionCreate, user: CurrentUser, d
     db.add(submission)
     db.commit()
     db.refresh(submission)
+    try:
+        enqueue(submission.id)
+    except Exception:
+        submission.status = "SYSTEM_ERROR"
+        submission.verdict = "SYSTEM_ERROR"
+        submission.output = "The judge queue is unavailable. Please try again."
+        db.commit()
+        db.refresh(submission)
     return submission
 
 

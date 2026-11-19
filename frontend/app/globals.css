@@ -206,3 +206,7 @@ select { max-width: 100%; min-height: 40px; border: 1px solid #36405a; border-ra
 .form-hint, .form-error { font-size: 12px; }
 .form-error { color: #ff9e9e; }
 .form-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.judge-result { display: grid; gap: 7px; margin-top: 8px; }
+.judge-result strong { color: #ffc16a; }
+.judge-result span { color: var(--muted); font-size: 12px; }
+.judge-result pre { overflow: auto; max-height: 180px; padding: 9px; border-radius: 6px; background: var(--background); white-space: pre-wrap; }
