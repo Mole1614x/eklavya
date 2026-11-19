@@ -53,6 +53,7 @@ services:
       ALLOWED_HOSTS: ${ALLOWED_HOSTS:-localhost,127.0.0.1,backend}
       RATE_LIMIT_ENABLED: ${RATE_LIMIT_ENABLED:-false}
       READINESS_CHECK_REDIS: ${READINESS_CHECK_REDIS:-false}
+      DATASET_STORAGE_DIR: /var/lib/eklavya/datasets
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -63,6 +64,8 @@ services:
     read_only: true
     tmpfs:
       - /tmp:size=32m,mode=1777
+    volumes:
+      - dataset-storage:/var/lib/eklavya/datasets
     cap_drop: ["ALL"]
     security_opt: ["no-new-privileges:true"]
     restart: unless-stopped
@@ -78,6 +81,7 @@ services:
     environment:
       DATABASE_URL: ${COMPOSE_DATABASE_URL:-postgresql+psycopg://eklavya:eklavya@db:5432/eklavya}
       REDIS_URL: redis://redis:6379/0
+      DATASET_STORAGE_DIR: /var/lib/eklavya/datasets
     profiles: ["judge"]
     depends_on:
       migrate:
@@ -100,6 +104,7 @@ services:
         condition: service_completed_successfully
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - dataset-storage:/var/lib/eklavya/datasets:ro
     group_add:
       - "${DOCKER_GID:-0}"
     read_only: true
@@ -184,3 +189,4 @@ services:
 volumes:
   postgres-data:
   redis-data:
+  dataset-storage:

@@ -1,0 +1,613 @@
+import base64
+import binascii
+import csv
+import hashlib
+import io
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Annotated
+from uuid import uuid4
+
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
+from fastapi.responses import FileResponse
+from sqlalchemy import func, or_, select
+from sqlalchemy.orm import Session
+
+from .auth import require_admin
+from .config import settings
+from .main_dependencies import get_db
+from .models import (
+    Achievement, AuditLog, Contest, ContestProblem, ContestRating, ContestRegistration,
+    ContestSubmission, LearningPath, LearningPathProblem, LearningPathProgress, ManagedDataset,
+    Problem, ProblemEvaluator, Profile, RankHistory, StarterCode, Submission, TestCase, User,
+    UserAchievement, XPTransaction,
+)
+from .schemas_admin import (
+    AdminAchievementRead, AdminAchievementWrite, AdminContestRead, AdminContestWrite,
+    AdminContestRegistrationRead, AdminContestStandingRead, AdminContestSubmissionRead,
+    AdminDatasetRead, AdminOverview, AdminPathRead, AdminPathWrite, AdminProblemDetail,
+    AdminProblemRead, AdminProblemWrite, AdminRankHistoryRead, AdminUserRead,
+    AdminXPTransactionRead, AuditLogRead, ContestStatusUpdate, DatasetStatusUpdate, DatasetUpload,
+    ProblemStatusUpdate, UserStatusUpdate,
+)
+from .contest_routes import calculate_standings
+
+router = APIRouter(prefix="/admin", tags=["administration"])
+DB = Annotated[Session, Depends(get_db)]
+Admin = Annotated[User, Depends(require_admin)]
+
+
+def record_audit(
+    db: Session, request: Request, actor: User, action: str, target_type: str,
+    target_id: str, details: dict | None = None,
+) -> None:
+    db.add(AuditLog(
+        actor_user_id=actor.id, action=action, target_type=target_type, target_id=target_id,
+        details=details or {}, ip_address=request.client.host if request.client else None,
+    ))
+
+
+def page_limit(limit: int) -> int:
+    return min(max(limit, 1), 100)
+
+
+@router.get("/overview", response_model=AdminOverview)
+def overview(db: DB, admin: Admin) -> dict:
+    del admin
+    now = datetime.now(timezone.utc)
+    failed = {"WRONG_ANSWER", "COMPILATION_ERROR", "RUNTIME_ERROR", "TIME_LIMIT_EXCEEDED", "MEMORY_LIMIT_EXCEEDED"}
+    registrations = db.execute(
+        select(func.date(User.created_at), func.count()).group_by(func.date(User.created_at))
+        .order_by(func.date(User.created_at).desc()).limit(14)
+    ).all()
+    submissions = db.execute(
+        select(func.date(Submission.created_at), func.count()).group_by(func.date(Submission.created_at))
+        .order_by(func.date(Submission.created_at).desc()).limit(14)
+    ).all()
+    recent = db.execute(
+        select(User, Profile).join(Profile, Profile.user_id == User.id)
+        .order_by(User.created_at.desc()).limit(8)
+    ).all()
+    return {
+        "total_users": db.scalar(select(func.count(User.id))) or 0,
+        "active_users": db.scalar(select(func.count(User.id)).where(User.is_active.is_(True))) or 0,
+        "total_problems": db.scalar(select(func.count(Problem.slug))) or 0,
+        "published_problems": db.scalar(select(func.count(Problem.slug)).where(Problem.status == "PUBLISHED")) or 0,
+        "total_submissions": db.scalar(select(func.count(Submission.id))) or 0,
+        "accepted_submissions": db.scalar(select(func.count(Submission.id)).where(Submission.verdict == "ACCEPTED")) or 0,
+        "failed_submissions": db.scalar(select(func.count(Submission.id)).where(Submission.verdict.in_(failed))) or 0,
+        "active_contests": db.scalar(select(func.count(Contest.id)).where(
+            Contest.publication_status == "PUBLISHED", Contest.starts_at <= now, Contest.ends_at > now,
+        )) or 0,
+        "queued_submissions": db.scalar(select(func.count(Submission.id)).where(Submission.status == "QUEUED")) or 0,
+        "running_submissions": db.scalar(select(func.count(Submission.id)).where(Submission.status == "RUNNING")) or 0,
+        "registration_trend": [{"day": str(day), "count": count} for day, count in reversed(registrations)],
+        "submission_trend": [{"day": str(day), "count": count} for day, count in reversed(submissions)],
+        "recent_registrations": [
+            {"username": user.username, "display_name": profile.display_name, "created_at": user.created_at}
+            for user, profile in recent
+        ],
+    }
+
+
+def problem_summary(problem: Problem) -> dict:
+    return {
+        "slug": problem.slug, "title": problem.title, "category": problem.category,
+        "difficulty": problem.difficulty, "format": problem.format, "topic": problem.topic,
+        "status": problem.status,
+        "supported_languages": [starter.language for starter in problem.starters],
+        "test_case_count": len(problem.test_cases),
+        "hidden_test_count": sum(case.is_hidden for case in problem.test_cases),
+    }
+
+
+@router.get("/problems", response_model=list[AdminProblemRead])
+def admin_problems(
+    db: DB, admin: Admin, q: Annotated[str, Query(max_length=100)] = "",
+    problem_status: Annotated[str | None, Query(alias="status", max_length=16)] = None,
+    limit: Annotated[int, Query(ge=1, le=100)] = 50, offset: Annotated[int, Query(ge=0)] = 0,
+) -> list[dict]:
+    del admin
+    filters = []
+    if q.strip():
+        term = q.strip().lower()
+        filters.append(or_(func.lower(Problem.title).contains(term), func.lower(Problem.slug).contains(term)))
+    if problem_status:
+        filters.append(Problem.status == problem_status)
+    problems = db.scalars(select(Problem).where(*filters).order_by(Problem.title).limit(limit).offset(offset)).all()
+    return [problem_summary(problem) for problem in problems]
+
+
+@router.get("/problems/{slug}", response_model=AdminProblemDetail)
+def admin_problem(slug: str, db: DB, admin: Admin) -> dict:
+    del admin
+    problem = db.get(Problem, slug)
+    if problem is None:
+        raise HTTPException(status_code=404, detail="Problem not found")
+    evaluator = db.get(ProblemEvaluator, slug)
+    return problem_summary(problem) | {
+        "tags": problem.tags, "description": problem.description, "constraints": problem.constraints,
+        "examples": problem.examples, "choices": problem.choices,
+        "starters": [{"language": item.language, "code": item.code} for item in problem.starters],
+        "test_cases": [{
+            "input_data": item.input_data, "expected_output": item.expected_output,
+            "is_hidden": item.is_hidden, "position": item.position, "tolerance": item.tolerance,
+        } for item in sorted(problem.test_cases, key=lambda case: (case.position, case.id))],
+        "evaluator": None if evaluator is None else {"kind": evaluator.kind, "config": evaluator.config},
+    }
+
+
+@router.put("/problems/{slug}", response_model=AdminProblemDetail)
+def save_problem(slug: str, payload: AdminProblemWrite, request: Request, db: DB, admin: Admin) -> dict:
+    if not slug or len(slug) > 100 or any(character not in "abcdefghijklmnopqrstuvwxyz0123456789-" for character in slug):
+        raise HTTPException(status_code=422, detail="Problem slug is invalid")
+    problem = db.get(Problem, slug)
+    action = "problem.update" if problem else "problem.create"
+    values = payload.model_dump(exclude={"starters", "test_cases", "evaluator"})
+    if problem is None:
+        problem = Problem(slug=slug, starters=[], test_cases=[], **values)
+        db.add(problem)
+    else:
+        for key, value in values.items():
+            setattr(problem, key, value)
+        problem.starters.clear()
+        problem.test_cases.clear()
+    problem.starters.extend(StarterCode(**starter.model_dump()) for starter in payload.starters)
+    problem.test_cases.extend(TestCase(**case.model_dump()) for case in payload.test_cases)
+    if payload.evaluator is None:
+        evaluator = db.get(ProblemEvaluator, slug)
+        if evaluator is not None:
+            db.delete(evaluator)
+    else:
+        db.merge(ProblemEvaluator(problem_slug=slug, **payload.evaluator.model_dump()))
+    record_audit(db, request, admin, action, "problem", slug, {"status": payload.status})
+    db.commit()
+    return admin_problem(slug, db, admin)
+
+
+@router.patch("/problems/{slug}/status", response_model=AdminProblemRead)
+def set_problem_status(
+    slug: str, payload: ProblemStatusUpdate, request: Request, db: DB, admin: Admin,
+) -> dict:
+    problem = db.get(Problem, slug)
+    if problem is None:
+        raise HTTPException(status_code=404, detail="Problem not found")
+    if payload.status == "PUBLISHED" and not problem.test_cases:
+        raise HTTPException(status_code=409, detail="A published problem requires test cases")
+    previous = problem.status
+    problem.status = payload.status
+    record_audit(db, request, admin, "problem.status", "problem", slug, {
+        "from": previous, "to": payload.status, "reason": payload.reason,
+    })
+    db.commit()
+    return problem_summary(problem)
+
+
+def validate_dataset(filename: str, content_type: str, content: bytes) -> str:
+    if Path(filename).name != filename:
+        raise HTTPException(status_code=422, detail="Dataset filename must not contain a path")
+    suffix = Path(filename).suffix.lower()
+    allowed = {
+        ".csv": {"text/csv", "application/csv", "text/plain"},
+        ".json": {"application/json", "text/json"},
+        ".parquet": {"application/octet-stream", "application/vnd.apache.parquet"},
+    }
+    if suffix not in allowed or content_type not in allowed[suffix]:
+        raise HTTPException(status_code=422, detail="Dataset file type is not allowed")
+    try:
+        if suffix == ".json":
+            json.loads(content)
+        elif suffix == ".csv":
+            rows = list(csv.reader(io.StringIO(content.decode("utf-8"))))
+            if not rows or not rows[0] or len(rows) > 1_000_000:
+                raise ValueError
+        elif not (content.startswith(b"PAR1") and content.endswith(b"PAR1")):
+            raise ValueError
+    except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
+        raise HTTPException(status_code=422, detail="Dataset content is invalid") from error
+    return suffix
+
+
+@router.get("/datasets", response_model=list[AdminDatasetRead])
+def datasets(
+    db: DB, admin: Admin, limit: Annotated[int, Query(ge=1, le=100)] = 50,
+    offset: Annotated[int, Query(ge=0)] = 0,
+) -> list[ManagedDataset]:
+    del admin
+    return list(db.scalars(select(ManagedDataset).order_by(
+        ManagedDataset.created_at.desc(), ManagedDataset.id,
+    ).limit(limit).offset(offset)))
+
+
+@router.post("/datasets", response_model=AdminDatasetRead, status_code=status.HTTP_201_CREATED)
+def upload_dataset(payload: DatasetUpload, request: Request, db: DB, admin: Admin) -> ManagedDataset:
+    try:
+        content = base64.b64decode(payload.content_base64, validate=True)
+    except (binascii.Error, ValueError) as error:
+        raise HTTPException(status_code=422, detail="Dataset content is not valid base64") from error
+    configuration = settings()
+    if not content or len(content) > configuration.dataset_max_bytes:
+        raise HTTPException(status_code=413, detail="Dataset exceeds the configured size limit")
+    suffix = validate_dataset(payload.filename, payload.content_type, content)
+    version = (db.scalar(select(func.max(ManagedDataset.version)).where(ManagedDataset.name == payload.name)) or 0) + 1
+    dataset_id = str(uuid4())
+    digest = hashlib.sha256(content).hexdigest()
+    configuration.dataset_storage_dir.mkdir(parents=True, exist_ok=True, mode=0o700)
+    storage = configuration.dataset_storage_dir / f"{dataset_id}{suffix}"
+    temporary = configuration.dataset_storage_dir / f".{dataset_id}.tmp"
+    temporary.write_bytes(content)
+    temporary.chmod(0o600)
+    temporary.replace(storage)
+    item = ManagedDataset(
+        id=dataset_id, name=payload.name, kind=payload.kind, version=version,
+        original_filename=payload.filename, content_type=payload.content_type,
+        size_bytes=len(content), sha256=digest, storage_path=str(storage), created_by=admin.id,
+    )
+    db.add(item)
+    record_audit(db, request, admin, "dataset.upload", "dataset", dataset_id, {
+        "name": payload.name, "kind": payload.kind, "version": version, "size_bytes": len(content),
+    })
+    try:
+        db.commit()
+    except Exception:
+        storage.unlink(missing_ok=True)
+        raise
+    db.refresh(item)
+    return item
+
+
+@router.get("/datasets/{dataset_id}/download", response_class=FileResponse)
+def download_dataset(dataset_id: str, db: DB, admin: Admin) -> FileResponse:
+    del admin
+    item = db.get(ManagedDataset, dataset_id)
+    if item is None:
+        raise HTTPException(status_code=404, detail="Dataset not found")
+    path = Path(item.storage_path)
+    if not path.is_file():
+        raise HTTPException(status_code=410, detail="Dataset file is unavailable")
+    return FileResponse(path, media_type=item.content_type, filename=item.original_filename)
+
+
+@router.patch("/datasets/{dataset_id}", response_model=AdminDatasetRead)
+def set_dataset_status(
+    dataset_id: str, payload: DatasetStatusUpdate, request: Request, db: DB, admin: Admin,
+) -> ManagedDataset:
+    item = db.get(ManagedDataset, dataset_id)
+    if item is None:
+        raise HTTPException(status_code=404, detail="Dataset not found")
+    item.is_active = payload.is_active
+    record_audit(db, request, admin, "dataset.status", "dataset", dataset_id, {
+        "is_active": payload.is_active, "reason": payload.reason,
+    })
+    db.commit()
+    db.refresh(item)
+    return item
+
+
+def user_rows(db: Session, filters: list, limit: int, offset: int) -> list[dict]:
+    submission_count = select(func.count(Submission.id)).where(Submission.user_id == User.id).correlate(User).scalar_subquery()
+    accepted_count = select(func.count(Submission.id)).where(
+        Submission.user_id == User.id, Submission.verdict == "ACCEPTED",
+    ).correlate(User).scalar_subquery()
+    error_count = select(func.count(Submission.id)).where(
+        Submission.user_id == User.id, Submission.verdict == "SYSTEM_ERROR",
+    ).correlate(User).scalar_subquery()
+    rows = db.execute(select(
+        User, Profile.display_name, submission_count, accepted_count, error_count,
+    ).join(Profile, Profile.user_id == User.id).where(*filters).order_by(User.created_at.desc()).limit(limit).offset(offset)).all()
+    return [{
+        "id": user.id, "email": user.email, "username": user.username, "display_name": display_name,
+        "role": user.role, "is_active": user.is_active, "email_verified": user.email_verified,
+        "created_at": user.created_at, "last_login_at": user.last_login_at,
+        "submissions": submissions, "accepted_submissions": accepted, "system_errors": errors,
+    } for user, display_name, submissions, accepted, errors in rows]
+
+
+@router.get("/users", response_model=list[AdminUserRead])
+def users(
+    db: DB, admin: Admin, q: Annotated[str, Query(max_length=100)] = "",
+    limit: Annotated[int, Query(ge=1, le=100)] = 50, offset: Annotated[int, Query(ge=0)] = 0,
+) -> list[dict]:
+    del admin
+    filters = []
+    if q.strip():
+        term = q.strip().lower()
+        filters.append(or_(
+            func.lower(User.username).contains(term), func.lower(User.email).contains(term),
+            func.lower(Profile.display_name).contains(term),
+        ))
+    return user_rows(db, filters, limit, offset)
+
+
+@router.get("/users/{user_id}", response_model=AdminUserRead)
+def user_detail(user_id: int, db: DB, admin: Admin) -> dict:
+    del admin
+    rows = user_rows(db, [User.id == user_id], 1, 0)
+    if not rows:
+        raise HTTPException(status_code=404, detail="User not found")
+    return rows[0]
+
+
+@router.patch("/users/{user_id}/status", response_model=AdminUserRead)
+def set_user_status(
+    user_id: int, payload: UserStatusUpdate, request: Request, db: DB, admin: Admin,
+) -> dict:
+    user = db.get(User, user_id)
+    if user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    if user.id == admin.id and not payload.is_active:
+        raise HTTPException(status_code=409, detail="Administrators cannot suspend their own active session")
+    previous = user.is_active
+    user.is_active = payload.is_active
+    record_audit(db, request, admin, "user.status", "user", str(user_id), {
+        "from": previous, "to": payload.is_active, "reason": payload.reason,
+    })
+    db.commit()
+    return user_detail(user_id, db, admin)
+
+
+def contest_summary(db: Session, contest: Contest) -> dict:
+    return {
+        "slug": contest.slug, "title": contest.title, "starts_at": contest.starts_at,
+        "ends_at": contest.ends_at, "is_rated": contest.is_rated,
+        "publication_status": contest.publication_status,
+        "registrations": db.scalar(select(func.count(ContestRegistration.id)).where(ContestRegistration.contest_id == contest.id)) or 0,
+        "submissions": db.scalar(select(func.count(ContestSubmission.id)).where(ContestSubmission.contest_id == contest.id)) or 0,
+        "problem_count": db.scalar(select(func.count(ContestProblem.problem_slug)).where(ContestProblem.contest_id == contest.id)) or 0,
+    }
+
+
+@router.get("/contests", response_model=list[AdminContestRead])
+def admin_contests(db: DB, admin: Admin) -> list[dict]:
+    del admin
+    return [contest_summary(db, contest) for contest in db.scalars(select(Contest).order_by(Contest.starts_at.desc()).limit(100))]
+
+
+def managed_contest(db: Session, slug: str) -> Contest:
+    contest = db.scalar(select(Contest).where(Contest.slug == slug))
+    if contest is None:
+        raise HTTPException(status_code=404, detail="Contest not found")
+    return contest
+
+
+@router.get(
+    "/contests/{slug}/registrations",
+    response_model=list[AdminContestRegistrationRead],
+)
+def contest_registrations(slug: str, db: DB, admin: Admin) -> list[dict]:
+    del admin
+    contest = managed_contest(db, slug)
+    rows = db.execute(
+        select(ContestRegistration, User, Profile)
+        .join(User, User.id == ContestRegistration.user_id)
+        .join(Profile, Profile.user_id == User.id)
+        .where(ContestRegistration.contest_id == contest.id)
+        .order_by(ContestRegistration.registered_at.desc())
+        .limit(500)
+    ).all()
+    return [{
+        "user_id": user.id, "username": user.username, "display_name": profile.display_name,
+        "registered_at": registration.registered_at,
+    } for registration, user, profile in rows]
+
+
+@router.get("/contests/{slug}/standings", response_model=list[AdminContestStandingRead])
+def contest_standings(slug: str, db: DB, admin: Admin) -> list[dict]:
+    del admin
+    return calculate_standings(db, managed_contest(db, slug))
+
+
+@router.get(
+    "/contests/{slug}/submissions",
+    response_model=list[AdminContestSubmissionRead],
+)
+def contest_submissions(slug: str, db: DB, admin: Admin) -> list[dict]:
+    del admin
+    contest = managed_contest(db, slug)
+    rows = db.execute(
+        select(ContestSubmission, Submission, User.username)
+        .join(Submission, Submission.id == ContestSubmission.submission_id)
+        .join(User, User.id == ContestSubmission.user_id)
+        .where(ContestSubmission.contest_id == contest.id)
+        .order_by(ContestSubmission.submitted_at.desc())
+        .limit(500)
+    ).all()
+    return [{
+        "submission_id": item.submission_id, "username": username,
+        "problem_slug": item.problem_slug, "language": submission.language,
+        "status": submission.status, "verdict": submission.verdict,
+        "submitted_at": item.submitted_at,
+    } for item, submission, username in rows]
+
+
+@router.put("/contests/{slug}", response_model=AdminContestRead)
+def save_contest(slug: str, payload: AdminContestWrite, request: Request, db: DB, admin: Admin) -> dict:
+    if payload.publication_status == "FINALIZED":
+        raise HTTPException(
+            status_code=422,
+            detail="Contest finalization is only available through the verified results workflow",
+        )
+    contest = db.scalar(select(Contest).where(Contest.slug == slug).with_for_update())
+    if contest is not None and (
+        contest.publication_status == "FINALIZED"
+        or db.scalar(select(ContestRating.id).where(ContestRating.contest_id == contest.id)) is not None
+    ):
+        raise HTTPException(status_code=409, detail="Finalized contest results cannot be edited")
+    for assignment in payload.problems:
+        if db.get(Problem, assignment.problem_slug) is None:
+            raise HTTPException(status_code=422, detail=f"Problem does not exist: {assignment.problem_slug}")
+    action = "contest.update" if contest else "contest.create"
+    values = payload.model_dump(exclude={"problems"})
+    if contest is None:
+        contest = Contest(slug=slug, **values)
+        db.add(contest)
+        db.flush()
+    else:
+        for key, value in values.items():
+            setattr(contest, key, value)
+        for assignment in db.scalars(select(ContestProblem).where(ContestProblem.contest_id == contest.id)):
+            db.delete(assignment)
+        db.flush()
+    for position, assignment in enumerate(payload.problems, 1):
+        db.add(ContestProblem(
+            contest_id=contest.id, problem_slug=assignment.problem_slug,
+            position=position, points=assignment.points,
+        ))
+    record_audit(db, request, admin, action, "contest", slug, {"status": payload.publication_status})
+    db.commit()
+    return contest_summary(db, contest)
+
+
+@router.patch("/contests/{slug}/status", response_model=AdminContestRead)
+def set_contest_status(
+    slug: str, payload: ContestStatusUpdate, request: Request, db: DB, admin: Admin,
+) -> dict:
+    contest = db.scalar(select(Contest).where(Contest.slug == slug).with_for_update())
+    if contest is None:
+        raise HTTPException(status_code=404, detail="Contest not found")
+    if payload.status == "FINALIZED":
+        raise HTTPException(
+            status_code=422,
+            detail="Contest finalization is only available through the verified results workflow",
+        )
+    if contest.publication_status == "FINALIZED" or db.scalar(
+        select(ContestRating.id).where(ContestRating.contest_id == contest.id)
+    ) is not None:
+        raise HTTPException(status_code=409, detail="Finalized contest results cannot be changed")
+    previous = contest.publication_status
+    contest.publication_status = payload.status
+    record_audit(db, request, admin, "contest.status", "contest", slug, {
+        "from": previous, "to": payload.status, "reason": payload.reason,
+    })
+    db.commit()
+    return contest_summary(db, contest)
+
+
+def path_summary(db: Session, path: LearningPath) -> dict:
+    return {
+        "slug": path.slug, "title": path.title, "status": path.status,
+        "prerequisites": path.prerequisites,
+        "problem_count": db.scalar(select(func.count(LearningPathProblem.problem_slug)).where(LearningPathProblem.path_slug == path.slug)) or 0,
+        "enrollments": db.scalar(select(func.count(LearningPathProgress.id)).where(LearningPathProgress.path_slug == path.slug)) or 0,
+    }
+
+
+@router.get("/paths", response_model=list[AdminPathRead])
+def admin_paths(db: DB, admin: Admin) -> list[dict]:
+    del admin
+    return [path_summary(db, path) for path in db.scalars(select(LearningPath).order_by(LearningPath.title))]
+
+
+@router.put("/paths/{slug}", response_model=AdminPathRead)
+def save_path(slug: str, payload: AdminPathWrite, request: Request, db: DB, admin: Admin) -> dict:
+    if slug in payload.prerequisites:
+        raise HTTPException(status_code=422, detail="A path cannot require itself")
+    for prerequisite in payload.prerequisites:
+        if db.get(LearningPath, prerequisite) is None:
+            raise HTTPException(status_code=422, detail=f"Prerequisite path does not exist: {prerequisite}")
+    for assignment in payload.problems:
+        if db.get(Problem, assignment.problem_slug) is None:
+            raise HTTPException(status_code=422, detail=f"Problem does not exist: {assignment.problem_slug}")
+    path = db.get(LearningPath, slug)
+    action = "path.update" if path else "path.create"
+    values = payload.model_dump(exclude={"problems"})
+    if path is None:
+        path = LearningPath(slug=slug, **values)
+        db.add(path)
+    else:
+        for key, value in values.items():
+            setattr(path, key, value)
+        for assignment in db.scalars(select(LearningPathProblem).where(LearningPathProblem.path_slug == slug)):
+            db.delete(assignment)
+        db.flush()
+    for position, assignment in enumerate(payload.problems, 1):
+        db.add(LearningPathProblem(
+            path_slug=slug, problem_slug=assignment.problem_slug,
+            position=position, milestone=assignment.milestone,
+        ))
+    record_audit(db, request, admin, action, "learning_path", slug, {"status": payload.status})
+    db.commit()
+    return path_summary(db, path)
+
+
+def achievement_summary(db: Session, achievement: Achievement) -> dict:
+    return {
+        "slug": achievement.slug, "name": achievement.name, "description": achievement.description,
+        "criteria": achievement.criteria, "xp_reward": achievement.xp_reward,
+        "awarded_count": db.scalar(select(func.count(UserAchievement.id)).where(
+            UserAchievement.achievement_slug == achievement.slug,
+        )) or 0,
+    }
+
+
+@router.get("/achievements", response_model=list[AdminAchievementRead])
+def admin_achievements(db: DB, admin: Admin) -> list[dict]:
+    del admin
+    return [achievement_summary(db, item) for item in db.scalars(select(Achievement).order_by(Achievement.name))]
+
+
+@router.put("/achievements/{slug}", response_model=AdminAchievementRead)
+def save_achievement(
+    slug: str, payload: AdminAchievementWrite, request: Request, db: DB, admin: Admin,
+) -> dict:
+    allowed_criteria = {"solved", "difficulty", "category", "topic", "count", "streak"}
+    if not payload.criteria or not set(payload.criteria).issubset(allowed_criteria):
+        raise HTTPException(status_code=422, detail="Achievement criteria are unsupported")
+    achievement = db.get(Achievement, slug)
+    action = "achievement.update" if achievement else "achievement.create"
+    if achievement is None:
+        achievement = Achievement(slug=slug, **payload.model_dump())
+        db.add(achievement)
+    else:
+        for key, value in payload.model_dump().items():
+            setattr(achievement, key, value)
+    record_audit(db, request, admin, action, "achievement", slug, {"xp_reward": payload.xp_reward})
+    db.commit()
+    return achievement_summary(db, achievement)
+
+
+@router.get("/xp-transactions", response_model=list[AdminXPTransactionRead])
+def xp_transactions(
+    db: DB, admin: Admin, limit: Annotated[int, Query(ge=1, le=100)] = 50,
+    offset: Annotated[int, Query(ge=0)] = 0,
+) -> list[dict]:
+    del admin
+    rows = db.execute(select(XPTransaction, User.username).join(
+        User, User.id == XPTransaction.user_id,
+    ).order_by(XPTransaction.created_at.desc()).limit(limit).offset(offset)).all()
+    return [{
+        "id": item.id, "username": username, "amount": item.amount, "reason": item.reason,
+        "source_type": item.source_type, "source_id": item.source_id, "created_at": item.created_at,
+    } for item, username in rows]
+
+
+@router.get("/rank-history", response_model=list[AdminRankHistoryRead])
+def rank_history(
+    db: DB, admin: Admin, limit: Annotated[int, Query(ge=1, le=100)] = 50,
+    offset: Annotated[int, Query(ge=0)] = 0,
+) -> list[dict]:
+    del admin
+    rows = db.execute(select(RankHistory, User.username).join(
+        User, User.id == RankHistory.user_id,
+    ).order_by(RankHistory.reached_at.desc()).limit(limit).offset(offset)).all()
+    return [{
+        "id": item.id, "username": username, "rank_slug": item.rank_slug, "reached_at": item.reached_at,
+    } for item, username in rows]
+
+
+@router.get("/audit-logs", response_model=list[AuditLogRead])
+def audit_logs(
+    db: DB, admin: Admin, limit: Annotated[int, Query(ge=1, le=100)] = 50,
+    offset: Annotated[int, Query(ge=0)] = 0,
+) -> list[dict]:
+    del admin
+    actor = User.__table__.alias("audit_actor")
+    rows = db.execute(select(AuditLog, actor.c.username).outerjoin(
+        actor, actor.c.id == AuditLog.actor_user_id,
+    ).order_by(AuditLog.created_at.desc(), AuditLog.id.desc()).limit(limit).offset(offset)).all()
+    return [{
+        "id": item.id, "actor_user_id": item.actor_user_id, "actor_username": username,
+        "action": item.action, "target_type": item.target_type, "target_id": item.target_id,
+        "details": item.details, "ip_address": item.ip_address, "created_at": item.created_at,
+    } for item, username in rows]

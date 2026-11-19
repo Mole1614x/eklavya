@@ -18,6 +18,8 @@ class Settings(BaseSettings):
     evaluator_seed_file: Path = ROOT / "challenges" / "evaluators.json"
     gamification_seed_file: Path = ROOT / "challenges" / "gamification.json"
     learning_paths_seed_file: Path = ROOT / "challenges" / "paths.json"
+    dataset_storage_dir: Path = ROOT / "var" / "datasets"
+    dataset_max_bytes: int = 5 * 1024 * 1024
     secret_key: str = "local-development-secret-change-before-deployment"
     access_token_minutes: int = 15
     refresh_token_days: int = 30

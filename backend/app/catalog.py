@@ -9,7 +9,7 @@ def list_problems(
     db: Session, search: str, category: Category | None, difficulty: Difficulty | None,
     topic: str | None, limit: int, offset: int,
 ) -> Catalog:
-    filters = []
+    filters = [Problem.status == "PUBLISHED"]
     if category:
         filters.append(Problem.category == category)
     topics = db.scalars(select(Problem.topic).where(*filters).distinct().order_by(Problem.topic)).all()

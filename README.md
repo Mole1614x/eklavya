@@ -14,6 +14,7 @@ EKLAVYA is a full-stack learning and competitive-practice platform for programmi
 - Dedicated SQL, Pandas, NumPy, PySpark, MapReduce, scikit-learn, and PyTorch evaluators.
 - Verified XP transactions, six Maharathi ranks, Veer achievements, leaderboards, insights, Daily Sadhana streaks, and 14 Vidya Paths.
 - Timed Arena registration, problem embargoes, contest-scoped submissions, ICPC-style penalties, rating history, and idempotent finalization.
+- A database-authorized admin control center for problems, private datasets, users, contests, paths, achievements, XP/rank review, and append-only action history.
 - Production configuration validation, allowlisted hosts/origins, security headers, Redis rate limits, request IDs, JSON logs, health probes, metrics, hardened containers, and an Nginx deployment edge.
 
 ## Architecture
@@ -58,6 +59,16 @@ make down
 
 Never use the example PostgreSQL password or development secret in an exposed environment.
 
+### Provision an administrator
+
+Public registration cannot choose an administrative role. Create or promote an administrator only from a trusted host:
+
+```sh
+PYTHONPATH=. python -m backend.app.provision_admin --email admin@example.com --username admin --display-name "Platform Administrator"
+```
+
+The command prompts for a password without echoing it. Automation may inject `EKLAVYA_ADMIN_PASSWORD` from a secret manager for the duration of the command. After signing in, open `/admin`.
+
 ## Host development
 
 Requires Python 3.12, Node.js 24, PostgreSQL 17, and Redis 7.
@@ -97,6 +108,8 @@ The root `.env.example` documents development defaults. Important production set
 | `COOKIE_SECURE` | Must be `true` behind HTTPS |
 | `RATE_LIMIT_ENABLED` | Enables shared Redis fixed-window limits |
 | `READINESS_CHECK_REDIS` | Includes Redis in readiness checks |
+| `DATASET_STORAGE_DIR` | Private mounted storage for hidden administrator datasets |
+| `DATASET_MAX_BYTES` | Maximum accepted administrator dataset upload size |
 
 Starting the API with `ENVIRONMENT=production` and a development secret, wildcard origin, or wildcard host fails immediately.
 
@@ -113,8 +126,9 @@ All application routes use `/api/v1`.
 | Progression | `GET /gamification/ranks`, `/leaderboard`, protected dashboard, achievements, and insights |
 | Learning | Daily challenge/history plus path list, detail, and enrollment routes |
 | Arena | Contest list/detail, registration, participant status, submissions, leaderboard, rating history, and admin finalization |
+| Administration | Overview, problem/dataset/user/contest/path/achievement management, XP/rank review, and audit history under `/admin/*` |
 
-Administrator-only APIs manage private problem cases and contest creation. Public registration can never select an administrator role.
+Administrator-only APIs manage private cases, evaluation datasets, platform content, accounts, and operating history. Public registration can never select an administrator role.
 
 ## Verification
 

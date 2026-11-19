@@ -55,6 +55,7 @@ def login(payload: LoginRequest, db: DB) -> AuthTokens:
     password_valid = verify_password(payload.password, user.password_hash if user is not None else DUMMY_PASSWORD_HASH)
     if user is None or not password_valid or not user.is_active:
         raise HTTPException(status_code=401, detail="Email, username, or password is incorrect")
+    user.last_login_at = datetime.now(timezone.utc)
     tokens = AuthTokens(access_token=create_access_token(user), refresh_token=issue_refresh_token(db, user))
     db.commit()
     return tokens

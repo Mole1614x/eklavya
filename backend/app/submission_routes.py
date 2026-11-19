@@ -5,11 +5,11 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from .auth import CurrentUser, require_admin
+from .auth import CurrentUser
 from .main_dependencies import get_db
 from .judge_client import Enqueuer
-from .models import Problem, StarterCode, Submission, TestCase, User
-from .schemas_submissions import ProblemAdminWrite, SubmissionCreate, SubmissionRead
+from .models import Problem, Submission
+from .schemas_submissions import SubmissionCreate, SubmissionRead
 
 router = APIRouter(tags=["submissions"])
 DB = Annotated[Session, Depends(get_db)]
@@ -58,21 +58,3 @@ def submission_detail(submission_id: str, user: CurrentUser, db: DB) -> Submissi
     if item is None or (item.user_id != user.id and user.role != "admin"):
         raise HTTPException(status_code=404, detail="Submission not found")
     return item
-
-
-@router.put("/admin/problems/{slug}", status_code=status.HTTP_204_NO_CONTENT)
-def upsert_problem(
-    slug: str, payload: ProblemAdminWrite, db: DB,
-    admin: Annotated[User, Depends(require_admin)],
-) -> None:
-    values = payload.model_dump(exclude={"test_cases"})
-    problem = db.get(Problem, slug)
-    if problem is None:
-        problem = Problem(slug=slug, starters=[], **values)
-        db.add(problem)
-    else:
-        for key, value in values.items():
-            setattr(problem, key, value)
-        problem.test_cases.clear()
-    problem.test_cases.extend(TestCase(**case.model_dump()) for case in payload.test_cases)
-    db.commit()

@@ -20,6 +20,7 @@ from .submission_routes import router as submission_router
 from .gamification_routes import router as gamification_router
 from .learning_routes import router as learning_router
 from .contest_routes import router as contest_router
+from .admin_routes import router as admin_router
 from .operations import RateLimitMiddleware, RequestMiddleware, configure_logging, metrics
 
 configuration = settings()
@@ -34,7 +35,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=configuration.origin_list,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PATCH", "PUT", "OPTIONS"],
+    allow_methods=["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["Authorization", "Content-Type", "X-Request-ID"],
 )
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=configuration.host_list)
@@ -96,7 +97,7 @@ def problems(
 @router.get("/problems/{slug}", response_model=ProblemDetail)
 def problem(slug: str, db: DB) -> Problem:
     item = db.get(Problem, slug)
-    if item is None:
+    if item is None or item.status != "PUBLISHED":
         raise HTTPException(status_code=404, detail="Problem not found")
     return item
 
@@ -106,4 +107,5 @@ router.include_router(submission_router)
 router.include_router(gamification_router)
 router.include_router(learning_router)
 router.include_router(contest_router)
+router.include_router(admin_router)
 app.include_router(router)

@@ -40,13 +40,13 @@ def daily_history(user: CurrentUser, db: DB) -> dict:
 @router.get("/paths")
 def paths(db: DB) -> list[dict]:
     counts = dict(db.execute(select(LearningPathProblem.path_slug, func.count()).group_by(LearningPathProblem.path_slug)).all())
-    return [{"slug": item.slug, "title": item.title, "description": item.description, "prerequisites": item.prerequisites, "problem_count": counts.get(item.slug, 0)} for item in db.scalars(select(LearningPath).order_by(LearningPath.title))]
+    return [{"slug": item.slug, "title": item.title, "description": item.description, "prerequisites": item.prerequisites, "problem_count": counts.get(item.slug, 0)} for item in db.scalars(select(LearningPath).where(LearningPath.status == "PUBLISHED").order_by(LearningPath.title))]
 
 
 @router.get("/paths/{slug}")
 def path_detail(slug: str, user: CurrentUser, db: DB) -> dict:
     path = db.get(LearningPath, slug)
-    if path is None:
+    if path is None or path.status != "PUBLISHED":
         raise HTTPException(status_code=404, detail="Learning path not found")
     assignments = db.execute(select(LearningPathProblem, Problem).join(Problem, Problem.slug == LearningPathProblem.problem_slug).where(
         LearningPathProblem.path_slug == slug,
@@ -61,7 +61,8 @@ def path_detail(slug: str, user: CurrentUser, db: DB) -> dict:
 
 @router.post("/paths/{slug}/enroll", status_code=status.HTTP_204_NO_CONTENT)
 def enroll(slug: str, user: CurrentUser, db: DB) -> None:
-    if db.get(LearningPath, slug) is None:
+    path = db.get(LearningPath, slug)
+    if path is None or path.status != "PUBLISHED":
         raise HTTPException(status_code=404, detail="Learning path not found")
     exists = db.scalar(select(LearningPathProgress.id).where(LearningPathProgress.user_id == user.id, LearningPathProgress.path_slug == slug))
     if exists is None:

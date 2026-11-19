@@ -2,14 +2,20 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, LibraryBig, Menu, UserCircle, X } from "lucide-react";
-import { useState } from "react";
+import { LayoutDashboard, LibraryBig, Menu, ShieldCheck, UserCircle, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { modules, community } from "@/lib/navigation";
 import { ModuleIcon } from "./icons";
 
 export function Sidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [administrator, setAdministrator] = useState(false);
+  useEffect(() => {
+    void fetch("/api/auth/me").then(async (response) => {
+      if (response.ok) setAdministrator((await response.json()).role === "admin");
+    }).catch(() => undefined);
+  }, [pathname]);
   const nav = (href: string, label: string, icon: React.ReactNode, active = pathname === href) => (
     <Link href={href} className={active ? "nav-link active" : "nav-link"} aria-current={active ? "page" : undefined} onClick={() => setOpen(false)}>
       {icon}<span>{label}</span>
@@ -36,6 +42,7 @@ export function Sidebar() {
         {community.map((item) => <div key={item.slug}>{nav(`/${item.slug}`, item.label, <ModuleIcon name={item.icon} />)}</div>)}
         <p className="nav-label">Account</p>
         {nav("/profile", "Profile", <UserCircle size={19} />)}
+        {administrator && nav("/admin", "Administration", <ShieldCheck size={19} />, pathname.startsWith("/admin"))}
       </nav>
     </aside>
   );

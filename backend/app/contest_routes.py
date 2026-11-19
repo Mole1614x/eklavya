@@ -38,7 +38,7 @@ def contests(db: DB) -> list[dict]:
             "starts_at": item.starts_at, "ends_at": item.ends_at,
             "status": contest_status(item, now), "is_rated": item.is_rated,
         }
-        for item in db.scalars(select(Contest).order_by(Contest.starts_at.desc()).limit(50))
+        for item in db.scalars(select(Contest).where(Contest.publication_status != "DRAFT").order_by(Contest.starts_at.desc()).limit(50))
     ]
 
 
@@ -111,6 +111,8 @@ def participant_status(slug: str, user: CurrentUser, db: DB) -> dict:
 @router.post("/{slug}/register", status_code=status.HTTP_204_NO_CONTENT)
 def register(slug: str, user: CurrentUser, db: DB) -> None:
     contest = find_contest(db, slug)
+    if contest.publication_status != "PUBLISHED":
+        raise HTTPException(status_code=409, detail="Contest registration is unavailable")
     if datetime.now(timezone.utc) >= aware(contest.starts_at):
         raise HTTPException(status_code=409, detail="Registration has closed")
     exists = db.scalar(
@@ -142,6 +144,8 @@ def submit(
 ) -> Submission:
     contest = find_contest(db, slug)
     now = datetime.now(timezone.utc)
+    if contest.publication_status != "PUBLISHED":
+        raise HTTPException(status_code=409, detail="Contest is unavailable")
     if not (aware(contest.starts_at) <= now < aware(contest.ends_at)):
         raise HTTPException(status_code=409, detail="Contest is not active")
     registered = db.scalar(
@@ -195,6 +199,8 @@ def finalize(slug: str, db: DB, admin: Annotated[User, Depends(require_admin)]) 
     if datetime.now(timezone.utc) < aware(contest.ends_at):
         raise HTTPException(status_code=409, detail="Contest is still active")
     if not contest.is_rated:
+        contest.publication_status = "FINALIZED"
+        db.commit()
         return
     if db.scalar(select(ContestRating.id).where(ContestRating.contest_id == contest.id)) is not None:
         return
@@ -214,6 +220,7 @@ def finalize(slug: str, db: DB, admin: Annotated[User, Depends(require_admin)]) 
             contest_id=contest.id, user_id=participant.id, rating_before=previous,
             rating_after=max(0, previous + delta), position=row["position"],
         ))
+    contest.publication_status = "FINALIZED"
     db.commit()
 
 
@@ -237,7 +244,7 @@ def create_contest(
 
 def find_contest(db: Session, slug: str) -> Contest:
     contest = db.scalar(select(Contest).where(Contest.slug == slug))
-    if contest is None:
+    if contest is None or contest.publication_status == "DRAFT":
         raise HTTPException(status_code=404, detail="Contest not found")
     return contest
 
@@ -288,6 +295,8 @@ def calculate_standings(db: Session, contest: Contest) -> list[dict]:
 
 
 def contest_status(contest: Contest, now: datetime) -> str:
+    if contest.publication_status in {"CANCELLED", "FINALIZED"}:
+        return contest.publication_status
     if now < aware(contest.starts_at):
         return "UPCOMING"
     if now < aware(contest.ends_at):

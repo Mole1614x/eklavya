@@ -32,6 +32,12 @@ test("authenticated session rotates across BFF routes and protects profile data"
   await page.getByRole("button", { name: "Save profile" }).click();
   await expect(page.getByRole("status")).toContainText("Profile saved.");
 
+  await page.goto("/admin");
+  const restricted = page.getByRole("heading", { name: "Administration unavailable" }).locator("..");
+  await expect(restricted).toBeVisible();
+  await expect(restricted).toContainText("restricted to administrators");
+  await page.goto("/profile");
+
   await page.getByRole("button", { name: "Sign out" }).click();
   await expect(page).toHaveURL(/\/auth$/);
   await page.goto("/profile");
