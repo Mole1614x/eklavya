@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from app.database import Base
 from app.main import app
 from app.main_dependencies import get_db
+from app.judge_client import get_enqueuer
 from app.models import Submission, TestCase as ProblemTestCase, User
 from app.seed import seed
 
@@ -22,6 +23,7 @@ def submission_client(tmp_path):
             yield db
 
     app.dependency_overrides[get_db] = override
+    app.dependency_overrides[get_enqueuer] = lambda: lambda submission_id: None
     try:
         with TestClient(app) as client:
             registration = client.post("/api/v1/auth/register", json={

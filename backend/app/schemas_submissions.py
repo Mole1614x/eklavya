@@ -27,6 +27,7 @@ class SubmissionRead(BaseModel):
     passed_tests: int
     total_tests: int
     created_at: datetime
+    started_at: datetime | None
     finished_at: datetime | None
 
 

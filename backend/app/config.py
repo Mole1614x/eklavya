@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     access_token_minutes: int = 15
     refresh_token_days: int = 30
     public_url: str = "http://localhost:3000"
+    redis_url: str = "redis://127.0.0.1:6379/0"
 
 
 @lru_cache
