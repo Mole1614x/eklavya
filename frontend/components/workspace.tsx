@@ -10,7 +10,7 @@ loader.config({ paths: { vs: "/monaco/vs" } });
 const languages: Record<string, string> = { python: "Python", java: "Java", c: "C", cpp: "C++", sql: "SQL" };
 type Result = { id: string; status: string; verdict: string | null; output: string | null; passed_tests: number; total_tests: number; execution_ms: number | null };
 
-export function Workspace({ problem }: { problem: ProblemDetail }) {
+export function Workspace({ problem, contestSlug }: { problem: ProblemDetail; contestSlug?: string }) {
   const [language, setLanguage] = useState(problem.starters[0]?.language ?? "");
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const [tab, setTab] = useState("Test cases");
@@ -36,7 +36,10 @@ export function Workspace({ problem }: { problem: ProblemDetail }) {
   async function act(action: "Run" | "Submit") {
     setTab(action === "Run" ? "Output" : "Submissions");
     setPending(true); setResult(null); setStatus("Sending your solution to the judge…");
-    const response = await fetch(`/api/submissions/problem/${problem.slug}`, {
+    const endpoint = action === "Submit" && contestSlug
+      ? `/api/contests/${encodeURIComponent(contestSlug)}/problems/${encodeURIComponent(problem.slug)}/submissions`
+      : `/api/submissions/problem/${problem.slug}`;
+    const response = await fetch(endpoint, {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ language: language || "answer", source_code: code, mode: action === "Run" ? "RUN" : "SUBMIT" }),
     });
@@ -57,6 +60,7 @@ export function Workspace({ problem }: { problem: ProblemDetail }) {
 
   return (
     <section className="card workspace" aria-label="Practice workspace">
+      {contestSlug && <div className="contest-workspace">Arena submission · Runs do not affect contest standings</div>}
       <div className="workspace-toolbar">
         {language ? <label>Language <select value={language} onChange={(event) => setLanguage(event.target.value)}>{problem.starters.map((entry) => <option key={entry.language} value={entry.language}>{languages[entry.language] ?? entry.language}</option>)}</select></label> : <strong>Your answer</strong>}
         <div><button className="button secondary" disabled={pending} onClick={() => void act("Run")}><Play size={15} /> Run</button><button className="button" disabled={pending} onClick={() => void act("Submit")}><Send size={15} /> Submit</button></div>

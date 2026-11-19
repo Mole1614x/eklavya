@@ -127,6 +127,7 @@ class Submission(Base):
     id: Mapped[str] = mapped_column(String(36), primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
     problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="RESTRICT"), index=True)
+    contest_id: Mapped[int | None] = mapped_column(ForeignKey("contests.id", ondelete="RESTRICT", name="fk_submissions_contest_id"), nullable=True, index=True)
     language: Mapped[str] = mapped_column(String(24))
     source_code: Mapped[str] = mapped_column(Text)
     mode: Mapped[str] = mapped_column(String(8))
@@ -251,3 +252,57 @@ class LearningPathProgress(Base):
     path_slug: Mapped[str] = mapped_column(ForeignKey("learning_paths.slug", ondelete="CASCADE"))
     enrolled_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
     completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class Contest(Base):
+    __tablename__ = "contests"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    slug: Mapped[str] = mapped_column(String(80), unique=True, index=True)
+    title: Mapped[str] = mapped_column(String(160))
+    description: Mapped[str] = mapped_column(String(500), default="")
+    starts_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    ends_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    is_rated: Mapped[bool] = mapped_column(Boolean, default=True)
+
+
+class ContestProblem(Base):
+    __tablename__ = "contest_problems"
+
+    contest_id: Mapped[int] = mapped_column(ForeignKey("contests.id", ondelete="CASCADE"), primary_key=True)
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="RESTRICT"), primary_key=True)
+    position: Mapped[int] = mapped_column(Integer)
+    points: Mapped[int] = mapped_column(Integer, default=100)
+
+
+class ContestRegistration(Base):
+    __tablename__ = "contest_registrations"
+    __table_args__ = (UniqueConstraint("contest_id", "user_id", name="uq_contest_registration"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    contest_id: Mapped[int] = mapped_column(ForeignKey("contests.id", ondelete="CASCADE"), index=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    registered_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class ContestSubmission(Base):
+    __tablename__ = "contest_submissions"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    contest_id: Mapped[int] = mapped_column(ForeignKey("contests.id", ondelete="CASCADE"), index=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="RESTRICT"))
+    submission_id: Mapped[str] = mapped_column(ForeignKey("submissions.id", ondelete="CASCADE"), unique=True)
+    submitted_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class ContestRating(Base):
+    __tablename__ = "contest_ratings"
+    __table_args__ = (UniqueConstraint("contest_id", "user_id", name="uq_contest_rating"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    contest_id: Mapped[int] = mapped_column(ForeignKey("contests.id", ondelete="CASCADE"), index=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    rating_before: Mapped[int] = mapped_column(Integer)
+    rating_after: Mapped[int] = mapped_column(Integer)
+    position: Mapped[int] = mapped_column(Integer)

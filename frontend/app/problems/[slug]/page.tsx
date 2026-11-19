@@ -5,13 +5,14 @@ import { getProblem } from "@/lib/api";
 import { formats } from "@/components/catalog";
 import { Workspace } from "@/components/workspace";
 
-export default async function ProblemPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ProblemPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ contest?: string }> }) {
   const { slug } = await params;
+  const { contest } = await searchParams;
   const problem = await getProblem(slug);
   if (!problem) notFound();
   return (
     <>
-      <Link className="back-link" href="/problems"><ArrowLeft size={16} /> Problem Catalog</Link>
+      <Link className="back-link" href={contest ? `/arena/${encodeURIComponent(contest)}` : "/problems"}><ArrowLeft size={16} /> {contest ? "Back to contest" : "Problem Catalog"}</Link>
       <header className="page-header compact"><h1>{problem.title}</h1><div className="problem-tags"><span className={`difficulty ${problem.difficulty.toLowerCase()}`}>{problem.difficulty}</span><span className="pill">{problem.topic}</span><span className="pill">{formats[problem.format]}</span></div></header>
       <div className="problem-layout">
         <article className="card statement">
@@ -19,7 +20,7 @@ export default async function ProblemPage({ params }: { params: Promise<{ slug: 
           <h2>Constraints</h2><ul>{problem.constraints.map((constraint) => <li key={constraint}>{constraint}</li>)}</ul>
           {problem.examples.map(({ input, output }, index) => <div className="example" key={index}><h2>Example {index + 1}</h2><small>Input</small><pre>{input}</pre><small>Expected output</small><pre>{output}</pre></div>)}
         </article>
-        <Workspace key={problem.slug} problem={problem} />
+        <Workspace key={`${problem.slug}-${contest ?? "practice"}`} problem={problem} contestSlug={contest} />
       </div>
     </>
   );

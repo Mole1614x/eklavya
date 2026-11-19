@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session as DatabaseSession
 
 from .config import settings
 from .database import Session
-from .models import Achievement, DailyChallenge, LearningPath, LearningPathProblem, Problem, ProblemEvaluator, RankLevel, StarterCode, TestCase
+from .models import Achievement, Contest, ContestProblem, DailyChallenge, LearningPath, LearningPathProblem, Problem, ProblemEvaluator, RankLevel, StarterCode, TestCase
 from .schemas import ProblemDetail
 
 
@@ -38,6 +38,17 @@ def seed(db: DatabaseSession) -> int:
     if db.scalar(select(DailyChallenge).where(DailyChallenge.challenge_date == today)) is None:
         slugs = [entry.slug for entry in entries]
         db.add(DailyChallenge(challenge_date=today, problem_slug=slugs[today.toordinal() % len(slugs)]))
+    now = datetime.now(timezone.utc)
+    year, week, _ = now.isocalendar()
+    contest_slug = f"weekly-{year}-{week}"
+    contest = db.scalar(select(Contest).where(Contest.slug == contest_slug))
+    if contest is None:
+        from datetime import timedelta
+        start = (now + timedelta(days=1)).replace(hour=12, minute=0, second=0, microsecond=0)
+        contest = Contest(slug=contest_slug, title=f"EKLAVYA Weekly {week}", description="A 90-minute algorithm sprint.", starts_at=start, ends_at=start + timedelta(minutes=90))
+        db.add(contest); db.flush()
+        for position, problem_slug in enumerate(["pair-indices", "first-occurrence", "balanced-delimiters"], 1):
+            db.add(ContestProblem(contest_id=contest.id, problem_slug=problem_slug, position=position, points=100))
     db.commit()
     return len(entries)
 

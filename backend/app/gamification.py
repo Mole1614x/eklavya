@@ -79,3 +79,22 @@ def _update_rank(db: Session, progress: UserProgress) -> None:
     if rank is not None and progress.current_rank_slug != rank.slug:
         progress.current_rank_slug = rank.slug
         db.add(RankHistory(user_id=progress.user_id, rank_slug=rank.slug))
+
+
+def award_achievement(db: Session, user_id: int, slug: str) -> bool:
+    db.scalar(select(User.id).where(User.id == user_id).with_for_update())
+    if db.scalar(select(UserAchievement.id).where(UserAchievement.user_id == user_id, UserAchievement.achievement_slug == slug)) is not None:
+        return False
+    achievement = db.get(Achievement, slug)
+    if achievement is None:
+        return False
+    progress = db.get(UserProgress, user_id)
+    if progress is None:
+        progress = UserProgress(user_id=user_id, xp=0, solved_count=0, current_rank_slug="shishya")
+        db.add(progress)
+    db.add(UserAchievement(user_id=user_id, achievement_slug=slug))
+    db.add(XPTransaction(user_id=user_id, amount=achievement.xp_reward, reason=achievement.name, source_type="achievement", source_id=slug))
+    progress.xp += achievement.xp_reward
+    db.flush()
+    _update_rank(db, progress)
+    return True

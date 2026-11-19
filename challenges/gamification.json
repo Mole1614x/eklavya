@@ -21,6 +21,7 @@
     {"slug":"pyspark-specialist","name":"PySpark Specialist","description":"Complete ten PySpark problems.","criteria":{"topic":"PySpark","count":10},"xp_reward":100},
     {"slug":"ml-specialist","name":"Machine Learning Specialist","description":"Complete ten machine-learning problems.","criteria":{"topic":"Machine Learning","count":10},"xp_reward":100},
     {"slug":"seven-day-streak","name":"Seven-day Streak","description":"Complete seven consecutive Daily Sadhana challenges.","criteria":{"streak":7},"xp_reward":100},
-    {"slug":"thirty-day-streak","name":"Thirty-day Streak","description":"Complete thirty consecutive Daily Sadhana challenges.","criteria":{"streak":30},"xp_reward":500}
+    {"slug":"thirty-day-streak","name":"Thirty-day Streak","description":"Complete thirty consecutive Daily Sadhana challenges.","criteria":{"streak":30},"xp_reward":500},
+    {"slug":"first-contest","name":"First Contest","description":"Submit a solution during an Arena contest.","criteria":{"contest_submissions":1},"xp_reward":50}
   ]
 }
