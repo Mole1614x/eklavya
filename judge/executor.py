@@ -9,6 +9,7 @@ from uuid import uuid4
 
 MAX_OUTPUT_BYTES = 64 * 1024
 TIME_LIMIT_SECONDS = 5
+CONTAINER_OVERHEAD_SECONDS = 2
 
 
 @dataclass(frozen=True)
@@ -21,8 +22,8 @@ class Execution:
 
 LANGUAGES = {
     "python": ("python:3.12-alpine", "main.py", "exec python /source/main.py"),
-    "c": ("gcc:14", "Main.c", "gcc -O2 -std=c17 /source/Main.c -o /work/main || { echo Compilation failed >&2; exit 90; }; exec /work/main"),
-    "cpp": ("gcc:14", "Main.cpp", "g++ -O2 -std=c++20 /source/Main.cpp -o /work/main || { echo Compilation failed >&2; exit 90; }; exec /work/main"),
+    "c": ("eklavya-code-runner:latest", "Main.c", "gcc -O2 -std=c17 /source/Main.c -o /work/main || { echo Compilation failed >&2; exit 90; }; exec /work/main"),
+    "cpp": ("eklavya-code-runner:latest", "Main.cpp", "g++ -O2 -std=c++20 /source/Main.cpp -o /work/main || { echo Compilation failed >&2; exit 90; }; exec /work/main"),
     "java": ("eclipse-temurin:21-jdk-alpine", "Main.java", "cp /source/Main.java /work/Main.java && javac /work/Main.java || { echo Compilation failed >&2; exit 90; }; exec java -cp /work Main"),
 }
 
@@ -37,14 +38,15 @@ def container_command(language: str, source_directory: Path, name: str) -> list[
 
 def isolated_command(image: str, source_directory: Path, name: str, command: str) -> list[str]:
     return [
-        "docker", "run", "--rm", "--name", name,
+        "docker", "run", "--rm", "--interactive", "--name", name,
+        "--pull", "never",
         "--network", "none", "--read-only", "--cap-drop", "ALL",
         "--security-opt", "no-new-privileges", "--pids-limit", "64",
         "--memory", "256m", "--memory-swap", "256m", "--cpus", "0.5",
-        "--tmpfs", "/tmp:rw,noexec,nosuid,size=16m",
-        "--tmpfs", "/work:rw,exec,nosuid,size=64m",
+        "--tmpfs", "/tmp:rw,noexec,nosuid,size=16m,mode=1777",
+        "--tmpfs", "/work:rw,exec,nosuid,size=64m,mode=1777",
         "--volume", f"{source_directory}:/source:ro", "--workdir", "/work",
-        image, "sh", "-lc", command,
+        image, "sh", "-c", command,
     ]
 
 
@@ -60,6 +62,7 @@ def execute(language: str, source_code: str, input_data: str) -> Execution:
 
 
 def run_container(image: str, source_directory: Path, command: str, input_data: str) -> Execution:
+        _prepare_source_directory(source_directory)
         name = f"eklavya-{uuid4().hex}"
         started = time.monotonic()
         process = subprocess.Popen(
@@ -73,7 +76,11 @@ def run_container(image: str, source_directory: Path, command: str, input_data: 
         selector = selectors.DefaultSelector()
         selector.register(process.stdout, selectors.EVENT_READ)
         output = bytearray()
-        deadline = started + TIME_LIMIT_SECONDS
+        # Container creation, JVM startup, and scientific-library imports are
+        # platform overhead rather than user work. Keep that allowance bounded.
+        # Container creation, JVM startup, and scientific-library imports are
+        # platform overhead rather than user work. Keep that allowance bounded.
+        deadline = started + TIME_LIMIT_SECONDS + CONTAINER_OVERHEAD_SECONDS
         verdict: str | None = None
         while process.poll() is None:
             if time.monotonic() >= deadline:
@@ -97,6 +104,8 @@ def run_container(image: str, source_directory: Path, command: str, input_data: 
             return Execution(verdict, output[:MAX_OUTPUT_BYTES].decode(errors="replace"), elapsed)
         if process.returncode == 90:
             verdict = "COMPILATION_ERROR"
+        elif process.returncode == 125:
+            return Execution("SYSTEM_ERROR", "The judge runtime is unavailable.", elapsed)
         elif process.returncode == 137:
             verdict = "MEMORY_LIMIT_EXCEEDED"
         elif process.returncode != 0:
@@ -106,10 +115,20 @@ def run_container(image: str, source_directory: Path, command: str, input_data: 
         return Execution(verdict, output.decode(errors="replace"), elapsed)
 
 
+def _prepare_source_directory(source_directory: Path) -> None:
+    # Rootless Docker remaps container root and cannot traverse mkdtemp's 0700
+    # directory or read its 0600 files. The read-only bind mount contains only
+    # this submission's ephemeral source and evaluator inputs.
+    source_directory.chmod(0o755)
+    for item in source_directory.iterdir():
+        if item.is_file():
+            item.chmod(0o444)
+
+
 def _terminate_container(process: subprocess.Popen, name: str) -> None:
     process.kill()
-    subprocess.run(["docker", "rm", "--force", name], capture_output=True, timeout=5, check=False)
     process.wait(timeout=5)
+    subprocess.run(["docker", "rm", "--force", name], capture_output=True, timeout=5, check=False)
 
 
 def outputs_match(actual: str, expected: str, tolerance: float | None = None) -> bool:

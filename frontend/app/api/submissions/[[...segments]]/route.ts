@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { backend } from "@/lib/backend";
+import { applySession, authenticatedBackend } from "@/lib/auth-session";
 
 async function authorized(request: NextRequest, path: string, init: RequestInit = {}) {
-  const access = request.cookies.get("eklavya_access")?.value;
-  if (!access) return NextResponse.json({ detail: "Sign in to run or submit solutions." }, { status: 401 });
-  const upstream = await backend(path, { ...init, headers: { ...init.headers, Authorization: `Bearer ${access}` } });
+  const { upstream, session } = await authenticatedBackend(request, path, init);
+  if (!upstream) return applySession(NextResponse.json({ detail: "Sign in to run or submit solutions." }, { status: 401 }), null, true);
   const data = upstream.status === 204 ? null : await upstream.json();
-  return data === null ? new NextResponse(null, { status: upstream.status }) : NextResponse.json(data, { status: upstream.status });
+  const response = data === null ? new NextResponse(null, { status: upstream.status }) : NextResponse.json(data, { status: upstream.status });
+  return applySession(response, session, upstream.status === 401);
 }
 
 export async function GET(request: NextRequest, context: { params: Promise<{ segments?: string[] }> }) {
