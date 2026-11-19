@@ -7,7 +7,7 @@ from backend.app.database import Session
 from backend.app.models import ProblemEvaluator, Submission, TestCase
 from judge.celery_app import app
 from judge.executor import execute, outputs_match
-from judge.specialized import execute_data, execute_sql, extract_result, structured_match
+from judge.specialized import evaluate_answer, execute_data, execute_sql, extract_result, structured_match
 
 
 @app.task(name="judge.evaluate")
@@ -42,6 +42,8 @@ def evaluate(submission_id: str) -> None:
                     result = execute(submission.language, submission.source_code, case.input_data)
                 elif evaluator.kind == "sql":
                     result = execute_sql(submission.source_code, case.input_data)
+                elif evaluator.kind in {"numerical", "multiple_choice"}:
+                    result = evaluate_answer(evaluator.kind, submission.source_code)
                 else:
                     result = execute_data(evaluator.kind, submission.source_code, case.input_data, evaluator.config)
                 total_ms += result.execution_ms

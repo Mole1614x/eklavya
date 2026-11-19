@@ -15,6 +15,14 @@ def execute_data(kind: str, source: str, input_data: str, config: dict) -> Execu
     return _specialized("eklavya-data-runner:latest", RUNNERS / "data_runner.py", "solution.py", source, input_data, {"kind": kind, **config})
 
 
+def evaluate_answer(kind: str, source: str) -> Execution:
+    try:
+        value = float(source.strip()) if kind == "numerical" else source.strip()
+    except ValueError:
+        return Execution("WRONG_ANSWER", "The answer is not a valid number.", 0)
+    return Execution("COMPLETED", "__EKLAVYA_RESULT__" + json.dumps(value), 0)
+
+
 def _specialized(image: str, runner: Path, filename: str, source: str, input_data: str, config: dict) -> Execution:
     with tempfile.TemporaryDirectory(prefix="eklavya-specialized-") as directory:
         root = Path(directory)
