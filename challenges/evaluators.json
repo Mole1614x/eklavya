@@ -6,5 +6,7 @@
   "row-centering": {"kind": "numpy_expression", "config": {"variable": "x", "output": "array", "tolerance": 1e-8}},
   "sample-variance": {"kind": "numerical", "config": {"tolerance": 1e-6}},
   "independent-events": {"kind": "multiple_choice", "config": {}},
-  "salary-outliers": {"kind": "pandas_function", "config": {"function": "outliers", "output": "dataframe_split"}}
+  "salary-outliers": {"kind": "pandas_function", "config": {"function": "outliers", "output": "dataframe_split"}},
+  "spark-region-totals": {"kind": "pyspark_function", "config": {"function": "region_totals", "sort": ["region"]}},
+  "mapreduce-word-count": {"kind": "mapreduce_function", "config": {"map_function": "map_line", "reduce_function": "reduce_word"}}
 }
