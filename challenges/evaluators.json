@@ -3,5 +3,8 @@
   "department-pay-rank": {"kind": "sql", "config": {"ordered": true}},
   "filter-students": {"kind": "pandas_expression", "config": {"variable": "df", "output": "dataframe_split"}},
   "monthly-orders": {"kind": "pandas_function", "config": {"function": "monthly_orders", "output": "dataframe_split"}},
-  "row-centering": {"kind": "numpy_expression", "config": {"variable": "x", "output": "array", "tolerance": 1e-8}}
+  "row-centering": {"kind": "numpy_expression", "config": {"variable": "x", "output": "array", "tolerance": 1e-8}},
+  "sample-variance": {"kind": "numerical", "config": {"tolerance": 1e-6}},
+  "independent-events": {"kind": "multiple_choice", "config": {}},
+  "salary-outliers": {"kind": "pandas_function", "config": {"function": "outliers", "output": "dataframe_split"}}
 }
