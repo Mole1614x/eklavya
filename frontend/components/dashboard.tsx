@@ -3,6 +3,7 @@ import { ArrowDownRight, ArrowRight, CheckCircle2, Flame, Star, Zap } from "luci
 import { modules } from "@/lib/navigation";
 import { ModuleIcon } from "./icons";
 import { PracticeChart } from "./practice-chart";
+import { LiveProgress } from "./live-progress";
 
 const stats = [
   { label: "Problems solved", value: "24", icon: CheckCircle2, color: "green" },
@@ -42,6 +43,7 @@ export function Dashboard() {
     <>
       <header className="topbar"><span>Overview <span className="crumb">/</span> <strong>Dashboard</strong></span><span className="profile" aria-label="Demo profile">E</span></header>
       <Hero />
+      <LiveProgress />
       <section className="stats-grid" aria-label="Demo practice statistics">
         {stats.map(({ label, value, icon: Icon, color }) => (
           <article className="card stat" key={label}><span className={`tile ${color}`}><Icon size={19} /></span><div><p>{label}</p><strong>{value}</strong></div><span className="pill">Demo</span></article>

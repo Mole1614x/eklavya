@@ -1,0 +1,24 @@
+{
+  "ranks": [
+    {"slug":"shishya","name":"Shishya","min_xp":0,"stars":1,"position":1},
+    {"slug":"sadhak","name":"Sadhak","min_xp":500,"stars":2,"position":2},
+    {"slug":"kushal","name":"Kushal","min_xp":1500,"stars":3,"position":3},
+    {"slug":"nipuna","name":"Nipuna","min_xp":3500,"stars":4,"position":4},
+    {"slug":"acharya","name":"Acharya","min_xp":7500,"stars":5,"position":5},
+    {"slug":"maharathi","name":"Maharathi","min_xp":15000,"stars":6,"position":6}
+  ],
+  "achievements": [
+    {"slug":"first-solve","name":"First Problem Solved","description":"Complete the first verified problem.","criteria":{"solved":1},"xp_reward":25},
+    {"slug":"ten-solves","name":"10 Problems Solved","description":"Complete ten verified problems.","criteria":{"solved":10},"xp_reward":50},
+    {"slug":"fifty-solves","name":"50 Problems Solved","description":"Complete fifty verified problems.","criteria":{"solved":50},"xp_reward":150},
+    {"slug":"hundred-solves","name":"100 Problems Solved","description":"Complete one hundred verified problems.","criteria":{"solved":100},"xp_reward":300},
+    {"slug":"five-hundred-solves","name":"500 Problems Solved","description":"Complete five hundred verified problems.","criteria":{"solved":500},"xp_reward":1000},
+    {"slug":"first-hard","name":"First Hard Problem","description":"Complete a hard problem.","criteria":{"difficulty":"Hard"},"xp_reward":75},
+    {"slug":"dsa-specialist","name":"DSA Specialist","description":"Complete ten Code and DSA problems.","criteria":{"category":"code","count":10},"xp_reward":100},
+    {"slug":"sql-specialist","name":"SQL Specialist","description":"Complete ten SQL problems.","criteria":{"topic":"SQL","count":10},"xp_reward":100},
+    {"slug":"pandas-specialist","name":"Pandas Specialist","description":"Complete ten Pandas problems.","criteria":{"topic":"Pandas","count":10},"xp_reward":100},
+    {"slug":"statistics-specialist","name":"Statistics Specialist","description":"Complete ten statistics problems.","criteria":{"category":"statistics","count":10},"xp_reward":100},
+    {"slug":"pyspark-specialist","name":"PySpark Specialist","description":"Complete ten PySpark problems.","criteria":{"topic":"PySpark","count":10},"xp_reward":100},
+    {"slug":"ml-specialist","name":"Machine Learning Specialist","description":"Complete ten machine-learning problems.","criteria":{"topic":"Machine Learning","count":10},"xp_reward":100}
+  ]
+}
