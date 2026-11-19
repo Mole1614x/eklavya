@@ -54,7 +54,7 @@ jobs:
           npm ci
           npm run typecheck
           npm run build
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
           npm test
 
       - name: Smoke test the Docker Compose stack
