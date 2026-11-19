@@ -14,6 +14,7 @@ from .models import Problem
 from .schemas import Catalog, Category, Difficulty, ProblemDetail
 from .submission_routes import router as submission_router
 from .gamification_routes import router as gamification_router
+from .learning_routes import router as learning_router
 
 logging.basicConfig(level=settings().log_level)
 logger = logging.getLogger(__name__)
@@ -55,4 +56,5 @@ def problem(slug: str, db: DB) -> Problem:
 router.include_router(auth_router)
 router.include_router(submission_router)
 router.include_router(gamification_router)
+router.include_router(learning_router)
 app.include_router(router)

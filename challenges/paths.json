@@ -1,0 +1,16 @@
+[
+  {"slug":"programming-foundations","title":"Programming Foundations","description":"Build control-flow and pattern fluency.","prerequisites":[],"problems":["parity-check","sum-of-digits","star-staircase","hollow-square"]},
+  {"slug":"python","title":"Python","description":"Practice Python through logic and algorithms.","prerequisites":["programming-foundations"],"problems":["parity-check","sum-of-digits","pair-indices"]},
+  {"slug":"java","title":"Java","description":"Practice Java fundamentals and algorithms.","prerequisites":["programming-foundations"],"problems":["parity-check","sum-of-digits","balanced-delimiters"]},
+  {"slug":"c","title":"C","description":"Practice C fundamentals and searching.","prerequisites":["programming-foundations"],"problems":["parity-check","sum-of-digits","first-occurrence"]},
+  {"slug":"cpp","title":"C++","description":"Practice C++ fundamentals and data structures.","prerequisites":["programming-foundations"],"problems":["parity-check","pair-indices","balanced-delimiters"]},
+  {"slug":"dsa","title":"DSA","description":"Master core data structures and algorithms.","prerequisites":["programming-foundations"],"problems":["pair-indices","first-occurrence","balanced-delimiters"]},
+  {"slug":"sql","title":"SQL","description":"Query, aggregate, and rank relational data.","prerequisites":[],"problems":["city-totals","department-pay-rank"]},
+  {"slug":"pandas","title":"Pandas","description":"Filter and aggregate DataFrames.","prerequisites":["python"],"problems":["filter-students","monthly-orders","salary-outliers"]},
+  {"slug":"numpy","title":"NumPy","description":"Build vectorized numerical intuition.","prerequisites":["python"],"problems":["row-centering","linear-prediction"]},
+  {"slug":"statistics","title":"Statistics for Data Science","description":"Connect descriptive statistics, probability, and outliers.","prerequisites":[],"problems":["sample-variance","independent-events","salary-outliers"]},
+  {"slug":"data-engineering","title":"Data Engineering","description":"Move from SQL to distributed processing.","prerequisites":["sql"],"problems":["city-totals","mapreduce-word-count","spark-region-totals"]},
+  {"slug":"pyspark","title":"PySpark","description":"Transform distributed DataFrames.","prerequisites":["data-engineering"],"problems":["spark-region-totals"]},
+  {"slug":"machine-learning","title":"Machine Learning","description":"Implement predictions and evaluation metrics.","prerequisites":["numpy","statistics"],"problems":["linear-prediction","binary-f1"]},
+  {"slug":"deep-learning","title":"Deep Learning","description":"Implement tensor operations and neural-network building blocks.","prerequisites":["machine-learning"],"problems":["relu-layer"]}
+]

@@ -225,3 +225,16 @@ select { max-width: 100%; min-height: 40px; border: 1px solid #36405a; border-ra
 .insight-list { padding: 16px; }
 .insight-list > div { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
 @media (max-width: 760px) { .live-progress { grid-template-columns: repeat(2, minmax(0, 1fr)); } .insight-grid { grid-template-columns: 1fr; } }
+.daily-live, .path-card { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 17px; }
+.daily-live h2, .path-card h2 { margin-top: 9px; font-size: 18px; }
+.daily-live p, .path-card p { margin-top: 5px; }
+.path-grid { display: grid; gap: 10px; }
+.path-card small { display: block; margin-top: 8px; color: #7f8ba7; }
+.path-steps { padding: 0; list-style: none; }
+.path-steps li { display: grid; grid-template-columns: 35px 1fr auto; align-items: center; gap: 10px; padding: 14px 17px; }
+.path-steps li + li { border-top: 1px solid var(--border); }
+.path-steps li > strong { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--surface-raised); }
+.path-steps li.complete > strong { background: #16493d; color: #69e8bd; }
+.path-steps span { display: grid; }
+.path-steps small { color: var(--accent); }
+.path-steps a { color: #ffc16a; }
