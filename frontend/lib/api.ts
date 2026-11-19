@@ -1,4 +1,5 @@
 import "server-only";
+import { backend } from "./backend";
 
 export type Problem = {
   slug: string;
@@ -21,8 +22,7 @@ export type ProblemDetail = Problem & {
 export type Catalog = { items: Problem[]; total: number; topics: string[] };
 
 async function request<T>(path: string): Promise<T | null> {
-  const base = process.env.API_BASE_URL ?? "http://127.0.0.1:8000/api/v1";
-  const response = await fetch(base + path, { cache: "no-store", signal: AbortSignal.timeout(5000) });
+  const response = await backend(path);
   if (response.status === 404) return null;
   if (!response.ok) throw new Error("The problem catalog is unavailable.");
   return response.json() as Promise<T>;
