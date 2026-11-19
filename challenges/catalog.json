@@ -1,0 +1,635 @@
+[
+  {
+    "slug": "parity-check",
+    "title": "Parity Check",
+    "category": "foundations",
+    "topic": "Conditionals",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Conditionals"
+    ],
+    "description": "Read one integer. Print Even if it is divisible by 2, otherwise print Odd.",
+    "constraints": [
+      "−10⁹ ≤ n ≤ 10⁹"
+    ],
+    "examples": [
+      {
+        "input": "17",
+        "output": "Odd"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "n = int(input())\n# Print Even or Odd\n"
+      },
+      {
+        "language": "java",
+        "code": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n    }\n}\n"
+      },
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main(void) {\n    return 0;\n}\n"
+      },
+      {
+        "language": "cpp",
+        "code": "#include <iostream>\n\nint main() {\n    return 0;\n}\n"
+      }
+    ]
+  },
+  {
+    "slug": "sum-of-digits",
+    "title": "Sum of Digits",
+    "category": "foundations",
+    "topic": "Loops",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Loops"
+    ],
+    "description": "Read a nonnegative integer and print the sum of its decimal digits.",
+    "constraints": [
+      "0 ≤ n ≤ 10⁹"
+    ],
+    "examples": [
+      {
+        "input": "405",
+        "output": "9"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "n = int(input())\n"
+      },
+      {
+        "language": "java",
+        "code": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n    }\n}\n"
+      },
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main(void) {\n    return 0;\n}\n"
+      },
+      {
+        "language": "cpp",
+        "code": "#include <iostream>\n\nint main() {\n    return 0;\n}\n"
+      }
+    ]
+  },
+  {
+    "slug": "star-staircase",
+    "title": "Star Staircase",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Patterns"
+    ],
+    "description": "Print n rows of stars. Row i contains exactly i stars, with no leading or trailing spaces.",
+    "constraints": [
+      "1 ≤ n ≤ 30",
+      "One row per line. A final newline is optional."
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "*\n**\n***\n****"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "n = int(input())\n"
+      },
+      {
+        "language": "java",
+        "code": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n    }\n}\n"
+      },
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main(void) {\n    return 0;\n}\n"
+      },
+      {
+        "language": "cpp",
+        "code": "#include <iostream>\n\nint main() {\n    return 0;\n}\n"
+      }
+    ]
+  },
+  {
+    "slug": "hollow-square",
+    "title": "Hollow Square",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Patterns"
+    ],
+    "description": "Print an n × n square. Use stars on the border and ASCII spaces in the interior.",
+    "constraints": [
+      "1 ≤ n ≤ 30",
+      "Each line has exactly n characters. A final newline is optional."
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "****\n*  *\n*  *\n****"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "n = int(input())\n"
+      },
+      {
+        "language": "java",
+        "code": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n    }\n}\n"
+      },
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main(void) {\n    return 0;\n}\n"
+      },
+      {
+        "language": "cpp",
+        "code": "#include <iostream>\n\nint main() {\n    return 0;\n}\n"
+      }
+    ]
+  },
+  {
+    "slug": "pair-indices",
+    "title": "Pair Indices",
+    "category": "code",
+    "topic": "Hash Maps",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Hash Maps"
+    ],
+    "description": "Read n and a target, then n integers. Print the two zero-based indices whose values sum to the target, in ascending order.",
+    "constraints": [
+      "2 ≤ n ≤ 100,000",
+      "Values and target are between −10⁹ and 10⁹.",
+      "Exactly one valid pair exists."
+    ],
+    "examples": [
+      {
+        "input": "4 8\n3 1 5 4",
+        "output": "0 2"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "n, target = map(int, input().split())\nvalues = list(map(int, input().split()))\n"
+      },
+      {
+        "language": "java",
+        "code": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n    }\n}\n"
+      },
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main(void) {\n    return 0;\n}\n"
+      },
+      {
+        "language": "cpp",
+        "code": "#include <iostream>\n\nint main() {\n    return 0;\n}\n"
+      }
+    ]
+  },
+  {
+    "slug": "first-occurrence",
+    "title": "First Occurrence",
+    "category": "code",
+    "topic": "Binary Search",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Binary Search"
+    ],
+    "description": "Read n and a target, then n integers sorted in nondecreasing order. Print the first zero-based index of the target or −1.",
+    "constraints": [
+      "1 ≤ n ≤ 100,000",
+      "Values and target are between −10⁹ and 10⁹.",
+      "Use O(log n) search."
+    ],
+    "examples": [
+      {
+        "input": "5 4\n1 2 4 4 7",
+        "output": "2"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "n, target = map(int, input().split())\nvalues = list(map(int, input().split()))\n"
+      },
+      {
+        "language": "java",
+        "code": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n    }\n}\n"
+      },
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main(void) {\n    return 0;\n}\n"
+      },
+      {
+        "language": "cpp",
+        "code": "#include <iostream>\n\nint main() {\n    return 0;\n}\n"
+      }
+    ]
+  },
+  {
+    "slug": "balanced-delimiters",
+    "title": "Balanced Delimiters",
+    "category": "code",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Stacks"
+    ],
+    "description": "Read a line of brackets. Print YES if every bracket is paired and correctly nested, otherwise NO.",
+    "constraints": [
+      "1 to 100,000 characters",
+      "Characters are limited to (), [], and {}."
+    ],
+    "examples": [
+      {
+        "input": "{[()]}",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "brackets = input()\n"
+      },
+      {
+        "language": "java",
+        "code": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n    }\n}\n"
+      },
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main(void) {\n    return 0;\n}\n"
+      },
+      {
+        "language": "cpp",
+        "code": "#include <iostream>\n\nint main() {\n    return 0;\n}\n"
+      }
+    ]
+  },
+  {
+    "slug": "city-totals",
+    "title": "City Totals",
+    "category": "data",
+    "topic": "SQL",
+    "difficulty": "Easy",
+    "format": "SQL_QUERY",
+    "tags": [
+      "SQL"
+    ],
+    "description": "Write a query returning city and total_sales from sales grouped by city, ordered by city ascending.",
+    "constraints": [
+      "City and amount are non-null."
+    ],
+    "examples": [
+      {
+        "input": "sales(city text, amount integer)\n(Pune, 30), (Delhi, 12), (Pune, 10)",
+        "output": "city | total_sales\nDelhi | 12\nPune | 40"
+      }
+    ],
+    "starters": [
+      {
+        "language": "sql",
+        "code": "-- Return city and total_sales\n"
+      }
+    ]
+  },
+  {
+    "slug": "department-pay-rank",
+    "title": "Department Pay Rank",
+    "category": "data",
+    "topic": "SQL",
+    "difficulty": "Medium",
+    "format": "SQL_QUERY",
+    "tags": [
+      "SQL"
+    ],
+    "description": "Return department, employee_id and pay_rank. Equal salaries share a rank with no gaps within each department. Sort by department, pay_rank and employee_id.",
+    "constraints": [
+      "Employee IDs are unique. All fields are non-null."
+    ],
+    "examples": [
+      {
+        "input": "employees(department text, employee_id integer, salary integer)\n(A, 1, 80), (A, 2, 80), (A, 3, 60)",
+        "output": "department | employee_id | pay_rank\nA | 1 | 1\nA | 2 | 1\nA | 3 | 2"
+      }
+    ],
+    "starters": [
+      {
+        "language": "sql",
+        "code": "-- Rank employees in each department\n"
+      }
+    ]
+  },
+  {
+    "slug": "filter-students",
+    "title": "Filter Students",
+    "category": "data",
+    "topic": "Pandas",
+    "difficulty": "Easy",
+    "format": "EXPRESSION",
+    "tags": [
+      "Pandas"
+    ],
+    "description": "Write a single expression that returns rows of df where Age is greater than 15. Preserve the original columns and index.",
+    "constraints": [
+      "df is a Pandas DataFrame with non-null integer ages."
+    ],
+    "examples": [
+      {
+        "input": "index | Name | Age\n0 | Anu | 15\n1 | Dev | 16",
+        "output": "index | Name | Age\n1 | Dev | 16"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# The variable df is supplied\n"
+      }
+    ]
+  },
+  {
+    "slug": "monthly-orders",
+    "title": "Monthly Orders",
+    "category": "data",
+    "topic": "Pandas",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Pandas"
+    ],
+    "description": "Implement monthly_orders(df). Return a DataFrame with columns month (YYYY-MM) and order_count, sorted by month, with a fresh integer index.",
+    "constraints": [
+      "placed_at contains valid ISO calendar dates."
+    ],
+    "examples": [
+      {
+        "input": "placed_at\n2026-01-02\n2026-01-17\n2026-02-01",
+        "output": "month | order_count\n2026-01 | 2\n2026-02 | 1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\n\ndef monthly_orders(df):\n    pass\n"
+      }
+    ]
+  },
+  {
+    "slug": "row-centering",
+    "title": "Row Centering",
+    "category": "data",
+    "topic": "NumPy",
+    "difficulty": "Easy",
+    "format": "EXPRESSION",
+    "tags": [
+      "NumPy"
+    ],
+    "description": "Write a NumPy expression that subtracts each row’s mean from every entry in that row without changing the array shape.",
+    "constraints": [
+      "x is a nonempty two-dimensional NumPy array.",
+      "Use absolute tolerance 1e-8."
+    ],
+    "examples": [
+      {
+        "input": "[[2, 4], [10, 16]]",
+        "output": "[[-1, 1], [-3, 3]]"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# x and np are supplied\n"
+      }
+    ]
+  },
+  {
+    "slug": "sample-variance",
+    "title": "Sample Variance",
+    "category": "statistics",
+    "topic": "Descriptive Statistics",
+    "difficulty": "Easy",
+    "format": "NUMERICAL",
+    "tags": [
+      "Descriptive Statistics"
+    ],
+    "description": "Compute the sample variance using a denominator of n − 1. Enter a single number.",
+    "constraints": [
+      "At least two observations.",
+      "Absolute tolerance is 1e-6."
+    ],
+    "examples": [
+      {
+        "input": "2, 4, 6",
+        "output": "4"
+      }
+    ],
+    "starters": []
+  },
+  {
+    "slug": "independent-events",
+    "title": "Independent Events",
+    "category": "statistics",
+    "topic": "Probability",
+    "difficulty": "Easy",
+    "format": "MULTIPLE_CHOICE",
+    "tags": [
+      "Probability"
+    ],
+    "description": "For independent events A and B, which formula gives P(A ∩ B)?",
+    "constraints": [
+      "Select exactly one option."
+    ],
+    "examples": [
+      {
+        "input": "P(A) = 0.5, P(B) = 0.4",
+        "output": "The joint probability is 0.2."
+      }
+    ],
+    "starters": [],
+    "choices": [
+      "P(A) + P(B)",
+      "P(A) × P(B)",
+      "P(A) − P(B)",
+      "P(A) / P(B)"
+    ]
+  },
+  {
+    "slug": "salary-outliers",
+    "title": "Salary Outliers with IQR",
+    "category": "statistics",
+    "topic": "Outlier Detection",
+    "difficulty": "Medium",
+    "format": "DATASET_ANALYSIS",
+    "tags": [
+      "Outlier Detection"
+    ],
+    "description": "Implement outliers(df) to return the original rows whose salary is strictly outside Q1 − 1.5 × IQR and Q3 + 1.5 × IQR.",
+    "constraints": [
+      "Use Pandas linear-interpolated quartiles.",
+      "Salaries are non-null."
+    ],
+    "examples": [
+      {
+        "input": "salary\n10\n11\n12\n13\n100",
+        "output": "salary\n100"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "def outliers(df):\n    pass\n"
+      }
+    ]
+  },
+  {
+    "slug": "spark-region-totals",
+    "title": "Spark Region Totals",
+    "category": "big-data",
+    "topic": "PySpark",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "PySpark"
+    ],
+    "description": "Implement region_totals(df) to return region and total for each region, sorted alphabetically by region.",
+    "constraints": [
+      "Amounts are non-null integers. Regions are non-null strings."
+    ],
+    "examples": [
+      {
+        "input": "region | amount\nWest | 3\nEast | 2\nWest | 5",
+        "output": "region | total\nEast | 2\nWest | 8"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "from pyspark.sql import functions as F\n\ndef region_totals(df):\n    pass\n"
+      }
+    ]
+  },
+  {
+    "slug": "mapreduce-word-count",
+    "title": "MapReduce Word Count",
+    "category": "big-data",
+    "topic": "MapReduce",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "MapReduce"
+    ],
+    "description": "Implement map_line(line) to yield (word, 1) pairs and reduce_word(word, counts) to return (word, total). Split on whitespace and normalize to lowercase.",
+    "constraints": [
+      "Words consist of ASCII letters.",
+      "The example shows grouped output sorted by word."
+    ],
+    "examples": [
+      {
+        "input": "One fish\nTwo FISH",
+        "output": "fish 2\none 1\ntwo 1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "def map_line(line):\n    pass\n\ndef reduce_word(word, counts):\n    pass\n"
+      }
+    ]
+  },
+  {
+    "slug": "linear-prediction",
+    "title": "Linear Prediction",
+    "category": "ai",
+    "topic": "Machine Learning",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Machine Learning"
+    ],
+    "description": "Implement predict(x, weights, bias) to return one prediction per row using the dot product plus bias.",
+    "constraints": [
+      "x and weights are compatible NumPy arrays.",
+      "Absolute tolerance is 1e-8."
+    ],
+    "examples": [
+      {
+        "input": "x = [[1, 2], [2, 1]], weights = [3, 4], bias = 1",
+        "output": "[12, 11]"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef predict(x, weights, bias):\n    pass\n"
+      }
+    ]
+  },
+  {
+    "slug": "binary-f1",
+    "title": "Binary F1 Score",
+    "category": "ai",
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Machine Learning"
+    ],
+    "description": "Implement f1_score(actual, predicted) for positive class 1. Return zero when the denominator is zero.",
+    "constraints": [
+      "Inputs have equal length and contain only 0 or 1.",
+      "Absolute tolerance is 1e-8."
+    ],
+    "examples": [
+      {
+        "input": "actual = [1, 1, 0], predicted = [1, 0, 0]",
+        "output": "0.6666666667"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "def f1_score(actual, predicted):\n    pass\n"
+      }
+    ]
+  },
+  {
+    "slug": "relu-layer",
+    "title": "ReLU Layer",
+    "category": "ai",
+    "topic": "Deep Learning",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Deep Learning"
+    ],
+    "description": "Implement relu(x) using PyTorch operations that preserve the input shape, dtype and gradient tracking.",
+    "constraints": [
+      "x is a floating-point PyTorch tensor."
+    ],
+    "examples": [
+      {
+        "input": "[-2.0, 0.0, 3.0]",
+        "output": "[0.0, 0.0, 3.0]"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import torch\n\ndef relu(x):\n    pass\n"
+      }
+    ]
+  }
+]
