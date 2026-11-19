@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     seed_file: Path = ROOT / "challenges" / "catalog.json"
     test_seed_file: Path = ROOT / "challenges" / "tests.json"
     evaluator_seed_file: Path = ROOT / "challenges" / "evaluators.json"
+    gamification_seed_file: Path = ROOT / "challenges" / "gamification.json"
     secret_key: str = "local-development-secret-change-before-deployment"
     access_token_minutes: int = 15
     refresh_token_days: int = 30

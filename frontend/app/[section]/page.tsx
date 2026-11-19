@@ -8,6 +8,7 @@ import { Dashboard } from "@/components/dashboard";
 import { PracticeChart } from "@/components/practice-chart";
 import { ModuleIcon } from "@/components/icons";
 import { CatalogView, type Query } from "@/components/catalog";
+import { CommunityData } from "@/components/community-data";
 
 const activities: Record<string, { href: string; label: string }> = {
   "daily-sadhana": { href: "/problems/star-staircase", label: "Try Star Staircase" },
@@ -42,6 +43,7 @@ export default async function Section({ params, searchParams }: Props) {
       {!module && item.topics.length > 0 && <ul className="skills-grid clean-list">{item.topics.map((topic) => <li className="card feature-card" key={topic}><ModuleIcon name={item.icon} /><h2>{topic}</h2></li>)}</ul>}
       {section === "rankings" && <ul className="skills-grid clean-list">{ranks.map(([name, xp], index) => <li key={name} className="card feature-card"><div className="stars" aria-label={`${index + 1} stars`}>{Array.from({ length: index + 1 }, (_, star) => <Star key={star} size={16} fill="currentColor" aria-hidden="true" />)}</div><h2>{name}</h2><p>{xp.toLocaleString("en-US")} XP</p></li>)}</ul>}
       {section === "progress-insights" && <PracticeChart />}
+      {(["rankings", "badges", "progress-insights"] as const).includes(section as "rankings") && <CommunityData section={section} />}
     </>
   );
 }

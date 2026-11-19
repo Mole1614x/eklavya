@@ -210,3 +210,18 @@ select { max-width: 100%; min-height: 40px; border: 1px solid #36405a; border-ra
 .judge-result strong { color: #ffc16a; }
 .judge-result span { color: var(--muted); font-size: 12px; }
 .judge-result pre { overflow: auto; max-height: 180px; padding: 9px; border-radius: 6px; background: var(--background); white-space: pre-wrap; }
+.live-progress { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.sign-in-progress { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 16px; margin-top: 16px; }
+.sign-in-progress h2, .insight-list h2 { font-size: 16px; }
+.sign-in-progress p { margin-top: 4px; font-size: 13px; }
+.leaderboard { list-style: none; padding: 0; }
+.leaderboard li { display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 10px; padding: 13px 16px; }
+.leaderboard li + li { border-top: 1px solid var(--border); }
+.leaderboard span { display: grid; }
+.leaderboard small { color: var(--muted); }
+.feature-card.earned { border-color: #2c8068; }
+.feature-card.locked { opacity: .7; }
+.insight-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.insight-list { padding: 16px; }
+.insight-list > div { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+@media (max-width: 760px) { .live-progress { grid-template-columns: repeat(2, minmax(0, 1fr)); } .insight-grid { grid-template-columns: 1fr; } }

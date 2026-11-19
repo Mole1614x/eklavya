@@ -140,3 +140,65 @@ class Submission(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, index=True)
     started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class RankLevel(Base):
+    __tablename__ = "rank_levels"
+
+    slug: Mapped[str] = mapped_column(String(32), primary_key=True)
+    name: Mapped[str] = mapped_column(String(40), unique=True)
+    min_xp: Mapped[int] = mapped_column(Integer, unique=True)
+    stars: Mapped[int] = mapped_column(Integer)
+    position: Mapped[int] = mapped_column(Integer, unique=True)
+
+
+class UserProgress(Base):
+    __tablename__ = "user_progress"
+
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), primary_key=True)
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    solved_count: Mapped[int] = mapped_column(Integer, default=0)
+    current_rank_slug: Mapped[str] = mapped_column(ForeignKey("rank_levels.slug"), default="shishya")
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, onupdate=utcnow)
+
+
+class XPTransaction(Base):
+    __tablename__ = "xp_transactions"
+    __table_args__ = (UniqueConstraint("user_id", "source_type", "source_id", name="uq_xp_source"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    amount: Mapped[int] = mapped_column(Integer)
+    reason: Mapped[str] = mapped_column(String(120))
+    source_type: Mapped[str] = mapped_column(String(32))
+    source_id: Mapped[str] = mapped_column(String(100))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class RankHistory(Base):
+    __tablename__ = "rank_history"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    rank_slug: Mapped[str] = mapped_column(ForeignKey("rank_levels.slug"))
+    reached_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class Achievement(Base):
+    __tablename__ = "achievements"
+
+    slug: Mapped[str] = mapped_column(String(64), primary_key=True)
+    name: Mapped[str] = mapped_column(String(100), unique=True)
+    description: Mapped[str] = mapped_column(String(240))
+    criteria: Mapped[dict] = mapped_column(JSON)
+    xp_reward: Mapped[int] = mapped_column(Integer, default=0)
+
+
+class UserAchievement(Base):
+    __tablename__ = "user_achievements"
+    __table_args__ = (UniqueConstraint("user_id", "achievement_slug", name="uq_user_achievement"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    achievement_slug: Mapped[str] = mapped_column(ForeignKey("achievements.slug"))
+    awarded_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
