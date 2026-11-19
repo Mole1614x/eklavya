@@ -19,6 +19,11 @@ def execute_bigdata(kind: str, source: str, input_data: str, config: dict) -> Ex
     return _specialized("eklavya-bigdata-runner:latest", RUNNERS / "bigdata_runner.py", "solution.py", source, input_data, {"kind": kind, **config})
 
 
+def execute_ai(kind: str, source: str, input_data: str, config: dict) -> Execution:
+    image = "eklavya-deep-learning-runner:latest" if kind == "torch_function" else "eklavya-ml-runner:latest"
+    return _specialized(image, RUNNERS / "ai_runner.py", "solution.py", source, input_data, {"kind": kind, **config})
+
+
 def evaluate_answer(kind: str, source: str) -> Execution:
     try:
         value = float(source.strip()) if kind == "numerical" else source.strip()

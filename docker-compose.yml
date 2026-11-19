@@ -58,6 +58,10 @@ services:
         condition: service_completed_successfully
       bigdata-runner:
         condition: service_completed_successfully
+      ml-runner:
+        condition: service_completed_successfully
+      deep-learning-runner:
+        condition: service_completed_successfully
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     group_add:
@@ -77,6 +81,20 @@ services:
     build:
       context: .
       dockerfile: judge/images/bigdata.Dockerfile
+    command: ["true"]
+    restart: "no"
+  ml-runner:
+    image: eklavya-ml-runner:latest
+    build:
+      context: .
+      dockerfile: judge/images/ml.Dockerfile
+    command: ["true"]
+    restart: "no"
+  deep-learning-runner:
+    image: eklavya-deep-learning-runner:latest
+    build:
+      context: .
+      dockerfile: judge/images/deep-learning.Dockerfile
     command: ["true"]
     restart: "no"
   frontend:

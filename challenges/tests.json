@@ -59,5 +59,16 @@
   "mapreduce-word-count": [
     {"input_data": "{\"lines\":[\"One fish\",\"Two FISH\"]}", "expected_output": "[[\"fish\",2],[\"one\",1],[\"two\",1]]", "is_hidden": false, "position": 0},
     {"input_data": "{\"lines\":[\"A a a\",\"B\"]}", "expected_output": "[[\"a\",3],[\"b\",1]]", "is_hidden": true, "position": 1}
+  ],
+  "linear-prediction": [
+    {"input_data": "{\"x\":[[1,2],[2,1]],\"weights\":[3,4],\"bias\":1}", "expected_output": "[12,11]", "is_hidden": false, "position": 0, "tolerance": 1e-8},
+    {"input_data": "{\"x\":[[0,1]],\"weights\":[5,2],\"bias\":-1}", "expected_output": "[1]", "is_hidden": true, "position": 1, "tolerance": 1e-8}
+  ],
+  "binary-f1": [
+    {"input_data": "{\"actual\":[1,1,0],\"predicted\":[1,0,0]}", "expected_output": "0.6666666666666666", "is_hidden": false, "position": 0, "tolerance": 1e-8},
+    {"input_data": "{\"actual\":[0,0],\"predicted\":[0,0]}", "expected_output": "0.0", "is_hidden": true, "position": 1, "tolerance": 1e-8}
+  ],
+  "relu-layer": [
+    {"input_data": "{\"x\":[-2.0,0.0,3.0]}", "expected_output": "[0.0,0.0,3.0]", "is_hidden": false, "position": 0, "tolerance": 1e-8}
   ]
 }

@@ -8,5 +8,8 @@
   "independent-events": {"kind": "multiple_choice", "config": {}},
   "salary-outliers": {"kind": "pandas_function", "config": {"function": "outliers", "output": "dataframe_split"}},
   "spark-region-totals": {"kind": "pyspark_function", "config": {"function": "region_totals", "sort": ["region"]}},
-  "mapreduce-word-count": {"kind": "mapreduce_function", "config": {"map_function": "map_line", "reduce_function": "reduce_word"}}
+  "mapreduce-word-count": {"kind": "mapreduce_function", "config": {"map_function": "map_line", "reduce_function": "reduce_word"}},
+  "linear-prediction": {"kind": "numpy_ai_function", "config": {"function": "predict", "args": ["x", "weights", "bias"], "array_args": ["x", "weights"], "tolerance": 1e-8}},
+  "binary-f1": {"kind": "python_ai_function", "config": {"function": "f1_score", "args": ["actual", "predicted"], "tolerance": 1e-8}},
+  "relu-layer": {"kind": "torch_function", "config": {"function": "relu", "args": ["x"], "tensor_args": ["x"], "tolerance": 1e-8}}
 }
