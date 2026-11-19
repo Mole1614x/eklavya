@@ -63,7 +63,7 @@ jobs:
           BACKEND_PORT: "8011"
           FRONTEND_PORT: "3011"
         run: |
-          docker compose up --build -d --wait --wait-timeout 90
+          docker compose up --build -d --wait --wait-timeout 90 db redis backend frontend
           curl --fail --silent --show-error http://127.0.0.1:8011/api/v1/health
           curl --fail --silent --show-error 'http://127.0.0.1:8011/api/v1/problems?limit=1' | jq -e '.total == 20'
           curl --fail --silent --show-error http://127.0.0.1:3011/problems/parity-check | grep -F 'Parity Check' > /dev/null
