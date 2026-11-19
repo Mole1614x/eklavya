@@ -84,6 +84,7 @@ jobs:
           docker compose config --quiet
           docker build --check -f backend/Dockerfile .
           docker build --check -f judge/Dockerfile .
+          docker build --check -f judge/images/code.Dockerfile .
           docker build --check -f judge/images/data.Dockerfile .
           docker build --check -f judge/images/bigdata.Dockerfile .
           docker build --check -f judge/images/ml.Dockerfile .
