@@ -20,7 +20,6 @@ def upgrade():
         sa.Column("is_active", sa.Boolean, nullable=False, server_default=sa.true()),
         sa.Column("email_verified", sa.Boolean, nullable=False, server_default=sa.false()),
         sa.Column("created_at", sa.DateTime(timezone=True), nullable=False),
-        sa.UniqueConstraint("email"), sa.UniqueConstraint("username"),
     )
     op.create_index("ix_users_email", "users", ["email"], unique=True)
     op.create_index("ix_users_username", "users", ["username"], unique=True)
