@@ -12,6 +12,7 @@ from .auth_routes import router as auth_router
 from .main_dependencies import get_db
 from .models import Problem
 from .schemas import Catalog, Category, Difficulty, ProblemDetail
+from .submission_routes import router as submission_router
 
 logging.basicConfig(level=settings().log_level)
 logger = logging.getLogger(__name__)
@@ -51,4 +52,5 @@ def problem(slug: str, db: DB) -> Problem:
 
 
 router.include_router(auth_router)
+router.include_router(submission_router)
 app.include_router(router)
