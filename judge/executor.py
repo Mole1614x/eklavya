@@ -32,6 +32,10 @@ def container_command(language: str, source_directory: Path, name: str) -> list[
         image, _, command = LANGUAGES[language]
     except KeyError as error:
         raise ValueError(f"Unsupported language: {language}") from error
+    return isolated_command(image, source_directory, name, command)
+
+
+def isolated_command(image: str, source_directory: Path, name: str, command: str) -> list[str]:
     return [
         "docker", "run", "--rm", "--name", name,
         "--network", "none", "--read-only", "--cap-drop", "ALL",
@@ -51,10 +55,15 @@ def execute(language: str, source_code: str, input_data: str) -> Execution:
     with tempfile.TemporaryDirectory(prefix="eklavya-judge-") as directory:
         source_directory = Path(directory)
         (source_directory / filename).write_text(source_code, encoding="utf-8")
+        image, _, command = LANGUAGES[language]
+        return run_container(image, source_directory, command, input_data)
+
+
+def run_container(image: str, source_directory: Path, command: str, input_data: str) -> Execution:
         name = f"eklavya-{uuid4().hex}"
         started = time.monotonic()
         process = subprocess.Popen(
-            container_command(language, source_directory, name), stdin=subprocess.PIPE,
+            isolated_command(image, source_directory, name, command), stdin=subprocess.PIPE,
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
         )
         assert process.stdin is not None and process.stdout is not None

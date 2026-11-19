@@ -26,5 +26,21 @@
   "balanced-delimiters": [
     {"input_data": "{[()]}\n", "expected_output": "YES\n", "is_hidden": false, "position": 0},
     {"input_data": "([)]\n", "expected_output": "NO\n", "is_hidden": true, "position": 1}
+  ],
+  "city-totals": [
+    {"input_data": "{\"tables\":{\"sales\":{\"columns\":[[\"city\",\"TEXT\"],[\"amount\",\"INTEGER\"]],\"rows\":[[\"Pune\",30],[\"Delhi\",12],[\"Pune\",10]]}}}", "expected_output": "{\"columns\":[\"city\",\"total_sales\"],\"rows\":[[\"Delhi\",12],[\"Pune\",40]]}", "is_hidden": false, "position": 0},
+    {"input_data": "{\"tables\":{\"sales\":{\"columns\":[[\"city\",\"TEXT\"],[\"amount\",\"INTEGER\"]],\"rows\":[[\"A\",1],[\"A\",2],[\"B\",5]]}}}", "expected_output": "{\"columns\":[\"city\",\"total_sales\"],\"rows\":[[\"A\",3],[\"B\",5]]}", "is_hidden": true, "position": 1}
+  ],
+  "department-pay-rank": [
+    {"input_data": "{\"tables\":{\"employees\":{\"columns\":[[\"department\",\"TEXT\"],[\"employee_id\",\"INTEGER\"],[\"salary\",\"INTEGER\"]],\"rows\":[[\"A\",1,80],[\"A\",2,80],[\"A\",3,60]]}}}", "expected_output": "{\"columns\":[\"department\",\"employee_id\",\"pay_rank\"],\"rows\":[[\"A\",1,1],[\"A\",2,1],[\"A\",3,2]]}", "is_hidden": false, "position": 0}
+  ],
+  "filter-students": [
+    {"input_data": "{\"dataframe\":{\"Name\":[\"Anu\",\"Dev\"],\"Age\":[15,16]}}", "expected_output": "{\"columns\":[\"Name\",\"Age\"],\"index\":[1],\"data\":[[\"Dev\",16]]}", "is_hidden": false, "position": 0}
+  ],
+  "monthly-orders": [
+    {"input_data": "{\"dataframe\":{\"placed_at\":[\"2026-01-02\",\"2026-01-17\",\"2026-02-01\"]}}", "expected_output": "{\"columns\":[\"month\",\"order_count\"],\"index\":[0,1],\"data\":[[\"2026-01\",2],[\"2026-02\",1]]}", "is_hidden": false, "position": 0}
+  ],
+  "row-centering": [
+    {"input_data": "{\"array\":[[2,4],[10,16]]}", "expected_output": "[[-1.0,1.0],[-3.0,3.0]]", "is_hidden": false, "position": 0, "tolerance": 1e-8}
   ]
 }
