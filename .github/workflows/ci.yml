@@ -76,7 +76,7 @@ jobs:
           npm audit --omit=dev --audit-level=high
           npm run typecheck
           npm run build
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
           npm test
 
       - name: Validate container definitions
