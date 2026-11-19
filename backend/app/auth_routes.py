@@ -1,18 +1,19 @@
 import logging
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy import or_, select
+from sqlalchemy import or_, select, update
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from .auth import (
-    CurrentUser, consume_account_token, consume_refresh_token, create_access_token, hash_password,
+    CurrentUser, DUMMY_PASSWORD_HASH, consume_account_token, consume_refresh_token, create_access_token, hash_password,
     issue_account_token, issue_refresh_token, normalize_email, normalize_username,
     revoke_refresh_token, verify_password,
 )
 from .main_dependencies import get_db
-from .models import Profile, User
+from .models import Profile, RefreshToken, User
 from .schemas_auth import (
     AuthTokens, EmailRequest, LoginRequest, PasswordResetRequest, ProfileRead, ProfileUpdate,
     RefreshRequest, RegisterRequest, TokenRequest,
@@ -35,11 +36,15 @@ def register(payload: RegisterRequest, db: DB) -> AuthTokens:
         profile=Profile(display_name=payload.display_name.strip()),
     )
     db.add(user)
-    db.flush()
-    verification_token = issue_account_token(db, user, "verify_email", timedelta(hours=24))
-    logger.info("Email verification token issued for user %s: %s", user.id, verification_token)
-    tokens = AuthTokens(access_token=create_access_token(user), refresh_token=issue_refresh_token(db, user))
-    db.commit()
+    try:
+        db.flush()
+        issue_account_token(db, user, "verify_email", timedelta(hours=24))
+        logger.info("Email verification token issued for user %s", user.id)
+        tokens = AuthTokens(access_token=create_access_token(user), refresh_token=issue_refresh_token(db, user))
+        db.commit()
+    except IntegrityError as error:
+        db.rollback()
+        raise HTTPException(status_code=409, detail="Email or username is already registered") from error
     return tokens
 
 
@@ -47,7 +52,8 @@ def register(payload: RegisterRequest, db: DB) -> AuthTokens:
 def login(payload: LoginRequest, db: DB) -> AuthTokens:
     identity = payload.identity.strip().lower()
     user = db.scalar(select(User).where(or_(User.email == identity, User.username == identity)))
-    if user is None or not verify_password(payload.password, user.password_hash) or not user.is_active:
+    password_valid = verify_password(payload.password, user.password_hash if user is not None else DUMMY_PASSWORD_HASH)
+    if user is None or not password_valid or not user.is_active:
         raise HTTPException(status_code=401, detail="Email, username, or password is incorrect")
     tokens = AuthTokens(access_token=create_access_token(user), refresh_token=issue_refresh_token(db, user))
     db.commit()
@@ -97,8 +103,8 @@ def verify_email(payload: TokenRequest, db: DB) -> None:
 def request_password_reset(payload: EmailRequest, db: DB) -> dict[str, str]:
     user = db.scalar(select(User).where(User.email == normalize_email(payload.email)))
     if user is not None and user.is_active:
-        token = issue_account_token(db, user, "reset_password", timedelta(hours=1))
-        logger.info("Password reset token issued for user %s: %s", user.id, token)
+        issue_account_token(db, user, "reset_password", timedelta(hours=1))
+        logger.info("Password reset token issued for user %s", user.id)
         db.commit()
     return {"detail": "If the account exists, reset instructions have been issued"}
 
@@ -107,4 +113,7 @@ def request_password_reset(payload: EmailRequest, db: DB) -> dict[str, str]:
 def confirm_password_reset(payload: PasswordResetRequest, db: DB) -> None:
     user = consume_account_token(db, payload.token, "reset_password")
     user.password_hash = hash_password(payload.password)
+    db.execute(update(RefreshToken).where(
+        RefreshToken.user_id == user.id, RefreshToken.revoked_at.is_(None),
+    ).values(revoked_at=datetime.now(timezone.utc)))
     db.commit()

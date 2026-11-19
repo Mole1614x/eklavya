@@ -86,5 +86,7 @@ def test_verification_and_password_reset_tokens_are_one_time(auth_client):
         db.commit()
     response = client.post("/api/v1/auth/password-reset/confirm", json={"token": known, "password": "NewStrongPass456"})
     assert response.status_code == 204
+    with Session(engine) as db:
+        assert all(token.revoked_at is not None for token in db.scalars(select(RefreshToken)).all())
     assert client.post("/api/v1/auth/password-reset/confirm", json={"token": known, "password": "NewStrongPass456"}).status_code == 400
     assert client.post("/api/v1/auth/login", json={"identity": "learner_1", "password": "NewStrongPass456"}).status_code == 200
