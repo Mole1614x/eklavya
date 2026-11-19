@@ -1,10 +1,8 @@
 FROM node:24-bookworm-slim AS build
 WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
-COPY package*.json ./
-RUN npm ci
 COPY . .
-RUN npm run build
+RUN npm ci --no-audit --no-fund && npm run build && rm -rf node_modules .next/cache /root/.npm
 
 FROM node:24-bookworm-slim
 WORKDIR /app
