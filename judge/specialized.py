@@ -16,7 +16,8 @@ def execute_data(kind: str, source: str, input_data: str, config: dict) -> Execu
 
 
 def execute_bigdata(kind: str, source: str, input_data: str, config: dict) -> Execution:
-    return _specialized("eklavya-bigdata-runner:latest", RUNNERS / "bigdata_runner.py", "solution.py", source, input_data, {"kind": kind, **config})
+    image = "python:3.12-alpine" if kind == "mapreduce_function" else "eklavya-bigdata-runner:latest"
+    return _specialized(image, RUNNERS / "bigdata_runner.py", "solution.py", source, input_data, {"kind": kind, **config})
 
 
 def execute_ai(kind: str, source: str, input_data: str, config: dict) -> Execution:

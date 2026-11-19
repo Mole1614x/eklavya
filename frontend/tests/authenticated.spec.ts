@@ -1,0 +1,39 @@
+import { expect, test } from "@playwright/test";
+
+test("authenticated session rotates across BFF routes and protects profile data", async ({ page, context }) => {
+  const suffix = Date.now().toString(36);
+  const displayName = `Integration Archer ${suffix}`;
+
+  await page.goto("/auth");
+  await page.getByRole("tab", { name: "Create account" }).click();
+  await page.getByLabel("Display name").fill(displayName);
+  await page.getByLabel("Username").fill(`archer_${suffix}`);
+  await page.getByLabel("Email").fill(`archer_${suffix}@example.com`);
+  await page.getByLabel("Password").fill("StrongPass123");
+  await page.getByRole("button", { name: "Create account" }).click();
+
+  await expect(page).toHaveURL(/\/profile$/);
+  await expect(page.getByRole("heading", { name: displayName })).toBeVisible();
+
+  // Simulate access-token expiry while retaining the HttpOnly refresh session.
+  await context.clearCookies({ name: "eklavya_access" });
+  const submission = await page.request.post("/api/submissions/problem/parity-check", {
+    data: { language: "python", source_code: "n = int(input())\nprint('Even' if n % 2 == 0 else 'Odd')", mode: "SUBMIT" },
+  });
+  expect(submission.status()).toBe(202);
+  const created = await submission.json();
+  expect(created).not.toHaveProperty("source_code");
+  expect(["QUEUED", "SYSTEM_ERROR"]).toContain(created.status);
+  expect((await context.cookies()).some((cookie) => cookie.name === "eklavya_access")).toBe(true);
+
+  await page.reload();
+  await expect(page.getByRole("heading", { name: displayName })).toBeVisible();
+  await page.getByLabel("Bio").fill("Verified integration journey");
+  await page.getByRole("button", { name: "Save profile" }).click();
+  await expect(page.getByRole("status")).toContainText("Profile saved.");
+
+  await page.getByRole("button", { name: "Sign out" }).click();
+  await expect(page).toHaveURL(/\/auth$/);
+  await page.goto("/profile");
+  await expect(page).toHaveURL(/\/auth$/);
+});

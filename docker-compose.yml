@@ -84,6 +84,12 @@ services:
         condition: service_completed_successfully
       redis:
         condition: service_healthy
+      python-runner:
+        condition: service_completed_successfully
+      code-runner:
+        condition: service_completed_successfully
+      java-runner:
+        condition: service_completed_successfully
       data-runner:
         condition: service_completed_successfully
       bigdata-runner:
@@ -102,6 +108,24 @@ services:
     cap_drop: ["ALL"]
     security_opt: ["no-new-privileges:true"]
     restart: unless-stopped
+  python-runner:
+    image: python:3.12-alpine
+    command: ["true"]
+    restart: "no"
+    profiles: ["judge"]
+  code-runner:
+    image: eklavya-code-runner:latest
+    build:
+      context: .
+      dockerfile: judge/images/code.Dockerfile
+    command: ["true"]
+    restart: "no"
+    profiles: ["judge"]
+  java-runner:
+    image: eclipse-temurin:21-jdk-alpine
+    command: ["true"]
+    restart: "no"
+    profiles: ["judge"]
   data-runner:
     image: eklavya-data-runner:latest
     build:
