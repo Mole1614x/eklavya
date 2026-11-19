@@ -11,7 +11,7 @@ depends_on = None
 
 def upgrade():
     op.create_table("daily_challenges",
-        sa.Column("id", sa.Integer, primary_key=True), sa.Column("challenge_date", sa.Date, nullable=False, unique=True),
+        sa.Column("id", sa.Integer, primary_key=True), sa.Column("challenge_date", sa.Date, nullable=False),
         sa.Column("problem_slug", sa.String(100), sa.ForeignKey("problems.slug", ondelete="RESTRICT"), nullable=False),
         sa.Column("xp_reward", sa.Integer, nullable=False, server_default="20"))
     op.create_index("ix_daily_challenges_challenge_date", "daily_challenges", ["challenge_date"], unique=True)
