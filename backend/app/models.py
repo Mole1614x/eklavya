@@ -10,6 +10,7 @@ class Problem(Base):
     __tablename__ = "problems"
     __table_args__ = (
         CheckConstraint("difficulty IN ('Beginner', 'Easy', 'Medium', 'Hard')", name="problem_difficulty"),
+        CheckConstraint("status IN ('DRAFT', 'PUBLISHED', 'UNPUBLISHED', 'ARCHIVED')", name="problem_status"),
         CheckConstraint(
             "format IN ('CODE', 'EXPRESSION', 'SQL_QUERY', 'NUMERICAL', 'MULTIPLE_CHOICE', 'DATASET_ANALYSIS')",
             name="problem_format",
@@ -27,6 +28,7 @@ class Problem(Base):
     constraints: Mapped[list[str]] = mapped_column(JSON)
     examples: Mapped[list[dict]] = mapped_column(JSON)
     choices: Mapped[list[str]] = mapped_column(JSON)
+    status: Mapped[str] = mapped_column(String(16), default="PUBLISHED", index=True)
     starters: Mapped[list["StarterCode"]] = relationship(
         cascade="all, delete-orphan", lazy="selectin", order_by="StarterCode.language"
     )
@@ -76,6 +78,7 @@ class User(Base):
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     email_verified: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     profile: Mapped["Profile"] = relationship(cascade="all, delete-orphan", lazy="joined")
 
 
@@ -231,11 +234,15 @@ class DailyChallengeCompletion(Base):
 
 class LearningPath(Base):
     __tablename__ = "learning_paths"
+    __table_args__ = (
+        CheckConstraint("status IN ('DRAFT', 'PUBLISHED', 'ARCHIVED')", name="learning_path_status"),
+    )
 
     slug: Mapped[str] = mapped_column(String(64), primary_key=True)
     title: Mapped[str] = mapped_column(String(120), unique=True)
     description: Mapped[str] = mapped_column(String(500))
     prerequisites: Mapped[list[str]] = mapped_column(JSON, default=list)
+    status: Mapped[str] = mapped_column(String(16), default="PUBLISHED", index=True)
 
 
 class LearningPathProblem(Base):
@@ -260,6 +267,12 @@ class LearningPathProgress(Base):
 
 class Contest(Base):
     __tablename__ = "contests"
+    __table_args__ = (
+        CheckConstraint(
+            "publication_status IN ('DRAFT', 'PUBLISHED', 'CANCELLED', 'FINALIZED')",
+            name="contest_publication_status",
+        ),
+    )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     slug: Mapped[str] = mapped_column(String(80), unique=True, index=True)
@@ -268,6 +281,7 @@ class Contest(Base):
     starts_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
     ends_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
     is_rated: Mapped[bool] = mapped_column(Boolean, default=True)
+    publication_status: Mapped[str] = mapped_column(String(16), default="PUBLISHED", index=True)
 
 
 class ContestProblem(Base):
@@ -313,3 +327,46 @@ class ContestRating(Base):
     rating_before: Mapped[int] = mapped_column(Integer)
     rating_after: Mapped[int] = mapped_column(Integer)
     position: Mapped[int] = mapped_column(Integer)
+
+
+class ManagedDataset(Base):
+    __tablename__ = "managed_datasets"
+    __table_args__ = (
+        CheckConstraint(
+            "kind IN ('SQL', 'PANDAS', 'NUMPY', 'STATISTICS', 'PYSPARK', 'MACHINE_LEARNING')",
+            name="managed_dataset_kind",
+        ),
+        UniqueConstraint("name", "version", name="uq_managed_dataset_version"),
+    )
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    name: Mapped[str] = mapped_column(String(120), index=True)
+    kind: Mapped[str] = mapped_column(String(32), index=True)
+    version: Mapped[int] = mapped_column(Integer)
+    original_filename: Mapped[str] = mapped_column(String(255))
+    content_type: Mapped[str] = mapped_column(String(120))
+    size_bytes: Mapped[int] = mapped_column(Integer)
+    sha256: Mapped[str] = mapped_column(String(64))
+    storage_path: Mapped[str] = mapped_column(String(500), unique=True)
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+    created_by: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="RESTRICT"), index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class AuditLog(Base):
+    __tablename__ = "audit_logs"
+    __table_args__ = (
+        Index("ix_audit_logs_created_at", "created_at"),
+        Index("ix_audit_logs_target", "target_type", "target_id"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    actor_user_id: Mapped[int | None] = mapped_column(
+        ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True,
+    )
+    action: Mapped[str] = mapped_column(String(80), index=True)
+    target_type: Mapped[str] = mapped_column(String(40))
+    target_id: Mapped[str] = mapped_column(String(120))
+    details: Mapped[dict] = mapped_column(JSON, default=dict)
+    ip_address: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)

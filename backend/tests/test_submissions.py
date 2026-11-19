@@ -70,7 +70,9 @@ def test_admin_problem_management_rejects_learner(submission_client):
         user = db.scalar(select(User).where(User.username == "solver"))
         user.role = "admin"
         db.commit()
-    assert client.put("/api/v1/admin/problems/managed", headers=headers, json=payload).status_code == 204
+    response = client.put("/api/v1/admin/problems/managed", headers=headers, json=payload)
+    assert response.status_code == 200
+    assert response.json()["hidden_test_count"] == 1
     with Session(engine) as db:
         case = db.scalar(select(ProblemTestCase).where(ProblemTestCase.problem_slug == "managed"))
         assert case.is_hidden is True

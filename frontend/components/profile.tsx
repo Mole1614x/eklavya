@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type User = { email: string; username: string; role: string; email_verified: boolean; profile: { display_name?: string; bio?: string; timezone?: string } };
 
@@ -29,5 +30,5 @@ export function ProfilePanel() {
   }
 
   if (!user) return <div className="card state" role="status">{status}</div>;
-  return <section className="card profile-card"><div className="section-heading"><div><h2>{user.profile.display_name}</h2><p>@{user.username} · {user.email}</p></div><span className="pill">{user.email_verified ? "Verified" : "Verification pending"}</span></div><form onSubmit={save}><label>Display name<input name="display_name" defaultValue={user.profile.display_name} required /></label><label>Bio<textarea name="bio" maxLength={280} defaultValue={user.profile.bio} /></label><label>Timezone<input name="timezone" defaultValue={user.profile.timezone ?? "UTC"} /></label><div className="form-actions"><button className="button">Save profile</button><button className="button secondary" type="button" onClick={logout}>Sign out</button></div>{status && <p role="status">{status}</p>}</form></section>;
+  return <section className="card profile-card"><div className="section-heading"><div><h2>{user.profile.display_name}</h2><p>@{user.username} · {user.email}</p></div><span className="pill">{user.email_verified ? "Verified" : "Verification pending"}</span></div>{user.role === "admin" && <p><Link className="button secondary" href="/admin">Open administration</Link></p>}<form onSubmit={save}><label>Display name<input name="display_name" defaultValue={user.profile.display_name} required /></label><label>Bio<textarea name="bio" maxLength={280} defaultValue={user.profile.bio} /></label><label>Timezone<input name="timezone" defaultValue={user.profile.timezone ?? "UTC"} /></label><div className="form-actions"><button className="button">Save profile</button><button className="button secondary" type="button" onClick={logout}>Sign out</button></div>{status && <p role="status">{status}</p>}</form></section>;
 }
