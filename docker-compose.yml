@@ -56,6 +56,8 @@ services:
         condition: service_healthy
       data-runner:
         condition: service_completed_successfully
+      bigdata-runner:
+        condition: service_completed_successfully
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     group_add:
@@ -68,6 +70,13 @@ services:
     build:
       context: .
       dockerfile: judge/images/data.Dockerfile
+    command: ["true"]
+    restart: "no"
+  bigdata-runner:
+    image: eklavya-bigdata-runner:latest
+    build:
+      context: .
+      dockerfile: judge/images/bigdata.Dockerfile
     command: ["true"]
     restart: "no"
   frontend:

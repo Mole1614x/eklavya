@@ -15,6 +15,10 @@ def execute_data(kind: str, source: str, input_data: str, config: dict) -> Execu
     return _specialized("eklavya-data-runner:latest", RUNNERS / "data_runner.py", "solution.py", source, input_data, {"kind": kind, **config})
 
 
+def execute_bigdata(kind: str, source: str, input_data: str, config: dict) -> Execution:
+    return _specialized("eklavya-bigdata-runner:latest", RUNNERS / "bigdata_runner.py", "solution.py", source, input_data, {"kind": kind, **config})
+
+
 def evaluate_answer(kind: str, source: str) -> Execution:
     try:
         value = float(source.strip()) if kind == "numerical" else source.strip()
