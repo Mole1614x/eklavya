@@ -194,3 +194,15 @@ select { max-width: 100%; min-height: 40px; border: 1px solid #36405a; border-ra
 .answer-options input { accent-color: var(--accent); }
 .numerical { display: grid; gap: 6px; max-width: 220px; }
 .numerical input { min-height: 40px; padding: 6px 10px; border: 1px solid #36405a; border-radius: 7px; background: var(--background); }
+
+.auth-card, .profile-card { max-width: 620px; padding: 20px; }
+.auth-tabs { display: flex; gap: 6px; margin-bottom: 18px; }
+.auth-tabs button { padding: 9px 13px; border-radius: 7px; color: var(--muted); }
+.auth-tabs button[aria-selected="true"] { color: #211607; background: var(--accent); }
+.auth-card form, .profile-card form { display: grid; gap: 13px; }
+.auth-card label, .profile-card label { display: grid; gap: 5px; color: var(--muted); font-size: 13px; }
+.auth-card input, .profile-card input, .profile-card textarea { width: 100%; min-height: 42px; padding: 8px 10px; border: 1px solid #36405a; border-radius: 7px; background: var(--background); color: var(--text); }
+.profile-card textarea { min-height: 110px; resize: vertical; }
+.form-hint, .form-error { font-size: 12px; }
+.form-error { color: #ff9e9e; }
+.form-actions { display: flex; flex-wrap: wrap; gap: 8px; }

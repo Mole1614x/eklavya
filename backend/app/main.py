@@ -1,5 +1,4 @@
 import logging
-from collections.abc import Iterator
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, FastAPI, HTTPException, Query, Request
@@ -9,7 +8,8 @@ from sqlalchemy.orm import Session as DatabaseSession
 
 from .catalog import list_problems
 from .config import settings
-from .database import Session
+from .auth_routes import router as auth_router
+from .main_dependencies import get_db
 from .models import Problem
 from .schemas import Catalog, Category, Difficulty, ProblemDetail
 
@@ -17,11 +17,6 @@ logging.basicConfig(level=settings().log_level)
 logger = logging.getLogger(__name__)
 app = FastAPI(title="EKLAVYA")
 router = APIRouter(prefix="/api/v1")
-
-
-def get_db() -> Iterator[DatabaseSession]:
-    with Session() as session:
-        yield session
 
 
 DB = Annotated[DatabaseSession, Depends(get_db)]
@@ -55,4 +50,5 @@ def problem(slug: str, db: DB) -> Problem:
     return item
 
 
+router.include_router(auth_router)
 app.include_router(router)
