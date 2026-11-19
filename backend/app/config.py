@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://eklavya:eklavya@127.0.0.1:5432/eklavya"
     log_level: str = "INFO"
     seed_file: Path = ROOT / "challenges" / "catalog.json"
+    test_seed_file: Path = ROOT / "challenges" / "tests.json"
     secret_key: str = "local-development-secret-change-before-deployment"
     access_token_minutes: int = 15
     refresh_token_days: int = 30

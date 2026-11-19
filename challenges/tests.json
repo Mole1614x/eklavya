@@ -1,0 +1,30 @@
+{
+  "parity-check": [
+    {"input_data": "2\n", "expected_output": "Even\n", "is_hidden": false, "position": 0},
+    {"input_data": "-7\n", "expected_output": "Odd\n", "is_hidden": true, "position": 1}
+  ],
+  "sum-of-digits": [
+    {"input_data": "405\n", "expected_output": "9\n", "is_hidden": false, "position": 0},
+    {"input_data": "0\n", "expected_output": "0\n", "is_hidden": true, "position": 1}
+  ],
+  "star-staircase": [
+    {"input_data": "4\n", "expected_output": "*\n**\n***\n****\n", "is_hidden": false, "position": 0},
+    {"input_data": "1\n", "expected_output": "*\n", "is_hidden": true, "position": 1}
+  ],
+  "hollow-square": [
+    {"input_data": "4\n", "expected_output": "****\n*  *\n*  *\n****\n", "is_hidden": false, "position": 0},
+    {"input_data": "2\n", "expected_output": "**\n**\n", "is_hidden": true, "position": 1}
+  ],
+  "pair-indices": [
+    {"input_data": "4 8\n3 1 5 4\n", "expected_output": "0 2\n", "is_hidden": false, "position": 0},
+    {"input_data": "3 0\n-1 3 1\n", "expected_output": "0 2\n", "is_hidden": true, "position": 1}
+  ],
+  "first-occurrence": [
+    {"input_data": "5 4\n1 2 4 4 7\n", "expected_output": "2\n", "is_hidden": false, "position": 0},
+    {"input_data": "3 2\n1 3 5\n", "expected_output": "-1\n", "is_hidden": true, "position": 1}
+  ],
+  "balanced-delimiters": [
+    {"input_data": "{[()]}\n", "expected_output": "YES\n", "is_hidden": false, "position": 0},
+    {"input_data": "([)]\n", "expected_output": "NO\n", "is_hidden": true, "position": 1}
+  ]
+}

@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from sqlalchemy import Boolean, CheckConstraint, DateTime, ForeignKey, Integer, String, Text, JSON, UniqueConstraint
+from sqlalchemy import Boolean, CheckConstraint, DateTime, Float, ForeignKey, Integer, String, Text, JSON, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .database import Base
@@ -30,6 +30,7 @@ class Problem(Base):
     starters: Mapped[list["StarterCode"]] = relationship(
         cascade="all, delete-orphan", lazy="selectin", order_by="StarterCode.language"
     )
+    test_cases: Mapped[list["TestCase"]] = relationship(cascade="all, delete-orphan", lazy="selectin")
 
 
 class StarterCode(Base):
@@ -38,6 +39,18 @@ class StarterCode(Base):
     problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="CASCADE"), primary_key=True)
     language: Mapped[str] = mapped_column(String(24), primary_key=True)
     code: Mapped[str] = mapped_column(Text)
+
+
+class TestCase(Base):
+    __tablename__ = "test_cases"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="CASCADE"), index=True)
+    input_data: Mapped[str] = mapped_column(Text, default="")
+    expected_output: Mapped[str] = mapped_column(Text)
+    is_hidden: Mapped[bool] = mapped_column(Boolean, default=True)
+    position: Mapped[int] = mapped_column(Integer, default=0)
+    tolerance: Mapped[float | None] = mapped_column(Float, nullable=True)
 
 
 def utcnow() -> datetime:
@@ -94,3 +107,27 @@ class AccountToken(Base):
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     used_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class Submission(Base):
+    __tablename__ = "submissions"
+    __table_args__ = (
+        CheckConstraint("mode IN ('RUN', 'SUBMIT')", name="submission_mode"),
+        CheckConstraint("status IN ('QUEUED', 'RUNNING', 'FINISHED', 'SYSTEM_ERROR')", name="submission_status"),
+    )
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="RESTRICT"), index=True)
+    language: Mapped[str] = mapped_column(String(24))
+    source_code: Mapped[str] = mapped_column(Text)
+    mode: Mapped[str] = mapped_column(String(8))
+    status: Mapped[str] = mapped_column(String(16), default="QUEUED")
+    verdict: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    output: Mapped[str | None] = mapped_column(Text, nullable=True)
+    execution_ms: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    memory_kb: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    passed_tests: Mapped[int] = mapped_column(Integer, default=0)
+    total_tests: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, index=True)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
