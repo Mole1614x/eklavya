@@ -31,18 +31,18 @@ for /F "usebackq tokens=1,* delims==" %%A in (".env") do (
     if /I "%%A"=="BACKEND_PORT" set "API_PORT=%%B"
 )
 
-if /I "%~1"=="judge" goto :start_judge
-if /I "%~1"=="--judge" goto :start_judge
+if /I "%~1"=="web" goto :start_web
+if /I "%~1"=="--web" goto :start_web
 
-echo Starting PostgreSQL, Redis, API, and web frontend...
-docker compose up --build -d --wait --wait-timeout 180 db redis migrate backend frontend
-if errorlevel 1 goto :start_failed
-goto :ready
-
-:start_judge
 echo Starting the complete platform, including judge workers...
 echo The scientific, Spark, and AI images may take several minutes to build.
 docker compose --profile judge up --build -d --wait --wait-timeout 300
+if errorlevel 1 goto :start_failed
+goto :ready
+
+:start_web
+echo Starting the lightweight web stack without code-execution workers...
+docker compose up --build -d --wait --wait-timeout 180 db redis migrate backend frontend
 if errorlevel 1 goto :start_failed
 
 :ready
