@@ -50,6 +50,8 @@ docker compose up --build -d --wait
 
 Open <http://localhost:3000>. The development API documentation is at <http://localhost:8000/docs>. The one-shot `migrate` service applies all migrations and idempotently seeds problems, ranks, paths, the daily challenge, and the weekly contest before the API starts.
 
+On Windows, double-click `start.bat` to create the local `.env` when needed, start the web stack, wait for readiness, and open the site. Run `start.bat judge` from Command Prompt to include all isolated judge workers and their larger runtime images.
+
 Useful commands:
 
 ```sh
