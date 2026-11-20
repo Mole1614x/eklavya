@@ -15,6 +15,7 @@ class Problem(Base):
             "format IN ('CODE', 'EXPRESSION', 'SQL_QUERY', 'NUMERICAL', 'MULTIPLE_CHOICE', 'DATASET_ANALYSIS')",
             name="problem_format",
         ),
+        Index("ix_problems_catalog", "status", "category", "difficulty", "topic", "title"),
     )
 
     slug: Mapped[str] = mapped_column(String(100), primary_key=True)
@@ -69,6 +70,7 @@ def utcnow() -> datetime:
 
 class User(Base):
     __tablename__ = "users"
+    __table_args__ = (Index("ix_users_active_created", "is_active", "created_at"),)
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     email: Mapped[str] = mapped_column(String(320), unique=True, index=True)
@@ -124,8 +126,14 @@ class Submission(Base):
     __tablename__ = "submissions"
     __table_args__ = (
         CheckConstraint("mode IN ('RUN', 'SUBMIT')", name="submission_mode"),
-        CheckConstraint("status IN ('QUEUED', 'RUNNING', 'FINISHED', 'SYSTEM_ERROR')", name="submission_status"),
-        Index("ix_submissions_user_created_at", "user_id", "created_at"),
+        CheckConstraint(
+            "status IN ('QUEUED', 'RUNNING', 'FINISHED', 'SYSTEM_ERROR', 'CANCELLED')",
+            name="submission_status",
+        ),
+        Index("ix_submissions_user_created_at", "user_id", "created_at", "id"),
+        Index("ix_submissions_status_created_at", "status", "created_at"),
+        Index("ix_submissions_problem_verdict", "problem_slug", "verdict"),
+        Index("ix_submissions_user_status_created", "user_id", "status", "created_at"),
     )
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True)
@@ -142,8 +150,10 @@ class Submission(Base):
     memory_kb: Mapped[int | None] = mapped_column(Integer, nullable=True)
     passed_tests: Mapped[int] = mapped_column(Integer, default=0)
     total_tests: Mapped[int] = mapped_column(Integer, default=0)
+    attempt_count: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, index=True)
     started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    cancel_requested_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
 
 
@@ -159,6 +169,7 @@ class RankLevel(Base):
 
 class UserProgress(Base):
     __tablename__ = "user_progress"
+    __table_args__ = (Index("ix_user_progress_leaderboard", "xp", "updated_at"),)
 
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), primary_key=True)
     xp: Mapped[int] = mapped_column(Integer, default=0)
@@ -185,6 +196,7 @@ class XPTransaction(Base):
 
 class RankHistory(Base):
     __tablename__ = "rank_history"
+    __table_args__ = (Index("ix_rank_history_user_reached", "user_id", "reached_at"),)
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
@@ -256,7 +268,10 @@ class LearningPathProblem(Base):
 
 class LearningPathProgress(Base):
     __tablename__ = "learning_path_progress"
-    __table_args__ = (UniqueConstraint("user_id", "path_slug", name="uq_learning_path_progress"),)
+    __table_args__ = (
+        UniqueConstraint("user_id", "path_slug", name="uq_learning_path_progress"),
+        Index("ix_learning_path_progress_path", "path_slug", "enrolled_at"),
+    )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)

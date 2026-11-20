@@ -11,7 +11,11 @@ XP_BY_DIFFICULTY = {"Beginner": 20, "Easy": 30, "Medium": 50, "Hard": 80}
 def award_submission(db: Session, submission: Submission) -> bool:
     if submission.mode != "SUBMIT" or submission.verdict != "ACCEPTED":
         return False
-    db.scalar(select(User.id).where(User.id == submission.user_id).with_for_update())
+    # Lock users before SQLAlchemy flushes the dirty submission row. A stable
+    # user -> submission lock order prevents concurrent accepted attempts for
+    # the same learner from deadlocking during idempotent reward finalization.
+    with db.no_autoflush:
+        db.scalar(select(User.id).where(User.id == submission.user_id).with_for_update())
     exists = db.scalar(select(XPTransaction.id).where(
         XPTransaction.user_id == submission.user_id,
         XPTransaction.source_type == "first_solve",

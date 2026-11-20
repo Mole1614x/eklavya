@@ -159,6 +159,15 @@ export function AdminConsole() {
     } catch (error) { setStatus(error instanceof Error ? error.message : "Contest review failed"); }
   }
 
+  async function recoverJudge() {
+    try {
+      setStatus("Recovering stale judge leases…");
+      const result = await api<{ recovered: number; cancelled: number; failed_to_enqueue: number }>("judge/recover-stuck", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
+      await load();
+      setStatus(`Recovered ${result.recovered}; cancelled ${result.cancelled}; enqueue failures ${result.failed_to_enqueue}.`);
+    } catch (error) { setStatus(error instanceof Error ? error.message : "Recovery failed"); }
+  }
+
   if (denied) return <section className="card state" role="alert"><h1>Administration unavailable</h1><p>{status}</p><Link className="button" href="/profile">Return to profile</Link></section>;
   if (!overview) return <section className="card state" role="status">{status}</section>;
 
@@ -174,7 +183,9 @@ export function AdminConsole() {
         ["Users", overview.total_users], ["Active users", overview.active_users], ["Problems", overview.total_problems],
         ["Submissions", overview.total_submissions], ["Accepted", overview.accepted_submissions], ["Failed", overview.failed_submissions],
         ["Active contests", overview.active_contests], ["Judge queue", Number(overview.queued_submissions) + Number(overview.running_submissions)],
+        ["Stuck tasks", overview.stuck_submissions], ["Cancelled", overview.cancelled_submissions],
       ].map(([label, value]) => <article className="card admin-metric" key={String(label)}><p>{String(label)}</p><strong>{Number(value)}</strong></article>)}</section>
+      {Number(overview.stuck_submissions) > 0 && <button className="button" onClick={() => void recoverJudge()}>Recover stale judge tasks</button>}
       <section className="card admin-chart"><div className="section-heading"><div><h2>Platform activity</h2><p>Verified submission volume over the latest active days</p></div></div><div className="activity-bars">{trend.map((item) => <div key={item.day}><span style={{ height: `${Math.max(6, item.count / maxTrend * 100)}%` }} title={`${item.day}: ${item.count}`} /><small>{item.day.slice(5)}</small></div>)}</div></section>
       <section className="card admin-table"><h2>Recent registrations</h2><table><thead><tr><th>User</th><th>Display name</th><th>Registered</th></tr></thead><tbody>{(overview.recent_registrations as Array<{ username: string; display_name: string; created_at: string }>).map((item) => <tr key={item.username}><td>@{item.username}</td><td>{item.display_name}</td><td>{formatDate(item.created_at)}</td></tr>)}</tbody></table></section>
     </div>}

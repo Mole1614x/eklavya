@@ -54,6 +54,11 @@ services:
       RATE_LIMIT_ENABLED: ${RATE_LIMIT_ENABLED:-false}
       READINESS_CHECK_REDIS: ${READINESS_CHECK_REDIS:-false}
       DATASET_STORAGE_DIR: /var/lib/eklavya/datasets
+      DATABASE_POOL_SIZE: ${DATABASE_POOL_SIZE:-10}
+      DATABASE_MAX_OVERFLOW: ${DATABASE_MAX_OVERFLOW:-20}
+      DATABASE_POOL_TIMEOUT_SECONDS: ${DATABASE_POOL_TIMEOUT_SECONDS:-10}
+      PUBLIC_CACHE_SECONDS: ${PUBLIC_CACHE_SECONDS:-30}
+      JUDGE_STUCK_SECONDS: ${JUDGE_STUCK_SECONDS:-60}
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -82,6 +87,10 @@ services:
       DATABASE_URL: ${COMPOSE_DATABASE_URL:-postgresql+psycopg://eklavya:eklavya@db:5432/eklavya}
       REDIS_URL: redis://redis:6379/0
       DATASET_STORAGE_DIR: /var/lib/eklavya/datasets
+      DATABASE_POOL_SIZE: ${JUDGE_DATABASE_POOL_SIZE:-4}
+      DATABASE_MAX_OVERFLOW: ${JUDGE_DATABASE_MAX_OVERFLOW:-4}
+      DATABASE_POOL_TIMEOUT_SECONDS: ${DATABASE_POOL_TIMEOUT_SECONDS:-10}
+      JUDGE_STUCK_SECONDS: ${JUDGE_STUCK_SECONDS:-60}
     profiles: ["judge"]
     depends_on:
       migrate:

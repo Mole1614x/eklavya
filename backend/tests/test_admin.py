@@ -10,7 +10,8 @@ from app.config import settings
 from app.database import Base
 from app.main import app
 from app.main_dependencies import get_db
-from app.models import AuditLog, Contest, ContestRating, ManagedDataset, User
+from app.judge_client import get_enqueuer
+from app.models import AuditLog, Contest, ContestRating, ManagedDataset, Submission, User
 from app.seed import seed
 
 
@@ -30,6 +31,7 @@ def admin_client(tmp_path):
     settings().dataset_storage_dir = tmp_path / "private-datasets"
     settings().dataset_max_bytes = 2048
     app.dependency_overrides[get_db] = override
+    app.dependency_overrides[get_enqueuer] = lambda: lambda submission_id: None
     try:
         with TestClient(app) as client:
             tokens = {}
@@ -208,3 +210,25 @@ def test_contest_path_achievement_and_finalized_result_controls(admin_client):
     ).status_code == 409
     logs = client.get("/api/v1/admin/audit-logs", headers=headers["admin"]).json()
     assert {item["target_type"] for item in logs} >= {"contest", "learning_path", "achievement"}
+
+
+def test_stuck_judge_recovery_is_audited_and_idempotent(admin_client):
+    client, engine, headers, _ = admin_client
+    with Session(engine) as db:
+        admin = db.scalar(select(User).where(User.username == "admin"))
+        db.add(Submission(
+            id="stuck-admin-recovery", user_id=admin.id, problem_slug="parity-check",
+            language="python", source_code="print('Even')", mode="SUBMIT",
+            status="RUNNING", attempt_count=1,
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=5),
+        ))
+        db.commit()
+    recovered = client.post("/api/v1/admin/judge/recover-stuck", headers=headers["admin"], json={})
+    assert recovered.status_code == 200
+    assert recovered.json() == {"recovered": 1, "cancelled": 0, "failed_to_enqueue": 0}
+    assert client.post(
+        "/api/v1/admin/judge/recover-stuck", headers=headers["admin"], json={},
+    ).json()["recovered"] == 0
+    with Session(engine) as db:
+        assert db.get(Submission, "stuck-admin-recovery").status == "QUEUED"
+        assert db.scalar(select(AuditLog.id).where(AuditLog.action == "judge.recover_stuck")) is not None

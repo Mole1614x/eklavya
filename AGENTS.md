@@ -9,3 +9,5 @@
 - Keep evaluation datasets outside public routes. Validate size, name, type, and content before private storage; multi-host deployments must use private object storage rather than a shared public filesystem.
 - Keep feature work scoped, preserve existing changes, and run backend/judge tests, migration cycles, frontend typecheck/build, and relevant Playwright flows before proposing a PR.
 - Treat the Docker socket as a critical infrastructure boundary and document any change to the sandbox threat model.
+- Keep load tests bounded and pointed at disposable infrastructure. Report p50/p95/p99, errors, environment, and blocked workloads; never infer production capacity from a short local run.
+- Preserve judge idempotency and the user-before-submission finalization lock order. Retry database-operational failures only after rollback and lease reset; never award progression before verified evaluation commits.

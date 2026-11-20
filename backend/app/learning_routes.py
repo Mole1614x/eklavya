@@ -6,6 +6,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from .auth import CurrentUser
+from .cache import cache_key, get_public, set_public
 from .learning import current_streak
 from .main_dependencies import get_db
 from .models import (
@@ -39,8 +40,14 @@ def daily_history(user: CurrentUser, db: DB) -> dict:
 
 @router.get("/paths")
 def paths(db: DB) -> list[dict]:
+    key = cache_key("learning", "paths")
+    cached = get_public(key)
+    if cached is not None:
+        return cached
     counts = dict(db.execute(select(LearningPathProblem.path_slug, func.count()).group_by(LearningPathProblem.path_slug)).all())
-    return [{"slug": item.slug, "title": item.title, "description": item.description, "prerequisites": item.prerequisites, "problem_count": counts.get(item.slug, 0)} for item in db.scalars(select(LearningPath).where(LearningPath.status == "PUBLISHED").order_by(LearningPath.title))]
+    result = [{"slug": item.slug, "title": item.title, "description": item.description, "prerequisites": item.prerequisites, "problem_count": counts.get(item.slug, 0)} for item in db.scalars(select(LearningPath).where(LearningPath.status == "PUBLISHED").order_by(LearningPath.title))]
+    set_public(key, result)
+    return result
 
 
 @router.get("/paths/{slug}")

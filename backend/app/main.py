@@ -5,16 +5,17 @@ from fastapi import APIRouter, Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, PlainTextResponse
 from redis import Redis
-from sqlalchemy import text
+from sqlalchemy import func, select, text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session as DatabaseSession
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from .catalog import list_problems
+from .cache import cache_key, get_public, set_public
 from .config import settings
 from .auth_routes import router as auth_router
 from .main_dependencies import get_db
-from .models import Problem
+from .models import Problem, Submission
 from .schemas import Catalog, Category, Difficulty, ProblemDetail
 from .submission_routes import router as submission_router
 from .gamification_routes import router as gamification_router
@@ -81,8 +82,34 @@ def readiness(db: DB) -> dict[str, str]:
 
 
 @router.get("/metrics", include_in_schema=False)
-def prometheus_metrics() -> PlainTextResponse:
-    return PlainTextResponse(metrics.render(), media_type="text/plain; version=0.0.4")
+def prometheus_metrics(db: DB) -> PlainTextResponse:
+    try:
+        states = dict(db.execute(select(Submission.status, func.count()).group_by(Submission.status)).all())
+        recent = list(db.scalars(select(Submission).order_by(Submission.created_at.desc()).limit(500)))
+    except SQLAlchemyError:
+        db.rollback()
+        states, recent = {}, []
+        logger.warning("submission_metrics_unavailable")
+    queue_seconds = [
+        (item.started_at - item.created_at).total_seconds()
+        for item in recent if item.started_at is not None
+    ]
+    execution_seconds = [item.execution_ms / 1000 for item in recent if item.execution_ms is not None]
+    judge_metrics = (
+        "# HELP eklavya_submissions Current submissions by lifecycle state.\n"
+        "# TYPE eklavya_submissions gauge\n"
+        + "".join(
+            f'eklavya_submissions{{status="{state}"}} {states.get(state, 0)}\n'
+            for state in ("QUEUED", "RUNNING", "FINISHED", "SYSTEM_ERROR", "CANCELLED")
+        )
+        + "# HELP eklavya_submission_queue_seconds Average recent queue wait.\n"
+        "# TYPE eklavya_submission_queue_seconds gauge\n"
+        f"eklavya_submission_queue_seconds {sum(queue_seconds) / len(queue_seconds) if queue_seconds else 0:.6f}\n"
+        "# HELP eklavya_submission_execution_seconds Average recent isolated execution duration.\n"
+        "# TYPE eklavya_submission_execution_seconds gauge\n"
+        f"eklavya_submission_execution_seconds {sum(execution_seconds) / len(execution_seconds) if execution_seconds else 0:.6f}\n"
+    )
+    return PlainTextResponse(metrics.render() + judge_metrics, media_type="text/plain; version=0.0.4")
 
 
 @router.get("/problems", response_model=Catalog)
@@ -91,15 +118,27 @@ def problems(
     difficulty: Difficulty | None = None, topic: Annotated[str | None, Query(max_length=80)] = None,
     limit: Annotated[int, Query(ge=1, le=100)] = 50, offset: Annotated[int, Query(ge=0)] = 0,
 ) -> Catalog:
-    return list_problems(db, q, category, difficulty, topic, limit, offset)
+    key = cache_key("catalog", q.strip().lower(), category, difficulty, topic, limit, offset)
+    cached = get_public(key)
+    if cached is not None:
+        return Catalog.model_validate(cached)
+    catalog = list_problems(db, q, category, difficulty, topic, limit, offset)
+    set_public(key, catalog.model_dump(mode="json"))
+    return catalog
 
 
 @router.get("/problems/{slug}", response_model=ProblemDetail)
-def problem(slug: str, db: DB) -> Problem:
+def problem(slug: str, db: DB) -> ProblemDetail:
+    key = cache_key("problem", slug)
+    cached = get_public(key)
+    if cached is not None:
+        return ProblemDetail.model_validate(cached)
     item = db.get(Problem, slug)
     if item is None or item.status != "PUBLISHED":
         raise HTTPException(status_code=404, detail="Problem not found")
-    return item
+    detail = ProblemDetail.model_validate(item)
+    set_public(key, detail.model_dump(mode="json"))
+    return detail
 
 
 router.include_router(auth_router)
