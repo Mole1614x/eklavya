@@ -4,7 +4,7 @@ import csv
 import hashlib
 import io
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Annotated
 from uuid import uuid4
@@ -15,8 +15,10 @@ from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session
 
 from .auth import require_admin
+from .cache import invalidate_public
 from .config import settings
 from .main_dependencies import get_db
+from .judge_client import Enqueuer
 from .models import (
     Achievement, AuditLog, Contest, ContestProblem, ContestRating, ContestRegistration,
     ContestSubmission, LearningPath, LearningPathProblem, LearningPathProgress, ManagedDataset,
@@ -29,7 +31,7 @@ from .schemas_admin import (
     AdminDatasetRead, AdminOverview, AdminPathRead, AdminPathWrite, AdminProblemDetail,
     AdminProblemRead, AdminProblemWrite, AdminRankHistoryRead, AdminUserRead,
     AdminXPTransactionRead, AuditLogRead, ContestStatusUpdate, DatasetStatusUpdate, DatasetUpload,
-    ProblemStatusUpdate, UserStatusUpdate,
+    JudgeRecoveryRead, ProblemStatusUpdate, UserStatusUpdate,
 )
 from .contest_routes import calculate_standings
 
@@ -69,6 +71,15 @@ def overview(db: DB, admin: Admin) -> dict:
         select(User, Profile).join(Profile, Profile.user_id == User.id)
         .order_by(User.created_at.desc()).limit(8)
     ).all()
+    recent_submissions = list(db.scalars(
+        select(Submission).where(Submission.started_at.is_not(None)).order_by(Submission.created_at.desc()).limit(500)
+    ))
+    queue_ms = [
+        (item.started_at - item.created_at).total_seconds() * 1000
+        for item in recent_submissions if item.started_at is not None
+    ]
+    execution_ms = [item.execution_ms for item in recent_submissions if item.execution_ms is not None]
+    stuck_before = now - timedelta(seconds=settings().judge_stuck_seconds)
     return {
         "total_users": db.scalar(select(func.count(User.id))) or 0,
         "active_users": db.scalar(select(func.count(User.id)).where(User.is_active.is_(True))) or 0,
@@ -82,6 +93,12 @@ def overview(db: DB, admin: Admin) -> dict:
         )) or 0,
         "queued_submissions": db.scalar(select(func.count(Submission.id)).where(Submission.status == "QUEUED")) or 0,
         "running_submissions": db.scalar(select(func.count(Submission.id)).where(Submission.status == "RUNNING")) or 0,
+        "stuck_submissions": db.scalar(select(func.count(Submission.id)).where(
+            Submission.status == "RUNNING", Submission.started_at < stuck_before,
+        )) or 0,
+        "cancelled_submissions": db.scalar(select(func.count(Submission.id)).where(Submission.status == "CANCELLED")) or 0,
+        "average_queue_ms": round(sum(queue_ms) / len(queue_ms), 2) if queue_ms else None,
+        "average_execution_ms": round(sum(execution_ms) / len(execution_ms), 2) if execution_ms else None,
         "registration_trend": [{"day": str(day), "count": count} for day, count in reversed(registrations)],
         "submission_trend": [{"day": str(day), "count": count} for day, count in reversed(submissions)],
         "recent_registrations": [
@@ -89,6 +106,50 @@ def overview(db: DB, admin: Admin) -> dict:
             for user, profile in recent
         ],
     }
+
+
+@router.post("/judge/recover-stuck", response_model=JudgeRecoveryRead)
+def recover_stuck_submissions(
+    request: Request, db: DB, admin: Admin, enqueue: Enqueuer,
+) -> dict:
+    cutoff = datetime.now(timezone.utc) - timedelta(seconds=settings().judge_stuck_seconds)
+    items = list(db.scalars(
+        select(Submission).where(
+            Submission.status == "RUNNING", Submission.started_at < cutoff,
+        ).order_by(Submission.started_at).limit(100).with_for_update(skip_locked=True)
+    ))
+    requeue: list[str] = []
+    cancelled = 0
+    for item in items:
+        if item.cancel_requested_at is not None:
+            item.status = "CANCELLED"
+            item.verdict = "CANCELLED"
+            item.output = "Submission cancelled during stuck-task recovery."
+            item.finished_at = datetime.now(timezone.utc)
+            cancelled += 1
+        else:
+            item.status = "QUEUED"
+            item.started_at = None
+            requeue.append(item.id)
+    if items:
+        record_audit(db, request, admin, "judge.recover_stuck", "submission_batch", "stuck", {
+            "requeued": len(requeue), "cancelled": cancelled,
+        })
+    db.commit()
+    failed = 0
+    for submission_id in requeue:
+        try:
+            enqueue(submission_id)
+        except Exception:
+            failed += 1
+            item = db.get(Submission, submission_id)
+            if item is not None and item.status == "QUEUED":
+                item.status = "SYSTEM_ERROR"
+                item.verdict = "SYSTEM_ERROR"
+                item.output = "The judge queue was unavailable during recovery."
+                item.finished_at = datetime.now(timezone.utc)
+                db.commit()
+    return {"recovered": len(requeue), "cancelled": cancelled, "failed_to_enqueue": failed}
 
 
 def problem_summary(problem: Problem) -> dict:
@@ -163,6 +224,7 @@ def save_problem(slug: str, payload: AdminProblemWrite, request: Request, db: DB
         db.merge(ProblemEvaluator(problem_slug=slug, **payload.evaluator.model_dump()))
     record_audit(db, request, admin, action, "problem", slug, {"status": payload.status})
     db.commit()
+    invalidate_public("catalog", "problem")
     return admin_problem(slug, db, admin)
 
 
@@ -181,6 +243,7 @@ def set_problem_status(
         "from": previous, "to": payload.status, "reason": payload.reason,
     })
     db.commit()
+    invalidate_public("catalog", "problem")
     return problem_summary(problem)
 
 
@@ -347,21 +410,38 @@ def set_user_status(
     return user_detail(user_id, db, admin)
 
 
-def contest_summary(db: Session, contest: Contest) -> dict:
+def contest_summary(db: Session, contest: Contest, counts: tuple[int, int, int] | None = None) -> dict:
+    if counts is None:
+        counts = (
+            db.scalar(select(func.count(ContestRegistration.id)).where(ContestRegistration.contest_id == contest.id)) or 0,
+            db.scalar(select(func.count(ContestSubmission.id)).where(ContestSubmission.contest_id == contest.id)) or 0,
+            db.scalar(select(func.count(ContestProblem.problem_slug)).where(ContestProblem.contest_id == contest.id)) or 0,
+        )
     return {
         "slug": contest.slug, "title": contest.title, "starts_at": contest.starts_at,
         "ends_at": contest.ends_at, "is_rated": contest.is_rated,
         "publication_status": contest.publication_status,
-        "registrations": db.scalar(select(func.count(ContestRegistration.id)).where(ContestRegistration.contest_id == contest.id)) or 0,
-        "submissions": db.scalar(select(func.count(ContestSubmission.id)).where(ContestSubmission.contest_id == contest.id)) or 0,
-        "problem_count": db.scalar(select(func.count(ContestProblem.problem_slug)).where(ContestProblem.contest_id == contest.id)) or 0,
+        "registrations": counts[0], "submissions": counts[1], "problem_count": counts[2],
     }
 
 
 @router.get("/contests", response_model=list[AdminContestRead])
 def admin_contests(db: DB, admin: Admin) -> list[dict]:
     del admin
-    return [contest_summary(db, contest) for contest in db.scalars(select(Contest).order_by(Contest.starts_at.desc()).limit(100))]
+    registrations = select(func.count(ContestRegistration.id)).where(
+        ContestRegistration.contest_id == Contest.id,
+    ).correlate(Contest).scalar_subquery()
+    submissions = select(func.count(ContestSubmission.id)).where(
+        ContestSubmission.contest_id == Contest.id,
+    ).correlate(Contest).scalar_subquery()
+    problems = select(func.count(ContestProblem.problem_slug)).where(
+        ContestProblem.contest_id == Contest.id,
+    ).correlate(Contest).scalar_subquery()
+    rows = db.execute(select(Contest, registrations, submissions, problems).order_by(
+        Contest.starts_at.desc(), Contest.id,
+    ).limit(100)).all()
+    return [contest_summary(db, contest, (registration_count, submission_count, problem_count))
+            for contest, registration_count, submission_count, problem_count in rows]
 
 
 def managed_contest(db: Session, slug: str) -> Contest:
@@ -456,6 +536,7 @@ def save_contest(slug: str, payload: AdminContestWrite, request: Request, db: DB
         ))
     record_audit(db, request, admin, action, "contest", slug, {"status": payload.publication_status})
     db.commit()
+    invalidate_public("contest")
     return contest_summary(db, contest)
 
 
@@ -481,22 +562,35 @@ def set_contest_status(
         "from": previous, "to": payload.status, "reason": payload.reason,
     })
     db.commit()
+    invalidate_public("contest")
     return contest_summary(db, contest)
 
 
-def path_summary(db: Session, path: LearningPath) -> dict:
+def path_summary(db: Session, path: LearningPath, counts: tuple[int, int] | None = None) -> dict:
+    if counts is None:
+        counts = (
+            db.scalar(select(func.count(LearningPathProblem.problem_slug)).where(LearningPathProblem.path_slug == path.slug)) or 0,
+            db.scalar(select(func.count(LearningPathProgress.id)).where(LearningPathProgress.path_slug == path.slug)) or 0,
+        )
     return {
         "slug": path.slug, "title": path.title, "status": path.status,
         "prerequisites": path.prerequisites,
-        "problem_count": db.scalar(select(func.count(LearningPathProblem.problem_slug)).where(LearningPathProblem.path_slug == path.slug)) or 0,
-        "enrollments": db.scalar(select(func.count(LearningPathProgress.id)).where(LearningPathProgress.path_slug == path.slug)) or 0,
+        "problem_count": counts[0], "enrollments": counts[1],
     }
 
 
 @router.get("/paths", response_model=list[AdminPathRead])
 def admin_paths(db: DB, admin: Admin) -> list[dict]:
     del admin
-    return [path_summary(db, path) for path in db.scalars(select(LearningPath).order_by(LearningPath.title))]
+    problems = select(func.count(LearningPathProblem.problem_slug)).where(
+        LearningPathProblem.path_slug == LearningPath.slug,
+    ).correlate(LearningPath).scalar_subquery()
+    enrollments = select(func.count(LearningPathProgress.id)).where(
+        LearningPathProgress.path_slug == LearningPath.slug,
+    ).correlate(LearningPath).scalar_subquery()
+    rows = db.execute(select(LearningPath, problems, enrollments).order_by(LearningPath.title)).all()
+    return [path_summary(db, path, (problem_count, enrollment_count))
+            for path, problem_count, enrollment_count in rows]
 
 
 @router.put("/paths/{slug}", response_model=AdminPathRead)
@@ -528,23 +622,30 @@ def save_path(slug: str, payload: AdminPathWrite, request: Request, db: DB, admi
         ))
     record_audit(db, request, admin, action, "learning_path", slug, {"status": payload.status})
     db.commit()
+    invalidate_public("learning")
     return path_summary(db, path)
 
 
-def achievement_summary(db: Session, achievement: Achievement) -> dict:
+def achievement_summary(db: Session, achievement: Achievement, awarded_count: int | None = None) -> dict:
+    if awarded_count is None:
+        awarded_count = db.scalar(select(func.count(UserAchievement.id)).where(
+            UserAchievement.achievement_slug == achievement.slug,
+        )) or 0
     return {
         "slug": achievement.slug, "name": achievement.name, "description": achievement.description,
         "criteria": achievement.criteria, "xp_reward": achievement.xp_reward,
-        "awarded_count": db.scalar(select(func.count(UserAchievement.id)).where(
-            UserAchievement.achievement_slug == achievement.slug,
-        )) or 0,
+        "awarded_count": awarded_count,
     }
 
 
 @router.get("/achievements", response_model=list[AdminAchievementRead])
 def admin_achievements(db: DB, admin: Admin) -> list[dict]:
     del admin
-    return [achievement_summary(db, item) for item in db.scalars(select(Achievement).order_by(Achievement.name))]
+    awarded = select(func.count(UserAchievement.id)).where(
+        UserAchievement.achievement_slug == Achievement.slug,
+    ).correlate(Achievement).scalar_subquery()
+    rows = db.execute(select(Achievement, awarded).order_by(Achievement.name)).all()
+    return [achievement_summary(db, item, awarded_count) for item, awarded_count in rows]
 
 
 @router.put("/achievements/{slug}", response_model=AdminAchievementRead)

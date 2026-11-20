@@ -5,6 +5,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from .auth import CurrentUser
+from .cache import cache_key, get_public, set_public
 from .main_dependencies import get_db
 from .models import (
     Achievement, Profile, RankLevel, Submission, User, UserAchievement, UserProgress, XPTransaction,
@@ -20,13 +21,22 @@ def ranks(db: DB) -> list[dict]:
 
 
 @router.get("/leaderboard")
-def leaderboard(db: DB, limit: Annotated[int, Query(ge=1, le=100)] = 50) -> list[dict]:
+def leaderboard(
+    db: DB, limit: Annotated[int, Query(ge=1, le=100)] = 50,
+    offset: Annotated[int, Query(ge=0, le=100_000)] = 0,
+) -> list[dict]:
+    key = cache_key("leaderboard", limit, offset)
+    cached = get_public(key)
+    if cached is not None:
+        return cached
     rows = db.execute(select(User.username, Profile.display_name, UserProgress.xp, UserProgress.solved_count, RankLevel.name, RankLevel.stars).join(
         Profile, Profile.user_id == User.id,
     ).join(UserProgress, UserProgress.user_id == User.id).join(
         RankLevel, RankLevel.slug == UserProgress.current_rank_slug,
-    ).where(User.is_active.is_(True)).order_by(UserProgress.xp.desc(), UserProgress.updated_at, User.id).limit(limit))
-    return [{"position": index, "username": row.username, "display_name": row.display_name, "xp": row.xp, "solved_count": row.solved_count, "rank": row.name, "stars": row.stars} for index, row in enumerate(rows, 1)]
+    ).where(User.is_active.is_(True)).order_by(UserProgress.xp.desc(), UserProgress.updated_at, User.id).limit(limit).offset(offset))
+    result = [{"position": index, "username": row.username, "display_name": row.display_name, "xp": row.xp, "solved_count": row.solved_count, "rank": row.name, "stars": row.stars} for index, row in enumerate(rows, offset + 1)]
+    set_public(key, result)
+    return result
 
 
 @router.get("/dashboard")

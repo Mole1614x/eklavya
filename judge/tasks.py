@@ -2,8 +2,10 @@ import json
 from datetime import datetime, timedelta, timezone
 
 from sqlalchemy import select
+from sqlalchemy.exc import OperationalError
 
 from backend.app.database import Session
+from backend.app.cache import invalidate_public
 from backend.app.models import ProblemEvaluator, Submission, TestCase
 from backend.app.gamification import award_submission
 from backend.app.learning import record_daily_completion
@@ -12,19 +14,25 @@ from judge.executor import execute, outputs_match
 from judge.specialized import evaluate_answer, execute_ai, execute_bigdata, execute_data, execute_sql, extract_result, structured_match
 
 
-@app.task(name="judge.evaluate")
-def evaluate(submission_id: str) -> None:
+@app.task(name="judge.evaluate", bind=True, max_retries=2)
+def evaluate(self, submission_id: str) -> None:
     with Session() as db:
         submission = db.scalar(select(Submission).where(Submission.id == submission_id).with_for_update())
         now = datetime.now(timezone.utc)
-        if submission is None or submission.status in {"FINISHED", "SYSTEM_ERROR"}:
+        if submission is None or submission.status in {"FINISHED", "SYSTEM_ERROR", "CANCELLED"}:
+            return
+        if submission.cancel_requested_at is not None:
+            _cancel(submission, now)
+            db.commit()
             return
         if submission.status == "RUNNING" and submission.started_at is not None:
             started_at = submission.started_at if submission.started_at.tzinfo else submission.started_at.replace(tzinfo=timezone.utc)
             if started_at > now - timedelta(seconds=45):
-                return
+                delay = max(1, 46 - int((now - started_at).total_seconds()))
+                raise self.retry(countdown=delay)
         submission.status = "RUNNING"
         submission.started_at = now
+        submission.attempt_count += 1
         submission.passed_tests = 0
         db.commit()
         try:
@@ -53,6 +61,11 @@ def evaluate(submission_id: str) -> None:
                 else:
                     result = execute_data(evaluator.kind, submission.source_code, case.input_data, evaluator.config)
                 total_ms += result.execution_ms
+                db.refresh(submission, attribute_names=["status", "cancel_requested_at"])
+                if submission.cancel_requested_at is not None or submission.status == "CANCELLED":
+                    _cancel(submission)
+                    db.commit()
+                    return
                 if result.verdict != "COMPLETED":
                     _finish(submission, result.verdict, result.output, total_ms)
                     db.commit()
@@ -77,12 +90,26 @@ def evaluate(submission_id: str) -> None:
             award_submission(db, submission)
             record_daily_completion(db, submission)
             db.commit()
+            invalidate_public("leaderboard", "contest")
+        except OperationalError as error:
+            db.rollback()
+            retry_submission = db.scalar(
+                select(Submission).where(Submission.id == submission_id).with_for_update()
+            )
+            if retry_submission is not None and retry_submission.status == "RUNNING":
+                retry_submission.status = "QUEUED"
+                retry_submission.started_at = None
+                db.commit()
+            raise self.retry(exc=error, countdown=1)
         except Exception:
-            submission.status = "SYSTEM_ERROR"
-            submission.verdict = "SYSTEM_ERROR"
-            submission.output = "The judge could not evaluate this submission."
-            submission.finished_at = datetime.now(timezone.utc)
-            db.commit()
+            db.rollback()
+            failed = db.scalar(select(Submission).where(Submission.id == submission_id).with_for_update())
+            if failed is not None and failed.status not in {"FINISHED", "SYSTEM_ERROR", "CANCELLED"}:
+                failed.status = "SYSTEM_ERROR"
+                failed.verdict = "SYSTEM_ERROR"
+                failed.output = "The judge could not evaluate this submission."
+                failed.finished_at = datetime.now(timezone.utc)
+                db.commit()
             raise
 
 
@@ -92,3 +119,10 @@ def _finish(submission: Submission, verdict: str, output: str, execution_ms: int
     submission.output = output[:64_000]
     submission.execution_ms = execution_ms
     submission.finished_at = datetime.now(timezone.utc)
+
+
+def _cancel(submission: Submission, now: datetime | None = None) -> None:
+    submission.status = "CANCELLED"
+    submission.verdict = "CANCELLED"
+    submission.output = "Submission cancelled by the user."
+    submission.finished_at = now or datetime.now(timezone.utc)

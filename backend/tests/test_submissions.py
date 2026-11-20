@@ -49,6 +49,22 @@ def test_submission_is_queued_and_source_is_not_returned(submission_client):
         assert db.scalar(select(Submission)).source_code == "print('Even')"
 
 
+def test_submission_pagination_and_queue_cancellation(submission_client):
+    client, _, headers = submission_client
+    first = client.post("/api/v1/problems/parity-check/submissions", headers=headers, json={
+        "language": "python", "source_code": "print('Even')", "mode": "SUBMIT",
+    }).json()
+    second = client.post("/api/v1/problems/parity-check/submissions", headers=headers, json={
+        "language": "python", "source_code": "print('Odd')", "mode": "RUN",
+    }).json()
+    page = client.get("/api/v1/submissions?limit=1&offset=1", headers=headers).json()
+    assert [item["id"] for item in page] == [first["id"]]
+    cancelled = client.post(f"/api/v1/submissions/{second['id']}/cancel", headers=headers)
+    assert cancelled.status_code == 200
+    assert (cancelled.json()["status"], cancelled.json()["verdict"]) == ("CANCELLED", "CANCELLED")
+    assert client.post(f"/api/v1/submissions/{second['id']}/cancel", headers=headers).status_code == 409
+
+
 def test_language_ownership_and_hidden_test_isolation(submission_client):
     client, _, headers = submission_client
     assert client.post("/api/v1/problems/parity-check/submissions", headers=headers, json={"language": "ruby", "source_code": "puts 1"}).status_code == 422

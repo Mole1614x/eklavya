@@ -31,9 +31,19 @@ class AdminOverview(BaseModel):
     active_contests: int
     queued_submissions: int
     running_submissions: int
+    stuck_submissions: int
+    cancelled_submissions: int
+    average_queue_ms: float | None
+    average_execution_ms: float | None
     registration_trend: list[TrendPoint]
     submission_trend: list[TrendPoint]
     recent_registrations: list[RecentRegistration]
+
+
+class JudgeRecoveryRead(BaseModel):
+    recovered: int
+    cancelled: int
+    failed_to_enqueue: int
 
 
 class AdminStarterWrite(BaseModel):

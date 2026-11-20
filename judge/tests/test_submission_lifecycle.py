@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta, timezone
+
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -80,4 +82,43 @@ def test_hidden_failure_is_masked_and_never_awards_xp(tmp_path, monkeypatch):
         assert submission.output == "A hidden test case did not match the expected output."
         assert db.get(UserProgress, user_id) is None
         assert db.scalar(select(XPTransaction.id).where(XPTransaction.user_id == user_id)) is None
+    engine.dispose()
+
+
+def test_cancelled_delivery_never_executes_or_awards(tmp_path, monkeypatch):
+    engine, user_id = lifecycle_database(tmp_path)
+    monkeypatch.setattr(tasks, "Session", sessionmaker(engine))
+    monkeypatch.setattr(tasks, "execute", lambda *args: (_ for _ in ()).throw(AssertionError("must not execute")))
+    with Session(engine) as db:
+        db.add(Submission(
+            id="cancelled-before-start", user_id=user_id, problem_slug="parity-check",
+            language="python", source_code="print('Even')", mode="SUBMIT",
+            cancel_requested_at=datetime.now(timezone.utc),
+        ))
+        db.commit()
+    tasks.evaluate.run("cancelled-before-start")
+    with Session(engine) as db:
+        item = db.get(Submission, "cancelled-before-start")
+        assert (item.status, item.verdict, item.attempt_count) == ("CANCELLED", "CANCELLED", 0)
+        assert db.get(UserProgress, user_id) is None
+    engine.dispose()
+
+
+def test_stale_worker_lease_is_reclaimed_safely(tmp_path, monkeypatch):
+    engine, user_id = lifecycle_database(tmp_path)
+    monkeypatch.setattr(tasks, "Session", sessionmaker(engine))
+    monkeypatch.setattr(tasks, "execute", lambda language, source, value: Execution(
+        "COMPLETED", "Even\n" if int(value) % 2 == 0 else "Odd\n", 3,
+    ))
+    with Session(engine) as db:
+        db.add(Submission(
+            id="stale", user_id=user_id, problem_slug="parity-check", language="python",
+            source_code="verified", mode="SUBMIT", status="RUNNING", attempt_count=1,
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=2),
+        ))
+        db.commit()
+    tasks.evaluate.run("stale")
+    with Session(engine) as db:
+        item = db.get(Submission, "stale")
+        assert (item.status, item.verdict, item.attempt_count) == ("FINISHED", "ACCEPTED", 2)
     engine.dispose()

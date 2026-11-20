@@ -17,6 +17,9 @@ export async function GET(request: NextRequest, context: { params: Promise<{ seg
 
 export async function POST(request: NextRequest, context: { params: Promise<{ segments?: string[] }> }) {
   const segments = (await context.params).segments ?? [];
+  if (segments[0] && segments[1] === "cancel") {
+    return authorized(request, `/submissions/${encodeURIComponent(segments[0])}/cancel`, { method: "POST" });
+  }
   if (segments[0] !== "problem" || !segments[1]) return NextResponse.json({ detail: "Problem is required" }, { status: 404 });
   return authorized(request, `/problems/${encodeURIComponent(segments[1])}/submissions`, {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(await request.json()),

@@ -15,6 +15,7 @@ EKLAVYA is a full-stack learning and competitive-practice platform for programmi
 - Verified XP transactions, six Maharathi ranks, Veer achievements, leaderboards, insights, Daily Sadhana streaks, and 14 Vidya Paths.
 - Timed Arena registration, problem embargoes, contest-scoped submissions, ICPC-style penalties, rating history, and idempotent finalization.
 - A database-authorized admin control center for problems, private datasets, users, contests, paths, achievements, XP/rank review, and append-only action history.
+- Bounded public-data caching, explicit database pools, indexed/paginated hot paths, judge leases/cancellation/recovery, and measured load-test tooling.
 - Production configuration validation, allowlisted hosts/origins, security headers, Redis rate limits, request IDs, JSON logs, health probes, metrics, hardened containers, and an Nginx deployment edge.
 
 ## Architecture
@@ -110,6 +111,9 @@ The root `.env.example` documents development defaults. Important production set
 | `READINESS_CHECK_REDIS` | Includes Redis in readiness checks |
 | `DATASET_STORAGE_DIR` | Private mounted storage for hidden administrator datasets |
 | `DATASET_MAX_BYTES` | Maximum accepted administrator dataset upload size |
+| `DATABASE_POOL_SIZE`, `DATABASE_MAX_OVERFLOW` | Per-process PostgreSQL pool budget |
+| `PUBLIC_CACHE_SECONDS` | Shared Redis TTL for public, non-user-specific responses |
+| `JUDGE_STUCK_SECONDS` | Age at which an administrator may recover a running judge lease |
 
 Starting the API with `ENVIRONMENT=production` and a development secret, wildcard origin, or wildcard host fails immediately.
 
@@ -158,6 +162,16 @@ alembic upgrade head
 ```
 
 CI additionally validates every Dockerfile and smoke-tests the core Compose stack. Heavy evaluator images are profile-gated so routine pull requests do not repeatedly download Spark and PyTorch, while their Dockerfiles and evaluator contracts remain checked.
+
+Bounded local performance checks must target disposable infrastructure:
+
+```sh
+python performance/benchmark.py --base-url http://127.0.0.1:8000/api/v1 --requests 500 --concurrency 20
+pip install -r performance/requirements.txt
+locust -f performance/locustfile.py --headless --users 10 --spawn-rate 2 --run-time 20s --host http://127.0.0.1:8000
+```
+
+See [the Phase 15 report](docs/PHASE15_PERFORMANCE_REPORT.md) for the measured environment, before/after results, query plans, and limitations. Never direct these workloads at production without an approved test window.
 
 ## Production deployment
 

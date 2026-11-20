@@ -8,6 +8,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from .auth import CurrentUser, require_admin
+from .cache import cache_key, get_public, invalidate_public, set_public
 from .gamification import award_achievement
 from .judge_client import Enqueuer
 from .main_dependencies import get_db
@@ -31,8 +32,12 @@ def aware(value: datetime) -> datetime:
 
 @router.get("", response_model=list[ContestSummary])
 def contests(db: DB) -> list[dict]:
+    key = cache_key("contest", "list")
+    cached = get_public(key)
+    if cached is not None:
+        return cached
     now = datetime.now(timezone.utc)
-    return [
+    result = [
         {
             "slug": item.slug, "title": item.title, "description": item.description,
             "starts_at": item.starts_at, "ends_at": item.ends_at,
@@ -40,6 +45,8 @@ def contests(db: DB) -> list[dict]:
         }
         for item in db.scalars(select(Contest).where(Contest.publication_status != "DRAFT").order_by(Contest.starts_at.desc()).limit(50))
     ]
+    set_public(key, result)
+    return result
 
 
 @router.get("/me/history", response_model=list[ContestHistoryItem])
@@ -125,6 +132,7 @@ def register(slug: str, user: CurrentUser, db: DB) -> None:
     db.add(ContestRegistration(contest_id=contest.id, user_id=user.id))
     try:
         db.commit()
+        invalidate_public("contest")
     except IntegrityError:
         db.rollback()
         if db.scalar(select(ContestRegistration.id).where(
@@ -173,6 +181,7 @@ def submit(
     ))
     award_achievement(db, user.id, "first-contest")
     db.commit()
+    invalidate_public("contest", "leaderboard")
     db.refresh(submission)
     try:
         enqueue(submission.id)
@@ -181,6 +190,7 @@ def submit(
         submission.verdict = "SYSTEM_ERROR"
         submission.output = "The judge queue is unavailable."
         db.commit()
+        invalidate_public("contest", "leaderboard")
         db.refresh(submission)
     return submission
 
@@ -188,7 +198,13 @@ def submit(
 @router.get("/{slug}/leaderboard", response_model=list[ContestStanding])
 def contest_leaderboard(slug: str, db: DB) -> list[dict]:
     contest = find_contest(db, slug)
-    return calculate_standings(db, contest)
+    key = cache_key("contest", "leaderboard", slug)
+    cached = get_public(key)
+    if cached is not None:
+        return cached
+    standings = calculate_standings(db, contest)
+    set_public(key, standings)
+    return standings
 
 
 @router.post("/{slug}/finalize", status_code=status.HTTP_204_NO_CONTENT)
@@ -201,6 +217,7 @@ def finalize(slug: str, db: DB, admin: Annotated[User, Depends(require_admin)]) 
     if not contest.is_rated:
         contest.publication_status = "FINALIZED"
         db.commit()
+        invalidate_public("contest")
         return
     if db.scalar(select(ContestRating.id).where(ContestRating.contest_id == contest.id)) is not None:
         return
@@ -222,6 +239,7 @@ def finalize(slug: str, db: DB, admin: Annotated[User, Depends(require_admin)]) 
         ))
     contest.publication_status = "FINALIZED"
     db.commit()
+    invalidate_public("contest", "leaderboard")
 
 
 @router.post("", response_model=ContestCreated, status_code=status.HTTP_201_CREATED)
@@ -239,6 +257,7 @@ def create_contest(
     for position, problem_slug in enumerate(payload.problems, 1):
         db.add(ContestProblem(contest_id=contest.id, problem_slug=problem_slug, position=position))
     db.commit()
+    invalidate_public("contest")
     return {"slug": contest.slug}
 
 
