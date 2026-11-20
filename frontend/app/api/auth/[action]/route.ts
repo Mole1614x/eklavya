@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { apiJson, applySession, authenticatedBackend, clearSession, setSession } from "@/lib/auth-session";
+import { rejectCrossSiteMutation } from "@/lib/request-security";
 
 async function tokenResponse(upstream: Response) {
   const data = await upstream.json();
@@ -10,6 +11,8 @@ async function tokenResponse(upstream: Response) {
 }
 
 export async function POST(request: NextRequest, context: { params: Promise<{ action: string }> }) {
+  const rejected = rejectCrossSiteMutation(request);
+  if (rejected) return rejected;
   const { action } = await context.params;
   if (action === "register" || action === "login") {
     return tokenResponse(await apiJson(`/auth/${action}`, await request.json(), request));
@@ -39,6 +42,8 @@ export async function GET(request: NextRequest, context: { params: Promise<{ act
 }
 
 export async function PATCH(request: NextRequest, context: { params: Promise<{ action: string }> }) {
+  const rejected = rejectCrossSiteMutation(request);
+  if (rejected) return rejected;
   const { action } = await context.params;
   if (action !== "me") return NextResponse.json({ detail: "Unknown authentication action" }, { status: 404 });
   const { upstream, session } = await authenticatedBackend(request, "/auth/me", {

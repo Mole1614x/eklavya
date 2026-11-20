@@ -65,12 +65,22 @@ jobs:
           alembic upgrade head
           python -m app.seed
           python -m app.seed
+          EKLAVYA_ADMIN_PASSWORD='UatAdminPass123!' python -m app.provision_admin --email uat_admin@example.com --username uat_admin --display-name 'UAT Administrator'
           uvicorn app.main:app --host 127.0.0.1 --port 8000 > "${RUNNER_TEMP}/eklavya-api.log" 2>&1 &
           curl --fail --silent --retry 10 --retry-connrefused http://127.0.0.1:8000/api/v1/health/ready
           curl --fail --silent http://127.0.0.1:8000/api/v1/metrics | grep -F eklavya_http_requests_total
 
+      - name: Audit Python runtime dependencies
+        working-directory: backend
+        run: |
+          python -m pip install 'pip-audit>=2.7,<3'
+          python -m pip_audit -r requirements.txt
+
       - name: Check frontend and live API integration
         working-directory: frontend
+        env:
+          UAT_ADMIN_IDENTITY: uat_admin@example.com
+          UAT_ADMIN_PASSWORD: UatAdminPass123!
         run: |
           npm ci
           npm audit --omit=dev --audit-level=high
@@ -83,12 +93,37 @@ jobs:
         run: |
           docker compose config --quiet
           docker build --check -f backend/Dockerfile .
+          docker build --check -f frontend/Dockerfile frontend
           docker build --check -f judge/Dockerfile .
           docker build --check -f judge/images/code.Dockerfile .
           docker build --check -f judge/images/data.Dockerfile .
           docker build --check -f judge/images/bigdata.Dockerfile .
           docker build --check -f judge/images/ml.Dockerfile .
           docker build --check -f judge/images/deep-learning.Dockerfile .
+
+      - name: Validate production and monitoring definitions
+        env:
+          POSTGRES_USER: eklavya_ci
+          POSTGRES_PASSWORD: ci-postgres-password
+          POSTGRES_DB: eklavya
+          PRODUCTION_DATABASE_URL: postgresql+psycopg://eklavya_ci:ci-postgres-password@db:5432/eklavya
+          REDIS_PASSWORD: ci-redis-password
+          PRODUCTION_REDIS_URL: redis://:ci-redis-password@redis:6379/0
+          SECRET_KEY: ci-only-signing-key-with-at-least-thirty-two-characters
+          PUBLIC_URL: https://ci.example.invalid
+          ALLOWED_ORIGINS: https://ci.example.invalid
+          ALLOWED_HOSTS: ci.example.invalid,backend
+          TLS_CERTIFICATE_FILE: /tmp/ci-tls.crt
+          TLS_PRIVATE_KEY_FILE: /tmp/ci-tls.key
+        run: |
+          docker compose -f docker-compose.yml -f docker-compose.prod.yml config --quiet
+          docker compose -f docker-compose.yml -f docker-compose.prod.yml -f docker-compose.tls.yml config --quiet
+          docker compose -f docker-compose.yml -f docker-compose.prod.yml -f docker-compose.monitoring.yml --profile monitoring config --quiet
+          docker run --rm --add-host backend:127.0.0.1 --add-host frontend:127.0.0.1 -v "${PWD}/infrastructure/nginx.conf:/etc/nginx/conf.d/default.conf:ro" nginxinc/nginx-unprivileged:1.27-alpine nginx -t
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 -subj '/CN=ci.example.invalid' -keyout "${RUNNER_TEMP}/ci-tls.key" -out "${RUNNER_TEMP}/ci-tls.crt"
+          chmod 644 "${RUNNER_TEMP}/ci-tls.key" "${RUNNER_TEMP}/ci-tls.crt"
+          docker run --rm --add-host backend:127.0.0.1 --add-host frontend:127.0.0.1 -v "${PWD}/infrastructure/nginx-tls.conf:/etc/nginx/conf.d/default.conf:ro" -v "${RUNNER_TEMP}/ci-tls.crt:/run/secrets/tls.crt:ro" -v "${RUNNER_TEMP}/ci-tls.key:/run/secrets/tls.key:ro" nginxinc/nginx-unprivileged:1.27-alpine nginx -t
+          docker run --rm --entrypoint promtool -v "${PWD}/infrastructure:/etc/prometheus:ro" prom/prometheus:v3.5.0 check config /etc/prometheus/prometheus.yml
 
       - name: Smoke test the core Compose stack
         env:

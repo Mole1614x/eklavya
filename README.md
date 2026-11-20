@@ -28,6 +28,7 @@ EKLAVYA is a full-stack learning and competitive-practice platform for programmi
 | `judge/` | Celery worker, generic Docker executor, specialized evaluators, and minimal runner images |
 | `challenges/` | Public catalog, private test fixtures, evaluator contracts, progression, and learning-path definitions |
 | `infrastructure/` | Production reverse-proxy configuration |
+| `scripts/` | Guarded PostgreSQL backup and disposable-restore tooling |
 | `.github/workflows/` | API, migration, browser, dependency, container, and Compose verification |
 
 The API never executes learner code. It stores and queues a submission; the judge runs a new restricted container for each evaluation and persists only the bounded result. Hidden cases are stored separately and never appear in public schemas.
@@ -115,6 +116,8 @@ The root `.env.example` documents development defaults. Important production set
 | `PUBLIC_CACHE_SECONDS` | Shared Redis TTL for public, non-user-specific responses |
 | `JUDGE_STUCK_SECONDS` | Age at which an administrator may recover a running judge lease |
 
+Production additionally requires an authenticated `PRODUCTION_REDIS_URL`, matching `REDIS_PASSWORD`, an HTTPS `PUBLIC_URL`, and enabled shared rate limits/readiness checks. Start from `.env.production.example`; never commit the completed file.
+
 Starting the API with `ENVIRONMENT=production` and a development secret, wildcard origin, or wildcard host fails immediately.
 
 ## API overview
@@ -126,7 +129,7 @@ All application routes use `/api/v1`.
 | Operations | `GET /health`, `/health/live`, `/health/ready`, `/metrics` |
 | Catalog | `GET /problems`, `GET /problems/{slug}` |
 | Accounts | `POST /auth/register`, `/login`, `/refresh`, `/logout`, verification/reset routes; `GET/PATCH /auth/me` |
-| Submissions | `POST /problems/{slug}/submissions`, `GET /submissions`, `GET /submissions/{id}` |
+| Submissions | `POST /problems/{slug}/submissions`, `GET /submissions`, `GET /submissions/{id}`, `POST /submissions/{id}/cancel` |
 | Progression | `GET /gamification/ranks`, `/leaderboard`, protected dashboard, achievements, and insights |
 | Learning | Daily challenge/history plus path list, detail, and enrollment routes |
 | Arena | Contest list/detail, registration, participant status, submissions, leaderboard, rating history, and admin finalization |
@@ -175,14 +178,18 @@ See [the Phase 15 report](docs/PHASE15_PERFORMANCE_REPORT.md) for the measured e
 
 ## Production deployment
 
-`docker-compose.prod.yml` is an override for a single-host deployment. It removes direct database/API/frontend ports, enables secure cookies and shared rate limits, makes secrets mandatory, and exposes only an unprivileged Nginx proxy on loopback port 8080.
+`docker-compose.prod.yml` is an override for a single-host deployment. It removes direct database/API/frontend ports, enables secure cookies and shared rate limits, authenticates Redis, segments application/data networks, applies resource/log limits, makes secrets mandatory, and exposes only an unprivileged Nginx proxy on loopback port 8080.
 
 ```sh
-docker compose -f docker-compose.yml -f docker-compose.prod.yml --profile judge config
-docker compose -f docker-compose.yml -f docker-compose.prod.yml --profile judge up --build -d --wait
+docker compose --env-file /secure/path/eklavya.env -f docker-compose.yml -f docker-compose.prod.yml --profile judge config
+docker compose --env-file /secure/path/eklavya.env -f docker-compose.yml -f docker-compose.prod.yml --profile judge up --build -d --wait
 ```
 
-Terminate TLS at a managed load balancer or host proxy in front of `127.0.0.1:8080`. Do not expose that HTTP listener directly. Apply database backups before upgrades and run the one-shot migration service before scaling new API or judge replicas. See [Operations](docs/operations.md) and [Security](SECURITY.md) for the deployment checklist and trust boundaries.
+Terminate TLS at a managed load balancer or host proxy in front of `127.0.0.1:8080`. Do not expose that HTTP listener directly. `docker-compose.tls.yml` and `infrastructure/nginx-tls.conf` provide an optional direct-TLS path with operator-supplied files. Apply database backups before upgrades and run the one-shot migration service before scaling new API or judge replicas.
+
+Documentation: [architecture](docs/architecture.md), [API](docs/api.md), [database](docs/database.md), [judge](docs/judge.md), [security](docs/security.md), [deployment/rollback](docs/deployment.md), [operations](docs/operations.md), and [troubleshooting](docs/troubleshooting.md).
+
+Release evidence: [Phase 16 readiness](docs/PHASE16_RELEASE_READINESS.md) and the [final verification report](docs/EKLAVYA_FINAL_VERIFICATION_REPORT.md).
 
 ## Honest security boundary and limitations
 

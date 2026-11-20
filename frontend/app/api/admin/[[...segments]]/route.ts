@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { applySession, authenticatedBackend } from "@/lib/auth-session";
+import { rejectCrossSiteMutation } from "@/lib/request-security";
 
 type Context = { params: Promise<{ segments?: string[] }> };
 type Method = "GET" | "POST" | "PUT" | "PATCH";
 
 async function proxy(request: NextRequest, context: Context, method: Method) {
+  const rejected = rejectCrossSiteMutation(request);
+  if (rejected) return rejected;
   const segments = (await context.params).segments ?? [];
   const path = `/admin/${segments.map(encodeURIComponent).join("/")}${request.nextUrl.search}`.replace(/\/$/, "");
   const headers: Record<string, string> = {};

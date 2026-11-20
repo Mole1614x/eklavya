@@ -109,3 +109,10 @@ def test_cross_user_submission_access_is_concealed(security_client):
 
     with Session(security_client[1]) as db:
         assert db.get(Submission, submission_id).source_code == "print('Even')"
+
+
+def test_catalog_search_treats_sql_syntax_as_data(security_client):
+    client, _, _ = security_client
+    response = client.get("/api/v1/problems", params={"q": "' OR 1=1 --"})
+    assert response.status_code == 200
+    assert response.json()["total"] == 0

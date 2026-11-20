@@ -15,6 +15,13 @@ test("authenticated session rotates across BFF routes and protects profile data"
   await expect(page).toHaveURL(/\/profile$/);
   await expect(page.getByRole("heading", { name: displayName })).toBeVisible();
 
+  const csrfAttempt = await page.request.patch("/api/auth/me", {
+    headers: { Origin: "https://attacker.example", "Sec-Fetch-Site": "cross-site" },
+    data: { bio: "cross-site mutation" },
+  });
+  expect(csrfAttempt.status()).toBe(403);
+  expect(await csrfAttempt.json()).toEqual({ detail: "Cross-site request rejected" });
+
   // Simulate access-token expiry while retaining the HttpOnly refresh session.
   await context.clearCookies({ name: "eklavya_access" });
   const submission = await page.request.post("/api/submissions/problem/parity-check", {

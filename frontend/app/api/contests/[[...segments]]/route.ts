@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { backend } from "@/lib/backend";
 import { applySession, authenticatedBackend } from "@/lib/auth-session";
+import { rejectCrossSiteMutation } from "@/lib/request-security";
 
 type Context = { params: Promise<{ segments?: string[] }> };
 
 async function proxy(request: NextRequest, context: Context, method: "GET" | "POST") {
+  const rejected = rejectCrossSiteMutation(request);
+  if (rejected) return rejected;
   const segments = (await context.params).segments ?? [];
   const access = request.cookies.get("eklavya_access")?.value;
   const needsAuth = method === "POST" || segments.includes("me");

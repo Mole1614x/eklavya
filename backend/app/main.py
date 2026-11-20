@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime, timedelta, timezone
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, FastAPI, HTTPException, Query, Request
@@ -83,18 +84,35 @@ def readiness(db: DB) -> dict[str, str]:
 
 @router.get("/metrics", include_in_schema=False)
 def prometheus_metrics(db: DB) -> PlainTextResponse:
+    now = datetime.now(timezone.utc)
     try:
         states = dict(db.execute(select(Submission.status, func.count()).group_by(Submission.status)).all())
         recent = list(db.scalars(select(Submission).order_by(Submission.created_at.desc()).limit(500)))
+        stuck = db.scalar(select(func.count(Submission.id)).where(
+            Submission.status == "RUNNING",
+            Submission.started_at < now - timedelta(seconds=configuration.judge_stuck_seconds),
+        )) or 0
+        recent_system_errors = db.scalar(select(func.count(Submission.id)).where(
+            Submission.status == "SYSTEM_ERROR", Submission.created_at >= now - timedelta(minutes=15),
+        )) or 0
+        oldest_queued_at = db.scalar(select(func.min(Submission.created_at)).where(Submission.status == "QUEUED"))
+        database_up = 1
     except SQLAlchemyError:
         db.rollback()
         states, recent = {}, []
+        stuck, recent_system_errors, oldest_queued_at, database_up = 0, 0, None, 0
         logger.warning("submission_metrics_unavailable")
     queue_seconds = [
         (item.started_at - item.created_at).total_seconds()
         for item in recent if item.started_at is not None
     ]
     execution_seconds = [item.execution_ms / 1000 for item in recent if item.execution_ms is not None]
+    if oldest_queued_at is not None:
+        if oldest_queued_at.tzinfo is None:
+            oldest_queued_at = oldest_queued_at.replace(tzinfo=timezone.utc)
+        oldest_queued_seconds = max(0.0, (now - oldest_queued_at).total_seconds())
+    else:
+        oldest_queued_seconds = 0.0
     judge_metrics = (
         "# HELP eklavya_submissions Current submissions by lifecycle state.\n"
         "# TYPE eklavya_submissions gauge\n"
@@ -108,6 +126,18 @@ def prometheus_metrics(db: DB) -> PlainTextResponse:
         "# HELP eklavya_submission_execution_seconds Average recent isolated execution duration.\n"
         "# TYPE eklavya_submission_execution_seconds gauge\n"
         f"eklavya_submission_execution_seconds {sum(execution_seconds) / len(execution_seconds) if execution_seconds else 0:.6f}\n"
+        "# HELP eklavya_judge_stuck_submissions Running submissions older than the configured lease.\n"
+        "# TYPE eklavya_judge_stuck_submissions gauge\n"
+        f"eklavya_judge_stuck_submissions {stuck}\n"
+        "# HELP eklavya_judge_oldest_queued_seconds Age of the oldest queued submission.\n"
+        "# TYPE eklavya_judge_oldest_queued_seconds gauge\n"
+        f"eklavya_judge_oldest_queued_seconds {oldest_queued_seconds:.6f}\n"
+        "# HELP eklavya_judge_system_errors_15m System errors created in the last fifteen minutes.\n"
+        "# TYPE eklavya_judge_system_errors_15m gauge\n"
+        f"eklavya_judge_system_errors_15m {recent_system_errors}\n"
+        "# HELP eklavya_database_up Whether the submission metrics query reached PostgreSQL.\n"
+        "# TYPE eklavya_database_up gauge\n"
+        f"eklavya_database_up {database_up}\n"
     )
     return PlainTextResponse(metrics.render() + judge_metrics, media_type="text/plain; version=0.0.4")
 

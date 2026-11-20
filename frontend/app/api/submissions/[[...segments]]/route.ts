@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { applySession, authenticatedBackend } from "@/lib/auth-session";
+import { rejectCrossSiteMutation } from "@/lib/request-security";
 
 async function authorized(request: NextRequest, path: string, init: RequestInit = {}) {
   const { upstream, session } = await authenticatedBackend(request, path, init);
@@ -16,6 +17,8 @@ export async function GET(request: NextRequest, context: { params: Promise<{ seg
 }
 
 export async function POST(request: NextRequest, context: { params: Promise<{ segments?: string[] }> }) {
+  const rejected = rejectCrossSiteMutation(request);
+  if (rejected) return rejected;
   const segments = (await context.params).segments ?? [];
   if (segments[0] && segments[1] === "cancel") {
     return authorized(request, `/submissions/${encodeURIComponent(segments[0])}/cancel`, { method: "POST" });

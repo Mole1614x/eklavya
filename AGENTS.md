@@ -11,3 +11,6 @@
 - Treat the Docker socket as a critical infrastructure boundary and document any change to the sandbox threat model.
 - Keep load tests bounded and pointed at disposable infrastructure. Report p50/p95/p99, errors, environment, and blocked workloads; never infer production capacity from a short local run.
 - Preserve judge idempotency and the user-before-submission finalization lock order. Retry database-operational failures only after rollback and lease reset; never award progression before verified evaluation commits.
+- Keep production traffic behind HTTPS, secure cookies, explicit origins/hosts, authenticated Redis, private data networks, and the reverse proxy. Do not expose PostgreSQL, Redis, backend, frontend, metrics, or Prometheus directly to the public internet.
+- Run backups with `scripts/backup_postgres.sh`; restore only into an explicitly named disposable `*_restore_test` database with the guarded restore script. A release requires a restore rehearsal, reviewed migration, release checklist, and rollback decision point.
+- CI prepares and verifies release artifacts but must never deploy an unreviewed branch. Public deployment, infrastructure spending, secret rotation, and production data changes require explicit operator authorization.
