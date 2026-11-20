@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { backend } from "@/lib/backend";
 import { applySession, authenticatedBackend } from "@/lib/auth-session";
+import { rejectCrossSiteMutation } from "@/lib/request-security";
 
 export async function GET(request: NextRequest, context: { params: Promise<{ segments?: string[] }> }) {
   const segments = (await context.params).segments ?? [];
@@ -17,6 +18,8 @@ export async function GET(request: NextRequest, context: { params: Promise<{ seg
 }
 
 export async function POST(request: NextRequest, context: { params: Promise<{ segments?: string[] }> }) {
+  const rejected = rejectCrossSiteMutation(request);
+  if (rejected) return rejected;
   const segments = (await context.params).segments ?? [];
   const { upstream, session } = await authenticatedBackend(request, `/learning/${segments.map(encodeURIComponent).join("/")}`, { method: "POST" });
   if (!upstream) return applySession(NextResponse.json({ detail: "Authentication required" }, { status: 401 }), null, true);

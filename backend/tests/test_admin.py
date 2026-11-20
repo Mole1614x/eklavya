@@ -124,6 +124,14 @@ def test_private_dataset_validation_versioning_and_status(admin_client):
         **payload, "filename": "../secret.csv",
     })
     assert invalid.status_code == 422
+    spoofed = client.post("/api/v1/admin/datasets", headers=headers["admin"], json={
+        **payload, "filename": "scores.json", "content_type": "application/json",
+    })
+    assert spoofed.status_code == 422
+    oversized = client.post("/api/v1/admin/datasets", headers=headers["admin"], json={
+        **payload, "content_base64": base64.b64encode(b"x" * 2049).decode(),
+    })
+    assert oversized.status_code == 413
     with Session(engine) as db:
         stored = db.get(ManagedDataset, first.json()["id"])
         assert stored.storage_path.endswith(".csv")

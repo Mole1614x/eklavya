@@ -1,6 +1,7 @@
 from functools import lru_cache
 from pathlib import Path
 from typing import Literal
+from urllib.parse import urlsplit
 
 from pydantic import model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -52,6 +53,21 @@ class Settings(BaseSettings):
                 raise ValueError("Production ALLOWED_ORIGINS must be an explicit allowlist")
             if not self.host_list or "*" in self.host_list:
                 raise ValueError("Production ALLOWED_HOSTS must be an explicit allowlist")
+            if not self.database_url.startswith(("postgresql://", "postgresql+psycopg://")):
+                raise ValueError("Production DATABASE_URL must use PostgreSQL")
+            if "eklavya:eklavya@127.0.0.1" in self.database_url:
+                raise ValueError("Production DATABASE_URL must not use the development credentials")
+            parsed_redis = urlsplit(self.redis_url)
+            if parsed_redis.scheme not in {"redis", "rediss"}:
+                raise ValueError("Production REDIS_URL must use Redis")
+            if not parsed_redis.password:
+                raise ValueError("Production REDIS_URL must authenticate to Redis")
+            if urlsplit(self.public_url).scheme != "https":
+                raise ValueError("Production PUBLIC_URL must use HTTPS")
+            if any(urlsplit(origin).scheme != "https" or not urlsplit(origin).netloc for origin in self.origin_list):
+                raise ValueError("Production ALLOWED_ORIGINS entries must be absolute HTTPS origins")
+            if not self.rate_limit_enabled or not self.readiness_check_redis:
+                raise ValueError("Production rate limiting and Redis readiness checks must be enabled")
         return self
 
 

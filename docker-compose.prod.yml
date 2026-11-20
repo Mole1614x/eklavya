@@ -1,3 +1,9 @@
+x-production-logging: &production-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
 services:
   db:
     ports: !reset []
@@ -5,29 +11,94 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:?Set POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB:?Set POSTGRES_DB}
+    networks: [data]
+    deploy:
+      resources:
+        limits: {cpus: "2.0", memory: 1G, pids: 200}
+    logging: *production-logging
     security_opt: ["no-new-privileges:true"]
+
   redis:
+    command:
+      - sh
+      - -ec
+      - exec redis-server --appendonly yes --maxmemory 128mb --maxmemory-policy noeviction --requirepass "$$REDIS_PASSWORD"
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?Set REDIS_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "REDISCLI_AUTH=\"$$REDIS_PASSWORD\" redis-cli ping | grep -q PONG"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
+    networks: [data]
+    deploy:
+      resources:
+        limits: {cpus: "1.0", memory: 256M, pids: 100}
+    logging: *production-logging
     security_opt: ["no-new-privileges:true"]
+
   migrate:
     environment:
       DATABASE_URL: ${PRODUCTION_DATABASE_URL:?Set PRODUCTION_DATABASE_URL}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    networks: [data]
+    deploy:
+      resources:
+        limits: {cpus: "1.0", memory: 512M, pids: 100}
+    logging: *production-logging
+
   backend:
     ports: !reset []
     environment:
       DATABASE_URL: ${PRODUCTION_DATABASE_URL:?Set PRODUCTION_DATABASE_URL}
+      REDIS_URL: ${PRODUCTION_REDIS_URL:?Set PRODUCTION_REDIS_URL}
       ENVIRONMENT: production
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
       SECRET_KEY: ${SECRET_KEY:?Set a strong SECRET_KEY}
+      PUBLIC_URL: ${PUBLIC_URL:?Set the external HTTPS URL}
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:?Set ALLOWED_ORIGINS}
       ALLOWED_HOSTS: ${ALLOWED_HOSTS:?Set ALLOWED_HOSTS}
       RATE_LIMIT_ENABLED: "true"
       READINESS_CHECK_REDIS: "true"
+      DATASET_MAX_BYTES: ${DATASET_MAX_BYTES:-5242880}
+      DATABASE_POOL_SIZE: ${DATABASE_POOL_SIZE:-10}
+      DATABASE_MAX_OVERFLOW: ${DATABASE_MAX_OVERFLOW:-20}
+      DATABASE_POOL_TIMEOUT_SECONDS: ${DATABASE_POOL_TIMEOUT_SECONDS:-10}
+      PUBLIC_CACHE_SECONDS: ${PUBLIC_CACHE_SECONDS:-30}
+      JUDGE_STUCK_SECONDS: ${JUDGE_STUCK_SECONDS:-60}
+    networks: [application, data]
+    deploy:
+      resources:
+        limits: {cpus: "2.0", memory: 768M, pids: 200}
+    logging: *production-logging
+
   judge:
     environment:
       DATABASE_URL: ${PRODUCTION_DATABASE_URL:?Set PRODUCTION_DATABASE_URL}
+      REDIS_URL: ${PRODUCTION_REDIS_URL:?Set PRODUCTION_REDIS_URL}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DATABASE_POOL_SIZE: ${JUDGE_DATABASE_POOL_SIZE:-4}
+      DATABASE_MAX_OVERFLOW: ${JUDGE_DATABASE_MAX_OVERFLOW:-4}
+      DATABASE_POOL_TIMEOUT_SECONDS: ${DATABASE_POOL_TIMEOUT_SECONDS:-10}
+      JUDGE_STUCK_SECONDS: ${JUDGE_STUCK_SECONDS:-60}
+    networks: [data]
+    deploy:
+      resources:
+        limits: {cpus: "2.0", memory: 1G, pids: 200}
+    logging: *production-logging
+
   frontend:
     ports: !reset []
     environment:
+      API_BASE_URL: http://backend:8000/api/v1
+      HOSTNAME: 0.0.0.0
       COOKIE_SECURE: "true"
+    networks: [application]
+    deploy:
+      resources:
+        limits: {cpus: "1.0", memory: 512M, pids: 200}
+    logging: *production-logging
+
   proxy:
     image: nginxinc/nginx-unprivileged:1.27-alpine
     depends_on:
@@ -45,9 +116,21 @@ services:
       - /var/cache/nginx:size=16m,mode=0755
     cap_drop: ["ALL"]
     security_opt: ["no-new-privileges:true"]
+    networks: [edge, application]
+    deploy:
+      resources:
+        limits: {cpus: "0.5", memory: 128M, pids: 100}
+    logging: *production-logging
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
       interval: 5s
       timeout: 3s
       retries: 15
+
+networks:
+  edge:
+  application:
+    internal: true
+  data:
+    internal: true

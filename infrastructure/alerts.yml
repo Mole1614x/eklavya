@@ -1,0 +1,39 @@
+groups:
+  - name: eklavya-critical
+    rules:
+      - alert: EklavyaApiUnavailable
+        expr: up{job="eklavya-api"} == 0
+        for: 2m
+        labels: {severity: critical}
+        annotations:
+          summary: EKLAVYA API metrics endpoint is unavailable
+      - alert: EklavyaDatabaseUnavailable
+        expr: eklavya_database_up == 0
+        for: 1m
+        labels: {severity: critical}
+        annotations:
+          summary: EKLAVYA cannot query PostgreSQL
+      - alert: EklavyaJudgeHasStuckWork
+        expr: eklavya_judge_stuck_submissions > 0
+        for: 2m
+        labels: {severity: critical}
+        annotations:
+          summary: EKLAVYA has submissions beyond the judge lease
+      - alert: EklavyaQueueAgeHigh
+        expr: eklavya_judge_oldest_queued_seconds > 120
+        for: 5m
+        labels: {severity: warning}
+        annotations:
+          summary: EKLAVYA judge queue age exceeds two minutes
+      - alert: EklavyaJudgeSystemErrors
+        expr: eklavya_judge_system_errors_15m > 3
+        for: 2m
+        labels: {severity: warning}
+        annotations:
+          summary: EKLAVYA judge is producing repeated system errors
+      - alert: EklavyaApiErrorRateHigh
+        expr: rate(eklavya_http_errors_total[5m]) / clamp_min(rate(eklavya_http_requests_total[5m]), 0.001) > 0.05
+        for: 5m
+        labels: {severity: warning}
+        annotations:
+          summary: EKLAVYA API five-minute error rate exceeds five percent
