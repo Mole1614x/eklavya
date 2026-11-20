@@ -11,7 +11,7 @@ Release candidate: `1.0.0`
 - Phase 13 integration: stacked PR #13 and mainline PR #15 are merged.
 - Phase 14 administration PR #14: merged.
 - Phase 15 performance PR #16: merged.
-- Phase 16: prepared as a separate PR; it must not be merged until its CI and human review complete.
+- Phase 16 PR #17: open against `main`; it must not be merged until its CI and human review complete.
 - No public deployment was performed.
 
 ## Phase status
