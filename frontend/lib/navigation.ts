@@ -16,6 +16,16 @@ export const community = [
   { slug: "progress-insights", label: "Progress Insights", icon: "activity", title: "See your practice over time", description: "Review verified activity, solved topics, and recent XP progress.", topics: [] },
 ] as const;
 
+export const advanced = [
+  { slug: "assessments", label: "Assessments", icon: "target", title: "Your timed assessments", description: "Complete assigned technical assessments with server-enforced timing, autosave, and released results." },
+  { slug: "data-cleaning-lab", label: "Data Cleaning Lab", icon: "database", title: "Clean real-world data safely", description: "Upload private CSV, XLSX, JSON, or Parquet data, inspect its profile, apply bounded transformations, and download a cleaned copy." },
+  { slug: "excel-practice", label: "Excel Practice", icon: "chart", title: "Practise supported Excel formulas", description: "Solve spreadsheet challenges with a safe formula parser, hidden fixtures, and precise feedback." },
+  { slug: "tableau-practice", label: "Tableau Practice", icon: "activity", title: "Write Tableau calculations", description: "Validate calculated fields, FIXED LOD expressions, and supported table calculations against example datasets." },
+  { slug: "linux-practice", label: "Linux Practice", icon: "code", title: "Master Linux and Bash", description: "Solve command, pipeline, scripting, and log-processing problems in disposable unprivileged sandboxes." },
+  { slug: "multi-tool-challenges", label: "Multi-Tool Challenges", icon: "network", title: "Solve one problem five ways", description: "Compare SQL, Pandas, PySpark, Excel, and Tableau while tracking each technology independently." },
+  { slug: "dataset-library", label: "Dataset Library", icon: "layers", title: "Explore reusable practice datasets", description: "Use published, versioned synthetic datasets across analytics and data-engineering practice." },
+] as const;
+
 export const ranks = [
   ["Shishya", 0], ["Sadhak", 500], ["Kushal", 1500], ["Nipuna", 3500], ["Acharya", 7500], ["Maharathi", 15000],
 ] as const;

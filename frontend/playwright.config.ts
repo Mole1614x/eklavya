@@ -8,7 +8,7 @@ export default defineConfig({
     launchOptions: { executablePath: process.env.CHROMIUM_PATH },
   },
   webServer: {
-    command: "npm run start",
+    command: process.env.PLAYWRIGHT_WEB_COMMAND ?? "npm run start",
     env: { HOSTNAME: "127.0.0.1", PORT: "3000" },
     url: "http://127.0.0.1:3000",
     reuseExistingServer: !process.env.CI,

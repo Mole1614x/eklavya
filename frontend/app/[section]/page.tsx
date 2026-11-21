@@ -3,7 +3,7 @@ import CatalogLoading from "@/components/catalog-loading";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Star } from "lucide-react";
-import { community, modules, ranks } from "@/lib/navigation";
+import { advanced, community, modules, ranks } from "@/lib/navigation";
 import { Dashboard } from "@/components/dashboard";
 import { PracticeChart } from "@/components/practice-chart";
 import { ModuleIcon } from "@/components/icons";
@@ -11,6 +11,7 @@ import { CatalogView, type Query } from "@/components/catalog";
 import { CommunityData } from "@/components/community-data";
 import { LearningData } from "@/components/learning-data";
 import { ArenaData } from "@/components/arena-data";
+import { AdvancedPractice } from "@/components/advanced-practice";
 
 const activities: Record<string, { href: string; label: string }> = {
   "daily-sadhana": { href: "/problems/star-staircase", label: "Try Star Staircase" },
@@ -21,14 +22,16 @@ type Props = { params: Promise<{ section: string }>; searchParams: Promise<Query
 
 export async function generateMetadata({ params }: Props) {
   const { section } = await params;
-  return { title: section === "dashboard" ? "Dashboard" : [...modules, ...community].find((item) => item.slug === section)?.label };
+  return { title: section === "dashboard" ? "Dashboard" : [...modules, ...community, ...advanced].find((item) => item.slug === section)?.label };
 }
 
 export default async function Section({ params, searchParams }: Props) {
   const { section } = await params;
   if (section === "dashboard") return <Dashboard />;
   const module = modules.find((item) => item.slug === section);
-  const item = module ?? community.find((entry) => entry.slug === section);
+  const advancedItem = advanced.find((entry) => entry.slug === section);
+  const communityItem = community.find((entry) => entry.slug === section);
+  const item = module ?? communityItem ?? advancedItem;
   if (!item) notFound();
   const activity = activities[section];
   const query = module ? await searchParams : {};
@@ -41,12 +44,13 @@ export default async function Section({ params, searchParams }: Props) {
         {activity && <Link className="button" href={activity.href}>{activity.label} <ArrowRight size={16} /></Link>}
       </header>
       {module && <Suspense key={JSON.stringify(query)} fallback={<CatalogLoading />}><CatalogView query={query} fixedCategory={module.slug} /></Suspense>}
-      {!module && section !== "arena" && item.topics.length > 0 && <ul className="skills-grid clean-list">{item.topics.map((topic) => <li className="card feature-card" key={topic}><ModuleIcon name={item.icon} /><h2>{topic}</h2></li>)}</ul>}
+      {communityItem && section !== "arena" && communityItem.topics.length > 0 && <ul className="skills-grid clean-list">{communityItem.topics.map((topic) => <li className="card feature-card" key={topic}><ModuleIcon name={communityItem.icon} /><h2>{topic}</h2></li>)}</ul>}
       {section === "rankings" && <ul className="skills-grid clean-list">{ranks.map(([name, xp], index) => <li key={name} className="card feature-card"><div className="stars" aria-label={`${index + 1} stars`}>{Array.from({ length: index + 1 }, (_, star) => <Star key={star} size={16} fill="currentColor" aria-hidden="true" />)}</div><h2>{name}</h2><p>{xp.toLocaleString("en-US")} XP</p></li>)}</ul>}
-      {section === "progress-insights" && <PracticeChart />}
+      {section === "progress-insights" && <PracticeChart verified />}
       {(["rankings", "badges", "progress-insights"] as const).includes(section as "rankings") && <CommunityData section={section} />}
       {(section === "daily-sadhana" || section === "vidya-paths") && <LearningData section={section} />}
       {section === "arena" && <ArenaData />}
+      {advancedItem && <AdvancedPractice section={section} />}
     </>
   );
 }

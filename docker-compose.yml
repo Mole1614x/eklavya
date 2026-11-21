@@ -103,6 +103,8 @@ services:
         condition: service_completed_successfully
       java-runner:
         condition: service_completed_successfully
+      linux-runner:
+        condition: service_completed_successfully
       data-runner:
         condition: service_completed_successfully
       bigdata-runner:
@@ -137,6 +139,11 @@ services:
     profiles: ["judge"]
   java-runner:
     image: eclipse-temurin:21-jdk-alpine
+    command: ["true"]
+    restart: "no"
+    profiles: ["judge"]
+  linux-runner:
+    image: alpine:3.21
     command: ["true"]
     restart: "no"
     profiles: ["judge"]

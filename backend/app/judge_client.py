@@ -18,3 +18,14 @@ def get_enqueuer() -> Callable[[str], None]:
 
 
 Enqueuer = Annotated[Callable[[str], None], Depends(get_enqueuer)]
+
+
+def enqueue_dataset_practice(run_id: str) -> None:
+    client.send_task("judge.dataset_practice", args=[run_id])
+
+
+def get_dataset_practice_enqueuer() -> Callable[[str], None]:
+    return enqueue_dataset_practice
+
+
+DatasetPracticeEnqueuer = Annotated[Callable[[str], None], Depends(get_dataset_practice_enqueuer)]
