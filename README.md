@@ -15,6 +15,9 @@ EKLAVYA is a full-stack learning and competitive-practice platform for programmi
 - Verified XP transactions, six Maharathi ranks, Veer achievements, leaderboards, insights, Daily Sadhana streaks, and 14 Vidya Paths.
 - Timed Arena registration, problem embargoes, contest-scoped submissions, ICPC-style penalties, rating history, and idempotent finalization.
 - A database-authorized admin control center for problems, private datasets, users, contests, paths, achievements, XP/rank review, and append-only action history.
+- Server-timed assessments with student/group assignment, attempt limits, autosave, secure-judge answers, idempotent finalization, analytics, templates, and CSV/XLSX result export.
+- A private Data Cleaning Lab for CSV, XLSX, JSON, and Parquet profiling, bounded transformations, cleaned downloads, and isolated Pandas, NumPy, or SQL experimentation.
+- Documented-subset Excel and Tableau expression graders, isolated Linux/Bash challenges, multi-tool analytical practice, a versioned dataset library, and skill-wise analytics.
 - Bounded public-data caching, explicit database pools, indexed/paginated hot paths, judge leases/cancellation/recovery, and measured load-test tooling.
 - Production configuration validation, allowlisted hosts/origins, security headers, Redis rate limits, request IDs, JSON logs, health probes, metrics, hardened containers, and an Nginx deployment edge.
 
@@ -135,6 +138,7 @@ All application routes use `/api/v1`.
 | Progression | `GET /gamification/ranks`, `/leaderboard`, protected dashboard, achievements, and insights |
 | Learning | Daily challenge/history plus path list, detail, and enrollment routes |
 | Arena | Contest list/detail, registration, participant status, submissions, leaderboard, rating history, and admin finalization |
+| Advanced practice | Assigned assessments, attempts/autosave/finalization, Data Lab, Excel/Tableau graders, Linux catalog, multi-tool challenges, dataset library, and skill analytics under `/advanced/*` |
 | Administration | Overview, problem/dataset/user/contest/path/achievement management, XP/rank review, and audit history under `/admin/*` |
 
 Administrator-only APIs manage private cases, evaluation datasets, platform content, accounts, and operating history. Public registration can never select an administrator role.
@@ -198,5 +202,7 @@ Release evidence: [Phase 16 readiness](docs/PHASE16_RELEASE_READINESS.md) and th
 - Judge containers enforce and unit-test the configured isolation flags, but Docker-socket access makes the judge service a privileged infrastructure boundary. Run it on a dedicated, patched host or replace it with an external sandbox service before accepting hostile public traffic. The project has not received an independent penetration test.
 - Verification and password-reset tokens are created, hashed, expired, and consumed safely, but an email provider adapter is intentionally not bundled. Production must deliver the opaque token through a transactional email service; raw tokens are never written to logs.
 - The seed catalog is representative curriculum, not a complete course library. Large learner datasets should move to object storage rather than database test-case fields.
+- Excel grading supports a documented formula subset and finite ranges; VLOOKUP/HLOOKUP and workbook features that require a complete Excel calculation engine are administrator-reviewed. Tableau grading supports documented aggregates, FIXED LOD, running/window calculations, and explicit partition/order context, not the complete Tableau runtime.
+- Data Lab storage is private local-volume storage for single-host deployments. Multi-host production must replace it with private object storage and lifecycle policies; Data Lab code still runs only in disposable judge containers.
 - In-memory metrics reset on process restart. A production collector should scrape each replica and retain time series externally.
 - The dashboard keeps a clearly labeled demo comparison panel for new visitors; authenticated progression, schedules, paths, and contest data are live.

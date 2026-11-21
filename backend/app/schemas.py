@@ -2,7 +2,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-Category = Literal["foundations", "code", "data", "statistics", "big-data", "ai"]
+Category = Literal["foundations", "code", "data", "statistics", "big-data", "ai", "excel", "tableau", "linux", "multi-tool"]
 Difficulty = Literal["Beginner", "Easy", "Medium", "Hard"]
 ProblemFormat = Literal["CODE", "EXPRESSION", "SQL_QUERY", "NUMERICAL", "MULTIPLE_CHOICE", "DATASET_ANALYSIS"]
 

@@ -44,9 +44,10 @@ def test_catalog_preserves_domain_coverage(client):
     response = client.get("/api/v1/problems")
     assert response.status_code == 200
     payload = response.json()
-    assert payload["total"] == 20
+    assert payload["total"] == 26
     assert Counter(item["category"] for item in payload["items"]) == {
-        "foundations": 4, "code": 3, "data": 5, "statistics": 3, "big-data": 2, "ai": 3,
+        "foundations": 4, "code": 3, "data": 6, "statistics": 3, "big-data": 2, "ai": 3,
+        "linux": 2, "excel": 1, "tableau": 2,
     }
     assert {item["format"] for item in payload["items"]} == {
         "CODE", "EXPRESSION", "SQL_QUERY", "NUMERICAL", "MULTIPLE_CHOICE", "DATASET_ANALYSIS",
@@ -76,8 +77,8 @@ def test_detail_exposes_only_public_examples_and_starters(client):
 
 
 def test_seed_can_run_twice(db):
-    assert seed(db) == 20
-    assert len(db.scalars(select(Problem)).all()) == 20
+    assert seed(db) == 26
+    assert len(db.scalars(select(Problem)).all()) == 26
     assert len(db.get(Problem, "parity-check").starters) == 4
 
 

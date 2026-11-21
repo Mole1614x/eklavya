@@ -70,5 +70,28 @@
   ],
   "relu-layer": [
     {"input_data": "{\"x\":[-2.0,0.0,3.0]}", "expected_output": "[0.0,0.0,3.0]", "is_hidden": false, "position": 0, "tolerance": 1e-8}
+  ],
+  "linux-find-csv": [
+    {"input_data": "{\"files\":{\"data/sales.csv\":\"region,sales\",\"data/readme.txt\":\"notes\",\"archive/old.csv\":\"x\"}}", "expected_output": "./archive/old.csv\n./data/sales.csv\n", "is_hidden": false, "position": 0},
+    {"input_data": "{\"files\":{\"one.csv\":\"a\",\"nested/two.CSV\":\"b\",\"nested/three.csv\":\"c\"}}", "expected_output": "./nested/three.csv\n./one.csv\n", "is_hidden": true, "position": 1}
+  ],
+  "bash-error-report": [
+    {"input_data": "{\"files\":{\"application.log\":\"INFO ready\\nERROR disk\\nERROR auth\\nERROR disk\\n\"}}", "expected_output": "ERROR auth\nERROR disk\n", "is_hidden": false, "position": 0},
+    {"input_data": "{\"files\":{\"application.log\":\"WARN slow\\nERROR zeta\\nERROR alpha\\n\"}}", "expected_output": "ERROR alpha\nERROR zeta\n", "is_hidden": true, "position": 1}
+  ],
+  "excel-regional-sales": [
+    {"input_data": "{\"cells\":{\"A2\":\"West\",\"A3\":\"East\",\"A4\":\"West\",\"B2\":5,\"B3\":8,\"B4\":7,\"E2\":\"West\"}}", "expected_output": "12", "is_hidden": false, "position": 0},
+    {"input_data": "{\"cells\":{\"A2\":\"North\",\"A3\":\"South\",\"A4\":\"North\",\"B2\":3,\"B3\":11,\"B4\":9,\"E2\":\"North\"}}", "expected_output": "12", "is_hidden": true, "position": 1}
+  ],
+  "tableau-profit-ratio": [
+    {"input_data": "{\"rows\":[{\"Profit\":20,\"Sales\":100},{\"Profit\":30,\"Sales\":150}]}", "expected_output": "0.2", "is_hidden": false, "position": 0, "tolerance": 1e-9},
+    {"input_data": "{\"rows\":[{\"Profit\":5,\"Sales\":25},{\"Profit\":15,\"Sales\":75}]}", "expected_output": "0.2", "is_hidden": true, "position": 1, "tolerance": 1e-9}
+  ],
+  "tableau-fixed-customer-sales": [
+    {"input_data": "{\"rows\":[{\"Customer ID\":\"C1\",\"Sales\":5},{\"Customer ID\":\"C1\",\"Sales\":7},{\"Customer ID\":\"C2\",\"Sales\":8}]}", "expected_output": "{\"C1\":12.0,\"C2\":8.0}", "is_hidden": false, "position": 0},
+    {"input_data": "{\"rows\":[{\"Customer ID\":\"A\",\"Sales\":2},{\"Customer ID\":\"B\",\"Sales\":4},{\"Customer ID\":\"A\",\"Sales\":3}]}", "expected_output": "{\"A\":5.0,\"B\":4.0}", "is_hidden": true, "position": 1}
+  ],
+  "clean-customer-records": [
+    {"input_data": "{\"dataframe\":{\"customer_id\":[2,1,2,null],\"name\":[\"Dev\",\"Anu\",\"Dev\",\"Unknown\"]}}", "expected_output": "{\"columns\":[\"customer_id\",\"name\"],\"index\":[1,0],\"data\":[[1.0,\"Anu\"],[2.0,\"Dev\"]]}", "is_hidden": false, "position": 0}
   ]
 }

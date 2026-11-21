@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LayoutDashboard, LibraryBig, Menu, ShieldCheck, UserCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { modules, community } from "@/lib/navigation";
+import { modules, community, advanced } from "@/lib/navigation";
 import { ModuleIcon } from "./icons";
 
 export function Sidebar() {
@@ -38,6 +38,8 @@ export function Sidebar() {
         {nav("/problems", "Problem Catalog", <LibraryBig size={19} />, pathname.startsWith("/problems"))}
         <p className="nav-label">Practice</p>
         {modules.map((item) => <div key={item.slug}>{nav(`/${item.slug}`, item.label, <ModuleIcon name={item.icon} />)}</div>)}
+        <p className="nav-label">Advanced practice</p>
+        {advanced.map((item) => <div key={item.slug}>{nav(`/${item.slug}`, item.label, <ModuleIcon name={item.icon} />)}</div>)}
         <p className="nav-label">Community</p>
         {community.map((item) => <div key={item.slug}>{nav(`/${item.slug}`, item.label, <ModuleIcon name={item.icon} />)}</div>)}
         <p className="nav-label">Account</p>
