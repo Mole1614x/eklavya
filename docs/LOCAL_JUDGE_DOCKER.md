@@ -54,3 +54,31 @@ program runtime separately from container startup and compilation.
 
 After changing the override, recreate the judge (a Dockerfile rebuild is not
 needed for environment-only changes, but is needed after executor.py changes).
+
+## One-command local validation
+
+From the patched worktree run:
+
+```sh
+bash scripts/verify_judge_local.sh
+```
+
+This recreates the local judge and runs `python -m judge.smoke` with no
+additional test dependencies. It checks five languages, error verdicts, stdin,
+SQL, Linux fixtures, NumPy, MapReduce, AI NumPy, CSV Data Lab,
+time-limit enforcement, and output-limit enforcement.
+The smoke test is intentionally opt-in; no untrusted submissions should
+be accepted while the root Docker socket override is enabled.
+
+For heavier PySpark and PyTorch verification (requires runner images
+and more RAM) use:
+
+```sh
+docker compose -p eklavya -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge exec -T -e EKLAVYA_JUDGE_HEAVY_SMOKE=1 judge python -m judge.smoke
+```
+
+**Limitations:** This local-development repair uses a privileged Docker socket,
+and the time budget covers startup, compilation, and user execution together.
+It is not a secure production judge and cannot accurately rank code runtime.
+The website Accepted result and direct evaluator smoke tests do not establish
+database persistence, all frontend workflows, or a hostile-code security audit.
