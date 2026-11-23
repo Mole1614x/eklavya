@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 export type StudentScope = "ALL" | "SELECTED";
 type Learner = { id: number; username: string; display_name: string };
@@ -15,6 +15,7 @@ export function StudentAccessPicker({
   selectedIds: number[];
   onSelectedIdsChange: (values: number[]) => void;
 }) {
+  const controlId = useId();
   const [query, setQuery] = useState("");
   const [learners, setLearners] = useState<Learner[]>([]);
   const [error, setError] = useState("");
@@ -40,16 +41,16 @@ export function StudentAccessPicker({
   return <fieldset className="student-access" aria-label="Student access">
     <legend>Who can access this content?</legend>
     <label className="student-access-choice">
-      <input type="radio" name="access-scope" checked={scope === "ALL"} onChange={() => onScopeChange("ALL")} />
+      <input type="radio" name={`access-scope-${controlId}`} checked={scope === "ALL"} onChange={() => onScopeChange("ALL")} />
       <span><strong>All Students</strong><small>All eligible learners, including future registrations. No manual assignment needed.</small></span>
     </label>
     <label className="student-access-choice">
-      <input type="radio" name="access-scope" checked={scope === "SELECTED"} onChange={() => onScopeChange("SELECTED")} />
+      <input type="radio" name={`access-scope-${controlId}`} checked={scope === "SELECTED"} onChange={() => onScopeChange("SELECTED")} />
       <span><strong>Selected Students Only</strong><small>Only explicitly assigned eligible learners can access published content.</small></span>
     </label>
     {scope === "SELECTED" && <div className="student-access-selection">
-      <label htmlFor="student-access-search">Search registered learners</label>
-      <input id="student-access-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search username or email" />
+      <label htmlFor={controlId}>Search registered learners</label>
+      <input id={controlId} type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search username or email" />
       <p aria-live="polite">{selectedIds.length} selected {selectedIds.length === 1 ? "student" : "students"}</p>
       {error && <p role="alert" className="form-error">{error}</p>}
       <div className="student-access-results">
@@ -110,7 +111,7 @@ export function StudentAccessManager({
   }
   async function save() {
     if (!original || !preview) return;
-    if (scope === "SELECTED" && students.length === 0) {
+    if (original.published && scope === "SELECTED" && students.length === 0 && original.assigned_count === 0) {
       setMessage("Select at least one learner before saving this scope."); return;
     }
     if (original.published && !confirmed && (preview.scope_change || preview.may_remove_access ||
