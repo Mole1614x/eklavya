@@ -78,7 +78,8 @@ def contest_detail(slug: str, db: DB, viewer: OptionalUser = None) -> dict:
         rows = db.execute(
             select(ContestProblem, Problem)
             .join(Problem, Problem.slug == ContestProblem.problem_slug)
-            .where(ContestProblem.contest_id == contest.id)
+            .where(ContestProblem.contest_id == contest.id,
+                Problem.status == "PUBLISHED", audience_filter(Problem, "problem", viewer))
             .order_by(ContestProblem.position)
         ).all()
         problems = [
@@ -167,6 +168,8 @@ def submit(
         raise HTTPException(status_code=403, detail="Contest registration is required")
     contest_problem = db.get(ContestProblem, (contest.id, problem_slug))
     problem = db.get(Problem, problem_slug)
+    if problem is None or problem.status != "PUBLISHED" or not can_access(db, problem, "problem", user):
+        raise HTTPException(status_code=404, detail="Contest problem not found")
     if contest_problem is None or problem is None:
         raise HTTPException(status_code=404, detail="Contest problem not found")
     if payload.language not in {starter.language for starter in problem.starters}:
