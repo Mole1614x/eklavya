@@ -14,6 +14,7 @@ from fastapi.responses import FileResponse
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session
 
+from .access_control import access_summary, replace_students, require_publishable, target, validate_students
 from .auth import require_admin
 from .cache import invalidate_public
 from .config import settings
@@ -31,7 +32,7 @@ from .schemas_admin import (
     AdminDatasetRead, AdminOverview, AdminPathRead, AdminPathWrite, AdminProblemDetail,
     AdminProblemRead, AdminProblemWrite, AdminRankHistoryRead, AdminUserRead,
     AdminXPTransactionRead, AuditLogRead, ContestStatusUpdate, DatasetStatusUpdate, DatasetUpload,
-    JudgeRecoveryRead, ProblemStatusUpdate, UserStatusUpdate,
+    JudgeRecoveryRead, ProblemStatusUpdate, StudentAccessWrite, UserStatusUpdate,
 )
 from .contest_routes import calculate_standings
 
@@ -53,6 +54,79 @@ def record_audit(
 def page_limit(limit: int) -> int:
     return min(max(limit, 1), 100)
 
+
+
+
+@router.get("/students")
+def available_students(
+    db: DB, admin: Admin, q: Annotated[str, Query(max_length=100)] = "",
+    limit: Annotated[int, Query(ge=1, le=100)] = 50,
+) -> list[dict]:
+    """Search only active learner accounts; never expose passwords or tokens."""
+    filters = [User.role == "learner", User.is_active.is_(True)]
+    if q.strip():
+        term = q.strip().lower()
+        filters.append(or_(func.lower(User.username).contains(term, autoescape=True),
+                           func.lower(User.email).contains(term, autoescape=True)))
+    users = db.scalars(select(User).where(*filters).order_by(User.username).limit(limit)).all()
+    return [{"id": user.id, "username": user.username, "display_name": user.profile.display_name}
+            for user in users]
+
+
+@router.get("/access/{kind}/{identifier}")
+def read_content_access(kind: str, identifier: str, db: DB, admin: Admin) -> dict:
+    item = target(db, kind, identifier)
+    if item is None: raise HTTPException(status_code=404, detail="Content not found")
+    return access_summary(db, item, kind)
+
+
+@router.post("/access/{kind}/{identifier}/preview")
+def preview_content_access(kind: str, identifier: str, payload: StudentAccessWrite, db: DB, admin: Admin) -> dict:
+    item = target(db, kind, identifier)
+    if item is None: raise HTTPException(status_code=404, detail="Content not found")
+    if payload.assigned_user_ids is not None: validate_students(db, payload.assigned_user_ids)
+    current = access_summary(db, item, kind)
+    next_ids = payload.assigned_user_ids if payload.assigned_user_ids is not None else current["assigned_user_ids"]
+    return {
+        "current_scope": item.access_scope,
+        "next_scope": payload.access_scope,
+        "currently_assigned": len(current["assigned_user_ids"]),
+        "next_assigned": len(next_ids),
+        "scope_change": item.access_scope != payload.access_scope,
+        "may_remove_access": current["published"] and (
+            (item.access_scope == "ALL" and payload.access_scope == "SELECTED")
+            or (item.access_scope == "SELECTED" and payload.access_scope == "SELECTED"
+                and bool(set(current["assigned_user_ids"]) - set(next_ids)))
+        ),
+        "preserves_submissions": True,
+    }
+
+
+@router.patch("/access/{kind}/{identifier}")
+def update_content_access(
+    kind: str, identifier: str, payload: StudentAccessWrite,
+    request: Request, db: DB, admin: Admin,
+) -> dict:
+    item = target(db, kind, identifier)
+    if item is None: raise HTTPException(status_code=404, detail="Content not found")
+    before = access_summary(db, item, kind)
+    changed = item.access_scope != payload.access_scope or (
+        payload.assigned_user_ids is not None
+        and sorted(payload.assigned_user_ids) != before["assigned_user_ids"]
+    )
+    if before["published"] and changed and not payload.confirm_impact:
+        raise HTTPException(status_code=409, detail="Confirm the impact of changing published student access")
+    if payload.assigned_user_ids is not None:
+        replace_students(db, kind, identifier, payload.assigned_user_ids)
+    item.access_scope = payload.access_scope
+    if before["published"]: require_publishable(db, item, kind)
+    record_audit(db, request, admin, "content.access", kind, identifier, {
+        "previous": before, "next_scope": item.access_scope,
+        "next_assigned": access_summary(db, item, kind)["assigned_user_ids"], "reason": payload.reason,
+    })
+    db.commit()
+    invalidate_public("catalog", "problem", "learning", "contest")
+    return access_summary(db, item, kind)
 
 @router.get("/overview", response_model=AdminOverview)
 def overview(db: DB, admin: Admin) -> dict:
