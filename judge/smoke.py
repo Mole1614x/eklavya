@@ -4,6 +4,7 @@ Run inside the trusted local judge container:
     python -m judge.smoke
 """
 import json
+import os
 import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -99,6 +100,25 @@ def run() -> int:
             assert result.verdict == "COMPLETED", result
             return extract_result(result.output) == 5
     check("Dataset CSV", data_lab_check)
+
+    if os.getenv("EKLAVYA_JUDGE_HEAVY_SMOKE") == "1":
+        def pyspark_check():
+            source = "def select_value(df):\\n    return df.select('value')\\n"
+            result = execute_bigdata("pyspark_function", source,
+                json.dumps({"columns": ["value"], "rows": [[1], [2]]}),
+                {"function": "select_value"})
+            assert result.verdict == "COMPLETED", result
+            return extract_result(result.output) == {"columns": ["value"], "rows": [[1], [2]]}
+        check("PySpark", pyspark_check)
+
+        def torch_check():
+            source = "def double(x):\\n    return x * 2\\n"
+            result = execute_ai("torch_function", source,
+                json.dumps({"x": [1.0, 2.0]}),
+                {"args": ["x"], "tensor_args": ["x"], "function": "double"})
+            assert result.verdict == "COMPLETED", result
+            return extract_result(result.output) == [2.0, 4.0]
+        check("PyTorch", torch_check)
 
     check("time limit", lambda: expect("python", "while True: pass", "", "TIME_LIMIT_EXCEEDED"))
     check("output limit", lambda: expect("python", "while True: print('X'*2000, flush=True)", "", "OUTPUT_LIMIT_EXCEEDED"))
