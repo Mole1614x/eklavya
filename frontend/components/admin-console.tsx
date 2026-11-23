@@ -85,9 +85,11 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
     try {
       setMessage("Saving…");
       const definition = JSON.parse(String(form.get("definition")));
-      definition.access_scope = scope;
-      definition.assigned_user_ids = students;
-      if (definition.status === "PUBLISHED" || definition.publication_status === "PUBLISHED") {
+      if (endpoint !== "achievements") {
+        definition.access_scope = scope;
+        definition.assigned_user_ids = students;
+      }
+      if (endpoint !== "achievements" && (definition.status === "PUBLISHED" || definition.publication_status === "PUBLISHED")) {
         if (scope === "SELECTED" && students.length === 0) throw new Error("Select at least one student before publishing.");
       }
       await api(`${endpoint}/${encodeURIComponent(slug)}`, {
@@ -100,7 +102,7 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
   return <form className="card admin-editor" onSubmit={submit}>
     <h3>{title}</h3>
     <label>Slug<input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label>
-    <StudentAccessPicker scope={scope} onScopeChange={setScope} selectedIds={students} onSelectedIdsChange={setStudents}/>
+    {endpoint !== "achievements" && <StudentAccessPicker scope={scope} onScopeChange={setScope} selectedIds={students} onSelectedIdsChange={setStudents}/>}
     <label>Validated definition<textarea name="definition" defaultValue={initial} required spellCheck={false} /></label>
     <div className="form-actions"><button className="button">Save</button><span role="status">{message}</span></div>
   </form>;
