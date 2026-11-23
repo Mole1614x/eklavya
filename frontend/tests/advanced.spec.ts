@@ -52,6 +52,7 @@ test("Phase 17 assessment, Data Lab, expression, and multi-tool journeys", async
   await expect(page.getByText("Accepted", { exact: true })).toBeVisible();
 
   await page.goto("/multi-tool-challenges");
+  await expect(page.getByRole("button", { name: "Submit approach" })).toBeEnabled();
   await page.getByRole("button", { name: "Submit approach" }).click();
   await expect(page.getByRole("status")).toContainText("passed");
 
