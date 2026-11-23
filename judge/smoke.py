@@ -103,7 +103,7 @@ def run() -> int:
 
     if os.getenv("EKLAVYA_JUDGE_HEAVY_SMOKE") == "1":
         def pyspark_check():
-            source = "def select_value(df):\\n    return df.select('value')\\n"
+            source = "def select_value(df):\n    return df.select('value')\n"
             result = execute_bigdata("pyspark_function", source,
                 json.dumps({"columns": ["value"], "rows": [[1], [2]]}),
                 {"function": "select_value"})
