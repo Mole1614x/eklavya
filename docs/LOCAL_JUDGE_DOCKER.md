@@ -82,3 +82,21 @@ and the time budget covers startup, compilation, and user execution together.
 It is not a secure production judge and cannot accurately rank code runtime.
 The website Accepted result and direct evaluator smoke tests do not establish
 database persistence, all frontend workflows, or a hostile-code security audit.
+
+## PySpark local hostname startup fix
+
+PySpark 3.5.3 invokes the `ps` command and needs to bind its internal Java
+gateway on loopback. The dedicated bigdata runner image now includes `procps`
+and sets `SPARK_LOCAL_IP=127.0.0.1` and `SPARK_LOCAL_HOSTNAME=localhost`.
+The runner keeps `--network none` so external networking remains disabled.
+
+After updating the branch, rebuild **the bigdata runner image**, not just the
+judge image:
+
+```sh
+docker compose -p eklavya -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge build bigdata-runner
+docker compose -p eklavya -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge exec -T -e EKLAVYA_JUDGE_HEAVY_SMOKE=1 judge python -m judge.smoke
+```
+
+This is a targeted fix for the observed missing `ps` executable and
+hostname resolution failures, not a claim that every PySpark workload passes.
