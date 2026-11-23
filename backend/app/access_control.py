@@ -151,3 +151,18 @@ def access_summary(db: Session, item, kind: str) -> dict:
             else item.publication_status == "PUBLISHED"
         ),
     }
+
+
+def prevent_unconfirmed_inline_change(db: Session, item, kind: str, fields: set[str], scope: str,
+                                      requested_ids: list[int]) -> None:
+    """Published audience edits must use the dedicated preview + confirm endpoint."""
+    summary = access_summary(db, item, kind)
+    if not summary["published"]:
+        return
+    if ("access_scope" in fields and scope != item.access_scope) or (
+        "assigned_user_ids" in fields and sorted(requested_ids) != summary["assigned_user_ids"]
+    ):
+        raise HTTPException(
+            status_code=409,
+            detail="Use the student access manager to preview and confirm changes to published content",
+        )
