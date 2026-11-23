@@ -20,9 +20,10 @@ DB = Annotated[Session, Depends(get_db)]
 
 
 @router.get("/daily")
-def daily(db: DB) -> dict:
+def daily(db: DB, viewer: OptionalUser = None) -> dict:
     today = datetime.now(timezone.utc).date()
-    row = db.execute(select(DailyChallenge, Problem).join(Problem, Problem.slug == DailyChallenge.problem_slug).where(DailyChallenge.challenge_date == today)).first()
+    row = db.execute(select(DailyChallenge, Problem).join(Problem, Problem.slug == DailyChallenge.problem_slug).where(DailyChallenge.challenge_date == today, Problem.status == "PUBLISHED",
+        audience_filter(Problem, "problem", viewer))).first()
     if row is None:
         raise HTTPException(status_code=404, detail="Daily challenge is not scheduled")
     challenge, problem = row
