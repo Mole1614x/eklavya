@@ -82,7 +82,7 @@ def evaluate(self, submission_id: str) -> None:
                     try:
                         matched = structured_match(
                             extract_result(result.output), json.loads(case.expected_output),
-                            case.tolerance or evaluator.config.get("tolerance"),
+                            case.tolerance if case.tolerance is not None else (evaluator.config or {}).get("tolerance"),
                         )
                     except (ValueError, json.JSONDecodeError):
                         matched = False
