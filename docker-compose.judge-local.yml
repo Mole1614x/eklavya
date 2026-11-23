@@ -4,3 +4,9 @@
 services:
   judge:
     user: "0:0"
+    environment:
+      # Local Docker Desktop can take several seconds to create a runner.
+      # This is a wall-clock allowance, NOT precise per-program CPU timing.
+      JUDGE_CONTAINER_OVERHEAD_SECONDS: "15"
+      JUDGE_RUNNER_CPUS: "2.0"
+      JUDGE_RUNNER_MEMORY_MB: "512"
