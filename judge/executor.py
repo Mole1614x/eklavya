@@ -1,4 +1,6 @@
+import io
 import os
+import tarfile
 import selectors
 import subprocess
 import tempfile
@@ -37,7 +39,10 @@ def container_command(language: str, source_directory: Path, name: str) -> list[
     return isolated_command(image, source_directory, name, command)
 
 
-def isolated_command(image: str, source_directory: Path, name: str, command: str) -> list[str]:
+def isolated_command(image: str, source_directory: Path, name: str, command: str, archive_size: int | None = None) -> list[str]:
+    # Source files arrive over stdin. No host-path bind mount is required.
+    if archive_size is not None:
+        command = f"head -c {archive_size} | tar -xf - -C /source && {command}"
     return [
         "docker", "run", "--rm", "--interactive", "--name", name,
         "--pull", "never",
@@ -47,7 +52,8 @@ def isolated_command(image: str, source_directory: Path, name: str, command: str
         "--memory", "256m", "--memory-swap", "256m", "--cpus", "0.5",
         "--tmpfs", "/tmp:rw,noexec,nosuid,size=16m,mode=1777",
         "--tmpfs", "/work:rw,exec,nosuid,size=64m,mode=1777",
-        "--volume", f"{source_directory}:/source:ro", "--workdir", "/work",
+        "--tmpfs", "/source:rw,noexec,nosuid,size=64m,mode=1777",
+        "--workdir", "/work",
         image, "sh", "-c", command,
     ]
 
@@ -63,58 +69,113 @@ def execute(language: str, source_code: str, input_data: str) -> Execution:
         return run_container(image, source_directory, command, input_data)
 
 
+def _source_archive(source_directory: Path) -> bytes:
+    """Pack only regular submission files, using relative archive paths."""
+    stream = io.BytesIO()
+    with tarfile.open(fileobj=stream, mode="w") as archive:
+        for item in sorted(source_directory.rglob("*")):
+            if item.is_symlink():
+                raise ValueError("Submission fixtures cannot contain symbolic links.")
+            relative = item.relative_to(source_directory)
+            if item.is_dir():
+                continue
+            if not item.is_file():
+                raise ValueError("Unsupported submission fixture entry.")
+            data = item.read_bytes()
+            info = tarfile.TarInfo(relative.as_posix())
+            info.size = len(data)
+            info.mode = 0o444
+            info.uid = info.gid = 65534
+            archive.addfile(info, io.BytesIO(data))
+    return stream.getvalue()
+
+
 def run_container(image: str, source_directory: Path, command: str, input_data: str) -> Execution:
-        _prepare_source_directory(source_directory)
-        name = f"eklavya-{uuid4().hex}"
-        started = time.monotonic()
+    """Stream source to an isolated container instead of bind-mounting judge /tmp."""
+    name = f"eklavya-{uuid4().hex}"
+    started = time.monotonic()
+    try:
+        archive = _source_archive(source_directory)
+        payload = memoryview(archive + input_data.encode("utf-8"))
         process = subprocess.Popen(
-            isolated_command(image, source_directory, name, command), stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            isolated_command(image, source_directory, name, command, len(archive)),
+            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
         )
-        assert process.stdin is not None and process.stdout is not None
-        process.stdin.write(input_data.encode())
-        process.stdin.close()
+    except (OSError, ValueError) as error:
+        return Execution("SYSTEM_ERROR", f"Judge runtime setup failed: {type(error).__name__}", 0)
+
+    assert process.stdin is not None and process.stdout is not None
+    selector = selectors.DefaultSelector()
+    output = bytearray()
+    verdict: str | None = None
+    sent = 0
+    try:
+        os.set_blocking(process.stdin.fileno(), False)
         os.set_blocking(process.stdout.fileno(), False)
-        selector = selectors.DefaultSelector()
         selector.register(process.stdout, selectors.EVENT_READ)
-        output = bytearray()
-        # Container creation, JVM startup, and scientific-library imports are
-        # platform overhead rather than user work. Keep that allowance bounded.
-        # Container creation, JVM startup, and scientific-library imports are
-        # platform overhead rather than user work. Keep that allowance bounded.
+        if payload:
+            selector.register(process.stdin, selectors.EVENT_WRITE)
+        else:
+            process.stdin.close()
+
         deadline = started + TIME_LIMIT_SECONDS + CONTAINER_OVERHEAD_SECONDS
-        verdict: str | None = None
-        while process.poll() is None:
+        while selector.get_map():
             if time.monotonic() >= deadline:
                 verdict = "TIME_LIMIT_EXCEEDED"
                 _terminate_container(process, name)
                 break
             for key, _ in selector.select(timeout=0.05):
-                chunk = key.fileobj.read(4096)
-                if chunk:
-                    output.extend(chunk)
-                    if len(output) > MAX_OUTPUT_BYTES:
-                        verdict = "OUTPUT_LIMIT_EXCEEDED"
-                        _terminate_container(process, name)
-                        break
-        remaining_budget = max(0, MAX_OUTPUT_BYTES - len(output))
-        remaining = process.stdout.read(remaining_budget) if remaining_budget else b""
-        remaining = remaining or b""
-        output.extend(remaining)
-        elapsed = int((time.monotonic() - started) * 1000)
-        if verdict:
-            return Execution(verdict, output[:MAX_OUTPUT_BYTES].decode(errors="replace"), elapsed)
-        if process.returncode == 90:
-            verdict = "COMPILATION_ERROR"
-        elif process.returncode == 125:
-            return Execution("SYSTEM_ERROR", "The judge runtime is unavailable.", elapsed)
-        elif process.returncode == 137:
-            verdict = "MEMORY_LIMIT_EXCEEDED"
-        elif process.returncode != 0:
-            verdict = "RUNTIME_ERROR"
-        else:
-            verdict = "COMPLETED"
-        return Execution(verdict, output.decode(errors="replace"), elapsed)
+                if key.fileobj is process.stdin:
+                    try:
+                        written = os.write(process.stdin.fileno(), payload[sent:sent + 65536])
+                    except BrokenPipeError:
+                        written = 0
+                        sent = len(payload)
+                    sent += written
+                    if sent >= len(payload):
+                        selector.unregister(process.stdin)
+                        process.stdin.close()
+                else:
+                    try:
+                        chunk = os.read(process.stdout.fileno(), 4096)
+                    except BlockingIOError:
+                        continue
+                    if not chunk:
+                        selector.unregister(process.stdout)
+                    else:
+                        output.extend(chunk)
+                        if len(output) > MAX_OUTPUT_BYTES:
+                            verdict = "OUTPUT_LIMIT_EXCEEDED"
+                            _terminate_container(process, name)
+                            break
+            if verdict is not None:
+                break
+        if process.poll() is None:
+            process.wait(timeout=2)
+    except (OSError, subprocess.TimeoutExpired):
+        verdict = verdict or "SYSTEM_ERROR"
+        _terminate_container(process, name)
+    finally:
+        selector.close()
+        if not process.stdin.closed:
+            process.stdin.close()
+        process.stdout.close()
+
+    elapsed = int((time.monotonic() - started) * 1000)
+    if verdict:
+        message = "Judge execution failed." if verdict == "SYSTEM_ERROR" else output[:MAX_OUTPUT_BYTES].decode(errors="replace")
+        return Execution(verdict, message, elapsed)
+    if process.returncode == 90:
+        verdict = "COMPILATION_ERROR"
+    elif process.returncode == 125:
+        return Execution("SYSTEM_ERROR", "The judge runtime is unavailable.", elapsed)
+    elif process.returncode == 137:
+        verdict = "MEMORY_LIMIT_EXCEEDED"
+    elif process.returncode != 0:
+        verdict = "RUNTIME_ERROR"
+    else:
+        verdict = "COMPLETED"
+    return Execution(verdict, output.decode(errors="replace"), elapsed)
 
 
 def _prepare_source_directory(source_directory: Path) -> None:
