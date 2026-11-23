@@ -405,7 +405,7 @@ def attempt_read(db: Session, attempt: AssessmentAttempt, item: Assessment, user
 def dataset_read(item: PracticeDataset, user: User) -> dict[str, Any]:
     return {"id": item.id, "title": item.title, "description": item.description, "category": item.category,
             "difficulty": item.difficulty, "format": item.format, "original_filename": item.original_filename,
-            "size_bytes": item.size_bytes, "status": item.status, "version": item.version,
+            "size_bytes": item.size_bytes, "status": item.status, "access_scope": item.access_scope, "version": item.version,
             "download_allowed": item.download_allowed, "column_info": item.column_info, "profile": item.profile,
             "transformations": item.transformations, "created_at": item.created_at,
             "owned_by_current_user": item.owner_user_id == user.id}
@@ -414,6 +414,10 @@ def dataset_read(item: PracticeDataset, user: User) -> dict[str, Any]:
 @router.post("/datasets", response_model=DatasetRead, status_code=status.HTTP_201_CREATED)
 def upload_dataset(payload: DatasetUpload, request: Request, db: DB, user: CurrentUser) -> dict:
     if payload.publish and user.role != "admin": raise HTTPException(status_code=403, detail="Only administrators can publish library datasets")
+    if payload.assigned_user_ids and user.role != "admin": raise HTTPException(status_code=403, detail="Only administrators can assign students")
+    validate_students(db, payload.assigned_user_ids)
+    if payload.publish and payload.access_scope == "SELECTED" and not payload.assigned_user_ids:
+        raise HTTPException(status_code=409, detail="Assign at least one student when access is SELECTED")
     extension, dataset_format = _dataset_input(payload)
     try: content = base64.b64decode(payload.content_base64, validate=True)
     except (binascii.Error, ValueError) as error: raise HTTPException(status_code=422, detail="Dataset content is not valid base64") from error
@@ -432,10 +436,12 @@ def upload_dataset(payload: DatasetUpload, request: Request, db: DB, user: Curre
                            description=payload.description, category=payload.category, difficulty=payload.difficulty,
                            format=dataset_format, original_filename=payload.filename, content_type=payload.content_type,
                            size_bytes=len(content), sha256=hashlib.sha256(content).hexdigest(), storage_path=str(path),
-                           status="PUBLISHED" if payload.publish else "PRIVATE", version=version,
+                           status="PUBLISHED" if payload.publish else "PRIVATE", access_scope=payload.access_scope, version=version,
                            download_allowed=payload.download_allowed, column_info=column_info, profile=profile,
                            transformations=[], created_by=user.id)
     db.add(item)
+    if payload.publish and payload.assigned_user_ids:
+        replace_students(db, "dataset", item.id, payload.assigned_user_ids)
     if user.role == "admin": audit(db, request, user, "dataset.practice_upload", "practice_dataset", item.id, {"status": item.status})
     db.commit()
     return dataset_read(item, user)
@@ -463,7 +469,9 @@ def my_datasets(db: DB, user: CurrentUser) -> list[dict]:
 def dataset_library(db: DB, user: CurrentUser, category: Annotated[str | None, Query(max_length=32)] = None) -> list[dict]:
     filters = [PracticeDataset.status == "PUBLISHED"]
     if category: filters.append(PracticeDataset.category == category)
-    items = db.scalars(select(PracticeDataset).where(*filters).order_by(PracticeDataset.category, PracticeDataset.title).limit(100)).all()
+    items = db.scalars(select(PracticeDataset).where(
+        *filters, audience_filter(PracticeDataset, "dataset", user)
+    ).order_by(PracticeDataset.category, PracticeDataset.title).limit(100)).all()
     return [dataset_read(item, user) for item in items]
 
 
@@ -492,7 +500,9 @@ def transform_dataset(dataset_id: str, payload: DatasetTransform, db: DB, user: 
 def download_dataset(dataset_id: str, db: DB, user: CurrentUser):
     item = db.get(PracticeDataset, dataset_id)
     if item is None or item.status == "ARCHIVED": raise HTTPException(status_code=404, detail="Dataset not found")
-    permitted = item.owner_user_id == user.id or user.role == "admin" or (item.status == "PUBLISHED" and item.download_allowed)
+    permitted = item.owner_user_id == user.id or user.role == "admin" or (
+        item.status == "PUBLISHED" and item.download_allowed and can_access(db, item, "dataset", user)
+    )
     if not permitted: raise HTTPException(status_code=404, detail="Dataset not found")
     path = Path(item.storage_path)
     if not path.is_file(): raise HTTPException(status_code=410, detail="Dataset object is unavailable")
@@ -509,7 +519,11 @@ def download_dataset(dataset_id: str, db: DB, user: CurrentUser):
 def create_dataset_practice(dataset_id: str, payload: DatasetPracticeWrite, db: DB, user: CurrentUser,
                             enqueue: DatasetPracticeEnqueuer) -> DatasetPracticeRun:
     item = db.get(PracticeDataset, dataset_id)
-    if item is None or item.status == "ARCHIVED" or not (item.owner_user_id == user.id or item.status == "PUBLISHED"):
+    if item is None or item.status == "ARCHIVED" or not (
+        item.owner_user_id == user.id or user.role == "admin" or (
+            item.status == "PUBLISHED" and can_access(db, item, "dataset", user)
+        )
+    ):
         raise HTTPException(status_code=404, detail="Dataset not found")
     active = db.scalar(select(func.count(DatasetPracticeRun.id)).where(DatasetPracticeRun.user_id == user.id,
                                                                         DatasetPracticeRun.status.in_(["QUEUED", "RUNNING"]))) or 0
@@ -546,6 +560,7 @@ def manage_dataset(dataset_id: str, payload: dict[str, Any], request: Request, d
     item = own_dataset(db, dataset_id, admin)
     requested = payload.get("status")
     if requested not in {"PRIVATE", "PUBLISHED", "ARCHIVED"}: raise HTTPException(status_code=422, detail="Invalid dataset status")
+    if requested == "PUBLISHED": require_publishable(db, item, "dataset")
     item.status = requested; item.owner_user_id = None if requested == "PUBLISHED" else item.owner_user_id
     audit(db, request, admin, "dataset.practice_status", "practice_dataset", item.id, {"status": requested})
     db.commit(); return dataset_read(item, admin)
