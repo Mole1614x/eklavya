@@ -74,25 +74,42 @@ function fileBase64(file: File) {
 
 function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; initial: string; endpoint: string; onSaved: () => Promise<void> }) {
   const [message, setMessage] = useState("");
+  const [definition, setDefinition] = useState(initial);
+  const [advanced, setAdvanced] = useState(false);
+  const [slug, setSlug] = useState("");
+  const parsed = (() => { try { return JSON.parse(definition) as Record<string, unknown>; } catch { return null; } })();
+
+  function updateField(field: string, value: string) {
+    if (!parsed) { setMessage("Fix the JSON before using quick-edit fields."); return; }
+    setDefinition(JSON.stringify({ ...parsed, [field]: value }, null, 2));
+  }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const slug = String(form.get("slug") ?? "").trim();
     try {
       setMessage("Saving…");
-      const definition = JSON.parse(String(form.get("definition")));
-      await api(`${endpoint}/${encodeURIComponent(slug)}`, {
-        method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(definition),
+      const payload = JSON.parse(definition);
+      await api(`${endpoint}/${encodeURIComponent(slug.trim())}`, {
+        method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload),
       });
-      setMessage("Saved and audited.");
+      setMessage("Saved successfully. Your changes are recorded in the audit log.");
       await onSaved();
     } catch (error) { setMessage(error instanceof Error ? error.message : "Save failed"); }
   }
+  const isProblem = endpoint === "problems";
+  const isContest = endpoint === "contests";
   return <form className="card admin-editor" onSubmit={submit}>
-    <h3>{title}</h3>
-    <label>Slug<input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label>
-    <label>Validated definition<textarea name="definition" defaultValue={initial} required spellCheck={false} /></label>
-    <div className="form-actions"><button className="button">Save</button><span role="status">{message}</span></div>
+    <div className="admin-editor-heading"><div><span className="section-kicker">CONTENT STUDIO</span><h3>{title}</h3><p>Start with the essentials, then refine the full definition if needed.</p></div><span className="pill">Admin only</span></div>
+    <label>Unique slug<input name="slug" value={slug} onChange={(event) => setSlug(event.target.value)} placeholder={isProblem ? "two-sum" : isContest ? "weekly-arena" : "new-entry"} required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label>
+    {parsed && <div className="admin-quick-fields">
+      <label>Title<input value={String(parsed.title ?? parsed.name ?? "")} onChange={(event) => updateField("title", event.target.value)} placeholder="Give this item a clear title" /></label>
+      {isProblem && <label>Difficulty<select value={String(parsed.difficulty ?? "Easy")} onChange={(event) => updateField("difficulty", event.target.value)}><option>Beginner</option><option>Easy</option><option>Medium</option><option>Hard</option></select></label>}
+      {isContest && <label>Publication<select value={String(parsed.publication_status ?? "DRAFT")} onChange={(event) => updateField("publication_status", event.target.value)}><option>DRAFT</option><option>PUBLISHED</option></select></label>}
+      {isProblem && <label>Publication<select value={String(parsed.status ?? "DRAFT")} onChange={(event) => updateField("status", event.target.value)}><option>DRAFT</option><option>PUBLISHED</option></select></label>}
+    </div>}
+    <button className="admin-advanced-toggle" type="button" aria-expanded={advanced} onClick={() => setAdvanced((value) => !value)}>{advanced ? "Hide" : "Show"} full definition (JSON) <span aria-hidden="true">{advanced ? "−" : "+"}</span></button>
+    {advanced && <label>Validated definition<textarea name="definition" value={definition} onChange={(event) => setDefinition(event.target.value)} required spellCheck={false} aria-label="Complete item definition in JSON" /><small>Configure test cases, constraints, editor starters, schedules and evaluator settings here.</small></label>}
+    {!parsed && <p className="form-error" role="alert">The definition is not valid JSON. Correct it using the full definition editor.</p>}
+    <div className="form-actions"><button className="button" disabled={!parsed}>Save changes</button><span role="status">{message}</span></div>
   </form>;
 }
 
