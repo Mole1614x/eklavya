@@ -24,6 +24,7 @@ class AssessmentWrite(BaseModel):
     penalty_percent: float = Field(default=0, ge=0, le=100)
     release_results: bool = False
     status: Literal["DRAFT", "PUBLISHED", "UNPUBLISHED"] = "DRAFT"
+    access_scope: Literal["ALL", "SELECTED"] = "SELECTED"
     template_key: str | None = Field(default=None, max_length=40)
     questions: list[AssessmentQuestionWrite] = Field(min_length=1, max_length=100)
     assigned_user_ids: list[int] = Field(default_factory=list, max_length=1000)
@@ -56,6 +57,7 @@ class AssessmentTemplateCreate(BaseModel):
     question_slugs: list[str] = Field(default_factory=list, max_length=100)
     assigned_user_ids: list[int] = Field(default_factory=list, max_length=1000)
     assigned_group_ids: list[str] = Field(default_factory=list, max_length=100)
+    access_scope: Literal["ALL", "SELECTED"] = "SELECTED"
     release_results: bool = False
 
 
@@ -78,6 +80,9 @@ class AssessmentRead(BaseModel):
     release_results: bool
     status: str
     template_key: str | None
+    access_scope: Literal["ALL", "SELECTED"]
+    assigned_user_ids: list[int] = Field(default_factory=list)
+    assigned_group_ids: list[str] = Field(default_factory=list)
     questions: list[dict[str, Any]]
     assigned_count: int
     attempt_count: int
