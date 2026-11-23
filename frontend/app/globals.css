@@ -520,3 +520,14 @@ h1, h2, h3 { color: #f8fafb; }
 .admin-editor .form-actions { align-items: center; }
 .admin-editor .form-actions span { font-size: 12px; color: #b0c0c6; overflow-wrap: anywhere; }
 @media (max-width: 640px) { .auth-card { padding: 20px; } .admin-editor-heading { flex-direction: column; } }
+
+.workspace-mode { display: inline-flex; align-items: center; gap: 8px; color: #c6ff3d;
+  font-size: 10px; font-weight: 850; letter-spacing: .13em; }
+.workspace-mode svg { color: #c6ff3d; }
+.workspace-toolbar > label { margin-left: auto; }
+.workspace-toolbar > div { margin-left: auto; }
+@media (max-width: 760px) {
+  .workspace-toolbar { justify-content: space-between; }
+  .workspace-mode { flex: 1 1 100%; }
+  .workspace-toolbar > label, .workspace-toolbar > div { margin-left: 0; }
+}
