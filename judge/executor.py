@@ -10,6 +10,8 @@ from pathlib import Path
 from uuid import uuid4
 
 MAX_OUTPUT_BYTES = 64 * 1024
+MAX_SOURCE_BYTES = 16 * 1024 * 1024
+MAX_STDIN_BYTES = 2 * 1024 * 1024
 TIME_LIMIT_SECONDS = 5
 CONTAINER_OVERHEAD_SECONDS = max(0, int(os.getenv("JUDGE_CONTAINER_OVERHEAD_SECONDS", "2")))
 RUNNER_CPUS = os.getenv("JUDGE_RUNNER_CPUS", "0.5")
@@ -75,6 +77,7 @@ def _source_archive(source_directory: Path) -> bytes:
     """Pack only regular submission files, using relative archive paths."""
     stream = io.BytesIO()
     with tarfile.open(fileobj=stream, mode="w") as archive:
+        source_total = 0
         for item in sorted(source_directory.rglob("*")):
             if item.is_symlink():
                 raise ValueError("Submission fixtures cannot contain symbolic links.")
@@ -83,6 +86,9 @@ def _source_archive(source_directory: Path) -> bytes:
                 continue
             if not item.is_file():
                 raise ValueError("Unsupported submission fixture entry.")
+            source_total += item.stat().st_size
+            if source_total > MAX_SOURCE_BYTES:
+                raise ValueError("Submission source exceeds maximum archive size.")
             data = item.read_bytes()
             info = tarfile.TarInfo(relative.as_posix())
             info.size = len(data)
@@ -97,8 +103,11 @@ def run_container(image: str, source_directory: Path, command: str, input_data: 
     name = f"eklavya-{uuid4().hex}"
     started = time.monotonic()
     try:
+        stdin_bytes = input_data.encode("utf-8")
+        if len(stdin_bytes) > MAX_STDIN_BYTES:
+            raise ValueError("Submission input exceeds the allowed size.")
         archive = _source_archive(source_directory)
-        payload = memoryview(archive + input_data.encode("utf-8"))
+        payload = memoryview(archive + stdin_bytes)
         process = subprocess.Popen(
             isolated_command(image, source_directory, name, command, len(archive)),
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
