@@ -7,7 +7,8 @@ from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
-from .auth import CurrentUser, require_admin
+from .access_control import audience_filter, can_access
+from .auth import CurrentUser, OptionalUser, require_admin
 from .cache import cache_key, get_public, invalidate_public, set_public
 from .gamification import award_achievement
 from .judge_client import Enqueuer
@@ -31,9 +32,9 @@ def aware(value: datetime) -> datetime:
 
 
 @router.get("", response_model=list[ContestSummary])
-def contests(db: DB) -> list[dict]:
+def contests(db: DB, viewer: OptionalUser = None) -> list[dict]:
     key = cache_key("contest", "list")
-    cached = get_public(key)
+    cached = get_public(key) if viewer is None else None
     if cached is not None:
         return cached
     now = datetime.now(timezone.utc)
@@ -43,9 +44,10 @@ def contests(db: DB) -> list[dict]:
             "starts_at": item.starts_at, "ends_at": item.ends_at,
             "status": contest_status(item, now), "is_rated": item.is_rated,
         }
-        for item in db.scalars(select(Contest).where(Contest.publication_status != "DRAFT").order_by(Contest.starts_at.desc()).limit(50))
+        for item in db.scalars(select(Contest).where(Contest.publication_status != "DRAFT",
+                                       audience_filter(Contest, "contest", viewer)).order_by(Contest.starts_at.desc()).limit(50))
     ]
-    set_public(key, result)
+    if viewer is None: set_public(key, result)
     return result
 
 
@@ -68,8 +70,8 @@ def contest_history(user: CurrentUser, db: DB) -> list[dict]:
 
 
 @router.get("/{slug}", response_model=ContestDetail)
-def contest_detail(slug: str, db: DB) -> dict:
-    contest = find_contest(db, slug)
+def contest_detail(slug: str, db: DB, viewer: OptionalUser = None) -> dict:
+    contest = find_contest(db, slug, viewer)
     now = datetime.now(timezone.utc)
     problems = []
     if aware(contest.starts_at) <= now:
@@ -95,7 +97,7 @@ def contest_detail(slug: str, db: DB) -> dict:
 
 @router.get("/{slug}/me", response_model=ContestParticipant)
 def participant_status(slug: str, user: CurrentUser, db: DB) -> dict:
-    contest = find_contest(db, slug)
+    contest = find_contest(db, slug, user)
     registered = db.scalar(
         select(ContestRegistration.id).where(
             ContestRegistration.contest_id == contest.id, ContestRegistration.user_id == user.id,
@@ -117,7 +119,7 @@ def participant_status(slug: str, user: CurrentUser, db: DB) -> dict:
 
 @router.post("/{slug}/register", status_code=status.HTTP_204_NO_CONTENT)
 def register(slug: str, user: CurrentUser, db: DB) -> None:
-    contest = find_contest(db, slug)
+    contest = find_contest(db, slug, user)
     if contest.publication_status != "PUBLISHED":
         raise HTTPException(status_code=409, detail="Contest registration is unavailable")
     if datetime.now(timezone.utc) >= aware(contest.starts_at):
@@ -150,7 +152,7 @@ def submit(
     slug: str, problem_slug: str, payload: SubmissionCreate,
     user: CurrentUser, db: DB, enqueue: Enqueuer,
 ) -> Submission:
-    contest = find_contest(db, slug)
+    contest = find_contest(db, slug, user)
     now = datetime.now(timezone.utc)
     if contest.publication_status != "PUBLISHED":
         raise HTTPException(status_code=409, detail="Contest is unavailable")
@@ -196,8 +198,8 @@ def submit(
 
 
 @router.get("/{slug}/leaderboard", response_model=list[ContestStanding])
-def contest_leaderboard(slug: str, db: DB) -> list[dict]:
-    contest = find_contest(db, slug)
+def contest_leaderboard(slug: str, db: DB, viewer: OptionalUser = None) -> list[dict]:
+    contest = find_contest(db, slug, viewer)
     key = cache_key("contest", "leaderboard", slug)
     cached = get_public(key)
     if cached is not None:
@@ -261,9 +263,9 @@ def create_contest(
     return {"slug": contest.slug}
 
 
-def find_contest(db: Session, slug: str) -> Contest:
+def find_contest(db: Session, slug: str, viewer: User | None = None) -> Contest:
     contest = db.scalar(select(Contest).where(Contest.slug == slug))
-    if contest is None or contest.publication_status == "DRAFT":
+    if contest is None or contest.publication_status == "DRAFT" or not can_access(db, contest, "contest", viewer):
         raise HTTPException(status_code=404, detail="Contest not found")
     return contest
 
