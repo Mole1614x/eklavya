@@ -85,7 +85,7 @@ def assessment_read(db: Session, item: Assessment) -> dict[str, Any]:
         "opens_at": item.opens_at, "closes_at": item.closes_at, "max_attempts": item.max_attempts,
         "penalty_percent": item.penalty_percent, "release_results": item.release_results,
         "status": item.status, "template_key": item.template_key, "access_scope": item.access_scope,
-        "assigned_user_ids": sorted(assigned_users),
+        "assigned_user_ids": student_ids(db, "assessment", item.id),
         "assigned_group_ids": sorted(db.scalars(select(AssessmentGroupAssignment.group_id).where(AssessmentGroupAssignment.assessment_id == item.id))),
         "questions": [{"problem_slug": question.problem_slug, "title": problem.title,
                        "difficulty": problem.difficulty, "position": question.position, "points": question.points}
@@ -251,7 +251,11 @@ def my_assessments(db: DB, user: CurrentUser) -> list[dict]:
     items = db.scalars(select(Assessment).where(
         Assessment.status == "PUBLISHED", audience_filter(Assessment, "assessment", user)
     ).order_by(Assessment.opens_at.desc())).all()
-    return [assessment_read(db, item) for item in items]
+    # The list shows counts, not question text or slugs before an attempt starts.
+    result = [assessment_read(db, item) for item in items]
+    for summary in result:
+        summary["questions"] = [{"position": index} for index, _ in enumerate(summary["questions"])]
+    return result
 
 
 @router.post("/assessments/{assessment_id}/start", response_model=AttemptRead, status_code=status.HTTP_201_CREATED)
