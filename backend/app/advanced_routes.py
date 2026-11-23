@@ -18,7 +18,7 @@ from sqlalchemy import case, delete, func, or_, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
-from .access_control import audience_filter, can_access, require_publishable, replace_students, student_ids, validate_students
+from .access_control import audience_filter, can_access, prevent_unconfirmed_inline_change, require_publishable, replace_students, student_ids, validate_students
 from .advanced_evaluators import EXCEL_FUNCTIONS, TABLEAU_FUNCTIONS, ExpressionError, equivalent, evaluate_excel, evaluate_tableau, validate_tableau
 from .auth import CurrentUser, require_admin
 from .config import settings
@@ -169,6 +169,7 @@ def create_assessment_from_template(template_key: str, payload: AssessmentTempla
 def update_assessment(assessment_id: str, payload: AssessmentWrite, request: Request, db: DB, admin: Admin) -> dict:
     item = db.get(Assessment, assessment_id)
     if item is None: raise HTTPException(status_code=404, detail="Assessment not found")
+    prevent_unconfirmed_inline_change(db, item, "assessment", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
     if db.scalar(select(func.count(AssessmentAttempt.id)).where(AssessmentAttempt.assessment_id == item.id)):
         raise HTTPException(status_code=409, detail="An assessment with attempts cannot have its questions or timing replaced")
     for key, value in payload.model_dump(exclude={"questions", "assigned_user_ids", "assigned_group_ids"}).items(): setattr(item, key, value)
