@@ -313,3 +313,10 @@ class AuditLogRead(BaseModel):
     details: dict
     ip_address: str | None
     created_at: datetime
+
+
+class StudentAccessWrite(BaseModel):
+    access_scope: Literal["ALL", "SELECTED"]
+    assigned_user_ids: list[int] | None = Field(default=None, max_length=1000)
+    confirm_impact: bool = False
+    reason: str = Field(default="Access scope updated", min_length=3, max_length=240)
