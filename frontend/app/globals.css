@@ -323,3 +323,37 @@ select { max-width: 100%; min-height: 40px; border: 1px solid #36405a; border-ra
 .admin-review pre { max-height: 260px; overflow: auto; padding: 10px; background: var(--background); color: #cbd5ef; font-size: 11px; }
 @media (max-width: 1040px) { .admin-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .admin-two { grid-template-columns: 1fr; } .admin-editor { position: static; } }
 @media (max-width: 640px) { .admin-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .admin-table .section-heading { align-items: stretch; flex-direction: column; } .admin-search { min-width: 100%; } }
+
+/* Central student audience picker and impact confirmation */
+.student-access { min-width: 0; display: grid; gap: 10px; margin: 0; padding: 14px; border: 1px solid var(--border); border-radius: 11px; }
+.student-access legend { padding: 0 6px; font-size: 13px; font-weight: 750; color: var(--text); }
+.student-access-choice { display: flex !important; align-items: flex-start; gap: 10px !important; cursor: pointer; padding: 11px 12px; border: 1px solid var(--border);
+  border-radius: 9px; background: var(--background); }
+.student-access-choice:has(input:checked) { border-color: var(--accent); background: var(--surface-raised); }
+.student-access-choice > input { flex: 0 0 16px; width: 16px; height: 16px; margin-top: 3px; accent-color: var(--accent); }
+.student-access-choice span, .student-access-student span { display: grid; gap: 3px; }
+.student-access-choice strong { color: var(--text); font-size: 13px; }
+.student-access-choice small { display: block; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.student-access-note { color: #86e1bb; font-size: 12px; line-height: 1.5; }
+.student-access-selection { display: grid; gap: 9px; min-width: 0; }
+.student-access-selection > label { display: block; color: var(--muted); font-size: 12px; }
+.student-access-selection > input { width: 100%; min-height: 40px; padding: 9px 11px; color: var(--text); border: 1px solid var(--border); border-radius: 9px; background: var(--background); }
+.student-access-selection > p { font-size: 12px; }
+.student-access-results { display: grid; gap: 5px; max-height: 170px; overflow-y: auto; }
+.student-access-student { display: flex !important; align-items: center; gap: 10px !important; padding: 9px 11px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
+.student-access-student input { flex: 0 0 auto; width: 15px !important; min-height: 15px !important; height: 15px; accent-color: var(--accent); }
+.student-access-student span { font-size: 12px; color: var(--text); }
+.student-access-student small { color: var(--muted); font-size: 10px; }
+.student-access-selected { display: flex; flex-wrap: wrap; gap: 6px; }
+.student-access-selected button { font-size: 11px; border: 1px solid #445a48; padding: 6px 8px; color: var(--accent); border-radius: 20px; }
+.access-manager { width: 100%; position: relative; }
+.access-manager-toggle { padding: 7px 0; color: var(--accent) !important; font-size: 12px; font-weight: 700; }
+.access-manager-panel { display: grid; gap: 12px; width: min(470px, 72vw); padding: 14px; border: 1px solid #455e52; background: var(--surface);
+  box-shadow: 0 16px 42px #05070b55; border-radius: 12px; }
+.access-manager-panel p { font-size: 12px; line-height: 1.5; }
+.access-impact { display: grid; gap: 10px; padding: 13px; border: 1px solid #5f6546; border-radius: 10px; background: #282821; }
+.access-impact strong { color: var(--accent); font-size: 12px; }
+.access-impact label { display: flex; align-items: flex-start; gap: 9px; font-size: 12px; cursor: pointer; }
+.access-impact input { flex: 0 0 auto; margin-top: 2px; accent-color: var(--accent); }
+.admin-access-filter { display: flex; align-items: center; gap: 10px; margin: 14px 0; color: var(--muted); font-size: 12px; }
+@media (max-width: 640px) { .student-access { padding: 10px; } .access-manager-panel { width: min(340px, 86vw); } }
