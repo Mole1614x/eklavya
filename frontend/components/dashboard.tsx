@@ -51,7 +51,7 @@ export function Dashboard() {
         <LiveProgress />
       </section>
       <div className="overview-grid">
-        <PracticeChart />
+        <PracticeChart verified />
         <div className="stack">
           <section className="card rank-card spotlight-card">
             <div className="section-heading"><div><p className="section-kicker">KEEP EXPLORING</p><h2>Your next milestone</h2></div><Sparkles size={22}/></div>
