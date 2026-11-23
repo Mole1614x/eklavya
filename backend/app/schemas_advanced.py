@@ -120,6 +120,8 @@ class DatasetUpload(BaseModel):
     content_type: str = Field(min_length=1, max_length=120)
     content_base64: str = Field(min_length=1)
     publish: bool = False
+    access_scope: Literal["ALL", "SELECTED"] = "ALL"
+    assigned_user_ids: list[int] = Field(default_factory=list, max_length=1000)
     download_allowed: bool = True
 
 
@@ -133,6 +135,7 @@ class DatasetRead(BaseModel):
     original_filename: str
     size_bytes: int
     status: str
+    access_scope: Literal["ALL", "SELECTED"]
     version: int
     download_allowed: bool
     column_info: list[dict[str, Any]]
