@@ -16,8 +16,8 @@ def test_container_command_applies_isolation_controls(tmp_path):
 
 
 def test_console_comparison_preserves_whitespace_and_allows_final_newline():
-    assert outputs_match("*\\n**\\n", "*\\n**")
-    assert not outputs_match("* \\n**", "*\\n**")
+    assert outputs_match("*\n**\n", "*\n**")
+    assert not outputs_match("* \n**", "*\n**")
     assert outputs_match("0.300001", "0.3", 0.00001)
     assert not outputs_match("0.31", "0.3", 0.00001)
 
