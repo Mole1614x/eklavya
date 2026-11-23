@@ -45,6 +45,27 @@ cp .env.example .env
 docker compose --profile judge up --build -d --wait
 ```
 
+### Docker Desktop on macOS (trusted local development)
+
+On Docker Desktop installations where the judge socket is owned by root and
+cannot be accessed by its unprivileged user, **do not** change the socket
+permissions. Use the explicit local-only override, which grants the worker
+Docker daemon control and must never be used on a public server:
+
+```sh
+docker compose -p eklavya -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge up -d --build
+bash scripts/verify_judge_local.sh
+```
+
+Open <http://localhost:3000>. The API listens on the port set by
+`BACKEND_PORT` in `.env` (8001 in the verified macOS setup).
+
+The repair has passed 22 local judge smoke tests, including Java, C++, SQL,
+Pandas/NumPy, PySpark, PyTorch, error outcomes, and output/time limits.
+This does **not** mean the Docker-socket design is production-secure, nor does
+it validate every browser/account workflow. See
+[local judge setup and security notes](docs/LOCAL_JUDGE_DOCKER.md).
+
 The full command builds the data, Spark, ML, and CPU PyTorch images and can take several minutes. For UI/API work without execution workers:
 
 ```sh

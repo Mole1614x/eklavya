@@ -1,0 +1,102 @@
+# EKLAVYA judge on Docker Desktop (local development only)
+
+The web application runs independently of the optional judge profile.
+The judge Dockerfile uses Docker CLI 24.0.6, matching Docker Desktop Engine
+24.0.6. The judge runner sends source files over stdin as a tar archive,
+so Docker does not need to bind-mount paths from inside the judge container.
+
+## Run on the Mac
+
+In the repository root, ensure Docker Desktop is running.
+
+```sh
+docker compose -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge up -d --build
+docker compose -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge ps
+docker compose -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge exec judge docker info
+docker compose -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge logs --tail=60 judge
+```
+
+The local Compose override deliberately runs the judge as root to access
+Docker Desktop's root-owned Docker socket (mode 0755 in the reported setup).
+**Do not use the override on a shared, internet-facing or production host.**
+Docker socket access is equivalent to Docker host administrative access.
+The judge's container limits do not make socket delegation safe.
+
+For local changes, use `git status` before pulling and preserve any uncommitted
+modifications. The local override is intentionally separate from the base
+Compose file; never enable it in a production deployment.
+
+Frontend: http://localhost:3000
+Backend health: http://localhost:8001/api/v1/health/ready
+
+## Smoke tests
+
+```sh
+docker compose -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge exec judge python -c 'from judge.executor import execute; print(execute("python", "print(2+2)", ""))'
+docker compose -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge exec judge python -c 'from judge.executor import execute; print(execute("java", "public class Main { public static void main(String[] args) { System.out.println(4); }}", ""))'
+```
+
+Expect `Execution(verdict='COMPLETED', output='4\\n', ...)` for both smoke tests.
+Full API submission, evaluator verdicts and security hardening require separate validation.
+
+Note: the Docker daemon in the reported local environment warns that its
+default seccomp profile is disabled. Review Docker Desktop security settings
+before running code from anyone besides yourself.
+
+## Slow Java and C++ compilation on Docker Desktop
+
+The local-only override gives each ephemeral runner up to 2 CPUs and 512 MiB of
+memory and increases the overall wall-clock start/compile allowance from 2s to
+15s. This is only a development workaround: it does **not** distinguish
+compilation time from user-code execution time, and is not suitable for fair
+competitive time limits or hostile submissions. A production judge must measure
+program runtime separately from container startup and compilation.
+
+After changing the override, recreate the judge (a Dockerfile rebuild is not
+needed for environment-only changes, but is needed after executor.py changes).
+
+## One-command local validation
+
+From the patched worktree run:
+
+```sh
+bash scripts/verify_judge_local.sh
+```
+
+This recreates the local judge and runs `python -m judge.smoke` with no
+additional test dependencies. It checks five languages, error verdicts, stdin,
+SQL, Linux fixtures, NumPy, MapReduce, AI NumPy, CSV Data Lab,
+time-limit enforcement, and output-limit enforcement.
+The smoke test is intentionally opt-in; no untrusted submissions should
+be accepted while the root Docker socket override is enabled.
+
+For heavier PySpark and PyTorch verification (requires runner images
+and more RAM) use:
+
+```sh
+docker compose -p eklavya -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge exec -T -e EKLAVYA_JUDGE_HEAVY_SMOKE=1 judge python -m judge.smoke
+```
+
+**Limitations:** This local-development repair uses a privileged Docker socket,
+and the time budget covers startup, compilation, and user execution together.
+It is not a secure production judge and cannot accurately rank code runtime.
+The website Accepted result and direct evaluator smoke tests do not establish
+database persistence, all frontend workflows, or a hostile-code security audit.
+
+## PySpark local hostname startup fix
+
+PySpark 3.5.3 invokes the `ps` command and needs to bind its internal Java
+gateway on loopback. The dedicated bigdata runner image now includes `procps`
+and sets `SPARK_LOCAL_IP=127.0.0.1` and `SPARK_LOCAL_HOSTNAME=localhost`.
+The runner keeps `--network none` so external networking remains disabled.
+
+After updating the branch, rebuild **the bigdata runner image**, not just the
+judge image:
+
+```sh
+docker compose -p eklavya -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge build bigdata-runner
+docker compose -p eklavya -f docker-compose.yml -f docker-compose.judge-local.yml --profile judge exec -T -e EKLAVYA_JUDGE_HEAVY_SMOKE=1 judge python -m judge.smoke
+```
+
+This is a targeted fix for the observed missing `ps` executable and
+hostname resolution failures, not a claim that every PySpark workload passes.
