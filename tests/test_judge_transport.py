@@ -40,3 +40,10 @@ def test_archive_rejects_symlinks():
             pass
         else:
             raise AssertionError("Symlink must not be accepted")
+
+
+def test_runner_resource_settings_are_applied():
+    from judge import executor
+    command = isolated_command("python:3.12-alpine", Path("/tmp/unused"), "test", "true", 10240)
+    assert command[command.index("--cpus") + 1] == executor.RUNNER_CPUS
+    assert command[command.index("--memory") + 1] == f"{executor.RUNNER_MEMORY_MB}m"
