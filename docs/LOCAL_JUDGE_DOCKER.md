@@ -42,3 +42,15 @@ Full API submission, evaluator verdicts and security hardening require separate 
 Note: the Docker daemon in the reported local environment warns that its
 default seccomp profile is disabled. Review Docker Desktop security settings
 before running code from anyone besides yourself.
+
+## Slow Java and C++ compilation on Docker Desktop
+
+The local-only override gives each ephemeral runner up to 2 CPUs and 512 MiB of
+memory and increases the overall wall-clock start/compile allowance from 2s to
+15s. This is only a development workaround: it does **not** distinguish
+compilation time from user-code execution time, and is not suitable for fair
+competitive time limits or hostile submissions. A production judge must measure
+program runtime separately from container startup and compilation.
+
+After changing the override, recreate the judge (a Dockerfile rebuild is not
+needed for environment-only changes, but is needed after executor.py changes).
