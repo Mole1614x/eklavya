@@ -11,7 +11,9 @@ from uuid import uuid4
 
 MAX_OUTPUT_BYTES = 64 * 1024
 TIME_LIMIT_SECONDS = 5
-CONTAINER_OVERHEAD_SECONDS = 2
+CONTAINER_OVERHEAD_SECONDS = max(0, int(os.getenv("JUDGE_CONTAINER_OVERHEAD_SECONDS", "2")))
+RUNNER_CPUS = os.getenv("JUDGE_RUNNER_CPUS", "0.5")
+RUNNER_MEMORY_MB = max(128, int(os.getenv("JUDGE_RUNNER_MEMORY_MB", "256")))
 
 
 @dataclass(frozen=True)
@@ -49,7 +51,7 @@ def isolated_command(image: str, source_directory: Path, name: str, command: str
         "--network", "none", "--read-only", "--cap-drop", "ALL",
         "--user", "65534:65534",
         "--security-opt", "no-new-privileges", "--pids-limit", "64",
-        "--memory", "256m", "--memory-swap", "256m", "--cpus", "0.5",
+        "--memory", f"{RUNNER_MEMORY_MB}m", "--memory-swap", f"{RUNNER_MEMORY_MB}m", "--cpus", RUNNER_CPUS,
         "--tmpfs", "/tmp:rw,noexec,nosuid,size=16m,mode=1777",
         "--tmpfs", "/work:rw,exec,nosuid,size=64m,mode=1777",
         "--tmpfs", "/source:rw,noexec,nosuid,size=64m,mode=1777",
@@ -176,16 +178,6 @@ def run_container(image: str, source_directory: Path, command: str, input_data: 
     else:
         verdict = "COMPLETED"
     return Execution(verdict, output.decode(errors="replace"), elapsed)
-
-
-def _prepare_source_directory(source_directory: Path) -> None:
-    # Rootless Docker remaps container root and cannot traverse mkdtemp's 0700
-    # directory or read its 0600 files. The read-only bind mount contains only
-    # this submission's ephemeral source and evaluator inputs.
-    source_directory.chmod(0o755)
-    for item in source_directory.iterdir():
-        if item.is_file():
-            item.chmod(0o444)
 
 
 def _terminate_container(process: subprocess.Popen, name: str) -> None:
