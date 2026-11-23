@@ -1,0 +1,6 @@
+# Only for trusted, local Docker Desktop development.
+# Root is needed because Docker Desktop mounts docker.sock as root:root mode 0755.
+# This grants the worker control over the Docker daemon: NEVER use on a public host.
+services:
+  judge:
+    user: "0:0"
