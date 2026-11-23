@@ -112,7 +112,7 @@ def run() -> int:
         check("PySpark", pyspark_check)
 
         def torch_check():
-            source = "def double(x):\\n    return x * 2\\n"
+            source = "def double(x):\n    return x * 2\n"
             result = execute_ai("torch_function", source,
                 json.dumps({"x": [1.0, 2.0]}),
                 {"args": ["x"], "tensor_args": ["x"], "function": "double"})
