@@ -25,6 +25,7 @@ LANGUAGES = {
     "c": ("eklavya-code-runner:latest", "Main.c", "gcc -O2 -std=c17 /source/Main.c -o /work/main || { echo Compilation failed >&2; exit 90; }; exec /work/main"),
     "cpp": ("eklavya-code-runner:latest", "Main.cpp", "g++ -O2 -std=c++20 /source/Main.cpp -o /work/main || { echo Compilation failed >&2; exit 90; }; exec /work/main"),
     "java": ("eclipse-temurin:21-jdk-alpine", "Main.java", "cp /source/Main.java /work/Main.java && javac /work/Main.java || { echo Compilation failed >&2; exit 90; }; exec java -cp /work Main"),
+    "bash": ("alpine:3.21", "main.sh", "exec /bin/sh /source/main.sh"),
 }
 
 
@@ -41,6 +42,7 @@ def isolated_command(image: str, source_directory: Path, name: str, command: str
         "docker", "run", "--rm", "--interactive", "--name", name,
         "--pull", "never",
         "--network", "none", "--read-only", "--cap-drop", "ALL",
+        "--user", "65534:65534",
         "--security-opt", "no-new-privileges", "--pids-limit", "64",
         "--memory", "256m", "--memory-swap", "256m", "--cpus", "0.5",
         "--tmpfs", "/tmp:rw,noexec,nosuid,size=16m,mode=1777",

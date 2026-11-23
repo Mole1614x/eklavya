@@ -631,5 +631,83 @@
         "code": "import torch\n\ndef relu(x):\n    pass\n"
       }
     ]
+  },
+  {
+    "slug": "linux-find-csv",
+    "title": "Find CSV Files Recursively",
+    "category": "linux",
+    "topic": "Files and Directories",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": ["Linux", "find", "filesystem"],
+    "description": "Write a Bash command or script that prints every .csv file below the current directory, sorted lexicographically. The judge creates a disposable filesystem fixture for each test.",
+    "constraints": ["Run without network access.", "Do not assume host paths.", "Print paths relative to the current directory."],
+    "examples": [{"input": "./data/sales.csv and ./notes.txt", "output": "./data/sales.csv"}],
+    "starters": [{"language": "bash", "code": "find . -type f -name \"*.csv\" | sort\n"}]
+  },
+  {
+    "slug": "bash-error-report",
+    "title": "Unique Error Report",
+    "category": "linux",
+    "topic": "Text Processing",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": ["Bash", "grep", "sort", "logs"],
+    "description": "Read application.log from the isolated fixture, extract lines containing ERROR, remove duplicates, sort them, and print the report.",
+    "constraints": ["Use an unprivileged isolated shell.", "The fixture is destroyed after evaluation."],
+    "examples": [{"input": "INFO ready\\nERROR disk\\nERROR disk", "output": "ERROR disk"}],
+    "starters": [{"language": "bash", "code": "grep \"ERROR\" application.log | sort -u\n"}]
+  },
+  {
+    "slug": "excel-regional-sales",
+    "title": "Regional Sales with SUMIF",
+    "category": "excel",
+    "topic": "Conditional Aggregation",
+    "difficulty": "Easy",
+    "format": "EXPRESSION",
+    "tags": ["Excel", "SUMIF", "aggregation"],
+    "description": "Write a supported Excel formula that totals the Sales values in column B where Region in column A matches the region in E2.",
+    "constraints": ["Formula must start with =.", "Only the documented Excel subset is graded."],
+    "examples": [{"input": "A2:A4 = West, East, West; B2:B4 = 5, 8, 7; E2 = West", "output": "12"}],
+    "starters": [{"language": "excel", "code": "=SUMIF(A2:A4,E2,B2:B4)"}]
+  },
+  {
+    "slug": "tableau-profit-ratio",
+    "title": "Overall Profit Ratio",
+    "category": "tableau",
+    "topic": "Calculated Fields",
+    "difficulty": "Easy",
+    "format": "EXPRESSION",
+    "tags": ["Tableau", "aggregate", "ratio"],
+    "description": "Write a Tableau calculated field for total Profit divided by total Sales.",
+    "constraints": ["Use aggregate functions.", "The supported Tableau subset is not a complete Tableau runtime."],
+    "examples": [{"input": "Profit = 20, 30; Sales = 100, 150", "output": "0.2"}],
+    "starters": [{"language": "tableau", "code": "SUM([Profit]) / SUM([Sales])"}]
+  },
+  {
+    "slug": "tableau-fixed-customer-sales",
+    "title": "Customer Sales with FIXED LOD",
+    "category": "tableau",
+    "topic": "LOD Expressions",
+    "difficulty": "Medium",
+    "format": "EXPRESSION",
+    "tags": ["Tableau", "FIXED", "LOD"],
+    "description": "Calculate total Sales for each Customer ID independently of visualization dimensions.",
+    "constraints": ["Use a FIXED LOD expression.", "Grouping semantics are evaluated against hidden rows."],
+    "examples": [{"input": "C1: 5, 7; C2: 8", "output": "C1: 12; C2: 8"}],
+    "starters": [{"language": "tableau", "code": "{ FIXED [Customer ID] : SUM([Sales]) }"}]
+  },
+  {
+    "slug": "clean-customer-records",
+    "title": "Clean Customer Records",
+    "category": "data",
+    "topic": "Data Cleaning",
+    "difficulty": "Medium",
+    "format": "DATASET_ANALYSIS",
+    "tags": ["Pandas", "missing values", "duplicates"],
+    "description": "Implement clean_customers(df): remove duplicate rows, discard records without customer_id, and return rows sorted by customer_id.",
+    "constraints": ["Do not mutate the input DataFrame.", "Preserve the remaining columns."],
+    "examples": [{"input": "duplicate customer rows and one missing customer_id", "output": "unique, identified customers sorted by customer_id"}],
+    "starters": [{"language": "python", "code": "def clean_customers(df):\n    pass\n"}]
   }
 ]

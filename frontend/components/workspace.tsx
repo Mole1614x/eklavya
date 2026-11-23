@@ -10,7 +10,7 @@ const Editor = dynamic(() => import("@monaco-editor/react").then((module) => mod
   ssr: false, loading: () => <p role="status">Loading editor…</p>,
 });
 
-const languages: Record<string, string> = { python: "Python", java: "Java", c: "C", cpp: "C++", sql: "SQL" };
+const languages: Record<string, string> = { python: "Python", java: "Java", c: "C", cpp: "C++", sql: "SQL", bash: "Bash", excel: "Excel formula", tableau: "Tableau expression" };
 type Result = { id: string; status: string; verdict: string | null; output: string | null; passed_tests: number; total_tests: number; execution_ms: number | null };
 
 export function Workspace({ problem, contestSlug }: { problem: ProblemDetail; contestSlug?: string }) {

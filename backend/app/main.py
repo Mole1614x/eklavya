@@ -23,6 +23,7 @@ from .gamification_routes import router as gamification_router
 from .learning_routes import router as learning_router
 from .contest_routes import router as contest_router
 from .admin_routes import router as admin_router
+from .advanced_routes import router as advanced_router
 from .operations import RateLimitMiddleware, RequestMiddleware, configure_logging, metrics
 
 configuration = settings()
@@ -177,4 +178,5 @@ router.include_router(gamification_router)
 router.include_router(learning_router)
 router.include_router(contest_router)
 router.include_router(admin_router)
+router.include_router(advanced_router)
 app.include_router(router)

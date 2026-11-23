@@ -5,13 +5,15 @@ import { modules } from "@/lib/navigation";
 
 export type Query = Record<string, string | string[] | undefined>;
 const difficulties = ["Beginner", "Easy", "Medium", "Hard"];
+const extraCategories = [{ slug: "excel", label: "Excel" }, { slug: "tableau", label: "Tableau" }, { slug: "linux", label: "Linux & Bash" }, { slug: "multi-tool", label: "Multi-Tool" }];
 export const formats: Record<string, string> = {
   CODE: "Program", EXPRESSION: "Expression", SQL_QUERY: "SQL query",
   NUMERICAL: "Numerical", MULTIPLE_CHOICE: "Multiple choice", DATASET_ANALYSIS: "Dataset analysis",
 };
 
 export async function CatalogView({ query, fixedCategory }: { query: Query; fixedCategory?: string }) {
-  const category = fixedCategory ?? modules.find((module) => module.slug === query.category)?.slug ?? "";
+  const categories = [...modules, ...extraCategories];
+  const category = fixedCategory ?? categories.find((module) => module.slug === query.category)?.slug ?? "";
   const difficulty = difficulties.find((value) => value === query.difficulty) ?? "";
   const topic = typeof query.topic === "string" ? query.topic.slice(0, 80) : "";
   const q = typeof query.q === "string" ? query.q.slice(0, 100) : "";
@@ -27,7 +29,7 @@ export async function CatalogView({ query, fixedCategory }: { query: Query; fixe
     <section className="catalog" aria-label="Problem catalog">
       <form className="card filters" action={path}>
         <label className="search"><span>Search</span><div><Search size={16} /><input type="search" name="q" placeholder="Title or topic" defaultValue={q} maxLength={100} /></div></label>
-        {!fixedCategory && <label>Category<select name="category" defaultValue={category}><option value="">All categories</option>{modules.map((module) => <option key={module.slug} value={module.slug}>{module.label}</option>)}</select></label>}
+        {!fixedCategory && <label>Category<select name="category" defaultValue={category}><option value="">All categories</option>{categories.map((module) => <option key={module.slug} value={module.slug}>{module.label}</option>)}</select></label>}
         <label>Difficulty<select name="difficulty" defaultValue={difficulty}><option value="">All levels</option>{difficulties.map((value) => <option key={value}>{value}</option>)}</select></label>
         <label>Topic<select name="topic" defaultValue={topic}><option value="">All topics</option>{topic && !topics.includes(topic) && <option>{topic}</option>}{topics.map((value) => <option key={value}>{value}</option>)}</select></label>
         <button className="button" type="submit">Apply filters</button>

@@ -385,3 +385,182 @@ class AuditLog(Base):
     details: Mapped[dict] = mapped_column(JSON, default=dict)
     ip_address: Mapped[str | None] = mapped_column(String(64), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class Assessment(Base):
+    __tablename__ = "assessments"
+    __table_args__ = (
+        CheckConstraint("status IN ('DRAFT', 'PUBLISHED', 'UNPUBLISHED', 'ARCHIVED')", name="assessment_status"),
+        CheckConstraint("duration_minutes > 0 AND duration_minutes <= 480", name="assessment_duration"),
+        CheckConstraint("max_attempts > 0 AND max_attempts <= 20", name="assessment_attempt_limit"),
+        Index("ix_assessments_window", "status", "opens_at", "closes_at"),
+    )
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    title: Mapped[str] = mapped_column(String(160))
+    description: Mapped[str] = mapped_column(String(1000), default="")
+    instructions: Mapped[str] = mapped_column(Text, default="")
+    assessment_type: Mapped[str] = mapped_column(String(32), index=True)
+    duration_minutes: Mapped[int] = mapped_column(Integer)
+    opens_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    closes_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    max_attempts: Mapped[int] = mapped_column(Integer, default=1)
+    penalty_percent: Mapped[float] = mapped_column(Float, default=0)
+    release_results: Mapped[bool] = mapped_column(Boolean, default=False)
+    status: Mapped[str] = mapped_column(String(16), default="DRAFT", index=True)
+    template_key: Mapped[str | None] = mapped_column(String(40), nullable=True)
+    created_by: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="RESTRICT"), index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, onupdate=utcnow)
+
+
+class AssessmentQuestion(Base):
+    __tablename__ = "assessment_questions"
+    __table_args__ = (UniqueConstraint("assessment_id", "position", name="uq_assessment_question_position"),)
+
+    assessment_id: Mapped[str] = mapped_column(ForeignKey("assessments.id", ondelete="CASCADE"), primary_key=True)
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="RESTRICT"), primary_key=True)
+    position: Mapped[int] = mapped_column(Integer)
+    points: Mapped[int] = mapped_column(Integer, default=100)
+
+
+class AssessmentAssignment(Base):
+    __tablename__ = "assessment_assignments"
+    __table_args__ = (UniqueConstraint("assessment_id", "user_id", name="uq_assessment_assignment"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    assessment_id: Mapped[str] = mapped_column(ForeignKey("assessments.id", ondelete="CASCADE"), index=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    assigned_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class LearnerGroup(Base):
+    __tablename__ = "learner_groups"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    name: Mapped[str] = mapped_column(String(120), unique=True)
+    created_by: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="RESTRICT"), index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class LearnerGroupMember(Base):
+    __tablename__ = "learner_group_members"
+
+    group_id: Mapped[str] = mapped_column(ForeignKey("learner_groups.id", ondelete="CASCADE"), primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), primary_key=True)
+    added_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class AssessmentGroupAssignment(Base):
+    __tablename__ = "assessment_group_assignments"
+
+    assessment_id: Mapped[str] = mapped_column(ForeignKey("assessments.id", ondelete="CASCADE"), primary_key=True)
+    group_id: Mapped[str] = mapped_column(ForeignKey("learner_groups.id", ondelete="CASCADE"), primary_key=True)
+    assigned_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class AssessmentAttempt(Base):
+    __tablename__ = "assessment_attempts"
+    __table_args__ = (
+        UniqueConstraint("assessment_id", "user_id", "attempt_number", name="uq_assessment_attempt_number"),
+        CheckConstraint("status IN ('IN_PROGRESS', 'SUBMITTED', 'EXPIRED')", name="assessment_attempt_status"),
+        Index("ix_assessment_attempt_deadline", "status", "deadline_at"),
+    )
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    assessment_id: Mapped[str] = mapped_column(ForeignKey("assessments.id", ondelete="CASCADE"), index=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    attempt_number: Mapped[int] = mapped_column(Integer)
+    status: Mapped[str] = mapped_column(String(16), default="IN_PROGRESS")
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    deadline_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    finalized_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    score: Mapped[float] = mapped_column(Float, default=0)
+    max_score: Mapped[float] = mapped_column(Float, default=0)
+
+
+class AssessmentAnswer(Base):
+    __tablename__ = "assessment_answers"
+    __table_args__ = (UniqueConstraint("attempt_id", "problem_slug", name="uq_assessment_answer"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    attempt_id: Mapped[str] = mapped_column(ForeignKey("assessment_attempts.id", ondelete="CASCADE"), index=True)
+    problem_slug: Mapped[str] = mapped_column(ForeignKey("problems.slug", ondelete="RESTRICT"), index=True)
+    answer: Mapped[str] = mapped_column(Text, default="")
+    language: Mapped[str | None] = mapped_column(String(24), nullable=True)
+    submission_id: Mapped[str | None] = mapped_column(ForeignKey("submissions.id", ondelete="SET NULL"), nullable=True)
+    saved_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, onupdate=utcnow)
+
+
+class AssessmentResult(Base):
+    __tablename__ = "assessment_results"
+
+    attempt_id: Mapped[str] = mapped_column(ForeignKey("assessment_attempts.id", ondelete="CASCADE"), primary_key=True)
+    correct_answers: Mapped[int] = mapped_column(Integer, default=0)
+    total_answers: Mapped[int] = mapped_column(Integer, default=0)
+    breakdown: Mapped[list[dict]] = mapped_column(JSON, default=list)
+    released_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class PracticeDataset(Base):
+    __tablename__ = "practice_datasets"
+    __table_args__ = (
+        CheckConstraint("format IN ('CSV', 'XLSX', 'JSON', 'PARQUET')", name="practice_dataset_format"),
+        CheckConstraint("status IN ('PRIVATE', 'PUBLISHED', 'ARCHIVED')", name="practice_dataset_status"),
+        Index("ix_practice_datasets_library", "status", "category", "difficulty"),
+    )
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    owner_user_id: Mapped[int | None] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=True, index=True)
+    title: Mapped[str] = mapped_column(String(160))
+    description: Mapped[str] = mapped_column(String(1000), default="")
+    category: Mapped[str] = mapped_column(String(32), default="Personal", index=True)
+    difficulty: Mapped[str] = mapped_column(String(12), default="Beginner")
+    format: Mapped[str] = mapped_column(String(12))
+    original_filename: Mapped[str] = mapped_column(String(255))
+    content_type: Mapped[str] = mapped_column(String(120))
+    size_bytes: Mapped[int] = mapped_column(Integer)
+    sha256: Mapped[str] = mapped_column(String(64))
+    storage_path: Mapped[str] = mapped_column(String(500), unique=True)
+    status: Mapped[str] = mapped_column(String(16), default="PRIVATE", index=True)
+    version: Mapped[int] = mapped_column(Integer, default=1)
+    download_allowed: Mapped[bool] = mapped_column(Boolean, default=True)
+    column_info: Mapped[list[dict]] = mapped_column(JSON, default=list)
+    profile: Mapped[dict] = mapped_column(JSON, default=dict)
+    transformations: Mapped[list[dict]] = mapped_column(JSON, default=list)
+    created_by: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="RESTRICT"), index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class MultiToolProgress(Base):
+    __tablename__ = "multi_tool_progress"
+    __table_args__ = (UniqueConstraint("user_id", "challenge_key", "technology", name="uq_multi_tool_progress"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    challenge_key: Mapped[str] = mapped_column(String(80), index=True)
+    technology: Mapped[str] = mapped_column(String(20))
+    completed: Mapped[bool] = mapped_column(Boolean, default=False)
+    score: Mapped[float] = mapped_column(Float, default=0)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, onupdate=utcnow)
+
+
+class DatasetPracticeRun(Base):
+    __tablename__ = "dataset_practice_runs"
+    __table_args__ = (
+        CheckConstraint("technology IN ('PANDAS', 'NUMPY', 'SQL')", name="dataset_practice_technology"),
+        CheckConstraint("status IN ('QUEUED', 'RUNNING', 'FINISHED', 'SYSTEM_ERROR')", name="dataset_practice_status"),
+        Index("ix_dataset_practice_user_created", "user_id", "created_at"),
+    )
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    dataset_id: Mapped[str] = mapped_column(ForeignKey("practice_datasets.id", ondelete="CASCADE"), index=True)
+    technology: Mapped[str] = mapped_column(String(12))
+    source_code: Mapped[str] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(String(16), default="QUEUED")
+    output: Mapped[str | None] = mapped_column(Text, nullable=True)
+    execution_ms: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
