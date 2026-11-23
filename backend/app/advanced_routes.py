@@ -290,6 +290,8 @@ def get_attempt(attempt_id: str, db: DB, user: CurrentUser) -> dict:
     attempt = db.get(AssessmentAttempt, attempt_id)
     if attempt is None or attempt.user_id != user.id: raise HTTPException(status_code=404, detail="Assessment attempt not found")
     item = db.get(Assessment, attempt.assessment_id)
+    if attempt.status == "IN_PROGRESS" and (item.status != "PUBLISHED" or not can_access(db, item, "assessment", user)):
+        raise HTTPException(status_code=404, detail="Assessment access is no longer available")
     if attempt.status == "IN_PROGRESS" and datetime.now(timezone.utc) >= aware(attempt.deadline_at):
         finalize_attempt(db, attempt, expired=True); db.commit()
     return attempt_read(db, attempt, item, user)
@@ -300,6 +302,9 @@ def autosave_answer(attempt_id: str, payload: AnswerWrite, db: DB, user: Current
     attempt = db.scalar(select(AssessmentAttempt).where(AssessmentAttempt.id == attempt_id).with_for_update())
     if attempt is None or attempt.user_id != user.id: raise HTTPException(status_code=404, detail="Assessment attempt not found")
     now = datetime.now(timezone.utc)
+    assessment = db.get(Assessment, attempt.assessment_id)
+    if assessment.status != "PUBLISHED" or not can_access(db, assessment, "assessment", user):
+        raise HTTPException(status_code=404, detail="Assessment access is no longer available")
     if attempt.status != "IN_PROGRESS": raise HTTPException(status_code=409, detail="Assessment attempt is already finalized")
     if now >= aware(attempt.deadline_at):
         finalize_attempt(db, attempt, expired=True); db.commit(); raise HTTPException(status_code=409, detail="Assessment time expired and the attempt was finalized")
@@ -324,6 +329,9 @@ def autosave_answer(attempt_id: str, payload: AnswerWrite, db: DB, user: Current
 def assessment_submission(attempt_id: str, problem_slug: str, payload: SubmissionCreate, db: DB, user: CurrentUser, enqueue: Enqueuer) -> Submission:
     attempt = db.scalar(select(AssessmentAttempt).where(AssessmentAttempt.id == attempt_id).with_for_update())
     if attempt is None or attempt.user_id != user.id: raise HTTPException(status_code=404, detail="Assessment attempt not found")
+    assessment = db.get(Assessment, attempt.assessment_id)
+    if assessment.status != "PUBLISHED" or not can_access(db, assessment, "assessment", user):
+        raise HTTPException(status_code=404, detail="Assessment access is no longer available")
     if attempt.status != "IN_PROGRESS": raise HTTPException(status_code=409, detail="Assessment attempt is already finalized")
     if datetime.now(timezone.utc) >= aware(attempt.deadline_at):
         finalize_attempt(db, attempt, expired=True); db.commit(); raise HTTPException(status_code=409, detail="Assessment time expired and the attempt was finalized")
@@ -357,6 +365,9 @@ def submit_attempt(attempt_id: str, db: DB, user: CurrentUser) -> dict:
     attempt = db.scalar(select(AssessmentAttempt).where(AssessmentAttempt.id == attempt_id).with_for_update())
     if attempt is None or attempt.user_id != user.id: raise HTTPException(status_code=404, detail="Assessment attempt not found")
     if attempt.status == "IN_PROGRESS":
+        assessment = db.get(Assessment, attempt.assessment_id)
+        if assessment.status != "PUBLISHED" or not can_access(db, assessment, "assessment", user):
+            raise HTTPException(status_code=404, detail="Assessment access is no longer available")
         expired = datetime.now(timezone.utc) >= aware(attempt.deadline_at)
         if not expired:
             pending = db.scalar(select(func.count(Submission.id)).join(AssessmentAnswer, AssessmentAnswer.submission_id == Submission.id)
