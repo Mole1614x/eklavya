@@ -14,7 +14,7 @@ from fastapi.responses import FileResponse
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session
 
-from .access_control import access_summary, replace_students, require_publishable, target, validate_students
+from .access_control import access_summary, prevent_unconfirmed_inline_change, replace_students, require_publishable, target, validate_students
 from .auth import require_admin
 from .cache import invalidate_public
 from .config import settings
@@ -109,6 +109,8 @@ def update_content_access(
 ) -> dict:
     item = target(db, kind, identifier)
     if item is None: raise HTTPException(status_code=404, detail="Content not found")
+    if kind == "contest" and item.publication_status == "FINALIZED":
+        raise HTTPException(status_code=409, detail="Finalized contest access cannot be changed")
     before = access_summary(db, item, kind)
     changed = item.access_scope != payload.access_scope or (
         payload.assigned_user_ids is not None
@@ -279,6 +281,8 @@ def save_problem(slug: str, payload: AdminProblemWrite, request: Request, db: DB
     if not slug or len(slug) > 100 or any(character not in "abcdefghijklmnopqrstuvwxyz0123456789-" for character in slug):
         raise HTTPException(status_code=422, detail="Problem slug is invalid")
     problem = db.get(Problem, slug)
+    if problem is not None:
+        prevent_unconfirmed_inline_change(db, problem, "problem", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
     action = "problem.update" if problem else "problem.create"
     values = payload.model_dump(exclude={"starters", "test_cases", "evaluator", "assigned_user_ids"})
     if problem is not None and "access_scope" not in payload.model_fields_set:
@@ -600,6 +604,8 @@ def save_contest(slug: str, payload: AdminContestWrite, request: Request, db: DB
     for assignment in payload.problems:
         if db.get(Problem, assignment.problem_slug) is None:
             raise HTTPException(status_code=422, detail=f"Problem does not exist: {assignment.problem_slug}")
+    if contest is not None:
+        prevent_unconfirmed_inline_change(db, contest, "contest", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
     action = "contest.update" if contest else "contest.create"
     values = payload.model_dump(exclude={"problems", "assigned_user_ids"})
     if contest is not None and "access_scope" not in payload.model_fields_set:
@@ -695,6 +701,8 @@ def save_path(slug: str, payload: AdminPathWrite, request: Request, db: DB, admi
         if db.get(Problem, assignment.problem_slug) is None:
             raise HTTPException(status_code=422, detail=f"Problem does not exist: {assignment.problem_slug}")
     path = db.get(LearningPath, slug)
+    if path is not None:
+        prevent_unconfirmed_inline_change(db, path, "path", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
     action = "path.update" if path else "path.create"
     values = payload.model_dump(exclude={"problems", "assigned_user_ids"})
     if path is not None and "access_scope" not in payload.model_fields_set:
