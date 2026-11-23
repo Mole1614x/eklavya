@@ -16,8 +16,8 @@ test("Phase 17 assessment, Data Lab, expression, and multi-tool journeys", async
     title: `Phase 17 Journey ${suffix}`, description: "Browser-verified timed assessment", instructions: "Answer before expiry.",
     assessment_type: "MIXED", duration_minutes: 15,
     opens_at: new Date(Date.now() - 60_000).toISOString(), closes_at: new Date(Date.now() + 3_600_000).toISOString(),
-    max_attempts: 1, penalty_percent: 0, release_results: true, status: "PUBLISHED",
-    questions: [{ problem_slug: "parity-check", points: 100 }], assigned_user_ids: [me.id], assigned_group_ids: [],
+    max_attempts: 1, penalty_percent: 0, release_results: true, status: "PUBLISHED", access_scope: "ALL",
+    questions: [{ problem_slug: "parity-check", points: 100 }], assigned_user_ids: [], assigned_group_ids: [],
   } });
   expect(created.status()).toBe(201);
 
