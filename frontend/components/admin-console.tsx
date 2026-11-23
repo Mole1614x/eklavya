@@ -1,20 +1,21 @@
 "use client";
 
 import Link from "next/link";
+import { StudentAccessManager, StudentAccessPicker, type StudentScope } from "./student-access";
 import { FormEvent, useCallback, useEffect, useState } from "react";
 
 type Section = "overview" | "assessments" | "problems" | "datasets" | "users" | "contests" | "paths" | "achievements" | "audit";
 type Overview = Record<string, number | Array<{ day?: string; count?: number; username?: string; display_name?: string; created_at?: string }>>;
-type Problem = { slug: string; title: string; category: string; difficulty: string; format: string; topic: string; status: string; supported_languages: string[]; test_case_count: number; hidden_test_count: number };
+type Problem = { access_scope: StudentScope; assigned_count: number; slug: string; title: string; category: string; difficulty: string; format: string; topic: string; status: string; supported_languages: string[]; test_case_count: number; hidden_test_count: number };
 type Dataset = { id: string; name: string; kind: string; version: number; original_filename: string; size_bytes: number; sha256: string; is_active: boolean; created_at: string };
 type User = { id: number; username: string; email: string; display_name: string; role: string; is_active: boolean; created_at: string; last_login_at: string | null; submissions: number; accepted_submissions: number; system_errors: number };
-type Contest = { slug: string; title: string; starts_at: string; ends_at: string; is_rated: boolean; publication_status: string; registrations: number; submissions: number; problem_count: number };
-type Path = { slug: string; title: string; status: string; prerequisites: string[]; problem_count: number; enrollments: number };
+type Contest = { access_scope: StudentScope; assigned_count: number; slug: string; title: string; starts_at: string; ends_at: string; is_rated: boolean; publication_status: string; registrations: number; submissions: number; problem_count: number };
+type Path = { access_scope: StudentScope; assigned_count: number; slug: string; title: string; status: string; prerequisites: string[]; problem_count: number; enrollments: number };
 type Achievement = { slug: string; name: string; description: string; criteria: Record<string, unknown>; xp_reward: number; awarded_count: number };
 type Audit = { id: number; actor_username: string | null; action: string; target_type: string; target_id: string; details: Record<string, unknown>; ip_address: string | null; created_at: string };
 type Ledger = { id: number; username: string; amount?: number; reason?: string; rank_slug?: string; created_at?: string; reached_at?: string };
-type Assessment = { id: string; title: string; assessment_type: string; duration_minutes: number; opens_at: string; closes_at: string; status: string; assigned_count: number; attempt_count: number; questions: Array<{ title: string; points: number }> };
-type PracticeDataset = { id: string; title: string; category: string; difficulty: string; format: string; version: number; status: string; size_bytes: number; profile: { rows?: number }; download_allowed: boolean };
+type Assessment = { access_scope: StudentScope; assigned_user_ids: number[]; assigned_group_ids: string[]; id: string; title: string; assessment_type: string; duration_minutes: number; opens_at: string; closes_at: string; status: string; assigned_count: number; attempt_count: number; questions: Array<{ title: string; points: number }> };
+type PracticeDataset = { access_scope: StudentScope; id: string; title: string; category: string; difficulty: string; format: string; version: number; status: string; size_bytes: number; profile: { rows?: number }; download_allowed: boolean };
 type LearnerGroup = { id: string; name: string; user_ids: number[]; created_at: string };
 
 const sections: Array<[Section, string]> = [
@@ -26,6 +27,7 @@ const sections: Array<[Section, string]> = [
 const initialProblem = JSON.stringify({
   title: "", category: "foundations", difficulty: "Easy", format: "CODE", topic: "",
   tags: [], description: "", constraints: [], examples: [], choices: [], status: "DRAFT",
+  access_scope: "ALL", assigned_user_ids: [],
   starters: [{ language: "python", code: "" }],
   test_cases: [{ input_data: "", expected_output: "", is_hidden: false, position: 0 }],
   evaluator: null,
@@ -33,15 +35,15 @@ const initialProblem = JSON.stringify({
 const initialContest = JSON.stringify({
   title: "", description: "", starts_at: new Date(Date.now() + 86400000).toISOString(),
   ends_at: new Date(Date.now() + 90000000).toISOString(), is_rated: true,
-  publication_status: "DRAFT", problems: [{ problem_slug: "", points: 100 }],
+  publication_status: "DRAFT", access_scope: "ALL", assigned_user_ids: [], problems: [{ problem_slug: "", points: 100 }],
 }, null, 2);
-const initialPath = JSON.stringify({ title: "", description: "", prerequisites: [], status: "DRAFT", problems: [] }, null, 2);
+const initialPath = JSON.stringify({ title: "", description: "", prerequisites: [], status: "DRAFT", access_scope: "ALL", assigned_user_ids: [], problems: [] }, null, 2);
 const initialAchievement = JSON.stringify({ name: "", description: "", criteria: { solved: 1 }, xp_reward: 0 }, null, 2);
 const initialAssessment = JSON.stringify({
   title: "Data Analyst Screening", description: "Role-specific technical assessment", instructions: "Complete every question before the server timer expires.",
   assessment_type: "MIXED", duration_minutes: 90,
   opens_at: new Date(Date.now() + 3600000).toISOString(), closes_at: new Date(Date.now() + 86400000).toISOString(),
-  max_attempts: 1, penalty_percent: 0, release_results: false, status: "DRAFT", template_key: "data-analyst",
+  max_attempts: 1, penalty_percent: 0, release_results: false, status: "DRAFT", access_scope: "SELECTED", template_key: "data-analyst",
   questions: [{ problem_slug: "city-totals", points: 100 }], assigned_user_ids: [], assigned_group_ids: [],
 }, null, 2);
 
@@ -74,6 +76,8 @@ function fileBase64(file: File) {
 
 function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; initial: string; endpoint: string; onSaved: () => Promise<void> }) {
   const [message, setMessage] = useState("");
+  const [scope, setScope] = useState<StudentScope>("ALL");
+  const [students, setStudents] = useState<number[]>([]);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -81,6 +85,11 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
     try {
       setMessage("Saving…");
       const definition = JSON.parse(String(form.get("definition")));
+      definition.access_scope = scope;
+      definition.assigned_user_ids = students;
+      if (definition.status === "PUBLISHED" || definition.publication_status === "PUBLISHED") {
+        if (scope === "SELECTED" && students.length === 0) throw new Error("Select at least one student before publishing.");
+      }
       await api(`${endpoint}/${encodeURIComponent(slug)}`, {
         method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(definition),
       });
@@ -91,6 +100,7 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
   return <form className="card admin-editor" onSubmit={submit}>
     <h3>{title}</h3>
     <label>Slug<input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label>
+    <StudentAccessPicker scope={scope} onScopeChange={setScope} selectedIds={students} onSelectedIdsChange={setStudents}/>
     <label>Validated definition<textarea name="definition" defaultValue={initial} required spellCheck={false} /></label>
     <div className="form-actions"><button className="button">Save</button><span role="status">{message}</span></div>
   </form>;
@@ -111,6 +121,11 @@ export function AdminConsole() {
   const [xp, setXp] = useState<Ledger[]>([]);
   const [ranks, setRanks] = useState<Ledger[]>([]);
   const [assessments, setAssessments] = useState<Assessment[]>([]);
+  const [assessmentScope, setAssessmentScope] = useState<StudentScope>("SELECTED");
+  const [assessmentStudents, setAssessmentStudents] = useState<number[]>([]);
+  const [datasetScope, setDatasetScope] = useState<StudentScope>("ALL");
+  const [datasetStudents, setDatasetStudents] = useState<number[]>([]);
+  const [accessFilter, setAccessFilter] = useState<"ALL" | "SELECTED" | "ANY">("ANY");
   const [assessmentAnalytics, setAssessmentAnalytics] = useState<Record<string, unknown> | null>(null);
   const [practiceDatasets, setPracticeDatasets] = useState<PracticeDataset[]>([]);
   const [groups, setGroups] = useState<LearnerGroup[]>([]);
@@ -198,6 +213,9 @@ export function AdminConsole() {
     try {
       setStatus("Validating assessment definition…");
       const definition = JSON.parse(String(new FormData(event.currentTarget).get("definition")));
+      definition.access_scope = assessmentScope;
+      definition.assigned_user_ids = assessmentStudents;
+      if (definition.status === "PUBLISHED" && assessmentScope === "SELECTED" && assessmentStudents.length === 0 && !definition.assigned_group_ids?.length) throw new Error("Select at least one student before publishing.");
       await advancedApi("assessments", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(definition) });
       await load(); setStatus("Assessment created and audited.");
     } catch (error) { setStatus(error instanceof Error ? error.message : "Assessment creation failed"); }
@@ -220,9 +238,11 @@ export function AdminConsole() {
     event.preventDefault(); const formElement = event.currentTarget; const form = new FormData(formElement); const file = form.get("file") as File;
     try {
       setStatus("Validating and publishing practice dataset…");
+      if (datasetScope === "SELECTED" && datasetStudents.length === 0) throw new Error("Select at least one student before publishing.");
       const response = await fetch("/api/advanced/datasets", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
         title: form.get("title"), description: form.get("description"), category: form.get("category"), difficulty: form.get("difficulty"),
         filename: file.name, content_type: file.type || "application/octet-stream", content_base64: await fileBase64(file), publish: true,
+        access_scope: datasetScope, assigned_user_ids: datasetStudents,
       }) });
       const result = await response.json(); if (!response.ok) throw new Error(result.detail ?? "Publish failed");
       formElement.reset(); await load(); setStatus("Practice dataset published to the library.");
