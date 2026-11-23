@@ -18,6 +18,7 @@ from sqlalchemy import case, delete, func, or_, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
+from .access_control import audience_filter, can_access, require_publishable, replace_students, student_ids, validate_students
 from .advanced_evaluators import EXCEL_FUNCTIONS, TABLEAU_FUNCTIONS, ExpressionError, equivalent, evaluate_excel, evaluate_tableau, validate_tableau
 from .auth import CurrentUser, require_admin
 from .config import settings
@@ -83,7 +84,9 @@ def assessment_read(db: Session, item: Assessment) -> dict[str, Any]:
         "assessment_type": item.assessment_type, "duration_minutes": item.duration_minutes,
         "opens_at": item.opens_at, "closes_at": item.closes_at, "max_attempts": item.max_attempts,
         "penalty_percent": item.penalty_percent, "release_results": item.release_results,
-        "status": item.status, "template_key": item.template_key,
+        "status": item.status, "template_key": item.template_key, "access_scope": item.access_scope,
+        "assigned_user_ids": sorted(assigned_users),
+        "assigned_group_ids": sorted(db.scalars(select(AssessmentGroupAssignment.group_id).where(AssessmentGroupAssignment.assessment_id == item.id))),
         "questions": [{"problem_slug": question.problem_slug, "title": problem.title,
                        "difficulty": problem.difficulty, "position": question.position, "points": question.points}
                        | {"languages": [starter.language for starter in problem.starters], "format": problem.format}
@@ -128,11 +131,12 @@ def admin_assessments(db: DB, admin: Admin, limit: Annotated[int, Query(ge=1, le
 
 @router.post("/admin/assessments", response_model=AssessmentRead, status_code=status.HTTP_201_CREATED)
 def create_assessment(payload: AssessmentWrite, request: Request, db: DB, admin: Admin) -> dict:
-    if payload.status == "PUBLISHED" and not (payload.assigned_user_ids or payload.assigned_group_ids):
+    if payload.status == "PUBLISHED" and payload.access_scope == "SELECTED" and not (payload.assigned_user_ids or payload.assigned_group_ids):
         raise HTTPException(status_code=409, detail="Assign at least one student or group before publishing")
     item = Assessment(id=str(uuid4()), created_by=admin.id, **payload.model_dump(exclude={"questions", "assigned_user_ids", "assigned_group_ids"}))
     db.add(item)
     _replace_assessment_children(db, item, payload)
+    if item.status == "PUBLISHED": require_publishable(db, item, "assessment")
     audit(db, request, admin, "assessment.create", "assessment", item.id, {"status": item.status})
     db.commit()
     return assessment_read(db, item)
@@ -156,6 +160,7 @@ def create_assessment_from_template(template_key: str, payload: AssessmentTempla
         closes_at=payload.closes_at, release_results=payload.release_results, status="DRAFT", template_key=template_key,
         questions=[{"problem_slug": slug, "points": 100} for slug in slugs],
         assigned_user_ids=payload.assigned_user_ids, assigned_group_ids=payload.assigned_group_ids,
+        access_scope=payload.access_scope,
     )
     return create_assessment(definition, request, db, admin)
 
@@ -171,6 +176,7 @@ def update_assessment(assessment_id: str, payload: AssessmentWrite, request: Req
     db.execute(delete(AssessmentAssignment).where(AssessmentAssignment.assessment_id == item.id))
     db.execute(delete(AssessmentGroupAssignment).where(AssessmentGroupAssignment.assessment_id == item.id))
     _replace_assessment_children(db, item, payload)
+    if item.status == "PUBLISHED": require_publishable(db, item, "assessment")
     audit(db, request, admin, "assessment.update", "assessment", item.id)
     db.commit()
     return assessment_read(db, item)
@@ -179,24 +185,22 @@ def update_assessment(assessment_id: str, payload: AssessmentWrite, request: Req
 def _replace_assessment_children(db: Session, item: Assessment, payload: AssessmentWrite) -> None:
     missing = [question.problem_slug for question in payload.questions if db.get(Problem, question.problem_slug) is None]
     if missing: raise HTTPException(status_code=422, detail=f"Unknown problem(s): {', '.join(missing)}")
-    invalid_users = [user_id for user_id in payload.assigned_user_ids if db.get(User, user_id) is None]
-    if invalid_users: raise HTTPException(status_code=422, detail="One or more assigned users do not exist")
+    validate_students(db, payload.assigned_user_ids)
     invalid_groups = [group_id for group_id in payload.assigned_group_ids if db.get(LearnerGroup, group_id) is None]
     if invalid_groups: raise HTTPException(status_code=422, detail="One or more assigned groups do not exist")
     db.add_all(AssessmentQuestion(assessment_id=item.id, problem_slug=question.problem_slug, position=index, points=question.points)
                for index, question in enumerate(payload.questions))
     db.add_all(AssessmentAssignment(assessment_id=item.id, user_id=user_id) for user_id in payload.assigned_user_ids)
     db.add_all(AssessmentGroupAssignment(assessment_id=item.id, group_id=group_id) for group_id in payload.assigned_group_ids)
+    db.flush()
 
 
 @router.patch("/admin/assessments/{assessment_id}/status", response_model=AssessmentRead)
 def assessment_status(assessment_id: str, payload: AssessmentStatusWrite, request: Request, db: DB, admin: Admin) -> dict:
     item = db.get(Assessment, assessment_id)
     if item is None: raise HTTPException(status_code=404, detail="Assessment not found")
+    if payload.status == "PUBLISHED": require_publishable(db, item, "assessment")
     item.status = payload.status
-    assigned = (db.scalar(select(func.count(AssessmentAssignment.id)).where(AssessmentAssignment.assessment_id == item.id)) or 0) + (db.scalar(select(func.count()).select_from(AssessmentGroupAssignment).where(AssessmentGroupAssignment.assessment_id == item.id)) or 0)
-    if payload.status == "PUBLISHED" and not assigned:
-        raise HTTPException(status_code=409, detail="Assign at least one student before publishing")
     audit(db, request, admin, "assessment.status", "assessment", item.id, {"status": payload.status, "reason": payload.reason})
     db.commit()
     return assessment_read(db, item)
@@ -244,11 +248,9 @@ LiteralFormat = Annotated[str, Query(pattern="^(csv|xlsx)$")]
 
 @router.get("/assessments", response_model=list[AssessmentRead])
 def my_assessments(db: DB, user: CurrentUser) -> list[dict]:
-    items = db.scalars(select(Assessment).outerjoin(AssessmentAssignment, AssessmentAssignment.assessment_id == Assessment.id)
-                       .outerjoin(AssessmentGroupAssignment, AssessmentGroupAssignment.assessment_id == Assessment.id)
-                       .outerjoin(LearnerGroupMember, LearnerGroupMember.group_id == AssessmentGroupAssignment.group_id)
-                       .where(or_(AssessmentAssignment.user_id == user.id, LearnerGroupMember.user_id == user.id), Assessment.status == "PUBLISHED")
-                       .distinct().order_by(Assessment.opens_at.desc())).all()
+    items = db.scalars(select(Assessment).where(
+        Assessment.status == "PUBLISHED", audience_filter(Assessment, "assessment", user)
+    ).order_by(Assessment.opens_at.desc())).all()
     return [assessment_read(db, item) for item in items]
 
 
@@ -256,12 +258,8 @@ def my_assessments(db: DB, user: CurrentUser) -> list[dict]:
 def start_assessment(assessment_id: str, db: DB, user: CurrentUser) -> dict:
     now = datetime.now(timezone.utc)
     item = db.get(Assessment, assessment_id)
-    directly_assigned = db.scalar(select(AssessmentAssignment.id).where(AssessmentAssignment.assessment_id == assessment_id,
-                                                                         AssessmentAssignment.user_id == user.id))
-    group_assigned = db.scalar(select(LearnerGroupMember.user_id).join(
-        AssessmentGroupAssignment, AssessmentGroupAssignment.group_id == LearnerGroupMember.group_id,
-    ).where(AssessmentGroupAssignment.assessment_id == assessment_id, LearnerGroupMember.user_id == user.id))
-    if item is None or (directly_assigned is None and group_assigned is None) or item.status != "PUBLISHED": raise HTTPException(status_code=404, detail="Assigned assessment not found")
+    if item is None or item.status != "PUBLISHED" or not can_access(db, item, "assessment", user):
+        raise HTTPException(status_code=404, detail="Assessment not found")
     if now < aware(item.opens_at) or now >= aware(item.closes_at): raise HTTPException(status_code=409, detail="Assessment is outside its permitted window")
     active = db.scalar(select(AssessmentAttempt).where(AssessmentAttempt.assessment_id == item.id,
                                                         AssessmentAttempt.user_id == user.id,
