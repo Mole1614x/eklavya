@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Code2, Compass, Sparkles, Terminal, Trophy, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, Code2, Sparkles, Terminal, Trophy, Zap } from "lucide-react";
 import { modules } from "@/lib/navigation";
 import { ModuleIcon } from "./icons";
 import { PracticeChart } from "./practice-chart";
