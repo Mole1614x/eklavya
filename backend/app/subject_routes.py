@@ -1,8 +1,8 @@
-"""Live subject-level discovery; counts include only explicitly classified questions."""
+"""Live subject-level discovery, including audited legacy curriculum mapping."""
 from typing import Annotated
 
 from fastapi import APIRouter, Depends
-from sqlalchemy import func, select
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from .access_control import audience_filter
@@ -14,33 +14,56 @@ from .subject_catalog import SUBJECTS
 router = APIRouter(tags=["subjects"])
 DB = Annotated[Session, Depends(get_db)]
 
+LOGIC_TOPICS = {
+    "Basic Programming", "Number Logic", "Patterns", "String Logic",
+    "Arrays and Lists", "Searching Sorting and Recursion", "Interview Logic",
+}
+LOGIC_EXISTING = {"parity-check", "sum-of-digits", "pair-indices", "balanced-delimiters"}
+
+
+def matching_subjects(problem: Problem) -> set[int]:
+    """Unambiguous backfill for the current 100 logic + 115 data-study items."""
+    matches = {subject["id"] for subject in SUBJECTS if problem.topic == subject["name"]}
+    if problem.topic in LOGIC_TOPICS or problem.slug in LOGIC_EXISTING:
+        matches.add(1)
+    if problem.topic.startswith("NumPy · Level "):
+        matches.add(5)
+    if problem.topic.startswith("Pandas · Level "):
+        matches.add(6)
+    if problem.topic.startswith("Practical Data Analysis · Level "):
+        matches.add(7)
+    return matches
+
 
 @router.get("/subjects")
 def subject_catalog(db: DB, viewer: OptionalUser = None) -> dict:
-    # SQL aggregation respects role-based ALL/SELECTED audience restrictions.
-    rows = db.execute(
-        select(Problem.topic, func.count(Problem.slug))
-        .where(
+    # Respect publication + individual learner access in the backend, not the UI.
+    visible = db.scalars(
+        select(Problem).where(
             Problem.status == "PUBLISHED",
             audience_filter(Problem, "problem", viewer),
         )
-        .group_by(Problem.topic)
     ).all()
-    count_by_topic = dict(rows)
-    classified = []
-    for item in SUBJECTS:
-        published = count_by_topic.get(item["name"], 0)
-        classified.append({
-            **item, "published_questions": published,
-            "remaining_to_target": max(0, item["target"] - published),
-            "execution_status": "Knowledge checks" if published else "Not yet evaluated",
-        })
+    counts: dict[int, int] = {subject["id"]: 0 for subject in SUBJECTS}
+    classified_slugs: set[str] = set()
+    for problem in visible:
+        matched = matching_subjects(problem)
+        for subject_id in matched:
+            counts[subject_id] += 1
+        if matched:
+            classified_slugs.add(problem.slug)
+    result = [{
+        **item,
+        "published_questions": counts[item["id"]],
+        "remaining_to_target": max(0, item["target"] - counts[item["id"]]),
+        "execution_status": ("Existing practice + knowledge checks" if counts[item["id"]] > 3
+                             else "Knowledge checks" if counts[item["id"]] else "Not yet evaluated"),
+    } for item in SUBJECTS]
     return {
-        "subjects": classified,
+        "subjects": result,
         "target_total": sum(item["target"] for item in SUBJECTS),
-        # These tagged counts intentionally do not claim to have classified all
-        # 237 pre-existing questions into the new taxonomy.
-        "classified_published": sum(item["published_questions"] for item in classified),
-        "published_catalog_total": sum(count_by_topic.values()),
-        "classification_note": "Existing legacy problems may not yet have a subject tag. Subject counts are conservative and do not imply full execution support.",
+        "classified_published": len(classified_slugs),
+        "published_catalog_total": len(visible),
+        "unclassified_legacy": len(visible) - len(classified_slugs),
+        "classification_note": "Legacy logic, NumPy, Pandas and data-analysis questions are mapped to their subjects. Other legacy questions may remain unclassified. Some subjects offer knowledge checks only, not specialized code runtimes.",
     }
