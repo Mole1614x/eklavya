@@ -44,15 +44,16 @@ def test_catalog_preserves_domain_coverage(client):
     response = client.get("/api/v1/problems", params={"limit": 100})
     assert response.status_code == 200
     payload = response.json()
-    assert payload["total"] == 372
-    remainder = client.get("/api/v1/problems", params={"offset": 100, "limit": 100}).json()["items"]
-    third = client.get("/api/v1/problems", params={"offset": 200, "limit": 100}).json()["items"]
-    fourth = client.get("/api/v1/problems", params={"offset": 300, "limit": 100}).json()["items"]
-    items = payload["items"] + remainder + third + fourth
-    assert len(items) == 372
+    assert payload["total"] == 1212
+    items = []
+    for offset in range(0, payload["total"], 100):
+        batch = client.get("/api/v1/problems", params={"offset": offset, "limit": 100})
+        assert batch.status_code == 200
+        items.extend(batch.json()["items"])
+    assert len(items) == 1212
     assert Counter(item["category"] for item in items) == {
-        "foundations": 50, "code": 101, "data": 151, "statistics": 18,
-        "big-data": 14, "ai": 24, "linux": 5, "excel": 4, "tableau": 5,
+        "foundations": 50, "code": 401, "data": 311, "statistics": 118,
+        "big-data": 94, "ai": 164, "linux": 25, "excel": 24, "tableau": 25,
     }
     assert {item["format"] for item in items} == {
         "CODE", "EXPRESSION", "SQL_QUERY", "NUMERICAL", "MULTIPLE_CHOICE", "DATASET_ANALYSIS",
@@ -82,8 +83,8 @@ def test_detail_exposes_only_public_examples_and_starters(client):
 
 
 def test_seed_can_run_twice(db):
-    assert seed(db) == 372
-    assert len(db.scalars(select(Problem)).all()) == 372
+    assert seed(db) == 1212
+    assert len(db.scalars(select(Problem)).all()) == 1212
     assert len(db.get(Problem, "parity-check").starters) == 4
 
 
