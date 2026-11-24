@@ -1,0 +1,372 @@
+[
+  {
+    "subject_id": 19,
+    "skill": "Student t distribution",
+    "description": "A heavy-tailed symmetric distribution used in inference when population variance is unknown"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Chi square distribution",
+    "description": "A distribution arising as a sum of squares of independent standard normal variables"
+  },
+  {
+    "subject_id": 19,
+    "skill": "F distribution",
+    "description": "A ratio distribution used when comparing independent variance estimates"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Poisson distribution",
+    "description": "A model for event counts under independent constant-rate arrivals"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Binomial distribution",
+    "description": "A distribution counting successes in a fixed number of independent Bernoulli trials"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Geometric distribution",
+    "description": "A model for trials needed until the first Bernoulli success"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Exponential distribution",
+    "description": "A continuous waiting-time distribution with a constant hazard rate"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Beta distribution",
+    "description": "A flexible distribution on the interval from zero to one often used for probabilities"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Gamma distribution",
+    "description": "A positive-valued distribution generalizing exponential waiting times"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Lognormal distribution",
+    "description": "The distribution of a positive random variable whose logarithm is normally distributed"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Moment generating function",
+    "description": "A transform whose derivatives at zero yield raw moments when they exist"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Characteristic function",
+    "description": "The expected complex exponential of a random variable, which characterizes its distribution"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Law of total probability",
+    "description": "Combining conditional probabilities over a partition of the sample space"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Bayesian credible interval",
+    "description": "A posterior distribution interval assigned a specified probability under the model"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Jeffreys prior",
+    "description": "An invariant Bayesian prior often constructed from Fisher information"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Wilcoxon signed rank test",
+    "description": "A nonparametric paired-sample test using ranks of signed differences"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Mann Whitney U test",
+    "description": "A rank-based comparison of two independent samples' distributions"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Kruskal Wallis test",
+    "description": "A rank-based test for differences among multiple independent groups"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Shapiro Wilk test",
+    "description": "A statistical test evaluating compatibility of a sample with a normal distribution"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Levene test",
+    "description": "A procedure comparing variability across groups using deviations from group centers"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Singular matrix",
+    "description": "A square matrix lacking an inverse because its determinant is zero"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Orthogonal projection",
+    "description": "The nearest vector to a point within a linear subspace under Euclidean distance"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Null space",
+    "description": "The set of input vectors mapped to zero by a linear operator"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Column space",
+    "description": "The set of all vectors obtainable as linear combinations of a matrix's columns"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Basis",
+    "description": "A linearly independent collection spanning a vector space"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Linear independence",
+    "description": "A property of vectors where only the zero coefficients yield the zero linear combination"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Gram Schmidt",
+    "description": "An algorithm orthogonalizing a sequence of linearly independent vectors"
+  },
+  {
+    "subject_id": 20,
+    "skill": "QR decomposition",
+    "description": "Factoring a matrix into an orthogonal factor and an upper triangular factor"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Cholesky decomposition",
+    "description": "Factoring a symmetric positive definite matrix into a triangular factor and its transpose"
+  },
+  {
+    "subject_id": 20,
+    "skill": "LU decomposition",
+    "description": "Factoring a matrix into lower and upper triangular factors with possible pivoting"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Spectral theorem",
+    "description": "A result that real symmetric matrices admit an orthonormal eigenbasis"
+  },
+  {
+    "subject_id": 20,
+    "skill": "PCA covariance eigenvectors",
+    "description": "Principal directions obtained as eigenvectors of a centered-data covariance matrix"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Rayleigh quotient",
+    "description": "A scalar ratio of a quadratic form to the squared vector norm"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Partial derivative",
+    "description": "A derivative varying one input while holding the other inputs fixed"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Total derivative",
+    "description": "The sensitivity of a composed quantity accounting for all dependent paths"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Lipschitz continuity",
+    "description": "A bound on how fast a function can change relative to distance between inputs"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Lagrangian dual",
+    "description": "A lower-bound maximization framework associated with constrained optimization"
+  },
+  {
+    "subject_id": 20,
+    "skill": "KKT conditions",
+    "description": "Stationarity, feasibility and complementary slackness conditions for constrained optima"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Strong convexity",
+    "description": "A convexity property including a strictly positive quadratic curvature lower bound"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Jensen inequality",
+    "description": "Relating the value of a convex function at an average to the average of its values"
+  },
+  {
+    "subject_id": 21,
+    "skill": "xargs",
+    "description": "Turning standard-input items into arguments for another command"
+  },
+  {
+    "subject_id": 21,
+    "skill": "tee",
+    "description": "Copying standard input to both standard output and one or more files"
+  },
+  {
+    "subject_id": 21,
+    "skill": "sort -u",
+    "description": "Sorting lines and retaining only distinct adjacent sorted values"
+  },
+  {
+    "subject_id": 21,
+    "skill": "uniq -c",
+    "description": "Counting consecutive duplicate lines in sorted or grouped text"
+  },
+  {
+    "subject_id": 21,
+    "skill": "comm",
+    "description": "Comparing two sorted files line by line to show unique and common entries"
+  },
+  {
+    "subject_id": 21,
+    "skill": "cut -d",
+    "description": "Extracting delimited text fields using a selected delimiter"
+  },
+  {
+    "subject_id": 21,
+    "skill": "tr",
+    "description": "Translating or deleting characters from a byte or character stream"
+  },
+  {
+    "subject_id": 21,
+    "skill": "paste",
+    "description": "Combining corresponding lines from files with delimiters"
+  },
+  {
+    "subject_id": 21,
+    "skill": "split",
+    "description": "Dividing input data into smaller output files by size or line count"
+  },
+  {
+    "subject_id": 21,
+    "skill": "tar",
+    "description": "Archiving many files and directories into a single container stream"
+  },
+  {
+    "subject_id": 21,
+    "skill": "gzip",
+    "description": "Compressing and decompressing data using the gzip format"
+  },
+  {
+    "subject_id": 21,
+    "skill": "rsync",
+    "description": "Synchronizing source and destination files efficiently using change-aware transfer"
+  },
+  {
+    "subject_id": 21,
+    "skill": "scp",
+    "description": "Copying files over an SSH-based encrypted connection"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ssh-keygen",
+    "description": "Generating or managing public and private keys for SSH authentication"
+  },
+  {
+    "subject_id": 21,
+    "skill": "lsof",
+    "description": "Listing open files and network handles associated with processes"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ss",
+    "description": "Inspecting TCP, UDP and other socket statistics on Linux"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ip route",
+    "description": "Viewing or modifying routing tables with the ip utility"
+  },
+  {
+    "subject_id": 21,
+    "skill": "nc",
+    "description": "Opening or listening on network connections for testing or data transfer"
+  },
+  {
+    "subject_id": 21,
+    "skill": "flock",
+    "description": "Obtaining an advisory file lock to coordinate shell processes"
+  },
+  {
+    "subject_id": 21,
+    "skill": "trap",
+    "description": "Registering shell commands to run when specified signals or shell events occur"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git tag annotated",
+    "description": "Creating a version label stored with a tag object and message"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git describe",
+    "description": "Producing a human-readable identifier derived from nearby tags and commits"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git show",
+    "description": "Displaying a commit or object along with associated content and metadata"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git clean -nd",
+    "description": "Previewing which untracked files would be deleted by git clean"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git merge-base",
+    "description": "Finding a common ancestor commit of two revisions"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git rev-parse",
+    "description": "Resolving revision expressions and repository metadata to concrete values"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git sparse-checkout",
+    "description": "Restricting checked-out working-tree content to selected repository paths"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker image manifest",
+    "description": "Metadata describing image platform variants and content layers"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker build cache mount",
+    "description": "A BuildKit mount retaining intermediate dependency caches across rebuilds"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker health status",
+    "description": "A reported state derived from periodic configured healthcheck results"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Container namespace",
+    "description": "A Linux isolation mechanism providing separate views of resources to processes"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Container cgroup",
+    "description": "A Linux kernel mechanism tracking or limiting resources for groups of processes"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker rootless mode",
+    "description": "Running the Docker daemon and containers without requiring root privileges"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker content trust",
+    "description": "A workflow using signatures to verify trusted image publishers or artifacts"
+  }
+]
