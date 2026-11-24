@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Activity, Award, BookOpen, Code2, Flame, Menu, Route, ShieldCheck, Target, Trophy, X } from "lucide-react";
+import { Activity, Award, BookOpen, Code2, Flame, Menu, ShieldCheck, Trophy, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { modules, advanced } from "@/lib/navigation";
 import { ModuleIcon } from "./icons";
