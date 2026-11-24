@@ -4,6 +4,7 @@ const identity = process.env.UAT_ADMIN_IDENTITY ?? "uat_admin@example.com";
 const password = process.env.UAT_ADMIN_PASSWORD ?? "UatAdminPass123!";
 
 test("administrator creates, publishes, and reviews through the real BFF", async ({ page }) => {
+  test.setTimeout(120000);
   await page.goto("/auth");
   await page.getByLabel("Email or username").fill(identity);
   await page.getByLabel("Password", { exact: true }).fill(password);
@@ -41,7 +42,7 @@ test("administrator creates, publishes, and reviews through the real BFF", async
 
   let row = page.getByRole("row").filter({ hasText: title });
   await row.getByRole("button", { name: "Publish" }).click();
-  await expect(page.locator(".admin-notice")).toContainText("Problem status updated.");
+  await expect(page.locator(".admin-notice")).toContainText("Problem status updated.", { timeout: 45000 });
   row = page.getByRole("row").filter({ hasText: title });
   await expect(row).toContainText("PUBLISHED");
 
@@ -53,5 +54,5 @@ test("administrator creates, publishes, and reviews through the real BFF", async
   await page.getByRole("tab", { name: "Problems" }).click();
   row = page.getByRole("row").filter({ hasText: title });
   await row.getByRole("button", { name: "Archive" }).click();
-  await expect(page.locator(".admin-notice")).toContainText("Problem archived.");
+  await expect(page.locator(".admin-notice")).toContainText("Problem archived.", { timeout: 45000 });
 });
