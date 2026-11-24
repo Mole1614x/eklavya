@@ -1,0 +1,267 @@
+[
+  {
+    "subject_id": 3,
+    "skill": "Destructor",
+    "description": "A special object-lifecycle operation invoked when an instance is destroyed under language-specific rules"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Object identity",
+    "description": "The ability to distinguish one instance from another independently of their stored values"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Class factory method",
+    "description": "A class-associated method that constructs or selects instances based on supplied parameters"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Double dispatch",
+    "description": "Choosing behavior using the dynamic types of two collaborating objects"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Dynamic downcast",
+    "description": "Checking and converting a reference from a base type to a compatible derived type at runtime"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Resource acquisition is initialization",
+    "description": "Binding external resource ownership to object construction and deterministic destruction"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Constructor chaining",
+    "description": "Invoking another constructor in the same or parent class during object initialization"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Unit standardization",
+    "description": "Converting comparable measurements into one agreed physical or business unit"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Type inference confidence",
+    "description": "A measure of certainty assigned to a guessed data type during schema discovery"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Record validity mask",
+    "description": "A Boolean indicator showing which rows pass a collection of validation predicates"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Conflict precedence",
+    "description": "An ordered rule selecting the authoritative source when records disagree"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Null distribution profile",
+    "description": "A summary of missing-value patterns across columns and row groups"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Range constraint validation",
+    "description": "Checking that numeric values fall inside permitted lower and upper boundaries"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Referential orphan detection",
+    "description": "Finding records whose foreign identifiers have no corresponding parent entity"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark accumulator",
+    "description": "A shared aggregation variable updated by tasks and read reliably through driver-side semantics"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark broadcast variable",
+    "description": "A read-only value distributed to executors for efficient repeated task access"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark local checkpoint",
+    "description": "Truncating lineage using executor storage without the durability of reliable checkpoint files"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark task speculation",
+    "description": "Starting redundant instances of slow tasks when speculative execution is enabled"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark executor memory overhead",
+    "description": "Additional nonheap or container memory reserved beyond the configured executor heap"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark task locality",
+    "description": "Preference for scheduling computation near the data it must read"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Group normalization",
+    "description": "Normalizing neural activations within groups of channels rather than across the batch"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Instance normalization",
+    "description": "Normalizing channel statistics independently for each sample"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Dilated convolution",
+    "description": "A convolution sampling spatial positions with gaps to enlarge receptive field"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Causal convolution",
+    "description": "A convolution restricted so an output cannot depend on later sequence positions"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Separable convolution",
+    "description": "Replacing a full spatial convolution with depthwise filtering and channelwise mixing"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Activation checkpointing",
+    "description": "Trading extra forward recomputation for reduced memory storage during backward propagation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Exponential moving average weights",
+    "description": "Tracking smoothed model parameter values across optimizer steps"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Label smoothing",
+    "description": "Replacing hard one-hot class targets with softened distributions during classification training"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Knowledge distillation",
+    "description": "Training a smaller learner to match predictions or representations of a stronger teacher"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Self supervised pretraining",
+    "description": "Learning representations from automatically constructed supervisory signals in unlabeled data"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Masked language modeling",
+    "description": "Predicting hidden sequence tokens using surrounding unmasked context"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Masked image modeling",
+    "description": "Training image representations by reconstructing or predicting hidden patches"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Diffusion denoising step",
+    "description": "A learned operation reducing noise in a latent or pixel representation during sampling"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Noise schedule",
+    "description": "A specification controlling how noise magnitudes vary across diffusion time steps"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Contrastive temperature",
+    "description": "A scaling parameter controlling sharpness of similarity-based contrastive softmax scores"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Gradient norm monitoring",
+    "description": "Tracking the magnitude of training gradients to detect unstable optimization"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Cosine embedding similarity",
+    "description": "A vector similarity measure based on the cosine of the angle between vectors"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Cross encoder reranking",
+    "description": "Scoring a query and candidate document jointly with a transformer model"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Maximal marginal relevance",
+    "description": "Selecting retrieval passages that balance query relevance with diversity from selected passages"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Query expansion",
+    "description": "Adding related search terms to improve retrieval coverage"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Query rewriting",
+    "description": "Reformulating a search request into a form better suited to a retrieval backend"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Answerability detection",
+    "description": "Determining whether available evidence is sufficient to answer a user's question"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Document level access control",
+    "description": "Filtering retrieved sources according to the requesting user's authorization"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Retrieval provenance",
+    "description": "Metadata describing where a selected evidence passage originated"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Citation verification",
+    "description": "Checking that source citations actually support each corresponding generated claim"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Context compression",
+    "description": "Reducing retrieved content while retaining information needed to answer a question"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Semantic cache",
+    "description": "Reusing a prior answer or computation when a new request is semantically close enough"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Groundedness score",
+    "description": "An evaluation measure estimating how strongly a generated claim is supported by supplied evidence"
+  },
+  {
+    "subject_id": 13,
+    "skill": "PII redaction",
+    "description": "Removing or masking personally identifying details before sharing data with a model"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Safety moderation",
+    "description": "Classifying generated or submitted material against relevant safety categories"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Model routing",
+    "description": "Selecting among available models based on task demands, cost or policy"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Inference batch size",
+    "description": "The number of requests or sequences grouped for one model execution step"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Tool result grounding",
+    "description": "Treating outputs from trusted operations as evidence while not elevating their embedded instructions"
+  }
+]
