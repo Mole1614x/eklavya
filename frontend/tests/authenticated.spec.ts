@@ -74,7 +74,8 @@ test("authenticated session rotates across BFF routes and protects profile data"
   await expect(accountOptions.getByRole("button", { name: "Log out" })).toBeVisible();
   await accountOptions.getByRole("button", { name: "Log out" }).click();
   await expect(page).toHaveURL(/\/auth$/);
-  await expect(page.getByRole("link", { name: "Sign in" })).toBeVisible();
+  await expect(page.getByRole("tab", { name: "Sign in" })).toBeVisible();
+  await expect(page.locator(".auth-experience")).toBeVisible();
   await page.goto("/profile");
   await expect(page).toHaveURL(/\/auth$/);
 });
