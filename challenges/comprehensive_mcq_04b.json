@@ -2161,15 +2161,15 @@
   },
   {
     "subject_id": 39,
-    "skill": "Simple interest",
-    "prompt": "In Quantitative Aptitude, which term best matches this description: calculates interest only on the original principal at a fixed rate?",
+    "skill": "Successive percentage change",
+    "prompt": "In Quantitative Aptitude, which term best matches this description: computes the combined percentage effect when multiple proportional increases or decreases occur?",
     "choices": [
-      "Simple interest",
+      "Successive percentage change",
       "Speed-distance-time",
       "Profit percentage",
       "Permutation"
     ],
-    "answer": "Simple interest"
+    "answer": "Successive percentage change"
   },
   {
     "subject_id": 39,
@@ -2191,7 +2191,7 @@
       "Speed-distance-time",
       "Weighted average",
       "Inverse proportion",
-      "Simple interest"
+      "Successive percentage change"
     ],
     "answer": "Speed-distance-time"
   },
@@ -2226,7 +2226,7 @@
     "choices": [
       "Profit percentage",
       "Inverse proportion",
-      "Simple interest",
+      "Successive percentage change",
       "Work-rate addition"
     ],
     "answer": "Profit percentage"
@@ -2261,7 +2261,7 @@
     "prompt": "In Quantitative Aptitude, which term best matches this description: counts ordered arrangements of distinct selected items?",
     "choices": [
       "Permutation",
-      "Simple interest",
+      "Successive percentage change",
       "Work-rate addition",
       "Discount percentage"
     ],
@@ -2285,7 +2285,7 @@
     "prompt": "In Logical Reasoning, which term best matches this description: tests whether conclusions logically follow from quantified premises?",
     "choices": [
       "Syllogism",
-      "Number series",
+      "Truth table",
       "Seating arrangement",
       "Ranking and order"
     ],
@@ -2305,15 +2305,15 @@
   },
   {
     "subject_id": 40,
-    "skill": "Number series",
-    "prompt": "In Logical Reasoning, which term best matches this description: identifies a rule connecting successive numerical terms?",
+    "skill": "Truth table",
+    "prompt": "In Logical Reasoning, which term best matches this description: enumerates logical outputs for every input combination of Boolean variables?",
     "choices": [
-      "Number series",
+      "Truth table",
       "Direction sense",
       "Classification",
       "Syllogism"
     ],
-    "answer": "Number series"
+    "answer": "Truth table"
   },
   {
     "subject_id": 40,
@@ -2335,7 +2335,7 @@
       "Direction sense",
       "Analogy",
       "Necessary condition",
-      "Number series"
+      "Truth table"
     ],
     "answer": "Direction sense"
   },
@@ -2370,7 +2370,7 @@
     "choices": [
       "Classification",
       "Necessary condition",
-      "Number series",
+      "Truth table",
       "Seating arrangement"
     ],
     "answer": "Classification"
@@ -2401,15 +2401,15 @@
   },
   {
     "subject_id": 41,
-    "skill": "Subject-verb agreement",
-    "prompt": "In English and Verbal Ability, which term best matches this description: matches a finite verb to the number and person of its grammatical subject?",
+    "skill": "Restrictive relative clause",
+    "prompt": "In English and Verbal Ability, which term best matches this description: identifies the defining information required to specify the noun it modifies?",
     "choices": [
-      "Subject-verb agreement",
+      "Restrictive relative clause",
       "Passive voice",
       "Reading comprehension",
       "Conditional sentence"
     ],
-    "answer": "Subject-verb agreement"
+    "answer": "Restrictive relative clause"
   },
   {
     "subject_id": 41,
@@ -2431,7 +2431,7 @@
       "Passive voice",
       "Antonym",
       "Preposition",
-      "Subject-verb agreement"
+      "Restrictive relative clause"
     ],
     "answer": "Passive voice"
   },
@@ -2466,7 +2466,7 @@
     "choices": [
       "Reading comprehension",
       "Preposition",
-      "Subject-verb agreement",
+      "Restrictive relative clause",
       "Synonym"
     ],
     "answer": "Reading comprehension"
@@ -2501,7 +2501,7 @@
     "prompt": "In English and Verbal Ability, which term best matches this description: expresses how an outcome depends on a stated condition?",
     "choices": [
       "Conditional sentence",
-      "Subject-verb agreement",
+      "Restrictive relative clause",
       "Synonym",
       "Dangling modifier"
     ],
@@ -2521,15 +2521,15 @@
   },
   {
     "subject_id": 42,
-    "skill": "Semantic HTML",
-    "prompt": "In Web Development, which term best matches this description: uses elements whose built-in meanings describe content structure?",
+    "skill": "DOM tree",
+    "prompt": "In Web Development, which term best matches this description: represents nested HTML document elements as parent-child nodes?",
     "choices": [
-      "Semantic HTML",
+      "DOM tree",
       "CSS Grid",
       "HTTP cookie",
       "Debouncing"
     ],
-    "answer": "Semantic HTML"
+    "answer": "DOM tree"
   },
   {
     "subject_id": 42,
@@ -2551,7 +2551,7 @@
       "CSS Grid",
       "Same-origin policy",
       "Service worker",
-      "Semantic HTML"
+      "DOM tree"
     ],
     "answer": "CSS Grid"
   },
@@ -2586,7 +2586,7 @@
     "choices": [
       "HTTP cookie",
       "Service worker",
-      "Semantic HTML",
+      "DOM tree",
       "Event bubbling"
     ],
     "answer": "HTTP cookie"
@@ -2621,7 +2621,7 @@
     "prompt": "In Web Development, which term best matches this description: delays a handler until a burst of events has stopped?",
     "choices": [
       "Debouncing",
-      "Semantic HTML",
+      "DOM tree",
       "Event bubbling",
       "WebSocket"
     ],
