@@ -21,7 +21,7 @@ test("catalog lists numbered questions in ascending difficulty and across pages"
 });
 
 test("difficulty filter and numbering agree for individual practice tracks", async ({ page }) => {
-  await page.goto("/problems?category=foundations&difficulty=Medium");
+  await page.goto("/problems?category=data&difficulty=Medium");
   const rows = page.locator(".problem-list li");
   const total = await rows.count();
   expect(total).toBeGreaterThan(0);
