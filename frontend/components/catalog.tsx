@@ -17,9 +17,10 @@ export async function CatalogView({ query, fixedCategory }: { query: Query; fixe
   const difficulty = difficulties.find((value) => value === query.difficulty) ?? "";
   const topic = typeof query.topic === "string" ? query.topic.slice(0, 80) : "";
   const q = typeof query.q === "string" ? query.q.slice(0, 100) : "";
+  const subject = typeof query.subject === "string" ? query.subject.slice(0, 100) : "";
   const requestedPage = Number(typeof query.page === "string" ? query.page : 1);
   const page = Number.isSafeInteger(requestedPage) && requestedPage >= 1 && requestedPage <= 1000000 ? requestedPage : 1;
-  const values = { category, difficulty, topic, q };
+  const values = { category, difficulty, topic, q, subject };
   const filters = Object.fromEntries(Object.entries(values).filter(([, value]) => value));
   const path = fixedCategory ? `/${fixedCategory}` : "/problems";
   const { items, total, topics } = await getCatalog({ ...filters, offset: String((page - 1) * 50) });
@@ -28,6 +29,7 @@ export async function CatalogView({ query, fixedCategory }: { query: Query; fixe
   return (
     <section className="catalog" aria-label="Problem catalog">
       <form className="card filters" action={path}>
+        {subject && <input type="hidden" name="subject" value={subject} />}
         <label className="search"><span>Search</span><div><Search size={16} /><input type="search" name="q" placeholder="Title or topic" defaultValue={q} maxLength={100} /></div></label>
         {!fixedCategory && <label>Category<select name="category" defaultValue={category}><option value="">All categories</option>{categories.map((module) => <option key={module.slug} value={module.slug}>{module.label}</option>)}</select></label>}
         <label>Difficulty<select name="difficulty" defaultValue={difficulty}><option value="">All levels</option>{difficulties.map((value) => <option key={value}>{value}</option>)}</select></label>
