@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 16,
+    "skill": "SUMIFS",
+    "description": "Summing numeric cells whose associated ranges meet several criteria"
+  },
+  {
+    "subject_id": 16,
+    "skill": "COUNTIFS",
+    "description": "Counting records satisfying multiple range criteria"
+  },
+  {
+    "subject_id": 16,
+    "skill": "INDEX MATCH",
+    "description": "Retrieving a table value by combining position lookup and value indexing"
+  },
+  {
+    "subject_id": 16,
+    "skill": "XMATCH",
+    "description": "Finding the relative position of a value in a lookup array"
+  },
+  {
+    "subject_id": 16,
+    "skill": "FILTER function",
+    "description": "Returning rows or values meeting a Boolean condition in dynamic-array spreadsheets"
+  },
+  {
+    "subject_id": 16,
+    "skill": "UNIQUE function",
+    "description": "Returning distinct values from a supplied spreadsheet range"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SORT function",
+    "description": "Returning a dynamically sorted copy of spreadsheet values"
+  },
+  {
+    "subject_id": 16,
+    "skill": "LET function",
+    "description": "Assigning names to intermediate calculations within a single formula"
+  },
+  {
+    "subject_id": 16,
+    "skill": "LAMBDA function",
+    "description": "Creating a reusable custom calculation with parameters using spreadsheet formulas"
+  },
+  {
+    "subject_id": 16,
+    "skill": "TEXTSPLIT",
+    "description": "Splitting text into array elements using selected delimiters"
+  },
+  {
+    "subject_id": 16,
+    "skill": "TEXTJOIN",
+    "description": "Concatenating strings with a chosen separator and optional empty-value handling"
+  },
+  {
+    "subject_id": 16,
+    "skill": "EOMONTH",
+    "description": "Returning a date at a specified month-end offset"
+  },
+  {
+    "subject_id": 16,
+    "skill": "NETWORKDAYS",
+    "description": "Counting weekdays between dates with optional holiday exclusions"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SUBTOTAL",
+    "description": "Calculating an aggregate that can respect filtered or hidden rows depending on its function code"
+  },
+  {
+    "subject_id": 16,
+    "skill": "PivotTable slicer",
+    "description": "A visual filter control for pivot-table summaries"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Power Query merge",
+    "description": "Joining two query tables based on matching key columns"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Power Query append",
+    "description": "Stacking records from tables with compatible columns"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Data validation list",
+    "description": "Restricting spreadsheet entry to values from a configured list"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Conditional formatting",
+    "description": "Changing cell presentation according to value-dependent rules"
+  },
+  {
+    "subject_id": 16,
+    "skill": "What if Goal Seek",
+    "description": "Finding an input value that makes a formula return a selected outcome"
+  },
+  {
+    "subject_id": 17,
+    "skill": "INCLUDE LOD",
+    "description": "A level-of-detail expression adding specified dimensions to the view's dimensional detail"
+  },
+  {
+    "subject_id": 17,
+    "skill": "EXCLUDE LOD",
+    "description": "A level-of-detail expression calculating while removing specified dimensions from the view's dimensional detail"
+  },
+  {
+    "subject_id": 17,
+    "skill": "FIXED filter order",
+    "description": "FIXED level-of-detail expressions are computed before regular dimension filters unless context changes evaluation"
+  },
+  {
+    "subject_id": 17,
+    "skill": "ATTR aggregation",
+    "description": "Returning a dimension value if it is unique in the current partition, otherwise a special multiple-values indicator"
+  },
+  {
+    "subject_id": 17,
+    "skill": "WINDOW_SUM",
+    "description": "A table calculation summing a measure across a selected window"
+  },
+  {
+    "subject_id": 17,
+    "skill": "LOOKUP calculation",
+    "description": "Accessing a value at a relative position within a table-calculation partition"
+  },
+  {
+    "subject_id": 17,
+    "skill": "INDEX table calc",
+    "description": "Returning the current position in a table-calculation partition"
+  },
+  {
+    "subject_id": 17,
+    "skill": "RANK table calc",
+    "description": "Returning an ordering rank according to a specified measure and table-calculation partition"
+  },
+  {
+    "subject_id": 17,
+    "skill": "RUNNING_SUM",
+    "description": "Computing accumulated totals along a chosen addressing direction"
+  },
+  {
+    "subject_id": 17,
+    "skill": "ZN function",
+    "description": "Replacing a numeric null value with zero in a Tableau calculation"
+  },
+  {
+    "subject_id": 17,
+    "skill": "IFNULL function",
+    "description": "Returning a replacement when an expression evaluates to null"
+  },
+  {
+    "subject_id": 17,
+    "skill": "DATETRUNC",
+    "description": "Rounding a date down to the beginning of the chosen date part"
+  },
+  {
+    "subject_id": 17,
+    "skill": "DATEPART",
+    "description": "Extracting a selected numeric part from a date"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Parameter action",
+    "description": "Updating a workbook parameter through a viewer's interaction"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Set action",
+    "description": "Changing membership of a set based on interactions with marks"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Dashboard action",
+    "description": "Linking interactive selections to filtering, highlighting, or navigation across views"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Dual axis",
+    "description": "Displaying two measures against aligned plot coordinates with separate axes"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Blended data source",
+    "description": "Combining aggregated fields from separate sources using shared linking fields"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Extract refresh",
+    "description": "Updating a materialized Tableau extract from its original data source"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Tableau order of operations",
+    "description": "The sequence in which filters, LOD expressions, and calculations are applied"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Row context",
+    "description": "The per-row evaluation context created during certain calculated-column and iterator operations"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Context transition",
+    "description": "Conversion of row context into filter context when CALCULATE is evaluated"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ALL function",
+    "description": "Removing filters from specified tables or columns for a DAX calculation"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ALLSELECTED",
+    "description": "Modifying filter context while preserving selected external query filters"
+  },
+  {
+    "subject_id": 18,
+    "skill": "REMOVEFILTERS",
+    "description": "Explicitly clearing filters on supplied tables or columns"
+  },
+  {
+    "subject_id": 18,
+    "skill": "KEEPFILTERS",
+    "description": "Applying filters in CALCULATE by intersecting rather than replacing corresponding filters"
+  },
+  {
+    "subject_id": 18,
+    "skill": "USERELATIONSHIP",
+    "description": "Temporarily activating a specified model relationship during calculation"
+  },
+  {
+    "subject_id": 18,
+    "skill": "RELATED",
+    "description": "Fetching a column value through an existing many-to-one relationship from row context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "RELATEDTABLE",
+    "description": "Returning related many-side records for the current row context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SUMX",
+    "description": "Evaluating an expression for each row of a table and summing results"
+  },
+  {
+    "subject_id": 18,
+    "skill": "AVERAGEX",
+    "description": "Iterating a table and averaging an expression's per-row values"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DISTINCTCOUNT",
+    "description": "Counting distinct nonblank and blank values as specified by DAX semantics"
+  },
+  {
+    "subject_id": 18,
+    "skill": "HASONEVALUE",
+    "description": "Testing whether the filter context contains exactly one distinct column value"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SELECTEDVALUE",
+    "description": "Returning a single distinct context value or an alternate when there is not exactly one"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DIVIDE",
+    "description": "Performing division with built-in alternate handling for zero denominators"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DATESYTD",
+    "description": "Returning dates from the beginning of the year through the current period"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SAMEPERIODLASTYEAR",
+    "description": "Shifting a supplied date set to the corresponding prior-year period"
+  },
+  {
+    "subject_id": 18,
+    "skill": "TOTALYTD",
+    "description": "Evaluating an expression over year-to-date dates with optional year-end definition"
+  },
+  {
+    "subject_id": 18,
+    "skill": "TREATAS",
+    "description": "Applying values from an unrelated table expression as filters on target columns"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DAX measure storage",
+    "description": "A measure is generally computed at query time instead of materialized as a regular row value"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Population parameter",
+    "description": "A quantity describing a property of the entire target population"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sample statistic",
+    "description": "A quantity computed from a subset of observations"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sampling distribution",
+    "description": "The distribution of a statistic across repeated random samples"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Central limit theorem",
+    "description": "Conditions under which normalized sums or means converge toward a normal distribution"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Law of large numbers",
+    "description": "A convergence principle connecting sample averages with their expected values"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Null hypothesis",
+    "description": "A reference assertion evaluated through a statistical testing procedure"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Type I error",
+    "description": "Rejecting a true null hypothesis"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Type II error",
+    "description": "Failing to reject a false null hypothesis"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Statistical power",
+    "description": "The probability of rejecting the null when a specified alternative is true"
+  },
+  {
+    "subject_id": 19,
+    "skill": "P value",
+    "description": "Under a null model, the probability of results at least as incompatible as those observed"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Effect size",
+    "description": "A quantitative measure of the magnitude of a relationship or difference"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Multiple testing",
+    "description": "Testing many hypotheses in a way that can inflate false-positive rates"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Bonferroni correction",
+    "description": "Controlling familywise error by using a significance threshold divided by the number of tests"
+  },
+  {
+    "subject_id": 19,
+    "skill": "False discovery rate",
+    "description": "Expected proportion of false rejections among rejected hypotheses"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Bootstrap interval",
+    "description": "A confidence interval estimated by resampling observations from a sample"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Permutation test",
+    "description": "A test constructing a null distribution by reshuffling labels under exchangeability"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Likelihood function",
+    "description": "The probability model viewed as a function of its parameters for observed data"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Maximum likelihood estimate",
+    "description": "Parameter values that maximize likelihood of the observed data under the model"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Covariance",
+    "description": "A measure of how two variables vary jointly around their means"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Spearman correlation",
+    "description": "Rank-based correlation measuring monotonic association"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Eigenvalue",
+    "description": "A scalar by which a nonzero eigenvector is stretched under a linear transformation"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Eigenvector",
+    "description": "A nonzero direction preserved up to scaling by a linear transformation"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Positive semidefinite matrix",
+    "description": "A symmetric matrix whose quadratic form is nonnegative for every real vector"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Jacobian",
+    "description": "The matrix of first partial derivatives of a vector-valued function"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Hessian",
+    "description": "The matrix of second partial derivatives of a scalar-valued function"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Directional derivative",
+    "description": "The local rate of change of a function along a chosen direction"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Chain rule",
+    "description": "A differentiation rule for composed functions"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Convex function",
+    "description": "A function lying at or below line segments joining points on its graph within a convex domain"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Lagrange multiplier",
+    "description": "An auxiliary variable used to enforce a differentiable constraint during optimization"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Projection matrix",
+    "description": "A linear operator mapping vectors onto a selected subspace"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Orthogonal matrix",
+    "description": "A square matrix whose transpose is its inverse"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Pseudoinverse",
+    "description": "A generalized matrix inverse providing least-squares or minimum-norm solutions"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Condition number",
+    "description": "A measure of sensitivity of a computational problem to input perturbations"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Singular value",
+    "description": "A nonnegative scaling magnitude produced by singular value decomposition"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Gradient descent",
+    "description": "Iterative optimization that moves parameters opposite to the gradient of an objective"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Newton method",
+    "description": "An optimization technique using curvature information to compute local update directions"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Logarithm identity",
+    "description": "The rule log(ab) = log(a) + log(b) for positive real factors"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Softmax function",
+    "description": "Converting arbitrary real-valued logits into positive values summing to one"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Cross entropy",
+    "description": "Expected negative log probability assigned to outcomes under a candidate distribution"
+  },
+  {
+    "subject_id": 20,
+    "skill": "KL divergence",
+    "description": "A nonnegative information measure comparing two probability distributions on compatible support"
+  }
+]
