@@ -54,6 +54,8 @@ def extract_result(output: str):
 def structured_match(actual, expected, tolerance: float | None = None) -> bool:
     if tolerance is None:
         return actual == expected
+    if isinstance(actual, dict) and isinstance(expected, dict) and actual.keys() == expected.keys():
+        return all(structured_match(actual[key], expected[key], tolerance) for key in actual)
     if isinstance(actual, list) and isinstance(expected, list) and len(actual) == len(expected):
         return all(structured_match(left, right, tolerance) for left, right in zip(actual, expected))
     try:
