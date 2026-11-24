@@ -6,17 +6,17 @@ const password = process.env.UAT_ADMIN_PASSWORD ?? "UatAdminPass123!";
 test("administrator creates, publishes, and reviews through the real BFF", async ({ page }) => {
   await page.goto("/auth");
   await page.getByLabel("Email or username").fill(identity);
-  await page.getByLabel("Password").fill(password);
+  await page.getByLabel("Password", { exact: true }).fill(password);
   await page.getByRole("button", { name: "Sign in" }).click();
-  await expect(page).toHaveURL(/\/profile$/);
+  await expect(page).toHaveURL(/\/admin$/);
 
   await page.goto("/admin");
   await expect(page.getByRole("heading", { name: "Admin control center" })).toBeVisible();
   await page.getByRole("tab", { name: "Problems" }).click();
 
   const title = "Release Readiness Sum";
-  const editor = page.getByRole("heading", { name: "Create or replace a problem" }).locator("..");
-  await editor.getByLabel("Slug").fill("uat-release-readiness-sum");
+  const editor = page.locator("form.admin-editor").filter({ has: page.getByRole("heading", { name: "Create or replace a problem" }) });
+  await editor.getByLabel("Unique slug").fill("uat-release-readiness-sum");
   await editor.getByLabel("Validated definition").fill(JSON.stringify({
     title,
     category: "foundations",
@@ -36,7 +36,7 @@ test("administrator creates, publishes, and reviews through the real BFF", async
     ],
     evaluator: null,
   }, null, 2));
-  await editor.getByRole("button", { name: "Save" }).click();
+  await editor.getByRole("button", { name: "Save changes" }).click();
   await expect(editor.getByRole("status")).toContainText("Saved and audited.");
 
   let row = page.getByRole("row").filter({ hasText: title });

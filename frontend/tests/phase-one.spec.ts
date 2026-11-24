@@ -5,10 +5,8 @@ test("navigation reaches every Phase 1 section", async ({ page }) => {
   await page.goto("/");
   const navigation = page.getByRole("navigation", { name: "Main navigation" });
   await navigation.getByRole("link", { name: "Dashboard" }).click();
-  await expect(page.getByRole("heading", { name: "Practice activity" })).toBeVisible();
-  await expect(page.getByRole("img", { name: /Mon 2, Tue 4/ })).toBeVisible();
-  await expect(page.locator(".recharts-bar-rectangle")).toHaveCount(7);
-  await expect(page.getByText("Demo data")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Progress at a glance" })).toBeVisible();
+  await expect(page.getByText("Sign in to see your verified skill analytics.")).toBeVisible();
   for (const module of [...modules, ...community]) {
     await navigation.getByRole("link", { name: module.label, exact: true }).click();
     await expect(page.getByRole("heading", { name: module.title, level: 1 })).toBeVisible();
