@@ -1,0 +1,1778 @@
+[
+  {
+    "subject_id": 42,
+    "skill": "Document type declaration",
+    "prompt": "What web-development concept matches this task or definition: tells a browser to render modern HTML using standards mode?",
+    "choices": [
+      "Document type declaration",
+      "HTML section element",
+      "CSS specificity",
+      "CSS pseudo element"
+    ],
+    "answer": "Document type declaration"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTML form",
+    "prompt": "What web-development concept matches this task or definition: groups user input controls for browser submission?",
+    "choices": [
+      "HTML form",
+      "HTML article element",
+      "CSS cascade",
+      "CSS positioning"
+    ],
+    "answer": "HTML form"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTML label",
+    "prompt": "What web-development concept matches this task or definition: associates visible explanatory text with a form control?",
+    "choices": [
+      "HTML label",
+      "HTML aside element",
+      "CSS media query",
+      "CSS overflow"
+    ],
+    "answer": "HTML label"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTML button",
+    "prompt": "What web-development concept matches this task or definition: provides a keyboard-accessible interactive form or action control?",
+    "choices": [
+      "HTML button",
+      "Accessible name",
+      "CSS custom property",
+      "CSS rem unit"
+    ],
+    "answer": "HTML button"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTML main element",
+    "prompt": "What web-development concept matches this task or definition: marks the page's primary unique content region?",
+    "choices": [
+      "HTML main element",
+      "ARIA attribute",
+      "CSS pseudo class",
+      "Responsive design"
+    ],
+    "answer": "HTML main element"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTML section element",
+    "prompt": "What web-development concept matches this task or definition: groups thematically related content with its own accessible heading?",
+    "choices": [
+      "HTML section element",
+      "CSS box model",
+      "CSS pseudo element",
+      "Mobile first design"
+    ],
+    "answer": "HTML section element"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTML article element",
+    "prompt": "What web-development concept matches this task or definition: represents standalone content that could be distributed independently?",
+    "choices": [
+      "HTML article element",
+      "CSS specificity",
+      "CSS positioning",
+      "DOM querySelector"
+    ],
+    "answer": "HTML article element"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTML aside element",
+    "prompt": "What web-development concept matches this task or definition: contains supplementary content tangential to nearby main content?",
+    "choices": [
+      "HTML aside element",
+      "CSS cascade",
+      "CSS overflow",
+      "DOM addEventListener"
+    ],
+    "answer": "HTML aside element"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Accessible name",
+    "prompt": "What web-development concept matches this task or definition: provides the descriptive identifier announced for an interactive interface control?",
+    "choices": [
+      "Accessible name",
+      "CSS media query",
+      "CSS rem unit",
+      "Event delegation"
+    ],
+    "answer": "Accessible name"
+  },
+  {
+    "subject_id": 42,
+    "skill": "ARIA attribute",
+    "prompt": "What web-development concept matches this task or definition: adds semantic or state information to accessibility APIs when needed?",
+    "choices": [
+      "ARIA attribute",
+      "CSS custom property",
+      "Responsive design",
+      "Prevent default"
+    ],
+    "answer": "ARIA attribute"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS box model",
+    "prompt": "What web-development concept matches this task or definition: combines content padding border and margin areas for layout sizing?",
+    "choices": [
+      "CSS box model",
+      "CSS pseudo class",
+      "Mobile first design",
+      "JavaScript Promise"
+    ],
+    "answer": "CSS box model"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS specificity",
+    "prompt": "What web-development concept matches this task or definition: ranks competing style declarations by selector weight and other cascade rules?",
+    "choices": [
+      "CSS specificity",
+      "CSS pseudo element",
+      "DOM querySelector",
+      "Async await"
+    ],
+    "answer": "CSS specificity"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS cascade",
+    "prompt": "What web-development concept matches this task or definition: resolves which applicable style declaration determines a property value?",
+    "choices": [
+      "CSS cascade",
+      "CSS positioning",
+      "DOM addEventListener",
+      "Fetch API"
+    ],
+    "answer": "CSS cascade"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS media query",
+    "prompt": "What web-development concept matches this task or definition: applies styles conditionally according to viewport or device characteristics?",
+    "choices": [
+      "CSS media query",
+      "CSS overflow",
+      "Event delegation",
+      "JavaScript closure"
+    ],
+    "answer": "CSS media query"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS custom property",
+    "prompt": "What web-development concept matches this task or definition: defines a reusable cascade-aware variable using a double-hyphen name?",
+    "choices": [
+      "CSS custom property",
+      "CSS rem unit",
+      "Prevent default",
+      "JavaScript event loop"
+    ],
+    "answer": "CSS custom property"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS pseudo class",
+    "prompt": "What web-development concept matches this task or definition: matches elements by state such as hover focus or checked?",
+    "choices": [
+      "CSS pseudo class",
+      "Responsive design",
+      "JavaScript Promise",
+      "Microtask queue"
+    ],
+    "answer": "CSS pseudo class"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS pseudo element",
+    "prompt": "What web-development concept matches this task or definition: styles a selected part or generated portion of an element?",
+    "choices": [
+      "CSS pseudo element",
+      "Mobile first design",
+      "Async await",
+      "React state"
+    ],
+    "answer": "CSS pseudo element"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS positioning",
+    "prompt": "What web-development concept matches this task or definition: selects static relative absolute fixed or sticky placement behavior?",
+    "choices": [
+      "CSS positioning",
+      "DOM querySelector",
+      "Fetch API",
+      "React effect"
+    ],
+    "answer": "CSS positioning"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS overflow",
+    "prompt": "What web-development concept matches this task or definition: controls clipping or scrolling when content exceeds its containing box?",
+    "choices": [
+      "CSS overflow",
+      "DOM addEventListener",
+      "JavaScript closure",
+      "React key"
+    ],
+    "answer": "CSS overflow"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS rem unit",
+    "prompt": "What web-development concept matches this task or definition: scales a length relative to the root element's font size?",
+    "choices": [
+      "CSS rem unit",
+      "Event delegation",
+      "JavaScript event loop",
+      "React controlled input"
+    ],
+    "answer": "CSS rem unit"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Responsive design",
+    "prompt": "What web-development concept matches this task or definition: adapts page layout to different screen sizes and capabilities?",
+    "choices": [
+      "Responsive design",
+      "Prevent default",
+      "Microtask queue",
+      "Hydration"
+    ],
+    "answer": "Responsive design"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Mobile first design",
+    "prompt": "What web-development concept matches this task or definition: starts layouts from narrow-screen defaults then adds larger-screen enhancements?",
+    "choices": [
+      "Mobile first design",
+      "JavaScript Promise",
+      "React state",
+      "Server-side rendering"
+    ],
+    "answer": "Mobile first design"
+  },
+  {
+    "subject_id": 42,
+    "skill": "DOM querySelector",
+    "prompt": "What web-development concept matches this task or definition: returns the first document element matching a CSS selector?",
+    "choices": [
+      "DOM querySelector",
+      "Async await",
+      "React effect",
+      "Static site generation"
+    ],
+    "answer": "DOM querySelector"
+  },
+  {
+    "subject_id": 42,
+    "skill": "DOM addEventListener",
+    "prompt": "What web-development concept matches this task or definition: registers a handler for a named browser event?",
+    "choices": [
+      "DOM addEventListener",
+      "Fetch API",
+      "React key",
+      "Client-side routing"
+    ],
+    "answer": "DOM addEventListener"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Event delegation",
+    "prompt": "What web-development concept matches this task or definition: handles events on an ancestor instead of registering listeners on each descendant?",
+    "choices": [
+      "Event delegation",
+      "JavaScript closure",
+      "React controlled input",
+      "Lazy loading"
+    ],
+    "answer": "Event delegation"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Prevent default",
+    "prompt": "What web-development concept matches this task or definition: stops an event's browser-defined default behavior when cancelable?",
+    "choices": [
+      "Prevent default",
+      "JavaScript event loop",
+      "Hydration",
+      "Code splitting"
+    ],
+    "answer": "Prevent default"
+  },
+  {
+    "subject_id": 42,
+    "skill": "JavaScript Promise",
+    "prompt": "What web-development concept matches this task or definition: represents the eventual success or failure of an asynchronous operation?",
+    "choices": [
+      "JavaScript Promise",
+      "Microtask queue",
+      "Server-side rendering",
+      "Cache busting"
+    ],
+    "answer": "JavaScript Promise"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Async await",
+    "prompt": "What web-development concept matches this task or definition: provides syntax for waiting on promise results in asynchronous functions?",
+    "choices": [
+      "Async await",
+      "React state",
+      "Static site generation",
+      "Critical rendering path"
+    ],
+    "answer": "Async await"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Fetch API",
+    "prompt": "What web-development concept matches this task or definition: makes browser-managed HTTP requests and returns response promises?",
+    "choices": [
+      "Fetch API",
+      "React effect",
+      "Client-side routing",
+      "Cumulative Layout Shift"
+    ],
+    "answer": "Fetch API"
+  },
+  {
+    "subject_id": 42,
+    "skill": "JavaScript closure",
+    "prompt": "What web-development concept matches this task or definition: lets a function retain access to lexical bindings after its enclosing call returns?",
+    "choices": [
+      "JavaScript closure",
+      "React key",
+      "Lazy loading",
+      "Largest Contentful Paint"
+    ],
+    "answer": "JavaScript closure"
+  },
+  {
+    "subject_id": 42,
+    "skill": "JavaScript event loop",
+    "prompt": "What web-development concept matches this task or definition: coordinates queued work and asynchronous callbacks on a runtime thread?",
+    "choices": [
+      "JavaScript event loop",
+      "React controlled input",
+      "Code splitting",
+      "Cross-site request forgery token"
+    ],
+    "answer": "JavaScript event loop"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Microtask queue",
+    "prompt": "What web-development concept matches this task or definition: runs promise reactions and related jobs before many later event-loop tasks?",
+    "choices": [
+      "Microtask queue",
+      "Hydration",
+      "Cache busting",
+      "Document type declaration"
+    ],
+    "answer": "Microtask queue"
+  },
+  {
+    "subject_id": 42,
+    "skill": "React state",
+    "prompt": "What web-development concept matches this task or definition: stores component values whose changes request a new render?",
+    "choices": [
+      "React state",
+      "Server-side rendering",
+      "Critical rendering path",
+      "HTML form"
+    ],
+    "answer": "React state"
+  },
+  {
+    "subject_id": 42,
+    "skill": "React effect",
+    "prompt": "What web-development concept matches this task or definition: synchronizes a React component with external systems after rendering?",
+    "choices": [
+      "React effect",
+      "Static site generation",
+      "Cumulative Layout Shift",
+      "HTML label"
+    ],
+    "answer": "React effect"
+  },
+  {
+    "subject_id": 42,
+    "skill": "React key",
+    "prompt": "What web-development concept matches this task or definition: identifies stable list items so React can reconcile them across updates?",
+    "choices": [
+      "React key",
+      "Client-side routing",
+      "Largest Contentful Paint",
+      "HTML button"
+    ],
+    "answer": "React key"
+  },
+  {
+    "subject_id": 42,
+    "skill": "React controlled input",
+    "prompt": "What web-development concept matches this task or definition: takes its current value from application component state?",
+    "choices": [
+      "React controlled input",
+      "Lazy loading",
+      "Cross-site request forgery token",
+      "HTML main element"
+    ],
+    "answer": "React controlled input"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Hydration",
+    "prompt": "What web-development concept matches this task or definition: attaches client-side interactivity to HTML produced during server rendering?",
+    "choices": [
+      "Hydration",
+      "Code splitting",
+      "Document type declaration",
+      "HTML section element"
+    ],
+    "answer": "Hydration"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Server-side rendering",
+    "prompt": "What web-development concept matches this task or definition: generates HTML using server execution before client delivery?",
+    "choices": [
+      "Server-side rendering",
+      "Cache busting",
+      "HTML form",
+      "HTML article element"
+    ],
+    "answer": "Server-side rendering"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Static site generation",
+    "prompt": "What web-development concept matches this task or definition: produces HTML ahead of incoming user requests?",
+    "choices": [
+      "Static site generation",
+      "Critical rendering path",
+      "HTML label",
+      "HTML aside element"
+    ],
+    "answer": "Static site generation"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Client-side routing",
+    "prompt": "What web-development concept matches this task or definition: changes application views without loading a wholly new document?",
+    "choices": [
+      "Client-side routing",
+      "Cumulative Layout Shift",
+      "HTML button",
+      "Accessible name"
+    ],
+    "answer": "Client-side routing"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Lazy loading",
+    "prompt": "What web-development concept matches this task or definition: defers loading of lower-priority resources until they are needed?",
+    "choices": [
+      "Lazy loading",
+      "Largest Contentful Paint",
+      "HTML main element",
+      "ARIA attribute"
+    ],
+    "answer": "Lazy loading"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Code splitting",
+    "prompt": "What web-development concept matches this task or definition: breaks application bundles into separately loadable chunks?",
+    "choices": [
+      "Code splitting",
+      "Cross-site request forgery token",
+      "HTML section element",
+      "CSS box model"
+    ],
+    "answer": "Code splitting"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Cache busting",
+    "prompt": "What web-development concept matches this task or definition: changes resource URLs or validators when content is updated?",
+    "choices": [
+      "Cache busting",
+      "Document type declaration",
+      "HTML article element",
+      "CSS specificity"
+    ],
+    "answer": "Cache busting"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Critical rendering path",
+    "prompt": "What web-development concept matches this task or definition: describes browser steps from downloaded resources to displayed pixels?",
+    "choices": [
+      "Critical rendering path",
+      "HTML form",
+      "HTML aside element",
+      "CSS cascade"
+    ],
+    "answer": "Critical rendering path"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Cumulative Layout Shift",
+    "prompt": "What web-development concept matches this task or definition: measures unexpected visual position changes while a page loads?",
+    "choices": [
+      "Cumulative Layout Shift",
+      "HTML label",
+      "Accessible name",
+      "CSS media query"
+    ],
+    "answer": "Cumulative Layout Shift"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Largest Contentful Paint",
+    "prompt": "What web-development concept matches this task or definition: measures when the largest visible content element is rendered?",
+    "choices": [
+      "Largest Contentful Paint",
+      "HTML button",
+      "ARIA attribute",
+      "CSS custom property"
+    ],
+    "answer": "Largest Contentful Paint"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Cross-site request forgery token",
+    "prompt": "What web-development concept matches this task or definition: assists servers in distinguishing intended state-changing requests from forged browser submissions?",
+    "choices": [
+      "Cross-site request forgery token",
+      "HTML main element",
+      "CSS box model",
+      "CSS pseudo class"
+    ],
+    "answer": "Cross-site request forgery token"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Return on investment",
+    "prompt": "What business-analytics concept matches this task or definition: measures net gain relative to investment cost?",
+    "choices": [
+      "Return on investment",
+      "Net revenue retention",
+      "Daily active users",
+      "Customer satisfaction score"
+    ],
+    "answer": "Return on investment"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Return on ad spend",
+    "prompt": "What business-analytics concept matches this task or definition: divides advertising-attributed revenue by advertising spending?",
+    "choices": [
+      "Return on ad spend",
+      "Gross revenue retention",
+      "DAU to MAU ratio",
+      "Customer effort score"
+    ],
+    "answer": "Return on ad spend"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Monthly recurring revenue",
+    "prompt": "What business-analytics concept matches this task or definition: represents normalized subscription revenue expected per month?",
+    "choices": [
+      "Monthly recurring revenue",
+      "Revenue churn",
+      "Activation rate",
+      "Market share"
+    ],
+    "answer": "Monthly recurring revenue"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Annual recurring revenue",
+    "prompt": "What business-analytics concept matches this task or definition: annualizes subscription revenue under defined reporting rules?",
+    "choices": [
+      "Annual recurring revenue",
+      "Customer lifetime value to CAC ratio",
+      "Adoption rate",
+      "Total addressable market"
+    ],
+    "answer": "Annual recurring revenue"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Average revenue per user",
+    "prompt": "What business-analytics concept matches this task or definition: divides recognized revenue by the number of relevant users?",
+    "choices": [
+      "Average revenue per user",
+      "CAC payback period",
+      "Funnel drop off",
+      "Serviceable available market"
+    ],
+    "answer": "Average revenue per user"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Net revenue retention",
+    "prompt": "What business-analytics concept matches this task or definition: compares recurring revenue from an existing customer cohort after expansion and contraction?",
+    "choices": [
+      "Net revenue retention",
+      "Monthly active users",
+      "Customer satisfaction score",
+      "Serviceable obtainable market"
+    ],
+    "answer": "Net revenue retention"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Gross revenue retention",
+    "prompt": "What business-analytics concept matches this task or definition: compares retained recurring revenue from an existing cohort without expansion?",
+    "choices": [
+      "Gross revenue retention",
+      "Daily active users",
+      "Customer effort score",
+      "Price elasticity of demand"
+    ],
+    "answer": "Gross revenue retention"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Revenue churn",
+    "prompt": "What business-analytics concept matches this task or definition: measures recurring revenue lost through cancellation or contraction in a period?",
+    "choices": [
+      "Revenue churn",
+      "DAU to MAU ratio",
+      "Market share",
+      "Sunk cost"
+    ],
+    "answer": "Revenue churn"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Customer lifetime value to CAC ratio",
+    "prompt": "What business-analytics concept matches this task or definition: compares expected lifetime customer contribution with acquisition cost?",
+    "choices": [
+      "Customer lifetime value to CAC ratio",
+      "Activation rate",
+      "Total addressable market",
+      "Cannibalization"
+    ],
+    "answer": "Customer lifetime value to CAC ratio"
+  },
+  {
+    "subject_id": 43,
+    "skill": "CAC payback period",
+    "prompt": "What business-analytics concept matches this task or definition: estimates time required for customer contribution to recover acquisition spending?",
+    "choices": [
+      "CAC payback period",
+      "Adoption rate",
+      "Serviceable available market",
+      "Marginal cost"
+    ],
+    "answer": "CAC payback period"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Monthly active users",
+    "prompt": "What business-analytics concept matches this task or definition: counts distinct users meeting an active-use definition during a calendar month?",
+    "choices": [
+      "Monthly active users",
+      "Funnel drop off",
+      "Serviceable obtainable market",
+      "Marginal revenue"
+    ],
+    "answer": "Monthly active users"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Daily active users",
+    "prompt": "What business-analytics concept matches this task or definition: counts distinct users meeting an active-use definition during one day?",
+    "choices": [
+      "Daily active users",
+      "Customer satisfaction score",
+      "Price elasticity of demand",
+      "Economies of scale"
+    ],
+    "answer": "Daily active users"
+  },
+  {
+    "subject_id": 43,
+    "skill": "DAU to MAU ratio",
+    "prompt": "What business-analytics concept matches this task or definition: compares daily engagement relative to monthly active users?",
+    "choices": [
+      "DAU to MAU ratio",
+      "Customer effort score",
+      "Sunk cost",
+      "Sensitivity scenario"
+    ],
+    "answer": "DAU to MAU ratio"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Activation rate",
+    "prompt": "What business-analytics concept matches this task or definition: measures new users completing a defined first-value event?",
+    "choices": [
+      "Activation rate",
+      "Market share",
+      "Cannibalization",
+      "Scenario planning"
+    ],
+    "answer": "Activation rate"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Adoption rate",
+    "prompt": "What business-analytics concept matches this task or definition: measures the share of eligible users who begin using a product or feature?",
+    "choices": [
+      "Adoption rate",
+      "Total addressable market",
+      "Marginal cost",
+      "RFM analysis"
+    ],
+    "answer": "Adoption rate"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Funnel drop off",
+    "prompt": "What business-analytics concept matches this task or definition: measures the share of users leaving between successive journey stages?",
+    "choices": [
+      "Funnel drop off",
+      "Serviceable available market",
+      "Marginal revenue",
+      "Pareto analysis"
+    ],
+    "answer": "Funnel drop off"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Customer satisfaction score",
+    "prompt": "What business-analytics concept matches this task or definition: summarizes answers to a direct satisfaction survey?",
+    "choices": [
+      "Customer satisfaction score",
+      "Serviceable obtainable market",
+      "Economies of scale",
+      "Sales pipeline velocity"
+    ],
+    "answer": "Customer satisfaction score"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Customer effort score",
+    "prompt": "What business-analytics concept matches this task or definition: measures users' perceived difficulty completing a requested task?",
+    "choices": [
+      "Customer effort score",
+      "Price elasticity of demand",
+      "Sensitivity scenario",
+      "Forecast error"
+    ],
+    "answer": "Customer effort score"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Market share",
+    "prompt": "What business-analytics concept matches this task or definition: expresses one company's relevant sales as a portion of a defined market?",
+    "choices": [
+      "Market share",
+      "Sunk cost",
+      "Scenario planning",
+      "Mean absolute percentage error"
+    ],
+    "answer": "Market share"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Total addressable market",
+    "prompt": "What business-analytics concept matches this task or definition: estimates all potential demand for a product category?",
+    "choices": [
+      "Total addressable market",
+      "Cannibalization",
+      "RFM analysis",
+      "Incrementality test"
+    ],
+    "answer": "Total addressable market"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Serviceable available market",
+    "prompt": "What business-analytics concept matches this task or definition: estimates the reachable portion of total addressable demand?",
+    "choices": [
+      "Serviceable available market",
+      "Marginal cost",
+      "Pareto analysis",
+      "Attribution window"
+    ],
+    "answer": "Serviceable available market"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Serviceable obtainable market",
+    "prompt": "What business-analytics concept matches this task or definition: estimates the realistic short-term share of the serviceable market?",
+    "choices": [
+      "Serviceable obtainable market",
+      "Marginal revenue",
+      "Sales pipeline velocity",
+      "Return on investment"
+    ],
+    "answer": "Serviceable obtainable market"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Price elasticity of demand",
+    "prompt": "What business-analytics concept matches this task or definition: measures percentage change in demand relative to percentage change in price?",
+    "choices": [
+      "Price elasticity of demand",
+      "Economies of scale",
+      "Forecast error",
+      "Return on ad spend"
+    ],
+    "answer": "Price elasticity of demand"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Sunk cost",
+    "prompt": "What business-analytics concept matches this task or definition: represents a past expenditure that cannot be recovered and should not dictate future choices?",
+    "choices": [
+      "Sunk cost",
+      "Sensitivity scenario",
+      "Mean absolute percentage error",
+      "Monthly recurring revenue"
+    ],
+    "answer": "Sunk cost"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Cannibalization",
+    "prompt": "What business-analytics concept matches this task or definition: occurs when new product sales replace sales of existing products from the same company?",
+    "choices": [
+      "Cannibalization",
+      "Scenario planning",
+      "Incrementality test",
+      "Annual recurring revenue"
+    ],
+    "answer": "Cannibalization"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Marginal cost",
+    "prompt": "What business-analytics concept matches this task or definition: measures extra cost incurred by producing one additional unit?",
+    "choices": [
+      "Marginal cost",
+      "RFM analysis",
+      "Attribution window",
+      "Average revenue per user"
+    ],
+    "answer": "Marginal cost"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Marginal revenue",
+    "prompt": "What business-analytics concept matches this task or definition: measures extra revenue produced by selling one additional unit?",
+    "choices": [
+      "Marginal revenue",
+      "Pareto analysis",
+      "Return on investment",
+      "Net revenue retention"
+    ],
+    "answer": "Marginal revenue"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Economies of scale",
+    "prompt": "What business-analytics concept matches this task or definition: reduce average unit cost as output rises within a relevant range?",
+    "choices": [
+      "Economies of scale",
+      "Sales pipeline velocity",
+      "Return on ad spend",
+      "Gross revenue retention"
+    ],
+    "answer": "Economies of scale"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Sensitivity scenario",
+    "prompt": "What business-analytics concept matches this task or definition: changes model assumptions to estimate corresponding business outcome variation?",
+    "choices": [
+      "Sensitivity scenario",
+      "Forecast error",
+      "Monthly recurring revenue",
+      "Revenue churn"
+    ],
+    "answer": "Sensitivity scenario"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Scenario planning",
+    "prompt": "What business-analytics concept matches this task or definition: compares coherent combinations of potential future market conditions?",
+    "choices": [
+      "Scenario planning",
+      "Mean absolute percentage error",
+      "Annual recurring revenue",
+      "Customer lifetime value to CAC ratio"
+    ],
+    "answer": "Scenario planning"
+  },
+  {
+    "subject_id": 43,
+    "skill": "RFM analysis",
+    "prompt": "What business-analytics concept matches this task or definition: segments customers by recency frequency and monetary purchase value?",
+    "choices": [
+      "RFM analysis",
+      "Incrementality test",
+      "Average revenue per user",
+      "CAC payback period"
+    ],
+    "answer": "RFM analysis"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Pareto analysis",
+    "prompt": "What business-analytics concept matches this task or definition: prioritizes influential causes using their uneven contributions to an observed outcome?",
+    "choices": [
+      "Pareto analysis",
+      "Attribution window",
+      "Net revenue retention",
+      "Monthly active users"
+    ],
+    "answer": "Pareto analysis"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Sales pipeline velocity",
+    "prompt": "What business-analytics concept matches this task or definition: estimates how quickly forecast opportunities turn into realized revenue?",
+    "choices": [
+      "Sales pipeline velocity",
+      "Return on investment",
+      "Gross revenue retention",
+      "Daily active users"
+    ],
+    "answer": "Sales pipeline velocity"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Forecast error",
+    "prompt": "What business-analytics concept matches this task or definition: quantifies the deviation between an estimated future value and observed actual?",
+    "choices": [
+      "Forecast error",
+      "Return on ad spend",
+      "Revenue churn",
+      "DAU to MAU ratio"
+    ],
+    "answer": "Forecast error"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Mean absolute percentage error",
+    "prompt": "What business-analytics concept matches this task or definition: averages absolute forecast errors as percentages of actual values?",
+    "choices": [
+      "Mean absolute percentage error",
+      "Monthly recurring revenue",
+      "Customer lifetime value to CAC ratio",
+      "Activation rate"
+    ],
+    "answer": "Mean absolute percentage error"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Incrementality test",
+    "prompt": "What business-analytics concept matches this task or definition: estimates additional outcome caused by marketing intervention over a control?",
+    "choices": [
+      "Incrementality test",
+      "Annual recurring revenue",
+      "CAC payback period",
+      "Adoption rate"
+    ],
+    "answer": "Incrementality test"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Attribution window",
+    "prompt": "What business-analytics concept matches this task or definition: sets the period in which a conversion may be credited to an earlier touchpoint?",
+    "choices": [
+      "Attribution window",
+      "Average revenue per user",
+      "Monthly active users",
+      "Funnel drop off"
+    ],
+    "answer": "Attribution window"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Bar chart",
+    "prompt": "What data-visualization concept matches this task or definition: compares categories using lengths of aligned rectangular bars?",
+    "choices": [
+      "Bar chart",
+      "Lollipop chart",
+      "Violin plot",
+      "Annotation"
+    ],
+    "answer": "Bar chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Grouped bar chart",
+    "prompt": "What data-visualization concept matches this task or definition: places category subgroups side by side for direct comparison?",
+    "choices": [
+      "Grouped bar chart",
+      "Slope chart",
+      "Beeswarm plot",
+      "Chart junk"
+    ],
+    "answer": "Grouped bar chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Stacked bar chart",
+    "prompt": "What data-visualization concept matches this task or definition: divides each bar into segments representing component contributions?",
+    "choices": [
+      "Stacked bar chart",
+      "Waterfall chart",
+      "Dot plot",
+      "Preattentive attribute"
+    ],
+    "answer": "Stacked bar chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "One hundred percent stacked bar",
+    "prompt": "What data-visualization concept matches this task or definition: rescales each category's segments to a full 100 percent total?",
+    "choices": [
+      "One hundred percent stacked bar",
+      "Sankey diagram",
+      "Error bar",
+      "Visual hierarchy"
+    ],
+    "answer": "One hundred percent stacked bar"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Diverging bar chart",
+    "prompt": "What data-visualization concept matches this task or definition: uses opposite directions from a shared baseline to compare positive and negative values?",
+    "choices": [
+      "Diverging bar chart",
+      "Treemap",
+      "Confidence band",
+      "Sequential color scale"
+    ],
+    "answer": "Diverging bar chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Lollipop chart",
+    "prompt": "What data-visualization concept matches this task or definition: uses a line and endpoint marker instead of a full bar to compare magnitudes?",
+    "choices": [
+      "Lollipop chart",
+      "Sunburst chart",
+      "Annotation",
+      "Diverging color scale"
+    ],
+    "answer": "Lollipop chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Slope chart",
+    "prompt": "What data-visualization concept matches this task or definition: connects category values across two time points to emphasize rank changes?",
+    "choices": [
+      "Slope chart",
+      "Violin plot",
+      "Chart junk",
+      "Categorical palette"
+    ],
+    "answer": "Slope chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Waterfall chart",
+    "prompt": "What data-visualization concept matches this task or definition: shows how successive positive and negative changes build an ending total?",
+    "choices": [
+      "Waterfall chart",
+      "Beeswarm plot",
+      "Preattentive attribute",
+      "Zero baseline"
+    ],
+    "answer": "Waterfall chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Sankey diagram",
+    "prompt": "What data-visualization concept matches this task or definition: depicts flows between stages with link widths proportional to quantities?",
+    "choices": [
+      "Sankey diagram",
+      "Dot plot",
+      "Visual hierarchy",
+      "Overplotting"
+    ],
+    "answer": "Sankey diagram"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Treemap",
+    "prompt": "What data-visualization concept matches this task or definition: encodes hierarchical part-to-whole quantities through nested rectangles?",
+    "choices": [
+      "Treemap",
+      "Error bar",
+      "Sequential color scale",
+      "Jitter"
+    ],
+    "answer": "Treemap"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Sunburst chart",
+    "prompt": "What data-visualization concept matches this task or definition: represents hierarchical composition with concentric segmented rings?",
+    "choices": [
+      "Sunburst chart",
+      "Confidence band",
+      "Diverging color scale",
+      "Alpha transparency"
+    ],
+    "answer": "Sunburst chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Violin plot",
+    "prompt": "What data-visualization concept matches this task or definition: shows a smoothed distribution density mirrored around a centerline?",
+    "choices": [
+      "Violin plot",
+      "Annotation",
+      "Categorical palette",
+      "Bar chart"
+    ],
+    "answer": "Violin plot"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Beeswarm plot",
+    "prompt": "What data-visualization concept matches this task or definition: positions points to show observations while reducing overlap?",
+    "choices": [
+      "Beeswarm plot",
+      "Chart junk",
+      "Zero baseline",
+      "Grouped bar chart"
+    ],
+    "answer": "Beeswarm plot"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Dot plot",
+    "prompt": "What data-visualization concept matches this task or definition: compares individual quantitative observations as positioned marks?",
+    "choices": [
+      "Dot plot",
+      "Preattentive attribute",
+      "Overplotting",
+      "Stacked bar chart"
+    ],
+    "answer": "Dot plot"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Error bar",
+    "prompt": "What data-visualization concept matches this task or definition: displays uncertainty or variability intervals around estimated values?",
+    "choices": [
+      "Error bar",
+      "Visual hierarchy",
+      "Jitter",
+      "One hundred percent stacked bar"
+    ],
+    "answer": "Error bar"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Confidence band",
+    "prompt": "What data-visualization concept matches this task or definition: shades a range of uncertainty around a fitted line or time series?",
+    "choices": [
+      "Confidence band",
+      "Sequential color scale",
+      "Alpha transparency",
+      "Diverging bar chart"
+    ],
+    "answer": "Confidence band"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Annotation",
+    "prompt": "What data-visualization concept matches this task or definition: adds contextual text to explain a data feature or event in a visualization?",
+    "choices": [
+      "Annotation",
+      "Diverging color scale",
+      "Bar chart",
+      "Lollipop chart"
+    ],
+    "answer": "Annotation"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Chart junk",
+    "prompt": "What data-visualization concept matches this task or definition: adds decorative visual material that distracts from the represented data?",
+    "choices": [
+      "Chart junk",
+      "Categorical palette",
+      "Grouped bar chart",
+      "Slope chart"
+    ],
+    "answer": "Chart junk"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Preattentive attribute",
+    "prompt": "What data-visualization concept matches this task or definition: draws rapid visual attention through features like color orientation or size?",
+    "choices": [
+      "Preattentive attribute",
+      "Zero baseline",
+      "Stacked bar chart",
+      "Waterfall chart"
+    ],
+    "answer": "Preattentive attribute"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Visual hierarchy",
+    "prompt": "What data-visualization concept matches this task or definition: organizes display elements so important information attracts attention first?",
+    "choices": [
+      "Visual hierarchy",
+      "Overplotting",
+      "One hundred percent stacked bar",
+      "Sankey diagram"
+    ],
+    "answer": "Visual hierarchy"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Sequential color scale",
+    "prompt": "What data-visualization concept matches this task or definition: encodes ordered magnitudes using progressively changing lightness or intensity?",
+    "choices": [
+      "Sequential color scale",
+      "Jitter",
+      "Diverging bar chart",
+      "Treemap"
+    ],
+    "answer": "Sequential color scale"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Diverging color scale",
+    "prompt": "What data-visualization concept matches this task or definition: emphasizes values on opposite sides of a meaningful midpoint?",
+    "choices": [
+      "Diverging color scale",
+      "Alpha transparency",
+      "Lollipop chart",
+      "Sunburst chart"
+    ],
+    "answer": "Diverging color scale"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Categorical palette",
+    "prompt": "What data-visualization concept matches this task or definition: assigns visually distinguishable hues to unordered groups?",
+    "choices": [
+      "Categorical palette",
+      "Bar chart",
+      "Slope chart",
+      "Violin plot"
+    ],
+    "answer": "Categorical palette"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Zero baseline",
+    "prompt": "What data-visualization concept matches this task or definition: places quantitative bar lengths against a zero reference to avoid misleading proportions?",
+    "choices": [
+      "Zero baseline",
+      "Grouped bar chart",
+      "Waterfall chart",
+      "Beeswarm plot"
+    ],
+    "answer": "Zero baseline"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Overplotting",
+    "prompt": "What data-visualization concept matches this task or definition: hides observations when many visual marks overlap?",
+    "choices": [
+      "Overplotting",
+      "Stacked bar chart",
+      "Sankey diagram",
+      "Dot plot"
+    ],
+    "answer": "Overplotting"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Jitter",
+    "prompt": "What data-visualization concept matches this task or definition: adds small position offsets to expose overlapping plotted observations?",
+    "choices": [
+      "Jitter",
+      "One hundred percent stacked bar",
+      "Treemap",
+      "Error bar"
+    ],
+    "answer": "Jitter"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Alpha transparency",
+    "prompt": "What data-visualization concept matches this task or definition: reduces mark opacity to reveal density and overlap patterns?",
+    "choices": [
+      "Alpha transparency",
+      "Diverging bar chart",
+      "Sunburst chart",
+      "Confidence band"
+    ],
+    "answer": "Alpha transparency"
+  },
+  {
+    "subject_id": 45,
+    "skill": "ReAct pattern",
+    "prompt": "What agentic-workflow concept matches this task or definition: interleaves model reasoning steps with actions and observations from external tools?",
+    "choices": [
+      "ReAct pattern",
+      "Tool result parsing",
+      "Semantic memory",
+      "Tool timeout"
+    ],
+    "answer": "ReAct pattern"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Supervisor agent",
+    "prompt": "What agentic-workflow concept matches this task or definition: assigns work and aggregates outputs from cooperating specialist agents?",
+    "choices": [
+      "Supervisor agent",
+      "Tool schema validation",
+      "Procedural memory",
+      "Tool retry policy"
+    ],
+    "answer": "Supervisor agent"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Worker agent",
+    "prompt": "What agentic-workflow concept matches this task or definition: performs an assigned subtask under a coordinating workflow?",
+    "choices": [
+      "Worker agent",
+      "Tool authorization",
+      "Agent checkpoint",
+      "Exponential backoff"
+    ],
+    "answer": "Worker agent"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent handoff",
+    "prompt": "What agentic-workflow concept matches this task or definition: transfers control and relevant context from one agent to another?",
+    "choices": [
+      "Agent handoff",
+      "Human confirmation gate",
+      "Conversation compaction",
+      "Idempotent tool action"
+    ],
+    "answer": "Agent handoff"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent routing",
+    "prompt": "What agentic-workflow concept matches this task or definition: chooses a specialized path or worker based on request characteristics?",
+    "choices": [
+      "Agent routing",
+      "Short term state",
+      "Token budget",
+      "Agent evaluator"
+    ],
+    "answer": "Agent routing"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool result parsing",
+    "prompt": "What agentic-workflow concept matches this task or definition: converts external tool output into a validated structured representation?",
+    "choices": [
+      "Tool result parsing",
+      "Episodic memory",
+      "Tool timeout",
+      "Verifier agent"
+    ],
+    "answer": "Tool result parsing"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool schema validation",
+    "prompt": "What agentic-workflow concept matches this task or definition: checks invocation arguments against declared parameter constraints?",
+    "choices": [
+      "Tool schema validation",
+      "Semantic memory",
+      "Tool retry policy",
+      "Critic agent"
+    ],
+    "answer": "Tool schema validation"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool authorization",
+    "prompt": "What agentic-workflow concept matches this task or definition: restricts an agent's available actions according to approved permissions?",
+    "choices": [
+      "Tool authorization",
+      "Procedural memory",
+      "Exponential backoff",
+      "Multiagent debate"
+    ],
+    "answer": "Tool authorization"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Human confirmation gate",
+    "prompt": "What agentic-workflow concept matches this task or definition: pauses a workflow until a person approves a consequential next action?",
+    "choices": [
+      "Human confirmation gate",
+      "Agent checkpoint",
+      "Idempotent tool action",
+      "Parallel tool execution"
+    ],
+    "answer": "Human confirmation gate"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Short term state",
+    "prompt": "What agentic-workflow concept matches this task or definition: retains temporary inputs and observations during one task execution?",
+    "choices": [
+      "Short term state",
+      "Conversation compaction",
+      "Agent evaluator",
+      "Sequential dependency"
+    ],
+    "answer": "Short term state"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Episodic memory",
+    "prompt": "What agentic-workflow concept matches this task or definition: stores records of earlier events and interactions for future recall?",
+    "choices": [
+      "Episodic memory",
+      "Token budget",
+      "Verifier agent",
+      "Workflow graph"
+    ],
+    "answer": "Episodic memory"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Semantic memory",
+    "prompt": "What agentic-workflow concept matches this task or definition: stores stable facts and concepts retained across tasks?",
+    "choices": [
+      "Semantic memory",
+      "Tool timeout",
+      "Critic agent",
+      "State transition"
+    ],
+    "answer": "Semantic memory"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Procedural memory",
+    "prompt": "What agentic-workflow concept matches this task or definition: stores learned instructions or operational routines for reuse?",
+    "choices": [
+      "Procedural memory",
+      "Tool retry policy",
+      "Multiagent debate",
+      "Agent sandbox"
+    ],
+    "answer": "Procedural memory"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent checkpoint",
+    "prompt": "What agentic-workflow concept matches this task or definition: persists workflow state so processing can resume after interruption?",
+    "choices": [
+      "Agent checkpoint",
+      "Exponential backoff",
+      "Parallel tool execution",
+      "Tool output injection"
+    ],
+    "answer": "Agent checkpoint"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Conversation compaction",
+    "prompt": "What agentic-workflow concept matches this task or definition: summarizes older context to reduce token consumption?",
+    "choices": [
+      "Conversation compaction",
+      "Idempotent tool action",
+      "Sequential dependency",
+      "Trust boundary"
+    ],
+    "answer": "Conversation compaction"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Token budget",
+    "prompt": "What agentic-workflow concept matches this task or definition: limits model input and output tokens available to a specific processing step?",
+    "choices": [
+      "Token budget",
+      "Agent evaluator",
+      "Workflow graph",
+      "Action audit log"
+    ],
+    "answer": "Token budget"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool timeout",
+    "prompt": "What agentic-workflow concept matches this task or definition: bounds how long an external operation is allowed before failure handling?",
+    "choices": [
+      "Tool timeout",
+      "Verifier agent",
+      "State transition",
+      "Trace span"
+    ],
+    "answer": "Tool timeout"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool retry policy",
+    "prompt": "What agentic-workflow concept matches this task or definition: determines when and how a failed invocation may be attempted again?",
+    "choices": [
+      "Tool retry policy",
+      "Critic agent",
+      "Agent sandbox",
+      "Error recovery policy"
+    ],
+    "answer": "Tool retry policy"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Exponential backoff",
+    "prompt": "What agentic-workflow concept matches this task or definition: increases delays between retries to reduce pressure on failing dependencies?",
+    "choices": [
+      "Exponential backoff",
+      "Multiagent debate",
+      "Tool output injection",
+      "Agent benchmark"
+    ],
+    "answer": "Exponential backoff"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Idempotent tool action",
+    "prompt": "What agentic-workflow concept matches this task or definition: avoids duplicate side effects when the same action request is repeated?",
+    "choices": [
+      "Idempotent tool action",
+      "Parallel tool execution",
+      "Trust boundary",
+      "Deterministic workflow"
+    ],
+    "answer": "Idempotent tool action"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent evaluator",
+    "prompt": "What agentic-workflow concept matches this task or definition: scores intermediate or completed results against specified criteria?",
+    "choices": [
+      "Agent evaluator",
+      "Sequential dependency",
+      "Action audit log",
+      "Artifact handoff"
+    ],
+    "answer": "Agent evaluator"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Verifier agent",
+    "prompt": "What agentic-workflow concept matches this task or definition: checks proposed answers or artifacts against independent constraints?",
+    "choices": [
+      "Verifier agent",
+      "Workflow graph",
+      "Trace span",
+      "ReAct pattern"
+    ],
+    "answer": "Verifier agent"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Critic agent",
+    "prompt": "What agentic-workflow concept matches this task or definition: provides feedback on a generated result to guide revision?",
+    "choices": [
+      "Critic agent",
+      "State transition",
+      "Error recovery policy",
+      "Supervisor agent"
+    ],
+    "answer": "Critic agent"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Multiagent debate",
+    "prompt": "What agentic-workflow concept matches this task or definition: compares competing candidate solutions produced by multiple agents?",
+    "choices": [
+      "Multiagent debate",
+      "Agent sandbox",
+      "Agent benchmark",
+      "Worker agent"
+    ],
+    "answer": "Multiagent debate"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Parallel tool execution",
+    "prompt": "What agentic-workflow concept matches this task or definition: runs independent external operations concurrently to reduce latency?",
+    "choices": [
+      "Parallel tool execution",
+      "Tool output injection",
+      "Deterministic workflow",
+      "Agent handoff"
+    ],
+    "answer": "Parallel tool execution"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Sequential dependency",
+    "prompt": "What agentic-workflow concept matches this task or definition: requires one action's output before another action can start?",
+    "choices": [
+      "Sequential dependency",
+      "Trust boundary",
+      "Artifact handoff",
+      "Agent routing"
+    ],
+    "answer": "Sequential dependency"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Workflow graph",
+    "prompt": "What agentic-workflow concept matches this task or definition: represents explicit nodes and transitions for a multi-step agent task?",
+    "choices": [
+      "Workflow graph",
+      "Action audit log",
+      "ReAct pattern",
+      "Tool result parsing"
+    ],
+    "answer": "Workflow graph"
+  },
+  {
+    "subject_id": 45,
+    "skill": "State transition",
+    "prompt": "What agentic-workflow concept matches this task or definition: moves workflow execution between named states when conditions are met?",
+    "choices": [
+      "State transition",
+      "Trace span",
+      "Supervisor agent",
+      "Tool schema validation"
+    ],
+    "answer": "State transition"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent sandbox",
+    "prompt": "What agentic-workflow concept matches this task or definition: isolates untrusted code or files processed by automated agents?",
+    "choices": [
+      "Agent sandbox",
+      "Error recovery policy",
+      "Worker agent",
+      "Tool authorization"
+    ],
+    "answer": "Agent sandbox"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool output injection",
+    "prompt": "What agentic-workflow concept matches this task or definition: tries to hide malicious instructions inside external tool results?",
+    "choices": [
+      "Tool output injection",
+      "Agent benchmark",
+      "Agent handoff",
+      "Human confirmation gate"
+    ],
+    "answer": "Tool output injection"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Trust boundary",
+    "prompt": "What agentic-workflow concept matches this task or definition: marks where externally supplied information requires validation?",
+    "choices": [
+      "Trust boundary",
+      "Deterministic workflow",
+      "Agent routing",
+      "Short term state"
+    ],
+    "answer": "Trust boundary"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Action audit log",
+    "prompt": "What agentic-workflow concept matches this task or definition: records significant automated decisions and mutations for accountability?",
+    "choices": [
+      "Action audit log",
+      "Artifact handoff",
+      "Tool result parsing",
+      "Episodic memory"
+    ],
+    "answer": "Action audit log"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Trace span",
+    "prompt": "What agentic-workflow concept matches this task or definition: captures one timed segment within an agent execution trace?",
+    "choices": [
+      "Trace span",
+      "ReAct pattern",
+      "Tool schema validation",
+      "Semantic memory"
+    ],
+    "answer": "Trace span"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Error recovery policy",
+    "prompt": "What agentic-workflow concept matches this task or definition: defines how to resume abort or escalate after an operation fails?",
+    "choices": [
+      "Error recovery policy",
+      "Supervisor agent",
+      "Tool authorization",
+      "Procedural memory"
+    ],
+    "answer": "Error recovery policy"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent benchmark",
+    "prompt": "What agentic-workflow concept matches this task or definition: measures behavior on a fixed set of representative tasks?",
+    "choices": [
+      "Agent benchmark",
+      "Worker agent",
+      "Human confirmation gate",
+      "Agent checkpoint"
+    ],
+    "answer": "Agent benchmark"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Deterministic workflow",
+    "prompt": "What agentic-workflow concept matches this task or definition: uses explicitly defined transitions rather than unconstrained model decisions?",
+    "choices": [
+      "Deterministic workflow",
+      "Agent handoff",
+      "Short term state",
+      "Conversation compaction"
+    ],
+    "answer": "Deterministic workflow"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Artifact handoff",
+    "prompt": "What agentic-workflow concept matches this task or definition: passes a generated file or structured result from one workflow step to another?",
+    "choices": [
+      "Artifact handoff",
+      "Agent routing",
+      "Episodic memory",
+      "Token budget"
+    ],
+    "answer": "Artifact handoff"
+  }
+]
