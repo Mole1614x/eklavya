@@ -15,7 +15,7 @@ test("administrator creates, publishes, and reviews through the real BFF", async
   await page.getByRole("tab", { name: "Problems" }).click();
 
   const title = "Release Readiness Sum";
-  const editor = page.getByRole("heading", { name: "Create or replace a problem" }).locator("..");
+  const editor = page.locator("form.admin-editor").filter({ has: page.getByRole("heading", { name: "Create or replace a problem" }) });
   await editor.getByLabel("Unique slug").fill("uat-release-readiness-sum");
   await editor.getByLabel("Validated definition").fill(JSON.stringify({
     title,
