@@ -25,6 +25,14 @@ export async function CatalogView({ query, fixedCategory }: { query: Query; fixe
   const path = fixedCategory ? `/${fixedCategory}` : "/problems";
   const { items, total, topics } = await getCatalog({ ...filters, offset: String((page - 1) * 50) });
   const pageHref = (index: number) => `${path}?${new URLSearchParams({ ...filters, page: String(index) })}`;
+  // Pass the current listing context into each question, including when it
+  // originated from a subject track or a later catalog page.
+  const questionContext = new URLSearchParams({
+    ...filters, ...(fixedCategory ? { category: fixedCategory, section: fixedCategory } : {}),
+    ...(page > 1 ? { page: String(page) } : {}),
+  });
+  const questionHref = (slug: string) => `/problems/${encodeURIComponent(slug)}${questionContext.size ? `?${questionContext}` : ""}`;
+
 
   return (
     <section className="catalog" aria-label="Problem catalog">
@@ -42,7 +50,7 @@ export async function CatalogView({ query, fixedCategory }: { query: Query; fixe
         <ul className="card problem-list">
           {items.map((item) => (
             <li key={item.slug}>
-              <Link href={`/problems/${item.slug}`}>
+              <Link href={questionHref(item.slug)}>
                 <div><strong>{item.title}</strong><p>{item.topic} · {formats[item.format]}</p></div>
                 <span className={`difficulty ${item.difficulty.toLowerCase()}`}>{item.difficulty}</span><ArrowRight size={16} />
               </Link>
