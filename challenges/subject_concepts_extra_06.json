@@ -1,0 +1,392 @@
+[
+  {
+    "subject_id": 29,
+    "skill": "MongoDB collation",
+    "description": "Rules governing language-sensitive string comparisons and sorting"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB hint",
+    "description": "A query option directing the optimizer to use a specified index"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB explain",
+    "description": "A command or cursor method showing how a query is planned or executed"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB bulkWrite",
+    "description": "Submitting several write operations in a coordinated batch"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB updateMany",
+    "description": "Modifying all documents matching a chosen filter"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB arrayFilters",
+    "description": "Identifying which nested array elements a positional update should modify"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB upsert",
+    "description": "Inserting a document when a matching update target does not already exist"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB transactions",
+    "description": "Grouping supported read and write operations into atomic database transactions"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB read preference",
+    "description": "Choosing whether reads target primary or suitable secondary members"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB hidden replica",
+    "description": "A replica set member excluded from ordinary client read selection"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB arbiter",
+    "description": "A replica set voter that does not store a complete copy of collection data"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB oplog",
+    "description": "An ordered replication log recording operations applied to a replica set"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB chunk migration",
+    "description": "Moving ranges of sharded collection data between shards for balancing"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB hashed shard key",
+    "description": "Distributing documents using a hash of chosen shard key values"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB zone sharding",
+    "description": "Associating shard key ranges with designated shard groups"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB covered query",
+    "description": "A query answered entirely from index entries without fetching full documents"
+  },
+  {
+    "subject_id": 29,
+    "skill": "MongoDB wildcard index",
+    "description": "An index supporting queries over dynamically named document fields"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis hyperloglog",
+    "description": "A probabilistic structure estimating distinct element counts with bounded memory"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis bloom filter",
+    "description": "An optional probabilistic membership structure allowing false positives but not false negatives under its supported contract"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis bitmap",
+    "description": "Bit-oriented access to string values enabling compact Boolean flags"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis geospatial index",
+    "description": "Geographic member coordinates stored and queried through sorted-set-based commands"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis Lua EVALSHA",
+    "description": "Executing a previously loaded script using its SHA digest"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis SCAN",
+    "description": "Iterating keys incrementally without blocking the server like a complete key listing"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis sentinel",
+    "description": "A high-availability subsystem monitoring Redis instances and coordinating failover"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud reserved capacity",
+    "description": "A purchasing commitment reducing compute cost in exchange for a usage obligation"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Spot instance",
+    "description": "Discounted spare compute capacity that may be interrupted by its provider"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Multi region deployment",
+    "description": "Running service resources across multiple geographically separated cloud regions"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Point in time restore",
+    "description": "Restoring a managed database to a selected past point within an available recovery window"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud audit trail",
+    "description": "A managed record of control-plane and security-relevant operations"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud metrics service",
+    "description": "A monitoring facility collecting resource and application measurements"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud secrets manager",
+    "description": "A managed vault for storing and rotating sensitive application credentials"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud key management",
+    "description": "A managed service handling encryption keys and cryptographic operations"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Content delivery network",
+    "description": "A distributed network caching content near consumers to reduce latency"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud private endpoint",
+    "description": "A connection that reaches supported services through private networking rather than a public internet route"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud NAT gateway",
+    "description": "A managed network translator supporting outbound connections from private workloads"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud transit gateway",
+    "description": "A hub for routing traffic among multiple private networks or gateways"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud autoscaling policy",
+    "description": "A rule adjusting resource counts according to observed demand or schedules"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud serverless event trigger",
+    "description": "An event source that invokes managed function execution when configured conditions occur"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud storage lifecycle rule",
+    "description": "A policy moving or deleting objects based on age or selected metadata"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud infrastructure as code",
+    "description": "Declaring provisioned resources in version-controlled configuration"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud immutable infrastructure",
+    "description": "Deploying new machine or image instances instead of manually changing running instances"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model registry stage",
+    "description": "A lifecycle classification such as candidate, approved or production assigned to a model version"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Offline feature values",
+    "description": "Historical feature data used for model training or replay evaluation"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Online feature values",
+    "description": "Low-latency feature values retrieved during live inference"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Training data snapshot",
+    "description": "A fixed version of training inputs retained for reproducibility"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Data versioning",
+    "description": "Tracking revisions of datasets alongside code and models"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model signature",
+    "description": "A record of expected input and output structures for a model"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model serving autoscaling",
+    "description": "Adjusting inference replicas based on demand or resource metrics"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model batching",
+    "description": "Grouping inference requests to improve throughput on shared accelerators"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model quantization serving",
+    "description": "Using lower-precision model weights or activations to reduce inference cost"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model drift alert",
+    "description": "A notification triggered by a monitored distribution or quality threshold"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model bias assessment",
+    "description": "Measuring whether model errors or outcomes differ across relevant evaluated groups"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model fairness constraint",
+    "description": "A specified limit on undesirable disparities across protected or relevant populations"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model privacy risk",
+    "description": "Potential disclosure of sensitive training or inference information from a model"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model evaluation dataset",
+    "description": "A fixed benchmark set used for repeatable post-training comparison"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model explainability artifact",
+    "description": "A saved explanation report linking feature contributions to specific predictions"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model request logging",
+    "description": "Capturing inference inputs or metadata subject to privacy and retention controls"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model error budget",
+    "description": "An allowance for service failures or latency violations under reliability objectives"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Scheduling quantum",
+    "description": "A bounded CPU time slice allocated before a scheduler may preempt a task"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Multi level feedback queue",
+    "description": "A CPU scheduling design using several priority queues with dynamically adjusted priority"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Shortest remaining time",
+    "description": "A preemptive scheduling policy selecting the job with least estimated time left"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Aging",
+    "description": "Increasing the priority of a long-waiting process to mitigate starvation"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Readers writers problem",
+    "description": "A concurrency problem coordinating shared reads and exclusive writes"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Dining philosophers",
+    "description": "A classic concurrency problem illustrating deadlock and starvation risks"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Banker algorithm",
+    "description": "A resource allocation algorithm granting requests only when they preserve a safe state"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Condition variable",
+    "description": "A synchronization primitive letting threads wait for a predicate while releasing a mutex"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Spinlock",
+    "description": "A lock that waits by repeatedly checking ownership instead of sleeping"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Atomic operation",
+    "description": "An indivisible operation as observed under a specified memory model"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Memory barrier",
+    "description": "An ordering constraint limiting compiler or processor reordering of memory operations"
+  },
+  {
+    "subject_id": 33,
+    "skill": "TLB",
+    "description": "A processor cache mapping recent virtual page addresses to physical address translations"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Page table",
+    "description": "Data structures storing mappings and permissions for virtual memory pages"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Huge page",
+    "description": "A larger-than-default virtual memory page potentially reducing address-translation overhead"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Demand zero page",
+    "description": "A virtual page initially supplied as zero-filled memory when first materialized"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Fork system call",
+    "description": "Creating a new process with state derived from the calling process"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Exec system call",
+    "description": "Replacing a process's program image with a new executable"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Orphan process",
+    "description": "A child process whose parent exits before the child has terminated"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Zombie process",
+    "description": "A terminated process awaiting collection of its exit status by its parent"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Filesystem journal",
+    "description": "A log of selected filesystem updates used to improve consistency after crashes"
+  }
+]
