@@ -1,3 +1,4 @@
+import { StudioDashboard } from "./studio-dashboard";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Code2, Sparkles, Terminal, Trophy, Zap } from "lucide-react";
 import { modules } from "@/lib/navigation";
@@ -41,35 +42,4 @@ export function Hero({ home = false }: { home?: boolean }) {
   );
 }
 
-export function Dashboard() {
-  return (
-    <>
-      <header className="topbar"><span>Workspace <span className="crumb">/</span> <strong>My dashboard</strong></span><span className="topbar-status"><span className="signal"/> Ready to practice</span></header>
-      <Hero />
-      <section className="dashboard-section" aria-label="Verified learner statistics">
-        <div className="section-heading"><div><p className="section-kicker">YOUR NUMBERS</p><h2>Progress at a glance</h2></div><Link href="/profile">View my profile <ArrowRight size={15}/></Link></div>
-        <LiveProgress />
-      </section>
-      <div className="overview-grid">
-        <PracticeChart verified />
-        <div className="stack">
-          <section className="card rank-card spotlight-card">
-            <div className="section-heading"><div><p className="section-kicker">KEEP EXPLORING</p><h2>Your next milestone</h2></div><Sparkles size={22}/></div>
-            <p>Every solved problem moves you closer to the next rank. Choose a track and keep your momentum.</p>
-            <div className="milestone-actions"><Link href="/vidya-paths">Learning paths <ArrowRight size={15}/></Link><Link href="/leaderboard">Leaderboard <ArrowRight size={15}/></Link></div>
-          </section>
-          <DashboardSchedule />
-        </div>
-      </div>
-      <section className="skills dashboard-section">
-        <div className="section-heading"><div><p className="section-kicker">EXPLORE TRACKS</p><h2>Choose your practice area</h2></div><Link href="/problems">All challenges <ArrowRight size={15}/></Link></div>
-        <SkillCards />
-      </section>
-      <div className="quick-links">
-        <Link className="card quick-link" href="/vidya-paths"><BookOpen size={21}/><div><strong>Guided learning paths</strong><p>Learn concepts in the right order</p></div><ArrowRight size={17}/></Link>
-        <Link className="card quick-link" href="/arena"><Trophy size={21}/><div><strong>Competitive arena</strong><p>Timed contests and rankings</p></div><ArrowRight size={17}/></Link>
-        <Link className="card quick-link" href="/problems"><Terminal size={21}/><div><strong>Coding practice</strong><p>Sharpen your problem-solving</p></div><ArrowRight size={17}/></Link>
-      </div>
-    </>
-  );
-}
+export function Dashboard() { return <StudioDashboard />; }

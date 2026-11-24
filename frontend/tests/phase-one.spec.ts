@@ -5,7 +5,7 @@ test("navigation reaches every Phase 1 section", async ({ page }) => {
   await page.goto("/");
   const navigation = page.getByRole("navigation", { name: "Main navigation" });
   await navigation.getByRole("link", { name: "Dashboard" }).click();
-  await expect(page.getByRole("heading", { name: "Progress at a glance" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Continue your learning journey" })).toBeVisible();
   await expect(page.getByText("Sign in to see your verified skill analytics.")).toBeVisible();
   for (const module of [...modules, ...community]) {
     await navigation.getByRole("link", { name: module.label, exact: true }).click();

@@ -39,9 +39,14 @@ export function Sidebar() {
       </div>
       <nav id="main-navigation" aria-label="Main navigation" className={open ? "nav-open" : ""}>
         <p className="nav-label">Workspace</p>
-        {nav("/dashboard", "My dashboard", <LayoutDashboard size={18} />)}
-        {nav("/problems", "Problem library", <LibraryBig size={18} />, pathname.startsWith("/problems"))}
-        {nav("/subjects", "All 45 subjects", <BookOpen size={18} />, pathname.startsWith("/subjects"))}
+        {nav("/dashboard", "Dashboard", <LayoutDashboard size={18} />)}
+        {nav("/problems", "Practice", <LibraryBig size={18} />, pathname.startsWith("/problems"))}
+        {nav("/subjects", "Learn", <BookOpen size={18} />, pathname.startsWith("/subjects"))}
+        {nav("/assessments", "Assessments", <BookOpen size={18} />, pathname.startsWith("/assessments"))}
+        {nav("/vidya-paths", "Career Paths", <BookOpen size={18} />, pathname.startsWith("/vidya-paths"))}
+        {nav("/progress-insights", "Progress", <LayoutDashboard size={18} />, pathname.startsWith("/progress-insights"))}
+        {nav("/rankings", "Leaderboard", <UserCircle size={18} />, pathname.startsWith("/leaderboard"))}
+        {nav("/arena", "Community", <UserCircle size={18} />, pathname.startsWith("/arena"))}
         {administrator && nav("/admin", "Admin control center", <ShieldCheck size={18} />, pathname.startsWith("/admin"))}
         <p className="nav-label">Practice tracks</p>
         {modules.map((item) => <div key={item.slug}>{nav(`/${item.slug}`, item.label, <ModuleIcon name={item.icon} />)}</div>)}
