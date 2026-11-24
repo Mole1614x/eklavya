@@ -9,7 +9,7 @@ test("all 45 subjects show truthful targets and lead to genuine questions", asyn
   await expect(numpy).toContainText("53 published in this track");
   await expect(numpy).toContainText("Target 50");
   await numpy.getByRole("link", { name: "Explore questions" }).click();
-  await expect(page).toHaveURL(/\/problems\?topic=NumPy/);
+  await expect(page).toHaveURL(/\/problems\?subject=numpy/);
   await expect(page.getByRole("heading", { name: /problems/ })).toBeVisible();
 });
 
