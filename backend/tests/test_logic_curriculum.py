@@ -31,9 +31,9 @@ def db(tmp_path):
 
 def test_logic_curriculum_has_seven_ordered_levels_and_real_judge_cases(db):
     problems = list(db.scalars(select(Problem)))
-    assert len(problems) == 2527  # original 26 + 96 logic + 115 data practice
+    assert len(problems) == 2527  # 372 previous questions + 2155 newly authored MCQs
     assert Counter(problem.category for problem in problems)["foundations"] == 50
-    assert Counter(problem.category for problem in problems)["code"] == 101
+    assert Counter(problem.category for problem in problems)["code"] == 786
     level_problems = {
         n: list(db.scalars(select(LearningPathProblem)
             .where(LearningPathProblem.path_slug == f"logic-level-{n}")
