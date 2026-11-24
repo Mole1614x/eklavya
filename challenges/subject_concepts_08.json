@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 36,
+    "skill": "CAP theorem",
+    "description": "A distributed-system principle that partitions force a choice between strong consistency and availability of responses"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Eventual consistency",
+    "description": "A guarantee that replicas converge after updates stop and communication succeeds"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Strong consistency",
+    "description": "A contract under which clients observe behavior equivalent to a specified single authoritative order"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Quorum reads",
+    "description": "Retrieving values from enough replicas to satisfy a selected consistency protocol"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Quorum writes",
+    "description": "Acknowledging a write only after enough designated replicas confirm it"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Consistent hashing",
+    "description": "Distributing keys around a hash ring to limit remapping when nodes change"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Leader election",
+    "description": "Selecting one node to coordinate an operation in a distributed cluster"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Heartbeats",
+    "description": "Periodic liveness signals used to detect communication loss or node failure"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Lease",
+    "description": "Time-bounded permission to act as an exclusive owner or leader"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Circuit breaker states",
+    "description": "Closed normal operation, open request rejection, and half-open probe recovery"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Bulkhead isolation",
+    "description": "Partitioning system resources to prevent one failing dependency from exhausting others"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Backpressure",
+    "description": "Signaling producers to slow down when downstream capacity cannot keep up"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Load shedding",
+    "description": "Deliberately dropping low-priority requests to preserve service during overload"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Write through strategy",
+    "description": "Applying updates to a cache and backing store in the same logical operation"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Read replica",
+    "description": "A secondary copy serving reads while receiving updates from a primary"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Leader follower replication",
+    "description": "Replication where designated leaders accept changes and followers receive propagated updates"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Synchronous replication",
+    "description": "Waiting for required replica acknowledgments before an operation is considered complete"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Asynchronous replication",
+    "description": "Forwarding committed changes to replicas without necessarily waiting for their acknowledgment"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Saga pattern",
+    "description": "Coordinating a distributed business transaction through local transactions and compensations"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Outbox pattern",
+    "description": "Persisting a business change and its event record atomically for reliable later publication"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Assertion",
+    "description": "A test statement that fails when an expected condition does not hold"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test fixture",
+    "description": "Reusable setup data or resources that establish a test's environment"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test double",
+    "description": "A replacement collaborator used during testing instead of the real dependency"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Mock object",
+    "description": "A test double that can verify specified interactions with a collaborator"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Stub",
+    "description": "A test double returning predetermined answers to calls"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Spy",
+    "description": "A test double recording how a dependency was invoked"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Contract test",
+    "description": "A test ensuring an integration satisfies an agreed API or interaction contract"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Integration test",
+    "description": "A test checking interaction among multiple working components"
+  },
+  {
+    "subject_id": 37,
+    "skill": "End to end test",
+    "description": "A test exercising a representative workflow across system boundaries"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Property based testing",
+    "description": "Generating varied inputs to verify general behavioral invariants"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Mutation testing",
+    "description": "Measuring test strength by deliberately modifying program behavior and checking whether tests fail"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Coverage report",
+    "description": "A measurement of which code paths or statements tests executed"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Branch coverage",
+    "description": "A measurement of whether alternative control-flow branches have been exercised"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Flaky test",
+    "description": "A test that intermittently fails despite unchanged relevant code behavior"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Golden file test",
+    "description": "Comparing output against a stored approved reference artifact"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Snapshot test",
+    "description": "Comparing a rendered or serialized result against a saved snapshot"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Failure injection",
+    "description": "Intentionally causing dependency failures to test recovery behavior"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Binary search debugging",
+    "description": "Narrowing the location of a regression by testing progressively smaller halves of a change range"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Reproduction case",
+    "description": "A small deterministic input sequence that reliably triggers a bug"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Root cause analysis",
+    "description": "Identifying the underlying mechanism that led to an observed failure"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Factory method",
+    "description": "A creation pattern delegating selection of concrete object construction to a specialized method"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Builder pattern",
+    "description": "Constructing complex objects through staged configuration steps"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Prototype pattern",
+    "description": "Creating new instances by cloning a representative instance"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Singleton pattern",
+    "description": "Constraining a class to one accessible instance within a defined scope"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Adapter pattern",
+    "description": "Translating one interface into another expected by client code"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Facade pattern",
+    "description": "Providing a simplified interface to a collection of subsystem features"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Decorator pattern",
+    "description": "Wrapping an object to add behavior while preserving its interface"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Composite pattern",
+    "description": "Representing individual objects and collections with a shared tree-oriented interface"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Proxy pattern",
+    "description": "Controlling access to another object through an intermediary"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Bridge pattern",
+    "description": "Separating an abstraction from implementation variation so both can evolve independently"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Observer pattern",
+    "description": "Notifying registered listeners when a subject changes state"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Command pattern",
+    "description": "Wrapping a request as an object to support queues, history or undo"
+  },
+  {
+    "subject_id": 38,
+    "skill": "State pattern",
+    "description": "Changing an object's behavior by delegating to a current state-specific implementation"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Template method",
+    "description": "Defining an algorithm skeleton while subclasses supply designated steps"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Chain of responsibility",
+    "description": "Passing a request through a sequence of handlers until handled or exhausted"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Mediator pattern",
+    "description": "Centralizing communication among collaborating objects"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Iterator pattern",
+    "description": "Traversing aggregate elements without exposing their internal representation"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Visitor pattern",
+    "description": "Separating operations from the object structures they act on"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Memento pattern",
+    "description": "Capturing state for later restoration without exposing unnecessary internals"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Flyweight pattern",
+    "description": "Sharing common immutable or reusable state across many fine-grained objects"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Compound interest",
+    "description": "Interest calculated on principal plus previously accumulated interest"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Simple interest",
+    "description": "Interest calculated only on the original principal"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Effective annual rate",
+    "description": "The annualized yield accounting for within-year compounding"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount percentage",
+    "description": "The reduction from a listed price expressed as a percentage of that price"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Markup percentage",
+    "description": "The increase from cost to sale price expressed relative to cost"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit margin",
+    "description": "Profit expressed as a fraction of selling revenue"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Weighted average",
+    "description": "A mean where observations contribute in proportion to assigned weights"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Geometric mean",
+    "description": "The nth root of the product of n positive observations"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Harmonic mean",
+    "description": "The reciprocal of the average of reciprocals of nonzero values"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Work rate",
+    "description": "The fraction of a job completed per unit time"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Relative speed",
+    "description": "The difference or sum of speeds depending on relative direction of motion"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Average speed for equal distances",
+    "description": "Twice the product of the speeds divided by their sum"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Mixture concentration",
+    "description": "The fraction of a substance within a total mixture"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Alligation",
+    "description": "A weighted-mixture reasoning method based on deviations from a target mean"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Permutation count",
+    "description": "The number of ordered arrangements chosen from a collection"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Combination count",
+    "description": "The number of unordered selections from a collection"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Independent event probability",
+    "description": "Joint probability equal to the product of event probabilities under independence"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Conditional probability",
+    "description": "Probability of an event after restricting the sample space to a given condition"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Expected value",
+    "description": "The probability-weighted sum or integral of a random outcome"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Remainder theorem",
+    "description": "Evaluating a polynomial at a gives its remainder when divided by x minus a"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Syllogism",
+    "description": "A deduction connecting premises to a proposed conclusion through logical relationships"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Contrapositive",
+    "description": "The logically equivalent implication from not consequent to not antecedent"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Necessary condition",
+    "description": "A condition that must hold whenever the target statement is true"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sufficient condition",
+    "description": "A condition that guarantees the target statement when it holds"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Exclusive or",
+    "description": "A logical connective true when exactly one of its inputs is true"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Truth table",
+    "description": "A complete enumeration of logical input assignments and corresponding outputs"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Venn diagram",
+    "description": "A representation of set relationships using overlapping regions"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Transitive relation",
+    "description": "A relation where aRb and bRc together imply aRc"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Reflexive relation",
+    "description": "A relation where every element is related to itself"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Symmetric relation",
+    "description": "A relation where aRb implies bRa"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Antisymmetric relation",
+    "description": "A relation where aRb and bRa imply a equals b"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Equivalence relation",
+    "description": "A relation satisfying reflexivity, symmetry and transitivity"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Partial order",
+    "description": "A relation satisfying reflexivity, antisymmetry and transitivity"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Bijection",
+    "description": "A mapping that is both one-to-one and onto"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Injective mapping",
+    "description": "A mapping that sends distinct inputs to distinct outputs"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Surjective mapping",
+    "description": "A mapping whose output range covers every element of the target set"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Pigeonhole principle",
+    "description": "More objects than containers forces at least one container to hold multiple objects"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Inclusion exclusion",
+    "description": "Counting unions of sets while adjusting for overlaps"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Logical negation of all",
+    "description": "Negating a universal assertion by producing an existential counterexample"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Logical negation of some",
+    "description": "Negating an existential assertion by requiring the property fail for every element"
+  }
+]
