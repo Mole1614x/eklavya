@@ -1398,3 +1398,32 @@ input, textarea { accent-color: #a0c4f8; }
   .problem-navigation-button { flex: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .problem-navigation-button { transition: none; } }
+
+
+/* Difficulty-sorted question catalog: indexed rows and verified-solve ticks. */
+.problem-list a { display: flex; align-items: center; gap: 12px; }
+.problem-list .problem-index {
+  display: inline-flex; align-items: center; justify-content: flex-start;
+  min-width: 37px; flex: 0 0 37px; color: #93a9c5; font: 600 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.problem-list a > .problem-list-info { min-width: 0; flex: 1 1 auto; }
+.problem-list .problem-title-line { display: flex; align-items: center; gap: 9px; min-width: 0; flex-grow: 0; }
+.problem-list .problem-title-line strong { min-width: 0; overflow-wrap: anywhere; font-weight: 670; }
+.problem-list .problem-solved-tick {
+  display: inline-flex; justify-content: center; align-items: center; flex: 0 0 19px;
+  height: 19px; width: 19px; border-radius: 50%; border: 1px solid #6abf9b75;
+  background: rgba(75, 175, 124, .16); color: #8ae0b6;
+}
+.problem-list .problem-solved .problem-index { color: #88bcaa; }
+.problem-list .difficulty { flex: 0 0 auto; font-size: 10px; font-weight: 710; letter-spacing: .02em; }
+.difficulty.beginner { color: #b4d4f9; background: rgba(107, 158, 224, .12); border-color: rgba(122, 179, 243, .35); }
+.difficulty.easy { color: #82d9b2; background: rgba(76, 168, 123, .11); border-color: rgba(93, 185, 144, .34); }
+.difficulty.medium { color: #edc987; background: rgba(190, 138, 51, .11); border-color: rgba(227, 176, 94, .34); }
+.difficulty.hard { color: #f4a3a8; background: rgba(196, 90, 107, .12); border-color: rgba(232, 125, 141, .37); }
+@media (max-width: 540px) {
+  .problem-list a { gap: 8px; }
+  .problem-list .problem-index { flex-basis: 29px; min-width: 29px; font-size: 10px; }
+  .problem-list .difficulty { padding: 3px 6px; }
+  .problem-list .problem-title-line { gap: 5px; }
+}
