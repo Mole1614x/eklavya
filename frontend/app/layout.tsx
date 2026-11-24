@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sidebar } from "@/components/sidebar";
+import { StudioHeader } from "@/components/studio-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         <a className="skip" href="#main-content">Skip to content</a>
+        <StudioHeader />
         <Sidebar />
         <main className="main" id="main-content">{children}</main>
       </body>
