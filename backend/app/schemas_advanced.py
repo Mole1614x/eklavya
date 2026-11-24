@@ -61,6 +61,20 @@ class AssessmentTemplateCreate(BaseModel):
     release_results: bool = False
 
 
+class AssessmentScheduleWrite(BaseModel):
+    """Authorized scheduling updates for assessments without started attempts."""
+    opens_at: datetime
+    closes_at: datetime
+    duration_minutes: int = Field(ge=1, le=480)
+    reason: str = Field(min_length=3, max_length=500)
+
+    @model_validator(mode="after")
+    def valid_schedule(self):
+        if self.closes_at <= self.opens_at:
+            raise ValueError("Assessment close time must be after its open time")
+        return self
+
+
 class AssessmentStatusWrite(BaseModel):
     status: Literal["DRAFT", "PUBLISHED", "UNPUBLISHED", "ARCHIVED"]
     reason: str = Field(min_length=3, max_length=500)
