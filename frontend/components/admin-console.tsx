@@ -92,6 +92,9 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
   const [definition, setDefinition] = useState(initial);
   const [advanced, setAdvanced] = useState(true);
   const [slug, setSlug] = useState("");
+  const [duplicates, setDuplicates] = useState<Array<{ slug: string; title: string; reason: string }>>([]);
+  const [duplicateLoading, setDuplicateLoading] = useState(false);
+  const [duplicateChecked, setDuplicateChecked] = useState(false);
   const isProblem = endpoint === "problems";
   const isContest = endpoint === "contests";
   const parsed = (() => { try { return JSON.parse(definition) as Record<string, unknown>; } catch { return null; } })();
@@ -99,6 +102,31 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
   function updateField(field: string, value: string) {
     if (!parsed) { setMessage("Fix the JSON before using quick-edit fields."); return; }
     setDefinition(JSON.stringify({ ...parsed, [field]: value }, null, 2));
+    setDuplicates([]);
+    setDuplicateChecked(false);
+  }
+
+  async function checkDuplicates(payload: Record<string, unknown>): Promise<Array<{ slug: string; title: string; reason: string }>> {
+    const params = new URLSearchParams({
+      title: String(payload.title ?? ""),
+      category: String(payload.category ?? ""),
+      format: String(payload.format ?? ""),
+      topic: String(payload.topic ?? ""),
+      description: String(payload.description ?? "").slice(0, 1000),
+      exclude_slug: slug.trim(),
+    });
+    if (!String(payload.title ?? "").trim()) throw new Error("Enter a question title before checking for duplicates.");
+    setDuplicateLoading(true);
+    try {
+      const result = await api<{ duplicates: Array<{ slug: string; title: string; reason: string }> }>(
+        `problems/duplicate-check?${params.toString()}`
+      );
+      setDuplicates(result.duplicates);
+      setDuplicateChecked(true);
+      return result.duplicates;
+    } finally {
+      setDuplicateLoading(false);
+    }
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -113,10 +141,18 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
             scope === "SELECTED" && students.length === 0)
           throw new Error("Select at least one student before publishing.");
       }
+      if (isProblem) {
+        const matches = await checkDuplicates(payload);
+        if (matches.length) {
+          setMessage(`Existing question found: ${matches[0].title} (${matches[0].slug}). Reuse or edit that question instead of creating a duplicate.`);
+          return;
+        }
+      }
       await api(`${endpoint}/${encodeURIComponent(slug.trim())}`, {
         method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload),
       });
       setMessage("Saved and audited.");
+      setDuplicates([]);
       await onSaved();
     } catch (error) { setMessage(error instanceof Error ? error.message : "Save failed"); }
   }
@@ -126,7 +162,7 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
       <div><span className="section-kicker">CONTENT STUDIO</span><h3>{title}</h3><p>Start with the essentials, then refine the full definition if needed.</p></div>
       <span className="pill">Admin only</span>
     </div>
-    <label>Unique slug<input name="slug" value={slug} onChange={(event) => setSlug(event.target.value)}
+    <label>Unique slug<input name="slug" value={slug} onChange={(event) => { setSlug(event.target.value); setDuplicates([]); setDuplicateChecked(false); }}
       placeholder={isProblem ? "two-sum" : isContest ? "weekly-arena" : "new-entry"}
       required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label>
     {parsed && <div className="admin-quick-fields">
@@ -138,6 +174,27 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
         <option>DRAFT</option><option>PUBLISHED</option>
       </select></label>}
     </div>}
+    {isProblem && <section className="duplicate-check-field" aria-label="Question duplicate check">
+      <div className="duplicate-check-field-row">
+        <span>Check existing question bank before saving</span>
+        <button type="button" className="button secondary" disabled={!parsed || duplicateLoading}
+          onClick={() => void checkDuplicates(parsed ?? {}).then((matches) => {
+            setMessage(matches.length ? "Matching questions found; reuse the existing challenge." : "No strong duplicate matches found.");
+          }).catch((error) => setMessage(error instanceof Error ? error.message : "Duplicate check failed"))}>
+          {duplicateLoading ? "Checking…" : "Check for duplicates"}
+        </button>
+      </div>
+      {duplicateChecked && <div>
+        {duplicates.length ? <div className="duplicate-matches">
+          <strong>Potential existing questions ({duplicates.length})</strong>
+          {duplicates.map((item) => <div key={item.slug}>
+            <Link href={`/problems/${item.slug}`}>{item.title}</Link>
+            <code>{item.slug}</code>
+            <small>{item.reason}. Use the existing slug rather than copying this question.</small>
+          </div>)}
+        </div> : <p className="duplicate-clear">No strong duplicate matches found. Similar topics may still need manual review.</p>}
+      </div>}
+    </section>}
     {endpoint !== "achievements" && <StudentAccessPicker scope={scope} onScopeChange={setScope}
       selectedIds={students} onSelectedIdsChange={setStudents}/>}
     <button className="admin-advanced-toggle" type="button" aria-expanded={advanced}
@@ -145,7 +202,7 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
       {advanced ? "Hide" : "Show"} full definition (JSON) <span aria-hidden="true">{advanced ? "−" : "+"}</span>
     </button>
     {advanced && <label>Validated definition<textarea name="definition" value={definition}
-      onChange={(event) => setDefinition(event.target.value)} required spellCheck={false} />
+      onChange={(event) => { setDefinition(event.target.value); setDuplicates([]); setDuplicateChecked(false); }} required spellCheck={false} />
       <small>Configure test cases, constraints, editor starters, schedules and evaluator settings here.</small>
     </label>}
     {!parsed && <p className="form-error" role="alert">The definition is not valid JSON. Correct it using the full definition editor.</p>}
