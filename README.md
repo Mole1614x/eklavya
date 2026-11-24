@@ -248,3 +248,8 @@ basic programming, number logic, pattern programming, strings, arrays, sorting,
 recursion, and interview questions. It reuses four existing problems and adds
 96 judge-backed problems under seven published learning paths. See
 [Logic Building Curriculum](docs/LOGIC_BUILDING_CURRICULUM.md).
+
+
+## Timed assessment scheduling
+
+Administrators can create assessments without editing JSON, choose immediate or scheduled availability, and reschedule existing assessments before the first attempt. Server timers, access scope and attempt limits remain enforced. See [Assessment Scheduling](docs/ASSESSMENT_SCHEDULING.md).

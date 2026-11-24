@@ -20,3 +20,25 @@ test("admin student-access picker toggles scope and hides selection for ALL", as
   await expect(page.getByLabel("Search registered learners")).toBeVisible();
   await expect(page.getByText("Select at least one student before publishing")).toBeVisible();
 });
+
+
+test("admin can create a published assessment available immediately to all students", async ({ page }) => {
+  await page.goto("/auth");
+  await page.getByLabel("Email or username").fill(identity);
+  await page.getByLabel("Password", { exact: true }).fill(password);
+  await page.getByRole("button", { name: "Sign in" }).click();
+  await expect(page).toHaveURL(/\/admin$/);
+  await page.getByRole("tab", { name: "Assessment Management" }).click();
+  const form = page.locator("form.assessment-create-form");
+  const title = `Immediate Practice ${Date.now().toString(36)}`;
+  await form.getByLabel("Assessment title").fill(title);
+  await form.getByLabel("Question bank problem").selectOption("parity-check");
+  await form.getByRole("button", { name: "Add question" }).click();
+  await form.getByLabel("Publish immediately after creating").check();
+  await form.getByRole("button", { name: "Create and publish assessment" }).click();
+  await expect(form.getByRole("status")).toContainText("Assessment published successfully.");
+  const record = page.locator(".assessment-record").filter({ hasText: title });
+  await expect(record).toBeVisible();
+  await expect(record.locator(".assessment-window-badge")).toHaveText("AVAILABLE");
+  await expect(record).toContainText("All eligible students");
+});

@@ -565,3 +565,80 @@ h1, h2, h3 { color: #f8fafb; }
 .access-impact input { flex: 0 0 auto; margin-top: 2px; accent-color: var(--accent); }
 .admin-access-filter { display: flex; align-items: center; gap: 10px; margin: 14px 0; color: var(--muted); font-size: 12px; }
 @media (max-width: 640px) { .student-access { padding: 10px; } .access-manager-panel { width: min(340px, 86vw); } }
+
+
+/* Assessment studio: readable scheduling and management without editing raw JSON. */
+.assessment-admin-layout { grid-template-columns: minmax(345px, .86fr) minmax(0, 1.65fr); align-items: start; }
+.assessment-create-form { position: static; gap: 17px; }
+.assessment-create-form textarea.assessment-short-text { min-height: 80px; font: inherit; resize: vertical; }
+.assessment-create-form select, .assessment-schedule-fields select, .assessment-library-heading select {
+  min-height: 40px; max-width: 100%; padding: 8px 10px; border: 1px solid #394650;
+  border-radius: 9px; background: #0c1015; color: var(--text); font: inherit;
+}
+.assessment-fieldset { display: grid; gap: 11px; padding: 15px; margin: 0; border-radius: 12px;
+  border: 1px solid #38444a; min-width: 0; }
+.assessment-fieldset legend { padding: 0 5px; font-size: 13px; font-weight: 750; color: #f4f6fa; }
+.assessment-fieldset small, .assessment-question-picker + label { color: var(--muted); font-size: 11px; }
+.assessment-question-picker { display: flex; align-items: flex-end; gap: 9px; }
+.assessment-question-picker > label { flex: 1 1 auto; min-width: 0; }
+.assessment-question-picker .button { flex: 0 0 auto; white-space: nowrap; }
+.assessment-question-row { display: flex; align-items: center; gap: 10px; justify-content: space-between;
+  padding: 9px 11px; border: 1px solid #3a484c; border-radius: 9px; background: #14201e; font-size: 12px; }
+.assessment-question-row span { min-width: 0; overflow-wrap: anywhere; }
+.assessment-question-row button { font-size: 11px; color: #e9aeae; }
+.assessment-radio { display: flex !important; flex-direction: row !important; align-items: center !important;
+  gap: 10px !important; cursor: pointer; line-height: 1.45; color: #d4dce4 !important; font-size: 12px !important; }
+.assessment-radio input { flex: 0 0 16px; width: 16px !important; height: 16px; min-height: 16px !important;
+  margin: 0; accent-color: var(--accent); }
+.assessment-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.assessment-publish-option { padding: 11px 13px; border: 1px solid #465a46; border-radius: 9px; background: #1f2e25; }
+.assessment-extra { border: 1px solid #37454a; border-radius: 10px; padding: 11px 13px; }
+.assessment-extra summary { color: #c6ff3d; font-size: 12px; font-weight: 700; cursor: pointer; }
+.assessment-extra .assessment-form-grid { padding: 14px 0 4px; align-items: center; }
+.assessment-message { padding: 10px 12px; background: #202d29; border: 1px solid #455a50;
+  border-radius: 10px; font-size: 12px; line-height: 1.5; }
+.assessment-library { overflow: visible; }
+.assessment-library-heading { display: flex; gap: 15px; justify-content: space-between; align-items: center; margin-bottom: 19px; }
+.assessment-library-heading p:not(.section-kicker) { margin-top: 6px; color: var(--muted); font-size: 12px; }
+.assessment-library-heading label { display: grid; flex: 0 0 auto; gap: 4px; color: var(--muted); font-size: 11px; }
+.assessment-records { display: grid; gap: 13px; }
+.assessment-record { padding: 18px; border: 1px solid #36434a; border-radius: 14px;
+  background: linear-gradient(140deg, #1b242a, #141b22); min-width: 0; }
+.assessment-record-heading { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.assessment-record-heading h3 { margin: 0; font-size: 16px; line-height: 1.45; letter-spacing: -.02em; }
+.assessment-record-heading p { margin-top: 6px; color: #9fadb8; font-size: 12px; }
+.assessment-window-badge { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto;
+  border-radius: 24px; font-size: 10px; font-weight: 800; letter-spacing: .06em; padding: 6px 9px;
+  background: #353b42; color: #c7ced6; }
+.assessment-window-badge.available { color: #b8f6c9; background: #23402f; }
+.assessment-window-badge.upcoming { color: #c9d8ff; background: #2a3c57; }
+.assessment-window-badge.closed { color: #f5c1a3; background: #4a312b; }
+.assessment-record-details { display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 15px 20px; margin: 19px 0; padding: 14px 0;
+  border-top: 1px solid #303a43; border-bottom: 1px solid #303a43; }
+.assessment-record-details > div { display: grid; gap: 4px; min-width: 0; }
+.assessment-record-details span { color: #8d9ca8; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.assessment-record-details strong { color: #eff5f6; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.assessment-window-hint { margin-bottom: 15px; color: #f2cdb8; font-size: 12px; line-height: 1.5; }
+.assessment-record-actions { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.assessment-record-actions button, .assessment-record-actions a { color: #c6ff3d; font-size: 12px; font-weight: 720; cursor: pointer; }
+.assessment-record-settings { margin-top: 16px; padding-top: 13px; border-top: 1px solid #333f46; }
+.assessment-record-settings > summary { cursor: pointer; color: #d6e2dc; font-size: 12px; font-weight: 700; }
+.assessment-record-settings-content { display: grid; gap: 12px; padding-top: 15px; }
+.assessment-schedule-editor { display: grid; gap: 8px; }
+.assessment-schedule-editor > button { color: #c6ff3d; text-align: left; font-weight: 700; font-size: 12px; justify-self: start; }
+.assessment-schedule-editor > button:disabled { color: #84908d; }
+.assessment-schedule-editor > small { font-size: 11px; color: var(--muted); }
+.assessment-schedule-fields { display: grid; gap: 12px; padding: 14px; border: 1px solid #3c4d4d; border-radius: 10px; background: #11191d; }
+.assessment-schedule-fields label { display: grid; gap: 5px; color: #c4cdd2; font-size: 12px; }
+.assessment-schedule-fields input { min-width: 0; width: 100%; min-height: 39px; padding: 7px 10px; color: #f1f4f5;
+  border: 1px solid #405258; border-radius: 8px; background: #19252a; color-scheme: dark; }
+.assessment-schedule-fields .button { justify-self: start; }
+.assessment-empty { color: var(--muted); font-size: 13px; }
+@media (max-width: 1250px) { .assessment-admin-layout { grid-template-columns: 1fr; } .assessment-create-form { position: static; } }
+@media (max-width: 620px) {
+  .assessment-form-grid { grid-template-columns: 1fr; }
+  .assessment-question-picker { flex-wrap: wrap; }
+  .assessment-library-heading { align-items: stretch; flex-direction: column; }
+  .assessment-record { padding: 14px; }
+}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { StudentAccessManager, StudentAccessPicker, type StudentScope } from "./student-access";
+import { AssessmentCreationForm, AssessmentScheduleEditor, windowStatus, type AssessmentDraft } from "./assessment-editor";
 import { FormEvent, useCallback, useEffect, useState } from "react";
 
 type Section = "overview" | "assessments" | "problems" | "datasets" | "users" | "contests" | "paths" | "achievements" | "audit";
@@ -39,14 +40,6 @@ const initialContest = JSON.stringify({
 }, null, 2);
 const initialPath = JSON.stringify({ title: "", description: "", prerequisites: [], status: "DRAFT", access_scope: "ALL", assigned_user_ids: [], problems: [] }, null, 2);
 const initialAchievement = JSON.stringify({ name: "", description: "", criteria: { solved: 1 }, xp_reward: 0 }, null, 2);
-const initialAssessment = JSON.stringify({
-  title: "Data Analyst Screening", description: "Role-specific technical assessment", instructions: "Complete every question before the server timer expires.",
-  assessment_type: "MIXED", duration_minutes: 90,
-  opens_at: new Date(Date.now() + 3600000).toISOString(), closes_at: new Date(Date.now() + 86400000).toISOString(),
-  max_attempts: 1, penalty_percent: 0, release_results: false, status: "DRAFT", access_scope: "SELECTED", template_key: "data-analyst",
-  questions: [{ problem_slug: "city-totals", points: 100 }], assigned_user_ids: [], assigned_group_ids: [],
-}, null, 2);
-
 async function api<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`/api/admin/${path}`, init);
   const data = response.status === 204 ? null : await response.json();
@@ -157,8 +150,7 @@ export function AdminConsole() {
   const [xp, setXp] = useState<Ledger[]>([]);
   const [ranks, setRanks] = useState<Ledger[]>([]);
   const [assessments, setAssessments] = useState<Assessment[]>([]);
-  const [assessmentScope, setAssessmentScope] = useState<StudentScope>("SELECTED");
-  const [assessmentStudents, setAssessmentStudents] = useState<number[]>([]);
+  const [assessmentFilter, setAssessmentFilter] = useState<"ANY" | "PUBLISHED" | "DRAFT">("ANY");
   const [datasetScope, setDatasetScope] = useState<StudentScope>("ALL");
   const [datasetStudents, setDatasetStudents] = useState<number[]>([]);
   const [accessFilter, setAccessFilter] = useState<"ALL" | "SELECTED" | "ANY">("ANY");
@@ -244,17 +236,12 @@ export function AdminConsole() {
     } catch (error) { setStatus(error instanceof Error ? error.message : "Recovery failed"); }
   }
 
-  async function createAssessment(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    try {
-      setStatus("Validating assessment definition…");
-      const definition = JSON.parse(String(new FormData(event.currentTarget).get("definition")));
-      definition.access_scope = assessmentScope;
-      definition.assigned_user_ids = assessmentStudents;
-      if (definition.status === "PUBLISHED" && assessmentScope === "SELECTED" && assessmentStudents.length === 0 && !definition.assigned_group_ids?.length) throw new Error("Select at least one student before publishing.");
-      await advancedApi("assessments", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(definition) });
-      await load(); setStatus("Assessment created and audited.");
-    } catch (error) { setStatus(error instanceof Error ? error.message : "Assessment creation failed"); }
+  async function createAssessment(definition: AssessmentDraft) {
+    await advancedApi("assessments", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(definition),
+    });
+    await load();
+    setStatus(definition.status === "PUBLISHED" ? "Assessment created and published." : "Assessment draft created.");
   }
 
   async function setAssessmentStatus(id: string, next: string) {
@@ -319,7 +306,56 @@ export function AdminConsole() {
 
     {section === "problems" && <div className="admin-two"><JsonEditor title="Create or replace a problem" initial={initialProblem} endpoint="problems" onSaved={load} /><section className="card admin-table"><h2>Problem lifecycle</h2><label className="admin-access-filter">Audience <select value={accessFilter} onChange={(event) => setAccessFilter(event.target.value as "ALL" | "SELECTED" | "ANY")}><option value="ANY">Any</option><option value="ALL">All students</option><option value="SELECTED">Selected only</option></select></label><table><thead><tr><th>Problem</th><th>Format</th><th>Tests</th><th>Status</th><th>Actions</th></tr></thead><tbody>{problems.filter((item) => accessFilter === "ANY" || item.access_scope === accessFilter).map((item) => <tr key={item.slug}><td><strong>{item.title}</strong><small>{item.slug} · {item.difficulty}</small></td><td>{item.format}<small>{item.supported_languages.join(", ") || "Evaluator"}</small></td><td>{item.test_case_count}<small>{item.hidden_test_count} hidden</small></td><td><span className="pill">{item.status}</span><small>{item.access_scope === "ALL" ? "All students" : `${item.assigned_count} selected`}</small></td><td className="row-actions">{item.status === "PUBLISHED" && <Link href={`/problems/${item.slug}`}>Preview</Link>}<button onClick={() => void act(`problems/${item.slug}/status`, { status: item.status === "PUBLISHED" ? "UNPUBLISHED" : "PUBLISHED", reason: "Changed from admin control center" }, "Problem status updated.")}>{item.status === "PUBLISHED" ? "Unpublish" : "Publish"}</button><button onClick={() => void act(`problems/${item.slug}/status`, { status: "ARCHIVED", reason: "Archived from admin control center" }, "Problem archived.")}>Archive</button><StudentAccessManager kind="problem" identifier={item.slug} onSaved={load}/></td></tr>)}</tbody></table></section></div>}
 
-    {section === "assessments" && <div className="admin-two"><form className="card admin-editor" onSubmit={createAssessment}><h3>Create from question bank or template</h3><StudentAccessPicker scope={assessmentScope} onScopeChange={setAssessmentScope} selectedIds={assessmentStudents} onSelectedIdsChange={setAssessmentStudents}/><label>Validated assessment definition<textarea name="definition" defaultValue={initialAssessment} required spellCheck={false} /></label><button className="button">Create assessment</button><p>Use learner user IDs in assigned_user_ids. SELECTED assessments require at least one student or group; ALL can publish without assignments.</p></form><section className="card admin-table"><h2>Assessments and results</h2><table><thead><tr><th>Assessment</th><th>Window</th><th>Participation</th><th>Actions</th></tr></thead><tbody>{assessments.map((item) => <tr key={item.id}><td><strong>{item.title}</strong><small>{item.assessment_type} · {item.duration_minutes} minutes · {item.status}</small></td><td>{formatDate(item.opens_at)}<small>Closes {formatDate(item.closes_at)}</small></td><td>{item.access_scope === "ALL" ? "All eligible students" : `${item.assigned_count} assigned`}<small>{item.attempt_count} attempts · {item.questions.length} questions</small></td><td className="row-actions"><button onClick={() => void reviewAssessment(item.id)}>Results</button><a href={`/api/advanced/admin/assessments/${item.id}/export?format=csv`}>CSV</a><a href={`/api/advanced/admin/assessments/${item.id}/export?format=xlsx`}>XLSX</a><button onClick={() => void setAssessmentStatus(item.id, item.status === "PUBLISHED" ? "UNPUBLISHED" : "PUBLISHED")}>{item.status === "PUBLISHED" ? "Unpublish" : "Publish"}</button><StudentAccessManager kind="assessment" identifier={item.id} onSaved={load}/></td></tr>)}</tbody></table>{assessmentAnalytics && <div className="admin-review"><h3>Assessment analytics</h3><pre>{JSON.stringify(assessmentAnalytics, null, 2)}</pre></div>}</section></div>}
+    {section === "assessments" && <div className="admin-two assessment-admin-layout">
+      <AssessmentCreationForm problems={problems} groups={groups} onCreate={createAssessment}/>
+      <section className="card admin-table assessment-library">
+        <div className="assessment-library-heading">
+          <div><p className="section-kicker">ADMIN / ASSESSMENTS</p><h2>Assessments and results</h2>
+            <p>Review availability, edit schedules, and manage learner access.</p></div>
+          <label>Show
+            <select aria-label="Filter assessments" value={assessmentFilter} onChange={(event) => setAssessmentFilter(event.target.value as "ANY" | "PUBLISHED" | "DRAFT")}>
+              <option value="ANY">All assessments</option><option value="PUBLISHED">Published</option><option value="DRAFT">Drafts</option>
+            </select>
+          </label>
+        </div>
+        <div className="assessment-records">{assessments.filter((item) => assessmentFilter === "ANY" ||
+          (assessmentFilter === "DRAFT" ? item.status !== "PUBLISHED" : item.status === "PUBLISHED")).map((item) => {
+          const availability = windowStatus(item);
+          return <article className="assessment-record" key={item.id}>
+            <div className="assessment-record-heading">
+              <div><h3>{item.title}</h3><p>{item.assessment_type} · {item.duration_minutes} min · {item.questions.length} questions</p></div>
+              <span className={`assessment-window-badge ${availability.toLowerCase()}`}>{availability === "DRAFT" ? item.status : availability}</span>
+            </div>
+            <div className="assessment-record-details">
+              <div><span>Opens</span><strong>{formatDate(item.opens_at)}</strong></div>
+              <div><span>Closes</span><strong>{formatDate(item.closes_at)}</strong></div>
+              <div><span>Audience</span><strong>{item.access_scope === "ALL" ? "All eligible students" : `${item.assigned_count} assigned`}</strong></div>
+              <div><span>Attempts</span><strong>{item.attempt_count}</strong></div>
+            </div>
+            {availability === "UPCOMING" && <p className="assessment-window-hint">Students can start after the opening time shown above.</p>}
+            {availability === "CLOSED" && <p className="assessment-window-hint">The closing time has passed; new attempts are blocked.</p>}
+            <div className="assessment-record-actions">
+              <button type="button" onClick={() => void setAssessmentStatus(item.id, item.status === "PUBLISHED" ? "UNPUBLISHED" : "PUBLISHED")}>
+                {item.status === "PUBLISHED" ? "Unpublish" : "Publish"}
+              </button>
+              <button type="button" onClick={() => void reviewAssessment(item.id)}>Results</button>
+              <a href={`/api/advanced/admin/assessments/${item.id}/export?format=csv`}>CSV</a>
+              <a href={`/api/advanced/admin/assessments/${item.id}/export?format=xlsx`}>XLSX</a>
+            </div>
+            <details className="assessment-record-settings">
+              <summary>Manage schedule and student access</summary>
+              <div className="assessment-record-settings-content">
+                <AssessmentScheduleEditor assessment={item} onSaved={load}/>
+                <StudentAccessManager kind="assessment" identifier={item.id} onSaved={load}/>
+              </div>
+            </details>
+          </article>;
+        })}</div>
+        {assessments.length === 0 && <p className="assessment-empty">No assessments yet. Create your first assessment using the form.</p>}
+        {assessmentAnalytics && <div className="admin-review"><h3>Assessment analytics</h3><pre>{JSON.stringify(assessmentAnalytics, null, 2)}</pre></div>}
+      </section>
+    </div>}
+
     {section === "assessments" && <div className="admin-two"><form className="card admin-editor" onSubmit={createGroup}><h3>Create learner group</h3><label>Group name<input name="name" required /></label><label>Member user IDs<input name="user_ids" placeholder="2, 5, 8" /></label><button className="button">Create group</button></form><section className="card admin-table"><h2>Assignment groups</h2><table><thead><tr><th>Group</th><th>Members</th><th>Identifier</th></tr></thead><tbody>{groups.map((group) => <tr key={group.id}><td><strong>{group.name}</strong><small>{formatDate(group.created_at)}</small></td><td>{group.user_ids.length}<small>{group.user_ids.join(", ") || "No members"}</small></td><td><code>{group.id}</code></td></tr>)}</tbody></table></section></div>}
 
     {section === "datasets" && <div className="admin-two"><form className="card admin-editor" onSubmit={upload}><h3>Upload private evaluation data</h3><label>Dataset name<input name="name" required /></label><label>Evaluator<select name="kind"><option>SQL</option><option>PANDAS</option><option>NUMPY</option><option>STATISTICS</option><option>PYSPARK</option><option>MACHINE_LEARNING</option></select></label><label>CSV, JSON, or Parquet<input name="file" type="file" accept=".csv,.json,.parquet" required /></label><button className="button">Validate and upload</button></form><section className="card admin-table"><h2>Versioned datasets</h2><table><thead><tr><th>Dataset</th><th>Size</th><th>Integrity</th><th>Action</th></tr></thead><tbody>{datasets.map((item) => <tr key={item.id}><td><strong>{item.name} v{item.version}</strong><small>{item.kind} · {item.original_filename}</small></td><td>{Math.ceil(item.size_bytes / 1024)} KB</td><td><code>{item.sha256.slice(0, 12)}…</code><small>{item.is_active ? "Active" : "Disabled"}</small></td><td className="row-actions"><a href={`/api/admin/datasets/${item.id}/download`}>Download</a><button onClick={() => void act(`datasets/${item.id}`, { is_active: !item.is_active, reason: "Changed from admin control center" }, "Dataset status updated.")}>{item.is_active ? "Disable" : "Activate"}</button></td></tr>)}</tbody></table></section></div>}
