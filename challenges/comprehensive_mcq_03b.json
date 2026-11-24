@@ -1,0 +1,182 @@
+[
+  {
+    "subject_id": 36,
+    "skill": "Horizontal scaling",
+    "prompt": "What does horizontal scaling typically add to a service?",
+    "choices": [
+      "More service instances",
+      "More CPU cores in one existing machine only",
+      "A single larger hard drive",
+      "A new programming language"
+    ],
+    "answer": "More service instances"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Circuit breaker",
+    "prompt": "What is a circuit breaker in distributed service communication?",
+    "choices": [
+      "A mechanism that temporarily rejects calls after repeated failures",
+      "A tool that merges Git branches",
+      "A database query optimizer",
+      "An API documentation generator"
+    ],
+    "answer": "A mechanism that temporarily rejects calls after repeated failures"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Idempotency key",
+    "prompt": "Why accept an idempotency key when creating a payment?",
+    "choices": [
+      "Avoid processing the same logical request multiple times",
+      "Increase currency exchange rate",
+      "Avoid authenticating the user",
+      "Ensure every transaction fails on retry"
+    ],
+    "answer": "Avoid processing the same logical request multiple times"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Unit test focus",
+    "prompt": "What does a unit test ordinarily target?",
+    "choices": [
+      "A small isolated unit of behavior",
+      "The whole public internet",
+      "Only the deployed load balancer",
+      "The production user's private data"
+    ],
+    "answer": "A small isolated unit of behavior"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Regression test",
+    "prompt": "What is the purpose of a regression test?",
+    "choices": [
+      "Detect recurrence of previously fixed behavior defects",
+      "Measure CPU clock speed",
+      "Compile dependencies only",
+      "Assign developer permissions"
+    ],
+    "answer": "Detect recurrence of previously fixed behavior defects"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Boundary values",
+    "prompt": "For input range 1 through 100 inclusive, which value is an immediate invalid boundary?",
+    "choices": [
+      "101",
+      "50",
+      "1",
+      "100"
+    ],
+    "answer": "101"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Single responsibility",
+    "prompt": "What does the single responsibility principle emphasize?",
+    "choices": [
+      "A class should have one reason to change",
+      "A class must contain exactly one method",
+      "Every method must be static",
+      "All modules must use one global variable"
+    ],
+    "answer": "A class should have one reason to change"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Strategy pattern",
+    "prompt": "When is the Strategy pattern especially appropriate?",
+    "choices": [
+      "Selecting among interchangeable algorithms through a common interface",
+      "Creating only one global object",
+      "Sharing a database connection across processes without locks",
+      "Serializing all methods into strings"
+    ],
+    "answer": "Selecting among interchangeable algorithms through a common interface"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Dependency inversion",
+    "prompt": "What should high-level modules depend upon under dependency inversion?",
+    "choices": [
+      "Abstractions rather than concrete low-level details",
+      "Only directly instantiated database drivers",
+      "Filesystem paths only",
+      "Network sockets without interfaces"
+    ],
+    "answer": "Abstractions rather than concrete low-level details"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Simple interest",
+    "prompt": "At 10% annual simple interest, what is interest on 1000 for two years?",
+    "choices": [
+      "200",
+      "100",
+      "210",
+      "1200"
+    ],
+    "answer": "200"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Average speed",
+    "prompt": "If equal distances are covered at 40 km/h and 60 km/h, what is overall average speed?",
+    "choices": [
+      "48 km/h",
+      "50 km/h",
+      "52 km/h",
+      "45 km/h"
+    ],
+    "answer": "48 km/h"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Work rates",
+    "prompt": "A completes work in 6 days and B in 3 days. How much of the work can they complete together in one day?",
+    "choices": [
+      "1/2",
+      "1/3",
+      "1/6",
+      "2/3"
+    ],
+    "answer": "1/2"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Number series",
+    "prompt": "What number comes next in 3, 6, 12, 24, ...?",
+    "choices": [
+      "48",
+      "36",
+      "30",
+      "27"
+    ],
+    "answer": "48"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Relative direction",
+    "prompt": "A person faces north, turns right, then turns right again. Which direction do they face?",
+    "choices": [
+      "South",
+      "East",
+      "West",
+      "North"
+    ],
+    "answer": "South"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Ranking position",
+    "prompt": "In a line of 20 people, someone is seventh from the left. What is their position from the right?",
+    "choices": [
+      "14th",
+      "13th",
+      "12th",
+      "15th"
+    ],
+    "answer": "14th"
+  }
+]
