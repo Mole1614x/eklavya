@@ -76,7 +76,29 @@ def evaluate(self, submission_id: str) -> None:
                     _finish(submission, result.verdict, result.output, total_ms)
                     db.commit()
                     return
-                if evaluator is None or evaluator.kind == "bash_sandbox":
+                if evaluator is not None and evaluator.kind == "data_practice_function":
+                    # The reference runs in a separate sandbox, never alongside learner code.
+                    reference_source = (evaluator.config or {}).get("reference_source")
+                    if not reference_source:
+                        _finish(submission, "SYSTEM_ERROR", "This practice challenge is missing its reference solution.", total_ms)
+                        db.commit()
+                        return
+                    reference_result = execute_data(
+                        "data_practice_function", reference_source, case.input_data,
+                        {"function": "solve", "output": "json"},
+                    )
+                    if reference_result.verdict != "COMPLETED":
+                        _finish(submission, "SYSTEM_ERROR", "This practice challenge could not be graded.", total_ms)
+                        db.commit()
+                        return
+                    try:
+                        matched = structured_match(
+                            extract_result(result.output), extract_result(reference_result.output),
+                            case.tolerance if case.tolerance is not None else (evaluator.config or {}).get("tolerance", 1e-6),
+                        )
+                    except (ValueError, TypeError):
+                        matched = False
+                elif evaluator is None or evaluator.kind == "bash_sandbox":
                     matched = outputs_match(result.output, case.expected_output, case.tolerance)
                 else:
                     try:
