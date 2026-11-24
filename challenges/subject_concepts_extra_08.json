@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 39,
+    "skill": "Modular arithmetic",
+    "description": "Computing with integer residues under an equivalence relation modulo a fixed number"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Euler totient function",
+    "description": "Counting positive integers up to n that are coprime to n"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Fermat little theorem",
+    "description": "Relating powers modulo a prime when the base is not divisible by that prime"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Chinese remainder theorem",
+    "description": "Constructing integers satisfying compatible simultaneous modular congruences"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Greatest common divisor",
+    "description": "The largest positive integer dividing two given integers"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Least common multiple",
+    "description": "The smallest positive integer divisible by both given positive integers"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Prime factorization",
+    "description": "Expressing an integer as a product of prime powers"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Divisibility test by nine",
+    "description": "An integer is divisible by nine exactly when its decimal digit sum is divisible by nine"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Triangular number",
+    "description": "The sum of the first n positive integers"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Arithmetic progression",
+    "description": "A sequence with constant difference between successive terms"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Geometric progression",
+    "description": "A sequence with constant ratio between successive nonzero terms"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Sum of geometric progression",
+    "description": "A closed-form expression for the total of a finite constant-ratio sequence"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Clock angle problem",
+    "description": "Determining the smaller angle between hour and minute hands at a specified time"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Calendar odd days",
+    "description": "Computing day-of-week offsets using the number of elapsed days modulo seven"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Pipe and cistern rate",
+    "description": "Modeling filling and draining as signed fractions of total capacity per unit time"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Boats and streams",
+    "description": "Combining boat speed in still water with current speed for upstream or downstream travel"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Train crossing a platform",
+    "description": "Relating train plus platform length to relative speed and crossing time"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit loss marked price",
+    "description": "Distinguishing cost price, selling price, marked price and applied discounts"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Partnership investment share",
+    "description": "Allocating profit in proportion to investment multiplied by time invested"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Population compound growth",
+    "description": "Predicting a quantity after repeated percentage increases or decreases"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Statement assumption",
+    "description": "A proposition that must be implicitly accepted for an argument to work"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Statement conclusion",
+    "description": "A proposition logically supported by given premises rather than external facts"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Cause effect inference",
+    "description": "Evaluating whether one event plausibly produces another"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Strengthen argument",
+    "description": "Introducing evidence that increases confidence in a claimed conclusion"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Weaken argument",
+    "description": "Introducing evidence that reduces confidence in a claimed conclusion"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Critical reasoning flaw",
+    "description": "A mistaken inference or unsupported assumption within an argument"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Circular reasoning",
+    "description": "Treating a conclusion as a premise offered in its support"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Hasty generalization",
+    "description": "Drawing a broad conclusion from insufficient or unrepresentative examples"
+  },
+  {
+    "subject_id": 40,
+    "skill": "False dilemma",
+    "description": "Presenting only two alternatives when additional possibilities exist"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Ad hominem",
+    "description": "Attacking a person instead of addressing the relevant argument"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Post hoc fallacy",
+    "description": "Inferring causation solely because one event occurred before another"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Correlation causation confusion",
+    "description": "Treating statistical association alone as proof of a causal effect"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Affirming consequent",
+    "description": "Inferring the antecedent from an implication and a true consequent"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Denying antecedent",
+    "description": "Inferring the consequent is false from an implication and a false antecedent"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Deductive validity",
+    "description": "A property under which true premises cannot lead to a false conclusion"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Logical soundness",
+    "description": "A valid deductive argument whose premises are actually true"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Inference to best explanation",
+    "description": "Choosing a hypothesis that most plausibly explains observed facts"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Consistency check",
+    "description": "Verifying that a set of assertions can be true simultaneously"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Contradiction proof",
+    "description": "Assuming a negated proposition and deriving an impossibility"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Counterexample",
+    "description": "A case disproving a general mathematical or logical assertion"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Countable noun",
+    "description": "A noun that can normally occur with a numeral and plural inflection"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Mass noun",
+    "description": "A noun ordinarily referring to uncounted substance or abstraction"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Definite article",
+    "description": "The article the used to identify a specific or contextually known referent"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Indefinite article",
+    "description": "The articles a and an used with singular count nouns for nonspecific reference"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Present perfect",
+    "description": "A have or has plus past participle construction linking past events to present relevance"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Past perfect",
+    "description": "A had plus past participle form placing an event before another past reference"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Future perfect",
+    "description": "A will have plus past participle form describing completion before a future reference time"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Present continuous",
+    "description": "A be plus -ing construction often expressing ongoing present activity"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Past continuous",
+    "description": "A was or were plus -ing construction expressing ongoing past activity"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Present perfect continuous",
+    "description": "A have been plus -ing construction emphasizing duration extending to a reference time"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Modal auxiliary",
+    "description": "A helping verb such as can, may or must expressing possibility, ability or obligation"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Subjunctive mood",
+    "description": "A grammatical form used for hypothetical, desired or contrary-to-fact situations"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Direct quotation",
+    "description": "Reproducing someone's exact words within appropriate quotation marks"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Indirect question",
+    "description": "A question embedded within a statement or another question using statement-like word order"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Appositive phrase",
+    "description": "A noun phrase renaming or explaining a nearby noun"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Restrictive modifier",
+    "description": "A modifier essential to identifying the noun or idea in context"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Correlative conjunction",
+    "description": "A paired connector such as either or or neither nor"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Transition word",
+    "description": "A discourse marker indicating relations such as contrast, result or sequence"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Ambiguous antecedent",
+    "description": "A pronoun reference whose intended noun cannot be identified confidently"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Parallel comparison",
+    "description": "A comparison matching equivalent grammatical entities or constructions"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Cross origin resource sharing",
+    "description": "Browser-enforced rules for allowing selected cross-origin script requests"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Same origin policy",
+    "description": "Restricting access between resources with different scheme, host or port combinations"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTTP cookie HttpOnly",
+    "description": "An attribute preventing JavaScript from reading a cookie through standard document APIs"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTTP cookie Secure",
+    "description": "An attribute restricting cookie transmission to secure connections under browser rules"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTTP cookie SameSite",
+    "description": "A cookie attribute controlling inclusion in cross-site request contexts"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSRF token",
+    "description": "An unpredictable request value helping distinguish legitimate state-changing requests"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Accessible focus indicator",
+    "description": "A visible signal showing which interactive control currently receives keyboard input"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Keyboard trap",
+    "description": "An interface defect preventing a keyboard user from moving focus out of a component"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Form label association",
+    "description": "Connecting text to an input so assistive technologies identify the field's purpose"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Lazy image loading",
+    "description": "Deferring image requests until images approach the visible viewport"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Code splitting",
+    "description": "Dividing application JavaScript into smaller resources loaded as needed"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Tree shaking",
+    "description": "Removing statically determined unused exports from production bundles"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTTP preload",
+    "description": "A browser hint requesting critical resources earlier in loading"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTTP preconnect",
+    "description": "Establishing network connections in advance to origins likely needed soon"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Critical rendering path",
+    "description": "The sequence of parsing and style/layout work needed before pixels appear"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Largest contentful paint",
+    "description": "A web performance metric measuring when the largest visible content element renders"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Cumulative layout shift",
+    "description": "A performance metric measuring unexpected visible page layout movement"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Interaction to next paint",
+    "description": "A responsiveness metric timing interaction latency until visual update"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Web accessibility audit",
+    "description": "Checking a website against requirements such as keyboard use and WCAG success criteria"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Browser devtools network panel",
+    "description": "An interface for inspecting request timing, headers, status and transferred assets"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Product market fit",
+    "description": "The extent to which a product reliably satisfies a meaningful market demand"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Addressable market",
+    "description": "The portion of economic demand a business could potentially serve"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Serviceable obtainable market",
+    "description": "The realistically capturable subset of an eligible market"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Customer segmentation",
+    "description": "Dividing customers into meaningful groups based on behavior or characteristics"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Value proposition",
+    "description": "The distinctive customer benefit offered by a product or service"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Price discrimination",
+    "description": "Charging different prices for comparable offerings based on differing demand or segments"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Price sensitivity",
+    "description": "The degree to which purchase behavior responds to price changes"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Retention uplift",
+    "description": "The incremental retention improvement attributable to an intervention"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Incremental profit",
+    "description": "Additional revenue caused by a change less the incremental cost of delivering it"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Average revenue per paying user",
+    "description": "Revenue divided by the number of paying users in a period"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Freemium conversion",
+    "description": "The proportion of free users becoming paying users during a defined period"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Annual recurring revenue",
+    "description": "Contracted or expected recurring subscription revenue expressed on a yearly basis"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Monthly recurring revenue",
+    "description": "Normalized recurring subscription revenue expected in one month"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Expansion revenue",
+    "description": "Extra recurring revenue earned from existing customers who upgrade or add usage"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Contraction revenue",
+    "description": "Recurring revenue lost when existing customers reduce their subscription or usage"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Logo churn",
+    "description": "The proportion of customer accounts leaving in a chosen interval"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Revenue churn",
+    "description": "The portion of recurring revenue lost from existing customers over a defined interval"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Sales pipeline velocity",
+    "description": "A measure estimating revenue throughput from opportunities, conversion, deal size and cycle length"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Lead qualification",
+    "description": "Evaluating whether a prospect meets fit, intent and readiness criteria"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Unit contribution profit",
+    "description": "Revenue minus unit-level variable costs of fulfilling a transaction"
+  }
+]
