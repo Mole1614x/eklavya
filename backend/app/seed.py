@@ -7,6 +7,7 @@ from .config import settings
 from .database import Session
 from .models import Achievement, Contest, ContestProblem, DailyChallenge, LearningPath, LearningPathProblem, Problem, ProblemEvaluator, RankLevel, StarterCode, TestCase
 from .schemas import ProblemDetail
+from .problem_uniqueness import check_seed_duplicates
 
 
 def seed(db: DatabaseSession) -> int:
@@ -70,6 +71,7 @@ def seed(db: DatabaseSession) -> int:
             practice_levels[pack_name].setdefault(level, []).append(slug)
             source.append({key: value for key, value in item.items()
                            if key not in {"number", "test_inputs", "reference_source"}})
+    check_seed_duplicates(source)
     entries = [ProblemDetail.model_validate(item) for item in source]
     evaluators = json.loads(settings().evaluator_seed_file.read_text()) if settings().evaluator_seed_file.exists() else {}
     gamification = json.loads(settings().gamification_seed_file.read_text()) if settings().gamification_seed_file.exists() else {"ranks": [], "achievements": []}
