@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Code2, LayoutDashboard, LibraryBig, Menu, ShieldCheck, UserCircle, X } from "lucide-react";
+import { ArrowUpRight, BookOpen, Code2, LayoutDashboard, LibraryBig, Menu, ShieldCheck, UserCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { modules, community, advanced } from "@/lib/navigation";
 import { ModuleIcon } from "./icons";
@@ -41,6 +41,7 @@ export function Sidebar() {
         <p className="nav-label">Workspace</p>
         {nav("/dashboard", "My dashboard", <LayoutDashboard size={18} />)}
         {nav("/problems", "Problem library", <LibraryBig size={18} />, pathname.startsWith("/problems"))}
+        {nav("/subjects", "All 45 subjects", <BookOpen size={18} />, pathname.startsWith("/subjects"))}
         {administrator && nav("/admin", "Admin control center", <ShieldCheck size={18} />, pathname.startsWith("/admin"))}
         <p className="nav-label">Practice tracks</p>
         {modules.map((item) => <div key={item.slug}>{nav(`/${item.slug}`, item.label, <ModuleIcon name={item.icon} />)}</div>)}
