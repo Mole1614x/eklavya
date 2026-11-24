@@ -132,7 +132,7 @@ def seed(db: DatabaseSession) -> int:
         sid = item["subject_id"]
         if sid not in subject_by_id or needed[sid] == 0:
             raise ValueError(f"Concept assigned to completed or unknown subject: {sid}")
-        if len(item["skill"].strip()) < 3 or len(item["description"].strip()) < 30:
+        if not item["skill"].strip() or len(item["description"].strip()) < 30:
             raise ValueError(f"Concept lacks a meaningful description: {item}")
         by_subject.setdefault(sid, []).append(item)
     if len(concept_rows) != sum(needed.values()) or set(by_subject) != {sid for sid, count in needed.items() if count}:
