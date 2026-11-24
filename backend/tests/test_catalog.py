@@ -44,16 +44,16 @@ def test_catalog_preserves_domain_coverage(client):
     response = client.get("/api/v1/problems", params={"limit": 100})
     assert response.status_code == 200
     payload = response.json()
-    assert payload["total"] == 1212
+    assert payload["total"] == 2527
     items = []
     for offset in range(0, payload["total"], 100):
         batch = client.get("/api/v1/problems", params={"offset": offset, "limit": 100})
         assert batch.status_code == 200
         items.extend(batch.json()["items"])
-    assert len(items) == 1212
+    assert len(items) == 2527
     assert Counter(item["category"] for item in items) == {
-        "foundations": 50, "code": 401, "data": 311, "statistics": 118,
-        "big-data": 94, "ai": 164, "linux": 25, "excel": 24, "tableau": 25,
+        "foundations": 50, "code": 786, "data": 562, "statistics": 403,
+        "big-data": 161, "ai": 410, "linux": 52, "excel": 51, "tableau": 52,
     }
     assert {item["format"] for item in items} == {
         "CODE", "EXPRESSION", "SQL_QUERY", "NUMERICAL", "MULTIPLE_CHOICE", "DATASET_ANALYSIS",
@@ -83,8 +83,8 @@ def test_detail_exposes_only_public_examples_and_starters(client):
 
 
 def test_seed_can_run_twice(db):
-    assert seed(db) == 1212
-    assert len(db.scalars(select(Problem)).all()) == 1212
+    assert seed(db) == 2527
+    assert len(db.scalars(select(Problem)).all()) == 2527
     assert len(db.get(Problem, "parity-check").starters) == 4
 
 
