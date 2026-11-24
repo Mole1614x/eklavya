@@ -256,8 +256,8 @@
   },
   {
     "subject_id": 23,
-    "skill": "Named volume",
-    "description": "Docker-managed persistent storage independent of individual container lifecycles"
+    "skill": "Volume driver",
+    "description": "A Docker plugin or backend responsible for providing a configured volume's storage"
   },
   {
     "subject_id": 23,
