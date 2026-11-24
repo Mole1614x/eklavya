@@ -481,8 +481,8 @@
   },
   {
     "subject_id": 35,
-    "skill": "Least privilege",
-    "description": "Giving an identity only permissions required for its authorized tasks"
+    "skill": "Security exception process",
+    "description": "A governed procedure for approving and recording departures from normal security policy"
   },
   {
     "subject_id": 35,
