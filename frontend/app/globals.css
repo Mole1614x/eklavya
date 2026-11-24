@@ -899,3 +899,25 @@ progress::-moz-progress-bar { background: #8ab4f8; }
   .sidebar { top: 60px; }
   .main { padding-top: 115px; }
 }
+
+
+/* Shared surfaces outside the dashboard: same glass design, no loud lime/magenta. */
+.auth-card, .profile-card, .filters, .workspace, .statement, .admin-table, .admin-editor,
+.assessment-record, .subject-card, .feature-card, .quick-link, .skill-card {
+  border-color: #71829a40;
+  box-shadow: inset 0 1px #eef4ff08;
+}
+.auth-tabs button[aria-selected="true"] { color: #0d1722; background: #a4c8fa; }
+.admin-notice, .assessment-message { background: #202c3a; border-color: #52709288; color: #e1ebf6; }
+.admin-table button, .admin-table td a, .admin-review summary,
+.assessment-record-actions button, .assessment-record-actions a,
+.assessment-extra summary, .assessment-schedule-editor > button,
+.assessment-create-form a, .access-manager-toggle { color: #aacbfa !important; }
+.admin-metric strong, .subject-metrics strong, .admin-editor .section-kicker { color: #b4d0f7; }
+.activity-bars span { background: linear-gradient(#a9cafe,#648ebf); }
+.admin-editor, .admin-table, .admin-chart, .assessment-library { background: linear-gradient(150deg,#222b36,#171d26); }
+.assessment-record { background: linear-gradient(140deg,#283343,#181f2a); }
+.assessment-question-row { background: #1a2835; border-color: #52647a; }
+.assessment-publish-option { background: #223246; border-color: #536b85; }
+.assessment-form-grid select, .assessment-create-form select, .assessment-schedule-fields select { background: #141b25; border-color: #51657d; }
+input, textarea { accent-color: #a0c4f8; }
