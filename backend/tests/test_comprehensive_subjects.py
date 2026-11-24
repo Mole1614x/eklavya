@@ -45,7 +45,7 @@ def test_source_catalogue_is_complete_and_targets_are_auditable():
     assert all(s["target"] >= 30 for s in SUBJECTS)
 
 
-def test_each_subject_has_three_genuine_evaluated_checks(db):
+def test_each_subject_has_genuine_evaluated_checks(db):
     for subject in SUBJECTS:
         problems = db.scalars(select(Problem).where(
             Problem.topic == subject["name"], Problem.status == "PUBLISHED",
@@ -53,14 +53,14 @@ def test_each_subject_has_three_genuine_evaluated_checks(db):
         )).all()
         assert len(problems) >= 3, subject["name"]
         ours = [p for p in problems if f'Subject:{subject["slug"]}' in p.tags]
-        assert len(ours) == 3, subject["name"]
+        assert len(ours) == (3 if subject["id"] in {1, 5, 6} else 13), subject["name"]
         path = db.get(LearningPath, "subject-" + subject["slug"][:65])
         assert path is not None
         assert path.status == "PUBLISHED" and path.access_scope == "ALL"
         members = db.scalars(select(LearningPathProblem).where(
             LearningPathProblem.path_slug == path.slug
         )).all()
-        assert len(members) == 3
+        assert len(members) == (3 if subject["id"] in {1, 5, 6} else 13)
         for problem in ours:
             assert problem.access_scope == "ALL"
             assert len(problem.choices) == 4 and len(set(problem.choices)) == 4
@@ -79,9 +79,9 @@ def test_subject_catalogue_api_respects_public_audience(client):
     payload = response.json()
     assert payload["target_total"] == 2500
     assert len(payload["subjects"]) == 45
-    assert payload["classified_published"] == 359
-    assert payload["published_catalog_total"] == 372
-    assert sum(entry["published_questions"] for entry in payload["subjects"]) == 359
+    assert payload["classified_published"] == 779
+    assert payload["published_catalog_total"] == 792
+    assert sum(entry["published_questions"] for entry in payload["subjects"]) == 779
     assert all(entry["remaining_to_target"] >= 0 for entry in payload["subjects"])
     assert payload["unclassified_legacy"] == 13
     indexed = {s["id"]: s for s in payload["subjects"]}
@@ -101,7 +101,7 @@ def test_correct_answers_have_varied_option_positions(db):
                 continue
             answer = json.loads(problem.test_cases[0].expected_output)
             positions.append(problem.choices.index(answer))
-    assert len(positions) == 135
+    assert len(positions) == 555
     counts = Counter(positions)
     assert len(counts) == 4 and max(counts.values()) < 65
 
@@ -110,9 +110,9 @@ def test_no_repeated_new_titles_or_quiz_statements(db):
     subjects = [item["name"] for item in SUBJECTS]
     problems = list(db.scalars(select(Problem).where(Problem.topic.in_(subjects))))
     owned = [p for p in problems if any(t.startswith("Subject:") for t in p.tags)]
-    assert len(owned) == 135
-    assert len({p.title.casefold() for p in owned}) == 135
-    assert len({p.description.casefold() for p in owned}) == 135
+    assert len(owned) == 555
+    assert len({p.title.casefold() for p in owned}) == 555
+    assert len({p.description.casefold() for p in owned}) == 555
 
 
 def test_subject_filter_includes_legacy_curriculum_not_just_new_mcqs(client):
