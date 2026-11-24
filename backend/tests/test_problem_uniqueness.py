@@ -35,3 +35,16 @@ def test_legacy_equivalent_pair_is_preserved_without_new_duplicates():
     check_seed_duplicates([old, newer])
     with pytest.raises(ValueError, match="duplicates"):
         check_seed_duplicates([old, newer, sample("duplicate-binary", "Binary Search")])
+
+
+def test_similar_but_different_numeric_goals_are_not_duplicates():
+    zeros = sample("numpy-ten-zeros", "Ten zeros") | {
+        "category": "data", "topic": "NumPy · Level 1",
+        "description": "Implement solve(data) in Python using NumPy. Return ten integer zeros.",
+    }
+    ones = sample("numpy-ten-ones", "Ten ones") | {
+        "category": "data", "topic": "NumPy · Level 1",
+        "description": "Implement solve(data) in Python using NumPy. Return ten integer ones.",
+    }
+    check_seed_duplicates([zeros, ones])
+    assert not find_duplicates(ones, [zeros])
