@@ -18,6 +18,7 @@ from sqlalchemy import case, delete, func, or_, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
+from .access_control import audience_filter, can_access, prevent_unconfirmed_inline_change, require_publishable, replace_students, student_ids, validate_students
 from .advanced_evaluators import EXCEL_FUNCTIONS, TABLEAU_FUNCTIONS, ExpressionError, equivalent, evaluate_excel, evaluate_tableau, validate_tableau
 from .auth import CurrentUser, require_admin
 from .config import settings
@@ -83,7 +84,9 @@ def assessment_read(db: Session, item: Assessment) -> dict[str, Any]:
         "assessment_type": item.assessment_type, "duration_minutes": item.duration_minutes,
         "opens_at": item.opens_at, "closes_at": item.closes_at, "max_attempts": item.max_attempts,
         "penalty_percent": item.penalty_percent, "release_results": item.release_results,
-        "status": item.status, "template_key": item.template_key,
+        "status": item.status, "template_key": item.template_key, "access_scope": item.access_scope,
+        "assigned_user_ids": student_ids(db, "assessment", item.id),
+        "assigned_group_ids": sorted(db.scalars(select(AssessmentGroupAssignment.group_id).where(AssessmentGroupAssignment.assessment_id == item.id))),
         "questions": [{"problem_slug": question.problem_slug, "title": problem.title,
                        "difficulty": problem.difficulty, "position": question.position, "points": question.points}
                        | {"languages": [starter.language for starter in problem.starters], "format": problem.format}
@@ -128,11 +131,12 @@ def admin_assessments(db: DB, admin: Admin, limit: Annotated[int, Query(ge=1, le
 
 @router.post("/admin/assessments", response_model=AssessmentRead, status_code=status.HTTP_201_CREATED)
 def create_assessment(payload: AssessmentWrite, request: Request, db: DB, admin: Admin) -> dict:
-    if payload.status == "PUBLISHED" and not (payload.assigned_user_ids or payload.assigned_group_ids):
+    if payload.status == "PUBLISHED" and payload.access_scope == "SELECTED" and not (payload.assigned_user_ids or payload.assigned_group_ids):
         raise HTTPException(status_code=409, detail="Assign at least one student or group before publishing")
     item = Assessment(id=str(uuid4()), created_by=admin.id, **payload.model_dump(exclude={"questions", "assigned_user_ids", "assigned_group_ids"}))
     db.add(item)
     _replace_assessment_children(db, item, payload)
+    if item.status == "PUBLISHED": require_publishable(db, item, "assessment")
     audit(db, request, admin, "assessment.create", "assessment", item.id, {"status": item.status})
     db.commit()
     return assessment_read(db, item)
@@ -156,6 +160,7 @@ def create_assessment_from_template(template_key: str, payload: AssessmentTempla
         closes_at=payload.closes_at, release_results=payload.release_results, status="DRAFT", template_key=template_key,
         questions=[{"problem_slug": slug, "points": 100} for slug in slugs],
         assigned_user_ids=payload.assigned_user_ids, assigned_group_ids=payload.assigned_group_ids,
+        access_scope=payload.access_scope,
     )
     return create_assessment(definition, request, db, admin)
 
@@ -164,6 +169,7 @@ def create_assessment_from_template(template_key: str, payload: AssessmentTempla
 def update_assessment(assessment_id: str, payload: AssessmentWrite, request: Request, db: DB, admin: Admin) -> dict:
     item = db.get(Assessment, assessment_id)
     if item is None: raise HTTPException(status_code=404, detail="Assessment not found")
+    prevent_unconfirmed_inline_change(db, item, "assessment", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
     if db.scalar(select(func.count(AssessmentAttempt.id)).where(AssessmentAttempt.assessment_id == item.id)):
         raise HTTPException(status_code=409, detail="An assessment with attempts cannot have its questions or timing replaced")
     for key, value in payload.model_dump(exclude={"questions", "assigned_user_ids", "assigned_group_ids"}).items(): setattr(item, key, value)
@@ -171,6 +177,7 @@ def update_assessment(assessment_id: str, payload: AssessmentWrite, request: Req
     db.execute(delete(AssessmentAssignment).where(AssessmentAssignment.assessment_id == item.id))
     db.execute(delete(AssessmentGroupAssignment).where(AssessmentGroupAssignment.assessment_id == item.id))
     _replace_assessment_children(db, item, payload)
+    if item.status == "PUBLISHED": require_publishable(db, item, "assessment")
     audit(db, request, admin, "assessment.update", "assessment", item.id)
     db.commit()
     return assessment_read(db, item)
@@ -179,24 +186,22 @@ def update_assessment(assessment_id: str, payload: AssessmentWrite, request: Req
 def _replace_assessment_children(db: Session, item: Assessment, payload: AssessmentWrite) -> None:
     missing = [question.problem_slug for question in payload.questions if db.get(Problem, question.problem_slug) is None]
     if missing: raise HTTPException(status_code=422, detail=f"Unknown problem(s): {', '.join(missing)}")
-    invalid_users = [user_id for user_id in payload.assigned_user_ids if db.get(User, user_id) is None]
-    if invalid_users: raise HTTPException(status_code=422, detail="One or more assigned users do not exist")
+    validate_students(db, payload.assigned_user_ids)
     invalid_groups = [group_id for group_id in payload.assigned_group_ids if db.get(LearnerGroup, group_id) is None]
     if invalid_groups: raise HTTPException(status_code=422, detail="One or more assigned groups do not exist")
     db.add_all(AssessmentQuestion(assessment_id=item.id, problem_slug=question.problem_slug, position=index, points=question.points)
                for index, question in enumerate(payload.questions))
     db.add_all(AssessmentAssignment(assessment_id=item.id, user_id=user_id) for user_id in payload.assigned_user_ids)
     db.add_all(AssessmentGroupAssignment(assessment_id=item.id, group_id=group_id) for group_id in payload.assigned_group_ids)
+    db.flush()
 
 
 @router.patch("/admin/assessments/{assessment_id}/status", response_model=AssessmentRead)
 def assessment_status(assessment_id: str, payload: AssessmentStatusWrite, request: Request, db: DB, admin: Admin) -> dict:
     item = db.get(Assessment, assessment_id)
     if item is None: raise HTTPException(status_code=404, detail="Assessment not found")
+    if payload.status == "PUBLISHED": require_publishable(db, item, "assessment")
     item.status = payload.status
-    assigned = (db.scalar(select(func.count(AssessmentAssignment.id)).where(AssessmentAssignment.assessment_id == item.id)) or 0) + (db.scalar(select(func.count()).select_from(AssessmentGroupAssignment).where(AssessmentGroupAssignment.assessment_id == item.id)) or 0)
-    if payload.status == "PUBLISHED" and not assigned:
-        raise HTTPException(status_code=409, detail="Assign at least one student before publishing")
     audit(db, request, admin, "assessment.status", "assessment", item.id, {"status": payload.status, "reason": payload.reason})
     db.commit()
     return assessment_read(db, item)
@@ -244,24 +249,22 @@ LiteralFormat = Annotated[str, Query(pattern="^(csv|xlsx)$")]
 
 @router.get("/assessments", response_model=list[AssessmentRead])
 def my_assessments(db: DB, user: CurrentUser) -> list[dict]:
-    items = db.scalars(select(Assessment).outerjoin(AssessmentAssignment, AssessmentAssignment.assessment_id == Assessment.id)
-                       .outerjoin(AssessmentGroupAssignment, AssessmentGroupAssignment.assessment_id == Assessment.id)
-                       .outerjoin(LearnerGroupMember, LearnerGroupMember.group_id == AssessmentGroupAssignment.group_id)
-                       .where(or_(AssessmentAssignment.user_id == user.id, LearnerGroupMember.user_id == user.id), Assessment.status == "PUBLISHED")
-                       .distinct().order_by(Assessment.opens_at.desc())).all()
-    return [assessment_read(db, item) for item in items]
+    items = db.scalars(select(Assessment).where(
+        Assessment.status == "PUBLISHED", audience_filter(Assessment, "assessment", user)
+    ).order_by(Assessment.opens_at.desc())).all()
+    # The list shows counts, not question text or slugs before an attempt starts.
+    result = [assessment_read(db, item) for item in items]
+    for summary in result:
+        summary["questions"] = [{"position": index} for index, _ in enumerate(summary["questions"])]
+    return result
 
 
 @router.post("/assessments/{assessment_id}/start", response_model=AttemptRead, status_code=status.HTTP_201_CREATED)
 def start_assessment(assessment_id: str, db: DB, user: CurrentUser) -> dict:
     now = datetime.now(timezone.utc)
     item = db.get(Assessment, assessment_id)
-    directly_assigned = db.scalar(select(AssessmentAssignment.id).where(AssessmentAssignment.assessment_id == assessment_id,
-                                                                         AssessmentAssignment.user_id == user.id))
-    group_assigned = db.scalar(select(LearnerGroupMember.user_id).join(
-        AssessmentGroupAssignment, AssessmentGroupAssignment.group_id == LearnerGroupMember.group_id,
-    ).where(AssessmentGroupAssignment.assessment_id == assessment_id, LearnerGroupMember.user_id == user.id))
-    if item is None or (directly_assigned is None and group_assigned is None) or item.status != "PUBLISHED": raise HTTPException(status_code=404, detail="Assigned assessment not found")
+    if item is None or item.status != "PUBLISHED" or not can_access(db, item, "assessment", user):
+        raise HTTPException(status_code=404, detail="Assessment not found")
     if now < aware(item.opens_at) or now >= aware(item.closes_at): raise HTTPException(status_code=409, detail="Assessment is outside its permitted window")
     active = db.scalar(select(AssessmentAttempt).where(AssessmentAttempt.assessment_id == item.id,
                                                         AssessmentAttempt.user_id == user.id,
@@ -287,6 +290,8 @@ def get_attempt(attempt_id: str, db: DB, user: CurrentUser) -> dict:
     attempt = db.get(AssessmentAttempt, attempt_id)
     if attempt is None or attempt.user_id != user.id: raise HTTPException(status_code=404, detail="Assessment attempt not found")
     item = db.get(Assessment, attempt.assessment_id)
+    if attempt.status == "IN_PROGRESS" and (item.status != "PUBLISHED" or not can_access(db, item, "assessment", user)):
+        raise HTTPException(status_code=404, detail="Assessment access is no longer available")
     if attempt.status == "IN_PROGRESS" and datetime.now(timezone.utc) >= aware(attempt.deadline_at):
         finalize_attempt(db, attempt, expired=True); db.commit()
     return attempt_read(db, attempt, item, user)
@@ -297,6 +302,9 @@ def autosave_answer(attempt_id: str, payload: AnswerWrite, db: DB, user: Current
     attempt = db.scalar(select(AssessmentAttempt).where(AssessmentAttempt.id == attempt_id).with_for_update())
     if attempt is None or attempt.user_id != user.id: raise HTTPException(status_code=404, detail="Assessment attempt not found")
     now = datetime.now(timezone.utc)
+    assessment = db.get(Assessment, attempt.assessment_id)
+    if assessment.status != "PUBLISHED" or not can_access(db, assessment, "assessment", user):
+        raise HTTPException(status_code=404, detail="Assessment access is no longer available")
     if attempt.status != "IN_PROGRESS": raise HTTPException(status_code=409, detail="Assessment attempt is already finalized")
     if now >= aware(attempt.deadline_at):
         finalize_attempt(db, attempt, expired=True); db.commit(); raise HTTPException(status_code=409, detail="Assessment time expired and the attempt was finalized")
@@ -321,6 +329,9 @@ def autosave_answer(attempt_id: str, payload: AnswerWrite, db: DB, user: Current
 def assessment_submission(attempt_id: str, problem_slug: str, payload: SubmissionCreate, db: DB, user: CurrentUser, enqueue: Enqueuer) -> Submission:
     attempt = db.scalar(select(AssessmentAttempt).where(AssessmentAttempt.id == attempt_id).with_for_update())
     if attempt is None or attempt.user_id != user.id: raise HTTPException(status_code=404, detail="Assessment attempt not found")
+    assessment = db.get(Assessment, attempt.assessment_id)
+    if assessment.status != "PUBLISHED" or not can_access(db, assessment, "assessment", user):
+        raise HTTPException(status_code=404, detail="Assessment access is no longer available")
     if attempt.status != "IN_PROGRESS": raise HTTPException(status_code=409, detail="Assessment attempt is already finalized")
     if datetime.now(timezone.utc) >= aware(attempt.deadline_at):
         finalize_attempt(db, attempt, expired=True); db.commit(); raise HTTPException(status_code=409, detail="Assessment time expired and the attempt was finalized")
@@ -354,6 +365,9 @@ def submit_attempt(attempt_id: str, db: DB, user: CurrentUser) -> dict:
     attempt = db.scalar(select(AssessmentAttempt).where(AssessmentAttempt.id == attempt_id).with_for_update())
     if attempt is None or attempt.user_id != user.id: raise HTTPException(status_code=404, detail="Assessment attempt not found")
     if attempt.status == "IN_PROGRESS":
+        assessment = db.get(Assessment, attempt.assessment_id)
+        if assessment.status != "PUBLISHED" or not can_access(db, assessment, "assessment", user):
+            raise HTTPException(status_code=404, detail="Assessment access is no longer available")
         expired = datetime.now(timezone.utc) >= aware(attempt.deadline_at)
         if not expired:
             pending = db.scalar(select(func.count(Submission.id)).join(AssessmentAnswer, AssessmentAnswer.submission_id == Submission.id)
@@ -407,7 +421,7 @@ def attempt_read(db: Session, attempt: AssessmentAttempt, item: Assessment, user
 def dataset_read(item: PracticeDataset, user: User) -> dict[str, Any]:
     return {"id": item.id, "title": item.title, "description": item.description, "category": item.category,
             "difficulty": item.difficulty, "format": item.format, "original_filename": item.original_filename,
-            "size_bytes": item.size_bytes, "status": item.status, "version": item.version,
+            "size_bytes": item.size_bytes, "status": item.status, "access_scope": item.access_scope, "version": item.version,
             "download_allowed": item.download_allowed, "column_info": item.column_info, "profile": item.profile,
             "transformations": item.transformations, "created_at": item.created_at,
             "owned_by_current_user": item.owner_user_id == user.id}
@@ -416,6 +430,10 @@ def dataset_read(item: PracticeDataset, user: User) -> dict[str, Any]:
 @router.post("/datasets", response_model=DatasetRead, status_code=status.HTTP_201_CREATED)
 def upload_dataset(payload: DatasetUpload, request: Request, db: DB, user: CurrentUser) -> dict:
     if payload.publish and user.role != "admin": raise HTTPException(status_code=403, detail="Only administrators can publish library datasets")
+    if payload.assigned_user_ids and user.role != "admin": raise HTTPException(status_code=403, detail="Only administrators can assign students")
+    validate_students(db, payload.assigned_user_ids)
+    if payload.publish and payload.access_scope == "SELECTED" and not payload.assigned_user_ids:
+        raise HTTPException(status_code=409, detail="Assign at least one student when access is SELECTED")
     extension, dataset_format = _dataset_input(payload)
     try: content = base64.b64decode(payload.content_base64, validate=True)
     except (binascii.Error, ValueError) as error: raise HTTPException(status_code=422, detail="Dataset content is not valid base64") from error
@@ -434,10 +452,12 @@ def upload_dataset(payload: DatasetUpload, request: Request, db: DB, user: Curre
                            description=payload.description, category=payload.category, difficulty=payload.difficulty,
                            format=dataset_format, original_filename=payload.filename, content_type=payload.content_type,
                            size_bytes=len(content), sha256=hashlib.sha256(content).hexdigest(), storage_path=str(path),
-                           status="PUBLISHED" if payload.publish else "PRIVATE", version=version,
+                           status="PUBLISHED" if payload.publish else "PRIVATE", access_scope=payload.access_scope, version=version,
                            download_allowed=payload.download_allowed, column_info=column_info, profile=profile,
                            transformations=[], created_by=user.id)
     db.add(item)
+    if payload.publish and payload.assigned_user_ids:
+        replace_students(db, "dataset", item.id, payload.assigned_user_ids)
     if user.role == "admin": audit(db, request, user, "dataset.practice_upload", "practice_dataset", item.id, {"status": item.status})
     db.commit()
     return dataset_read(item, user)
@@ -465,7 +485,9 @@ def my_datasets(db: DB, user: CurrentUser) -> list[dict]:
 def dataset_library(db: DB, user: CurrentUser, category: Annotated[str | None, Query(max_length=32)] = None) -> list[dict]:
     filters = [PracticeDataset.status == "PUBLISHED"]
     if category: filters.append(PracticeDataset.category == category)
-    items = db.scalars(select(PracticeDataset).where(*filters).order_by(PracticeDataset.category, PracticeDataset.title).limit(100)).all()
+    items = db.scalars(select(PracticeDataset).where(
+        *filters, audience_filter(PracticeDataset, "dataset", user)
+    ).order_by(PracticeDataset.category, PracticeDataset.title).limit(100)).all()
     return [dataset_read(item, user) for item in items]
 
 
@@ -494,7 +516,9 @@ def transform_dataset(dataset_id: str, payload: DatasetTransform, db: DB, user: 
 def download_dataset(dataset_id: str, db: DB, user: CurrentUser):
     item = db.get(PracticeDataset, dataset_id)
     if item is None or item.status == "ARCHIVED": raise HTTPException(status_code=404, detail="Dataset not found")
-    permitted = item.owner_user_id == user.id or user.role == "admin" or (item.status == "PUBLISHED" and item.download_allowed)
+    permitted = item.owner_user_id == user.id or user.role == "admin" or (
+        item.status == "PUBLISHED" and item.download_allowed and can_access(db, item, "dataset", user)
+    )
     if not permitted: raise HTTPException(status_code=404, detail="Dataset not found")
     path = Path(item.storage_path)
     if not path.is_file(): raise HTTPException(status_code=410, detail="Dataset object is unavailable")
@@ -511,7 +535,11 @@ def download_dataset(dataset_id: str, db: DB, user: CurrentUser):
 def create_dataset_practice(dataset_id: str, payload: DatasetPracticeWrite, db: DB, user: CurrentUser,
                             enqueue: DatasetPracticeEnqueuer) -> DatasetPracticeRun:
     item = db.get(PracticeDataset, dataset_id)
-    if item is None or item.status == "ARCHIVED" or not (item.owner_user_id == user.id or item.status == "PUBLISHED"):
+    if item is None or item.status == "ARCHIVED" or not (
+        item.owner_user_id == user.id or user.role == "admin" or (
+            item.status == "PUBLISHED" and can_access(db, item, "dataset", user)
+        )
+    ):
         raise HTTPException(status_code=404, detail="Dataset not found")
     active = db.scalar(select(func.count(DatasetPracticeRun.id)).where(DatasetPracticeRun.user_id == user.id,
                                                                         DatasetPracticeRun.status.in_(["QUEUED", "RUNNING"]))) or 0
@@ -548,6 +576,7 @@ def manage_dataset(dataset_id: str, payload: dict[str, Any], request: Request, d
     item = own_dataset(db, dataset_id, admin)
     requested = payload.get("status")
     if requested not in {"PRIVATE", "PUBLISHED", "ARCHIVED"}: raise HTTPException(status_code=422, detail="Invalid dataset status")
+    if requested == "PUBLISHED": require_publishable(db, item, "dataset")
     item.status = requested; item.owner_user_id = None if requested == "PUBLISHED" else item.owner_user_id
     audit(db, request, admin, "dataset.practice_status", "practice_dataset", item.id, {"status": requested})
     db.commit(); return dataset_read(item, admin)

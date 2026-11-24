@@ -76,6 +76,8 @@ class AdminProblemWrite(BaseModel):
     examples: list[dict[str, str]] = Field(default_factory=list, max_length=20)
     choices: list[str] = Field(default_factory=list, max_length=20)
     status: ProblemStatus = "DRAFT"
+    access_scope: Literal["ALL", "SELECTED"] = "ALL"
+    assigned_user_ids: list[int] = Field(default_factory=list, max_length=1000)
     starters: list[AdminStarterWrite] = Field(default_factory=list, max_length=10)
     test_cases: list[AdminTestCaseWrite] = Field(default_factory=list, max_length=200)
     evaluator: AdminEvaluatorWrite | None = None
@@ -105,6 +107,8 @@ class AdminProblemRead(BaseModel):
     format: str
     topic: str
     status: str
+    access_scope: Literal["ALL", "SELECTED"]
+    assigned_count: int
     supported_languages: list[str]
     test_case_count: int
     hidden_test_count: int
@@ -181,6 +185,8 @@ class AdminContestWrite(BaseModel):
     ends_at: datetime
     is_rated: bool = True
     publication_status: ContestPublicationStatus = "DRAFT"
+    access_scope: Literal["ALL", "SELECTED"] = "ALL"
+    assigned_user_ids: list[int] = Field(default_factory=list, max_length=1000)
     problems: list[AdminContestProblemWrite] = Field(default_factory=list, max_length=50)
 
     @model_validator(mode="after")
@@ -205,6 +211,8 @@ class AdminContestRead(BaseModel):
     ends_at: datetime
     is_rated: bool
     publication_status: str
+    access_scope: Literal["ALL", "SELECTED"]
+    assigned_count: int
     registrations: int
     submissions: int
     problem_count: int
@@ -246,6 +254,8 @@ class AdminPathWrite(BaseModel):
     description: str = Field(max_length=500)
     prerequisites: list[str] = Field(default_factory=list, max_length=20)
     status: PathStatus = "DRAFT"
+    access_scope: Literal["ALL", "SELECTED"] = "ALL"
+    assigned_user_ids: list[int] = Field(default_factory=list, max_length=1000)
     problems: list[AdminPathProblemWrite] = Field(default_factory=list, max_length=100)
 
 
@@ -253,6 +263,8 @@ class AdminPathRead(BaseModel):
     slug: str
     title: str
     status: str
+    access_scope: Literal["ALL", "SELECTED"]
+    assigned_count: int
     prerequisites: list[str]
     problem_count: int
     enrollments: int
@@ -301,3 +313,10 @@ class AuditLogRead(BaseModel):
     details: dict
     ip_address: str | None
     created_at: datetime
+
+
+class StudentAccessWrite(BaseModel):
+    access_scope: Literal["ALL", "SELECTED"]
+    assigned_user_ids: list[int] | None = Field(default=None, max_length=1000)
+    confirm_impact: bool = False
+    reason: str = Field(default="Access scope updated", min_length=3, max_length=240)

@@ -30,6 +30,7 @@ class Problem(Base):
     examples: Mapped[list[dict]] = mapped_column(JSON)
     choices: Mapped[list[str]] = mapped_column(JSON)
     status: Mapped[str] = mapped_column(String(16), default="PUBLISHED", index=True)
+    access_scope: Mapped[str] = mapped_column(String(8), default="ALL", server_default="ALL", nullable=False)
     starters: Mapped[list["StarterCode"]] = relationship(
         cascade="all, delete-orphan", lazy="selectin", order_by="StarterCode.language"
     )
@@ -255,6 +256,7 @@ class LearningPath(Base):
     description: Mapped[str] = mapped_column(String(500))
     prerequisites: Mapped[list[str]] = mapped_column(JSON, default=list)
     status: Mapped[str] = mapped_column(String(16), default="PUBLISHED", index=True)
+    access_scope: Mapped[str] = mapped_column(String(8), default="ALL", server_default="ALL", nullable=False)
 
 
 class LearningPathProblem(Base):
@@ -297,6 +299,7 @@ class Contest(Base):
     ends_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
     is_rated: Mapped[bool] = mapped_column(Boolean, default=True)
     publication_status: Mapped[str] = mapped_column(String(16), default="PUBLISHED", index=True)
+    access_scope: Mapped[str] = mapped_column(String(8), default="ALL", server_default="ALL", nullable=False)
 
 
 class ContestProblem(Base):
@@ -408,6 +411,7 @@ class Assessment(Base):
     penalty_percent: Mapped[float] = mapped_column(Float, default=0)
     release_results: Mapped[bool] = mapped_column(Boolean, default=False)
     status: Mapped[str] = mapped_column(String(16), default="DRAFT", index=True)
+    access_scope: Mapped[str] = mapped_column(String(8), default="SELECTED", server_default="SELECTED", nullable=False)
     template_key: Mapped[str | None] = mapped_column(String(40), nullable=True)
     created_by: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="RESTRICT"), index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
@@ -523,6 +527,7 @@ class PracticeDataset(Base):
     sha256: Mapped[str] = mapped_column(String(64))
     storage_path: Mapped[str] = mapped_column(String(500), unique=True)
     status: Mapped[str] = mapped_column(String(16), default="PRIVATE", index=True)
+    access_scope: Mapped[str] = mapped_column(String(8), default="ALL", server_default="ALL", nullable=False)
     version: Mapped[int] = mapped_column(Integer, default=1)
     download_allowed: Mapped[bool] = mapped_column(Boolean, default=True)
     column_info: Mapped[list[dict]] = mapped_column(JSON, default=list)
@@ -564,3 +569,23 @@ class DatasetPracticeRun(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
     started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class ContentAssignment(Base):
+    """Selected-student grants shared by problems, contests, paths and dataset-library items.
+
+    Assessment grants remain in their existing tables so existing groups and attempts
+    retain their referential integrity and behavior.
+    """
+    __tablename__ = "content_assignments"
+    __table_args__ = (
+        UniqueConstraint("content_type", "content_id", "user_id", name="uq_content_assignment"),
+        CheckConstraint("content_type IN ('problem', 'contest', 'path', 'dataset')", name="content_assignment_type"),
+        Index("ix_content_assignment_target", "content_type", "content_id", "user_id"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    content_type: Mapped[str] = mapped_column(String(16))
+    content_id: Mapped[str] = mapped_column(String(100))
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    assigned_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)

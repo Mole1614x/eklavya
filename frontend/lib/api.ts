@@ -1,4 +1,5 @@
 import "server-only";
+import { cookies } from "next/headers";
 import { backend } from "./backend";
 
 export type Problem = {
@@ -22,7 +23,10 @@ export type ProblemDetail = Problem & {
 export type Catalog = { items: Problem[]; total: number; topics: string[] };
 
 async function request<T>(path: string): Promise<T | null> {
-  const response = await backend(path);
+  const access = (await cookies()).get("eklavya_access")?.value;
+  let response = await backend(path, access ? { headers: { Authorization: `Bearer ${access}` } } : {});
+  // An expired access token must never expose selected content; fall back to public data.
+  if (response.status === 401 && access) response = await backend(path);
   if (response.status === 404) return null;
   if (!response.ok) throw new Error("The problem catalog is unavailable.");
   return response.json() as Promise<T>;

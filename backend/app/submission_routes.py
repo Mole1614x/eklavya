@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from .access_control import can_access
 from .auth import CurrentUser
 from .main_dependencies import get_db
 from .judge_client import Enqueuer
@@ -19,7 +20,7 @@ DB = Annotated[Session, Depends(get_db)]
 @router.post("/problems/{slug}/submissions", response_model=SubmissionRead, status_code=status.HTTP_202_ACCEPTED)
 def create_submission(slug: str, payload: SubmissionCreate, user: CurrentUser, db: DB, enqueue: Enqueuer) -> Submission:
     problem = db.get(Problem, slug)
-    if problem is None or problem.status != "PUBLISHED":
+    if problem is None or problem.status != "PUBLISHED" or not can_access(db, problem, "problem", user):
         raise HTTPException(status_code=404, detail="Problem not found")
     languages = {starter.language for starter in problem.starters}
     if languages and payload.language not in languages:

@@ -11,6 +11,8 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session as DatabaseSession
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
+from .access_control import can_access
+from .auth import OptionalUser
 from .catalog import list_problems
 from .cache import cache_key, get_public, set_public
 from .config import settings
@@ -148,27 +150,28 @@ def problems(
     db: DB, q: Annotated[str, Query(max_length=100)] = "", category: Category | None = None,
     difficulty: Difficulty | None = None, topic: Annotated[str | None, Query(max_length=80)] = None,
     limit: Annotated[int, Query(ge=1, le=100)] = 50, offset: Annotated[int, Query(ge=0)] = 0,
+    viewer: OptionalUser = None,
 ) -> Catalog:
     key = cache_key("catalog", q.strip().lower(), category, difficulty, topic, limit, offset)
-    cached = get_public(key)
+    cached = get_public(key) if viewer is None else None
     if cached is not None:
         return Catalog.model_validate(cached)
-    catalog = list_problems(db, q, category, difficulty, topic, limit, offset)
-    set_public(key, catalog.model_dump(mode="json"))
+    catalog = list_problems(db, q, category, difficulty, topic, limit, offset, viewer)
+    if viewer is None: set_public(key, catalog.model_dump(mode="json"))
     return catalog
 
 
 @router.get("/problems/{slug}", response_model=ProblemDetail)
-def problem(slug: str, db: DB) -> ProblemDetail:
+def problem(slug: str, db: DB, viewer: OptionalUser = None) -> ProblemDetail:
     key = cache_key("problem", slug)
-    cached = get_public(key)
+    cached = get_public(key) if viewer is None else None
     if cached is not None:
         return ProblemDetail.model_validate(cached)
     item = db.get(Problem, slug)
-    if item is None or item.status != "PUBLISHED":
+    if item is None or item.status != "PUBLISHED" or not can_access(db, item, "problem", viewer):
         raise HTTPException(status_code=404, detail="Problem not found")
     detail = ProblemDetail.model_validate(item)
-    set_public(key, detail.model_dump(mode="json"))
+    if viewer is None: set_public(key, detail.model_dump(mode="json"))
     return detail
 
 

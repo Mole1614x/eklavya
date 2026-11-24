@@ -1,15 +1,16 @@
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from .models import Problem
+from .access_control import audience_filter
+from .models import Problem, User
 from .schemas import Catalog, Category, Difficulty, ProblemSummary
 
 
 def list_problems(
     db: Session, search: str, category: Category | None, difficulty: Difficulty | None,
-    topic: str | None, limit: int, offset: int,
+    topic: str | None, limit: int, offset: int, viewer: User | None = None,
 ) -> Catalog:
-    filters = [Problem.status == "PUBLISHED"]
+    filters = [Problem.status == "PUBLISHED", audience_filter(Problem, "problem", viewer)]
     if category:
         filters.append(Problem.category == category)
     topics = db.scalars(select(Problem.topic).where(*filters).distinct().order_by(Problem.topic)).all()

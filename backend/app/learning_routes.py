@@ -5,7 +5,8 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from .auth import CurrentUser
+from .access_control import audience_filter, can_access
+from .auth import CurrentUser, OptionalUser
 from .cache import cache_key, get_public, set_public
 from .learning import current_streak
 from .main_dependencies import get_db
@@ -19,9 +20,10 @@ DB = Annotated[Session, Depends(get_db)]
 
 
 @router.get("/daily")
-def daily(db: DB) -> dict:
+def daily(db: DB, viewer: OptionalUser = None) -> dict:
     today = datetime.now(timezone.utc).date()
-    row = db.execute(select(DailyChallenge, Problem).join(Problem, Problem.slug == DailyChallenge.problem_slug).where(DailyChallenge.challenge_date == today)).first()
+    row = db.execute(select(DailyChallenge, Problem).join(Problem, Problem.slug == DailyChallenge.problem_slug).where(DailyChallenge.challenge_date == today, Problem.status == "PUBLISHED",
+        audience_filter(Problem, "problem", viewer))).first()
     if row is None:
         raise HTTPException(status_code=404, detail="Daily challenge is not scheduled")
     challenge, problem = row
@@ -39,24 +41,26 @@ def daily_history(user: CurrentUser, db: DB) -> dict:
 
 
 @router.get("/paths")
-def paths(db: DB) -> list[dict]:
+def paths(db: DB, viewer: OptionalUser = None) -> list[dict]:
     key = cache_key("learning", "paths")
-    cached = get_public(key)
+    cached = get_public(key) if viewer is None else None
     if cached is not None:
         return cached
     counts = dict(db.execute(select(LearningPathProblem.path_slug, func.count()).group_by(LearningPathProblem.path_slug)).all())
-    result = [{"slug": item.slug, "title": item.title, "description": item.description, "prerequisites": item.prerequisites, "problem_count": counts.get(item.slug, 0)} for item in db.scalars(select(LearningPath).where(LearningPath.status == "PUBLISHED").order_by(LearningPath.title))]
-    set_public(key, result)
+    result = [{"slug": item.slug, "title": item.title, "description": item.description, "prerequisites": item.prerequisites, "problem_count": counts.get(item.slug, 0)} for item in db.scalars(select(LearningPath).where(LearningPath.status == "PUBLISHED",
+        audience_filter(LearningPath, "path", viewer)).order_by(LearningPath.title))]
+    if viewer is None: set_public(key, result)
     return result
 
 
 @router.get("/paths/{slug}")
 def path_detail(slug: str, user: CurrentUser, db: DB) -> dict:
     path = db.get(LearningPath, slug)
-    if path is None or path.status != "PUBLISHED":
+    if path is None or path.status != "PUBLISHED" or not can_access(db, path, "path", user):
         raise HTTPException(status_code=404, detail="Learning path not found")
     assignments = db.execute(select(LearningPathProblem, Problem).join(Problem, Problem.slug == LearningPathProblem.problem_slug).where(
-        LearningPathProblem.path_slug == slug,
+        LearningPathProblem.path_slug == slug, Problem.status == "PUBLISHED",
+        audience_filter(Problem, "problem", user),
     ).order_by(LearningPathProblem.position)).all()
     solved = set(db.scalars(select(Submission.problem_slug).where(Submission.user_id == user.id, Submission.mode == "SUBMIT", Submission.verdict == "ACCEPTED")).all())
     progress = db.scalar(select(LearningPathProgress).where(LearningPathProgress.user_id == user.id, LearningPathProgress.path_slug == slug))
@@ -69,7 +73,7 @@ def path_detail(slug: str, user: CurrentUser, db: DB) -> dict:
 @router.post("/paths/{slug}/enroll", status_code=status.HTTP_204_NO_CONTENT)
 def enroll(slug: str, user: CurrentUser, db: DB) -> None:
     path = db.get(LearningPath, slug)
-    if path is None or path.status != "PUBLISHED":
+    if path is None or path.status != "PUBLISHED" or not can_access(db, path, "path", user):
         raise HTTPException(status_code=404, detail="Learning path not found")
     exists = db.scalar(select(LearningPathProgress.id).where(LearningPathProgress.user_id == user.id, LearningPathProgress.path_slug == slug))
     if exists is None:

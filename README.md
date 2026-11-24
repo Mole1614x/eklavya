@@ -227,3 +227,15 @@ Release evidence: [Phase 16 readiness](docs/PHASE16_RELEASE_READINESS.md) and th
 - Data Lab storage is private local-volume storage for single-host deployments. Multi-host production must replace it with private object storage and lifecycle policies; Data Lab code still runs only in disposable judge containers.
 - In-memory metrics reset on process restart. A production collector should scrape each replica and retain time series externally.
 - The dashboard keeps a clearly labeled demo comparison panel for new visitors; authenticated progression, schedules, paths, and contest data are live.
+
+
+## Student access scopes (ALL / SELECTED)
+
+Student-facing content now supports an explicit audience independent of
+publication status: **ALL** makes published content available to every eligible
+learner without assignments; **SELECTED** restricts it to assigned learners
+(and legacy assessment groups) and requires a recipient before publishing.
+Existing restricted assessments are preserved by migration. The admin panel
+provides a searchable reusable learner selector and requires confirmation
+before changing a published audience. See
+[Student access and assignment documentation](docs/STUDENT_ACCESS.md).

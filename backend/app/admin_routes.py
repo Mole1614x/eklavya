@@ -14,6 +14,7 @@ from fastapi.responses import FileResponse
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session
 
+from .access_control import access_summary, prevent_unconfirmed_inline_change, replace_students, require_publishable, target, validate_students
 from .auth import require_admin
 from .cache import invalidate_public
 from .config import settings
@@ -31,7 +32,7 @@ from .schemas_admin import (
     AdminDatasetRead, AdminOverview, AdminPathRead, AdminPathWrite, AdminProblemDetail,
     AdminProblemRead, AdminProblemWrite, AdminRankHistoryRead, AdminUserRead,
     AdminXPTransactionRead, AuditLogRead, ContestStatusUpdate, DatasetStatusUpdate, DatasetUpload,
-    JudgeRecoveryRead, ProblemStatusUpdate, UserStatusUpdate,
+    JudgeRecoveryRead, ProblemStatusUpdate, StudentAccessWrite, UserStatusUpdate,
 )
 from .contest_routes import calculate_standings
 
@@ -53,6 +54,81 @@ def record_audit(
 def page_limit(limit: int) -> int:
     return min(max(limit, 1), 100)
 
+
+
+
+@router.get("/students")
+def available_students(
+    db: DB, admin: Admin, q: Annotated[str, Query(max_length=100)] = "",
+    limit: Annotated[int, Query(ge=1, le=100)] = 50,
+) -> list[dict]:
+    """Search only active learner accounts; never expose passwords or tokens."""
+    filters = [User.role == "learner", User.is_active.is_(True)]
+    if q.strip():
+        term = q.strip().lower()
+        filters.append(or_(func.lower(User.username).contains(term, autoescape=True),
+                           func.lower(User.email).contains(term, autoescape=True)))
+    users = db.scalars(select(User).where(*filters).order_by(User.username).limit(limit)).all()
+    return [{"id": user.id, "username": user.username, "display_name": user.profile.display_name}
+            for user in users]
+
+
+@router.get("/access/{kind}/{identifier}")
+def read_content_access(kind: str, identifier: str, db: DB, admin: Admin) -> dict:
+    item = target(db, kind, identifier)
+    if item is None: raise HTTPException(status_code=404, detail="Content not found")
+    return access_summary(db, item, kind)
+
+
+@router.post("/access/{kind}/{identifier}/preview")
+def preview_content_access(kind: str, identifier: str, payload: StudentAccessWrite, db: DB, admin: Admin) -> dict:
+    item = target(db, kind, identifier)
+    if item is None: raise HTTPException(status_code=404, detail="Content not found")
+    if payload.assigned_user_ids is not None: validate_students(db, payload.assigned_user_ids)
+    current = access_summary(db, item, kind)
+    next_ids = payload.assigned_user_ids if payload.assigned_user_ids is not None else current["assigned_user_ids"]
+    return {
+        "current_scope": item.access_scope,
+        "next_scope": payload.access_scope,
+        "currently_assigned": len(current["assigned_user_ids"]),
+        "next_assigned": len(next_ids),
+        "scope_change": item.access_scope != payload.access_scope,
+        "may_remove_access": current["published"] and (
+            (item.access_scope == "ALL" and payload.access_scope == "SELECTED")
+            or (item.access_scope == "SELECTED" and payload.access_scope == "SELECTED"
+                and bool(set(current["assigned_user_ids"]) - set(next_ids)))
+        ),
+        "preserves_submissions": True,
+    }
+
+
+@router.patch("/access/{kind}/{identifier}")
+def update_content_access(
+    kind: str, identifier: str, payload: StudentAccessWrite,
+    request: Request, db: DB, admin: Admin,
+) -> dict:
+    item = target(db, kind, identifier)
+    if item is None: raise HTTPException(status_code=404, detail="Content not found")
+    if kind == "contest" and item.publication_status == "FINALIZED":
+        raise HTTPException(status_code=409, detail="Finalized contest access cannot be changed")
+    before = access_summary(db, item, kind)
+    changed = item.access_scope != payload.access_scope or (
+        payload.assigned_user_ids is not None
+        and sorted(payload.assigned_user_ids) != before["assigned_user_ids"]
+    )
+    if before["published"] and changed and not payload.confirm_impact:
+        raise HTTPException(status_code=409, detail="Confirm the impact of changing published student access")
+    if payload.assigned_user_ids is not None:
+        replace_students(db, kind, identifier, payload.assigned_user_ids)
+    item.access_scope = payload.access_scope
+    if before["published"]: require_publishable(db, item, kind)
+    record_audit(db, request, admin, "content.access", kind, identifier, {
+        "previous": before, "next_scope": item.access_scope,
+        "next_assigned": access_summary(db, item, kind)["assigned_user_ids"], "reason": payload.reason,
+    })
+    db.commit()
+    invalidate_public("catalog", "problem", "learning", "contest")
+    return access_summary(db, item, kind)
 
 @router.get("/overview", response_model=AdminOverview)
 def overview(db: DB, admin: Admin) -> dict:
@@ -152,11 +228,12 @@ def recover_stuck_submissions(
     return {"recovered": len(requeue), "cancelled": cancelled, "failed_to_enqueue": failed}
 
 
-def problem_summary(problem: Problem) -> dict:
+def problem_summary(problem: Problem, db: Session | None = None) -> dict:
     return {
         "slug": problem.slug, "title": problem.title, "category": problem.category,
         "difficulty": problem.difficulty, "format": problem.format, "topic": problem.topic,
-        "status": problem.status,
+        "status": problem.status, "access_scope": problem.access_scope,
+        "assigned_count": len(access_summary(db, problem, "problem")["assigned_user_ids"]) if db is not None else 0,
         "supported_languages": [starter.language for starter in problem.starters],
         "test_case_count": len(problem.test_cases),
         "hidden_test_count": sum(case.is_hidden for case in problem.test_cases),
@@ -177,7 +254,7 @@ def admin_problems(
     if problem_status:
         filters.append(Problem.status == problem_status)
     problems = db.scalars(select(Problem).where(*filters).order_by(Problem.title).limit(limit).offset(offset)).all()
-    return [problem_summary(problem) for problem in problems]
+    return [problem_summary(problem, db) for problem in problems]
 
 
 @router.get("/problems/{slug}", response_model=AdminProblemDetail)
@@ -187,7 +264,7 @@ def admin_problem(slug: str, db: DB, admin: Admin) -> dict:
     if problem is None:
         raise HTTPException(status_code=404, detail="Problem not found")
     evaluator = db.get(ProblemEvaluator, slug)
-    return problem_summary(problem) | {
+    return problem_summary(problem, db) | {
         "tags": problem.tags, "description": problem.description, "constraints": problem.constraints,
         "examples": problem.examples, "choices": problem.choices,
         "starters": [{"language": item.language, "code": item.code} for item in problem.starters],
@@ -204,8 +281,12 @@ def save_problem(slug: str, payload: AdminProblemWrite, request: Request, db: DB
     if not slug or len(slug) > 100 or any(character not in "abcdefghijklmnopqrstuvwxyz0123456789-" for character in slug):
         raise HTTPException(status_code=422, detail="Problem slug is invalid")
     problem = db.get(Problem, slug)
+    if problem is not None:
+        prevent_unconfirmed_inline_change(db, problem, "problem", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
     action = "problem.update" if problem else "problem.create"
-    values = payload.model_dump(exclude={"starters", "test_cases", "evaluator"})
+    values = payload.model_dump(exclude={"starters", "test_cases", "evaluator", "assigned_user_ids"})
+    if problem is not None and "access_scope" not in payload.model_fields_set:
+        values.pop("access_scope", None)
     if problem is None:
         problem = Problem(slug=slug, starters=[], test_cases=[], **values)
         db.add(problem)
@@ -214,6 +295,9 @@ def save_problem(slug: str, payload: AdminProblemWrite, request: Request, db: DB
             setattr(problem, key, value)
         problem.starters.clear()
         problem.test_cases.clear()
+    if "assigned_user_ids" in payload.model_fields_set:
+        replace_students(db, "problem", slug, payload.assigned_user_ids)
+    if problem.status == "PUBLISHED": require_publishable(db, problem, "problem")
     problem.starters.extend(StarterCode(**starter.model_dump()) for starter in payload.starters)
     problem.test_cases.extend(TestCase(**case.model_dump()) for case in payload.test_cases)
     if payload.evaluator is None:
@@ -235,6 +319,7 @@ def set_problem_status(
     problem = db.get(Problem, slug)
     if problem is None:
         raise HTTPException(status_code=404, detail="Problem not found")
+    if payload.status == "PUBLISHED": require_publishable(db, problem, "problem")
     if payload.status == "PUBLISHED" and not problem.test_cases:
         raise HTTPException(status_code=409, detail="A published problem requires test cases")
     previous = problem.status
@@ -244,7 +329,7 @@ def set_problem_status(
     })
     db.commit()
     invalidate_public("catalog", "problem")
-    return problem_summary(problem)
+    return problem_summary(problem, db)
 
 
 def validate_dataset(filename: str, content_type: str, content: bytes) -> str:
@@ -421,6 +506,8 @@ def contest_summary(db: Session, contest: Contest, counts: tuple[int, int, int] 
         "slug": contest.slug, "title": contest.title, "starts_at": contest.starts_at,
         "ends_at": contest.ends_at, "is_rated": contest.is_rated,
         "publication_status": contest.publication_status,
+        "access_scope": contest.access_scope,
+        "assigned_count": access_summary(db, contest, "contest")["assigned_count"],
         "registrations": counts[0], "submissions": counts[1], "problem_count": counts[2],
     }
 
@@ -517,8 +604,12 @@ def save_contest(slug: str, payload: AdminContestWrite, request: Request, db: DB
     for assignment in payload.problems:
         if db.get(Problem, assignment.problem_slug) is None:
             raise HTTPException(status_code=422, detail=f"Problem does not exist: {assignment.problem_slug}")
+    if contest is not None:
+        prevent_unconfirmed_inline_change(db, contest, "contest", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
     action = "contest.update" if contest else "contest.create"
-    values = payload.model_dump(exclude={"problems"})
+    values = payload.model_dump(exclude={"problems", "assigned_user_ids"})
+    if contest is not None and "access_scope" not in payload.model_fields_set:
+        values.pop("access_scope", None)
     if contest is None:
         contest = Contest(slug=slug, **values)
         db.add(contest)
@@ -529,6 +620,9 @@ def save_contest(slug: str, payload: AdminContestWrite, request: Request, db: DB
         for assignment in db.scalars(select(ContestProblem).where(ContestProblem.contest_id == contest.id)):
             db.delete(assignment)
         db.flush()
+    if "assigned_user_ids" in payload.model_fields_set:
+        replace_students(db, "contest", slug, payload.assigned_user_ids)
+    if contest.publication_status == "PUBLISHED": require_publishable(db, contest, "contest")
     for position, assignment in enumerate(payload.problems, 1):
         db.add(ContestProblem(
             contest_id=contest.id, problem_slug=assignment.problem_slug,
@@ -556,6 +650,7 @@ def set_contest_status(
         select(ContestRating.id).where(ContestRating.contest_id == contest.id)
     ) is not None:
         raise HTTPException(status_code=409, detail="Finalized contest results cannot be changed")
+    if payload.status == "PUBLISHED": require_publishable(db, contest, "contest")
     previous = contest.publication_status
     contest.publication_status = payload.status
     record_audit(db, request, admin, "contest.status", "contest", slug, {
@@ -574,6 +669,8 @@ def path_summary(db: Session, path: LearningPath, counts: tuple[int, int] | None
         )
     return {
         "slug": path.slug, "title": path.title, "status": path.status,
+        "access_scope": path.access_scope,
+        "assigned_count": access_summary(db, path, "path")["assigned_count"],
         "prerequisites": path.prerequisites,
         "problem_count": counts[0], "enrollments": counts[1],
     }
@@ -604,8 +701,12 @@ def save_path(slug: str, payload: AdminPathWrite, request: Request, db: DB, admi
         if db.get(Problem, assignment.problem_slug) is None:
             raise HTTPException(status_code=422, detail=f"Problem does not exist: {assignment.problem_slug}")
     path = db.get(LearningPath, slug)
+    if path is not None:
+        prevent_unconfirmed_inline_change(db, path, "path", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
     action = "path.update" if path else "path.create"
-    values = payload.model_dump(exclude={"problems"})
+    values = payload.model_dump(exclude={"problems", "assigned_user_ids"})
+    if path is not None and "access_scope" not in payload.model_fields_set:
+        values.pop("access_scope", None)
     if path is None:
         path = LearningPath(slug=slug, **values)
         db.add(path)
@@ -615,6 +716,9 @@ def save_path(slug: str, payload: AdminPathWrite, request: Request, db: DB, admi
         for assignment in db.scalars(select(LearningPathProblem).where(LearningPathProblem.path_slug == slug)):
             db.delete(assignment)
         db.flush()
+    if "assigned_user_ids" in payload.model_fields_set:
+        replace_students(db, "path", slug, payload.assigned_user_ids)
+    if path.status == "PUBLISHED": require_publishable(db, path, "path")
     for position, assignment in enumerate(payload.problems, 1):
         db.add(LearningPathProblem(
             path_slug=slug, problem_slug=assignment.problem_slug,

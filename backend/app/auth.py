@@ -130,3 +130,16 @@ def require_admin(user: CurrentUser) -> User:
     if user.role != "admin":
         raise HTTPException(status_code=403, detail="Administrator access required")
     return user
+
+
+def optional_current_user(
+    credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)],
+    db: Annotated[Session, Depends(get_db)],
+) -> User | None:
+    """Anonymous viewers receive ALL content only; invalid tokens never grant access."""
+    if credentials is None:
+        return None
+    return current_user(credentials, db)
+
+
+OptionalUser = Annotated[User | None, Depends(optional_current_user)]
