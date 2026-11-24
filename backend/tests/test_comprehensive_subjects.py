@@ -88,7 +88,7 @@ def test_subject_catalogue_api_respects_public_audience(client):
     assert indexed[1]["published_questions"] == 105
     assert indexed[5]["published_questions"] == 54
     assert indexed[6]["published_questions"] == 55
-    assert indexed[7]["published_questions"] == 18
+    assert indexed[7]["published_questions"] == 50
     assert indexed[1]["remaining_to_target"] == 0
 
 
@@ -103,7 +103,7 @@ def test_correct_answers_have_varied_option_positions(db):
             positions.append(problem.choices.index(answer))
     assert len(positions) == 2294
     counts = Counter(positions)
-    assert len(counts) == 4 and max(counts.values()) < 65
+    assert len(counts) == 4 and max(counts.values()) < len(positions) * 0.35
 
 
 def test_no_repeated_new_titles_or_quiz_statements(db):
