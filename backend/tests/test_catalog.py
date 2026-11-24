@@ -41,28 +41,31 @@ def test_health_without_database():
 
 
 def test_catalog_preserves_domain_coverage(client):
-    response = client.get("/api/v1/problems")
+    response = client.get("/api/v1/problems", params={"limit": 100})
     assert response.status_code == 200
     payload = response.json()
-    assert payload["total"] == 26
-    assert Counter(item["category"] for item in payload["items"]) == {
-        "foundations": 4, "code": 3, "data": 6, "statistics": 3, "big-data": 2, "ai": 3,
-        "linux": 2, "excel": 1, "tableau": 2,
+    assert payload["total"] == 122
+    remainder = client.get("/api/v1/problems", params={"offset": 100, "limit": 100}).json()["items"]
+    items = payload["items"] + remainder
+    assert len(items) == 122
+    assert Counter(item["category"] for item in items) == {
+        "foundations": 47, "code": 56, "data": 6, "statistics": 3,
+        "big-data": 2, "ai": 3, "linux": 2, "excel": 1, "tableau": 2,
     }
-    assert {item["format"] for item in payload["items"]} == {
+    assert {item["format"] for item in items} == {
         "CODE", "EXPRESSION", "SQL_QUERY", "NUMERICAL", "MULTIPLE_CHOICE", "DATASET_ANALYSIS",
     }
 
 
 def test_filters_and_pagination(client):
     response = client.get("/api/v1/problems", params={
-        "q": "star", "category": "foundations", "difficulty": "Beginner", "topic": "Patterns",
+        "q": "star-staircase", "category": "foundations", "difficulty": "Beginner", "topic": "Patterns",
     })
     assert response.status_code == 200
     assert [item["slug"] for item in response.json()["items"]] == ["star-staircase"]
 
-    results = client.get("/api/v1/problems", params={"category": "foundations", "limit": 1, "offset": 1}).json()
-    assert results["total"] == 4
+    results = client.get("/api/v1/problems", params={"category": "foundations", "q": "parity", "limit": 1, "offset": 0}).json()
+    assert results["total"] == 1
     assert [item["title"] for item in results["items"]] == ["Parity Check"]
     assert client.get("/api/v1/problems", params={"q": "%"}).json()["total"] == 0
     assert client.get("/api/v1/problems", params={"difficulty": "Impossible"}).status_code == 422
@@ -77,8 +80,8 @@ def test_detail_exposes_only_public_examples_and_starters(client):
 
 
 def test_seed_can_run_twice(db):
-    assert seed(db) == 26
-    assert len(db.scalars(select(Problem)).all()) == 26
+    assert seed(db) == 122
+    assert len(db.scalars(select(Problem)).all()) == 122
     assert len(db.get(Problem, "parity-check").starters) == 4
 
 
