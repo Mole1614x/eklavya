@@ -216,8 +216,8 @@
   },
   {
     "subject_id": 8,
-    "skill": "Deduplication key",
-    "description": "A set of fields representing identity of a logical business record"
+    "skill": "Conflict resolution rule",
+    "description": "A deterministic policy deciding which record is retained when multiple records represent the same logical entity"
   },
   {
     "subject_id": 8,
