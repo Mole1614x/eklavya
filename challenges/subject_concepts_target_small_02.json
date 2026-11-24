@@ -1,0 +1,282 @@
+[
+  {
+    "subject_id": 14,
+    "skill": "Feature pyramid network",
+    "description": "A multiscale image architecture combining representations from different spatial resolutions"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Region proposal network",
+    "description": "A neural component generating candidate object regions for two-stage detectors"
+  },
+  {
+    "subject_id": 14,
+    "skill": "RoI Align",
+    "description": "Sampling fixed-size region features without coarse coordinate quantization"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Soft NMS",
+    "description": "Reducing confidence scores of overlapping detections rather than always removing them"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Dice coefficient",
+    "description": "Twice the overlapping positive region divided by the sum of two positive region sizes"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Tversky index",
+    "description": "An overlap measure weighting false-positive and false-negative regions differently"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Boundary IoU",
+    "description": "A segmentation metric comparing overlap near object boundaries"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Latent Dirichlet allocation",
+    "description": "A probabilistic topic model describing documents as mixtures of latent topics"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Topic coherence",
+    "description": "A metric measuring whether high-ranking topic words are semantically consistent"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Word sense disambiguation",
+    "description": "Identifying a word's intended meaning from its surrounding context"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Semantic role labeling",
+    "description": "Assigning predicate-argument roles such as agent and patient to sentence constituents"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Cross lingual transfer",
+    "description": "Reusing learned representations or supervision from one language to improve another"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Span alignment",
+    "description": "Matching character or token boundaries between differently tokenized texts"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Keyword extraction",
+    "description": "Selecting informative words or phrases that summarize a document's main content"
+  },
+  {
+    "subject_id": 16,
+    "skill": "PivotChart",
+    "description": "A chart connected to a PivotTable that reflects its aggregation and filtering operations"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Power Pivot data model",
+    "description": "A relational analytical model inside Excel supporting relationships and DAX measures"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Power Query unpivot",
+    "description": "Converting several value columns into attribute and value rows"
+  },
+  {
+    "subject_id": 16,
+    "skill": "CUBE functions",
+    "description": "Worksheet functions retrieving measures and members from an analytical data model"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Excel Solver",
+    "description": "An add-in for optimizing a formula under specified variable and constraint conditions"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Forecast Sheet",
+    "description": "A feature generating a time-series forecast and accompanying visual summary"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Scenario Manager",
+    "description": "A what-if tool storing alternative sets of input cell values for comparison"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Tableau Prep flow",
+    "description": "A visual data preparation sequence of cleaning, joins, unions and outputs"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Tableau worksheet",
+    "description": "A canvas defining one interactive visualization from chosen fields"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Tableau story",
+    "description": "An ordered series of dashboards or sheets presenting a narrative"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Tableau Marks card",
+    "description": "The control mapping fields to color, size, shape, label and other visual channels"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Measure Names",
+    "description": "A generated Tableau field containing the names of measures available in the view"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Measure Values",
+    "description": "A generated Tableau field combining selected measure values into a view"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Pages shelf",
+    "description": "A Tableau control stepping through values of a field to animate or sequence the view"
+  },
+  {
+    "subject_id": 18,
+    "skill": "COUNTROWS",
+    "description": "Returning the number of rows in a table expression"
+  },
+  {
+    "subject_id": 18,
+    "skill": "CALCULATETABLE",
+    "description": "Evaluating a table expression under a modified filter context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "MAXX",
+    "description": "Iterating table rows to return the greatest value of an evaluated expression"
+  },
+  {
+    "subject_id": 18,
+    "skill": "MINX",
+    "description": "Iterating table rows to return the smallest value of an evaluated expression"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DATESBETWEEN",
+    "description": "Returning a date range between supplied start and end boundaries"
+  },
+  {
+    "subject_id": 18,
+    "skill": "PARALLELPERIOD",
+    "description": "Returning an entire parallel period shifted by a chosen interval count"
+  },
+  {
+    "subject_id": 18,
+    "skill": "GENERATESERIES",
+    "description": "Producing a one-column DAX table of numeric values across a specified range"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Bessel correction",
+    "description": "Dividing sample variance by n minus one to obtain an unbiased estimate under standard assumptions"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Welch t test",
+    "description": "A two-sample mean comparison that does not require equal population variances"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Chi square independence test",
+    "description": "Testing association between categorical variables using observed and expected contingency counts"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Fisher exact test",
+    "description": "Testing categorical association by computing exact table probabilities under a fixed-margin null"
+  },
+  {
+    "subject_id": 19,
+    "skill": "McNemar test",
+    "description": "Evaluating discordant outcomes in paired binary categorical observations"
+  },
+  {
+    "subject_id": 19,
+    "skill": "One way ANOVA",
+    "description": "Comparing means across several groups using between-group and within-group variation"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Bootstrap BCa interval",
+    "description": "A bootstrap confidence interval adjusted for bias and acceleration"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Matrix trace",
+    "description": "The sum of diagonal entries of a square matrix"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Frobenius norm",
+    "description": "The square root of the sum of squared entries of a matrix"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Affine transformation",
+    "description": "A linear mapping followed by a translation"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Subgradient",
+    "description": "A generalized first-order slope supporting nonsmooth convex functions"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Proximal operator",
+    "description": "An operator minimizing a function plus a squared-distance penalty around a point"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Legendre transform",
+    "description": "A convex conjugate operation exchanging variables with dual slope coordinates"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Conditioning of linear systems",
+    "description": "Sensitivity of a computed solution to small changes in coefficients or right-hand-side values"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ulimit",
+    "description": "A shell facility for examining or setting process resource limits"
+  },
+  {
+    "subject_id": 21,
+    "skill": "nice",
+    "description": "Starting a process with an adjusted scheduler niceness value"
+  },
+  {
+    "subject_id": 21,
+    "skill": "renice",
+    "description": "Changing niceness of an already running process"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ionice",
+    "description": "Assigning a process an I/O scheduling priority class or level where supported"
+  },
+  {
+    "subject_id": 21,
+    "skill": "chroot",
+    "description": "Changing the apparent root directory used for resolving pathnames by a process"
+  },
+  {
+    "subject_id": 21,
+    "skill": "mount",
+    "description": "Attaching a filesystem to a directory within the active namespace"
+  },
+  {
+    "subject_id": 21,
+    "skill": "strace",
+    "description": "Observing system calls and their results made by a Linux process"
+  }
+]
