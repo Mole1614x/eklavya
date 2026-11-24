@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 11,
+    "skill": "Bias variance tradeoff",
+    "description": "The balance between systematic prediction error and sensitivity to training samples"
+  },
+  {
+    "subject_id": 11,
+    "skill": "L1 regularization",
+    "description": "Adding a penalty proportional to the sum of absolute model coefficients"
+  },
+  {
+    "subject_id": 11,
+    "skill": "L2 regularization",
+    "description": "Adding a penalty proportional to the sum of squared model coefficients"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Elastic Net",
+    "description": "A regularizer combining L1 and L2 penalties"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Gradient boosting",
+    "description": "Sequentially fitting weak learners to correct shortcomings of an ensemble"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Bagging",
+    "description": "Training multiple predictors on resampled data and combining their outputs"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Out of bag evaluation",
+    "description": "Measuring bagged model performance using records omitted from a learner's bootstrap sample"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Calibration curve",
+    "description": "Comparing predicted event probabilities with observed event frequencies"
+  },
+  {
+    "subject_id": 11,
+    "skill": "ROC AUC",
+    "description": "A threshold-independent measure of pairwise positive-versus-negative ranking"
+  },
+  {
+    "subject_id": 11,
+    "skill": "PR AUC",
+    "description": "Area under a precision-recall curve, often useful for rare positive classes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Multicollinearity",
+    "description": "Strong correlations among predictors that destabilize some coefficient estimates"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Feature leakage",
+    "description": "Using information in training that would not be available at real prediction time"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Target encoding",
+    "description": "Replacing categorical levels with statistics derived from the target under leakage-safe fitting"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Early stopping",
+    "description": "Halting iterative training after validation performance stops improving"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Learning rate schedule",
+    "description": "A policy that changes optimization step sizes during model training"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Class weighting",
+    "description": "Assigning unequal loss importance to observations from different classes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "SMOTE",
+    "description": "A minority-class oversampling method producing synthetic points between related samples"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Confusion matrix",
+    "description": "Counts of true and predicted classes used to assess classification errors"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Nested cross validation",
+    "description": "Separating model selection from performance estimation with inner and outer validation loops"
+  },
+  {
+    "subject_id": 11,
+    "skill": "SHAP values",
+    "description": "Feature attributions based on Shapley-value principles for explaining predictions"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Vanishing gradient",
+    "description": "Gradients shrinking as they propagate backward through deep computations"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Exploding gradient",
+    "description": "Gradients growing excessively during backward propagation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Gradient clipping",
+    "description": "Limiting gradient magnitude to stabilize parameter updates"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Batch normalization",
+    "description": "Normalizing intermediate activations using batch statistics and learned scaling"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Layer normalization",
+    "description": "Normalizing features within an individual sample or token representation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Residual connection",
+    "description": "A pathway that adds an earlier representation to a later computed transformation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Xavier initialization",
+    "description": "Scaling initial weights based on layer fan-in and fan-out for variance control"
+  },
+  {
+    "subject_id": 12,
+    "skill": "He initialization",
+    "description": "Weight scaling tailored for rectified activations"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Weight decay",
+    "description": "A training mechanism penalizing or shrinking parameter magnitudes"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Learning rate warmup",
+    "description": "Gradually increasing optimization step size during initial updates"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Attention head",
+    "description": "One of several learned attention projections in a multi-head attention layer"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Embedding layer",
+    "description": "A learned mapping from discrete indices to continuous vectors"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Cross entropy loss",
+    "description": "A log-likelihood-based objective comparing predicted class probabilities with target labels"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Focal loss",
+    "description": "A loss that reduces emphasis on easily classified examples"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Teacher forcing",
+    "description": "Training a sequence decoder using true prior tokens rather than its own predictions"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Scheduled sampling",
+    "description": "Mixing teacher-supplied and model-generated prior outputs during sequence training"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Gradient accumulation",
+    "description": "Combining gradients across multiple microbatches before updating parameters"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Mixed precision training",
+    "description": "Using multiple numeric precisions to reduce cost while maintaining stable optimization"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Transfer learning",
+    "description": "Reusing knowledge from a pretrained model for a related task"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Fine tuning",
+    "description": "Updating pretrained parameters using a new target dataset or objective"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Byte pair encoding",
+    "description": "A tokenization approach merging frequent adjacent symbol pairs into vocabulary units"
+  },
+  {
+    "subject_id": 13,
+    "skill": "KV cache",
+    "description": "Stored attention key and value tensors reused during autoregressive decoding"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Causal mask",
+    "description": "A constraint preventing a token from attending to future positions"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Context window",
+    "description": "The maximum input and generated-token context available in a particular model invocation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "System instruction",
+    "description": "A high-priority instruction specifying the assistant's intended behavior and boundaries"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Instruction tuning",
+    "description": "Supervised model adaptation using instruction-and-response examples"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Preference optimization",
+    "description": "Adapting a model using comparisons or preference signals between candidate outputs"
+  },
+  {
+    "subject_id": 13,
+    "skill": "LoRA",
+    "description": "Low-rank adapter matrices used for parameter-efficient model fine-tuning"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Quantization",
+    "description": "Representing weights or activations with reduced numerical precision"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Perplexity",
+    "description": "An exponentiated average negative log-likelihood measure for language modeling"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Hallucination",
+    "description": "Generated content that appears plausible but is unsupported or false"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Grounding",
+    "description": "Connecting generated claims to verifiable source information"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Chunking",
+    "description": "Splitting large documents into retrievable passages"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Embedding retrieval",
+    "description": "Searching for semantically related content using vector representations"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Reranker",
+    "description": "A model that reorders initial retrieval candidates by relevance"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Hybrid search",
+    "description": "Combining lexical search with semantic or vector retrieval"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Prompt injection",
+    "description": "Instructions embedded in lower-trust material attempting to redirect model behavior"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Tool schema",
+    "description": "A structured definition of valid arguments for a callable external operation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Structured output",
+    "description": "Model generation constrained to an expected machine-readable format or schema"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Model evaluation harness",
+    "description": "A repeatable procedure comparing generated results against task-specific criteria"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Image kernel",
+    "description": "A small matrix of weights applied around image positions for local filtering"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Edge detection",
+    "description": "Identifying areas of rapid spatial intensity change"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Sobel operator",
+    "description": "A convolution-based approximation of horizontal or vertical image intensity gradients"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Gaussian blur",
+    "description": "A smoothing filter based on a Gaussian-weighted neighborhood"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Median filter",
+    "description": "A nonlinear neighborhood filter replacing each pixel with a local median"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Histogram equalization",
+    "description": "Transforming intensity distributions to improve image contrast"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Nonmaximum suppression",
+    "description": "Removing redundant overlapping detections based on overlap and confidence criteria"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Intersection over Union",
+    "description": "The intersection area of two regions divided by their union area"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Bounding box regression",
+    "description": "Predicting the coordinates or offsets of a detected object's enclosing rectangle"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Anchor box",
+    "description": "A reference rectangle used as a prior for certain object detection architectures"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Optical flow",
+    "description": "Estimated apparent motion of image features between frames"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Homography",
+    "description": "A projective mapping between planar image coordinates"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Camera intrinsic matrix",
+    "description": "Parameters relating camera-frame coordinates to pixel coordinates"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Stereo disparity",
+    "description": "The displacement of corresponding features across two camera views"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Image augmentation",
+    "description": "Training-time transformations intended to improve robustness to input variation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Semantic segmentation",
+    "description": "Assigning a semantic category to each image pixel"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Instance segmentation",
+    "description": "Distinguishing individual object masks even when objects share a semantic class"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Panoptic segmentation",
+    "description": "Combining semantic and instance labels into a unified pixel-level representation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Vision Transformer patch",
+    "description": "A fixed-size image region converted into a token for transformer processing"
+  },
+  {
+    "subject_id": 14,
+    "skill": "mAP metric",
+    "description": "A mean of average precision scores computed across classes and often IoU thresholds"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Lemmatization",
+    "description": "Reducing inflected words to dictionary-like forms using linguistic knowledge"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Stemming",
+    "description": "Heuristically trimming words to related stems"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Stopword removal",
+    "description": "Filtering common words that may contribute little to a specified text task"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Bag of words",
+    "description": "Representing text using token counts without preserving token order"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Word embedding",
+    "description": "A dense vector representation learned for lexical items"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Subword tokenization",
+    "description": "Dividing text into units smaller than full words to handle rare forms"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Dependency parsing",
+    "description": "Predicting syntactic relations between words in a sentence"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Part of speech tagging",
+    "description": "Assigning grammatical categories such as noun or verb to tokens"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Named entity linking",
+    "description": "Connecting a recognized entity mention to a canonical knowledge-base entry"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Coreference resolution",
+    "description": "Determining which expressions refer to the same real-world entity"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Sentence embedding",
+    "description": "A numeric vector representing the meaning of an entire text span"
+  },
+  {
+    "subject_id": 15,
+    "skill": "BM25",
+    "description": "A lexical ranking function based on term frequencies, document length, and inverse document frequency"
+  },
+  {
+    "subject_id": 15,
+    "skill": "ROUGE",
+    "description": "A family of text-generation metrics comparing overlaps with reference texts"
+  },
+  {
+    "subject_id": 15,
+    "skill": "BLEU",
+    "description": "An n-gram precision based machine-translation evaluation metric with brevity penalty"
+  },
+  {
+    "subject_id": 15,
+    "skill": "WER",
+    "description": "Word error rate computed from substitutions, deletions and insertions relative to reference length"
+  },
+  {
+    "subject_id": 15,
+    "skill": "CTC loss",
+    "description": "A sequence loss aligning variable-length predictions without explicit frame-level labels"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Sequence labeling",
+    "description": "Predicting labels for individual tokens or positions in a sequence"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Text classification",
+    "description": "Assigning a document or sentence to one or more predefined categories"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Language identification",
+    "description": "Determining the language or languages present in text"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Sentiment analysis",
+    "description": "Estimating sentiment polarity or attitude expressed in a piece of text"
+  }
+]
