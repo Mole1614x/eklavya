@@ -53,7 +53,8 @@ def test_each_subject_has_three_genuine_evaluated_checks(db):
         )).all()
         assert len(problems) >= 3, subject["name"]
         ours = [p for p in problems if f'Subject:{subject["slug"]}' in p.tags]
-        expected = 3 if subject["id"] in {1, 5, 6} else 23
+        legacy_counts = {1: 102, 5: 51, 6: 52, 7: 15, 9: 1, 11: 2, 12: 1}
+        expected = max(3, subject["target"] - legacy_counts.get(subject["id"], 0))
         assert len(ours) == expected, subject["name"]
         path = db.get(LearningPath, "subject-" + subject["slug"][:65])
         assert path is not None
@@ -80,16 +81,19 @@ def test_subject_catalogue_api_respects_public_audience(client):
     payload = response.json()
     assert payload["target_total"] == 2500
     assert len(payload["subjects"]) == 45
-    assert payload["classified_published"] == 1199
-    assert payload["published_catalog_total"] == 1212
-    assert sum(entry["published_questions"] for entry in payload["subjects"]) == 1199
+    assert payload["classified_published"] == 2514
+    assert payload["published_catalog_total"] == 2527
+    assert sum(entry["published_questions"] for entry in payload["subjects"]) == 2514
     assert all(entry["remaining_to_target"] >= 0 for entry in payload["subjects"])
     assert payload["unclassified_legacy"] == 13
     indexed = {s["id"]: s for s in payload["subjects"]}
     assert indexed[1]["published_questions"] == 105
     assert indexed[5]["published_questions"] == 54
     assert indexed[6]["published_questions"] == 55
-    assert indexed[7]["published_questions"] == 38
+    assert indexed[7]["published_questions"] == 50
+    for subject in payload["subjects"]:
+        assert subject["published_questions"] >= subject["target"]
+        assert subject["remaining_to_target"] == 0
     assert indexed[1]["remaining_to_target"] == 0
 
 
@@ -102,18 +106,18 @@ def test_correct_answers_have_varied_option_positions(db):
                 continue
             answer = json.loads(problem.test_cases[0].expected_output)
             positions.append(problem.choices.index(answer))
-    assert len(positions) == 975
+    assert len(positions) == 2290
     counts = Counter(positions)
-    assert len(counts) == 4 and max(counts.values()) < 330
+    assert len(counts) == 4 and max(counts.values()) < 750
 
 
 def test_no_repeated_new_titles_or_quiz_statements(db):
     subjects = [item["name"] for item in SUBJECTS]
     problems = list(db.scalars(select(Problem).where(Problem.topic.in_(subjects))))
     owned = [p for p in problems if any(t.startswith("Subject:") for t in p.tags)]
-    assert len(owned) == 975
-    assert len({p.title.casefold() for p in owned}) == 975
-    assert len({p.description.casefold() for p in owned}) == 975
+    assert len(owned) == 2290
+    assert len({p.title.casefold() for p in owned}) == 2290
+    assert len({p.description.casefold() for p in owned}) == 2290
 
 
 def test_subject_filter_includes_legacy_curriculum_not_just_new_mcqs(client):
