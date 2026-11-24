@@ -13,7 +13,7 @@ export default async function ProblemPage({ params, searchParams }: { params: Pr
   return (
     <>
       <Link className="back-link" href={contest ? `/arena/${encodeURIComponent(contest)}` : "/problems"}><ArrowLeft size={16} /> {contest ? "Back to contest" : "Problem Catalog"}</Link>
-      <header className="page-header compact"><h1>{problem.title}</h1><div className="problem-tags"><span className={`difficulty ${problem.difficulty.toLowerCase()}`}>{problem.difficulty}</span><span className="pill">{problem.topic}</span><span className="pill">{formats[problem.format]}</span></div></header>
+      <header className="page-header compact"><p className="eyebrow"><span className="signal"/> PRACTICE / CHALLENGE</p><h1>{problem.title}</h1><div className="problem-tags"><span className={`difficulty ${problem.difficulty.toLowerCase()}`}>{problem.difficulty}</span><span className="pill">{problem.topic}</span><span className="pill">{formats[problem.format]}</span></div></header>
       <div className="problem-layout">
         <article className="card statement">
           <h2>Description</h2><p>{problem.description}</p>
