@@ -1,0 +1,127 @@
+[
+  {
+    "subject_id": 11,
+    "skill": "Time series ARIMA",
+    "description": "Forecasting autoregressive integrated moving-average dynamics"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Seasonal ARIMA",
+    "description": "Extending ARIMA with seasonal differencing and seasonal lag components"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Exponential smoothing",
+    "description": "Forecasting time series through recursively weighted recent observations"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Holt linear trend",
+    "description": "Exponential smoothing with explicit level and trend components"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Holt Winters seasonal model",
+    "description": "Exponential smoothing with level, trend and seasonal state components"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Granger causality test",
+    "description": "Testing whether past values of one series improve predictions of another given model assumptions"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Walk forward validation",
+    "description": "Evaluating sequential forecasts using training windows that progress through time"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Group aware split",
+    "description": "Keeping observations sharing a designated group from appearing across train and test sets"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Time series split",
+    "description": "Preserving chronological order when constructing evaluation folds"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Stratified group split",
+    "description": "Preserving group isolation while approximating class balance across evaluation subsets"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy",
+    "description": "The mean recall across classes, useful under class imbalance"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Matthews correlation coefficient",
+    "description": "A confusion-matrix measure summarizing binary classification association"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Cohen kappa",
+    "description": "An agreement statistic accounting for agreement expected by chance"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Brier score",
+    "description": "The mean squared difference between predicted event probabilities and actual binary outcomes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Log loss",
+    "description": "The negative logarithmic score assigned to observed classes by a probabilistic classifier"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Hinge loss",
+    "description": "A margin-based objective penalizing insufficient separation of labeled examples"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Mean absolute error",
+    "description": "The average absolute difference between predicted and observed numeric targets"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Root mean squared error",
+    "description": "The square root of mean squared regression error"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Mean absolute percentage error",
+    "description": "Absolute relative forecast error averaged over observations with valid nonzero denominators"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Symmetric MAPE",
+    "description": "A forecast error metric scaling absolute difference by the sum of absolute prediction and observation magnitudes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Coefficient of determination",
+    "description": "The fraction of outcome variance explained relative to a baseline mean prediction in standard regression settings"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Adjusted R squared",
+    "description": "An R-squared variant penalizing extra predictors according to sample and parameter counts"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Partial dependence plot",
+    "description": "Averaging predictions as a selected feature changes while marginalizing over other observed features"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Permutation importance",
+    "description": "Measuring predictive performance decline after randomly disrupting one feature"
+  },
+  {
+    "subject_id": 11,
+    "skill": "ICE plot",
+    "description": "Showing individual prediction curves as a selected feature varies while other features remain fixed"
+  }
+]
