@@ -1119,7 +1119,7 @@ input, textarea { accent-color: #a0c4f8; }
 .lp-section-heading p, .lp-subtle { font-size: 11px; color: #9daec3; margin-top: 5px; }
 .lp-activity-total { font-size: 11px; color: #d6e6fa; border: 1px solid rgba(162,194,235,.2); background: rgba(150,190,240,.12); padding: 7px 11px; border-radius: 20px; white-space: nowrap; }
 .lp-heatmap-wrap { width: 100%; overflow-x: auto; padding: 3px 0 1px; }
-.lp-heatmap { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7,minmax(0,1fr)); grid-auto-columns: minmax(11px, 1fr); gap: 5px; min-width: 420px; }
+.lp-heatmap { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7,minmax(0,1fr)); grid-auto-columns: 11px; width: max-content; gap: 4px; min-width: 0; }
 .lp-day { display: block; width: 100%; aspect-ratio: 1; min-height: 11px; background: #334052; border: 1px solid rgba(168,187,216,.1); border-radius: 4px; }
 .lp-day-1 { background: #486b96; } .lp-day-2 { background: #769dd1; } .lp-day-3 { background: #bed9ff; }
 .lp-day-future { opacity: .2; }
