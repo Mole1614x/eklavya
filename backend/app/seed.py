@@ -109,6 +109,82 @@ def seed(db: DatabaseSession) -> int:
                 "is_hidden": True, "position": 0,
             }]
             data_practice[slug] = {"kind": "multiple_choice", "config": {}}
+    # Additional distinct subject knowledge checks. Each definition is a
+    # separately authored learning objective; alternatives are other factual
+    # descriptions from the same subject rather than recycled number variants.
+    # Three existing tracks have already met their minimum, so new content
+    # targets only the 42 subjects with verified outstanding question gaps.
+    from .problem_uniqueness import normalized
+    concept_rows: list[dict] = []
+    for pack in sorted(settings().seed_file.parent.glob("subject_concepts_*.json")):
+        concept_rows.extend(json.loads(pack.read_text(encoding="utf-8")))
+    by_subject: dict[int, list[dict]] = {}
+    for item in concept_rows:
+        sid = item["subject_id"]
+        if sid not in subject_by_id or sid in {1, 5, 6}:
+            raise ValueError(f"Concept assigned to completed or unknown subject: {sid}")
+        if len(item["skill"].strip()) < 3 or len(item["description"].strip()) < 30:
+            raise ValueError(f"Concept lacks a meaningful description: {item}")
+        by_subject.setdefault(sid, []).append(item)
+    if len(concept_rows) != 840 or len(by_subject) != 42:
+        raise ValueError("Subject concept bank must cover 42 remaining subjects with 20 unique concepts each")
+    for sid, concepts in sorted(by_subject.items()):
+        if len(concepts) != 20:
+            raise ValueError(f"Expected 20 concepts for subject {sid}, got {len(concepts)}")
+        existing_skills = {
+            normalized(entry["title"].split(": ", 1)[-1])
+            for entry in source if entry["topic"] == subject_by_id[sid]["name"]
+        }
+        seen_skills: set[str] = set()
+        seen_definitions: set[str] = set()
+        for item in concepts:
+            skill_key = normalized(item["skill"])
+            definition_key = normalized(item["description"])
+            if skill_key in existing_skills or skill_key in seen_skills:
+                raise ValueError(f"Duplicate learning objective for subject {sid}: {item['skill']}")
+            if definition_key in seen_definitions:
+                raise ValueError(f"Duplicate concept definition in subject {sid}: {item['skill']}")
+            seen_skills.add(skill_key)
+            seen_definitions.add(definition_key)
+        subject = subject_by_id[sid]
+        for item in concepts:
+            slug = (
+                "knowledge-" + subject["slug"][:55].rstrip("-")
+                + "-" + str(len(subject_questions[subject["slug"]]) + 1).zfill(2)
+            )
+            if slug in seen:
+                raise ValueError(f"Repeated concept slug: {slug}")
+            seen.add(slug)
+            correct = item["description"]
+            alternatives = sorted(
+                (other["description"] for other in concepts if other is not item),
+                key=lambda candidate: sha256(f"{slug}:distractor:{candidate}".encode()).hexdigest(),
+            )[:3]
+            choices = sorted(
+                [correct, *alternatives],
+                key=lambda choice: sha256(f"{slug}:choice:{choice}".encode()).hexdigest(),
+            )
+            if len(set(choices)) != 4:
+                raise ValueError(f"Ambiguous repeated answer choice: {slug}")
+            title = f'{subject["name"]}: {item["skill"]}'
+            source.append({
+                "slug": slug, "title": title,
+                "category": subject["category"], "difficulty": "Medium",
+                "format": "MULTIPLE_CHOICE", "topic": subject["name"],
+                "tags": [f'Subject:{subject["slug"]}', "Concept Application"],
+                "description": (
+                    f'Which description best matches "{item["skill"]}" '
+                    f'in {subject["name"]}?'
+                ),
+                "constraints": ["Select the single most accurate definition of the named concept."],
+                "examples": [], "starters": [], "choices": choices,
+            })
+            test_cases[slug] = [{
+                "input_data": "{}", "expected_output": json.dumps(correct),
+                "is_hidden": True, "position": 0,
+            }]
+            data_practice[slug] = {"kind": "multiple_choice", "config": {}}
+            subject_questions[subject["slug"]].append(slug)
     check_seed_duplicates(source)
     entries = [ProblemDetail.model_validate(item) for item in source]
     evaluators = json.loads(settings().evaluator_seed_file.read_text()) if settings().evaluator_seed_file.exists() else {}
