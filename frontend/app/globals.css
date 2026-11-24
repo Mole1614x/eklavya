@@ -1427,3 +1427,5 @@ input, textarea { accent-color: #a0c4f8; }
   .problem-list .difficulty { padding: 3px 6px; }
   .problem-list .problem-title-line { gap: 5px; }
 }
+
+.problem-tags .problem-number-pill { color: #b2c8e6; border-color: rgba(154, 187, 235, .35); background: rgba(121, 163, 215, .1); font: 650 11px/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
