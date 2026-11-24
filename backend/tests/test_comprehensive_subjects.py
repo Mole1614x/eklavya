@@ -79,15 +79,15 @@ def test_subject_catalogue_api_respects_public_audience(client):
     payload = response.json()
     assert payload["target_total"] == 2500
     assert len(payload["subjects"]) == 45
-    assert payload["classified_published"] == 352
+    assert payload["classified_published"] == 359
     assert payload["published_catalog_total"] == 372
-    assert sum(entry["published_questions"] for entry in payload["subjects"]) == 352
+    assert sum(entry["published_questions"] for entry in payload["subjects"]) == 359
     assert all(entry["remaining_to_target"] >= 0 for entry in payload["subjects"])
-    assert payload["unclassified_legacy"] == 20
+    assert payload["unclassified_legacy"] == 13
     indexed = {s["id"]: s for s in payload["subjects"]}
     assert indexed[1]["published_questions"] == 105
-    assert indexed[5]["published_questions"] == 53
-    assert indexed[6]["published_questions"] == 53
+    assert indexed[5]["published_questions"] == 54
+    assert indexed[6]["published_questions"] == 55
     assert indexed[7]["published_questions"] == 18
     assert indexed[1]["remaining_to_target"] == 0
 
@@ -118,7 +118,7 @@ def test_no_repeated_new_titles_or_quiz_statements(db):
 def test_subject_filter_includes_legacy_curriculum_not_just_new_mcqs(client):
     numpy = client.get("/api/v1/problems", params={"subject": "numpy", "limit": 100})
     assert numpy.status_code == 200
-    assert numpy.json()["total"] == 53
+    assert numpy.json()["total"] == 54
     assert "numpy-create-array" in {item["slug"] for item in numpy.json()["items"]}
     logic = client.get("/api/v1/problems", params={"subject": SUBJECTS[0]["slug"], "limit": 100})
     assert logic.status_code == 200
@@ -135,7 +135,7 @@ def test_subject_counts_respect_selected_only_visibility(client, db):
     response = client.get("/api/v1/subjects")
     assert response.status_code == 200
     numpy = next(subject for subject in response.json()["subjects"] if subject["id"] == 5)
-    assert numpy["published_questions"] == 52
+    assert numpy["published_questions"] == 53
     filtered = client.get("/api/v1/problems", params={"subject": "numpy"})
-    assert filtered.json()["total"] == 52
+    assert filtered.json()["total"] == 53
     assert client.get(f"/api/v1/problems/{slug}").status_code == 404
