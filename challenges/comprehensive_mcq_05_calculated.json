@@ -3254,14 +3254,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.05",
-    "prompt": "A classifier produces class-1 probability 0.05. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.05. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -3338,14 +3338,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.08",
-    "prompt": "A classifier produces class-1 probability 0.08. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.08. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -3422,14 +3422,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.11",
-    "prompt": "A classifier produces class-1 probability 0.11. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.11. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -3506,14 +3506,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.14",
-    "prompt": "A classifier produces class-1 probability 0.14. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.14. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -3590,14 +3590,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.17",
-    "prompt": "A classifier produces class-1 probability 0.17. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.17. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -3674,14 +3674,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.20",
-    "prompt": "A classifier produces class-1 probability 0.20. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.20. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -3758,14 +3758,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.23",
-    "prompt": "A classifier produces class-1 probability 0.23. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.23. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -3842,14 +3842,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.26",
-    "prompt": "A classifier produces class-1 probability 0.26. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.26. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -3926,14 +3926,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.29",
-    "prompt": "A classifier produces class-1 probability 0.29. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.29. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -4010,14 +4010,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.32",
-    "prompt": "A classifier produces class-1 probability 0.32. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.32. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -4094,14 +4094,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.35",
-    "prompt": "A classifier produces class-1 probability 0.35. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.35. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
@@ -4178,14 +4178,14 @@
   {
     "subject_id": 11,
     "skill": "Decision threshold probability 0.38",
-    "prompt": "A classifier produces class-1 probability 0.38. Using the rule probability >= 0.50, what is the predicted class (0 or 1)?",
+    "prompt": "A classifier produces class-1 probability 0.38. Using the rule probability >= 0.50, which single class is predicted?",
     "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
     ],
-    "answer": "0"
+    "answer": "Class 0"
   },
   {
     "subject_id": 11,
