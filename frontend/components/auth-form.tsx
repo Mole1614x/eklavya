@@ -49,7 +49,7 @@ export function AuthForm() {
     <div className="auth-card-topline"><span className="auth-card-logo"><LockKeyhole size={19}/></span><span>ACCOUNT ACCESS</span></div>
     <div className="auth-card-intro">
       <h2 id="auth-form-title">{mode === "login" ? "Welcome back." : "Start your journey."}</h2>
-      <p>{mode === "login" ? "Sign in to continue your practice and pick up where you left off." : "Create your free account and start building your skills."}</p>
+      <p>{mode === "login" ? "Sign in to continue your practice and pick up where you left off." : "Create your account and start building your skills."}</p>
     </div>
 
     <div className="auth-tabs" role="tablist" aria-label="Account access">
