@@ -1,0 +1,152 @@
+[
+  {
+    "subject_id": 11,
+    "skill": "DBSCAN",
+    "description": "Density-based clustering grouping core-connected points and labeling sparse points as noise"
+  },
+  {
+    "subject_id": 11,
+    "skill": "HDBSCAN",
+    "description": "Hierarchical density-based clustering selecting stable clusters across density levels"
+  },
+  {
+    "subject_id": 11,
+    "skill": "K means",
+    "description": "Partitioning observations into k clusters by repeatedly assigning points and updating centroids"
+  },
+  {
+    "subject_id": 11,
+    "skill": "K medoids",
+    "description": "Partitioning data into clusters represented by observed exemplar points"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Agglomerative clustering",
+    "description": "Building a hierarchy by repeatedly merging the closest clusters"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Divisive clustering",
+    "description": "Building a hierarchy by recursively splitting larger clusters"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Spectral clustering",
+    "description": "Clustering based on eigenvectors of a graph affinity or Laplacian matrix"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Affinity propagation",
+    "description": "Selecting representative exemplars through iterative message passing"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Mean shift",
+    "description": "Clustering by moving points toward local density modes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Gaussian process regression",
+    "description": "Bayesian nonparametric regression providing predictive means and uncertainty"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Isotonic regression",
+    "description": "Fitting a monotonic relationship using ordered outcomes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Quantile regression",
+    "description": "Predicting conditional quantiles rather than conditional means"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Poisson regression",
+    "description": "Generalized linear modeling of count outcomes with a log-link mean"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Negative binomial regression",
+    "description": "Regression for count data with dispersion exceeding the Poisson variance constraint"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Probit regression",
+    "description": "Modeling binary probabilities using a normal cumulative distribution link"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Ordinal logistic regression",
+    "description": "Predicting ordered categories using cumulative probability thresholds"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Multinomial logistic regression",
+    "description": "Modeling probabilities for more than two unordered classes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Multi label classification",
+    "description": "Predicting an independent set of possible labels for each observation"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Multi output regression",
+    "description": "Predicting several continuous targets from one feature input"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Survival analysis",
+    "description": "Modeling event-time distributions while allowing censored observations"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Cox proportional hazards",
+    "description": "A semiparametric survival model relating covariates to multiplicative hazard changes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Kaplan Meier estimator",
+    "description": "Estimating survival probabilities nonparametrically from censored event observations"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Isolation forest",
+    "description": "Detecting anomalies using the short path lengths of randomly partitioned trees"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Local outlier factor",
+    "description": "Detecting observations whose local density is low relative to their neighbors"
+  },
+  {
+    "subject_id": 11,
+    "skill": "One class SVM",
+    "description": "Learning a boundary around typical training examples for novelty detection"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Principal component analysis",
+    "description": "Rotating features to orthogonal directions of maximum data variance"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Independent component analysis",
+    "description": "Recovering components modeled as statistically independent from mixtures"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Nonnegative matrix factorization",
+    "description": "Approximating a nonnegative data matrix using nonnegative lower-rank factors"
+  },
+  {
+    "subject_id": 11,
+    "skill": "t distributed stochastic neighbor embedding",
+    "description": "A nonlinear visualization method preserving local neighborhood affinities in low dimensions"
+  },
+  {
+    "subject_id": 11,
+    "skill": "UMAP",
+    "description": "A nonlinear manifold-based embedding used for visualization and representation learning"
+  }
+]
