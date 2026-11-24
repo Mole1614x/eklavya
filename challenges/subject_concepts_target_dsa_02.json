@@ -1,0 +1,287 @@
+[
+  {
+    "subject_id": 2,
+    "skill": "Breadth first search layering",
+    "description": "Exploring an unweighted graph in nondecreasing distance from a start vertex"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Zero one BFS",
+    "description": "Finding shortest paths with edge weights zero or one using a deque"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bidirectional BFS",
+    "description": "Running searches from both ends to reduce exploration for a known start and goal"
+  },
+  {
+    "subject_id": 2,
+    "skill": "A star search",
+    "description": "A shortest-path search prioritizing estimated total path cost using a heuristic"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Admissible heuristic",
+    "description": "A search heuristic that never overestimates the remaining true path cost"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Consistent heuristic",
+    "description": "A search heuristic satisfying a triangle inequality along each transition"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Johnson algorithm",
+    "description": "Computing all-pairs shortest paths by reweighting edges and running repeated shortest-path searches"
+  },
+  {
+    "subject_id": 2,
+    "skill": "SPFA",
+    "description": "A queue-based relaxation variant of Bellman-Ford with poor worst-case behavior"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Minimum spanning tree cut property",
+    "description": "The lightest edge crossing a cut is safe under the standard minimum-spanning-tree conditions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Prim algorithm",
+    "description": "Growing a minimum spanning tree by repeatedly choosing the cheapest outgoing edge"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Boruvka algorithm",
+    "description": "Merging components by repeatedly adding cheapest outgoing edges"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Dinic algorithm",
+    "description": "Finding maximum flow with level graphs and blocking-flow augmentations"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Push relabel algorithm",
+    "description": "Finding maximum flow by maintaining preflows and local relabel or push steps"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Minimum cut",
+    "description": "A partition of graph vertices minimizing total capacity of edges crossing from source side to sink side"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Max flow min cut theorem",
+    "description": "Equality between the maximum feasible flow and the minimum source-sink cut capacity"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Residual network",
+    "description": "A graph encoding how existing flow can be increased, decreased or rerouted"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Augmenting path",
+    "description": "A residual source-to-sink route on which additional flow can be sent"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min cost max flow",
+    "description": "Finding a feasible maximal flow minimizing cost across used edges"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bipartite vertex cover",
+    "description": "A set of vertices incident to every edge of a bipartite graph"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Konig theorem",
+    "description": "The maximum matching size equals minimum vertex cover size in bipartite graphs"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Hopcroft Karp",
+    "description": "A bipartite matching algorithm combining BFS layering and DFS augmenting searches"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Hungarian algorithm",
+    "description": "Solving the minimum-weight assignment problem for a bipartite cost matrix"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Eulerian circuit",
+    "description": "A closed trail using every edge of a graph exactly once"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Eulerian trail",
+    "description": "A trail that visits each edge of a graph exactly once"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Hamiltonian path",
+    "description": "A simple path visiting every vertex of a graph exactly once"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Strongly connected component condensation",
+    "description": "Collapsing strongly connected vertex groups to produce a directed acyclic graph"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Low link value",
+    "description": "A DFS-derived measure identifying back-edge reachability for bridge or articulation detection"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Biconnected component",
+    "description": "A maximal undirected subgraph without an articulation vertex within that component"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Centroid decomposition",
+    "description": "Recursively splitting a tree at balanced separator vertices"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Heavy light decomposition",
+    "description": "Partitioning tree paths into heavy chains to support fast path queries"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Rerooting dynamic programming",
+    "description": "Computing tree-state answers for every possible root by reusing transitions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Binary indexed tree range update",
+    "description": "Augmenting prefix-sum structures to handle range additions efficiently"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Lazy segment tree assignment",
+    "description": "Recording pending overwrite operations so interval updates remain efficient"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Wavelet tree",
+    "description": "A compact structure supporting rank, select and order-statistic queries on sequences"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Persistent segment tree",
+    "description": "An interval tree retaining earlier versions using structural sharing"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Li Chao tree",
+    "description": "Maintaining line functions to answer minimum or maximum evaluations at query coordinates"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Convex hull trick",
+    "description": "Optimizing DP transitions whose candidates are linear functions using an envelope"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Divide and conquer DP optimization",
+    "description": "Accelerating certain ordered transition recurrences when minimizing split points obey monotonicity"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Knuth optimization",
+    "description": "Reducing interval DP transitions when optimal split points satisfy quadrangle-related conditions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "SOS DP",
+    "description": "Efficiently aggregating values over all submasks or supermasks of bitmasks"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Fast zeta transform",
+    "description": "Computing subset or divisor-ordered aggregations by structured in-place updates"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Fast Mobius transform",
+    "description": "Inverting subset-ordered aggregations computed by a zeta transform"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Number theoretic transform",
+    "description": "Performing convolution using roots of unity in modular arithmetic"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Fast Fourier transform",
+    "description": "Decomposing discrete Fourier computations into smaller structured subproblems"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Polynomial convolution",
+    "description": "Computing coefficients of a product polynomial as sums over matching index pairs"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Reservoir sampling",
+    "description": "Uniformly choosing a fixed number of elements from a stream of unknown length"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bloom filter",
+    "description": "A probabilistic membership structure with no false negatives under normal insert-only operation"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Count Min sketch",
+    "description": "A probabilistic frequency estimator using several hashed counter rows"
+  },
+  {
+    "subject_id": 2,
+    "skill": "HyperLogLog",
+    "description": "A probabilistic algorithm estimating the number of distinct elements in a stream"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Union by rank",
+    "description": "Merging disjoint-set roots according to approximate subtree height"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Path compression",
+    "description": "Rewriting disjoint-set parent links during find operations to shorten future paths"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Offline query processing",
+    "description": "Reordering a collection of known queries to process them more efficiently"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Mo algorithm",
+    "description": "Sorting range queries to minimize total movement of interval boundaries"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Square root decomposition",
+    "description": "Dividing an array into blocks to speed updates and range queries"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Meet in the middle",
+    "description": "Dividing an exponential search into two halves and combining their results"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Branch and bound",
+    "description": "Pruning optimization search states using bounds on achievable outcomes"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Constraint propagation",
+    "description": "Narrowing candidate values based on current partial assignments"
+  }
+]
