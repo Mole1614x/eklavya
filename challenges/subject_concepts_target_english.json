@@ -1,0 +1,287 @@
+[
+  {
+    "subject_id": 41,
+    "skill": "Transitive verb",
+    "description": "A verb normally taking a direct object to complete the expressed action"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Intransitive verb",
+    "description": "A verb not requiring a direct object to complete the expressed action"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Linking verb",
+    "description": "A verb relating a subject to a subject complement rather than expressing an action on an object"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Auxiliary verb",
+    "description": "A verb used with another verb to form tense, aspect, voice or modality"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Determiner",
+    "description": "A word introducing or specifying a noun in a noun phrase"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Quantifier",
+    "description": "A word or phrase describing quantity or amount in a noun phrase"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Demonstrative pronoun",
+    "description": "A pronoun referring to a specific entity as near or distant in context"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Relative pronoun",
+    "description": "A pronoun introducing a clause that modifies a noun phrase"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Reflexive pronoun",
+    "description": "A pronoun referring back to the subject of the same clause in an appropriate construction"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Reciprocal pronoun",
+    "description": "A pronoun expressing a mutual relationship between multiple participants"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Present participle",
+    "description": "An -ing verb form used in progressive constructions or modifiers"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Past participle",
+    "description": "A verb form often used in perfect tenses, passive constructions and modifiers"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Direct object",
+    "description": "A noun phrase or equivalent receiving the action of a transitive verb"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Indirect object",
+    "description": "A recipient or beneficiary role linked to the action of a verb"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Subject complement",
+    "description": "A constituent describing or identifying the subject after a linking verb"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Object complement",
+    "description": "A constituent describing or renaming an object after certain verbs"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Independent clause",
+    "description": "A clause able to stand alone as a complete sentence"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Dependent clause",
+    "description": "A clause containing a predicate but not functioning independently as a full sentence"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Compound sentence",
+    "description": "A sentence joining at least two independent clauses"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Complex sentence",
+    "description": "A sentence containing an independent clause and at least one dependent clause"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Compound complex sentence",
+    "description": "A sentence combining at least two independent clauses and a dependent clause"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Adverbial clause",
+    "description": "A subordinate clause functioning as an adverbial modifier of the main clause"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Noun clause",
+    "description": "A subordinate clause functioning in a noun-like role in a sentence"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Concessive clause",
+    "description": "A subordinate clause expressing contrast or an unexpected qualification"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Coordinating conjunction",
+    "description": "A connector joining grammatical elements of equivalent status"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Subordinating conjunction",
+    "description": "A connector introducing a clause dependent on another clause"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Prepositional phrase",
+    "description": "A phrase headed by a preposition and its complement"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Participial phrase",
+    "description": "A phrase built around a participle and its related modifiers or complements"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Absolute phrase",
+    "description": "A loosely attached noun-participle construction modifying a whole clause"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Elliptical construction",
+    "description": "A construction omitting words that can be recovered from context"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Metaphor",
+    "description": "A figure of speech describing one thing through an implicit comparison with another"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Simile",
+    "description": "A figure of speech comparing different things using like or as"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Personification",
+    "description": "Attributing human traits or behavior to nonhuman things"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Hyperbole",
+    "description": "Deliberate exaggeration for rhetorical effect"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Understatement",
+    "description": "Presenting something as less significant or intense than it is"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Verbal irony",
+    "description": "Expressing an intended meaning that contrasts with the literal words"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Oxymoron",
+    "description": "Juxtaposing apparently contradictory terms in one expression"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Alliteration",
+    "description": "Repeating initial consonant sounds in nearby words"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Assonance",
+    "description": "Repeating vowel sounds in nearby words"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Consonance",
+    "description": "Repeating consonant sounds within or at the ends of nearby words"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Antithesis",
+    "description": "Presenting contrasting ideas in balanced or parallel grammatical structures"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Chiasmus",
+    "description": "Repeating corresponding elements in reverse order for rhetorical effect"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Anaphora",
+    "description": "Repeating the same expression at the beginning of successive clauses"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Epistrophe",
+    "description": "Repeating the same expression at the ends of successive clauses"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Rhetorical question",
+    "description": "A question posed primarily for effect rather than to obtain an answer"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Euphemism",
+    "description": "A mild expression substituted for a blunt or potentially offensive one"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Idiom",
+    "description": "An established expression whose meaning cannot always be derived from its individual words"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Collocation",
+    "description": "A conventional grouping of words that commonly appear together"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Phrasal verb",
+    "description": "A verb combined with a particle that can produce a distinct meaning"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Synonym",
+    "description": "A word with the same or nearly the same meaning as another word in a context"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Antonym",
+    "description": "A word expressing an opposite meaning in a specified sense"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Homophone",
+    "description": "A word sharing pronunciation with another word but differing in meaning or spelling"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Homonym",
+    "description": "A word identical in sound or form to another word with unrelated meaning"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Denotation",
+    "description": "The direct or literal reference of a word rather than its associated implications"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Connotation",
+    "description": "The emotional, cultural or associative meaning carried alongside a word's literal sense"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Main idea",
+    "description": "The central claim or subject developed across a passage"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Context clue",
+    "description": "Surrounding text that helps a reader infer an unfamiliar expression's meaning"
+  }
+]
