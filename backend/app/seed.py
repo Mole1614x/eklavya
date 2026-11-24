@@ -25,6 +25,51 @@ def seed(db: DatabaseSession) -> int:
             logic_ids[item["number"]] = slug
             test_cases[slug] = item["test_cases"]
             source.append({key: value for key, value in item.items() if key not in {"number", "test_cases"}})
+    # Data science practice: all 115 prompts use the existing data category and
+    # isolated reference-graded solve(data) evaluator. Do not expose references
+    # through learner-facing problem details or public judge cases.
+    data_practice: dict[str, dict] = {}
+    practice_levels: dict[str, dict[int, list[str]]] = {
+        "numpy": {}, "pandas": {}, "data_analysis": {},
+    }
+    for pack_name in ("numpy", "pandas", "data_analysis"):
+        pack = settings().seed_file.parent / f"{pack_name}_practice.json"
+        if not pack.exists():
+            continue
+        questions = json.loads(pack.read_text(encoding="utf-8"))
+        expected = 15 if pack_name == "data_analysis" else 50
+        if len(questions) != expected:
+            raise ValueError(f"{pack.name} must contain {expected} practice questions")
+        for item in questions:
+            slug = item["slug"]
+            if slug in seen:
+                raise ValueError(f"Duplicate data practice slug: {slug}")
+            seen.add(slug)
+            reference_source = item["reference_source"]
+            compile(reference_source, f"{slug}.py", "exec")
+            data_practice[slug] = {
+                "kind": "data_practice_function",
+                "config": {
+                    "function": "solve", "output": "json",
+                    "reference_source": reference_source,
+                    "tolerance": 1e-6,
+                },
+            }
+            cases = []
+            for position, input_value in enumerate(item["test_inputs"]):
+                cases.append({
+                    "input_data": json.dumps(input_value, allow_nan=False),
+                    "expected_output": "null", # reference result computed in isolated judge
+                    "is_hidden": position != 0, "position": position,
+                })
+            test_cases[slug] = cases
+            level_label = item["topic"].rsplit("Level ", 1)
+            if len(level_label) != 2:
+                raise ValueError(f"Data practice level missing for {slug}")
+            level = int(level_label[1])
+            practice_levels[pack_name].setdefault(level, []).append(slug)
+            source.append({key: value for key, value in item.items()
+                           if key not in {"number", "test_inputs", "reference_source"}})
     entries = [ProblemDetail.model_validate(item) for item in source]
     evaluators = json.loads(settings().evaluator_seed_file.read_text()) if settings().evaluator_seed_file.exists() else {}
     gamification = json.loads(settings().gamification_seed_file.read_text()) if settings().gamification_seed_file.exists() else {"ranks": [], "achievements": []}
@@ -32,6 +77,7 @@ def seed(db: DatabaseSession) -> int:
         db.merge(RankLevel(**rank))
     for achievement in gamification["achievements"]:
         db.merge(Achievement(**achievement))
+    evaluators.update(data_practice)
     for entry in entries:
         problem = db.merge(Problem(
             **entry.model_dump(exclude={"starters"}),
@@ -76,6 +122,24 @@ def seed(db: DatabaseSession) -> int:
                 path_slug=slug, problem_slug=problem_ids[item_number],
                 position=index, milestone="Level complete" if index == len(sequence) else None,
             ))
+    # Series of topic-specific study paths; no extra student-targeting logic.
+    for name, title in (("numpy", "NumPy"), ("pandas", "Pandas"),
+                        ("data_analysis", "Practical Data Analysis")):
+        prior = None
+        for level, slugs in sorted(practice_levels[name].items()):
+            slug = f"{name.replace('_','-')}-practice-{level}"
+            db.merge(LearningPath(
+                slug=slug, title=f"{title} — Level {level}",
+                description=f"{title} practice with real data, runnable Python and auto-grading.",
+                prerequisites=[prior] if prior else [],
+                status="PUBLISHED", access_scope="ALL",
+            ))
+            for position, problem_slug in enumerate(slugs, 1):
+                db.merge(LearningPathProblem(
+                    path_slug=slug, problem_slug=problem_slug, position=position,
+                    milestone="Level complete" if position == len(slugs) else None,
+                ))
+            prior = slug
     from datetime import datetime, timezone
     today = datetime.now(timezone.utc).date()
     if db.scalar(select(DailyChallenge).where(DailyChallenge.challenge_date == today)) is None:
