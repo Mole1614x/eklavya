@@ -1,5 +1,6 @@
 """The 45 subject catalogue is real, safely scoped and accurately counted."""
 import json
+from collections import Counter
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine, select
@@ -89,6 +90,20 @@ def test_subject_catalogue_api_respects_public_audience(client):
     assert indexed[6]["published_questions"] == 53
     assert indexed[7]["published_questions"] == 18
     assert indexed[1]["remaining_to_target"] == 0
+
+
+def test_correct_answers_have_varied_option_positions(db):
+    from sqlalchemy import select
+    positions = []
+    for subject in SUBJECTS:
+        for problem in db.scalars(select(Problem).where(Problem.topic == subject["name"])):
+            if f'Subject:{subject["slug"]}' not in problem.tags:
+                continue
+            answer = json.loads(problem.test_cases[0].expected_output)
+            positions.append(problem.choices.index(answer))
+    assert len(positions) == 135
+    counts = Counter(positions)
+    assert len(counts) == 4 and max(counts.values()) < 65
 
 
 def test_no_repeated_new_titles_or_quiz_statements(db):
