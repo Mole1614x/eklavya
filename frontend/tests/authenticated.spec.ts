@@ -9,7 +9,7 @@ test("authenticated session rotates across BFF routes and protects profile data"
   await page.getByLabel("Display name").fill(displayName);
   await page.getByLabel("Username").fill(`archer_${suffix}`);
   await page.getByLabel("Email").fill(`archer_${suffix}@example.com`);
-  await page.getByLabel("Password").fill("StrongPass123");
+  await page.getByLabel("Password", { exact: true }).fill("StrongPass123");
   await page.getByRole("button", { name: "Create account" }).click();
 
   await expect(page).toHaveURL(/\/dashboard$/);
