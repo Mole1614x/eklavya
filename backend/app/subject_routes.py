@@ -9,31 +9,10 @@ from .access_control import audience_filter
 from .auth import OptionalUser
 from .main_dependencies import get_db
 from .models import Problem
-from .subject_catalog import SUBJECTS
+from .subject_catalog import SUBJECTS, matched_subject_ids
 
 router = APIRouter(tags=["subjects"])
 DB = Annotated[Session, Depends(get_db)]
-
-LOGIC_TOPICS = {
-    "Basic Programming", "Number Logic", "Patterns", "String Logic",
-    "Arrays and Lists", "Searching Sorting and Recursion", "Interview Logic",
-}
-LOGIC_EXISTING = {"parity-check", "sum-of-digits", "pair-indices", "balanced-delimiters"}
-
-
-def matching_subjects(problem: Problem) -> set[int]:
-    """Unambiguous backfill for the current 100 logic + 115 data-study items."""
-    matches = {subject["id"] for subject in SUBJECTS if problem.topic == subject["name"]}
-    if problem.topic in LOGIC_TOPICS or problem.slug in LOGIC_EXISTING:
-        matches.add(1)
-    if problem.topic.startswith("NumPy · Level "):
-        matches.add(5)
-    if problem.topic.startswith("Pandas · Level "):
-        matches.add(6)
-    if problem.topic.startswith("Practical Data Analysis · Level "):
-        matches.add(7)
-    return matches
-
 
 @router.get("/subjects")
 def subject_catalog(db: DB, viewer: OptionalUser = None) -> dict:
@@ -47,7 +26,7 @@ def subject_catalog(db: DB, viewer: OptionalUser = None) -> dict:
     counts: dict[int, int] = {subject["id"]: 0 for subject in SUBJECTS}
     classified_slugs: set[str] = set()
     for problem in visible:
-        matched = matching_subjects(problem)
+        matched = matched_subject_ids(problem)
         for subject_id in matched:
             counts[subject_id] += 1
         if matched:
