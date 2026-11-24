@@ -1,0 +1,187 @@
+[
+  {
+    "subject_id": 4,
+    "skill": "Sequential scan",
+    "description": "A database plan operation reading a relation's stored rows without using an index lookup"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Bitmap index scan",
+    "description": "Building a set of matching row locations from an index before fetching underlying tuples"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Index only scan",
+    "description": "Returning requested fields directly from index entries when visibility conditions allow"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Composite index prefix",
+    "description": "The leading columns of a multicolumn index that determine useful ordered access paths"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Expression index",
+    "description": "An index built on a computed expression instead of only raw columns"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Unique constraint",
+    "description": "A database rule preventing duplicate values for specified key columns under its null semantics"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Exclusion constraint",
+    "description": "A constraint prohibiting rows with designated overlapping or conflicting indexed relationships"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Deferrable constraint",
+    "description": "An integrity rule whose checking may be postponed until transaction commit"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Generated column",
+    "description": "A database field whose value is derived automatically from other row expressions"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Identity column",
+    "description": "A database field with an automatically generated identity sequence"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Sequence object",
+    "description": "A database object generating numbers independent of table row lifetime"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Trigger",
+    "description": "A procedure invoked automatically by specified table or database events"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Statement trigger",
+    "description": "A trigger executed once per triggering SQL statement"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Row trigger",
+    "description": "A trigger executed once for each affected row in a triggering statement"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Stored procedure",
+    "description": "A database-resident routine that may perform operations and transaction control under DBMS rules"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL function",
+    "description": "A callable database routine returning a scalar or structured result"
+  },
+  {
+    "subject_id": 4,
+    "skill": "View",
+    "description": "A named query abstraction that usually does not store its results independently"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Materialized view refresh",
+    "description": "Recomputing or incrementally updating the persisted result of a materialized query"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Table partitioning",
+    "description": "Splitting a logical table into physical portions selected by partition keys"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Range partitioning",
+    "description": "Assigning rows to partitions based on ordered key boundaries"
+  },
+  {
+    "subject_id": 4,
+    "skill": "List partitioning",
+    "description": "Assigning rows to partitions based on explicitly designated key values"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Hash partitioning",
+    "description": "Assigning rows to partitions based on a hash of partition key values"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Partition pruning",
+    "description": "Avoiding scans of partitions ruled out by query predicates"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Vacuum maintenance",
+    "description": "Reclaiming or making reusable storage occupied by dead row versions in MVCC engines"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Autovacuum",
+    "description": "Automatic database maintenance that reclaims old row versions and updates relevant statistics"
+  },
+  {
+    "subject_id": 4,
+    "skill": "ANALYZE statistics",
+    "description": "Collecting table data distribution estimates to improve query planning"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Database checkpoint",
+    "description": "Synchronizing recovery metadata and dirty pages to establish a restart recovery point"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Point in time recovery",
+    "description": "Restoring a database to a selected commit position using backups and replayable logs"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Replication slot",
+    "description": "A mechanism tracking replication consumer progress and retaining required log records"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Logical replication",
+    "description": "Replicating row-level changes or logical operations rather than copying raw data pages"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Physical replication",
+    "description": "Reproducing database storage changes from a primary server's physical log stream"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Read replica lag",
+    "description": "Delay between primary writes and their appearance on a read-only replicated node"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Connection pooling",
+    "description": "Reusing a bounded set of database connections to avoid per-request connection overhead"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Database schema migration",
+    "description": "A versioned change to database structures and associated data constraints"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Online schema change",
+    "description": "A migration strategy reducing application downtime while changing large tables"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Zero downtime migration",
+    "description": "A compatibility-aware sequence of schema and application updates that avoids service interruption"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL injection parameterization",
+    "description": "Binding untrusted values separately from SQL syntax to prevent statement manipulation"
+  }
+]
