@@ -29,7 +29,7 @@
     "prompt": "Select the technique matching the following NLP description: updates parameters from gradients estimated on selected training examples?",
     "choices": [
       "Stochastic gradient descent",
-      "ReLU activation",
+      "Parametric ReLU",
       "Epoch",
       "Pointwise convolution"
     ],
@@ -109,15 +109,15 @@
   },
   {
     "subject_id": 12,
-    "skill": "ReLU activation",
-    "prompt": "Select the technique matching the following NLP description: returns zero for negative inputs and passes positive inputs unchanged?",
+    "skill": "Parametric ReLU",
+    "prompt": "Select the technique matching the following NLP description: learns a trainable slope for negative inputs rather than fixing all negative outputs at zero?",
     "choices": [
-      "ReLU activation",
+      "Parametric ReLU",
       "Minibatch",
       "Dilated convolution",
       "Transformer decoder"
     ],
-    "answer": "ReLU activation"
+    "answer": "Parametric ReLU"
   },
   {
     "subject_id": 12,
@@ -451,7 +451,7 @@
       "Label smoothing",
       "Triplet loss",
       "Momentum optimizer",
-      "ReLU activation"
+      "Parametric ReLU"
     ],
     "answer": "Label smoothing"
   },
@@ -522,7 +522,7 @@
     "choices": [
       "Contrastive loss",
       "Momentum optimizer",
-      "ReLU activation",
+      "Parametric ReLU",
       "Epoch"
     ],
     "answer": "Contrastive loss"
