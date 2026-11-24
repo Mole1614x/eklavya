@@ -1,15 +1,31 @@
 import { expect, test } from "@playwright/test";
 import { community, modules } from "../lib/navigation";
 
-test("navigation reaches every Phase 1 section", async ({ page }) => {
+test("primary header and contextual sidebar together reach every Phase 1 section", async ({ page }) => {
   await page.goto("/");
-  const navigation = page.getByRole("navigation", { name: "Main navigation" });
-  await navigation.getByRole("link", { name: "Dashboard" }).click();
+  const primary = page.getByRole("navigation", { name: "Primary navigation" });
+  const sidebar = page.getByRole("navigation", { name: "Main navigation" });
+  await primary.getByRole("link", { name: "Dashboard", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Continue your learning journey" })).toBeVisible();
   await expect(page.getByText("Sign in to see your verified skill analytics.")).toBeVisible();
-  for (const module of [...modules, ...community]) {
-    await navigation.getByRole("link", { name: module.label, exact: true }).click();
+
+  for (const module of modules) {
+    await sidebar.getByRole("link", { name: module.label, exact: true }).click();
     await expect(page.getByRole("heading", { name: module.title, level: 1 })).toBeVisible();
+  }
+
+  const labels: Record<string, { nav: "primary" | "sidebar"; label: string }> = {
+    "daily-sadhana": { nav: "sidebar", label: "Daily challenge" },
+    "arena": { nav: "primary", label: "Community" },
+    "rankings": { nav: "sidebar", label: "Rankings" },
+    "badges": { nav: "sidebar", label: "Achievements" },
+    "vidya-paths": { nav: "primary", label: "Career Paths" },
+    "progress-insights": { nav: "sidebar", label: "Progress insights" },
+  };
+  for (const item of community) {
+    const entry = labels[item.slug];
+    await (entry.nav === "primary" ? primary : sidebar).getByRole("link", { name: entry.label, exact: true }).click();
+    await expect(page.getByRole("heading", { name: item.title, level: 1 })).toBeVisible();
   }
 });
 
