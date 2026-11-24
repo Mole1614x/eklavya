@@ -1,0 +1,202 @@
+[
+  {
+    "subject_id": 4,
+    "skill": "Atomicity",
+    "description": "A transaction property requiring changes to commit together or be rolled back"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Consistency in ACID",
+    "description": "A transaction property requiring preservation of defined database integrity constraints"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Isolation in ACID",
+    "description": "A property controlling visibility and interference between concurrent transactions"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Durability in ACID",
+    "description": "A property requiring acknowledged commits to survive relevant system failures"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Read uncommitted isolation",
+    "description": "A transaction isolation level that may permit reading other transactions' uncommitted values"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Read committed isolation",
+    "description": "A level intended to prevent dirty reads while permitting certain changes between statements"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Repeatable read isolation",
+    "description": "A level aiming to preserve repeat reads within one transaction under engine-specific rules"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Serializable isolation",
+    "description": "A correctness guarantee equivalent to some serial order of committed transactions"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Snapshot isolation",
+    "description": "A multiversion transaction model reading from a consistent snapshot and detecting some write conflicts"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Nonrepeatable read",
+    "description": "Re-reading a row and observing a changed committed value from a concurrent transaction"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Lost update",
+    "description": "A concurrency anomaly where one transaction overwrites another transaction's modification"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Write skew",
+    "description": "An anomaly where concurrent changes to disjoint rows jointly violate an invariant"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Deadlock detection",
+    "description": "Discovering cycles or equivalent waits that prevent transactions from progressing"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Row level lock",
+    "description": "A lock restricting concurrent access or writes to a particular database row"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Table level lock",
+    "description": "A lock coordinating access or modification across an entire relation"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Optimistic locking column",
+    "description": "A version field checked during update to reject stale modifications"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Savepoint",
+    "description": "A named transaction position to which partial work can be rolled back"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Autocommit",
+    "description": "Database client behavior committing eligible statements without explicit multi-statement transaction control"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Two phase commit",
+    "description": "A distributed transaction protocol separating prepare from final commit or abort"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Transaction rollback",
+    "description": "Reverting the uncommitted effects of a transaction"
+  },
+  {
+    "subject_id": 4,
+    "skill": "UNION ALL",
+    "description": "Combining the rows of query results while retaining duplicate rows"
+  },
+  {
+    "subject_id": 4,
+    "skill": "UNION",
+    "description": "Combining compatible query results while removing duplicate result rows"
+  },
+  {
+    "subject_id": 4,
+    "skill": "INTERSECT",
+    "description": "Returning rows that appear in both compatible query results"
+  },
+  {
+    "subject_id": 4,
+    "skill": "EXCEPT",
+    "description": "Returning rows from the left query not found in the right compatible result"
+  },
+  {
+    "subject_id": 4,
+    "skill": "DISTINCT ON",
+    "description": "A PostgreSQL extension retaining a selected first row from each distinct group of expressions"
+  },
+  {
+    "subject_id": 4,
+    "skill": "ORDER BY NULLS LAST",
+    "description": "Sorting null values after nonnull values in systems supporting explicit null placement"
+  },
+  {
+    "subject_id": 4,
+    "skill": "FETCH FIRST",
+    "description": "A standard syntax for limiting the number of returned query rows"
+  },
+  {
+    "subject_id": 4,
+    "skill": "OFFSET",
+    "description": "Skipping a specified number of preceding rows in a result set"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Keyset pagination",
+    "description": "Paging using last-seen ordering key values rather than skipping an offset"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Cursor",
+    "description": "A database mechanism for traversing a query result incrementally"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Prepared statement",
+    "description": "A precompiled or parameterized query plan that can be executed with different input values"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Bind parameter",
+    "description": "A placeholder whose value is supplied separately from SQL statement text"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL injection",
+    "description": "Altering the intended query when unsafe untrusted input becomes part of SQL syntax"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Query plan cardinality",
+    "description": "The estimated number of rows flowing through an execution plan operation"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Selectivity",
+    "description": "The fraction of records satisfying a filter or predicate"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Histogram statistics",
+    "description": "Collected value-distribution summaries used for query cardinality estimation"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Nested loop join",
+    "description": "A join algorithm comparing each qualifying outer row with matching inner-side rows"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Hash join",
+    "description": "A join algorithm building a hash table on one input and probing it with another"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Merge join",
+    "description": "A join algorithm walking sorted inputs and matching keys in ordered sequence"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Index scan",
+    "description": "A plan operation retrieving qualifying rows through an index structure"
+  }
+]
