@@ -2,7 +2,7 @@
   {
     "subject_id": 2,
     "skill": "Amortized analysis",
-    "prompt": "In the relevant subject, which concept specifically average cost per operation across a sequence, including occasional expensive resizing?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically average cost per operation across a sequence, including occasional expensive resizing?",
     "choices": [
       "Amortized analysis",
       "Dijkstra algorithm",
@@ -14,7 +14,7 @@
   {
     "subject_id": 2,
     "skill": "Disjoint-set union",
-    "prompt": "In the relevant subject, which concept specifically tracks partition membership with union and find operations?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically tracks partition membership with union and find operations?",
     "choices": [
       "Disjoint-set union",
       "Bellman-Ford algorithm",
@@ -26,7 +26,7 @@
   {
     "subject_id": 2,
     "skill": "Topological sort",
-    "prompt": "In the relevant subject, which concept specifically orders a directed acyclic graph so every prerequisite precedes its dependent?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically orders a directed acyclic graph so every prerequisite precedes its dependent?",
     "choices": [
       "Topological sort",
       "Trie",
@@ -38,7 +38,7 @@
   {
     "subject_id": 2,
     "skill": "Dijkstra algorithm",
-    "prompt": "In the relevant subject, which concept specifically finds shortest paths when all edge weights are nonnegative?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically finds shortest paths when all edge weights are nonnegative?",
     "choices": [
       "Dijkstra algorithm",
       "Segment tree",
@@ -50,7 +50,7 @@
   {
     "subject_id": 2,
     "skill": "Bellman-Ford algorithm",
-    "prompt": "In the relevant subject, which concept specifically finds shortest paths and can detect reachable negative-weight cycles?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically finds shortest paths and can detect reachable negative-weight cycles?",
     "choices": [
       "Bellman-Ford algorithm",
       "Min-heap",
@@ -62,7 +62,7 @@
   {
     "subject_id": 2,
     "skill": "Trie",
-    "prompt": "In the relevant subject, which concept specifically stores sequences using edges labeled by successive symbols?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically stores sequences using edges labeled by successive symbols?",
     "choices": [
       "Trie",
       "Stable sort",
@@ -74,7 +74,7 @@
   {
     "subject_id": 2,
     "skill": "Segment tree",
-    "prompt": "In the relevant subject, which concept specifically supports aggregate range queries and point updates over an array?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically supports aggregate range queries and point updates over an array?",
     "choices": [
       "Segment tree",
       "Memoization",
@@ -86,7 +86,7 @@
   {
     "subject_id": 2,
     "skill": "Min-heap",
-    "prompt": "In the relevant subject, which concept specifically ensures the smallest key is at the root?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically ensures the smallest key is at the root?",
     "choices": [
       "Min-heap",
       "Amortized analysis",
@@ -98,7 +98,7 @@
   {
     "subject_id": 2,
     "skill": "Stable sort",
-    "prompt": "In the relevant subject, which concept specifically preserves the original relative order of elements with equal keys?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically preserves the original relative order of elements with equal keys?",
     "choices": [
       "Stable sort",
       "Disjoint-set union",
@@ -110,7 +110,7 @@
   {
     "subject_id": 2,
     "skill": "Memoization",
-    "prompt": "In the relevant subject, which concept specifically caches results of overlapping recursive subproblems?",
+    "prompt": "In Data Structures and Algorithms, which concept specifically caches results of overlapping recursive subproblems?",
     "choices": [
       "Memoization",
       "Topological sort",
@@ -122,7 +122,7 @@
   {
     "subject_id": 3,
     "skill": "Encapsulation",
-    "prompt": "In the relevant subject, which concept specifically hides implementation state behind controlled object methods?",
+    "prompt": "In Object-Oriented Programming, which concept specifically hides implementation state behind controlled object methods?",
     "choices": [
       "Encapsulation",
       "Composition",
@@ -134,7 +134,7 @@
   {
     "subject_id": 3,
     "skill": "Inheritance",
-    "prompt": "In the relevant subject, which concept specifically allows a subtype to reuse and extend behavior from a base type?",
+    "prompt": "In Object-Oriented Programming, which concept specifically allows a subtype to reuse and extend behavior from a base type?",
     "choices": [
       "Inheritance",
       "Dependency injection",
@@ -146,7 +146,7 @@
   {
     "subject_id": 3,
     "skill": "Polymorphism",
-    "prompt": "In the relevant subject, which concept specifically lets different object types respond to a shared interface?",
+    "prompt": "In Object-Oriented Programming, which concept specifically lets different object types respond to a shared interface?",
     "choices": [
       "Polymorphism",
       "Liskov substitution principle",
@@ -158,7 +158,7 @@
   {
     "subject_id": 3,
     "skill": "Composition",
-    "prompt": "In the relevant subject, which concept specifically builds an object by owning collaborating component objects?",
+    "prompt": "In Object-Oriented Programming, which concept specifically builds an object by owning collaborating component objects?",
     "choices": [
       "Composition",
       "Abstract class",
@@ -170,7 +170,7 @@
   {
     "subject_id": 3,
     "skill": "Dependency injection",
-    "prompt": "In the relevant subject, which concept specifically supplies dependencies from outside rather than constructing them internally?",
+    "prompt": "In Object-Oriented Programming, which concept specifically supplies dependencies from outside rather than constructing them internally?",
     "choices": [
       "Dependency injection",
       "Method overloading",
@@ -182,7 +182,7 @@
   {
     "subject_id": 3,
     "skill": "Liskov substitution principle",
-    "prompt": "In the relevant subject, which concept specifically requires subtype objects to honor the behavioral contract of their base type?",
+    "prompt": "In Object-Oriented Programming, which concept specifically requires subtype objects to honor the behavioral contract of their base type?",
     "choices": [
       "Liskov substitution principle",
       "Method overriding",
@@ -194,7 +194,7 @@
   {
     "subject_id": 3,
     "skill": "Abstract class",
-    "prompt": "In the relevant subject, which concept specifically provides a noninstantiable base that can contain implemented and abstract behavior?",
+    "prompt": "In Object-Oriented Programming, which concept specifically provides a noninstantiable base that can contain implemented and abstract behavior?",
     "choices": [
       "Abstract class",
       "Single responsibility principle",
@@ -206,7 +206,7 @@
   {
     "subject_id": 3,
     "skill": "Method overloading",
-    "prompt": "In the relevant subject, which concept specifically uses a shared method name with different parameter signatures where the language supports it?",
+    "prompt": "In Object-Oriented Programming, which concept specifically uses a shared method name with different parameter signatures where the language supports it?",
     "choices": [
       "Method overloading",
       "Encapsulation",
@@ -218,7 +218,7 @@
   {
     "subject_id": 3,
     "skill": "Method overriding",
-    "prompt": "In the relevant subject, which concept specifically replaces an inherited virtual-method implementation in a subclass?",
+    "prompt": "In Object-Oriented Programming, which concept specifically replaces an inherited virtual-method implementation in a subclass?",
     "choices": [
       "Method overriding",
       "Inheritance",
@@ -230,7 +230,7 @@
   {
     "subject_id": 3,
     "skill": "Single responsibility principle",
-    "prompt": "In the relevant subject, which concept specifically advises that a class have one primary reason to change?",
+    "prompt": "In Object-Oriented Programming, which concept specifically advises that a class have one primary reason to change?",
     "choices": [
       "Single responsibility principle",
       "Polymorphism",
@@ -242,7 +242,7 @@
   {
     "subject_id": 4,
     "skill": "Window function",
-    "prompt": "In the relevant subject, which concept specifically computes a per-row result across a specified partition without collapsing all rows?",
+    "prompt": "In SQL and Database Engineering, which concept specifically computes a per-row result across a specified partition without collapsing all rows?",
     "choices": [
       "Window function",
       "Foreign key",
@@ -254,7 +254,7 @@
   {
     "subject_id": 4,
     "skill": "Common table expression",
-    "prompt": "In the relevant subject, which concept specifically names an intermediate query using WITH for use in a following SQL statement?",
+    "prompt": "In SQL and Database Engineering, which concept specifically names an intermediate query using WITH for use in a following SQL statement?",
     "choices": [
       "Common table expression",
       "Isolation level",
@@ -266,7 +266,7 @@
   {
     "subject_id": 4,
     "skill": "HAVING",
-    "prompt": "In the relevant subject, which concept specifically filters aggregated groups after GROUP BY?",
+    "prompt": "In SQL and Database Engineering, which concept specifically filters aggregated groups after GROUP BY?",
     "choices": [
       "HAVING",
       "Composite index",
@@ -278,7 +278,7 @@
   {
     "subject_id": 4,
     "skill": "Foreign key",
-    "prompt": "In the relevant subject, which concept specifically requires a child reference to match an allowed parent key?",
+    "prompt": "In SQL and Database Engineering, which concept specifically requires a child reference to match an allowed parent key?",
     "choices": [
       "Foreign key",
       "EXPLAIN",
@@ -290,7 +290,7 @@
   {
     "subject_id": 4,
     "skill": "Isolation level",
-    "prompt": "In the relevant subject, which concept specifically controls how concurrent database transactions can observe each other's changes?",
+    "prompt": "In SQL and Database Engineering, which concept specifically controls how concurrent database transactions can observe each other's changes?",
     "choices": [
       "Isolation level",
       "Normalization",
@@ -302,7 +302,7 @@
   {
     "subject_id": 4,
     "skill": "Composite index",
-    "prompt": "In the relevant subject, which concept specifically indexes more than one column in a specified key order?",
+    "prompt": "In SQL and Database Engineering, which concept specifically indexes more than one column in a specified key order?",
     "choices": [
       "Composite index",
       "UPSERT",
@@ -314,7 +314,7 @@
   {
     "subject_id": 4,
     "skill": "EXPLAIN",
-    "prompt": "In the relevant subject, which concept specifically shows a database query execution plan or its estimated operations?",
+    "prompt": "In SQL and Database Engineering, which concept specifically shows a database query execution plan or its estimated operations?",
     "choices": [
       "EXPLAIN",
       "ROLLBACK",
@@ -326,7 +326,7 @@
   {
     "subject_id": 4,
     "skill": "Normalization",
-    "prompt": "In the relevant subject, which concept specifically reduces redundant storage and update anomalies through relational decomposition?",
+    "prompt": "In SQL and Database Engineering, which concept specifically reduces redundant storage and update anomalies through relational decomposition?",
     "choices": [
       "Normalization",
       "Window function",
@@ -338,7 +338,7 @@
   {
     "subject_id": 4,
     "skill": "UPSERT",
-    "prompt": "In the relevant subject, which concept specifically inserts a row or updates a conflicting row using a supported conflict clause?",
+    "prompt": "In SQL and Database Engineering, which concept specifically inserts a row or updates a conflicting row using a supported conflict clause?",
     "choices": [
       "UPSERT",
       "Common table expression",
@@ -350,7 +350,7 @@
   {
     "subject_id": 4,
     "skill": "ROLLBACK",
-    "prompt": "In the relevant subject, which concept specifically undoes uncommitted changes in a transaction?",
+    "prompt": "In SQL and Database Engineering, which concept specifically undoes uncommitted changes in a transaction?",
     "choices": [
       "ROLLBACK",
       "HAVING",
@@ -362,7 +362,7 @@
   {
     "subject_id": 7,
     "skill": "Churn rate",
-    "prompt": "In the relevant subject, which concept specifically measures the share of existing customers lost during a period?",
+    "prompt": "In Practical Data Analysis, which concept specifically measures the share of existing customers lost during a period?",
     "choices": [
       "Churn rate",
       "A/B testing",
@@ -374,7 +374,7 @@
   {
     "subject_id": 7,
     "skill": "Cohort analysis",
-    "prompt": "In the relevant subject, which concept specifically compares groups of users sharing a common start event or period?",
+    "prompt": "In Practical Data Analysis, which concept specifically compares groups of users sharing a common start event or period?",
     "choices": [
       "Cohort analysis",
       "Retention curve",
@@ -386,7 +386,7 @@
   {
     "subject_id": 7,
     "skill": "Conversion funnel",
-    "prompt": "In the relevant subject, which concept specifically measures stepwise progression from entry to a desired outcome?",
+    "prompt": "In Practical Data Analysis, which concept specifically measures stepwise progression from entry to a desired outcome?",
     "choices": [
       "Conversion funnel",
       "Data leakage",
@@ -398,7 +398,7 @@
   {
     "subject_id": 7,
     "skill": "A/B testing",
-    "prompt": "In the relevant subject, which concept specifically randomly compares variants to estimate causal product impact?",
+    "prompt": "In Practical Data Analysis, which concept specifically randomly compares variants to estimate causal product impact?",
     "choices": [
       "A/B testing",
       "North star metric",
@@ -410,7 +410,7 @@
   {
     "subject_id": 7,
     "skill": "Retention curve",
-    "prompt": "In the relevant subject, which concept specifically tracks the proportion of a cohort still active over time?",
+    "prompt": "In Practical Data Analysis, which concept specifically tracks the proportion of a cohort still active over time?",
     "choices": [
       "Retention curve",
       "Seasonality",
@@ -422,7 +422,7 @@
   {
     "subject_id": 7,
     "skill": "Data leakage",
-    "prompt": "In the relevant subject, which concept specifically occurs when unavailable future or target information reaches a model input?",
+    "prompt": "In Practical Data Analysis, which concept specifically occurs when unavailable future or target information reaches a model input?",
     "choices": [
       "Data leakage",
       "Confidence interval",
@@ -434,7 +434,7 @@
   {
     "subject_id": 7,
     "skill": "North star metric",
-    "prompt": "In the relevant subject, which concept specifically represents the core sustained customer value a product delivers?",
+    "prompt": "In Practical Data Analysis, which concept specifically represents the core sustained customer value a product delivers?",
     "choices": [
       "North star metric",
       "Attribution model",
@@ -446,7 +446,7 @@
   {
     "subject_id": 7,
     "skill": "Seasonality",
-    "prompt": "In the relevant subject, which concept specifically describes recurring patterns tied to calendar periods?",
+    "prompt": "In Practical Data Analysis, which concept specifically describes recurring patterns tied to calendar periods?",
     "choices": [
       "Seasonality",
       "Churn rate",
@@ -458,7 +458,7 @@
   {
     "subject_id": 7,
     "skill": "Confidence interval",
-    "prompt": "In the relevant subject, which concept specifically provides an interval estimator with a stated long-run coverage property?",
+    "prompt": "In Practical Data Analysis, which concept specifically provides an interval estimator with a stated long-run coverage property?",
     "choices": [
       "Confidence interval",
       "Cohort analysis",
@@ -470,7 +470,7 @@
   {
     "subject_id": 7,
     "skill": "Attribution model",
-    "prompt": "In the relevant subject, which concept specifically assigns conversion credit across marketing touchpoints?",
+    "prompt": "In Practical Data Analysis, which concept specifically assigns conversion credit across marketing touchpoints?",
     "choices": [
       "Attribution model",
       "Conversion funnel",
@@ -482,7 +482,7 @@
   {
     "subject_id": 8,
     "skill": "Imputation",
-    "prompt": "In the relevant subject, which concept specifically fills missing observations using an explicit estimation rule?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically fills missing observations using an explicit estimation rule?",
     "choices": [
       "Imputation",
       "Outlier detection",
@@ -494,7 +494,7 @@
   {
     "subject_id": 8,
     "skill": "Deduplication",
-    "prompt": "In the relevant subject, which concept specifically identifies and removes repeated records representing the same entity or event?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically identifies and removes repeated records representing the same entity or event?",
     "choices": [
       "Deduplication",
       "One-hot encoding",
@@ -506,7 +506,7 @@
   {
     "subject_id": 8,
     "skill": "Schema validation",
-    "prompt": "In the relevant subject, which concept specifically checks whether incoming fields meet required names, types and constraints?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically checks whether incoming fields meet required names, types and constraints?",
     "choices": [
       "Schema validation",
       "Min-max scaling",
@@ -518,7 +518,7 @@
   {
     "subject_id": 8,
     "skill": "Outlier detection",
-    "prompt": "In the relevant subject, which concept specifically flags observations substantially unlike a stated baseline?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically flags observations substantially unlike a stated baseline?",
     "choices": [
       "Outlier detection",
       "Standardization",
@@ -530,7 +530,7 @@
   {
     "subject_id": 8,
     "skill": "One-hot encoding",
-    "prompt": "In the relevant subject, which concept specifically expands category membership into separate indicator columns?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically expands category membership into separate indicator columns?",
     "choices": [
       "One-hot encoding",
       "Referential integrity",
@@ -542,7 +542,7 @@
   {
     "subject_id": 8,
     "skill": "Min-max scaling",
-    "prompt": "In the relevant subject, which concept specifically rescales values relative to minimum and maximum endpoints?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically rescales values relative to minimum and maximum endpoints?",
     "choices": [
       "Min-max scaling",
       "Idempotent transformation",
@@ -554,7 +554,7 @@
   {
     "subject_id": 8,
     "skill": "Standardization",
-    "prompt": "In the relevant subject, which concept specifically centers features and divides them by a measure of spread?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically centers features and divides them by a measure of spread?",
     "choices": [
       "Standardization",
       "Type coercion",
@@ -566,7 +566,7 @@
   {
     "subject_id": 8,
     "skill": "Referential integrity",
-    "prompt": "In the relevant subject, which concept specifically ensures referenced keys exist in their related tables?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically ensures referenced keys exist in their related tables?",
     "choices": [
       "Referential integrity",
       "Imputation",
@@ -578,7 +578,7 @@
   {
     "subject_id": 8,
     "skill": "Idempotent transformation",
-    "prompt": "In the relevant subject, which concept specifically produces the same result when the operation is repeated?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically produces the same result when the operation is repeated?",
     "choices": [
       "Idempotent transformation",
       "Deduplication",
@@ -590,7 +590,7 @@
   {
     "subject_id": 8,
     "skill": "Type coercion",
-    "prompt": "In the relevant subject, which concept specifically converts values to a required data representation under explicit rules?",
+    "prompt": "In Data Cleaning and Transformation, which concept specifically converts values to a required data representation under explicit rules?",
     "choices": [
       "Type coercion",
       "Schema validation",
@@ -602,7 +602,7 @@
   {
     "subject_id": 9,
     "skill": "Spark DataFrame",
-    "prompt": "In the relevant subject, which concept specifically represents distributed tabular data with a named schema?",
+    "prompt": "In PySpark, which concept specifically represents distributed tabular data with a named schema?",
     "choices": [
       "Spark DataFrame",
       "Broadcast join",
@@ -614,7 +614,7 @@
   {
     "subject_id": 9,
     "skill": "Lazy evaluation",
-    "prompt": "In the relevant subject, which concept specifically defers execution of transformations until an action demands results?",
+    "prompt": "In PySpark, which concept specifically defers execution of transformations until an action demands results?",
     "choices": [
       "Lazy evaluation",
       "Cache",
@@ -626,7 +626,7 @@
   {
     "subject_id": 9,
     "skill": "Shuffle",
-    "prompt": "In the relevant subject, which concept specifically moves data across partitions to satisfy a wide dependency?",
+    "prompt": "In PySpark, which concept specifically moves data across partitions to satisfy a wide dependency?",
     "choices": [
       "Shuffle",
       "Repartition",
@@ -638,7 +638,7 @@
   {
     "subject_id": 9,
     "skill": "Broadcast join",
-    "prompt": "In the relevant subject, which concept specifically distributes a small relation to worker tasks to reduce shuffle cost?",
+    "prompt": "In PySpark, which concept specifically distributes a small relation to worker tasks to reduce shuffle cost?",
     "choices": [
       "Broadcast join",
       "Coalesce",
@@ -650,7 +650,7 @@
   {
     "subject_id": 9,
     "skill": "Cache",
-    "prompt": "In the relevant subject, which concept specifically stores reusable computed partitions to speed subsequent actions?",
+    "prompt": "In PySpark, which concept specifically stores reusable computed partitions to speed subsequent actions?",
     "choices": [
       "Cache",
       "Catalyst optimizer",
@@ -662,7 +662,7 @@
   {
     "subject_id": 9,
     "skill": "Repartition",
-    "prompt": "In the relevant subject, which concept specifically reshuffles data to construct a requested number of partitions?",
+    "prompt": "In PySpark, which concept specifically reshuffles data to construct a requested number of partitions?",
     "choices": [
       "Repartition",
       "Window specification",
@@ -674,7 +674,7 @@
   {
     "subject_id": 9,
     "skill": "Coalesce",
-    "prompt": "In the relevant subject, which concept specifically can reduce partitions using a narrow dependency when no shuffle is requested?",
+    "prompt": "In PySpark, which concept specifically can reduce partitions using a narrow dependency when no shuffle is requested?",
     "choices": [
       "Coalesce",
       "Checkpoint",
@@ -686,7 +686,7 @@
   {
     "subject_id": 9,
     "skill": "Catalyst optimizer",
-    "prompt": "In the relevant subject, which concept specifically rewrites and plans Spark SQL and DataFrame queries?",
+    "prompt": "In PySpark, which concept specifically rewrites and plans Spark SQL and DataFrame queries?",
     "choices": [
       "Catalyst optimizer",
       "Spark DataFrame",
@@ -698,7 +698,7 @@
   {
     "subject_id": 9,
     "skill": "Window specification",
-    "prompt": "In the relevant subject, which concept specifically defines partition, ordering and frame boundaries for analytic expressions?",
+    "prompt": "In PySpark, which concept specifically defines partition, ordering and frame boundaries for analytic expressions?",
     "choices": [
       "Window specification",
       "Lazy evaluation",
@@ -710,7 +710,7 @@
   {
     "subject_id": 9,
     "skill": "Checkpoint",
-    "prompt": "In the relevant subject, which concept specifically materializes lineage at a reliable storage boundary?",
+    "prompt": "In PySpark, which concept specifically materializes lineage at a reliable storage boundary?",
     "choices": [
       "Checkpoint",
       "Shuffle",
@@ -722,7 +722,7 @@
   {
     "subject_id": 10,
     "skill": "Mapper",
-    "prompt": "In the relevant subject, which concept specifically transforms an input record into intermediate key-value pairs?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically transforms an input record into intermediate key-value pairs?",
     "choices": [
       "Mapper",
       "HDFS NameNode",
@@ -734,7 +734,7 @@
   {
     "subject_id": 10,
     "skill": "Reducer",
-    "prompt": "In the relevant subject, which concept specifically aggregates the values associated with an intermediate key?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically aggregates the values associated with an intermediate key?",
     "choices": [
       "Reducer",
       "HDFS DataNode",
@@ -746,7 +746,7 @@
   {
     "subject_id": 10,
     "skill": "Combiner",
-    "prompt": "In the relevant subject, which concept specifically performs safe local preaggregation before map output is transferred?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically performs safe local preaggregation before map output is transferred?",
     "choices": [
       "Combiner",
       "YARN ResourceManager",
@@ -758,7 +758,7 @@
   {
     "subject_id": 10,
     "skill": "HDFS NameNode",
-    "prompt": "In the relevant subject, which concept specifically manages the filesystem namespace and metadata about block placement?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically manages the filesystem namespace and metadata about block placement?",
     "choices": [
       "HDFS NameNode",
       "Partitioner",
@@ -770,7 +770,7 @@
   {
     "subject_id": 10,
     "skill": "HDFS DataNode",
-    "prompt": "In the relevant subject, which concept specifically stores and serves actual HDFS data blocks?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically stores and serves actual HDFS data blocks?",
     "choices": [
       "HDFS DataNode",
       "Map-side join",
@@ -782,7 +782,7 @@
   {
     "subject_id": 10,
     "skill": "YARN ResourceManager",
-    "prompt": "In the relevant subject, which concept specifically coordinates cluster resources for application execution?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically coordinates cluster resources for application execution?",
     "choices": [
       "YARN ResourceManager",
       "Speculative execution",
@@ -794,7 +794,7 @@
   {
     "subject_id": 10,
     "skill": "Partitioner",
-    "prompt": "In the relevant subject, which concept specifically determines which reducer receives a mapper output key?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically determines which reducer receives a mapper output key?",
     "choices": [
       "Partitioner",
       "Data locality",
@@ -806,7 +806,7 @@
   {
     "subject_id": 10,
     "skill": "Map-side join",
-    "prompt": "In the relevant subject, which concept specifically joins compatible inputs during mapper processing without reducer-side joining?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically joins compatible inputs during mapper processing without reducer-side joining?",
     "choices": [
       "Map-side join",
       "Mapper",
@@ -818,7 +818,7 @@
   {
     "subject_id": 10,
     "skill": "Speculative execution",
-    "prompt": "In the relevant subject, which concept specifically runs redundant copies of slow tasks to reduce straggler impact?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically runs redundant copies of slow tasks to reduce straggler impact?",
     "choices": [
       "Speculative execution",
       "Reducer",
@@ -830,7 +830,7 @@
   {
     "subject_id": 10,
     "skill": "Data locality",
-    "prompt": "In the relevant subject, which concept specifically schedules computation near the data to reduce network transfers?",
+    "prompt": "In Hadoop and MapReduce, which concept specifically schedules computation near the data to reduce network transfers?",
     "choices": [
       "Data locality",
       "Combiner",
@@ -842,7 +842,7 @@
   {
     "subject_id": 11,
     "skill": "Logistic regression",
-    "prompt": "In the relevant subject, which concept specifically models binary-class probability using a sigmoid link?",
+    "prompt": "In Machine Learning, which concept specifically models binary-class probability using a sigmoid link?",
     "choices": [
       "Logistic regression",
       "K-means clustering",
@@ -854,7 +854,7 @@
   {
     "subject_id": 11,
     "skill": "Random forest",
-    "prompt": "In the relevant subject, which concept specifically aggregates many randomized decision trees for prediction?",
+    "prompt": "In Machine Learning, which concept specifically aggregates many randomized decision trees for prediction?",
     "choices": [
       "Random forest",
       "DBSCAN",
@@ -866,7 +866,7 @@
   {
     "subject_id": 11,
     "skill": "Gradient boosting",
-    "prompt": "In the relevant subject, which concept specifically builds an additive model from sequential learners correcting earlier errors?",
+    "prompt": "In Machine Learning, which concept specifically builds an additive model from sequential learners correcting earlier errors?",
     "choices": [
       "Gradient boosting",
       "Support vector machine",
@@ -878,7 +878,7 @@
   {
     "subject_id": 11,
     "skill": "K-means clustering",
-    "prompt": "In the relevant subject, which concept specifically alternates centroid assignment and updates to group points into k clusters?",
+    "prompt": "In Machine Learning, which concept specifically alternates centroid assignment and updates to group points into k clusters?",
     "choices": [
       "K-means clustering",
       "Naive Bayes",
@@ -890,7 +890,7 @@
   {
     "subject_id": 11,
     "skill": "DBSCAN",
-    "prompt": "In the relevant subject, which concept specifically finds dense clusters while identifying sparse-region noise?",
+    "prompt": "In Machine Learning, which concept specifically finds dense clusters while identifying sparse-region noise?",
     "choices": [
       "DBSCAN",
       "Cross-validation",
@@ -902,7 +902,7 @@
   {
     "subject_id": 11,
     "skill": "Support vector machine",
-    "prompt": "In the relevant subject, which concept specifically seeks a separating margin, potentially using a feature-space kernel?",
+    "prompt": "In Machine Learning, which concept specifically seeks a separating margin, potentially using a feature-space kernel?",
     "choices": [
       "Support vector machine",
       "Regularization",
@@ -914,7 +914,7 @@
   {
     "subject_id": 11,
     "skill": "Naive Bayes",
-    "prompt": "In the relevant subject, which concept specifically applies Bayes rule under conditional-feature-independence assumptions?",
+    "prompt": "In Machine Learning, which concept specifically applies Bayes rule under conditional-feature-independence assumptions?",
     "choices": [
       "Naive Bayes",
       "Calibration",
@@ -926,7 +926,7 @@
   {
     "subject_id": 11,
     "skill": "Cross-validation",
-    "prompt": "In the relevant subject, which concept specifically repeats fit and evaluation over designated training-validation splits?",
+    "prompt": "In Machine Learning, which concept specifically repeats fit and evaluation over designated training-validation splits?",
     "choices": [
       "Cross-validation",
       "Logistic regression",
@@ -938,7 +938,7 @@
   {
     "subject_id": 11,
     "skill": "Regularization",
-    "prompt": "In the relevant subject, which concept specifically penalizes model complexity to reduce instability or overfitting?",
+    "prompt": "In Machine Learning, which concept specifically penalizes model complexity to reduce instability or overfitting?",
     "choices": [
       "Regularization",
       "Random forest",
@@ -950,7 +950,7 @@
   {
     "subject_id": 11,
     "skill": "Calibration",
-    "prompt": "In the relevant subject, which concept specifically checks whether predicted probabilities correspond to observed event frequencies?",
+    "prompt": "In Machine Learning, which concept specifically checks whether predicted probabilities correspond to observed event frequencies?",
     "choices": [
       "Calibration",
       "Gradient boosting",
@@ -962,7 +962,7 @@
   {
     "subject_id": 12,
     "skill": "Backpropagation",
-    "prompt": "In the relevant subject, which concept specifically computes neural-network gradients by reverse application of the chain rule?",
+    "prompt": "In Deep Learning, which concept specifically computes neural-network gradients by reverse application of the chain rule?",
     "choices": [
       "Backpropagation",
       "Residual connection",
@@ -974,7 +974,7 @@
   {
     "subject_id": 12,
     "skill": "Dropout",
-    "prompt": "In the relevant subject, which concept specifically randomly suppresses activations during training as a regularizer?",
+    "prompt": "In Deep Learning, which concept specifically randomly suppresses activations during training as a regularizer?",
     "choices": [
       "Dropout",
       "Convolution",
@@ -986,7 +986,7 @@
   {
     "subject_id": 12,
     "skill": "Batch normalization",
-    "prompt": "In the relevant subject, which concept specifically normalizes intermediate activations using batch statistics during training?",
+    "prompt": "In Deep Learning, which concept specifically normalizes intermediate activations using batch statistics during training?",
     "choices": [
       "Batch normalization",
       "Self-attention",
@@ -998,7 +998,7 @@
   {
     "subject_id": 12,
     "skill": "Residual connection",
-    "prompt": "In the relevant subject, which concept specifically adds an earlier representation to a later transformed representation?",
+    "prompt": "In Deep Learning, which concept specifically adds an earlier representation to a later transformed representation?",
     "choices": [
       "Residual connection",
       "Gradient clipping",
@@ -1010,7 +1010,7 @@
   {
     "subject_id": 12,
     "skill": "Convolution",
-    "prompt": "In the relevant subject, which concept specifically applies a shared local filter across spatial positions?",
+    "prompt": "In Deep Learning, which concept specifically applies a shared local filter across spatial positions?",
     "choices": [
       "Convolution",
       "Early stopping",
@@ -1022,7 +1022,7 @@
   {
     "subject_id": 12,
     "skill": "Self-attention",
-    "prompt": "In the relevant subject, which concept specifically weights representations based on learned interactions among sequence positions?",
+    "prompt": "In Deep Learning, which concept specifically weights representations based on learned interactions among sequence positions?",
     "choices": [
       "Self-attention",
       "Learning-rate scheduler",
@@ -1034,7 +1034,7 @@
   {
     "subject_id": 12,
     "skill": "Gradient clipping",
-    "prompt": "In the relevant subject, which concept specifically limits gradient magnitude to control unstable updates?",
+    "prompt": "In Deep Learning, which concept specifically limits gradient magnitude to control unstable updates?",
     "choices": [
       "Gradient clipping",
       "Embedding layer",
@@ -1046,7 +1046,7 @@
   {
     "subject_id": 12,
     "skill": "Early stopping",
-    "prompt": "In the relevant subject, which concept specifically halts training based on a chosen validation criterion?",
+    "prompt": "In Deep Learning, which concept specifically halts training based on a chosen validation criterion?",
     "choices": [
       "Early stopping",
       "Backpropagation",
@@ -1058,7 +1058,7 @@
   {
     "subject_id": 12,
     "skill": "Learning-rate scheduler",
-    "prompt": "In the relevant subject, which concept specifically changes optimizer step size over the training process?",
+    "prompt": "In Deep Learning, which concept specifically changes optimizer step size over the training process?",
     "choices": [
       "Learning-rate scheduler",
       "Dropout",
@@ -1070,7 +1070,7 @@
   {
     "subject_id": 12,
     "skill": "Embedding layer",
-    "prompt": "In the relevant subject, which concept specifically maps discrete identifiers into learned dense vector representations?",
+    "prompt": "In Deep Learning, which concept specifically maps discrete identifiers into learned dense vector representations?",
     "choices": [
       "Embedding layer",
       "Batch normalization",
@@ -1082,7 +1082,7 @@
   {
     "subject_id": 13,
     "skill": "Tokenization",
-    "prompt": "In the relevant subject, which concept specifically splits text into model-compatible discrete units?",
+    "prompt": "In LLM and Generative AI, which concept specifically splits text into model-compatible discrete units?",
     "choices": [
       "Tokenization",
       "Fine-tuning",
@@ -1094,7 +1094,7 @@
   {
     "subject_id": 13,
     "skill": "Context window",
-    "prompt": "In the relevant subject, which concept specifically limits the amount of input and generated history a model can condition on?",
+    "prompt": "In LLM and Generative AI, which concept specifically limits the amount of input and generated history a model can condition on?",
     "choices": [
       "Context window",
       "LoRA",
@@ -1106,7 +1106,7 @@
   {
     "subject_id": 13,
     "skill": "Retrieval-augmented generation",
-    "prompt": "In the relevant subject, which concept specifically grounds generation using documents retrieved from a separate knowledge store?",
+    "prompt": "In LLM and Generative AI, which concept specifically grounds generation using documents retrieved from a separate knowledge store?",
     "choices": [
       "Retrieval-augmented generation",
       "Temperature",
@@ -1118,7 +1118,7 @@
   {
     "subject_id": 13,
     "skill": "Fine-tuning",
-    "prompt": "In the relevant subject, which concept specifically updates pretrained model parameters using task-specific training data?",
+    "prompt": "In LLM and Generative AI, which concept specifically updates pretrained model parameters using task-specific training data?",
     "choices": [
       "Fine-tuning",
       "Top-p sampling",
@@ -1130,7 +1130,7 @@
   {
     "subject_id": 13,
     "skill": "LoRA",
-    "prompt": "In the relevant subject, which concept specifically learns low-rank parameter updates for parameter-efficient model adaptation?",
+    "prompt": "In LLM and Generative AI, which concept specifically learns low-rank parameter updates for parameter-efficient model adaptation?",
     "choices": [
       "LoRA",
       "Hallucination",
@@ -1142,7 +1142,7 @@
   {
     "subject_id": 13,
     "skill": "Temperature",
-    "prompt": "In the relevant subject, which concept specifically controls randomness by scaling sampling logits?",
+    "prompt": "In LLM and Generative AI, which concept specifically controls randomness by scaling sampling logits?",
     "choices": [
       "Temperature",
       "Function calling",
@@ -1154,7 +1154,7 @@
   {
     "subject_id": 13,
     "skill": "Top-p sampling",
-    "prompt": "In the relevant subject, which concept specifically restricts selection to a probability-mass nucleus of tokens?",
+    "prompt": "In LLM and Generative AI, which concept specifically restricts selection to a probability-mass nucleus of tokens?",
     "choices": [
       "Top-p sampling",
       "Quantization",
@@ -1166,7 +1166,7 @@
   {
     "subject_id": 13,
     "skill": "Hallucination",
-    "prompt": "In the relevant subject, which concept specifically produces content unsupported by the provided evidence or reliable facts?",
+    "prompt": "In LLM and Generative AI, which concept specifically produces content unsupported by the provided evidence or reliable facts?",
     "choices": [
       "Hallucination",
       "Tokenization",
@@ -1178,7 +1178,7 @@
   {
     "subject_id": 13,
     "skill": "Function calling",
-    "prompt": "In the relevant subject, which concept specifically requests a structured tool invocation rather than free-form text?",
+    "prompt": "In LLM and Generative AI, which concept specifically requests a structured tool invocation rather than free-form text?",
     "choices": [
       "Function calling",
       "Context window",
@@ -1190,7 +1190,7 @@
   {
     "subject_id": 13,
     "skill": "Quantization",
-    "prompt": "In the relevant subject, which concept specifically reduces model weight or activation precision to improve resource efficiency?",
+    "prompt": "In LLM and Generative AI, which concept specifically reduces model weight or activation precision to improve resource efficiency?",
     "choices": [
       "Quantization",
       "Retrieval-augmented generation",
@@ -1202,7 +1202,7 @@
   {
     "subject_id": 14,
     "skill": "Canny edge detector",
-    "prompt": "In the relevant subject, which concept specifically finds edges using gradient detection, nonmaximum suppression and hysteresis?",
+    "prompt": "In Computer Vision, which concept specifically finds edges using gradient detection, nonmaximum suppression and hysteresis?",
     "choices": [
       "Canny edge detector",
       "Nonmaximum suppression",
@@ -1214,7 +1214,7 @@
   {
     "subject_id": 14,
     "skill": "Histogram equalization",
-    "prompt": "In the relevant subject, which concept specifically redistributes image intensity levels to increase global contrast?",
+    "prompt": "In Computer Vision, which concept specifically redistributes image intensity levels to increase global contrast?",
     "choices": [
       "Histogram equalization",
       "Optical flow",
@@ -1226,7 +1226,7 @@
   {
     "subject_id": 14,
     "skill": "Intersection over union",
-    "prompt": "In the relevant subject, which concept specifically measures overlap between predicted and true image regions?",
+    "prompt": "In Computer Vision, which concept specifically measures overlap between predicted and true image regions?",
     "choices": [
       "Intersection over union",
       "Morphological erosion",
@@ -1238,7 +1238,7 @@
   {
     "subject_id": 14,
     "skill": "Nonmaximum suppression",
-    "prompt": "In the relevant subject, which concept specifically removes overlapping lower-scored detection boxes?",
+    "prompt": "In Computer Vision, which concept specifically removes overlapping lower-scored detection boxes?",
     "choices": [
       "Nonmaximum suppression",
       "Morphological dilation",
@@ -1250,7 +1250,7 @@
   {
     "subject_id": 14,
     "skill": "Optical flow",
-    "prompt": "In the relevant subject, which concept specifically estimates apparent pixel motion between video frames?",
+    "prompt": "In Computer Vision, which concept specifically estimates apparent pixel motion between video frames?",
     "choices": [
       "Optical flow",
       "Image segmentation",
@@ -1262,7 +1262,7 @@
   {
     "subject_id": 14,
     "skill": "Morphological erosion",
-    "prompt": "In the relevant subject, which concept specifically shrinks foreground regions using a structuring element?",
+    "prompt": "In Computer Vision, which concept specifically shrinks foreground regions using a structuring element?",
     "choices": [
       "Morphological erosion",
       "Perspective transform",
@@ -1274,7 +1274,7 @@
   {
     "subject_id": 14,
     "skill": "Morphological dilation",
-    "prompt": "In the relevant subject, which concept specifically expands foreground regions using a structuring element?",
+    "prompt": "In Computer Vision, which concept specifically expands foreground regions using a structuring element?",
     "choices": [
       "Morphological dilation",
       "Data augmentation",
@@ -1286,7 +1286,7 @@
   {
     "subject_id": 14,
     "skill": "Image segmentation",
-    "prompt": "In the relevant subject, which concept specifically assigns semantic or instance regions to image pixels?",
+    "prompt": "In Computer Vision, which concept specifically assigns semantic or instance regions to image pixels?",
     "choices": [
       "Image segmentation",
       "Canny edge detector",
@@ -1298,7 +1298,7 @@
   {
     "subject_id": 14,
     "skill": "Perspective transform",
-    "prompt": "In the relevant subject, which concept specifically maps planar coordinates under a projective geometric transformation?",
+    "prompt": "In Computer Vision, which concept specifically maps planar coordinates under a projective geometric transformation?",
     "choices": [
       "Perspective transform",
       "Histogram equalization",
@@ -1310,7 +1310,7 @@
   {
     "subject_id": 14,
     "skill": "Data augmentation",
-    "prompt": "In the relevant subject, which concept specifically creates label-preserving image variations to improve model robustness?",
+    "prompt": "In Computer Vision, which concept specifically creates label-preserving image variations to improve model robustness?",
     "choices": [
       "Data augmentation",
       "Intersection over union",
@@ -1322,7 +1322,7 @@
   {
     "subject_id": 15,
     "skill": "Named entity recognition",
-    "prompt": "In the relevant subject, which concept specifically identifies spans referring to entities such as people, organizations or locations?",
+    "prompt": "In Natural Language Processing, which concept specifically identifies spans referring to entities such as people, organizations or locations?",
     "choices": [
       "Named entity recognition",
       "Stemming",
@@ -1334,7 +1334,7 @@
   {
     "subject_id": 15,
     "skill": "Part-of-speech tagging",
-    "prompt": "In the relevant subject, which concept specifically assigns grammatical labels to text tokens?",
+    "prompt": "In Natural Language Processing, which concept specifically assigns grammatical labels to text tokens?",
     "choices": [
       "Part-of-speech tagging",
       "TF-IDF",
@@ -1346,7 +1346,7 @@
   {
     "subject_id": 15,
     "skill": "Lemmatization",
-    "prompt": "In the relevant subject, which concept specifically reduces inflected words to dictionary base forms using linguistic analysis?",
+    "prompt": "In Natural Language Processing, which concept specifically reduces inflected words to dictionary base forms using linguistic analysis?",
     "choices": [
       "Lemmatization",
       "Word embeddings",
@@ -1358,7 +1358,7 @@
   {
     "subject_id": 15,
     "skill": "Stemming",
-    "prompt": "In the relevant subject, which concept specifically heuristically reduces words to shorter morphological forms?",
+    "prompt": "In Natural Language Processing, which concept specifically heuristically reduces words to shorter morphological forms?",
     "choices": [
       "Stemming",
       "Dependency parsing",
@@ -1370,7 +1370,7 @@
   {
     "subject_id": 15,
     "skill": "TF-IDF",
-    "prompt": "In the relevant subject, which concept specifically weights terms by within-document frequency and inverse collection frequency?",
+    "prompt": "In Natural Language Processing, which concept specifically weights terms by within-document frequency and inverse collection frequency?",
     "choices": [
       "TF-IDF",
       "BLEU",
@@ -1382,7 +1382,7 @@
   {
     "subject_id": 15,
     "skill": "Word embeddings",
-    "prompt": "In the relevant subject, which concept specifically represent lexical items as learned vectors?",
+    "prompt": "In Natural Language Processing, which concept specifically represent lexical items as learned vectors?",
     "choices": [
       "Word embeddings",
       "Perplexity",
@@ -1394,7 +1394,7 @@
   {
     "subject_id": 15,
     "skill": "Dependency parsing",
-    "prompt": "In the relevant subject, which concept specifically identifies grammatical head-dependent relationships in sentences?",
+    "prompt": "In Natural Language Processing, which concept specifically identifies grammatical head-dependent relationships in sentences?",
     "choices": [
       "Dependency parsing",
       "Coreference resolution",
@@ -1406,7 +1406,7 @@
   {
     "subject_id": 15,
     "skill": "BLEU",
-    "prompt": "In the relevant subject, which concept specifically estimates n-gram overlap between generated and reference translations?",
+    "prompt": "In Natural Language Processing, which concept specifically estimates n-gram overlap between generated and reference translations?",
     "choices": [
       "BLEU",
       "Named entity recognition",
@@ -1418,7 +1418,7 @@
   {
     "subject_id": 15,
     "skill": "Perplexity",
-    "prompt": "In the relevant subject, which concept specifically exponentiates average negative log probability assigned to tokens?",
+    "prompt": "In Natural Language Processing, which concept specifically exponentiates average negative log probability assigned to tokens?",
     "choices": [
       "Perplexity",
       "Part-of-speech tagging",
@@ -1430,7 +1430,7 @@
   {
     "subject_id": 15,
     "skill": "Coreference resolution",
-    "prompt": "In the relevant subject, which concept specifically links textual mentions that refer to the same entity?",
+    "prompt": "In Natural Language Processing, which concept specifically links textual mentions that refer to the same entity?",
     "choices": [
       "Coreference resolution",
       "Lemmatization",
@@ -1442,7 +1442,7 @@
   {
     "subject_id": 16,
     "skill": "XLOOKUP",
-    "prompt": "In the relevant subject, which concept specifically searches a lookup array and returns the corresponding result from another array?",
+    "prompt": "In Microsoft Excel, which concept specifically searches a lookup array and returns the corresponding result from another array?",
     "choices": [
       "XLOOKUP",
       "PivotTable",
@@ -1454,7 +1454,7 @@
   {
     "subject_id": 16,
     "skill": "SUMIFS",
-    "prompt": "In the relevant subject, which concept specifically adds values satisfying multiple range criteria?",
+    "prompt": "In Microsoft Excel, which concept specifically adds values satisfying multiple range criteria?",
     "choices": [
       "SUMIFS",
       "Power Query",
@@ -1466,7 +1466,7 @@
   {
     "subject_id": 16,
     "skill": "COUNTIFS",
-    "prompt": "In the relevant subject, which concept specifically counts rows satisfying multiple conditions?",
+    "prompt": "In Microsoft Excel, which concept specifically counts rows satisfying multiple conditions?",
     "choices": [
       "COUNTIFS",
       "Conditional formatting",
@@ -1478,7 +1478,7 @@
   {
     "subject_id": 16,
     "skill": "PivotTable",
-    "prompt": "In the relevant subject, which concept specifically summarizes source rows by draggable dimensions and aggregation fields?",
+    "prompt": "In Microsoft Excel, which concept specifically summarizes source rows by draggable dimensions and aggregation fields?",
     "choices": [
       "PivotTable",
       "Data validation",
@@ -1490,7 +1490,7 @@
   {
     "subject_id": 16,
     "skill": "Power Query",
-    "prompt": "In the relevant subject, which concept specifically imports and transforms data using refreshable query steps?",
+    "prompt": "In Microsoft Excel, which concept specifically imports and transforms data using refreshable query steps?",
     "choices": [
       "Power Query",
       "Absolute reference",
@@ -1502,7 +1502,7 @@
   {
     "subject_id": 16,
     "skill": "Conditional formatting",
-    "prompt": "In the relevant subject, which concept specifically applies visual formatting based on cell values or rules?",
+    "prompt": "In Microsoft Excel, which concept specifically applies visual formatting based on cell values or rules?",
     "choices": [
       "Conditional formatting",
       "FILTER",
@@ -1514,7 +1514,7 @@
   {
     "subject_id": 16,
     "skill": "Data validation",
-    "prompt": "In the relevant subject, which concept specifically restricts acceptable cell input according to configured rules?",
+    "prompt": "In Microsoft Excel, which concept specifically restricts acceptable cell input according to configured rules?",
     "choices": [
       "Data validation",
       "LET",
@@ -1526,7 +1526,7 @@
   {
     "subject_id": 16,
     "skill": "Absolute reference",
-    "prompt": "In the relevant subject, which concept specifically keeps both row and column fixed when a formula is copied?",
+    "prompt": "In Microsoft Excel, which concept specifically keeps both row and column fixed when a formula is copied?",
     "choices": [
       "Absolute reference",
       "XLOOKUP",
@@ -1538,7 +1538,7 @@
   {
     "subject_id": 16,
     "skill": "FILTER",
-    "prompt": "In the relevant subject, which concept specifically returns array rows that satisfy a Boolean inclusion criterion?",
+    "prompt": "In Microsoft Excel, which concept specifically returns array rows that satisfy a Boolean inclusion criterion?",
     "choices": [
       "FILTER",
       "SUMIFS",
@@ -1550,7 +1550,7 @@
   {
     "subject_id": 16,
     "skill": "LET",
-    "prompt": "In the relevant subject, which concept specifically assigns names to intermediate formula expressions?",
+    "prompt": "In Microsoft Excel, which concept specifically assigns names to intermediate formula expressions?",
     "choices": [
       "LET",
       "COUNTIFS",
@@ -1562,7 +1562,7 @@
   {
     "subject_id": 17,
     "skill": "FIXED LOD",
-    "prompt": "In the relevant subject, which concept specifically calculates an aggregation at explicitly declared dimensions independent of most view dimensions?",
+    "prompt": "In Tableau, which concept specifically calculates an aggregation at explicitly declared dimensions independent of most view dimensions?",
     "choices": [
       "FIXED LOD",
       "Table calculation",
@@ -1574,7 +1574,7 @@
   {
     "subject_id": 17,
     "skill": "INCLUDE LOD",
-    "prompt": "In the relevant subject, which concept specifically adds stated dimensions to the view level of detail before aggregating?",
+    "prompt": "In Tableau, which concept specifically adds stated dimensions to the view level of detail before aggregating?",
     "choices": [
       "INCLUDE LOD",
       "Context filter",
@@ -1586,7 +1586,7 @@
   {
     "subject_id": 17,
     "skill": "EXCLUDE LOD",
-    "prompt": "In the relevant subject, which concept specifically removes listed view dimensions from the expression's aggregation grain?",
+    "prompt": "In Tableau, which concept specifically removes listed view dimensions from the expression's aggregation grain?",
     "choices": [
       "EXCLUDE LOD",
       "Parameter",
@@ -1598,7 +1598,7 @@
   {
     "subject_id": 17,
     "skill": "Table calculation",
-    "prompt": "In the relevant subject, which concept specifically computes results using values already returned in a visualization?",
+    "prompt": "In Tableau, which concept specifically computes results using values already returned in a visualization?",
     "choices": [
       "Table calculation",
       "Calculated field",
@@ -1610,7 +1610,7 @@
   {
     "subject_id": 17,
     "skill": "Context filter",
-    "prompt": "In the relevant subject, which concept specifically creates a filtering context before dependent filters are applied?",
+    "prompt": "In Tableau, which concept specifically creates a filtering context before dependent filters are applied?",
     "choices": [
       "Context filter",
       "Dual-axis chart",
@@ -1622,7 +1622,7 @@
   {
     "subject_id": 17,
     "skill": "Parameter",
-    "prompt": "In the relevant subject, which concept specifically stores a user-controlled value that can affect calculations or views?",
+    "prompt": "In Tableau, which concept specifically stores a user-controlled value that can affect calculations or views?",
     "choices": [
       "Parameter",
       "Dashboard action",
@@ -1634,7 +1634,7 @@
   {
     "subject_id": 17,
     "skill": "Calculated field",
-    "prompt": "In the relevant subject, which concept specifically defines an expression derived from source fields and functions?",
+    "prompt": "In Tableau, which concept specifically defines an expression derived from source fields and functions?",
     "choices": [
       "Calculated field",
       "Extract",
@@ -1646,7 +1646,7 @@
   {
     "subject_id": 17,
     "skill": "Dual-axis chart",
-    "prompt": "In the relevant subject, which concept specifically layers two measures on separate synchronized or independent axes?",
+    "prompt": "In Tableau, which concept specifically layers two measures on separate synchronized or independent axes?",
     "choices": [
       "Dual-axis chart",
       "FIXED LOD",
@@ -1658,7 +1658,7 @@
   {
     "subject_id": 17,
     "skill": "Dashboard action",
-    "prompt": "In the relevant subject, which concept specifically creates interactions such as filtering or navigation between views?",
+    "prompt": "In Tableau, which concept specifically creates interactions such as filtering or navigation between views?",
     "choices": [
       "Dashboard action",
       "INCLUDE LOD",
@@ -1670,7 +1670,7 @@
   {
     "subject_id": 17,
     "skill": "Extract",
-    "prompt": "In the relevant subject, which concept specifically stores a Tableau-optimized local snapshot of the data?",
+    "prompt": "In Tableau, which concept specifically stores a Tableau-optimized local snapshot of the data?",
     "choices": [
       "Extract",
       "EXCLUDE LOD",
@@ -1682,7 +1682,7 @@
   {
     "subject_id": 18,
     "skill": "CALCULATE",
-    "prompt": "In the relevant subject, which concept specifically evaluates a DAX expression under a modified filter context?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically evaluates a DAX expression under a modified filter context?",
     "choices": [
       "CALCULATE",
       "ALL",
@@ -1694,7 +1694,7 @@
   {
     "subject_id": 18,
     "skill": "SUMX",
-    "prompt": "In the relevant subject, which concept specifically iterates a table and sums an expression evaluated per row?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically iterates a table and sums an expression evaluated per row?",
     "choices": [
       "SUMX",
       "Measure",
@@ -1706,7 +1706,7 @@
   {
     "subject_id": 18,
     "skill": "RELATED",
-    "prompt": "In the relevant subject, which concept specifically retrieves a value from a related table using the current row context?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically retrieves a value from a related table using the current row context?",
     "choices": [
       "RELATED",
       "Calculated column",
@@ -1718,7 +1718,7 @@
   {
     "subject_id": 18,
     "skill": "ALL",
-    "prompt": "In the relevant subject, which concept specifically removes specified filters when constructing a DAX calculation?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically removes specified filters when constructing a DAX calculation?",
     "choices": [
       "ALL",
       "Star schema",
@@ -1730,7 +1730,7 @@
   {
     "subject_id": 18,
     "skill": "Measure",
-    "prompt": "In the relevant subject, which concept specifically evaluates a calculation dynamically under the report filter context?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically evaluates a calculation dynamically under the report filter context?",
     "choices": [
       "Measure",
       "Power Query",
@@ -1742,7 +1742,7 @@
   {
     "subject_id": 18,
     "skill": "Calculated column",
-    "prompt": "In the relevant subject, which concept specifically computes and stores a value for each model row on refresh?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically computes and stores a value for each model row on refresh?",
     "choices": [
       "Calculated column",
       "Row-level security",
@@ -1754,7 +1754,7 @@
   {
     "subject_id": 18,
     "skill": "Star schema",
-    "prompt": "In the relevant subject, which concept specifically organizes numeric fact records around descriptive dimension tables?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically organizes numeric fact records around descriptive dimension tables?",
     "choices": [
       "Star schema",
       "USERELATIONSHIP",
@@ -1766,7 +1766,7 @@
   {
     "subject_id": 18,
     "skill": "Power Query",
-    "prompt": "In the relevant subject, which concept specifically performs import-time query shaping before model loading?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically performs import-time query shaping before model loading?",
     "choices": [
       "Power Query",
       "CALCULATE",
@@ -1778,7 +1778,7 @@
   {
     "subject_id": 18,
     "skill": "Row-level security",
-    "prompt": "In the relevant subject, which concept specifically restricts report data visibility by user-specific rules?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically restricts report data visibility by user-specific rules?",
     "choices": [
       "Row-level security",
       "SUMX",
@@ -1790,7 +1790,7 @@
   {
     "subject_id": 18,
     "skill": "USERELATIONSHIP",
-    "prompt": "In the relevant subject, which concept specifically activates an existing inactive model relationship for a calculation?",
+    "prompt": "In Microsoft Power BI and DAX, which concept specifically activates an existing inactive model relationship for a calculation?",
     "choices": [
       "USERELATIONSHIP",
       "RELATED",
@@ -1802,7 +1802,7 @@
   {
     "subject_id": 19,
     "skill": "Standard deviation",
-    "prompt": "In the relevant subject, which concept specifically quantifies typical dispersion around a distribution mean?",
+    "prompt": "In Statistics and Probability, which concept specifically quantifies typical dispersion around a distribution mean?",
     "choices": [
       "Standard deviation",
       "Type I error",
@@ -1814,7 +1814,7 @@
   {
     "subject_id": 19,
     "skill": "Median",
-    "prompt": "In the relevant subject, which concept specifically returns the middle order statistic or average of two central values?",
+    "prompt": "In Statistics and Probability, which concept specifically returns the middle order statistic or average of two central values?",
     "choices": [
       "Median",
       "Type II error",
@@ -1826,7 +1826,7 @@
   {
     "subject_id": 19,
     "skill": "Bayes theorem",
-    "prompt": "In the relevant subject, which concept specifically updates event probabilities using evidence and conditional likelihoods?",
+    "prompt": "In Statistics and Probability, which concept specifically updates event probabilities using evidence and conditional likelihoods?",
     "choices": [
       "Bayes theorem",
       "Central limit theorem",
@@ -1838,7 +1838,7 @@
   {
     "subject_id": 19,
     "skill": "Type I error",
-    "prompt": "In the relevant subject, which concept specifically rejects a true null hypothesis?",
+    "prompt": "In Statistics and Probability, which concept specifically rejects a true null hypothesis?",
     "choices": [
       "Type I error",
       "Poisson distribution",
@@ -1850,7 +1850,7 @@
   {
     "subject_id": 19,
     "skill": "Type II error",
-    "prompt": "In the relevant subject, which concept specifically fails to reject a false null hypothesis?",
+    "prompt": "In Statistics and Probability, which concept specifically fails to reject a false null hypothesis?",
     "choices": [
       "Type II error",
       "Binomial distribution",
@@ -1862,7 +1862,7 @@
   {
     "subject_id": 19,
     "skill": "Central limit theorem",
-    "prompt": "In the relevant subject, which concept specifically describes convergence of suitably standardized sample means toward a normal distribution under conditions?",
+    "prompt": "In Statistics and Probability, which concept specifically describes convergence of suitably standardized sample means toward a normal distribution under conditions?",
     "choices": [
       "Central limit theorem",
       "Covariance",
@@ -1874,7 +1874,7 @@
   {
     "subject_id": 19,
     "skill": "Poisson distribution",
-    "prompt": "In the relevant subject, which concept specifically models counts of independent events occurring at a constant average rate?",
+    "prompt": "In Statistics and Probability, which concept specifically models counts of independent events occurring at a constant average rate?",
     "choices": [
       "Poisson distribution",
       "P-value",
@@ -1886,7 +1886,7 @@
   {
     "subject_id": 19,
     "skill": "Binomial distribution",
-    "prompt": "In the relevant subject, which concept specifically models successes in a fixed number of independent Bernoulli trials?",
+    "prompt": "In Statistics and Probability, which concept specifically models successes in a fixed number of independent Bernoulli trials?",
     "choices": [
       "Binomial distribution",
       "Standard deviation",
@@ -1898,7 +1898,7 @@
   {
     "subject_id": 19,
     "skill": "Covariance",
-    "prompt": "In the relevant subject, which concept specifically measures joint linear variation of two random variables?",
+    "prompt": "In Statistics and Probability, which concept specifically measures joint linear variation of two random variables?",
     "choices": [
       "Covariance",
       "Median",
@@ -1910,7 +1910,7 @@
   {
     "subject_id": 19,
     "skill": "P-value",
-    "prompt": "In the relevant subject, which concept specifically quantifies how extreme results are under a specified null model?",
+    "prompt": "In Statistics and Probability, which concept specifically quantifies how extreme results are under a specified null model?",
     "choices": [
       "P-value",
       "Bayes theorem",
@@ -1922,7 +1922,7 @@
   {
     "subject_id": 20,
     "skill": "Eigenvector",
-    "prompt": "In the relevant subject, which concept specifically retains its direction under a linear transformation except for scaling?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically retains its direction under a linear transformation except for scaling?",
     "choices": [
       "Eigenvector",
       "Dot product",
@@ -1934,7 +1934,7 @@
   {
     "subject_id": 20,
     "skill": "Gradient",
-    "prompt": "In the relevant subject, which concept specifically collects partial derivatives of a scalar-valued function?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically collects partial derivatives of a scalar-valued function?",
     "choices": [
       "Gradient",
       "L2 norm",
@@ -1946,7 +1946,7 @@
   {
     "subject_id": 20,
     "skill": "Hessian",
-    "prompt": "In the relevant subject, which concept specifically organizes second partial derivatives of a scalar function into a matrix?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically organizes second partial derivatives of a scalar function into a matrix?",
     "choices": [
       "Hessian",
       "Matrix rank",
@@ -1958,7 +1958,7 @@
   {
     "subject_id": 20,
     "skill": "Dot product",
-    "prompt": "In the relevant subject, which concept specifically computes a scalar from paired coordinate products?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically computes a scalar from paired coordinate products?",
     "choices": [
       "Dot product",
       "Singular value decomposition",
@@ -1970,7 +1970,7 @@
   {
     "subject_id": 20,
     "skill": "L2 norm",
-    "prompt": "In the relevant subject, which concept specifically measures Euclidean vector length?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically measures Euclidean vector length?",
     "choices": [
       "L2 norm",
       "Chain rule",
@@ -1982,7 +1982,7 @@
   {
     "subject_id": 20,
     "skill": "Matrix rank",
-    "prompt": "In the relevant subject, which concept specifically counts linearly independent columns or rows?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically counts linearly independent columns or rows?",
     "choices": [
       "Matrix rank",
       "Convex function",
@@ -1994,7 +1994,7 @@
   {
     "subject_id": 20,
     "skill": "Singular value decomposition",
-    "prompt": "In the relevant subject, which concept specifically factorizes a matrix into orthogonal factors and nonnegative singular values?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically factorizes a matrix into orthogonal factors and nonnegative singular values?",
     "choices": [
       "Singular value decomposition",
       "Partial derivative",
@@ -2006,7 +2006,7 @@
   {
     "subject_id": 20,
     "skill": "Chain rule",
-    "prompt": "In the relevant subject, which concept specifically differentiates compositions by multiplying derivative factors?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically differentiates compositions by multiplying derivative factors?",
     "choices": [
       "Chain rule",
       "Eigenvector",
@@ -2018,7 +2018,7 @@
   {
     "subject_id": 20,
     "skill": "Convex function",
-    "prompt": "In the relevant subject, which concept specifically lies below or on chords connecting any two points of its domain?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically lies below or on chords connecting any two points of its domain?",
     "choices": [
       "Convex function",
       "Gradient",
@@ -2030,7 +2030,7 @@
   {
     "subject_id": 20,
     "skill": "Partial derivative",
-    "prompt": "In the relevant subject, which concept specifically measures sensitivity to one variable while holding others fixed?",
+    "prompt": "In Mathematics for AI/ML, which concept specifically measures sensitivity to one variable while holding others fixed?",
     "choices": [
       "Partial derivative",
       "Hessian",
