@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 41,
+    "skill": "Subject verb agreement",
+    "description": "Matching a finite verb's grammatical number and person to its subject"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Parallel structure",
+    "description": "Using corresponding grammatical forms for items of equal syntactic function"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Dangling modifier",
+    "description": "A descriptive phrase whose intended subject is absent or misidentified"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Misplaced modifier",
+    "description": "A phrase positioned so that it seems to modify the wrong expression"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Comma splice",
+    "description": "Joining two independent clauses using only a comma"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Semicolon",
+    "description": "Punctuation that can link closely related independent clauses"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Oxford comma",
+    "description": "The optional comma immediately before the final conjunction in a list"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Apostrophe for possession",
+    "description": "A punctuation mark used to signal possessive relationships in many English nouns"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Active voice",
+    "description": "A construction where the grammatical subject typically performs the action"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Passive voice",
+    "description": "A construction where the grammatical subject undergoes the action or receives its effect"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Conditional type zero",
+    "description": "A conditional structure expressing general or regularly true consequences"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Conditional type one",
+    "description": "A conditional describing a realistic or possible future consequence"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Conditional type two",
+    "description": "A conditional expressing hypothetical or unlikely present or future situations"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Conditional type three",
+    "description": "A conditional expressing an unreal past condition and imagined past result"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Reported speech",
+    "description": "Relaying someone's words while adapting pronouns and tenses where needed"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Gerund",
+    "description": "An -ing verb form functioning as a noun"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Infinitive",
+    "description": "A base verb form commonly preceded by to when expressing purpose or complementation"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Restrictive relative clause",
+    "description": "A clause necessary to identify the noun it modifies"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Nonrestrictive relative clause",
+    "description": "A supplemental clause that adds information without defining the noun's identity"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Concise expression",
+    "description": "Communicating the intended meaning with no unnecessary words"
+  },
+  {
+    "subject_id": 42,
+    "skill": "DOM",
+    "description": "The browser's object model representing a document as mutable nodes"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Event bubbling",
+    "description": "Event propagation from a target element through its ancestor chain"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Event capturing",
+    "description": "Event propagation through ancestors toward the target before target handling"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Semantic HTML",
+    "description": "Choosing elements based on meaning and structure instead of visual appearance"
+  },
+  {
+    "subject_id": 42,
+    "skill": "ARIA label",
+    "description": "Accessible naming metadata for interface controls when native labels are inadequate"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS specificity",
+    "description": "The priority calculation determining which competing CSS selector rule takes effect"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Flexbox",
+    "description": "A one-dimensional layout model for distributing items along a row or column"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS Grid",
+    "description": "A two-dimensional layout system defining rows and columns"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Responsive breakpoint",
+    "description": "A viewport threshold at which layout styling changes"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Media query",
+    "description": "A CSS condition selecting styles based on device or environment characteristics"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS custom property",
+    "description": "A reusable variable-like style value declared with a double-hyphen name"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Reflow",
+    "description": "Browser layout calculation after changes affecting element geometry"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Repaint",
+    "description": "Drawing updated visual pixels without necessarily recalculating full layout"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Hydration",
+    "description": "Attaching client-side interactivity to server-rendered document markup"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Server side rendering",
+    "description": "Generating HTML for a request using server execution"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Static generation",
+    "description": "Building HTML ahead of user requests and serving the precomputed result"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Progressive enhancement",
+    "description": "Delivering a functional baseline experience and adding richer features when supported"
+  },
+  {
+    "subject_id": 42,
+    "skill": "WebSocket",
+    "description": "A persistent bidirectional communication protocol negotiated over an HTTP connection"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Service worker",
+    "description": "A background browser script capable of intercepting fetch requests and managing caches"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Content security policy",
+    "description": "A browser-enforced policy restricting which resources and script execution sources are trusted"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Net promoter score",
+    "description": "A survey metric subtracting the percentage of detractors from the percentage of promoters"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Customer satisfaction score",
+    "description": "A metric derived from customer ratings of a specific interaction or experience"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Customer effort score",
+    "description": "A survey measure of difficulty encountered while completing a customer task"
+  },
+  {
+    "subject_id": 43,
+    "skill": "North star metric",
+    "description": "A leading measure intended to reflect sustained customer value from a product"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Conversion rate",
+    "description": "The proportion of eligible users or sessions completing a desired action"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Average order value",
+    "description": "Total order revenue divided by the number of orders"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Purchase frequency",
+    "description": "Average number of purchases per customer over a defined interval"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Repeat purchase rate",
+    "description": "The proportion of customers placing more than one purchase in a defined window"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Gross merchandise value",
+    "description": "Total monetary value of merchandise transactions before specified deductions"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Take rate",
+    "description": "Platform fee revenue divided by eligible transaction volume"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Contribution margin",
+    "description": "Revenue remaining after costs that vary with the sales or service volume"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Break even point",
+    "description": "The sales quantity or revenue level where total revenues cover total costs"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Payback period",
+    "description": "Time needed to recover initial investment or customer acquisition expense"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Cohort retention curve",
+    "description": "Retention measured for a starting group over successive elapsed intervals"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Funnel drop off",
+    "description": "The share of participants leaving a process between consecutive stages"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Cannibalization",
+    "description": "Sales shifted from one of a business's offerings to another of its own offerings"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Price elasticity",
+    "description": "The percentage change in quantity demanded relative to percentage change in price"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Market basket analysis",
+    "description": "Identifying combinations of items that frequently occur together in transactions"
+  },
+  {
+    "subject_id": 43,
+    "skill": "RFM segmentation",
+    "description": "Grouping customers using recency, frequency and monetary value"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Counterfactual outcome",
+    "description": "The result that would have occurred under an alternative treatment not received"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Binning",
+    "description": "Grouping continuous values into categorical intervals for display or analysis"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Histogram",
+    "description": "A display of frequencies or densities across contiguous numeric intervals"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Box plot",
+    "description": "A summary of numeric distributions using quartiles and whiskers"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Violin plot",
+    "description": "A distribution plot combining density shape with a central summary"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Scatter plot",
+    "description": "A graph of paired numeric observations on two axes"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Bubble chart",
+    "description": "A scatterplot whose marker sizes encode an additional quantitative variable"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Heatmap",
+    "description": "A matrix or spatial view using color to represent numeric magnitude"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Choropleth map",
+    "description": "A geographic display shading areas by an associated measure"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Line chart",
+    "description": "A plot linking measurements along an ordered or continuous axis"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Slope chart",
+    "description": "A graph emphasizing change between two ordered conditions for several categories"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Small multiples",
+    "description": "Repeated comparable charts displaying separate slices of a dataset"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Facet grid",
+    "description": "A layout subdividing a visualization into panels by categorical variables"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Reference line",
+    "description": "A line indicating a benchmark, threshold or summary statistic"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Logarithmic axis",
+    "description": "An axis scaled by powers of a common base rather than equal raw differences"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Diverging palette",
+    "description": "A color scale expressing values on both sides of a meaningful midpoint"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Sequential palette",
+    "description": "A color scale expressing ordered magnitudes using a directional change in appearance"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Categorical palette",
+    "description": "Distinguishable colors assigned to unordered groups"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Data ink ratio",
+    "description": "A design principle emphasizing information-bearing marks over decorative marks"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Annotation",
+    "description": "A label or note explaining a particular visual feature or event"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Dashboard drill down",
+    "description": "Moving from an aggregated view to more detailed data associated with a selection"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Planner agent",
+    "description": "An agent component that decomposes a goal into intermediate actions or subgoals"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool executor",
+    "description": "A component validating and invoking selected external operations"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent memory",
+    "description": "Retained context or state that an agent can consult across workflow steps"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Short term memory",
+    "description": "Information preserved within the current workflow or conversational context"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Long term memory",
+    "description": "Information retained across interactions for later retrieval"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent checkpoint",
+    "description": "A saved workflow state enabling pause, inspection or resumption"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Human approval gate",
+    "description": "A workflow state requiring explicit authorized consent before a consequential action"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Multi agent delegation",
+    "description": "Assigning subtasks among specialized agent roles"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Orchestrator agent",
+    "description": "A controller deciding which specialists or tools should act and when"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Evaluator agent",
+    "description": "A component checking a generated result against defined quality criteria"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Reflection loop",
+    "description": "An iterative step in which an agent critiques and revises its own output"
+  },
+  {
+    "subject_id": 45,
+    "skill": "ReAct pattern",
+    "description": "Interleaving reasoning steps and tool actions based on observed results"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool use policy",
+    "description": "Rules governing which external operations an agent is authorized to invoke"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool invocation schema",
+    "description": "A machine-readable definition of allowed function arguments"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Observation",
+    "description": "A tool's returned information used to update an agent's subsequent decisions"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent termination condition",
+    "description": "A criterion deciding when a workflow has reached its stopping point"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent loop guard",
+    "description": "A limit preventing repeated actions or endless agent reasoning cycles"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent idempotency",
+    "description": "Ensuring repeated execution of an action does not accidentally repeat its effect"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent sandbox",
+    "description": "An isolated execution environment limiting access to files, network or secrets"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent trace",
+    "description": "A recorded sequence of steps, inputs and results used for monitoring and debugging"
+  }
+]
