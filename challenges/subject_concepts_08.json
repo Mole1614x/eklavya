@@ -306,8 +306,8 @@
   },
   {
     "subject_id": 39,
-    "skill": "Simple interest",
-    "description": "Interest calculated only on the original principal"
+    "skill": "Compound annual growth rate",
+    "description": "A constant annualized growth rate that transforms a starting value into an ending value over multiple years"
   },
   {
     "subject_id": 39,
