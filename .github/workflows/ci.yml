@@ -137,6 +137,16 @@ jobs:
           curl --fail --silent --show-error http://127.0.0.1:3011/problems/parity-check | grep -F 'Parity Check' > /dev/null
           curl --fail --silent --show-error -o /dev/null http://127.0.0.1:3011/monaco/vs/loader.js
 
+      - name: Check all Pandas and NumPy reference exercises
+        run: |
+          docker build --file judge/images/data.Dockerfile --tag eklavya-data-runner:latest .
+          docker run --rm --network none --read-only --cap-drop ALL \
+            --security-opt no-new-privileges \
+            --volume "$PWD/challenges:/work/challenges:ro" \
+            --volume "$PWD/scripts:/work/scripts:ro" \
+            --workdir /work eklavya-data-runner:latest \
+            python scripts/verify_data_practice_references.py
+
       - name: Show service logs on failure
         if: failure()
         run: |
