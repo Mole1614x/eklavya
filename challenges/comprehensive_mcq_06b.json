@@ -1,0 +1,2018 @@
+[
+  {
+    "subject_id": 12,
+    "skill": "Categorical cross entropy",
+    "prompt": "Select the technique matching the following NLP description: penalizes a multiclass probability distribution based on the logarithm of the true class probability?",
+    "choices": [
+      "Categorical cross entropy",
+      "Gradient accumulation",
+      "Tanh activation",
+      "Instance normalization"
+    ],
+    "answer": "Categorical cross entropy"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Mean squared error",
+    "prompt": "Select the technique matching the following NLP description: averages squared differences between predicted and target continuous values?",
+    "choices": [
+      "Mean squared error",
+      "Mixed precision training",
+      "Softmax activation",
+      "Depthwise convolution"
+    ],
+    "answer": "Mean squared error"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Stochastic gradient descent",
+    "prompt": "Select the technique matching the following NLP description: updates parameters from gradients estimated on selected training examples?",
+    "choices": [
+      "Stochastic gradient descent",
+      "Parametric ReLU",
+      "Epoch",
+      "Pointwise convolution"
+    ],
+    "answer": "Stochastic gradient descent"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Momentum optimizer",
+    "prompt": "Select the technique matching the following NLP description: accumulates a decaying history of gradients to smooth optimization steps?",
+    "choices": [
+      "Momentum optimizer",
+      "Leaky ReLU",
+      "Minibatch",
+      "Dilated convolution"
+    ],
+    "answer": "Momentum optimizer"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Adam optimizer",
+    "prompt": "Select the technique matching the following NLP description: combines moving averages of first and second moments of gradients?",
+    "choices": [
+      "Adam optimizer",
+      "GELU activation",
+      "Layer normalization",
+      "Strided convolution"
+    ],
+    "answer": "Adam optimizer"
+  },
+  {
+    "subject_id": 12,
+    "skill": "AdamW optimizer",
+    "prompt": "Select the technique matching the following NLP description: decouples weight decay from adaptive gradient updates?",
+    "choices": [
+      "AdamW optimizer",
+      "Sigmoid activation",
+      "Group normalization",
+      "Max pooling"
+    ],
+    "answer": "AdamW optimizer"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Weight decay",
+    "prompt": "Select the technique matching the following NLP description: shrinks model weights through an explicit penalty or decoupled update?",
+    "choices": [
+      "Weight decay",
+      "Tanh activation",
+      "Instance normalization",
+      "Average pooling"
+    ],
+    "answer": "Weight decay"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Gradient accumulation",
+    "prompt": "Select the technique matching the following NLP description: adds gradients across minibatches before applying an optimizer step?",
+    "choices": [
+      "Gradient accumulation",
+      "Softmax activation",
+      "Depthwise convolution",
+      "Transposed convolution"
+    ],
+    "answer": "Gradient accumulation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Mixed precision training",
+    "prompt": "Select the technique matching the following NLP description: uses reduced numeric precision for selected operations while protecting unstable calculations?",
+    "choices": [
+      "Mixed precision training",
+      "Epoch",
+      "Pointwise convolution",
+      "Transformer encoder"
+    ],
+    "answer": "Mixed precision training"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Parametric ReLU",
+    "prompt": "Select the technique matching the following NLP description: learns a trainable slope for negative inputs rather than fixing all negative outputs at zero?",
+    "choices": [
+      "Parametric ReLU",
+      "Minibatch",
+      "Dilated convolution",
+      "Transformer decoder"
+    ],
+    "answer": "Parametric ReLU"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Leaky ReLU",
+    "prompt": "Select the technique matching the following NLP description: allows a small nonzero gradient on negative preactivations?",
+    "choices": [
+      "Leaky ReLU",
+      "Layer normalization",
+      "Strided convolution",
+      "Causal attention mask"
+    ],
+    "answer": "Leaky ReLU"
+  },
+  {
+    "subject_id": 12,
+    "skill": "GELU activation",
+    "prompt": "Select the technique matching the following NLP description: smoothly gates inputs based on an approximation to Gaussian probabilities?",
+    "choices": [
+      "GELU activation",
+      "Group normalization",
+      "Max pooling",
+      "Positional encoding"
+    ],
+    "answer": "GELU activation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Sigmoid activation",
+    "prompt": "Select the technique matching the following NLP description: maps real-valued inputs into values between zero and one?",
+    "choices": [
+      "Sigmoid activation",
+      "Instance normalization",
+      "Average pooling",
+      "Multi-head attention"
+    ],
+    "answer": "Sigmoid activation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Tanh activation",
+    "prompt": "Select the technique matching the following NLP description: maps real-valued inputs into values between negative one and one?",
+    "choices": [
+      "Tanh activation",
+      "Depthwise convolution",
+      "Transposed convolution",
+      "Attention head"
+    ],
+    "answer": "Tanh activation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Softmax activation",
+    "prompt": "Select the technique matching the following NLP description: normalizes a vector of logits into a distribution summing to one?",
+    "choices": [
+      "Softmax activation",
+      "Pointwise convolution",
+      "Transformer encoder",
+      "Recurrent neural network"
+    ],
+    "answer": "Softmax activation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Epoch",
+    "prompt": "Select the technique matching the following NLP description: represents a full pass over a designated training dataset?",
+    "choices": [
+      "Epoch",
+      "Dilated convolution",
+      "Transformer decoder",
+      "LSTM cell"
+    ],
+    "answer": "Epoch"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Minibatch",
+    "prompt": "Select the technique matching the following NLP description: groups several training examples for one gradient computation?",
+    "choices": [
+      "Minibatch",
+      "Strided convolution",
+      "Causal attention mask",
+      "GRU cell"
+    ],
+    "answer": "Minibatch"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Layer normalization",
+    "prompt": "Select the technique matching the following NLP description: normalizes activations across features within each selected example?",
+    "choices": [
+      "Layer normalization",
+      "Max pooling",
+      "Positional encoding",
+      "Teacher forcing"
+    ],
+    "answer": "Layer normalization"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Group normalization",
+    "prompt": "Select the technique matching the following NLP description: normalizes channel groups independently of batch size?",
+    "choices": [
+      "Group normalization",
+      "Average pooling",
+      "Multi-head attention",
+      "Label smoothing"
+    ],
+    "answer": "Group normalization"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Instance normalization",
+    "prompt": "Select the technique matching the following NLP description: normalizes each example's feature-map channels using their spatial statistics?",
+    "choices": [
+      "Instance normalization",
+      "Transposed convolution",
+      "Attention head",
+      "Knowledge distillation"
+    ],
+    "answer": "Instance normalization"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Depthwise convolution",
+    "prompt": "Select the technique matching the following NLP description: applies one spatial filter per input channel instead of mixing channels directly?",
+    "choices": [
+      "Depthwise convolution",
+      "Transformer encoder",
+      "Recurrent neural network",
+      "Autoencoder"
+    ],
+    "answer": "Depthwise convolution"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Pointwise convolution",
+    "prompt": "Select the technique matching the following NLP description: mixes channels using a one-by-one spatial kernel?",
+    "choices": [
+      "Pointwise convolution",
+      "Transformer decoder",
+      "LSTM cell",
+      "Variational autoencoder"
+    ],
+    "answer": "Pointwise convolution"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Dilated convolution",
+    "prompt": "Select the technique matching the following NLP description: spreads kernel taps apart to enlarge receptive fields without proportional parameter growth?",
+    "choices": [
+      "Dilated convolution",
+      "Causal attention mask",
+      "GRU cell",
+      "Generative adversarial network"
+    ],
+    "answer": "Dilated convolution"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Strided convolution",
+    "prompt": "Select the technique matching the following NLP description: moves a kernel by more than one pixel per step to reduce spatial resolution?",
+    "choices": [
+      "Strided convolution",
+      "Positional encoding",
+      "Teacher forcing",
+      "Diffusion model"
+    ],
+    "answer": "Strided convolution"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Max pooling",
+    "prompt": "Select the technique matching the following NLP description: selects the largest activation in each pooling region?",
+    "choices": [
+      "Max pooling",
+      "Multi-head attention",
+      "Label smoothing",
+      "Contrastive loss"
+    ],
+    "answer": "Max pooling"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Average pooling",
+    "prompt": "Select the technique matching the following NLP description: computes the mean activation in each pooling region?",
+    "choices": [
+      "Average pooling",
+      "Attention head",
+      "Knowledge distillation",
+      "Triplet loss"
+    ],
+    "answer": "Average pooling"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Transposed convolution",
+    "prompt": "Select the technique matching the following NLP description: learns a transformation that can increase output spatial dimensions?",
+    "choices": [
+      "Transposed convolution",
+      "Recurrent neural network",
+      "Autoencoder",
+      "Transfer learning"
+    ],
+    "answer": "Transposed convolution"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Transformer encoder",
+    "prompt": "Select the technique matching the following NLP description: builds contextual input representations using self-attention blocks?",
+    "choices": [
+      "Transformer encoder",
+      "LSTM cell",
+      "Variational autoencoder",
+      "Gradient checkpointing"
+    ],
+    "answer": "Transformer encoder"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Transformer decoder",
+    "prompt": "Select the technique matching the following NLP description: predicts output tokens using masked self-attention and optional cross-attention?",
+    "choices": [
+      "Transformer decoder",
+      "GRU cell",
+      "Generative adversarial network",
+      "Categorical cross entropy"
+    ],
+    "answer": "Transformer decoder"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Causal attention mask",
+    "prompt": "Select the technique matching the following NLP description: prevents each generation position from attending to future output tokens?",
+    "choices": [
+      "Causal attention mask",
+      "Teacher forcing",
+      "Diffusion model",
+      "Mean squared error"
+    ],
+    "answer": "Causal attention mask"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Positional encoding",
+    "prompt": "Select the technique matching the following NLP description: injects information about token order into a sequence model?",
+    "choices": [
+      "Positional encoding",
+      "Label smoothing",
+      "Contrastive loss",
+      "Stochastic gradient descent"
+    ],
+    "answer": "Positional encoding"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Multi-head attention",
+    "prompt": "Select the technique matching the following NLP description: computes several attention projections in parallel and combines their results?",
+    "choices": [
+      "Multi-head attention",
+      "Knowledge distillation",
+      "Triplet loss",
+      "Momentum optimizer"
+    ],
+    "answer": "Multi-head attention"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Attention head",
+    "prompt": "Select the technique matching the following NLP description: learns one projected query-key-value interaction within an attention layer?",
+    "choices": [
+      "Attention head",
+      "Autoencoder",
+      "Transfer learning",
+      "Adam optimizer"
+    ],
+    "answer": "Attention head"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Recurrent neural network",
+    "prompt": "Select the technique matching the following NLP description: updates a hidden state sequentially as input tokens arrive?",
+    "choices": [
+      "Recurrent neural network",
+      "Variational autoencoder",
+      "Gradient checkpointing",
+      "AdamW optimizer"
+    ],
+    "answer": "Recurrent neural network"
+  },
+  {
+    "subject_id": 12,
+    "skill": "LSTM cell",
+    "prompt": "Select the technique matching the following NLP description: uses gates and a memory cell to regulate long-range recurrent information?",
+    "choices": [
+      "LSTM cell",
+      "Generative adversarial network",
+      "Categorical cross entropy",
+      "Weight decay"
+    ],
+    "answer": "LSTM cell"
+  },
+  {
+    "subject_id": 12,
+    "skill": "GRU cell",
+    "prompt": "Select the technique matching the following NLP description: combines update and reset gates to control recurrent state flow?",
+    "choices": [
+      "GRU cell",
+      "Diffusion model",
+      "Mean squared error",
+      "Gradient accumulation"
+    ],
+    "answer": "GRU cell"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Teacher forcing",
+    "prompt": "Select the technique matching the following NLP description: uses the ground-truth prior token when training an autoregressive decoder?",
+    "choices": [
+      "Teacher forcing",
+      "Contrastive loss",
+      "Stochastic gradient descent",
+      "Mixed precision training"
+    ],
+    "answer": "Teacher forcing"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Label smoothing",
+    "prompt": "Select the technique matching the following NLP description: replaces a strict one-hot target with a softened target distribution?",
+    "choices": [
+      "Label smoothing",
+      "Triplet loss",
+      "Momentum optimizer",
+      "Parametric ReLU"
+    ],
+    "answer": "Label smoothing"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Knowledge distillation",
+    "prompt": "Select the technique matching the following NLP description: trains a smaller student using information from a larger teacher model?",
+    "choices": [
+      "Knowledge distillation",
+      "Transfer learning",
+      "Adam optimizer",
+      "Leaky ReLU"
+    ],
+    "answer": "Knowledge distillation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Autoencoder",
+    "prompt": "Select the technique matching the following NLP description: learns a compressed representation by reconstructing its original input?",
+    "choices": [
+      "Autoencoder",
+      "Gradient checkpointing",
+      "AdamW optimizer",
+      "GELU activation"
+    ],
+    "answer": "Autoencoder"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Variational autoencoder",
+    "prompt": "Select the technique matching the following NLP description: uses a probabilistic latent distribution with reconstruction and regularization objectives?",
+    "choices": [
+      "Variational autoencoder",
+      "Categorical cross entropy",
+      "Weight decay",
+      "Sigmoid activation"
+    ],
+    "answer": "Variational autoencoder"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Generative adversarial network",
+    "prompt": "Select the technique matching the following NLP description: trains generator and discriminator networks against each other?",
+    "choices": [
+      "Generative adversarial network",
+      "Mean squared error",
+      "Gradient accumulation",
+      "Tanh activation"
+    ],
+    "answer": "Generative adversarial network"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Diffusion model",
+    "prompt": "Select the technique matching the following NLP description: learns to reverse a gradual noising process to generate samples?",
+    "choices": [
+      "Diffusion model",
+      "Stochastic gradient descent",
+      "Mixed precision training",
+      "Softmax activation"
+    ],
+    "answer": "Diffusion model"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Contrastive loss",
+    "prompt": "Select the technique matching the following NLP description: pushes positive representation pairs together relative to negative pairs?",
+    "choices": [
+      "Contrastive loss",
+      "Momentum optimizer",
+      "Parametric ReLU",
+      "Epoch"
+    ],
+    "answer": "Contrastive loss"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Triplet loss",
+    "prompt": "Select the technique matching the following NLP description: compares an anchor, matching example and nonmatching example through relative distances?",
+    "choices": [
+      "Triplet loss",
+      "Adam optimizer",
+      "Leaky ReLU",
+      "Minibatch"
+    ],
+    "answer": "Triplet loss"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Transfer learning",
+    "prompt": "Select the technique matching the following NLP description: adapts parameters learned on an earlier task to a related task?",
+    "choices": [
+      "Transfer learning",
+      "AdamW optimizer",
+      "GELU activation",
+      "Layer normalization"
+    ],
+    "answer": "Transfer learning"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Gradient checkpointing",
+    "prompt": "Select the technique matching the following NLP description: trades extra recomputation for reduced activation memory during training?",
+    "choices": [
+      "Gradient checkpointing",
+      "Weight decay",
+      "Sigmoid activation",
+      "Group normalization"
+    ],
+    "answer": "Gradient checkpointing"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Sparse retrieval",
+    "prompt": "Select the technique matching the following NLP description: matches documents through term statistics rather than learned dense vectors?",
+    "choices": [
+      "Sparse retrieval",
+      "Reciprocal rank fusion",
+      "Retrieval recall at k",
+      "Stop sequence"
+    ],
+    "answer": "Sparse retrieval"
+  },
+  {
+    "subject_id": 13,
+    "skill": "BM25 scoring",
+    "prompt": "Select the technique matching the following NLP description: ranks documents using term frequency, inverse document frequency and length normalization?",
+    "choices": [
+      "BM25 scoring",
+      "Text chunking",
+      "Retrieval precision at k",
+      "Greedy decoding"
+    ],
+    "answer": "BM25 scoring"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Dense retrieval",
+    "prompt": "Select the technique matching the following NLP description: ranks documents by similarity between learned query and document vectors?",
+    "choices": [
+      "Dense retrieval",
+      "Overlapping chunks",
+      "Query expansion",
+      "Beam search"
+    ],
+    "answer": "Dense retrieval"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Vector database",
+    "prompt": "Select the technique matching the following NLP description: indexes vector representations for approximate or exact similarity search?",
+    "choices": [
+      "Vector database",
+      "Metadata filter",
+      "Query rewriting",
+      "Repetition penalty"
+    ],
+    "answer": "Vector database"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Approximate nearest neighbor search",
+    "prompt": "Select the technique matching the following NLP description: accelerates vector lookup by accepting controlled search approximations?",
+    "choices": [
+      "Approximate nearest neighbor search",
+      "Groundedness evaluation",
+      "Prompt template",
+      "Constrained decoding"
+    ],
+    "answer": "Approximate nearest neighbor search"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Hybrid retrieval",
+    "prompt": "Select the technique matching the following NLP description: combines lexical and semantic ranking signals for document search?",
+    "choices": [
+      "Hybrid retrieval",
+      "Answer faithfulness",
+      "System instruction",
+      "JSON schema output"
+    ],
+    "answer": "Hybrid retrieval"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Cross encoder reranker",
+    "prompt": "Select the technique matching the following NLP description: jointly encodes a query and a candidate passage to assign a relevance score?",
+    "choices": [
+      "Cross encoder reranker",
+      "Retrieval recall at k",
+      "Stop sequence",
+      "Prompt injection"
+    ],
+    "answer": "Cross encoder reranker"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Reciprocal rank fusion",
+    "prompt": "Select the technique matching the following NLP description: combines ordered result lists using reciprocal-rank weighted scores?",
+    "choices": [
+      "Reciprocal rank fusion",
+      "Retrieval precision at k",
+      "Greedy decoding",
+      "Jailbreak attempt"
+    ],
+    "answer": "Reciprocal rank fusion"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Text chunking",
+    "prompt": "Select the technique matching the following NLP description: splits long source documents into retrievable passages?",
+    "choices": [
+      "Text chunking",
+      "Query expansion",
+      "Beam search",
+      "Output moderation"
+    ],
+    "answer": "Text chunking"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Overlapping chunks",
+    "prompt": "Select the technique matching the following NLP description: reuse some text between adjacent passages to preserve boundary context?",
+    "choices": [
+      "Overlapping chunks",
+      "Query rewriting",
+      "Repetition penalty",
+      "Instruction tuning"
+    ],
+    "answer": "Overlapping chunks"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Metadata filter",
+    "prompt": "Select the technique matching the following NLP description: restricts retrieved candidates by attributes such as source or access scope?",
+    "choices": [
+      "Metadata filter",
+      "Prompt template",
+      "Constrained decoding",
+      "Supervised fine tuning"
+    ],
+    "answer": "Metadata filter"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Groundedness evaluation",
+    "prompt": "Select the technique matching the following NLP description: checks whether a generated statement is supported by retrieved evidence?",
+    "choices": [
+      "Groundedness evaluation",
+      "System instruction",
+      "JSON schema output",
+      "RLHF"
+    ],
+    "answer": "Groundedness evaluation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Answer faithfulness",
+    "prompt": "Select the technique matching the following NLP description: measures whether an answer stays consistent with supplied context?",
+    "choices": [
+      "Answer faithfulness",
+      "Stop sequence",
+      "Prompt injection",
+      "DPO"
+    ],
+    "answer": "Answer faithfulness"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Retrieval recall at k",
+    "prompt": "Select the technique matching the following NLP description: measures the fraction of relevant documents present in the top k search results?",
+    "choices": [
+      "Retrieval recall at k",
+      "Greedy decoding",
+      "Jailbreak attempt",
+      "Preference dataset"
+    ],
+    "answer": "Retrieval recall at k"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Retrieval precision at k",
+    "prompt": "Select the technique matching the following NLP description: measures the proportion of top k retrieved items that are relevant?",
+    "choices": [
+      "Retrieval precision at k",
+      "Beam search",
+      "Output moderation",
+      "Reward model"
+    ],
+    "answer": "Retrieval precision at k"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Query expansion",
+    "prompt": "Select the technique matching the following NLP description: adds related search expressions to improve document recall?",
+    "choices": [
+      "Query expansion",
+      "Repetition penalty",
+      "Instruction tuning",
+      "KV cache"
+    ],
+    "answer": "Query expansion"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Query rewriting",
+    "prompt": "Select the technique matching the following NLP description: rephrases a user query into a form optimized for retrieval?",
+    "choices": [
+      "Query rewriting",
+      "Constrained decoding",
+      "Supervised fine tuning",
+      "Prefix caching"
+    ],
+    "answer": "Query rewriting"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Prompt template",
+    "prompt": "Select the technique matching the following NLP description: specifies reusable model instructions with named input slots?",
+    "choices": [
+      "Prompt template",
+      "JSON schema output",
+      "RLHF",
+      "Speculative decoding"
+    ],
+    "answer": "Prompt template"
+  },
+  {
+    "subject_id": 13,
+    "skill": "System instruction",
+    "prompt": "Select the technique matching the following NLP description: sets model-wide behavior guidelines in a role-prioritized message?",
+    "choices": [
+      "System instruction",
+      "Prompt injection",
+      "DPO",
+      "Continuous batching"
+    ],
+    "answer": "System instruction"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Stop sequence",
+    "prompt": "Select the technique matching the following NLP description: ends generation when a specified sequence appears?",
+    "choices": [
+      "Stop sequence",
+      "Jailbreak attempt",
+      "Preference dataset",
+      "Tensor parallelism"
+    ],
+    "answer": "Stop sequence"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Greedy decoding",
+    "prompt": "Select the technique matching the following NLP description: selects the highest-probability next token at every step?",
+    "choices": [
+      "Greedy decoding",
+      "Output moderation",
+      "Reward model",
+      "Quantized inference"
+    ],
+    "answer": "Greedy decoding"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Beam search",
+    "prompt": "Select the technique matching the following NLP description: tracks several likely partial output sequences before choosing a result?",
+    "choices": [
+      "Beam search",
+      "Instruction tuning",
+      "KV cache",
+      "Model distillation"
+    ],
+    "answer": "Beam search"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Repetition penalty",
+    "prompt": "Select the technique matching the following NLP description: reduces the attractiveness of repeatedly generating the same tokens?",
+    "choices": [
+      "Repetition penalty",
+      "Supervised fine tuning",
+      "Prefix caching",
+      "Synthetic training data"
+    ],
+    "answer": "Repetition penalty"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Constrained decoding",
+    "prompt": "Select the technique matching the following NLP description: limits generation to outputs allowed by a formal format or grammar?",
+    "choices": [
+      "Constrained decoding",
+      "RLHF",
+      "Speculative decoding",
+      "Benchmark contamination"
+    ],
+    "answer": "Constrained decoding"
+  },
+  {
+    "subject_id": 13,
+    "skill": "JSON schema output",
+    "prompt": "Select the technique matching the following NLP description: validates structured responses against required keys and types?",
+    "choices": [
+      "JSON schema output",
+      "DPO",
+      "Continuous batching",
+      "Instruction hierarchy"
+    ],
+    "answer": "JSON schema output"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Prompt injection",
+    "prompt": "Select the technique matching the following NLP description: uses lower-trust content to attempt overriding higher-priority instructions?",
+    "choices": [
+      "Prompt injection",
+      "Preference dataset",
+      "Tensor parallelism",
+      "Semantic cache"
+    ],
+    "answer": "Prompt injection"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Jailbreak attempt",
+    "prompt": "Select the technique matching the following NLP description: tries to bypass the model's behavioral restrictions with adversarial prompts?",
+    "choices": [
+      "Jailbreak attempt",
+      "Reward model",
+      "Quantized inference",
+      "Context packing"
+    ],
+    "answer": "Jailbreak attempt"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Output moderation",
+    "prompt": "Select the technique matching the following NLP description: screens generated content against application safety categories?",
+    "choices": [
+      "Output moderation",
+      "KV cache",
+      "Model distillation",
+      "Evaluation rubric"
+    ],
+    "answer": "Output moderation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Instruction tuning",
+    "prompt": "Select the technique matching the following NLP description: trains on instruction-response examples to improve following user directions?",
+    "choices": [
+      "Instruction tuning",
+      "Prefix caching",
+      "Synthetic training data",
+      "Sparse retrieval"
+    ],
+    "answer": "Instruction tuning"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Supervised fine tuning",
+    "prompt": "Select the technique matching the following NLP description: updates pretrained parameters using labeled target responses?",
+    "choices": [
+      "Supervised fine tuning",
+      "Speculative decoding",
+      "Benchmark contamination",
+      "BM25 scoring"
+    ],
+    "answer": "Supervised fine tuning"
+  },
+  {
+    "subject_id": 13,
+    "skill": "RLHF",
+    "prompt": "Select the technique matching the following NLP description: optimizes model behavior using preferences modeled from human feedback?",
+    "choices": [
+      "RLHF",
+      "Continuous batching",
+      "Instruction hierarchy",
+      "Dense retrieval"
+    ],
+    "answer": "RLHF"
+  },
+  {
+    "subject_id": 13,
+    "skill": "DPO",
+    "prompt": "Select the technique matching the following NLP description: optimizes preference likelihood directly from chosen and rejected response pairs?",
+    "choices": [
+      "DPO",
+      "Tensor parallelism",
+      "Semantic cache",
+      "Vector database"
+    ],
+    "answer": "DPO"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Preference dataset",
+    "prompt": "Select the technique matching the following NLP description: contains relative judgments comparing candidate model responses?",
+    "choices": [
+      "Preference dataset",
+      "Quantized inference",
+      "Context packing",
+      "Approximate nearest neighbor search"
+    ],
+    "answer": "Preference dataset"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Reward model",
+    "prompt": "Select the technique matching the following NLP description: predicts relative quality or desirability for model-generated responses?",
+    "choices": [
+      "Reward model",
+      "Model distillation",
+      "Evaluation rubric",
+      "Hybrid retrieval"
+    ],
+    "answer": "Reward model"
+  },
+  {
+    "subject_id": 13,
+    "skill": "KV cache",
+    "prompt": "Select the technique matching the following NLP description: reuses attention keys and values from previously processed generation positions?",
+    "choices": [
+      "KV cache",
+      "Synthetic training data",
+      "Sparse retrieval",
+      "Cross encoder reranker"
+    ],
+    "answer": "KV cache"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Prefix caching",
+    "prompt": "Select the technique matching the following NLP description: reuses computation associated with a repeated initial prompt prefix?",
+    "choices": [
+      "Prefix caching",
+      "Benchmark contamination",
+      "BM25 scoring",
+      "Reciprocal rank fusion"
+    ],
+    "answer": "Prefix caching"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Speculative decoding",
+    "prompt": "Select the technique matching the following NLP description: uses a draft model and verifier to accelerate token generation?",
+    "choices": [
+      "Speculative decoding",
+      "Instruction hierarchy",
+      "Dense retrieval",
+      "Text chunking"
+    ],
+    "answer": "Speculative decoding"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Continuous batching",
+    "prompt": "Select the technique matching the following NLP description: combines active inference requests dynamically as tokens finish?",
+    "choices": [
+      "Continuous batching",
+      "Semantic cache",
+      "Vector database",
+      "Overlapping chunks"
+    ],
+    "answer": "Continuous batching"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Tensor parallelism",
+    "prompt": "Select the technique matching the following NLP description: partitions layer computations across multiple accelerators?",
+    "choices": [
+      "Tensor parallelism",
+      "Context packing",
+      "Approximate nearest neighbor search",
+      "Metadata filter"
+    ],
+    "answer": "Tensor parallelism"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Quantized inference",
+    "prompt": "Select the technique matching the following NLP description: runs models with reduced numeric precision to lower serving costs?",
+    "choices": [
+      "Quantized inference",
+      "Evaluation rubric",
+      "Hybrid retrieval",
+      "Groundedness evaluation"
+    ],
+    "answer": "Quantized inference"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Model distillation",
+    "prompt": "Select the technique matching the following NLP description: transfers capabilities from a larger model to a smaller one?",
+    "choices": [
+      "Model distillation",
+      "Sparse retrieval",
+      "Cross encoder reranker",
+      "Answer faithfulness"
+    ],
+    "answer": "Model distillation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Synthetic training data",
+    "prompt": "Select the technique matching the following NLP description: creates artificial labeled examples to support model training?",
+    "choices": [
+      "Synthetic training data",
+      "BM25 scoring",
+      "Reciprocal rank fusion",
+      "Retrieval recall at k"
+    ],
+    "answer": "Synthetic training data"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Benchmark contamination",
+    "prompt": "Select the technique matching the following NLP description: occurs when evaluation examples leak into training materials?",
+    "choices": [
+      "Benchmark contamination",
+      "Dense retrieval",
+      "Text chunking",
+      "Retrieval precision at k"
+    ],
+    "answer": "Benchmark contamination"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Instruction hierarchy",
+    "prompt": "Select the technique matching the following NLP description: resolves conflicting requests according to message priority?",
+    "choices": [
+      "Instruction hierarchy",
+      "Vector database",
+      "Overlapping chunks",
+      "Query expansion"
+    ],
+    "answer": "Instruction hierarchy"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Semantic cache",
+    "prompt": "Select the technique matching the following NLP description: reuses prior responses for inputs that are similar in meaning?",
+    "choices": [
+      "Semantic cache",
+      "Approximate nearest neighbor search",
+      "Metadata filter",
+      "Query rewriting"
+    ],
+    "answer": "Semantic cache"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Context packing",
+    "prompt": "Select the technique matching the following NLP description: selects and orders retrieved content under a finite token budget?",
+    "choices": [
+      "Context packing",
+      "Hybrid retrieval",
+      "Groundedness evaluation",
+      "Prompt template"
+    ],
+    "answer": "Context packing"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Evaluation rubric",
+    "prompt": "Select the technique matching the following NLP description: specifies explicit criteria for grading generated answers?",
+    "choices": [
+      "Evaluation rubric",
+      "Cross encoder reranker",
+      "Answer faithfulness",
+      "System instruction"
+    ],
+    "answer": "Evaluation rubric"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Gaussian blur",
+    "prompt": "Select the technique matching the following NLP description: smooths an image by convolving it with a Gaussian-weighted kernel?",
+    "choices": [
+      "Gaussian blur",
+      "Contour extraction",
+      "Receptive field",
+      "Panoptic segmentation"
+    ],
+    "answer": "Gaussian blur"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Median filter",
+    "prompt": "Select the technique matching the following NLP description: replaces pixels by neighborhood medians to reduce salt-and-pepper noise?",
+    "choices": [
+      "Median filter",
+      "Grayscale conversion",
+      "Region of interest",
+      "Dice coefficient"
+    ],
+    "answer": "Median filter"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Bilateral filter",
+    "prompt": "Select the technique matching the following NLP description: smooths images while preserving some intensity edges using range weights?",
+    "choices": [
+      "Bilateral filter",
+      "RGB color space",
+      "Bounding box",
+      "Average precision"
+    ],
+    "answer": "Bilateral filter"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Sobel operator",
+    "prompt": "Select the technique matching the following NLP description: estimates directional intensity gradients using small convolution kernels?",
+    "choices": [
+      "Sobel operator",
+      "HSV color space",
+      "Anchor box",
+      "Mean average precision"
+    ],
+    "answer": "Sobel operator"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Laplacian operator",
+    "prompt": "Select the technique matching the following NLP description: highlights rapid second-order changes in image intensity?",
+    "choices": [
+      "Laplacian operator",
+      "YCbCr color space",
+      "ROI Align",
+      "Object keypoint estimation"
+    ],
+    "answer": "Laplacian operator"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Hough line transform",
+    "prompt": "Select the technique matching the following NLP description: detects parameterized straight lines from image edge points?",
+    "choices": [
+      "Hough line transform",
+      "Image kernel",
+      "Instance segmentation",
+      "Pose estimation"
+    ],
+    "answer": "Hough line transform"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Connected component labeling",
+    "prompt": "Select the technique matching the following NLP description: groups adjacent foreground pixels into distinct regions?",
+    "choices": [
+      "Connected component labeling",
+      "Receptive field",
+      "Panoptic segmentation",
+      "Stereo matching"
+    ],
+    "answer": "Connected component labeling"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Contour extraction",
+    "prompt": "Select the technique matching the following NLP description: finds ordered boundaries around image objects?",
+    "choices": [
+      "Contour extraction",
+      "Region of interest",
+      "Dice coefficient",
+      "Disparity map"
+    ],
+    "answer": "Contour extraction"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Grayscale conversion",
+    "prompt": "Select the technique matching the following NLP description: maps multichannel colors into a single intensity channel?",
+    "choices": [
+      "Grayscale conversion",
+      "Bounding box",
+      "Average precision",
+      "Depth estimation"
+    ],
+    "answer": "Grayscale conversion"
+  },
+  {
+    "subject_id": 14,
+    "skill": "RGB color space",
+    "prompt": "Select the technique matching the following NLP description: represents colors as red green and blue channel intensities?",
+    "choices": [
+      "RGB color space",
+      "Anchor box",
+      "Mean average precision",
+      "Camera intrinsics"
+    ],
+    "answer": "RGB color space"
+  },
+  {
+    "subject_id": 14,
+    "skill": "HSV color space",
+    "prompt": "Select the technique matching the following NLP description: represents colors using hue saturation and value components?",
+    "choices": [
+      "HSV color space",
+      "ROI Align",
+      "Object keypoint estimation",
+      "Camera extrinsics"
+    ],
+    "answer": "HSV color space"
+  },
+  {
+    "subject_id": 14,
+    "skill": "YCbCr color space",
+    "prompt": "Select the technique matching the following NLP description: separates brightness information from blue and red chrominance channels?",
+    "choices": [
+      "YCbCr color space",
+      "Instance segmentation",
+      "Pose estimation",
+      "Radial lens distortion"
+    ],
+    "answer": "YCbCr color space"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Image kernel",
+    "prompt": "Select the technique matching the following NLP description: contains a small array of weights applied to local image neighborhoods?",
+    "choices": [
+      "Image kernel",
+      "Panoptic segmentation",
+      "Stereo matching",
+      "Affine transformation"
+    ],
+    "answer": "Image kernel"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Receptive field",
+    "prompt": "Select the technique matching the following NLP description: describes the region of input pixels influencing a feature activation?",
+    "choices": [
+      "Receptive field",
+      "Dice coefficient",
+      "Disparity map",
+      "Homography"
+    ],
+    "answer": "Receptive field"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Region of interest",
+    "prompt": "Select the technique matching the following NLP description: selects a bounded image area for more focused analysis?",
+    "choices": [
+      "Region of interest",
+      "Average precision",
+      "Depth estimation",
+      "Color jitter"
+    ],
+    "answer": "Region of interest"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Bounding box",
+    "prompt": "Select the technique matching the following NLP description: uses rectangle coordinates to localize an object in an image?",
+    "choices": [
+      "Bounding box",
+      "Mean average precision",
+      "Camera intrinsics",
+      "Optical character recognition"
+    ],
+    "answer": "Bounding box"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Anchor box",
+    "prompt": "Select the technique matching the following NLP description: provides a predefined candidate box size and ratio in some detection models?",
+    "choices": [
+      "Anchor box",
+      "Object keypoint estimation",
+      "Camera extrinsics",
+      "Per channel normalization"
+    ],
+    "answer": "Anchor box"
+  },
+  {
+    "subject_id": 14,
+    "skill": "ROI Align",
+    "prompt": "Select the technique matching the following NLP description: samples feature regions with spatial alignment for two-stage detectors?",
+    "choices": [
+      "ROI Align",
+      "Pose estimation",
+      "Radial lens distortion",
+      "Gamma correction"
+    ],
+    "answer": "ROI Align"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Instance segmentation",
+    "prompt": "Select the technique matching the following NLP description: assigns separate pixel masks to individual object instances?",
+    "choices": [
+      "Instance segmentation",
+      "Stereo matching",
+      "Affine transformation",
+      "Gaussian blur"
+    ],
+    "answer": "Instance segmentation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Panoptic segmentation",
+    "prompt": "Select the technique matching the following NLP description: combines semantic region labels with distinct thing-instance identities?",
+    "choices": [
+      "Panoptic segmentation",
+      "Disparity map",
+      "Homography",
+      "Median filter"
+    ],
+    "answer": "Panoptic segmentation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Dice coefficient",
+    "prompt": "Select the technique matching the following NLP description: measures segmentation overlap as twice the intersection divided by total area?",
+    "choices": [
+      "Dice coefficient",
+      "Depth estimation",
+      "Color jitter",
+      "Bilateral filter"
+    ],
+    "answer": "Dice coefficient"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Average precision",
+    "prompt": "Select the technique matching the following NLP description: summarizes precision across recall levels for a detection class?",
+    "choices": [
+      "Average precision",
+      "Camera intrinsics",
+      "Optical character recognition",
+      "Sobel operator"
+    ],
+    "answer": "Average precision"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Mean average precision",
+    "prompt": "Select the technique matching the following NLP description: averages per-class average precision across selected categories?",
+    "choices": [
+      "Mean average precision",
+      "Camera extrinsics",
+      "Per channel normalization",
+      "Laplacian operator"
+    ],
+    "answer": "Mean average precision"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Object keypoint estimation",
+    "prompt": "Select the technique matching the following NLP description: predicts locations of landmarks such as anatomical joints?",
+    "choices": [
+      "Object keypoint estimation",
+      "Radial lens distortion",
+      "Gamma correction",
+      "Hough line transform"
+    ],
+    "answer": "Object keypoint estimation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Pose estimation",
+    "prompt": "Select the technique matching the following NLP description: infers the spatial arrangement or orientation of an object or body?",
+    "choices": [
+      "Pose estimation",
+      "Affine transformation",
+      "Gaussian blur",
+      "Connected component labeling"
+    ],
+    "answer": "Pose estimation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Stereo matching",
+    "prompt": "Select the technique matching the following NLP description: matches corresponding image points across two camera views?",
+    "choices": [
+      "Stereo matching",
+      "Homography",
+      "Median filter",
+      "Contour extraction"
+    ],
+    "answer": "Stereo matching"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Disparity map",
+    "prompt": "Select the technique matching the following NLP description: records pixel offsets between corresponding points in stereo views?",
+    "choices": [
+      "Disparity map",
+      "Color jitter",
+      "Bilateral filter",
+      "Grayscale conversion"
+    ],
+    "answer": "Disparity map"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Depth estimation",
+    "prompt": "Select the technique matching the following NLP description: predicts distances of scene surfaces from the camera?",
+    "choices": [
+      "Depth estimation",
+      "Optical character recognition",
+      "Sobel operator",
+      "RGB color space"
+    ],
+    "answer": "Depth estimation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Camera intrinsics",
+    "prompt": "Select the technique matching the following NLP description: describe focal lengths and optical center in pixel coordinates?",
+    "choices": [
+      "Camera intrinsics",
+      "Per channel normalization",
+      "Laplacian operator",
+      "HSV color space"
+    ],
+    "answer": "Camera intrinsics"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Camera extrinsics",
+    "prompt": "Select the technique matching the following NLP description: describe camera rotation and translation relative to a reference frame?",
+    "choices": [
+      "Camera extrinsics",
+      "Gamma correction",
+      "Hough line transform",
+      "YCbCr color space"
+    ],
+    "answer": "Camera extrinsics"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Radial lens distortion",
+    "prompt": "Select the technique matching the following NLP description: causes straight lines to bow because magnification changes with radius?",
+    "choices": [
+      "Radial lens distortion",
+      "Gaussian blur",
+      "Connected component labeling",
+      "Image kernel"
+    ],
+    "answer": "Radial lens distortion"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Affine transformation",
+    "prompt": "Select the technique matching the following NLP description: models translation rotation scaling or shearing without perspective distortion?",
+    "choices": [
+      "Affine transformation",
+      "Median filter",
+      "Contour extraction",
+      "Receptive field"
+    ],
+    "answer": "Affine transformation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Homography",
+    "prompt": "Select the technique matching the following NLP description: maps corresponding points between two planar projective image views?",
+    "choices": [
+      "Homography",
+      "Bilateral filter",
+      "Grayscale conversion",
+      "Region of interest"
+    ],
+    "answer": "Homography"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Color jitter",
+    "prompt": "Select the technique matching the following NLP description: augments images by changing brightness contrast saturation or hue?",
+    "choices": [
+      "Color jitter",
+      "Sobel operator",
+      "RGB color space",
+      "Bounding box"
+    ],
+    "answer": "Color jitter"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Optical character recognition",
+    "prompt": "Select the technique matching the following NLP description: extracts textual characters from visual document images?",
+    "choices": [
+      "Optical character recognition",
+      "Laplacian operator",
+      "HSV color space",
+      "Anchor box"
+    ],
+    "answer": "Optical character recognition"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Per channel normalization",
+    "prompt": "Select the technique matching the following NLP description: centers and rescales color channels before model inference?",
+    "choices": [
+      "Per channel normalization",
+      "Hough line transform",
+      "YCbCr color space",
+      "ROI Align"
+    ],
+    "answer": "Per channel normalization"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Gamma correction",
+    "prompt": "Select the technique matching the following NLP description: applies a nonlinear power mapping to adjust perceived brightness?",
+    "choices": [
+      "Gamma correction",
+      "Connected component labeling",
+      "Image kernel",
+      "Instance segmentation"
+    ],
+    "answer": "Gamma correction"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Sentence segmentation",
+    "prompt": "Select the technique matching the following NLP description: separates a document into individual sentence boundaries?",
+    "choices": [
+      "Sentence segmentation",
+      "Bag of words",
+      "Token offsets",
+      "Topic modeling"
+    ],
+    "answer": "Sentence segmentation"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Word tokenization",
+    "prompt": "Select the technique matching the following NLP description: splits text into linguistic word units?",
+    "choices": [
+      "Word tokenization",
+      "Cosine similarity",
+      "Attention mask",
+      "Latent Dirichlet allocation"
+    ],
+    "answer": "Word tokenization"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Subword tokenization",
+    "prompt": "Select the technique matching the following NLP description: divides uncommon words into smaller learned or rule-based units?",
+    "choices": [
+      "Subword tokenization",
+      "Jaccard similarity",
+      "Span extraction",
+      "Extractive summarization"
+    ],
+    "answer": "Subword tokenization"
+  },
+  {
+    "subject_id": 15,
+    "skill": "WordPiece",
+    "prompt": "Select the technique matching the following NLP description: constructs subword units through vocabulary-based likelihood-oriented segmentation?",
+    "choices": [
+      "WordPiece",
+      "Character n-gram",
+      "Morphological analysis",
+      "Abstractive summarization"
+    ],
+    "answer": "WordPiece"
+  },
+  {
+    "subject_id": 15,
+    "skill": "SentencePiece",
+    "prompt": "Select the technique matching the following NLP description: trains tokenization from raw text without requiring whitespace preprocessing?",
+    "choices": [
+      "SentencePiece",
+      "Text normalization",
+      "Sentiment analysis",
+      "Machine translation"
+    ],
+    "answer": "SentencePiece"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Stop-word filtering",
+    "prompt": "Select the technique matching the following NLP description: removes frequently occurring function words for selected bag-of-words workflows?",
+    "choices": [
+      "Stop-word filtering",
+      "Language identification",
+      "Text classification",
+      "Sequence-to-sequence model"
+    ],
+    "answer": "Stop-word filtering"
+  },
+  {
+    "subject_id": 15,
+    "skill": "N-gram",
+    "prompt": "Select the technique matching the following NLP description: represents a contiguous sequence of n textual tokens?",
+    "choices": [
+      "N-gram",
+      "Token offsets",
+      "Topic modeling",
+      "ROUGE score"
+    ],
+    "answer": "N-gram"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Bag of words",
+    "prompt": "Select the technique matching the following NLP description: represents document text using token counts without preserving word order?",
+    "choices": [
+      "Bag of words",
+      "Attention mask",
+      "Latent Dirichlet allocation",
+      "Word error rate"
+    ],
+    "answer": "Bag of words"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Cosine similarity",
+    "prompt": "Select the technique matching the following NLP description: compares vector directions through normalized dot products?",
+    "choices": [
+      "Cosine similarity",
+      "Span extraction",
+      "Extractive summarization",
+      "Character error rate"
+    ],
+    "answer": "Cosine similarity"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Jaccard similarity",
+    "prompt": "Select the technique matching the following NLP description: measures set overlap as intersection size divided by union size?",
+    "choices": [
+      "Jaccard similarity",
+      "Morphological analysis",
+      "Abstractive summarization",
+      "Masked language modeling"
+    ],
+    "answer": "Jaccard similarity"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Character n-gram",
+    "prompt": "Select the technique matching the following NLP description: represents overlapping fixed-length sequences of characters?",
+    "choices": [
+      "Character n-gram",
+      "Sentiment analysis",
+      "Machine translation",
+      "Bidirectional encoder"
+    ],
+    "answer": "Character n-gram"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Text normalization",
+    "prompt": "Select the technique matching the following NLP description: standardizes written form before feature extraction or modeling?",
+    "choices": [
+      "Text normalization",
+      "Text classification",
+      "Sequence-to-sequence model",
+      "BIO tagging"
+    ],
+    "answer": "Text normalization"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Language identification",
+    "prompt": "Select the technique matching the following NLP description: predicts the natural language present in a text sample?",
+    "choices": [
+      "Language identification",
+      "Topic modeling",
+      "ROUGE score",
+      "Conditional random field"
+    ],
+    "answer": "Language identification"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Token offsets",
+    "prompt": "Select the technique matching the following NLP description: map parsed token units back to start and end positions in original text?",
+    "choices": [
+      "Token offsets",
+      "Latent Dirichlet allocation",
+      "Word error rate",
+      "Entity linking"
+    ],
+    "answer": "Token offsets"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Attention mask",
+    "prompt": "Select the technique matching the following NLP description: marks which sequence positions should participate in attention computation?",
+    "choices": [
+      "Attention mask",
+      "Extractive summarization",
+      "Character error rate",
+      "Semantic role labeling"
+    ],
+    "answer": "Attention mask"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Span extraction",
+    "prompt": "Select the technique matching the following NLP description: identifies start and end boundaries of a sought answer in text?",
+    "choices": [
+      "Span extraction",
+      "Abstractive summarization",
+      "Masked language modeling",
+      "Constituency parsing"
+    ],
+    "answer": "Span extraction"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Morphological analysis",
+    "prompt": "Select the technique matching the following NLP description: identifies stems and grammatical features within word forms?",
+    "choices": [
+      "Morphological analysis",
+      "Machine translation",
+      "Bidirectional encoder",
+      "Word-sense disambiguation"
+    ],
+    "answer": "Morphological analysis"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Sentiment analysis",
+    "prompt": "Select the technique matching the following NLP description: predicts emotional polarity or opinion orientation in text?",
+    "choices": [
+      "Sentiment analysis",
+      "Sequence-to-sequence model",
+      "BIO tagging",
+      "Natural language inference"
+    ],
+    "answer": "Sentiment analysis"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Text classification",
+    "prompt": "Select the technique matching the following NLP description: assigns documents to one or more specified categories?",
+    "choices": [
+      "Text classification",
+      "ROUGE score",
+      "Conditional random field",
+      "Sentence segmentation"
+    ],
+    "answer": "Text classification"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Topic modeling",
+    "prompt": "Select the technique matching the following NLP description: identifies latent themes shared among document collections?",
+    "choices": [
+      "Topic modeling",
+      "Word error rate",
+      "Entity linking",
+      "Word tokenization"
+    ],
+    "answer": "Topic modeling"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Latent Dirichlet allocation",
+    "prompt": "Select the technique matching the following NLP description: models documents as mixtures of topics and topics as word distributions?",
+    "choices": [
+      "Latent Dirichlet allocation",
+      "Character error rate",
+      "Semantic role labeling",
+      "Subword tokenization"
+    ],
+    "answer": "Latent Dirichlet allocation"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Extractive summarization",
+    "prompt": "Select the technique matching the following NLP description: builds a summary by selecting fragments from the source?",
+    "choices": [
+      "Extractive summarization",
+      "Masked language modeling",
+      "Constituency parsing",
+      "WordPiece"
+    ],
+    "answer": "Extractive summarization"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Abstractive summarization",
+    "prompt": "Select the technique matching the following NLP description: generates new wording to convey the main content of a source?",
+    "choices": [
+      "Abstractive summarization",
+      "Bidirectional encoder",
+      "Word-sense disambiguation",
+      "SentencePiece"
+    ],
+    "answer": "Abstractive summarization"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Machine translation",
+    "prompt": "Select the technique matching the following NLP description: converts semantic content from one human language to another?",
+    "choices": [
+      "Machine translation",
+      "BIO tagging",
+      "Natural language inference",
+      "Stop-word filtering"
+    ],
+    "answer": "Machine translation"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Sequence-to-sequence model",
+    "prompt": "Select the technique matching the following NLP description: maps a variable-length source sequence to a generated target sequence?",
+    "choices": [
+      "Sequence-to-sequence model",
+      "Conditional random field",
+      "Sentence segmentation",
+      "N-gram"
+    ],
+    "answer": "Sequence-to-sequence model"
+  },
+  {
+    "subject_id": 15,
+    "skill": "ROUGE score",
+    "prompt": "Select the technique matching the following NLP description: measures textual overlap between a generated summary and a reference?",
+    "choices": [
+      "ROUGE score",
+      "Entity linking",
+      "Word tokenization",
+      "Bag of words"
+    ],
+    "answer": "ROUGE score"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Word error rate",
+    "prompt": "Select the technique matching the following NLP description: divides word-level substitutions deletions and insertions by reference word count?",
+    "choices": [
+      "Word error rate",
+      "Semantic role labeling",
+      "Subword tokenization",
+      "Cosine similarity"
+    ],
+    "answer": "Word error rate"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Character error rate",
+    "prompt": "Select the technique matching the following NLP description: measures edit distance errors relative to reference character count?",
+    "choices": [
+      "Character error rate",
+      "Constituency parsing",
+      "WordPiece",
+      "Jaccard similarity"
+    ],
+    "answer": "Character error rate"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Masked language modeling",
+    "prompt": "Select the technique matching the following NLP description: predicts selected hidden tokens from surrounding visible context?",
+    "choices": [
+      "Masked language modeling",
+      "Word-sense disambiguation",
+      "SentencePiece",
+      "Character n-gram"
+    ],
+    "answer": "Masked language modeling"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Bidirectional encoder",
+    "prompt": "Select the technique matching the following NLP description: builds representations using context from both sides of a token?",
+    "choices": [
+      "Bidirectional encoder",
+      "Natural language inference",
+      "Stop-word filtering",
+      "Text normalization"
+    ],
+    "answer": "Bidirectional encoder"
+  },
+  {
+    "subject_id": 15,
+    "skill": "BIO tagging",
+    "prompt": "Select the technique matching the following NLP description: labels tokens as beginning inside or outside a target entity span?",
+    "choices": [
+      "BIO tagging",
+      "Sentence segmentation",
+      "N-gram",
+      "Language identification"
+    ],
+    "answer": "BIO tagging"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Conditional random field",
+    "prompt": "Select the technique matching the following NLP description: models dependencies among neighboring structured output labels?",
+    "choices": [
+      "Conditional random field",
+      "Word tokenization",
+      "Bag of words",
+      "Token offsets"
+    ],
+    "answer": "Conditional random field"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Entity linking",
+    "prompt": "Select the technique matching the following NLP description: resolves detected entity mentions to records in a knowledge base?",
+    "choices": [
+      "Entity linking",
+      "Subword tokenization",
+      "Cosine similarity",
+      "Attention mask"
+    ],
+    "answer": "Entity linking"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Semantic role labeling",
+    "prompt": "Select the technique matching the following NLP description: identifies predicate arguments such as agent or patient?",
+    "choices": [
+      "Semantic role labeling",
+      "WordPiece",
+      "Jaccard similarity",
+      "Span extraction"
+    ],
+    "answer": "Semantic role labeling"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Constituency parsing",
+    "prompt": "Select the technique matching the following NLP description: decomposes sentences into nested grammatical phrases?",
+    "choices": [
+      "Constituency parsing",
+      "SentencePiece",
+      "Character n-gram",
+      "Morphological analysis"
+    ],
+    "answer": "Constituency parsing"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Word-sense disambiguation",
+    "prompt": "Select the technique matching the following NLP description: selects the intended meaning of an ambiguous word from context?",
+    "choices": [
+      "Word-sense disambiguation",
+      "Stop-word filtering",
+      "Text normalization",
+      "Sentiment analysis"
+    ],
+    "answer": "Word-sense disambiguation"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Natural language inference",
+    "prompt": "Select the technique matching the following NLP description: predicts whether a hypothesis is entailed contradicted or neutral given a premise?",
+    "choices": [
+      "Natural language inference",
+      "N-gram",
+      "Language identification",
+      "Text classification"
+    ],
+    "answer": "Natural language inference"
+  }
+]

@@ -1,0 +1,7214 @@
+[
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 5",
+    "prompt": "Array [5, 7, 9, 11] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "9",
+      "11",
+      "7",
+      "13"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 7",
+    "prompt": "A perfect binary tree has 7 nodes. What is its height measured in edges?",
+    "choices": [
+      "2",
+      "3",
+      "1",
+      "4"
+    ],
+    "answer": "2"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 6",
+    "prompt": "A simple complete undirected graph has 6 vertices. How many edges does it contain?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 5",
+    "prompt": "A complete directed graph has 5 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "20",
+      "22",
+      "18",
+      "24"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 4",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 4-vertex graph. How many cells does it have?",
+    "choices": [
+      "16",
+      "18",
+      "14",
+      "20"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 5",
+    "prompt": "An array holds the first 5 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "30",
+      "32",
+      "28",
+      "34"
+    ],
+    "answer": "30"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 8",
+    "prompt": "A full binary tree has 8 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 3",
+    "prompt": "Evaluate postfix expression \"3 7 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "20",
+      "22",
+      "18",
+      "24"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 8",
+    "prompt": "A FIFO queue contains 1 through 8. After dequeueing 5 elements, which integer is at the front?",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "answer": "6"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 4",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+4. Find a(6)?",
+    "choices": [
+      "22",
+      "24",
+      "20",
+      "26"
+    ],
+    "answer": "22"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 6",
+    "prompt": "A min-heap currently contains 6, 8, 10. After inserting 5, what is the root value?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 6",
+    "prompt": "Array [6, 8, 10, 12] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "10",
+      "12",
+      "8",
+      "14"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 15",
+    "prompt": "A perfect binary tree has 15 nodes. What is its height measured in edges?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 7",
+    "prompt": "A simple complete undirected graph has 7 vertices. How many edges does it contain?",
+    "choices": [
+      "21",
+      "22",
+      "20",
+      "23"
+    ],
+    "answer": "21"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 6",
+    "prompt": "A complete directed graph has 6 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "30",
+      "32",
+      "28",
+      "34"
+    ],
+    "answer": "30"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 5",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 5-vertex graph. How many cells does it have?",
+    "choices": [
+      "25",
+      "27",
+      "23",
+      "29"
+    ],
+    "answer": "25"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 6",
+    "prompt": "An array holds the first 6 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "42",
+      "44",
+      "40",
+      "46"
+    ],
+    "answer": "42"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 9",
+    "prompt": "A full binary tree has 9 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 4",
+    "prompt": "Evaluate postfix expression \"4 8 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "24",
+      "26",
+      "22",
+      "28"
+    ],
+    "answer": "24"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 9",
+    "prompt": "A FIFO queue contains 1 through 9. After dequeueing 6 elements, which integer is at the front?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "answer": "7"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 5",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+5. Find a(6)?",
+    "choices": [
+      "27",
+      "29",
+      "25",
+      "31"
+    ],
+    "answer": "27"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 7",
+    "prompt": "A min-heap currently contains 7, 9, 11. After inserting 6, what is the root value?",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "answer": "6"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 7",
+    "prompt": "Array [7, 9, 11, 13] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "11",
+      "13",
+      "9",
+      "15"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 31",
+    "prompt": "A perfect binary tree has 31 nodes. What is its height measured in edges?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 8",
+    "prompt": "A simple complete undirected graph has 8 vertices. How many edges does it contain?",
+    "choices": [
+      "28",
+      "29",
+      "27",
+      "30"
+    ],
+    "answer": "28"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 7",
+    "prompt": "A complete directed graph has 7 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "42",
+      "44",
+      "40",
+      "46"
+    ],
+    "answer": "42"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 6",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 6-vertex graph. How many cells does it have?",
+    "choices": [
+      "36",
+      "38",
+      "34",
+      "40"
+    ],
+    "answer": "36"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 7",
+    "prompt": "An array holds the first 7 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "56",
+      "58",
+      "54",
+      "60"
+    ],
+    "answer": "56"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 10",
+    "prompt": "A full binary tree has 10 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 5",
+    "prompt": "Evaluate postfix expression \"5 9 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "28",
+      "30",
+      "26",
+      "32"
+    ],
+    "answer": "28"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 10",
+    "prompt": "A FIFO queue contains 1 through 10. After dequeueing 7 elements, which integer is at the front?",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 6",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+6. Find a(6)?",
+    "choices": [
+      "32",
+      "34",
+      "30",
+      "36"
+    ],
+    "answer": "32"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 8",
+    "prompt": "A min-heap currently contains 8, 10, 12. After inserting 7, what is the root value?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "answer": "7"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 8",
+    "prompt": "Array [8, 10, 12, 14] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "12",
+      "14",
+      "10",
+      "16"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 63",
+    "prompt": "A perfect binary tree has 63 nodes. What is its height measured in edges?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 9",
+    "prompt": "A simple complete undirected graph has 9 vertices. How many edges does it contain?",
+    "choices": [
+      "36",
+      "37",
+      "35",
+      "38"
+    ],
+    "answer": "36"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 8",
+    "prompt": "A complete directed graph has 8 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "56",
+      "58",
+      "54",
+      "60"
+    ],
+    "answer": "56"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 7",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 7-vertex graph. How many cells does it have?",
+    "choices": [
+      "49",
+      "51",
+      "47",
+      "53"
+    ],
+    "answer": "49"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 8",
+    "prompt": "An array holds the first 8 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "72",
+      "74",
+      "70",
+      "76"
+    ],
+    "answer": "72"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 11",
+    "prompt": "A full binary tree has 11 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 6",
+    "prompt": "Evaluate postfix expression \"6 10 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "32",
+      "34",
+      "30",
+      "36"
+    ],
+    "answer": "32"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 11",
+    "prompt": "A FIFO queue contains 1 through 11. After dequeueing 8 elements, which integer is at the front?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 7",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+7. Find a(6)?",
+    "choices": [
+      "37",
+      "39",
+      "35",
+      "41"
+    ],
+    "answer": "37"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 9",
+    "prompt": "A min-heap currently contains 9, 11, 13. After inserting 8, what is the root value?",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 9",
+    "prompt": "Array [9, 11, 13, 15] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "13",
+      "15",
+      "11",
+      "17"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 127",
+    "prompt": "A perfect binary tree has 127 nodes. What is its height measured in edges?",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "answer": "6"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 10",
+    "prompt": "A simple complete undirected graph has 10 vertices. How many edges does it contain?",
+    "choices": [
+      "45",
+      "46",
+      "44",
+      "47"
+    ],
+    "answer": "45"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 9",
+    "prompt": "A complete directed graph has 9 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "72",
+      "74",
+      "70",
+      "76"
+    ],
+    "answer": "72"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 8",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 8-vertex graph. How many cells does it have?",
+    "choices": [
+      "64",
+      "66",
+      "62",
+      "68"
+    ],
+    "answer": "64"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 9",
+    "prompt": "An array holds the first 9 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "90",
+      "92",
+      "88",
+      "94"
+    ],
+    "answer": "90"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 12",
+    "prompt": "A full binary tree has 12 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 7",
+    "prompt": "Evaluate postfix expression \"7 11 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "36",
+      "38",
+      "34",
+      "40"
+    ],
+    "answer": "36"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 12",
+    "prompt": "A FIFO queue contains 1 through 12. After dequeueing 9 elements, which integer is at the front?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 8",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+8. Find a(6)?",
+    "choices": [
+      "42",
+      "44",
+      "40",
+      "46"
+    ],
+    "answer": "42"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 10",
+    "prompt": "A min-heap currently contains 10, 12, 14. After inserting 9, what is the root value?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 10",
+    "prompt": "Array [10, 12, 14, 16] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "14",
+      "16",
+      "12",
+      "18"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 255",
+    "prompt": "A perfect binary tree has 255 nodes. What is its height measured in edges?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "answer": "7"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 11",
+    "prompt": "A simple complete undirected graph has 11 vertices. How many edges does it contain?",
+    "choices": [
+      "55",
+      "56",
+      "54",
+      "57"
+    ],
+    "answer": "55"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 10",
+    "prompt": "A complete directed graph has 10 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "90",
+      "92",
+      "88",
+      "94"
+    ],
+    "answer": "90"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 9",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 9-vertex graph. How many cells does it have?",
+    "choices": [
+      "81",
+      "83",
+      "79",
+      "85"
+    ],
+    "answer": "81"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 10",
+    "prompt": "An array holds the first 10 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "110",
+      "112",
+      "108",
+      "114"
+    ],
+    "answer": "110"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 13",
+    "prompt": "A full binary tree has 13 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 8",
+    "prompt": "Evaluate postfix expression \"8 12 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "40",
+      "42",
+      "38",
+      "44"
+    ],
+    "answer": "40"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 13",
+    "prompt": "A FIFO queue contains 1 through 13. After dequeueing 10 elements, which integer is at the front?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 9",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+9. Find a(6)?",
+    "choices": [
+      "47",
+      "49",
+      "45",
+      "51"
+    ],
+    "answer": "47"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 11",
+    "prompt": "A min-heap currently contains 11, 13, 15. After inserting 10, what is the root value?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 11",
+    "prompt": "Array [11, 13, 15, 17] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "15",
+      "17",
+      "13",
+      "19"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 511",
+    "prompt": "A perfect binary tree has 511 nodes. What is its height measured in edges?",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 12",
+    "prompt": "A simple complete undirected graph has 12 vertices. How many edges does it contain?",
+    "choices": [
+      "66",
+      "67",
+      "65",
+      "68"
+    ],
+    "answer": "66"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 11",
+    "prompt": "A complete directed graph has 11 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "110",
+      "112",
+      "108",
+      "114"
+    ],
+    "answer": "110"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 10",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 10-vertex graph. How many cells does it have?",
+    "choices": [
+      "100",
+      "102",
+      "98",
+      "104"
+    ],
+    "answer": "100"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 11",
+    "prompt": "An array holds the first 11 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "132",
+      "134",
+      "130",
+      "136"
+    ],
+    "answer": "132"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 14",
+    "prompt": "A full binary tree has 14 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 9",
+    "prompt": "Evaluate postfix expression \"9 13 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "44",
+      "46",
+      "42",
+      "48"
+    ],
+    "answer": "44"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 14",
+    "prompt": "A FIFO queue contains 1 through 14. After dequeueing 11 elements, which integer is at the front?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 10",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+10. Find a(6)?",
+    "choices": [
+      "52",
+      "54",
+      "50",
+      "56"
+    ],
+    "answer": "52"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 12",
+    "prompt": "A min-heap currently contains 12, 14, 16. After inserting 11, what is the root value?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 12",
+    "prompt": "Array [12, 14, 16, 18] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "16",
+      "18",
+      "14",
+      "20"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 1023",
+    "prompt": "A perfect binary tree has 1023 nodes. What is its height measured in edges?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 13",
+    "prompt": "A simple complete undirected graph has 13 vertices. How many edges does it contain?",
+    "choices": [
+      "78",
+      "79",
+      "77",
+      "80"
+    ],
+    "answer": "78"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 12",
+    "prompt": "A complete directed graph has 12 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "132",
+      "134",
+      "130",
+      "136"
+    ],
+    "answer": "132"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 11",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 11-vertex graph. How many cells does it have?",
+    "choices": [
+      "121",
+      "123",
+      "119",
+      "125"
+    ],
+    "answer": "121"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 12",
+    "prompt": "An array holds the first 12 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "156",
+      "158",
+      "154",
+      "160"
+    ],
+    "answer": "156"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 15",
+    "prompt": "A full binary tree has 15 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 10",
+    "prompt": "Evaluate postfix expression \"10 14 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "48",
+      "50",
+      "46",
+      "52"
+    ],
+    "answer": "48"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 15",
+    "prompt": "A FIFO queue contains 1 through 15. After dequeueing 12 elements, which integer is at the front?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 11",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+11. Find a(6)?",
+    "choices": [
+      "57",
+      "59",
+      "55",
+      "61"
+    ],
+    "answer": "57"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 13",
+    "prompt": "A min-heap currently contains 13, 15, 17. After inserting 12, what is the root value?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 13",
+    "prompt": "Array [13, 15, 17, 19] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "17",
+      "19",
+      "15",
+      "21"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 2047",
+    "prompt": "A perfect binary tree has 2047 nodes. What is its height measured in edges?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 14",
+    "prompt": "A simple complete undirected graph has 14 vertices. How many edges does it contain?",
+    "choices": [
+      "91",
+      "92",
+      "90",
+      "93"
+    ],
+    "answer": "91"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 13",
+    "prompt": "A complete directed graph has 13 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "156",
+      "158",
+      "154",
+      "160"
+    ],
+    "answer": "156"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 12",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 12-vertex graph. How many cells does it have?",
+    "choices": [
+      "144",
+      "146",
+      "142",
+      "148"
+    ],
+    "answer": "144"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 13",
+    "prompt": "An array holds the first 13 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "182",
+      "184",
+      "180",
+      "186"
+    ],
+    "answer": "182"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 16",
+    "prompt": "A full binary tree has 16 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 11",
+    "prompt": "Evaluate postfix expression \"11 15 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "52",
+      "54",
+      "50",
+      "56"
+    ],
+    "answer": "52"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 16",
+    "prompt": "A FIFO queue contains 1 through 16. After dequeueing 13 elements, which integer is at the front?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 12",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+12. Find a(6)?",
+    "choices": [
+      "62",
+      "64",
+      "60",
+      "66"
+    ],
+    "answer": "62"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 14",
+    "prompt": "A min-heap currently contains 14, 16, 18. After inserting 13, what is the root value?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 14",
+    "prompt": "Array [14, 16, 18, 20] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "18",
+      "20",
+      "16",
+      "22"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 4095",
+    "prompt": "A perfect binary tree has 4095 nodes. What is its height measured in edges?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 15",
+    "prompt": "A simple complete undirected graph has 15 vertices. How many edges does it contain?",
+    "choices": [
+      "105",
+      "106",
+      "104",
+      "107"
+    ],
+    "answer": "105"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 14",
+    "prompt": "A complete directed graph has 14 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "182",
+      "184",
+      "180",
+      "186"
+    ],
+    "answer": "182"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 13",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 13-vertex graph. How many cells does it have?",
+    "choices": [
+      "169",
+      "171",
+      "167",
+      "173"
+    ],
+    "answer": "169"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 14",
+    "prompt": "An array holds the first 14 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "210",
+      "212",
+      "208",
+      "214"
+    ],
+    "answer": "210"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 17",
+    "prompt": "A full binary tree has 17 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "18",
+      "19",
+      "17",
+      "20"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 12",
+    "prompt": "Evaluate postfix expression \"12 16 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "56",
+      "58",
+      "54",
+      "60"
+    ],
+    "answer": "56"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 17",
+    "prompt": "A FIFO queue contains 1 through 17. After dequeueing 14 elements, which integer is at the front?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 13",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+13. Find a(6)?",
+    "choices": [
+      "67",
+      "69",
+      "65",
+      "71"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 15",
+    "prompt": "A min-heap currently contains 15, 17, 19. After inserting 14, what is the root value?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 15",
+    "prompt": "Array [15, 17, 19, 21] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "19",
+      "21",
+      "17",
+      "23"
+    ],
+    "answer": "19"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 8191",
+    "prompt": "A perfect binary tree has 8191 nodes. What is its height measured in edges?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 16",
+    "prompt": "A simple complete undirected graph has 16 vertices. How many edges does it contain?",
+    "choices": [
+      "120",
+      "121",
+      "119",
+      "122"
+    ],
+    "answer": "120"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 15",
+    "prompt": "A complete directed graph has 15 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "210",
+      "212",
+      "208",
+      "214"
+    ],
+    "answer": "210"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 14",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 14-vertex graph. How many cells does it have?",
+    "choices": [
+      "196",
+      "198",
+      "194",
+      "200"
+    ],
+    "answer": "196"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 15",
+    "prompt": "An array holds the first 15 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "240",
+      "242",
+      "238",
+      "244"
+    ],
+    "answer": "240"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 18",
+    "prompt": "A full binary tree has 18 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "19",
+      "20",
+      "18",
+      "21"
+    ],
+    "answer": "19"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 13",
+    "prompt": "Evaluate postfix expression \"13 17 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "60",
+      "62",
+      "58",
+      "64"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 18",
+    "prompt": "A FIFO queue contains 1 through 18. After dequeueing 15 elements, which integer is at the front?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 14",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+14. Find a(6)?",
+    "choices": [
+      "72",
+      "74",
+      "70",
+      "76"
+    ],
+    "answer": "72"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 16",
+    "prompt": "A min-heap currently contains 16, 18, 20. After inserting 15, what is the root value?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 16",
+    "prompt": "Array [16, 18, 20, 22] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "20",
+      "22",
+      "18",
+      "24"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 16383",
+    "prompt": "A perfect binary tree has 16383 nodes. What is its height measured in edges?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 17",
+    "prompt": "A simple complete undirected graph has 17 vertices. How many edges does it contain?",
+    "choices": [
+      "136",
+      "137",
+      "135",
+      "138"
+    ],
+    "answer": "136"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 16",
+    "prompt": "A complete directed graph has 16 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "240",
+      "242",
+      "238",
+      "244"
+    ],
+    "answer": "240"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 15",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 15-vertex graph. How many cells does it have?",
+    "choices": [
+      "225",
+      "227",
+      "223",
+      "229"
+    ],
+    "answer": "225"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sum first even terms 16",
+    "prompt": "An array holds the first 16 positive even integers. What is the sum of all elements?",
+    "choices": [
+      "272",
+      "274",
+      "270",
+      "276"
+    ],
+    "answer": "272"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Full binary-tree leaves 19",
+    "prompt": "A full binary tree has 19 internal nodes and exactly two children per internal node. How many leaves does it have?",
+    "choices": [
+      "20",
+      "21",
+      "19",
+      "22"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Postfix expression 14",
+    "prompt": "Evaluate postfix expression \"14 18 + 2 *\" using integer arithmetic?",
+    "choices": [
+      "64",
+      "66",
+      "62",
+      "68"
+    ],
+    "answer": "64"
+  },
+  {
+    "subject_id": 2,
+    "skill": "FIFO after dequeues 19",
+    "prompt": "A FIFO queue contains 1 through 19. After dequeueing 16 elements, which integer is at the front?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Arithmetic recursion 15",
+    "prompt": "A recurrence satisfies a(1)=2, a(t)=a(t-1)+15. Find a(6)?",
+    "choices": [
+      "77",
+      "79",
+      "75",
+      "81"
+    ],
+    "answer": "77"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap root after insert 17",
+    "prompt": "A min-heap currently contains 17, 19, 21. After inserting 16, what is the root value?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Array left-rotation 17",
+    "prompt": "Array [17, 19, 21, 23] is rotated left by two positions. What is the new first element?",
+    "choices": [
+      "21",
+      "23",
+      "19",
+      "25"
+    ],
+    "answer": "21"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Perfect binary-tree height 32767",
+    "prompt": "A perfect binary tree has 32767 nodes. What is its height measured in edges?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Undirected complete-graph edges 18",
+    "prompt": "A simple complete undirected graph has 18 vertices. How many edges does it contain?",
+    "choices": [
+      "153",
+      "154",
+      "152",
+      "155"
+    ],
+    "answer": "153"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Directed complete-graph edges 17",
+    "prompt": "A complete directed graph has 17 vertices and no self-loops. How many directed edges are present?",
+    "choices": [
+      "272",
+      "274",
+      "270",
+      "276"
+    ],
+    "answer": "272"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Adjacency matrix entries 16",
+    "prompt": "An adjacency matrix stores all ordered pairs for a 16-vertex graph. How many cells does it have?",
+    "choices": [
+      "256",
+      "258",
+      "254",
+      "260"
+    ],
+    "answer": "256"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 9",
+    "prompt": "Table sales(amount) contains rows 9, 14, 19. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "42",
+      "43",
+      "41",
+      "44"
+    ],
+    "answer": "42"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 6",
+    "prompt": "Table t(v) contains 6, NULL, 9, NULL, 13. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 2",
+    "prompt": "Table visits(user_id) contains 2, 2, 3, 4, 4, 5. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 10",
+    "prompt": "Table orders(total) contains 8, 10, 11, 14, 18. How many rows satisfy total > 10?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 5",
+    "prompt": "One customers row has id 7. Orders contains 5 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 6",
+    "prompt": "A customers table has 6 customers; 4 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "answer": "6"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 4",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 4th row receive?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 3",
+    "prompt": "Table t(v) has values 3, 7, 11. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "answer": "7"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 10",
+    "prompt": "Table sales(amount) contains rows 10, 15, 20. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "45",
+      "46",
+      "44",
+      "47"
+    ],
+    "answer": "45"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 7",
+    "prompt": "Table t(v) contains 7, NULL, 10, NULL, 14. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 3",
+    "prompt": "Table visits(user_id) contains 3, 3, 4, 5, 5, 6. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 11",
+    "prompt": "Table orders(total) contains 9, 11, 12, 15, 19. How many rows satisfy total > 11?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 6",
+    "prompt": "One customers row has id 7. Orders contains 6 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "answer": "6"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 7",
+    "prompt": "A customers table has 7 customers; 5 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "answer": "7"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 5",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 5th row receive?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 4",
+    "prompt": "Table t(v) has values 4, 8, 12. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 11",
+    "prompt": "Table sales(amount) contains rows 11, 16, 21. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "48",
+      "49",
+      "47",
+      "50"
+    ],
+    "answer": "48"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 8",
+    "prompt": "Table t(v) contains 8, NULL, 11, NULL, 15. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 4",
+    "prompt": "Table visits(user_id) contains 4, 4, 5, 6, 6, 7. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 12",
+    "prompt": "Table orders(total) contains 10, 12, 13, 16, 20. How many rows satisfy total > 12?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 7",
+    "prompt": "One customers row has id 7. Orders contains 7 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "answer": "7"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 8",
+    "prompt": "A customers table has 8 customers; 6 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 6",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 6th row receive?",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "answer": "6"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 5",
+    "prompt": "Table t(v) has values 5, 9, 13. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 12",
+    "prompt": "Table sales(amount) contains rows 12, 17, 22. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "51",
+      "52",
+      "50",
+      "53"
+    ],
+    "answer": "51"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 9",
+    "prompt": "Table t(v) contains 9, NULL, 12, NULL, 16. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 5",
+    "prompt": "Table visits(user_id) contains 5, 5, 6, 7, 7, 8. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 13",
+    "prompt": "Table orders(total) contains 11, 13, 14, 17, 21. How many rows satisfy total > 13?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 8",
+    "prompt": "One customers row has id 7. Orders contains 8 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 9",
+    "prompt": "A customers table has 9 customers; 7 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 7",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 7th row receive?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "answer": "7"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 6",
+    "prompt": "Table t(v) has values 6, 10, 14. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 13",
+    "prompt": "Table sales(amount) contains rows 13, 18, 23. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "54",
+      "55",
+      "53",
+      "56"
+    ],
+    "answer": "54"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 10",
+    "prompt": "Table t(v) contains 10, NULL, 13, NULL, 17. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 6",
+    "prompt": "Table visits(user_id) contains 6, 6, 7, 8, 8, 9. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 14",
+    "prompt": "Table orders(total) contains 12, 14, 15, 18, 22. How many rows satisfy total > 14?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 9",
+    "prompt": "One customers row has id 7. Orders contains 9 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 10",
+    "prompt": "A customers table has 10 customers; 8 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 8",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 8th row receive?",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 7",
+    "prompt": "Table t(v) has values 7, 11, 15. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 14",
+    "prompt": "Table sales(amount) contains rows 14, 19, 24. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "57",
+      "58",
+      "56",
+      "59"
+    ],
+    "answer": "57"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 11",
+    "prompt": "Table t(v) contains 11, NULL, 14, NULL, 18. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 7",
+    "prompt": "Table visits(user_id) contains 7, 7, 8, 9, 9, 10. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 15",
+    "prompt": "Table orders(total) contains 13, 15, 16, 19, 23. How many rows satisfy total > 15?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 10",
+    "prompt": "One customers row has id 7. Orders contains 10 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 11",
+    "prompt": "A customers table has 11 customers; 9 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 9",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 9th row receive?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 8",
+    "prompt": "Table t(v) has values 8, 12, 16. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 15",
+    "prompt": "Table sales(amount) contains rows 15, 20, 25. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "60",
+      "61",
+      "59",
+      "62"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 12",
+    "prompt": "Table t(v) contains 12, NULL, 15, NULL, 19. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 8",
+    "prompt": "Table visits(user_id) contains 8, 8, 9, 10, 10, 11. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 16",
+    "prompt": "Table orders(total) contains 14, 16, 17, 20, 24. How many rows satisfy total > 16?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 11",
+    "prompt": "One customers row has id 7. Orders contains 11 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 12",
+    "prompt": "A customers table has 12 customers; 10 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 10",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 10th row receive?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 9",
+    "prompt": "Table t(v) has values 9, 13, 17. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 16",
+    "prompt": "Table sales(amount) contains rows 16, 21, 26. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "63",
+      "64",
+      "62",
+      "65"
+    ],
+    "answer": "63"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 13",
+    "prompt": "Table t(v) contains 13, NULL, 16, NULL, 20. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 9",
+    "prompt": "Table visits(user_id) contains 9, 9, 10, 11, 11, 12. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 17",
+    "prompt": "Table orders(total) contains 15, 17, 18, 21, 25. How many rows satisfy total > 17?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 12",
+    "prompt": "One customers row has id 7. Orders contains 12 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 13",
+    "prompt": "A customers table has 13 customers; 11 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 11",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 11th row receive?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 10",
+    "prompt": "Table t(v) has values 10, 14, 18. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 17",
+    "prompt": "Table sales(amount) contains rows 17, 22, 27. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "66",
+      "67",
+      "65",
+      "68"
+    ],
+    "answer": "66"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 14",
+    "prompt": "Table t(v) contains 14, NULL, 17, NULL, 21. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 10",
+    "prompt": "Table visits(user_id) contains 10, 10, 11, 12, 12, 13. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 18",
+    "prompt": "Table orders(total) contains 16, 18, 19, 22, 26. How many rows satisfy total > 18?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 13",
+    "prompt": "One customers row has id 7. Orders contains 13 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 14",
+    "prompt": "A customers table has 14 customers; 12 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 12",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 12th row receive?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 11",
+    "prompt": "Table t(v) has values 11, 15, 19. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 18",
+    "prompt": "Table sales(amount) contains rows 18, 23, 28. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "69",
+      "70",
+      "68",
+      "71"
+    ],
+    "answer": "69"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 15",
+    "prompt": "Table t(v) contains 15, NULL, 18, NULL, 22. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 11",
+    "prompt": "Table visits(user_id) contains 11, 11, 12, 13, 13, 14. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 19",
+    "prompt": "Table orders(total) contains 17, 19, 20, 23, 27. How many rows satisfy total > 19?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 14",
+    "prompt": "One customers row has id 7. Orders contains 14 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 15",
+    "prompt": "A customers table has 15 customers; 13 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 13",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 13th row receive?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 12",
+    "prompt": "Table t(v) has values 12, 16, 20. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 19",
+    "prompt": "Table sales(amount) contains rows 19, 24, 29. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "72",
+      "73",
+      "71",
+      "74"
+    ],
+    "answer": "72"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 16",
+    "prompt": "Table t(v) contains 16, NULL, 19, NULL, 23. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 12",
+    "prompt": "Table visits(user_id) contains 12, 12, 13, 14, 14, 15. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 20",
+    "prompt": "Table orders(total) contains 18, 20, 21, 24, 28. How many rows satisfy total > 20?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 15",
+    "prompt": "One customers row has id 7. Orders contains 15 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 16",
+    "prompt": "A customers table has 16 customers; 14 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 14",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 14th row receive?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 13",
+    "prompt": "Table t(v) has values 13, 17, 21. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 20",
+    "prompt": "Table sales(amount) contains rows 20, 25, 30. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "75",
+      "76",
+      "74",
+      "77"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 17",
+    "prompt": "Table t(v) contains 17, NULL, 20, NULL, 24. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 13",
+    "prompt": "Table visits(user_id) contains 13, 13, 14, 15, 15, 16. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 21",
+    "prompt": "Table orders(total) contains 19, 21, 22, 25, 29. How many rows satisfy total > 21?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 16",
+    "prompt": "One customers row has id 7. Orders contains 16 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 17",
+    "prompt": "A customers table has 17 customers; 15 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 15",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 15th row receive?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 14",
+    "prompt": "Table t(v) has values 14, 18, 22. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "18",
+      "19",
+      "17",
+      "20"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 21",
+    "prompt": "Table sales(amount) contains rows 21, 26, 31. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "78",
+      "79",
+      "77",
+      "80"
+    ],
+    "answer": "78"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 18",
+    "prompt": "Table t(v) contains 18, NULL, 21, NULL, 25. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 14",
+    "prompt": "Table visits(user_id) contains 14, 14, 15, 16, 16, 17. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL threshold filter 22",
+    "prompt": "Table orders(total) contains 20, 22, 23, 26, 30. How many rows satisfy total > 22?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL inner join duplicates 17",
+    "prompt": "One customers row has id 7. Orders contains 17 rows for id 7 and 3 rows for id 9. How many rows result from an INNER JOIN on id?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL left join cardinality 18",
+    "prompt": "A customers table has 18 customers; 16 each have exactly one order and the others have none. How many LEFT JOIN rows are returned?",
+    "choices": [
+      "18",
+      "19",
+      "17",
+      "20"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL row number 16",
+    "prompt": "In a window partition sorted by a unique timestamp, what ROW_NUMBER() does the 16th row receive?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL average value 15",
+    "prompt": "Table t(v) has values 15, 19, 23. What is SELECT AVG(v) FROM t?",
+    "choices": [
+      "19",
+      "20",
+      "18",
+      "21"
+    ],
+    "answer": "19"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL SUM sales 22",
+    "prompt": "Table sales(amount) contains rows 22, 27, 32. What is SELECT SUM(amount) FROM sales?",
+    "choices": [
+      "81",
+      "82",
+      "80",
+      "83"
+    ],
+    "answer": "81"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT values 19",
+    "prompt": "Table t(v) contains 19, NULL, 22, NULL, 26. What is SELECT COUNT(v) FROM t?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL distinct users 15",
+    "prompt": "Table visits(user_id) contains 15, 15, 16, 17, 17, 18. What is SELECT COUNT(DISTINCT user_id) FROM visits?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion rate 10 orders",
+    "prompt": "A shop records 200 eligible visits and 10 orders. What is conversion rate in whole percent?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Average basket size 11 orders",
+    "prompt": "A shop sells 44 units across 11 orders. What is its mean units per order?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort retention 12 users",
+    "prompt": "A cohort starts with 48 users and 36 return in week two. What is its retention rate in percent?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion rate 11 orders",
+    "prompt": "A shop records 220 eligible visits and 11 orders. What is conversion rate in whole percent?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Average basket size 12 orders",
+    "prompt": "A shop sells 48 units across 12 orders. What is its mean units per order?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort retention 13 users",
+    "prompt": "A cohort starts with 52 users and 39 return in week two. What is its retention rate in percent?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion rate 12 orders",
+    "prompt": "A shop records 240 eligible visits and 12 orders. What is conversion rate in whole percent?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Average basket size 13 orders",
+    "prompt": "A shop sells 52 units across 13 orders. What is its mean units per order?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort retention 14 users",
+    "prompt": "A cohort starts with 56 users and 42 return in week two. What is its retention rate in percent?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion rate 13 orders",
+    "prompt": "A shop records 260 eligible visits and 13 orders. What is conversion rate in whole percent?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Average basket size 14 orders",
+    "prompt": "A shop sells 56 units across 14 orders. What is its mean units per order?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort retention 15 users",
+    "prompt": "A cohort starts with 60 users and 45 return in week two. What is its retention rate in percent?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion rate 14 orders",
+    "prompt": "A shop records 280 eligible visits and 14 orders. What is conversion rate in whole percent?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Average basket size 15 orders",
+    "prompt": "A shop sells 60 units across 15 orders. What is its mean units per order?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort retention 16 users",
+    "prompt": "A cohort starts with 64 users and 48 return in week two. What is its retention rate in percent?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion rate 15 orders",
+    "prompt": "A shop records 300 eligible visits and 15 orders. What is conversion rate in whole percent?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Average basket size 16 orders",
+    "prompt": "A shop sells 64 units across 16 orders. What is its mean units per order?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort retention 17 users",
+    "prompt": "A cohort starts with 68 users and 51 return in week two. What is its retention rate in percent?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion rate 16 orders",
+    "prompt": "A shop records 320 eligible visits and 16 orders. What is conversion rate in whole percent?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Average basket size 17 orders",
+    "prompt": "A shop sells 68 units across 17 orders. What is its mean units per order?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort retention 18 users",
+    "prompt": "A cohort starts with 72 users and 54 return in week two. What is its retention rate in percent?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion rate 17 orders",
+    "prompt": "A shop records 340 eligible visits and 17 orders. What is conversion rate in whole percent?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 10",
+    "prompt": "A classifier reports TP=30, FP=10. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 10",
+    "prompt": "A classifier reports TP=30, FN=10. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 10",
+    "prompt": "Confusion matrix counts are TP=10, TN=10, FP=10, FN=10. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 11",
+    "prompt": "A classifier reports TN=33, FP=11. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 12",
+    "prompt": "A classifier reports TP=24, FP=12, FN=12. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.05",
+    "prompt": "A classifier produces class-1 probability 0.05. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 2",
+    "prompt": "What is Euclidean distance between points (0,0) and (6,8)?",
+    "choices": [
+      "10",
+      "12",
+      "8",
+      "14"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 11",
+    "prompt": "A classifier reports TP=33, FP=11. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 11",
+    "prompt": "A classifier reports TP=33, FN=11. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 11",
+    "prompt": "Confusion matrix counts are TP=11, TN=11, FP=11, FN=11. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 12",
+    "prompt": "A classifier reports TN=36, FP=12. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 13",
+    "prompt": "A classifier reports TP=26, FP=13, FN=13. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.08",
+    "prompt": "A classifier produces class-1 probability 0.08. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 3",
+    "prompt": "What is Euclidean distance between points (0,0) and (9,12)?",
+    "choices": [
+      "15",
+      "17",
+      "13",
+      "19"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 12",
+    "prompt": "A classifier reports TP=36, FP=12. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 12",
+    "prompt": "A classifier reports TP=36, FN=12. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 12",
+    "prompt": "Confusion matrix counts are TP=12, TN=12, FP=12, FN=12. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 13",
+    "prompt": "A classifier reports TN=39, FP=13. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 14",
+    "prompt": "A classifier reports TP=28, FP=14, FN=14. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.11",
+    "prompt": "A classifier produces class-1 probability 0.11. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 4",
+    "prompt": "What is Euclidean distance between points (0,0) and (12,16)?",
+    "choices": [
+      "20",
+      "22",
+      "18",
+      "24"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 13",
+    "prompt": "A classifier reports TP=39, FP=13. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 13",
+    "prompt": "A classifier reports TP=39, FN=13. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 13",
+    "prompt": "Confusion matrix counts are TP=13, TN=13, FP=13, FN=13. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 14",
+    "prompt": "A classifier reports TN=42, FP=14. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 15",
+    "prompt": "A classifier reports TP=30, FP=15, FN=15. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.14",
+    "prompt": "A classifier produces class-1 probability 0.14. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 5",
+    "prompt": "What is Euclidean distance between points (0,0) and (15,20)?",
+    "choices": [
+      "25",
+      "27",
+      "23",
+      "29"
+    ],
+    "answer": "25"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 14",
+    "prompt": "A classifier reports TP=42, FP=14. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 14",
+    "prompt": "A classifier reports TP=42, FN=14. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 14",
+    "prompt": "Confusion matrix counts are TP=14, TN=14, FP=14, FN=14. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 15",
+    "prompt": "A classifier reports TN=45, FP=15. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 16",
+    "prompt": "A classifier reports TP=32, FP=16, FN=16. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.17",
+    "prompt": "A classifier produces class-1 probability 0.17. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 6",
+    "prompt": "What is Euclidean distance between points (0,0) and (18,24)?",
+    "choices": [
+      "30",
+      "32",
+      "28",
+      "34"
+    ],
+    "answer": "30"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 15",
+    "prompt": "A classifier reports TP=45, FP=15. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 15",
+    "prompt": "A classifier reports TP=45, FN=15. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 15",
+    "prompt": "Confusion matrix counts are TP=15, TN=15, FP=15, FN=15. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 16",
+    "prompt": "A classifier reports TN=48, FP=16. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 17",
+    "prompt": "A classifier reports TP=34, FP=17, FN=17. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.20",
+    "prompt": "A classifier produces class-1 probability 0.20. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 7",
+    "prompt": "What is Euclidean distance between points (0,0) and (21,28)?",
+    "choices": [
+      "35",
+      "37",
+      "33",
+      "39"
+    ],
+    "answer": "35"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 16",
+    "prompt": "A classifier reports TP=48, FP=16. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 16",
+    "prompt": "A classifier reports TP=48, FN=16. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 16",
+    "prompt": "Confusion matrix counts are TP=16, TN=16, FP=16, FN=16. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 17",
+    "prompt": "A classifier reports TN=51, FP=17. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 18",
+    "prompt": "A classifier reports TP=36, FP=18, FN=18. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.23",
+    "prompt": "A classifier produces class-1 probability 0.23. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 8",
+    "prompt": "What is Euclidean distance between points (0,0) and (24,32)?",
+    "choices": [
+      "40",
+      "42",
+      "38",
+      "44"
+    ],
+    "answer": "40"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 17",
+    "prompt": "A classifier reports TP=51, FP=17. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 17",
+    "prompt": "A classifier reports TP=51, FN=17. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 17",
+    "prompt": "Confusion matrix counts are TP=17, TN=17, FP=17, FN=17. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 18",
+    "prompt": "A classifier reports TN=54, FP=18. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 19",
+    "prompt": "A classifier reports TP=38, FP=19, FN=19. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.26",
+    "prompt": "A classifier produces class-1 probability 0.26. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 9",
+    "prompt": "What is Euclidean distance between points (0,0) and (27,36)?",
+    "choices": [
+      "45",
+      "47",
+      "43",
+      "49"
+    ],
+    "answer": "45"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 18",
+    "prompt": "A classifier reports TP=54, FP=18. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 18",
+    "prompt": "A classifier reports TP=54, FN=18. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 18",
+    "prompt": "Confusion matrix counts are TP=18, TN=18, FP=18, FN=18. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 19",
+    "prompt": "A classifier reports TN=57, FP=19. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 20",
+    "prompt": "A classifier reports TP=40, FP=20, FN=20. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.29",
+    "prompt": "A classifier produces class-1 probability 0.29. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 10",
+    "prompt": "What is Euclidean distance between points (0,0) and (30,40)?",
+    "choices": [
+      "50",
+      "52",
+      "48",
+      "54"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 19",
+    "prompt": "A classifier reports TP=57, FP=19. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 19",
+    "prompt": "A classifier reports TP=57, FN=19. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 19",
+    "prompt": "Confusion matrix counts are TP=19, TN=19, FP=19, FN=19. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 20",
+    "prompt": "A classifier reports TN=60, FP=20. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 21",
+    "prompt": "A classifier reports TP=42, FP=21, FN=21. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.32",
+    "prompt": "A classifier produces class-1 probability 0.32. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 11",
+    "prompt": "What is Euclidean distance between points (0,0) and (33,44)?",
+    "choices": [
+      "55",
+      "57",
+      "53",
+      "59"
+    ],
+    "answer": "55"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 20",
+    "prompt": "A classifier reports TP=60, FP=20. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 20",
+    "prompt": "A classifier reports TP=60, FN=20. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 20",
+    "prompt": "Confusion matrix counts are TP=20, TN=20, FP=20, FN=20. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 21",
+    "prompt": "A classifier reports TN=63, FP=21. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 22",
+    "prompt": "A classifier reports TP=44, FP=22, FN=22. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.35",
+    "prompt": "A classifier produces class-1 probability 0.35. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 12",
+    "prompt": "What is Euclidean distance between points (0,0) and (36,48)?",
+    "choices": [
+      "60",
+      "62",
+      "58",
+      "64"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 21",
+    "prompt": "A classifier reports TP=63, FP=21. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 21",
+    "prompt": "A classifier reports TP=63, FN=21. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 21",
+    "prompt": "Confusion matrix counts are TP=21, TN=21, FP=21, FN=21. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification specificity 22",
+    "prompt": "A classifier reports TN=66, FP=22. What is specificity as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "F1 calculation 23",
+    "prompt": "A classifier reports TP=46, FP=23, FN=23. What is F1 rounded to the nearest whole percent?",
+    "choices": [
+      "67",
+      "72",
+      "62",
+      "77"
+    ],
+    "answer": "67"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision threshold probability 0.38",
+    "prompt": "A classifier produces class-1 probability 0.38. Using the rule probability >= 0.50, which single class is predicted?",
+    "choices": [
+      "Class 0",
+      "Class 1",
+      "No prediction",
+      "Both classes"
+    ],
+    "answer": "Class 0"
+  },
+  {
+    "subject_id": 11,
+    "skill": "KNN distance 13",
+    "prompt": "What is Euclidean distance between points (0,0) and (39,52)?",
+    "choices": [
+      "65",
+      "67",
+      "63",
+      "69"
+    ],
+    "answer": "65"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification precision 22",
+    "prompt": "A classifier reports TP=66, FP=22. What is precision as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification recall 22",
+    "prompt": "A classifier reports TP=66, FN=22. What is recall as a whole percentage?",
+    "choices": [
+      "75",
+      "80",
+      "70",
+      "85"
+    ],
+    "answer": "75"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Balanced accuracy 22",
+    "prompt": "Confusion matrix counts are TP=22, TN=22, FP=22, FN=22. What is standard accuracy in percent?",
+    "choices": [
+      "50",
+      "55",
+      "45",
+      "60"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Arithmetic mean 5",
+    "prompt": "Find the arithmetic mean of 5, 9, 13?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sorted-sample median 6",
+    "prompt": "Find the median of ordered observations 6, 8, 11, 15, 18?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Observation range 7",
+    "prompt": "Find the range of observations 7, 9, 14, 22?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Die probability denominator 8",
+    "prompt": "A fair 8-sided die numbered 1 through 8 is rolled. Express the chance of one selected face as 1/x. What is x?",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Population variance 9",
+    "prompt": "What is the population variance of the two observations 7 and 11?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Arithmetic mean 6",
+    "prompt": "Find the arithmetic mean of 6, 10, 14?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sorted-sample median 7",
+    "prompt": "Find the median of ordered observations 7, 9, 12, 16, 19?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Observation range 8",
+    "prompt": "Find the range of observations 8, 10, 15, 23?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Die probability denominator 9",
+    "prompt": "A fair 9-sided die numbered 1 through 9 is rolled. Express the chance of one selected face as 1/x. What is x?",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": "9"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Population variance 10",
+    "prompt": "What is the population variance of the two observations 8 and 12?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Arithmetic mean 7",
+    "prompt": "Find the arithmetic mean of 7, 11, 15?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sorted-sample median 8",
+    "prompt": "Find the median of ordered observations 8, 10, 13, 17, 20?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Observation range 9",
+    "prompt": "Find the range of observations 9, 11, 16, 24?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Die probability denominator 10",
+    "prompt": "A fair 10-sided die numbered 1 through 10 is rolled. Express the chance of one selected face as 1/x. What is x?",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Population variance 11",
+    "prompt": "What is the population variance of the two observations 9 and 13?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Arithmetic mean 8",
+    "prompt": "Find the arithmetic mean of 8, 12, 16?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sorted-sample median 9",
+    "prompt": "Find the median of ordered observations 9, 11, 14, 18, 21?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Observation range 10",
+    "prompt": "Find the range of observations 10, 12, 17, 25?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Die probability denominator 11",
+    "prompt": "A fair 11-sided die numbered 1 through 11 is rolled. Express the chance of one selected face as 1/x. What is x?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Population variance 12",
+    "prompt": "What is the population variance of the two observations 10 and 14?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Arithmetic mean 9",
+    "prompt": "Find the arithmetic mean of 9, 13, 17?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sorted-sample median 10",
+    "prompt": "Find the median of ordered observations 10, 12, 15, 19, 22?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Observation range 11",
+    "prompt": "Find the range of observations 11, 13, 18, 26?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Die probability denominator 12",
+    "prompt": "A fair 12-sided die numbered 1 through 12 is rolled. Express the chance of one selected face as 1/x. What is x?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Population variance 13",
+    "prompt": "What is the population variance of the two observations 11 and 15?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Arithmetic mean 10",
+    "prompt": "Find the arithmetic mean of 10, 14, 18?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sorted-sample median 11",
+    "prompt": "Find the median of ordered observations 11, 13, 16, 20, 23?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Observation range 12",
+    "prompt": "Find the range of observations 12, 14, 19, 27?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Die probability denominator 13",
+    "prompt": "A fair 13-sided die numbered 1 through 13 is rolled. Express the chance of one selected face as 1/x. What is x?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Population variance 14",
+    "prompt": "What is the population variance of the two observations 12 and 16?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Arithmetic mean 11",
+    "prompt": "Find the arithmetic mean of 11, 15, 19?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sorted-sample median 12",
+    "prompt": "Find the median of ordered observations 12, 14, 17, 21, 24?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Observation range 13",
+    "prompt": "Find the range of observations 13, 15, 20, 28?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Die probability denominator 14",
+    "prompt": "A fair 14-sided die numbered 1 through 14 is rolled. Express the chance of one selected face as 1/x. What is x?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Population variance 15",
+    "prompt": "What is the population variance of the two observations 13 and 17?",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Arithmetic mean 12",
+    "prompt": "Find the arithmetic mean of 12, 16, 20?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Sorted-sample median 13",
+    "prompt": "Find the median of ordered observations 13, 15, 18, 22, 25?",
+    "choices": [
+      "18",
+      "19",
+      "17",
+      "20"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Vector dot product 2",
+    "prompt": "Compute dot product of vectors (2,2) and (3,3)?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Two-by-two determinant 3",
+    "prompt": "What is determinant of matrix [[3, 1], [2, 6]]?",
+    "choices": [
+      "16",
+      "18",
+      "14",
+      "20"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Quadratic gradient 4",
+    "prompt": "For f(x)=x²+3x, evaluate derivative at x=4?",
+    "choices": [
+      "11",
+      "13",
+      "9",
+      "15"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 20,
+    "skill": "L1 norm 5",
+    "prompt": "Calculate L1 norm of vector (5, -7)?",
+    "choices": [
+      "12",
+      "14",
+      "10",
+      "16"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Diagonal matrix trace 6",
+    "prompt": "Calculate trace of diagonal matrix diag(6,8,11)?",
+    "choices": [
+      "25",
+      "27",
+      "23",
+      "29"
+    ],
+    "answer": "25"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Vector dot product 3",
+    "prompt": "Compute dot product of vectors (3,2) and (3,4)?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Two-by-two determinant 4",
+    "prompt": "What is determinant of matrix [[4, 1], [2, 7]]?",
+    "choices": [
+      "26",
+      "28",
+      "24",
+      "30"
+    ],
+    "answer": "26"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Quadratic gradient 5",
+    "prompt": "For f(x)=x²+3x, evaluate derivative at x=5?",
+    "choices": [
+      "13",
+      "15",
+      "11",
+      "17"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 20,
+    "skill": "L1 norm 6",
+    "prompt": "Calculate L1 norm of vector (6, -8)?",
+    "choices": [
+      "14",
+      "16",
+      "12",
+      "18"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Diagonal matrix trace 7",
+    "prompt": "Calculate trace of diagonal matrix diag(7,9,12)?",
+    "choices": [
+      "28",
+      "30",
+      "26",
+      "32"
+    ],
+    "answer": "28"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Vector dot product 4",
+    "prompt": "Compute dot product of vectors (4,2) and (3,5)?",
+    "choices": [
+      "22",
+      "23",
+      "21",
+      "24"
+    ],
+    "answer": "22"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Two-by-two determinant 5",
+    "prompt": "What is determinant of matrix [[5, 1], [2, 8]]?",
+    "choices": [
+      "38",
+      "40",
+      "36",
+      "42"
+    ],
+    "answer": "38"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Quadratic gradient 6",
+    "prompt": "For f(x)=x²+3x, evaluate derivative at x=6?",
+    "choices": [
+      "15",
+      "17",
+      "13",
+      "19"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 20,
+    "skill": "L1 norm 7",
+    "prompt": "Calculate L1 norm of vector (7, -9)?",
+    "choices": [
+      "16",
+      "18",
+      "14",
+      "20"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Diagonal matrix trace 8",
+    "prompt": "Calculate trace of diagonal matrix diag(8,10,13)?",
+    "choices": [
+      "31",
+      "33",
+      "29",
+      "35"
+    ],
+    "answer": "31"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Vector dot product 5",
+    "prompt": "Compute dot product of vectors (5,2) and (3,6)?",
+    "choices": [
+      "27",
+      "28",
+      "26",
+      "29"
+    ],
+    "answer": "27"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Two-by-two determinant 6",
+    "prompt": "What is determinant of matrix [[6, 1], [2, 9]]?",
+    "choices": [
+      "52",
+      "54",
+      "50",
+      "56"
+    ],
+    "answer": "52"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Quadratic gradient 7",
+    "prompt": "For f(x)=x²+3x, evaluate derivative at x=7?",
+    "choices": [
+      "17",
+      "19",
+      "15",
+      "21"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 20,
+    "skill": "L1 norm 8",
+    "prompt": "Calculate L1 norm of vector (8, -10)?",
+    "choices": [
+      "18",
+      "20",
+      "16",
+      "22"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Diagonal matrix trace 9",
+    "prompt": "Calculate trace of diagonal matrix diag(9,11,14)?",
+    "choices": [
+      "34",
+      "36",
+      "32",
+      "38"
+    ],
+    "answer": "34"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Vector dot product 6",
+    "prompt": "Compute dot product of vectors (6,2) and (3,7)?",
+    "choices": [
+      "32",
+      "33",
+      "31",
+      "34"
+    ],
+    "answer": "32"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Two-by-two determinant 7",
+    "prompt": "What is determinant of matrix [[7, 1], [2, 10]]?",
+    "choices": [
+      "68",
+      "70",
+      "66",
+      "72"
+    ],
+    "answer": "68"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Quadratic gradient 8",
+    "prompt": "For f(x)=x²+3x, evaluate derivative at x=8?",
+    "choices": [
+      "19",
+      "21",
+      "17",
+      "23"
+    ],
+    "answer": "19"
+  },
+  {
+    "subject_id": 20,
+    "skill": "L1 norm 9",
+    "prompt": "Calculate L1 norm of vector (9, -11)?",
+    "choices": [
+      "20",
+      "22",
+      "18",
+      "24"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Diagonal matrix trace 10",
+    "prompt": "Calculate trace of diagonal matrix diag(10,12,15)?",
+    "choices": [
+      "37",
+      "39",
+      "35",
+      "41"
+    ],
+    "answer": "37"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Vector dot product 7",
+    "prompt": "Compute dot product of vectors (7,2) and (3,8)?",
+    "choices": [
+      "37",
+      "38",
+      "36",
+      "39"
+    ],
+    "answer": "37"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Two-by-two determinant 8",
+    "prompt": "What is determinant of matrix [[8, 1], [2, 11]]?",
+    "choices": [
+      "86",
+      "88",
+      "84",
+      "90"
+    ],
+    "answer": "86"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Quadratic gradient 9",
+    "prompt": "For f(x)=x²+3x, evaluate derivative at x=9?",
+    "choices": [
+      "21",
+      "23",
+      "19",
+      "25"
+    ],
+    "answer": "21"
+  },
+  {
+    "subject_id": 20,
+    "skill": "L1 norm 10",
+    "prompt": "Calculate L1 norm of vector (10, -12)?",
+    "choices": [
+      "22",
+      "24",
+      "20",
+      "26"
+    ],
+    "answer": "22"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Diagonal matrix trace 11",
+    "prompt": "Calculate trace of diagonal matrix diag(11,13,16)?",
+    "choices": [
+      "40",
+      "42",
+      "38",
+      "44"
+    ],
+    "answer": "40"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Vector dot product 8",
+    "prompt": "Compute dot product of vectors (8,2) and (3,9)?",
+    "choices": [
+      "42",
+      "43",
+      "41",
+      "44"
+    ],
+    "answer": "42"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Two-by-two determinant 9",
+    "prompt": "What is determinant of matrix [[9, 1], [2, 12]]?",
+    "choices": [
+      "106",
+      "108",
+      "104",
+      "110"
+    ],
+    "answer": "106"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Quadratic gradient 10",
+    "prompt": "For f(x)=x²+3x, evaluate derivative at x=10?",
+    "choices": [
+      "23",
+      "25",
+      "21",
+      "27"
+    ],
+    "answer": "23"
+  },
+  {
+    "subject_id": 20,
+    "skill": "L1 norm 11",
+    "prompt": "Calculate L1 norm of vector (11, -13)?",
+    "choices": [
+      "24",
+      "26",
+      "22",
+      "28"
+    ],
+    "answer": "24"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Diagonal matrix trace 12",
+    "prompt": "Calculate trace of diagonal matrix diag(12,14,17)?",
+    "choices": [
+      "43",
+      "45",
+      "41",
+      "47"
+    ],
+    "answer": "43"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Vector dot product 9",
+    "prompt": "Compute dot product of vectors (9,2) and (3,10)?",
+    "choices": [
+      "47",
+      "48",
+      "46",
+      "49"
+    ],
+    "answer": "47"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Two-by-two determinant 10",
+    "prompt": "What is determinant of matrix [[10, 1], [2, 13]]?",
+    "choices": [
+      "128",
+      "130",
+      "126",
+      "132"
+    ],
+    "answer": "128"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 500",
+    "prompt": "How many rupees of simple interest accrue on principal ₹500 at 10% annually for two years?",
+    "choices": [
+      "100",
+      "110",
+      "90",
+      "120"
+    ],
+    "answer": "100"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 600",
+    "prompt": "An item costs ₹600 and sells for ₹720. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 700",
+    "prompt": "A ₹700 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "560",
+      "570",
+      "550",
+      "580"
+    ],
+    "answer": "560"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 80 3",
+    "prompt": "A train travels 80 km/h for 3 hours. How many kilometres does it cover?",
+    "choices": [
+      "240",
+      "250",
+      "230",
+      "260"
+    ],
+    "answer": "240"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 9",
+    "prompt": "Find highest common factor of 54 and 36?",
+    "choices": [
+      "18",
+      "20",
+      "16",
+      "22"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 10",
+    "prompt": "Find least common multiple of 20 and 30?",
+    "choices": [
+      "60",
+      "62",
+      "58",
+      "64"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 11",
+    "prompt": "A class has 22 boys and 33 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 12 3",
+    "prompt": "A shop sells 3 pens at ₹60 each. What is the total bill?",
+    "choices": [
+      "180",
+      "185",
+      "175",
+      "190"
+    ],
+    "answer": "180"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 600",
+    "prompt": "How many rupees of simple interest accrue on principal ₹600 at 10% annually for two years?",
+    "choices": [
+      "120",
+      "130",
+      "110",
+      "140"
+    ],
+    "answer": "120"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 700",
+    "prompt": "An item costs ₹700 and sells for ₹840. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 800",
+    "prompt": "A ₹800 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "640",
+      "650",
+      "630",
+      "660"
+    ],
+    "answer": "640"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 90 4",
+    "prompt": "A train travels 90 km/h for 4 hours. How many kilometres does it cover?",
+    "choices": [
+      "360",
+      "370",
+      "350",
+      "380"
+    ],
+    "answer": "360"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 10",
+    "prompt": "Find highest common factor of 60 and 40?",
+    "choices": [
+      "20",
+      "22",
+      "18",
+      "24"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 11",
+    "prompt": "Find least common multiple of 22 and 33?",
+    "choices": [
+      "66",
+      "68",
+      "64",
+      "70"
+    ],
+    "answer": "66"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 12",
+    "prompt": "A class has 24 boys and 36 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 13 4",
+    "prompt": "A shop sells 4 pens at ₹65 each. What is the total bill?",
+    "choices": [
+      "260",
+      "265",
+      "255",
+      "270"
+    ],
+    "answer": "260"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 700",
+    "prompt": "How many rupees of simple interest accrue on principal ₹700 at 10% annually for two years?",
+    "choices": [
+      "140",
+      "150",
+      "130",
+      "160"
+    ],
+    "answer": "140"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 800",
+    "prompt": "An item costs ₹800 and sells for ₹960. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 900",
+    "prompt": "A ₹900 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "720",
+      "730",
+      "710",
+      "740"
+    ],
+    "answer": "720"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 100 5",
+    "prompt": "A train travels 100 km/h for 5 hours. How many kilometres does it cover?",
+    "choices": [
+      "500",
+      "510",
+      "490",
+      "520"
+    ],
+    "answer": "500"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 11",
+    "prompt": "Find highest common factor of 66 and 44?",
+    "choices": [
+      "22",
+      "24",
+      "20",
+      "26"
+    ],
+    "answer": "22"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 12",
+    "prompt": "Find least common multiple of 24 and 36?",
+    "choices": [
+      "72",
+      "74",
+      "70",
+      "76"
+    ],
+    "answer": "72"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 13",
+    "prompt": "A class has 26 boys and 39 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 14 5",
+    "prompt": "A shop sells 5 pens at ₹70 each. What is the total bill?",
+    "choices": [
+      "350",
+      "355",
+      "345",
+      "360"
+    ],
+    "answer": "350"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 800",
+    "prompt": "How many rupees of simple interest accrue on principal ₹800 at 10% annually for two years?",
+    "choices": [
+      "160",
+      "170",
+      "150",
+      "180"
+    ],
+    "answer": "160"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 900",
+    "prompt": "An item costs ₹900 and sells for ₹1080. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 1000",
+    "prompt": "A ₹1000 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "800",
+      "810",
+      "790",
+      "820"
+    ],
+    "answer": "800"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 110 6",
+    "prompt": "A train travels 110 km/h for 6 hours. How many kilometres does it cover?",
+    "choices": [
+      "660",
+      "670",
+      "650",
+      "680"
+    ],
+    "answer": "660"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 12",
+    "prompt": "Find highest common factor of 72 and 48?",
+    "choices": [
+      "24",
+      "26",
+      "22",
+      "28"
+    ],
+    "answer": "24"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 13",
+    "prompt": "Find least common multiple of 26 and 39?",
+    "choices": [
+      "78",
+      "80",
+      "76",
+      "82"
+    ],
+    "answer": "78"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 14",
+    "prompt": "A class has 28 boys and 42 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 15 6",
+    "prompt": "A shop sells 6 pens at ₹75 each. What is the total bill?",
+    "choices": [
+      "450",
+      "455",
+      "445",
+      "460"
+    ],
+    "answer": "450"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 900",
+    "prompt": "How many rupees of simple interest accrue on principal ₹900 at 10% annually for two years?",
+    "choices": [
+      "180",
+      "190",
+      "170",
+      "200"
+    ],
+    "answer": "180"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 1000",
+    "prompt": "An item costs ₹1000 and sells for ₹1200. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 1100",
+    "prompt": "A ₹1100 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "880",
+      "890",
+      "870",
+      "900"
+    ],
+    "answer": "880"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 120 7",
+    "prompt": "A train travels 120 km/h for 7 hours. How many kilometres does it cover?",
+    "choices": [
+      "840",
+      "850",
+      "830",
+      "860"
+    ],
+    "answer": "840"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 13",
+    "prompt": "Find highest common factor of 78 and 52?",
+    "choices": [
+      "26",
+      "28",
+      "24",
+      "30"
+    ],
+    "answer": "26"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 14",
+    "prompt": "Find least common multiple of 28 and 42?",
+    "choices": [
+      "84",
+      "86",
+      "82",
+      "88"
+    ],
+    "answer": "84"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 15",
+    "prompt": "A class has 30 boys and 45 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 16 7",
+    "prompt": "A shop sells 7 pens at ₹80 each. What is the total bill?",
+    "choices": [
+      "560",
+      "565",
+      "555",
+      "570"
+    ],
+    "answer": "560"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 1000",
+    "prompt": "How many rupees of simple interest accrue on principal ₹1000 at 10% annually for two years?",
+    "choices": [
+      "200",
+      "210",
+      "190",
+      "220"
+    ],
+    "answer": "200"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 1100",
+    "prompt": "An item costs ₹1100 and sells for ₹1320. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 1200",
+    "prompt": "A ₹1200 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "960",
+      "970",
+      "950",
+      "980"
+    ],
+    "answer": "960"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 130 8",
+    "prompt": "A train travels 130 km/h for 8 hours. How many kilometres does it cover?",
+    "choices": [
+      "1040",
+      "1050",
+      "1030",
+      "1060"
+    ],
+    "answer": "1040"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 14",
+    "prompt": "Find highest common factor of 84 and 56?",
+    "choices": [
+      "28",
+      "30",
+      "26",
+      "32"
+    ],
+    "answer": "28"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 15",
+    "prompt": "Find least common multiple of 30 and 45?",
+    "choices": [
+      "90",
+      "92",
+      "88",
+      "94"
+    ],
+    "answer": "90"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 16",
+    "prompt": "A class has 32 boys and 48 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 17 8",
+    "prompt": "A shop sells 8 pens at ₹85 each. What is the total bill?",
+    "choices": [
+      "680",
+      "685",
+      "675",
+      "690"
+    ],
+    "answer": "680"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 1100",
+    "prompt": "How many rupees of simple interest accrue on principal ₹1100 at 10% annually for two years?",
+    "choices": [
+      "220",
+      "230",
+      "210",
+      "240"
+    ],
+    "answer": "220"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 1200",
+    "prompt": "An item costs ₹1200 and sells for ₹1440. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 1300",
+    "prompt": "A ₹1300 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "1040",
+      "1050",
+      "1030",
+      "1060"
+    ],
+    "answer": "1040"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 140 9",
+    "prompt": "A train travels 140 km/h for 9 hours. How many kilometres does it cover?",
+    "choices": [
+      "1260",
+      "1270",
+      "1250",
+      "1280"
+    ],
+    "answer": "1260"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 15",
+    "prompt": "Find highest common factor of 90 and 60?",
+    "choices": [
+      "30",
+      "32",
+      "28",
+      "34"
+    ],
+    "answer": "30"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 16",
+    "prompt": "Find least common multiple of 32 and 48?",
+    "choices": [
+      "96",
+      "98",
+      "94",
+      "100"
+    ],
+    "answer": "96"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 17",
+    "prompt": "A class has 34 boys and 51 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 18 9",
+    "prompt": "A shop sells 9 pens at ₹90 each. What is the total bill?",
+    "choices": [
+      "810",
+      "815",
+      "805",
+      "820"
+    ],
+    "answer": "810"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 1200",
+    "prompt": "How many rupees of simple interest accrue on principal ₹1200 at 10% annually for two years?",
+    "choices": [
+      "240",
+      "250",
+      "230",
+      "260"
+    ],
+    "answer": "240"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 1300",
+    "prompt": "An item costs ₹1300 and sells for ₹1560. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 1400",
+    "prompt": "A ₹1400 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "1120",
+      "1130",
+      "1110",
+      "1140"
+    ],
+    "answer": "1120"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 150 10",
+    "prompt": "A train travels 150 km/h for 10 hours. How many kilometres does it cover?",
+    "choices": [
+      "1500",
+      "1510",
+      "1490",
+      "1520"
+    ],
+    "answer": "1500"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 16",
+    "prompt": "Find highest common factor of 96 and 64?",
+    "choices": [
+      "32",
+      "34",
+      "30",
+      "36"
+    ],
+    "answer": "32"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 17",
+    "prompt": "Find least common multiple of 34 and 51?",
+    "choices": [
+      "102",
+      "104",
+      "100",
+      "106"
+    ],
+    "answer": "102"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 18",
+    "prompt": "A class has 36 boys and 54 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 19 10",
+    "prompt": "A shop sells 10 pens at ₹95 each. What is the total bill?",
+    "choices": [
+      "950",
+      "955",
+      "945",
+      "960"
+    ],
+    "answer": "950"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 1300",
+    "prompt": "How many rupees of simple interest accrue on principal ₹1300 at 10% annually for two years?",
+    "choices": [
+      "260",
+      "270",
+      "250",
+      "280"
+    ],
+    "answer": "260"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 1400",
+    "prompt": "An item costs ₹1400 and sells for ₹1680. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 1500",
+    "prompt": "A ₹1500 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "1200",
+      "1210",
+      "1190",
+      "1220"
+    ],
+    "answer": "1200"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 160 11",
+    "prompt": "A train travels 160 km/h for 11 hours. How many kilometres does it cover?",
+    "choices": [
+      "1760",
+      "1770",
+      "1750",
+      "1780"
+    ],
+    "answer": "1760"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 17",
+    "prompt": "Find highest common factor of 102 and 68?",
+    "choices": [
+      "34",
+      "36",
+      "32",
+      "38"
+    ],
+    "answer": "34"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 18",
+    "prompt": "Find least common multiple of 36 and 54?",
+    "choices": [
+      "108",
+      "110",
+      "106",
+      "112"
+    ],
+    "answer": "108"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 19",
+    "prompt": "A class has 38 boys and 57 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 20 11",
+    "prompt": "A shop sells 11 pens at ₹100 each. What is the total bill?",
+    "choices": [
+      "1100",
+      "1105",
+      "1095",
+      "1110"
+    ],
+    "answer": "1100"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 1400",
+    "prompt": "How many rupees of simple interest accrue on principal ₹1400 at 10% annually for two years?",
+    "choices": [
+      "280",
+      "290",
+      "270",
+      "300"
+    ],
+    "answer": "280"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 1500",
+    "prompt": "An item costs ₹1500 and sells for ₹1800. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 1600",
+    "prompt": "A ₹1600 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "1280",
+      "1290",
+      "1270",
+      "1300"
+    ],
+    "answer": "1280"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 170 12",
+    "prompt": "A train travels 170 km/h for 12 hours. How many kilometres does it cover?",
+    "choices": [
+      "2040",
+      "2050",
+      "2030",
+      "2060"
+    ],
+    "answer": "2040"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 18",
+    "prompt": "Find highest common factor of 108 and 72?",
+    "choices": [
+      "36",
+      "38",
+      "34",
+      "40"
+    ],
+    "answer": "36"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 19",
+    "prompt": "Find least common multiple of 38 and 57?",
+    "choices": [
+      "114",
+      "116",
+      "112",
+      "118"
+    ],
+    "answer": "114"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 20",
+    "prompt": "A class has 40 boys and 60 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Shopping bill 21 12",
+    "prompt": "A shop sells 12 pens at ₹105 each. What is the total bill?",
+    "choices": [
+      "1260",
+      "1265",
+      "1255",
+      "1270"
+    ],
+    "answer": "1260"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Interest principal 1500",
+    "prompt": "How many rupees of simple interest accrue on principal ₹1500 at 10% annually for two years?",
+    "choices": [
+      "300",
+      "310",
+      "290",
+      "320"
+    ],
+    "answer": "300"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit cost 1600",
+    "prompt": "An item costs ₹1600 and sells for ₹1920. What is profit percentage relative to cost?",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "30"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount amount 1700",
+    "prompt": "A ₹1700 marked-price product gets a 20% discount. What is its final price in rupees?",
+    "choices": [
+      "1360",
+      "1370",
+      "1350",
+      "1380"
+    ],
+    "answer": "1360"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Travel distance 180 13",
+    "prompt": "A train travels 180 km/h for 13 hours. How many kilometres does it cover?",
+    "choices": [
+      "2340",
+      "2350",
+      "2330",
+      "2360"
+    ],
+    "answer": "2340"
+  },
+  {
+    "subject_id": 39,
+    "skill": "HCF numbers 19",
+    "prompt": "Find highest common factor of 114 and 76?",
+    "choices": [
+      "38",
+      "40",
+      "36",
+      "42"
+    ],
+    "answer": "38"
+  },
+  {
+    "subject_id": 39,
+    "skill": "LCM numbers 20",
+    "prompt": "Find least common multiple of 40 and 60?",
+    "choices": [
+      "120",
+      "122",
+      "118",
+      "124"
+    ],
+    "answer": "120"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Class percentage 21",
+    "prompt": "A class has 42 boys and 63 girls. What percentage of the class are girls?",
+    "choices": [
+      "60",
+      "65",
+      "55",
+      "70"
+    ],
+    "answer": "60"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 3 5",
+    "prompt": "What term follows 3, 8, 13, 18?",
+    "choices": [
+      "23",
+      "24",
+      "22",
+      "25"
+    ],
+    "answer": "23"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 4",
+    "prompt": "What follows 4, 8, 16, 32?",
+    "choices": [
+      "64",
+      "66",
+      "62",
+      "68"
+    ],
+    "answer": "64"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 5",
+    "prompt": "A student is 5th from the top of 40 students. What is the position from the bottom?",
+    "choices": [
+      "36",
+      "37",
+      "35",
+      "38"
+    ],
+    "answer": "36"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 5",
+    "prompt": "A person walks 5 m east and then 7 m north. What is the total distance walked?",
+    "choices": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "answer": "12"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 10",
+    "prompt": "Anita is 5 years older than Raj, who is 10. What is Anita's age?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 8 3",
+    "prompt": "Letters are shifted forward by 3 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 8?",
+    "choices": [
+      "11",
+      "12",
+      "10",
+      "13"
+    ],
+    "answer": "11"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 5",
+    "prompt": "A person sits with 5 people to their left and 7 to their right. How many people are in the row?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 4 6",
+    "prompt": "What term follows 4, 10, 16, 22?",
+    "choices": [
+      "28",
+      "29",
+      "27",
+      "30"
+    ],
+    "answer": "28"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 5",
+    "prompt": "What follows 5, 10, 20, 40?",
+    "choices": [
+      "80",
+      "82",
+      "78",
+      "84"
+    ],
+    "answer": "80"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 6",
+    "prompt": "A student is 6th from the top of 42 students. What is the position from the bottom?",
+    "choices": [
+      "37",
+      "38",
+      "36",
+      "39"
+    ],
+    "answer": "37"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 6",
+    "prompt": "A person walks 6 m east and then 8 m north. What is the total distance walked?",
+    "choices": [
+      "14",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 11",
+    "prompt": "Anita is 6 years older than Raj, who is 11. What is Anita's age?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 9 4",
+    "prompt": "Letters are shifted forward by 4 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 9?",
+    "choices": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": "13"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 6",
+    "prompt": "A person sits with 6 people to their left and 8 to their right. How many people are in the row?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 5 7",
+    "prompt": "What term follows 5, 12, 19, 26?",
+    "choices": [
+      "33",
+      "34",
+      "32",
+      "35"
+    ],
+    "answer": "33"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 6",
+    "prompt": "What follows 6, 12, 24, 48?",
+    "choices": [
+      "96",
+      "98",
+      "94",
+      "100"
+    ],
+    "answer": "96"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 7",
+    "prompt": "A student is 7th from the top of 44 students. What is the position from the bottom?",
+    "choices": [
+      "38",
+      "39",
+      "37",
+      "40"
+    ],
+    "answer": "38"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 7",
+    "prompt": "A person walks 7 m east and then 9 m north. What is the total distance walked?",
+    "choices": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 12",
+    "prompt": "Anita is 7 years older than Raj, who is 12. What is Anita's age?",
+    "choices": [
+      "19",
+      "20",
+      "18",
+      "21"
+    ],
+    "answer": "19"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 10 5",
+    "prompt": "Letters are shifted forward by 5 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 10?",
+    "choices": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": "15"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 7",
+    "prompt": "A person sits with 7 people to their left and 9 to their right. How many people are in the row?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 6 8",
+    "prompt": "What term follows 6, 14, 22, 30?",
+    "choices": [
+      "38",
+      "39",
+      "37",
+      "40"
+    ],
+    "answer": "38"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 7",
+    "prompt": "What follows 7, 14, 28, 56?",
+    "choices": [
+      "112",
+      "114",
+      "110",
+      "116"
+    ],
+    "answer": "112"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 8",
+    "prompt": "A student is 8th from the top of 46 students. What is the position from the bottom?",
+    "choices": [
+      "39",
+      "40",
+      "38",
+      "41"
+    ],
+    "answer": "39"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 8",
+    "prompt": "A person walks 8 m east and then 10 m north. What is the total distance walked?",
+    "choices": [
+      "18",
+      "19",
+      "17",
+      "20"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 13",
+    "prompt": "Anita is 8 years older than Raj, who is 13. What is Anita's age?",
+    "choices": [
+      "21",
+      "22",
+      "20",
+      "23"
+    ],
+    "answer": "21"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 11 6",
+    "prompt": "Letters are shifted forward by 6 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 11?",
+    "choices": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": "17"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 8",
+    "prompt": "A person sits with 8 people to their left and 10 to their right. How many people are in the row?",
+    "choices": [
+      "19",
+      "20",
+      "18",
+      "21"
+    ],
+    "answer": "19"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 7 9",
+    "prompt": "What term follows 7, 16, 25, 34?",
+    "choices": [
+      "43",
+      "44",
+      "42",
+      "45"
+    ],
+    "answer": "43"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 8",
+    "prompt": "What follows 8, 16, 32, 64?",
+    "choices": [
+      "128",
+      "130",
+      "126",
+      "132"
+    ],
+    "answer": "128"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 9",
+    "prompt": "A student is 9th from the top of 48 students. What is the position from the bottom?",
+    "choices": [
+      "40",
+      "41",
+      "39",
+      "42"
+    ],
+    "answer": "40"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 9",
+    "prompt": "A person walks 9 m east and then 11 m north. What is the total distance walked?",
+    "choices": [
+      "20",
+      "21",
+      "19",
+      "22"
+    ],
+    "answer": "20"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 14",
+    "prompt": "Anita is 9 years older than Raj, who is 14. What is Anita's age?",
+    "choices": [
+      "23",
+      "24",
+      "22",
+      "25"
+    ],
+    "answer": "23"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 12 7",
+    "prompt": "Letters are shifted forward by 7 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 12?",
+    "choices": [
+      "19",
+      "20",
+      "18",
+      "21"
+    ],
+    "answer": "19"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 9",
+    "prompt": "A person sits with 9 people to their left and 11 to their right. How many people are in the row?",
+    "choices": [
+      "21",
+      "22",
+      "20",
+      "23"
+    ],
+    "answer": "21"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 8 10",
+    "prompt": "What term follows 8, 18, 28, 38?",
+    "choices": [
+      "48",
+      "49",
+      "47",
+      "50"
+    ],
+    "answer": "48"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 9",
+    "prompt": "What follows 9, 18, 36, 72?",
+    "choices": [
+      "144",
+      "146",
+      "142",
+      "148"
+    ],
+    "answer": "144"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 10",
+    "prompt": "A student is 10th from the top of 50 students. What is the position from the bottom?",
+    "choices": [
+      "41",
+      "42",
+      "40",
+      "43"
+    ],
+    "answer": "41"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 10",
+    "prompt": "A person walks 10 m east and then 12 m north. What is the total distance walked?",
+    "choices": [
+      "22",
+      "23",
+      "21",
+      "24"
+    ],
+    "answer": "22"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 15",
+    "prompt": "Anita is 10 years older than Raj, who is 15. What is Anita's age?",
+    "choices": [
+      "25",
+      "26",
+      "24",
+      "27"
+    ],
+    "answer": "25"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 13 8",
+    "prompt": "Letters are shifted forward by 8 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 13?",
+    "choices": [
+      "21",
+      "22",
+      "20",
+      "23"
+    ],
+    "answer": "21"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 10",
+    "prompt": "A person sits with 10 people to their left and 12 to their right. How many people are in the row?",
+    "choices": [
+      "23",
+      "24",
+      "22",
+      "25"
+    ],
+    "answer": "23"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 9 11",
+    "prompt": "What term follows 9, 20, 31, 42?",
+    "choices": [
+      "53",
+      "54",
+      "52",
+      "55"
+    ],
+    "answer": "53"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 10",
+    "prompt": "What follows 10, 20, 40, 80?",
+    "choices": [
+      "160",
+      "162",
+      "158",
+      "164"
+    ],
+    "answer": "160"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 11",
+    "prompt": "A student is 11th from the top of 52 students. What is the position from the bottom?",
+    "choices": [
+      "42",
+      "43",
+      "41",
+      "44"
+    ],
+    "answer": "42"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 11",
+    "prompt": "A person walks 11 m east and then 13 m north. What is the total distance walked?",
+    "choices": [
+      "24",
+      "25",
+      "23",
+      "26"
+    ],
+    "answer": "24"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 16",
+    "prompt": "Anita is 11 years older than Raj, who is 16. What is Anita's age?",
+    "choices": [
+      "27",
+      "28",
+      "26",
+      "29"
+    ],
+    "answer": "27"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 14 9",
+    "prompt": "Letters are shifted forward by 9 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 14?",
+    "choices": [
+      "23",
+      "24",
+      "22",
+      "25"
+    ],
+    "answer": "23"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 11",
+    "prompt": "A person sits with 11 people to their left and 13 to their right. How many people are in the row?",
+    "choices": [
+      "25",
+      "26",
+      "24",
+      "27"
+    ],
+    "answer": "25"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 10 12",
+    "prompt": "What term follows 10, 22, 34, 46?",
+    "choices": [
+      "58",
+      "59",
+      "57",
+      "60"
+    ],
+    "answer": "58"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 11",
+    "prompt": "What follows 11, 22, 44, 88?",
+    "choices": [
+      "176",
+      "178",
+      "174",
+      "180"
+    ],
+    "answer": "176"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 12",
+    "prompt": "A student is 12th from the top of 54 students. What is the position from the bottom?",
+    "choices": [
+      "43",
+      "44",
+      "42",
+      "45"
+    ],
+    "answer": "43"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 12",
+    "prompt": "A person walks 12 m east and then 14 m north. What is the total distance walked?",
+    "choices": [
+      "26",
+      "27",
+      "25",
+      "28"
+    ],
+    "answer": "26"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 17",
+    "prompt": "Anita is 12 years older than Raj, who is 17. What is Anita's age?",
+    "choices": [
+      "29",
+      "30",
+      "28",
+      "31"
+    ],
+    "answer": "29"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 15 10",
+    "prompt": "Letters are shifted forward by 10 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 15?",
+    "choices": [
+      "25",
+      "26",
+      "24",
+      "27"
+    ],
+    "answer": "25"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 12",
+    "prompt": "A person sits with 12 people to their left and 14 to their right. How many people are in the row?",
+    "choices": [
+      "27",
+      "28",
+      "26",
+      "29"
+    ],
+    "answer": "27"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 11 13",
+    "prompt": "What term follows 11, 24, 37, 50?",
+    "choices": [
+      "63",
+      "64",
+      "62",
+      "65"
+    ],
+    "answer": "63"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 12",
+    "prompt": "What follows 12, 24, 48, 96?",
+    "choices": [
+      "192",
+      "194",
+      "190",
+      "196"
+    ],
+    "answer": "192"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 13",
+    "prompt": "A student is 13th from the top of 56 students. What is the position from the bottom?",
+    "choices": [
+      "44",
+      "45",
+      "43",
+      "46"
+    ],
+    "answer": "44"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 13",
+    "prompt": "A person walks 13 m east and then 15 m north. What is the total distance walked?",
+    "choices": [
+      "28",
+      "29",
+      "27",
+      "30"
+    ],
+    "answer": "28"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 18",
+    "prompt": "Anita is 13 years older than Raj, who is 18. What is Anita's age?",
+    "choices": [
+      "31",
+      "32",
+      "30",
+      "33"
+    ],
+    "answer": "31"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 16 11",
+    "prompt": "Letters are shifted forward by 11 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 16?",
+    "choices": [
+      "1",
+      "2",
+      "0",
+      "3"
+    ],
+    "answer": "1"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 13",
+    "prompt": "A person sits with 13 people to their left and 15 to their right. How many people are in the row?",
+    "choices": [
+      "29",
+      "30",
+      "28",
+      "31"
+    ],
+    "answer": "29"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 12 14",
+    "prompt": "What term follows 12, 26, 40, 54?",
+    "choices": [
+      "68",
+      "69",
+      "67",
+      "70"
+    ],
+    "answer": "68"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 13",
+    "prompt": "What follows 13, 26, 52, 104?",
+    "choices": [
+      "208",
+      "210",
+      "206",
+      "212"
+    ],
+    "answer": "208"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 14",
+    "prompt": "A student is 14th from the top of 58 students. What is the position from the bottom?",
+    "choices": [
+      "45",
+      "46",
+      "44",
+      "47"
+    ],
+    "answer": "45"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 14",
+    "prompt": "A person walks 14 m east and then 16 m north. What is the total distance walked?",
+    "choices": [
+      "30",
+      "31",
+      "29",
+      "32"
+    ],
+    "answer": "30"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 19",
+    "prompt": "Anita is 14 years older than Raj, who is 19. What is Anita's age?",
+    "choices": [
+      "33",
+      "34",
+      "32",
+      "35"
+    ],
+    "answer": "33"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 17 12",
+    "prompt": "Letters are shifted forward by 12 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 17?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 14",
+    "prompt": "A person sits with 14 people to their left and 16 to their right. How many people are in the row?",
+    "choices": [
+      "31",
+      "32",
+      "30",
+      "33"
+    ],
+    "answer": "31"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 13 15",
+    "prompt": "What term follows 13, 28, 43, 58?",
+    "choices": [
+      "73",
+      "74",
+      "72",
+      "75"
+    ],
+    "answer": "73"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 14",
+    "prompt": "What follows 14, 28, 56, 112?",
+    "choices": [
+      "224",
+      "226",
+      "222",
+      "228"
+    ],
+    "answer": "224"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 15",
+    "prompt": "A student is 15th from the top of 60 students. What is the position from the bottom?",
+    "choices": [
+      "46",
+      "47",
+      "45",
+      "48"
+    ],
+    "answer": "46"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 15",
+    "prompt": "A person walks 15 m east and then 17 m north. What is the total distance walked?",
+    "choices": [
+      "32",
+      "33",
+      "31",
+      "34"
+    ],
+    "answer": "32"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 20",
+    "prompt": "Anita is 15 years older than Raj, who is 20. What is Anita's age?",
+    "choices": [
+      "35",
+      "36",
+      "34",
+      "37"
+    ],
+    "answer": "35"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 18 13",
+    "prompt": "Letters are shifted forward by 13 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 18?",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": "5"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 15",
+    "prompt": "A person sits with 15 people to their left and 17 to their right. How many people are in the row?",
+    "choices": [
+      "33",
+      "34",
+      "32",
+      "35"
+    ],
+    "answer": "33"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 14 16",
+    "prompt": "What term follows 14, 30, 46, 62?",
+    "choices": [
+      "78",
+      "79",
+      "77",
+      "80"
+    ],
+    "answer": "78"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 15",
+    "prompt": "What follows 15, 30, 60, 120?",
+    "choices": [
+      "240",
+      "242",
+      "238",
+      "244"
+    ],
+    "answer": "240"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 16",
+    "prompt": "A student is 16th from the top of 62 students. What is the position from the bottom?",
+    "choices": [
+      "47",
+      "48",
+      "46",
+      "49"
+    ],
+    "answer": "47"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Travel path distance 16",
+    "prompt": "A person walks 16 m east and then 18 m north. What is the total distance walked?",
+    "choices": [
+      "34",
+      "35",
+      "33",
+      "36"
+    ],
+    "answer": "34"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Age relationship 21",
+    "prompt": "Anita is 16 years older than Raj, who is 21. What is Anita's age?",
+    "choices": [
+      "37",
+      "38",
+      "36",
+      "39"
+    ],
+    "answer": "37"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet shift 19 14",
+    "prompt": "Letters are shifted forward by 14 positions, wrapping after Z. Using A=1 through Z=26, what numeric position results from 19?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "answer": "7"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating row length 16",
+    "prompt": "A person sits with 16 people to their left and 18 to their right. How many people are in the row?",
+    "choices": [
+      "35",
+      "36",
+      "34",
+      "37"
+    ],
+    "answer": "35"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Sequence increment 15 17",
+    "prompt": "What term follows 15, 32, 49, 66?",
+    "choices": [
+      "83",
+      "84",
+      "82",
+      "85"
+    ],
+    "answer": "83"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Geometric sequence 16",
+    "prompt": "What follows 16, 32, 64, 128?",
+    "choices": [
+      "256",
+      "258",
+      "254",
+      "260"
+    ],
+    "answer": "256"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rank from bottom 17",
+    "prompt": "A student is 17th from the top of 64 students. What is the position from the bottom?",
+    "choices": [
+      "48",
+      "49",
+      "47",
+      "50"
+    ],
+    "answer": "48"
+  }
+]

@@ -1,0 +1,2042 @@
+[
+  {
+    "subject_id": 2,
+    "skill": "Amortized analysis",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: average cost per operation across a sequence, including occasional expensive resizing?",
+    "choices": [
+      "Amortized analysis",
+      "Dijkstra algorithm",
+      "Trie",
+      "Min-heap"
+    ],
+    "answer": "Amortized analysis"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Disjoint-set union",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: tracks partition membership with union and find operations?",
+    "choices": [
+      "Disjoint-set union",
+      "Bellman-Ford algorithm",
+      "Segment tree",
+      "Stable sort"
+    ],
+    "answer": "Disjoint-set union"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Topological sort",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: orders a directed acyclic graph so every prerequisite precedes its dependent?",
+    "choices": [
+      "Topological sort",
+      "Trie",
+      "Min-heap",
+      "Memoization"
+    ],
+    "answer": "Topological sort"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Dijkstra algorithm",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: finds shortest paths when all edge weights are nonnegative?",
+    "choices": [
+      "Dijkstra algorithm",
+      "Segment tree",
+      "Stable sort",
+      "Amortized analysis"
+    ],
+    "answer": "Dijkstra algorithm"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bellman-Ford algorithm",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: finds shortest paths and can detect reachable negative-weight cycles?",
+    "choices": [
+      "Bellman-Ford algorithm",
+      "Min-heap",
+      "Memoization",
+      "Disjoint-set union"
+    ],
+    "answer": "Bellman-Ford algorithm"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Trie",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: stores sequences using edges labeled by successive symbols?",
+    "choices": [
+      "Trie",
+      "Stable sort",
+      "Amortized analysis",
+      "Topological sort"
+    ],
+    "answer": "Trie"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Segment tree",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: supports aggregate range queries and point updates over an array?",
+    "choices": [
+      "Segment tree",
+      "Memoization",
+      "Disjoint-set union",
+      "Dijkstra algorithm"
+    ],
+    "answer": "Segment tree"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Min-heap",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: ensures the smallest key is at the root?",
+    "choices": [
+      "Min-heap",
+      "Amortized analysis",
+      "Topological sort",
+      "Bellman-Ford algorithm"
+    ],
+    "answer": "Min-heap"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Stable sort",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: preserves the original relative order of elements with equal keys?",
+    "choices": [
+      "Stable sort",
+      "Disjoint-set union",
+      "Dijkstra algorithm",
+      "Trie"
+    ],
+    "answer": "Stable sort"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Memoization",
+    "prompt": "In Data Structures and Algorithms, which concept is best described as follows: caches results of overlapping recursive subproblems?",
+    "choices": [
+      "Memoization",
+      "Topological sort",
+      "Bellman-Ford algorithm",
+      "Segment tree"
+    ],
+    "answer": "Memoization"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Encapsulation",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: hides implementation state behind controlled object methods?",
+    "choices": [
+      "Encapsulation",
+      "Composition",
+      "Liskov substitution principle",
+      "Method overloading"
+    ],
+    "answer": "Encapsulation"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Inheritance",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: allows a subtype to reuse and extend behavior from a base type?",
+    "choices": [
+      "Inheritance",
+      "Dependency injection",
+      "Abstract class",
+      "Method overriding"
+    ],
+    "answer": "Inheritance"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Polymorphism",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: lets different object types respond to a shared interface?",
+    "choices": [
+      "Polymorphism",
+      "Liskov substitution principle",
+      "Method overloading",
+      "Single responsibility principle"
+    ],
+    "answer": "Polymorphism"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Composition",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: builds an object by owning collaborating component objects?",
+    "choices": [
+      "Composition",
+      "Abstract class",
+      "Method overriding",
+      "Encapsulation"
+    ],
+    "answer": "Composition"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Dependency injection",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: supplies dependencies from outside rather than constructing them internally?",
+    "choices": [
+      "Dependency injection",
+      "Method overloading",
+      "Single responsibility principle",
+      "Inheritance"
+    ],
+    "answer": "Dependency injection"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Liskov substitution principle",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: requires subtype objects to honor the behavioral contract of their base type?",
+    "choices": [
+      "Liskov substitution principle",
+      "Method overriding",
+      "Encapsulation",
+      "Polymorphism"
+    ],
+    "answer": "Liskov substitution principle"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Abstract class",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: provides a noninstantiable base that can contain implemented and abstract behavior?",
+    "choices": [
+      "Abstract class",
+      "Single responsibility principle",
+      "Inheritance",
+      "Composition"
+    ],
+    "answer": "Abstract class"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Method overloading",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: uses a shared method name with different parameter signatures where the language supports it?",
+    "choices": [
+      "Method overloading",
+      "Encapsulation",
+      "Polymorphism",
+      "Dependency injection"
+    ],
+    "answer": "Method overloading"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Method overriding",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: replaces an inherited virtual-method implementation in a subclass?",
+    "choices": [
+      "Method overriding",
+      "Inheritance",
+      "Composition",
+      "Liskov substitution principle"
+    ],
+    "answer": "Method overriding"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Single responsibility principle",
+    "prompt": "In Object-Oriented Programming, which concept is best described as follows: advises that a class have one primary reason to change?",
+    "choices": [
+      "Single responsibility principle",
+      "Polymorphism",
+      "Dependency injection",
+      "Abstract class"
+    ],
+    "answer": "Single responsibility principle"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Window function",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: computes a per-row result across a specified partition without collapsing all rows?",
+    "choices": [
+      "Window function",
+      "Foreign key",
+      "Composite index",
+      "Normalization"
+    ],
+    "answer": "Window function"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Common table expression",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: names an intermediate query using WITH for use in a following SQL statement?",
+    "choices": [
+      "Common table expression",
+      "Isolation level",
+      "EXPLAIN",
+      "UPSERT"
+    ],
+    "answer": "Common table expression"
+  },
+  {
+    "subject_id": 4,
+    "skill": "HAVING",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: filters aggregated groups after GROUP BY?",
+    "choices": [
+      "HAVING",
+      "Composite index",
+      "Normalization",
+      "ROLLBACK"
+    ],
+    "answer": "HAVING"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Foreign key",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: requires a child reference to match an allowed parent key?",
+    "choices": [
+      "Foreign key",
+      "EXPLAIN",
+      "UPSERT",
+      "Window function"
+    ],
+    "answer": "Foreign key"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Isolation level",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: controls how concurrent database transactions can observe each other's changes?",
+    "choices": [
+      "Isolation level",
+      "Normalization",
+      "ROLLBACK",
+      "Common table expression"
+    ],
+    "answer": "Isolation level"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Composite index",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: indexes more than one column in a specified key order?",
+    "choices": [
+      "Composite index",
+      "UPSERT",
+      "Window function",
+      "HAVING"
+    ],
+    "answer": "Composite index"
+  },
+  {
+    "subject_id": 4,
+    "skill": "EXPLAIN",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: shows a database query execution plan or its estimated operations?",
+    "choices": [
+      "EXPLAIN",
+      "ROLLBACK",
+      "Common table expression",
+      "Foreign key"
+    ],
+    "answer": "EXPLAIN"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Normalization",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: reduces redundant storage and update anomalies through relational decomposition?",
+    "choices": [
+      "Normalization",
+      "Window function",
+      "HAVING",
+      "Isolation level"
+    ],
+    "answer": "Normalization"
+  },
+  {
+    "subject_id": 4,
+    "skill": "UPSERT",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: inserts a row or updates a conflicting row using a supported conflict clause?",
+    "choices": [
+      "UPSERT",
+      "Common table expression",
+      "Foreign key",
+      "Composite index"
+    ],
+    "answer": "UPSERT"
+  },
+  {
+    "subject_id": 4,
+    "skill": "ROLLBACK",
+    "prompt": "In SQL and Database Engineering, which concept is best described as follows: undoes uncommitted changes in a transaction?",
+    "choices": [
+      "ROLLBACK",
+      "HAVING",
+      "Isolation level",
+      "EXPLAIN"
+    ],
+    "answer": "ROLLBACK"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Churn rate",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: measures the share of existing customers lost during a period?",
+    "choices": [
+      "Churn rate",
+      "A/B testing",
+      "Data leakage",
+      "Seasonality"
+    ],
+    "answer": "Churn rate"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort analysis",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: compares groups of users sharing a common start event or period?",
+    "choices": [
+      "Cohort analysis",
+      "Retention curve",
+      "North star metric",
+      "Confidence interval"
+    ],
+    "answer": "Cohort analysis"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Conversion funnel",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: measures stepwise progression from entry to a desired outcome?",
+    "choices": [
+      "Conversion funnel",
+      "Data leakage",
+      "Seasonality",
+      "Attribution model"
+    ],
+    "answer": "Conversion funnel"
+  },
+  {
+    "subject_id": 7,
+    "skill": "A/B testing",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: randomly compares variants to estimate causal product impact?",
+    "choices": [
+      "A/B testing",
+      "North star metric",
+      "Confidence interval",
+      "Churn rate"
+    ],
+    "answer": "A/B testing"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Retention curve",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: tracks the proportion of a cohort still active over time?",
+    "choices": [
+      "Retention curve",
+      "Seasonality",
+      "Attribution model",
+      "Cohort analysis"
+    ],
+    "answer": "Retention curve"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Data leakage",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: occurs when unavailable future or target information reaches a model input?",
+    "choices": [
+      "Data leakage",
+      "Confidence interval",
+      "Churn rate",
+      "Conversion funnel"
+    ],
+    "answer": "Data leakage"
+  },
+  {
+    "subject_id": 7,
+    "skill": "North star metric",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: represents the core sustained customer value a product delivers?",
+    "choices": [
+      "North star metric",
+      "Attribution model",
+      "Cohort analysis",
+      "A/B testing"
+    ],
+    "answer": "North star metric"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Seasonality",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: describes recurring patterns tied to calendar periods?",
+    "choices": [
+      "Seasonality",
+      "Churn rate",
+      "Conversion funnel",
+      "Retention curve"
+    ],
+    "answer": "Seasonality"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Confidence interval",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: provides an interval estimator with a stated long-run coverage property?",
+    "choices": [
+      "Confidence interval",
+      "Cohort analysis",
+      "A/B testing",
+      "Data leakage"
+    ],
+    "answer": "Confidence interval"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Attribution model",
+    "prompt": "In Practical Data Analysis, which concept is best described as follows: assigns conversion credit across marketing touchpoints?",
+    "choices": [
+      "Attribution model",
+      "Conversion funnel",
+      "Retention curve",
+      "North star metric"
+    ],
+    "answer": "Attribution model"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Imputation",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: fills missing observations using an explicit estimation rule?",
+    "choices": [
+      "Imputation",
+      "Outlier detection",
+      "Min-max scaling",
+      "Referential integrity"
+    ],
+    "answer": "Imputation"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Deduplication",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: identifies and removes repeated records representing the same entity or event?",
+    "choices": [
+      "Deduplication",
+      "One-hot encoding",
+      "Standardization",
+      "Idempotent transformation"
+    ],
+    "answer": "Deduplication"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Schema validation",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: checks whether incoming fields meet required names, types and constraints?",
+    "choices": [
+      "Schema validation",
+      "Min-max scaling",
+      "Referential integrity",
+      "Type coercion"
+    ],
+    "answer": "Schema validation"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Outlier detection",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: flags observations substantially unlike a stated baseline?",
+    "choices": [
+      "Outlier detection",
+      "Standardization",
+      "Idempotent transformation",
+      "Imputation"
+    ],
+    "answer": "Outlier detection"
+  },
+  {
+    "subject_id": 8,
+    "skill": "One-hot encoding",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: expands category membership into separate indicator columns?",
+    "choices": [
+      "One-hot encoding",
+      "Referential integrity",
+      "Type coercion",
+      "Deduplication"
+    ],
+    "answer": "One-hot encoding"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Min-max scaling",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: rescales values relative to minimum and maximum endpoints?",
+    "choices": [
+      "Min-max scaling",
+      "Idempotent transformation",
+      "Imputation",
+      "Schema validation"
+    ],
+    "answer": "Min-max scaling"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Standardization",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: centers features and divides them by a measure of spread?",
+    "choices": [
+      "Standardization",
+      "Type coercion",
+      "Deduplication",
+      "Outlier detection"
+    ],
+    "answer": "Standardization"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Referential integrity",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: ensures referenced keys exist in their related tables?",
+    "choices": [
+      "Referential integrity",
+      "Imputation",
+      "Schema validation",
+      "One-hot encoding"
+    ],
+    "answer": "Referential integrity"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Idempotent transformation",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: produces the same result when the operation is repeated?",
+    "choices": [
+      "Idempotent transformation",
+      "Deduplication",
+      "Outlier detection",
+      "Min-max scaling"
+    ],
+    "answer": "Idempotent transformation"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Type coercion",
+    "prompt": "In Data Cleaning and Transformation, which concept is best described as follows: converts values to a required data representation under explicit rules?",
+    "choices": [
+      "Type coercion",
+      "Schema validation",
+      "One-hot encoding",
+      "Standardization"
+    ],
+    "answer": "Type coercion"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark DataFrame",
+    "prompt": "In PySpark, which concept is best described as follows: represents distributed tabular data with a named schema?",
+    "choices": [
+      "Spark DataFrame",
+      "Broadcast join",
+      "Repartition",
+      "Catalyst optimizer"
+    ],
+    "answer": "Spark DataFrame"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Lazy evaluation",
+    "prompt": "In PySpark, which concept is best described as follows: defers execution of transformations until an action demands results?",
+    "choices": [
+      "Lazy evaluation",
+      "Cache",
+      "Coalesce",
+      "Window specification"
+    ],
+    "answer": "Lazy evaluation"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Shuffle",
+    "prompt": "In PySpark, which concept is best described as follows: moves data across partitions to satisfy a wide dependency?",
+    "choices": [
+      "Shuffle",
+      "Repartition",
+      "Catalyst optimizer",
+      "Checkpoint"
+    ],
+    "answer": "Shuffle"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Broadcast join",
+    "prompt": "In PySpark, which concept is best described as follows: distributes a small relation to worker tasks to reduce shuffle cost?",
+    "choices": [
+      "Broadcast join",
+      "Coalesce",
+      "Window specification",
+      "Spark DataFrame"
+    ],
+    "answer": "Broadcast join"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Cache",
+    "prompt": "In PySpark, which concept is best described as follows: stores reusable computed partitions to speed subsequent actions?",
+    "choices": [
+      "Cache",
+      "Catalyst optimizer",
+      "Checkpoint",
+      "Lazy evaluation"
+    ],
+    "answer": "Cache"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Repartition",
+    "prompt": "In PySpark, which concept is best described as follows: reshuffles data to construct a requested number of partitions?",
+    "choices": [
+      "Repartition",
+      "Window specification",
+      "Spark DataFrame",
+      "Shuffle"
+    ],
+    "answer": "Repartition"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Coalesce",
+    "prompt": "In PySpark, which concept is best described as follows: can reduce partitions using a narrow dependency when no shuffle is requested?",
+    "choices": [
+      "Coalesce",
+      "Checkpoint",
+      "Lazy evaluation",
+      "Broadcast join"
+    ],
+    "answer": "Coalesce"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Catalyst optimizer",
+    "prompt": "In PySpark, which concept is best described as follows: rewrites and plans Spark SQL and DataFrame queries?",
+    "choices": [
+      "Catalyst optimizer",
+      "Spark DataFrame",
+      "Shuffle",
+      "Cache"
+    ],
+    "answer": "Catalyst optimizer"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Window specification",
+    "prompt": "In PySpark, which concept is best described as follows: defines partition, ordering and frame boundaries for analytic expressions?",
+    "choices": [
+      "Window specification",
+      "Lazy evaluation",
+      "Broadcast join",
+      "Repartition"
+    ],
+    "answer": "Window specification"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Checkpoint",
+    "prompt": "In PySpark, which concept is best described as follows: materializes lineage at a reliable storage boundary?",
+    "choices": [
+      "Checkpoint",
+      "Shuffle",
+      "Cache",
+      "Coalesce"
+    ],
+    "answer": "Checkpoint"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Mapper",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: transforms an input record into intermediate key-value pairs?",
+    "choices": [
+      "Mapper",
+      "HDFS NameNode",
+      "YARN ResourceManager",
+      "Map-side join"
+    ],
+    "answer": "Mapper"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Reducer",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: aggregates the values associated with an intermediate key?",
+    "choices": [
+      "Reducer",
+      "HDFS DataNode",
+      "Partitioner",
+      "Speculative execution"
+    ],
+    "answer": "Reducer"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Combiner",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: performs safe local preaggregation before map output is transferred?",
+    "choices": [
+      "Combiner",
+      "YARN ResourceManager",
+      "Map-side join",
+      "Data locality"
+    ],
+    "answer": "Combiner"
+  },
+  {
+    "subject_id": 10,
+    "skill": "HDFS NameNode",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: manages the filesystem namespace and metadata about block placement?",
+    "choices": [
+      "HDFS NameNode",
+      "Partitioner",
+      "Speculative execution",
+      "Mapper"
+    ],
+    "answer": "HDFS NameNode"
+  },
+  {
+    "subject_id": 10,
+    "skill": "HDFS DataNode",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: stores and serves actual HDFS data blocks?",
+    "choices": [
+      "HDFS DataNode",
+      "Map-side join",
+      "Data locality",
+      "Reducer"
+    ],
+    "answer": "HDFS DataNode"
+  },
+  {
+    "subject_id": 10,
+    "skill": "YARN ResourceManager",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: coordinates cluster resources for application execution?",
+    "choices": [
+      "YARN ResourceManager",
+      "Speculative execution",
+      "Mapper",
+      "Combiner"
+    ],
+    "answer": "YARN ResourceManager"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Partitioner",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: determines which reducer receives a mapper output key?",
+    "choices": [
+      "Partitioner",
+      "Data locality",
+      "Reducer",
+      "HDFS NameNode"
+    ],
+    "answer": "Partitioner"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Map-side join",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: joins compatible inputs during mapper processing without reducer-side joining?",
+    "choices": [
+      "Map-side join",
+      "Mapper",
+      "Combiner",
+      "HDFS DataNode"
+    ],
+    "answer": "Map-side join"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Speculative execution",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: runs redundant copies of slow tasks to reduce straggler impact?",
+    "choices": [
+      "Speculative execution",
+      "Reducer",
+      "HDFS NameNode",
+      "YARN ResourceManager"
+    ],
+    "answer": "Speculative execution"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Data locality",
+    "prompt": "In Hadoop and MapReduce, which concept is best described as follows: schedules computation near the data to reduce network transfers?",
+    "choices": [
+      "Data locality",
+      "Combiner",
+      "HDFS DataNode",
+      "Partitioner"
+    ],
+    "answer": "Data locality"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Logistic regression",
+    "prompt": "In Machine Learning, which concept is best described as follows: models binary-class probability using a sigmoid link?",
+    "choices": [
+      "Logistic regression",
+      "K-means clustering",
+      "Support vector machine",
+      "Nested cross-validation"
+    ],
+    "answer": "Logistic regression"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Random forest",
+    "prompt": "In Machine Learning, which concept is best described as follows: aggregates many randomized decision trees for prediction?",
+    "choices": [
+      "Random forest",
+      "DBSCAN",
+      "Naive Bayes",
+      "Regularization"
+    ],
+    "answer": "Random forest"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Gradient boosting",
+    "prompt": "In Machine Learning, which concept is best described as follows: builds an additive model from sequential learners correcting earlier errors?",
+    "choices": [
+      "Gradient boosting",
+      "Support vector machine",
+      "Nested cross-validation",
+      "Calibration"
+    ],
+    "answer": "Gradient boosting"
+  },
+  {
+    "subject_id": 11,
+    "skill": "K-means clustering",
+    "prompt": "In Machine Learning, which concept is best described as follows: alternates centroid assignment and updates to group points into k clusters?",
+    "choices": [
+      "K-means clustering",
+      "Naive Bayes",
+      "Regularization",
+      "Logistic regression"
+    ],
+    "answer": "K-means clustering"
+  },
+  {
+    "subject_id": 11,
+    "skill": "DBSCAN",
+    "prompt": "In Machine Learning, which concept is best described as follows: finds dense clusters while identifying sparse-region noise?",
+    "choices": [
+      "DBSCAN",
+      "Nested cross-validation",
+      "Calibration",
+      "Random forest"
+    ],
+    "answer": "DBSCAN"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Support vector machine",
+    "prompt": "In Machine Learning, which concept is best described as follows: seeks a separating margin, potentially using a feature-space kernel?",
+    "choices": [
+      "Support vector machine",
+      "Regularization",
+      "Logistic regression",
+      "Gradient boosting"
+    ],
+    "answer": "Support vector machine"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Naive Bayes",
+    "prompt": "In Machine Learning, which concept is best described as follows: applies Bayes rule under conditional-feature-independence assumptions?",
+    "choices": [
+      "Naive Bayes",
+      "Calibration",
+      "Random forest",
+      "K-means clustering"
+    ],
+    "answer": "Naive Bayes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Nested cross-validation",
+    "prompt": "In Machine Learning, which concept is best described as follows: uses an outer validation loop to estimate performance while an inner loop selects hyperparameters?",
+    "choices": [
+      "Nested cross-validation",
+      "Logistic regression",
+      "Gradient boosting",
+      "DBSCAN"
+    ],
+    "answer": "Nested cross-validation"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Regularization",
+    "prompt": "In Machine Learning, which concept is best described as follows: penalizes model complexity to reduce instability or overfitting?",
+    "choices": [
+      "Regularization",
+      "Random forest",
+      "K-means clustering",
+      "Support vector machine"
+    ],
+    "answer": "Regularization"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Calibration",
+    "prompt": "In Machine Learning, which concept is best described as follows: checks whether predicted probabilities correspond to observed event frequencies?",
+    "choices": [
+      "Calibration",
+      "Gradient boosting",
+      "DBSCAN",
+      "Naive Bayes"
+    ],
+    "answer": "Calibration"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Vanishing gradient",
+    "prompt": "In Deep Learning, which concept is best described as follows: describes gradients shrinking through layers so early parameters learn very slowly?",
+    "choices": [
+      "Vanishing gradient",
+      "Residual connection",
+      "Self-attention",
+      "Early stopping"
+    ],
+    "answer": "Vanishing gradient"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Dropout",
+    "prompt": "In Deep Learning, which concept is best described as follows: randomly suppresses activations during training as a regularizer?",
+    "choices": [
+      "Dropout",
+      "Convolution",
+      "Gradient clipping",
+      "Learning-rate scheduler"
+    ],
+    "answer": "Dropout"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Batch normalization",
+    "prompt": "In Deep Learning, which concept is best described as follows: normalizes intermediate activations using batch statistics during training?",
+    "choices": [
+      "Batch normalization",
+      "Self-attention",
+      "Early stopping",
+      "Embedding layer"
+    ],
+    "answer": "Batch normalization"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Residual connection",
+    "prompt": "In Deep Learning, which concept is best described as follows: adds an earlier representation to a later transformed representation?",
+    "choices": [
+      "Residual connection",
+      "Gradient clipping",
+      "Learning-rate scheduler",
+      "Vanishing gradient"
+    ],
+    "answer": "Residual connection"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Convolution",
+    "prompt": "In Deep Learning, which concept is best described as follows: applies a shared local filter across spatial positions?",
+    "choices": [
+      "Convolution",
+      "Early stopping",
+      "Embedding layer",
+      "Dropout"
+    ],
+    "answer": "Convolution"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Self-attention",
+    "prompt": "In Deep Learning, which concept is best described as follows: weights representations based on learned interactions among sequence positions?",
+    "choices": [
+      "Self-attention",
+      "Learning-rate scheduler",
+      "Vanishing gradient",
+      "Batch normalization"
+    ],
+    "answer": "Self-attention"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Gradient clipping",
+    "prompt": "In Deep Learning, which concept is best described as follows: limits gradient magnitude to control unstable updates?",
+    "choices": [
+      "Gradient clipping",
+      "Embedding layer",
+      "Dropout",
+      "Residual connection"
+    ],
+    "answer": "Gradient clipping"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Early stopping",
+    "prompt": "In Deep Learning, which concept is best described as follows: halts training based on a chosen validation criterion?",
+    "choices": [
+      "Early stopping",
+      "Vanishing gradient",
+      "Batch normalization",
+      "Convolution"
+    ],
+    "answer": "Early stopping"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Learning-rate scheduler",
+    "prompt": "In Deep Learning, which concept is best described as follows: changes optimizer step size over the training process?",
+    "choices": [
+      "Learning-rate scheduler",
+      "Dropout",
+      "Residual connection",
+      "Self-attention"
+    ],
+    "answer": "Learning-rate scheduler"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Embedding layer",
+    "prompt": "In Deep Learning, which concept is best described as follows: maps discrete identifiers into learned dense vector representations?",
+    "choices": [
+      "Embedding layer",
+      "Batch normalization",
+      "Convolution",
+      "Gradient clipping"
+    ],
+    "answer": "Embedding layer"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Tokenization",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: splits text into model-compatible discrete units?",
+    "choices": [
+      "Tokenization",
+      "Fine-tuning",
+      "Temperature",
+      "Hallucination"
+    ],
+    "answer": "Tokenization"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Context window",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: limits the amount of input and generated history a model can condition on?",
+    "choices": [
+      "Context window",
+      "LoRA",
+      "Top-p sampling",
+      "Function calling"
+    ],
+    "answer": "Context window"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Retrieval-augmented generation",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: grounds generation using documents retrieved from a separate knowledge store?",
+    "choices": [
+      "Retrieval-augmented generation",
+      "Temperature",
+      "Hallucination",
+      "Quantization"
+    ],
+    "answer": "Retrieval-augmented generation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Fine-tuning",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: updates pretrained model parameters using task-specific training data?",
+    "choices": [
+      "Fine-tuning",
+      "Top-p sampling",
+      "Function calling",
+      "Tokenization"
+    ],
+    "answer": "Fine-tuning"
+  },
+  {
+    "subject_id": 13,
+    "skill": "LoRA",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: learns low-rank parameter updates for parameter-efficient model adaptation?",
+    "choices": [
+      "LoRA",
+      "Hallucination",
+      "Quantization",
+      "Context window"
+    ],
+    "answer": "LoRA"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Temperature",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: controls randomness by scaling sampling logits?",
+    "choices": [
+      "Temperature",
+      "Function calling",
+      "Tokenization",
+      "Retrieval-augmented generation"
+    ],
+    "answer": "Temperature"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Top-p sampling",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: restricts selection to a probability-mass nucleus of tokens?",
+    "choices": [
+      "Top-p sampling",
+      "Quantization",
+      "Context window",
+      "Fine-tuning"
+    ],
+    "answer": "Top-p sampling"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Hallucination",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: produces content unsupported by the provided evidence or reliable facts?",
+    "choices": [
+      "Hallucination",
+      "Tokenization",
+      "Retrieval-augmented generation",
+      "LoRA"
+    ],
+    "answer": "Hallucination"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Function calling",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: requests a structured tool invocation rather than free-form text?",
+    "choices": [
+      "Function calling",
+      "Context window",
+      "Fine-tuning",
+      "Temperature"
+    ],
+    "answer": "Function calling"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Quantization",
+    "prompt": "In LLM and Generative AI, which concept is best described as follows: reduces model weight or activation precision to improve resource efficiency?",
+    "choices": [
+      "Quantization",
+      "Retrieval-augmented generation",
+      "LoRA",
+      "Top-p sampling"
+    ],
+    "answer": "Quantization"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Canny edge detector",
+    "prompt": "In Computer Vision, which concept is best described as follows: finds edges using gradient detection, nonmaximum suppression and hysteresis?",
+    "choices": [
+      "Canny edge detector",
+      "Nonmaximum suppression",
+      "Morphological erosion",
+      "Semantic segmentation metric mIoU"
+    ],
+    "answer": "Canny edge detector"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Histogram equalization",
+    "prompt": "In Computer Vision, which concept is best described as follows: redistributes image intensity levels to increase global contrast?",
+    "choices": [
+      "Histogram equalization",
+      "Optical flow",
+      "Morphological dilation",
+      "Perspective transform"
+    ],
+    "answer": "Histogram equalization"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Intersection over union",
+    "prompt": "In Computer Vision, which concept is best described as follows: measures overlap between predicted and true image regions?",
+    "choices": [
+      "Intersection over union",
+      "Morphological erosion",
+      "Semantic segmentation metric mIoU",
+      "Data augmentation"
+    ],
+    "answer": "Intersection over union"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Nonmaximum suppression",
+    "prompt": "In Computer Vision, which concept is best described as follows: removes overlapping lower-scored detection boxes?",
+    "choices": [
+      "Nonmaximum suppression",
+      "Morphological dilation",
+      "Perspective transform",
+      "Canny edge detector"
+    ],
+    "answer": "Nonmaximum suppression"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Optical flow",
+    "prompt": "In Computer Vision, which concept is best described as follows: estimates apparent pixel motion between video frames?",
+    "choices": [
+      "Optical flow",
+      "Semantic segmentation metric mIoU",
+      "Data augmentation",
+      "Histogram equalization"
+    ],
+    "answer": "Optical flow"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Morphological erosion",
+    "prompt": "In Computer Vision, which concept is best described as follows: shrinks foreground regions using a structuring element?",
+    "choices": [
+      "Morphological erosion",
+      "Perspective transform",
+      "Canny edge detector",
+      "Intersection over union"
+    ],
+    "answer": "Morphological erosion"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Morphological dilation",
+    "prompt": "In Computer Vision, which concept is best described as follows: expands foreground regions using a structuring element?",
+    "choices": [
+      "Morphological dilation",
+      "Data augmentation",
+      "Histogram equalization",
+      "Nonmaximum suppression"
+    ],
+    "answer": "Morphological dilation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Semantic segmentation metric mIoU",
+    "prompt": "In Computer Vision, which concept is best described as follows: averages intersection-over-union scores across the semantic classes being evaluated?",
+    "choices": [
+      "Semantic segmentation metric mIoU",
+      "Canny edge detector",
+      "Intersection over union",
+      "Optical flow"
+    ],
+    "answer": "Semantic segmentation metric mIoU"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Perspective transform",
+    "prompt": "In Computer Vision, which concept is best described as follows: maps planar coordinates under a projective geometric transformation?",
+    "choices": [
+      "Perspective transform",
+      "Histogram equalization",
+      "Nonmaximum suppression",
+      "Morphological erosion"
+    ],
+    "answer": "Perspective transform"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Data augmentation",
+    "prompt": "In Computer Vision, which concept is best described as follows: creates label-preserving image variations to improve model robustness?",
+    "choices": [
+      "Data augmentation",
+      "Intersection over union",
+      "Optical flow",
+      "Morphological dilation"
+    ],
+    "answer": "Data augmentation"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Named entity recognition",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: identifies spans referring to entities such as people, organizations or locations?",
+    "choices": [
+      "Named entity recognition",
+      "Stemming",
+      "Word embeddings",
+      "BLEU"
+    ],
+    "answer": "Named entity recognition"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Part-of-speech tagging",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: assigns grammatical labels to text tokens?",
+    "choices": [
+      "Part-of-speech tagging",
+      "Byte pair encoding",
+      "Dependency parsing",
+      "Perplexity"
+    ],
+    "answer": "Part-of-speech tagging"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Lemmatization",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: reduces inflected words to dictionary base forms using linguistic analysis?",
+    "choices": [
+      "Lemmatization",
+      "Word embeddings",
+      "BLEU",
+      "Coreference resolution"
+    ],
+    "answer": "Lemmatization"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Stemming",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: heuristically reduces words to shorter morphological forms?",
+    "choices": [
+      "Stemming",
+      "Dependency parsing",
+      "Perplexity",
+      "Named entity recognition"
+    ],
+    "answer": "Stemming"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Byte pair encoding",
+    "prompt": "In Natural Language Processing, which subword-tokenization technique repeatedly merges the most frequent adjacent symbol pairs during vocabulary construction?",
+    "choices": [
+      "Byte pair encoding",
+      "BLEU",
+      "Coreference resolution",
+      "Part-of-speech tagging"
+    ],
+    "answer": "Byte pair encoding"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Word embeddings",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: represent lexical items as learned vectors?",
+    "choices": [
+      "Word embeddings",
+      "Perplexity",
+      "Named entity recognition",
+      "Lemmatization"
+    ],
+    "answer": "Word embeddings"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Dependency parsing",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: identifies grammatical head-dependent relationships in sentences?",
+    "choices": [
+      "Dependency parsing",
+      "Coreference resolution",
+      "Part-of-speech tagging",
+      "Stemming"
+    ],
+    "answer": "Dependency parsing"
+  },
+  {
+    "subject_id": 15,
+    "skill": "BLEU",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: estimates n-gram overlap between generated and reference translations?",
+    "choices": [
+      "BLEU",
+      "Named entity recognition",
+      "Lemmatization",
+      "Byte pair encoding"
+    ],
+    "answer": "BLEU"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Perplexity",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: exponentiates average negative log probability assigned to tokens?",
+    "choices": [
+      "Perplexity",
+      "Part-of-speech tagging",
+      "Stemming",
+      "Word embeddings"
+    ],
+    "answer": "Perplexity"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Coreference resolution",
+    "prompt": "In Natural Language Processing, which concept is best described as follows: links textual mentions that refer to the same entity?",
+    "choices": [
+      "Coreference resolution",
+      "Lemmatization",
+      "Byte pair encoding",
+      "Dependency parsing"
+    ],
+    "answer": "Coreference resolution"
+  },
+  {
+    "subject_id": 16,
+    "skill": "XLOOKUP",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: searches a lookup array and returns the corresponding result from another array?",
+    "choices": [
+      "XLOOKUP",
+      "PivotTable",
+      "Conditional formatting",
+      "Mixed reference"
+    ],
+    "answer": "XLOOKUP"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SUMIFS",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: adds values satisfying multiple range criteria?",
+    "choices": [
+      "SUMIFS",
+      "Power Query",
+      "Data validation",
+      "FILTER"
+    ],
+    "answer": "SUMIFS"
+  },
+  {
+    "subject_id": 16,
+    "skill": "COUNTIFS",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: counts rows satisfying multiple conditions?",
+    "choices": [
+      "COUNTIFS",
+      "Conditional formatting",
+      "Mixed reference",
+      "LET"
+    ],
+    "answer": "COUNTIFS"
+  },
+  {
+    "subject_id": 16,
+    "skill": "PivotTable",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: summarizes source rows by draggable dimensions and aggregation fields?",
+    "choices": [
+      "PivotTable",
+      "Data validation",
+      "FILTER",
+      "XLOOKUP"
+    ],
+    "answer": "PivotTable"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Power Query",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: imports and transforms data using refreshable query steps?",
+    "choices": [
+      "Power Query",
+      "Mixed reference",
+      "LET",
+      "SUMIFS"
+    ],
+    "answer": "Power Query"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Conditional formatting",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: applies visual formatting based on cell values or rules?",
+    "choices": [
+      "Conditional formatting",
+      "FILTER",
+      "XLOOKUP",
+      "COUNTIFS"
+    ],
+    "answer": "Conditional formatting"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Data validation",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: restricts acceptable cell input according to configured rules?",
+    "choices": [
+      "Data validation",
+      "LET",
+      "SUMIFS",
+      "PivotTable"
+    ],
+    "answer": "Data validation"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Mixed reference",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: locks only the row or only the column when a spreadsheet formula is copied?",
+    "choices": [
+      "Mixed reference",
+      "XLOOKUP",
+      "COUNTIFS",
+      "Power Query"
+    ],
+    "answer": "Mixed reference"
+  },
+  {
+    "subject_id": 16,
+    "skill": "FILTER",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: returns array rows that satisfy a Boolean inclusion criterion?",
+    "choices": [
+      "FILTER",
+      "SUMIFS",
+      "PivotTable",
+      "Conditional formatting"
+    ],
+    "answer": "FILTER"
+  },
+  {
+    "subject_id": 16,
+    "skill": "LET",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: assigns names to intermediate formula expressions?",
+    "choices": [
+      "LET",
+      "COUNTIFS",
+      "Power Query",
+      "Data validation"
+    ],
+    "answer": "LET"
+  },
+  {
+    "subject_id": 17,
+    "skill": "ATTR aggregate",
+    "prompt": "In Tableau, which concept is best described as follows: returns the displayed dimension value when all contributing records agree, otherwise an asterisk?",
+    "choices": [
+      "ATTR aggregate",
+      "Table calculation",
+      "Parameter",
+      "Dual-axis chart"
+    ],
+    "answer": "ATTR aggregate"
+  },
+  {
+    "subject_id": 17,
+    "skill": "INCLUDE LOD",
+    "prompt": "In Tableau, which concept is best described as follows: adds stated dimensions to the view level of detail before aggregating?",
+    "choices": [
+      "INCLUDE LOD",
+      "Context filter",
+      "Calculated field",
+      "Dashboard action"
+    ],
+    "answer": "INCLUDE LOD"
+  },
+  {
+    "subject_id": 17,
+    "skill": "EXCLUDE LOD",
+    "prompt": "In Tableau, which concept is best described as follows: removes listed view dimensions from the expression's aggregation grain?",
+    "choices": [
+      "EXCLUDE LOD",
+      "Parameter",
+      "Dual-axis chart",
+      "Extract"
+    ],
+    "answer": "EXCLUDE LOD"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Table calculation",
+    "prompt": "In Tableau, which concept is best described as follows: computes results using values already returned in a visualization?",
+    "choices": [
+      "Table calculation",
+      "Calculated field",
+      "Dashboard action",
+      "ATTR aggregate"
+    ],
+    "answer": "Table calculation"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Context filter",
+    "prompt": "In Tableau, which concept is best described as follows: creates a filtering context before dependent filters are applied?",
+    "choices": [
+      "Context filter",
+      "Dual-axis chart",
+      "Extract",
+      "INCLUDE LOD"
+    ],
+    "answer": "Context filter"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Parameter",
+    "prompt": "In Tableau, which concept is best described as follows: stores a user-controlled value that can affect calculations or views?",
+    "choices": [
+      "Parameter",
+      "Dashboard action",
+      "ATTR aggregate",
+      "EXCLUDE LOD"
+    ],
+    "answer": "Parameter"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Calculated field",
+    "prompt": "In Tableau, which concept is best described as follows: defines an expression derived from source fields and functions?",
+    "choices": [
+      "Calculated field",
+      "Extract",
+      "INCLUDE LOD",
+      "Table calculation"
+    ],
+    "answer": "Calculated field"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Dual-axis chart",
+    "prompt": "In Tableau, which concept is best described as follows: layers two measures on separate synchronized or independent axes?",
+    "choices": [
+      "Dual-axis chart",
+      "ATTR aggregate",
+      "EXCLUDE LOD",
+      "Context filter"
+    ],
+    "answer": "Dual-axis chart"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Dashboard action",
+    "prompt": "In Tableau, which concept is best described as follows: creates interactions such as filtering or navigation between views?",
+    "choices": [
+      "Dashboard action",
+      "INCLUDE LOD",
+      "Table calculation",
+      "Parameter"
+    ],
+    "answer": "Dashboard action"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Extract",
+    "prompt": "In Tableau, which concept is best described as follows: stores a Tableau-optimized local snapshot of the data?",
+    "choices": [
+      "Extract",
+      "EXCLUDE LOD",
+      "Context filter",
+      "Calculated field"
+    ],
+    "answer": "Extract"
+  },
+  {
+    "subject_id": 18,
+    "skill": "KEEPFILTERS",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: intersects new DAX filter conditions with existing filters instead of replacing them?",
+    "choices": [
+      "KEEPFILTERS",
+      "ALL",
+      "Calculated column",
+      "Power Query"
+    ],
+    "answer": "KEEPFILTERS"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SUMX",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: iterates a table and sums an expression evaluated per row?",
+    "choices": [
+      "SUMX",
+      "Measure",
+      "Star schema",
+      "Row-level security"
+    ],
+    "answer": "SUMX"
+  },
+  {
+    "subject_id": 18,
+    "skill": "RELATED",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: retrieves a value from a related table using the current row context?",
+    "choices": [
+      "RELATED",
+      "Calculated column",
+      "Power Query",
+      "USERELATIONSHIP"
+    ],
+    "answer": "RELATED"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ALL",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: removes specified filters when constructing a DAX calculation?",
+    "choices": [
+      "ALL",
+      "Star schema",
+      "Row-level security",
+      "KEEPFILTERS"
+    ],
+    "answer": "ALL"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Measure",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: evaluates a calculation dynamically under the report filter context?",
+    "choices": [
+      "Measure",
+      "Power Query",
+      "USERELATIONSHIP",
+      "SUMX"
+    ],
+    "answer": "Measure"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Calculated column",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: computes and stores a value for each model row on refresh?",
+    "choices": [
+      "Calculated column",
+      "Row-level security",
+      "KEEPFILTERS",
+      "RELATED"
+    ],
+    "answer": "Calculated column"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Star schema",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: organizes numeric fact records around descriptive dimension tables?",
+    "choices": [
+      "Star schema",
+      "USERELATIONSHIP",
+      "SUMX",
+      "ALL"
+    ],
+    "answer": "Star schema"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Power Query",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: performs import-time query shaping before model loading?",
+    "choices": [
+      "Power Query",
+      "KEEPFILTERS",
+      "RELATED",
+      "Measure"
+    ],
+    "answer": "Power Query"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Row-level security",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: restricts report data visibility by user-specific rules?",
+    "choices": [
+      "Row-level security",
+      "SUMX",
+      "ALL",
+      "Calculated column"
+    ],
+    "answer": "Row-level security"
+  },
+  {
+    "subject_id": 18,
+    "skill": "USERELATIONSHIP",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: activates an existing inactive model relationship for a calculation?",
+    "choices": [
+      "USERELATIONSHIP",
+      "RELATED",
+      "Measure",
+      "Star schema"
+    ],
+    "answer": "USERELATIONSHIP"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Interquartile range",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: measures dispersion as the difference between the third and first quartiles?",
+    "choices": [
+      "Interquartile range",
+      "Type I error",
+      "Central limit theorem",
+      "Binomial distribution"
+    ],
+    "answer": "Interquartile range"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Median",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: returns the middle order statistic or average of two central values?",
+    "choices": [
+      "Median",
+      "Type II error",
+      "Poisson distribution",
+      "Covariance"
+    ],
+    "answer": "Median"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Bayes theorem",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: updates event probabilities using evidence and conditional likelihoods?",
+    "choices": [
+      "Bayes theorem",
+      "Central limit theorem",
+      "Binomial distribution",
+      "P-value"
+    ],
+    "answer": "Bayes theorem"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Type I error",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: rejects a true null hypothesis?",
+    "choices": [
+      "Type I error",
+      "Poisson distribution",
+      "Covariance",
+      "Interquartile range"
+    ],
+    "answer": "Type I error"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Type II error",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: fails to reject a false null hypothesis?",
+    "choices": [
+      "Type II error",
+      "Binomial distribution",
+      "P-value",
+      "Median"
+    ],
+    "answer": "Type II error"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Central limit theorem",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: describes convergence of suitably standardized sample means toward a normal distribution under conditions?",
+    "choices": [
+      "Central limit theorem",
+      "Covariance",
+      "Interquartile range",
+      "Bayes theorem"
+    ],
+    "answer": "Central limit theorem"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Poisson distribution",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: models counts of independent events occurring at a constant average rate?",
+    "choices": [
+      "Poisson distribution",
+      "P-value",
+      "Median",
+      "Type I error"
+    ],
+    "answer": "Poisson distribution"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Binomial distribution",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: models successes in a fixed number of independent Bernoulli trials?",
+    "choices": [
+      "Binomial distribution",
+      "Interquartile range",
+      "Bayes theorem",
+      "Type II error"
+    ],
+    "answer": "Binomial distribution"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Covariance",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: measures joint linear variation of two random variables?",
+    "choices": [
+      "Covariance",
+      "Median",
+      "Type I error",
+      "Central limit theorem"
+    ],
+    "answer": "Covariance"
+  },
+  {
+    "subject_id": 19,
+    "skill": "P-value",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: quantifies how extreme results are under a specified null model?",
+    "choices": [
+      "P-value",
+      "Bayes theorem",
+      "Type II error",
+      "Poisson distribution"
+    ],
+    "answer": "P-value"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Eigenvector",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: retains its direction under a linear transformation except for scaling?",
+    "choices": [
+      "Eigenvector",
+      "Dot product",
+      "Null space",
+      "Chain rule"
+    ],
+    "answer": "Eigenvector"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Gradient",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: collects partial derivatives of a scalar-valued function?",
+    "choices": [
+      "Gradient",
+      "L2 norm",
+      "Singular value decomposition",
+      "Convex function"
+    ],
+    "answer": "Gradient"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Hessian",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: organizes second partial derivatives of a scalar function into a matrix?",
+    "choices": [
+      "Hessian",
+      "Null space",
+      "Chain rule",
+      "Partial derivative"
+    ],
+    "answer": "Hessian"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Dot product",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: computes a scalar from paired coordinate products?",
+    "choices": [
+      "Dot product",
+      "Singular value decomposition",
+      "Convex function",
+      "Eigenvector"
+    ],
+    "answer": "Dot product"
+  },
+  {
+    "subject_id": 20,
+    "skill": "L2 norm",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: measures Euclidean vector length?",
+    "choices": [
+      "L2 norm",
+      "Chain rule",
+      "Partial derivative",
+      "Gradient"
+    ],
+    "answer": "L2 norm"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Null space",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: collects the input vectors that a matrix transforms into the zero vector?",
+    "choices": [
+      "Null space",
+      "Convex function",
+      "Eigenvector",
+      "Hessian"
+    ],
+    "answer": "Null space"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Singular value decomposition",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: factorizes a matrix into orthogonal factors and nonnegative singular values?",
+    "choices": [
+      "Singular value decomposition",
+      "Partial derivative",
+      "Gradient",
+      "Dot product"
+    ],
+    "answer": "Singular value decomposition"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Chain rule",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: differentiates compositions by multiplying derivative factors?",
+    "choices": [
+      "Chain rule",
+      "Eigenvector",
+      "Hessian",
+      "L2 norm"
+    ],
+    "answer": "Chain rule"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Convex function",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: lies below or on chords connecting any two points of its domain?",
+    "choices": [
+      "Convex function",
+      "Gradient",
+      "Dot product",
+      "Null space"
+    ],
+    "answer": "Convex function"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Partial derivative",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: measures sensitivity to one variable while holding others fixed?",
+    "choices": [
+      "Partial derivative",
+      "Hessian",
+      "L2 norm",
+      "Singular value decomposition"
+    ],
+    "answer": "Partial derivative"
+  }
+]

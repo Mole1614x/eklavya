@@ -1,0 +1,1538 @@
+[
+  {
+    "subject_id": 3,
+    "skill": "Constructor",
+    "prompt": "Within this subject, identify the precise term for the following concept: initializes newly created object state during instance creation?",
+    "choices": [
+      "Constructor",
+      "Multiple inheritance",
+      "Immutable object",
+      "Property accessor"
+    ],
+    "answer": "Constructor"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Destructor",
+    "prompt": "Within this subject, identify the precise term for the following concept: runs object cleanup logic when an object is destroyed under the language's lifecycle rules?",
+    "choices": [
+      "Destructor",
+      "Mixin",
+      "Method resolution order",
+      "Object identity"
+    ],
+    "answer": "Destructor"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Access modifier",
+    "prompt": "Within this subject, identify the precise term for the following concept: declares which callers can access a class member?",
+    "choices": [
+      "Access modifier",
+      "Association",
+      "Virtual method",
+      "Value equality"
+    ],
+    "answer": "Access modifier"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Static method",
+    "prompt": "Within this subject, identify the precise term for the following concept: belongs to class-level behavior without requiring an instance receiver?",
+    "choices": [
+      "Static method",
+      "Aggregation",
+      "Pure virtual method",
+      "Interface segregation principle"
+    ],
+    "answer": "Static method"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Class variable",
+    "prompt": "Within this subject, identify the precise term for the following concept: stores state shared by instances of a class?",
+    "choices": [
+      "Class variable",
+      "Shallow copy",
+      "Final class",
+      "Open closed principle"
+    ],
+    "answer": "Class variable"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Instance variable",
+    "prompt": "Within this subject, identify the precise term for the following concept: stores per-object state rather than class-wide state?",
+    "choices": [
+      "Instance variable",
+      "Deep copy",
+      "Final method",
+      "Dependency inversion principle"
+    ],
+    "answer": "Instance variable"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Duck typing",
+    "prompt": "Within this subject, identify the precise term for the following concept: uses available behavior instead of requiring nominal type declarations?",
+    "choices": [
+      "Duck typing",
+      "Immutable object",
+      "Property accessor",
+      "Constructor chaining"
+    ],
+    "answer": "Duck typing"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Multiple inheritance",
+    "prompt": "Within this subject, identify the precise term for the following concept: derives a class from more than one parent class?",
+    "choices": [
+      "Multiple inheritance",
+      "Method resolution order",
+      "Object identity",
+      "Operator overloading"
+    ],
+    "answer": "Multiple inheritance"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Mixin",
+    "prompt": "Within this subject, identify the precise term for the following concept: adds a reusable set of behaviors without representing a primary domain identity?",
+    "choices": [
+      "Mixin",
+      "Virtual method",
+      "Value equality",
+      "Data class"
+    ],
+    "answer": "Mixin"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Association",
+    "prompt": "Within this subject, identify the precise term for the following concept: represents a relationship between independently living objects?",
+    "choices": [
+      "Association",
+      "Pure virtual method",
+      "Interface segregation principle",
+      "Serialization"
+    ],
+    "answer": "Association"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Aggregation",
+    "prompt": "Within this subject, identify the precise term for the following concept: represents a whole-part relationship where the parts can exist independently?",
+    "choices": [
+      "Aggregation",
+      "Final class",
+      "Open closed principle",
+      "Deserialization"
+    ],
+    "answer": "Aggregation"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Shallow copy",
+    "prompt": "Within this subject, identify the precise term for the following concept: copies an outer container while retaining references to nested objects?",
+    "choices": [
+      "Shallow copy",
+      "Final method",
+      "Dependency inversion principle",
+      "Repository pattern"
+    ],
+    "answer": "Shallow copy"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Deep copy",
+    "prompt": "Within this subject, identify the precise term for the following concept: recursively copies nested structures rather than retaining shared nested references?",
+    "choices": [
+      "Deep copy",
+      "Property accessor",
+      "Constructor chaining",
+      "Anemic domain model"
+    ],
+    "answer": "Deep copy"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Immutable object",
+    "prompt": "Within this subject, identify the precise term for the following concept: cannot change its externally observable state after construction?",
+    "choices": [
+      "Immutable object",
+      "Object identity",
+      "Operator overloading",
+      "Tell don't ask principle"
+    ],
+    "answer": "Immutable object"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Method resolution order",
+    "prompt": "Within this subject, identify the precise term for the following concept: determines which inherited implementation is selected along a class hierarchy?",
+    "choices": [
+      "Method resolution order",
+      "Value equality",
+      "Data class",
+      "Law of Demeter"
+    ],
+    "answer": "Method resolution order"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Virtual method",
+    "prompt": "Within this subject, identify the precise term for the following concept: supports choosing an override according to the runtime receiver type?",
+    "choices": [
+      "Virtual method",
+      "Interface segregation principle",
+      "Serialization",
+      "Dynamic dispatch"
+    ],
+    "answer": "Virtual method"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Pure virtual method",
+    "prompt": "Within this subject, identify the precise term for the following concept: declares a method contract that derived concrete classes must implement?",
+    "choices": [
+      "Pure virtual method",
+      "Open closed principle",
+      "Deserialization",
+      "Diamond problem"
+    ],
+    "answer": "Pure virtual method"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Final class",
+    "prompt": "Within this subject, identify the precise term for the following concept: disallows subclassing in a language with final-type support?",
+    "choices": [
+      "Final class",
+      "Dependency inversion principle",
+      "Repository pattern",
+      "Dependency lifecycle scope"
+    ],
+    "answer": "Final class"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Final method",
+    "prompt": "Within this subject, identify the precise term for the following concept: disallows overriding a particular inherited method?",
+    "choices": [
+      "Final method",
+      "Constructor chaining",
+      "Anemic domain model",
+      "Constructor"
+    ],
+    "answer": "Final method"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Property accessor",
+    "prompt": "Within this subject, identify the precise term for the following concept: exposes controlled attribute access through getter or setter logic?",
+    "choices": [
+      "Property accessor",
+      "Operator overloading",
+      "Tell don't ask principle",
+      "Destructor"
+    ],
+    "answer": "Property accessor"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Object identity",
+    "prompt": "Within this subject, identify the precise term for the following concept: distinguishes separate instances even when their stored values are equal?",
+    "choices": [
+      "Object identity",
+      "Data class",
+      "Law of Demeter",
+      "Access modifier"
+    ],
+    "answer": "Object identity"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Value equality",
+    "prompt": "Within this subject, identify the precise term for the following concept: compares the content or logical value of objects rather than identity?",
+    "choices": [
+      "Value equality",
+      "Serialization",
+      "Dynamic dispatch",
+      "Static method"
+    ],
+    "answer": "Value equality"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Interface segregation principle",
+    "prompt": "Within this subject, identify the precise term for the following concept: recommends client-specific small interfaces instead of a giant contract?",
+    "choices": [
+      "Interface segregation principle",
+      "Deserialization",
+      "Diamond problem",
+      "Class variable"
+    ],
+    "answer": "Interface segregation principle"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Open closed principle",
+    "prompt": "Within this subject, identify the precise term for the following concept: recommends extending stable code behavior without editing its tested internals?",
+    "choices": [
+      "Open closed principle",
+      "Repository pattern",
+      "Dependency lifecycle scope",
+      "Instance variable"
+    ],
+    "answer": "Open closed principle"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Dependency inversion principle",
+    "prompt": "Within this subject, identify the precise term for the following concept: makes high-level policies depend on abstractions rather than low-level implementations?",
+    "choices": [
+      "Dependency inversion principle",
+      "Anemic domain model",
+      "Constructor",
+      "Duck typing"
+    ],
+    "answer": "Dependency inversion principle"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Constructor chaining",
+    "prompt": "Within this subject, identify the precise term for the following concept: invokes an existing constructor from another constructor to share initialization?",
+    "choices": [
+      "Constructor chaining",
+      "Tell don't ask principle",
+      "Destructor",
+      "Multiple inheritance"
+    ],
+    "answer": "Constructor chaining"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Operator overloading",
+    "prompt": "Within this subject, identify the precise term for the following concept: defines how language operators behave for instances of a custom type?",
+    "choices": [
+      "Operator overloading",
+      "Law of Demeter",
+      "Access modifier",
+      "Mixin"
+    ],
+    "answer": "Operator overloading"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Data class",
+    "prompt": "Within this subject, identify the precise term for the following concept: generates standard data-holding methods such as equality or representation?",
+    "choices": [
+      "Data class",
+      "Dynamic dispatch",
+      "Static method",
+      "Association"
+    ],
+    "answer": "Data class"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Serialization",
+    "prompt": "Within this subject, identify the precise term for the following concept: encodes object state into a transferable or storable form?",
+    "choices": [
+      "Serialization",
+      "Diamond problem",
+      "Class variable",
+      "Aggregation"
+    ],
+    "answer": "Serialization"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Deserialization",
+    "prompt": "Within this subject, identify the precise term for the following concept: reconstructs structured object state from an encoded representation?",
+    "choices": [
+      "Deserialization",
+      "Dependency lifecycle scope",
+      "Instance variable",
+      "Shallow copy"
+    ],
+    "answer": "Deserialization"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Repository pattern",
+    "prompt": "Within this subject, identify the precise term for the following concept: separates data-access operations behind a domain-facing abstraction?",
+    "choices": [
+      "Repository pattern",
+      "Constructor",
+      "Duck typing",
+      "Deep copy"
+    ],
+    "answer": "Repository pattern"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Anemic domain model",
+    "prompt": "Within this subject, identify the precise term for the following concept: contains data structures with little associated business behavior?",
+    "choices": [
+      "Anemic domain model",
+      "Destructor",
+      "Multiple inheritance",
+      "Immutable object"
+    ],
+    "answer": "Anemic domain model"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Tell don't ask principle",
+    "prompt": "Within this subject, identify the precise term for the following concept: prefers directing an object to perform an operation over extracting its internal state?",
+    "choices": [
+      "Tell don't ask principle",
+      "Access modifier",
+      "Mixin",
+      "Method resolution order"
+    ],
+    "answer": "Tell don't ask principle"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Law of Demeter",
+    "prompt": "Within this subject, identify the precise term for the following concept: discourages navigating through long chains of collaborators from one object?",
+    "choices": [
+      "Law of Demeter",
+      "Static method",
+      "Association",
+      "Virtual method"
+    ],
+    "answer": "Law of Demeter"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Dynamic dispatch",
+    "prompt": "Within this subject, identify the precise term for the following concept: selects a method implementation at runtime from the actual receiver type?",
+    "choices": [
+      "Dynamic dispatch",
+      "Class variable",
+      "Aggregation",
+      "Pure virtual method"
+    ],
+    "answer": "Dynamic dispatch"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Diamond problem",
+    "prompt": "Within this subject, identify the precise term for the following concept: arises when multiple inheritance routes lead to the same ancestor member?",
+    "choices": [
+      "Diamond problem",
+      "Instance variable",
+      "Shallow copy",
+      "Final class"
+    ],
+    "answer": "Diamond problem"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Dependency lifecycle scope",
+    "prompt": "Within this subject, identify the precise term for the following concept: determines whether a dependency instance is recreated per request or shared over time?",
+    "choices": [
+      "Dependency lifecycle scope",
+      "Duck typing",
+      "Deep copy",
+      "Final method"
+    ],
+    "answer": "Dependency lifecycle scope"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Missingness mechanism MCAR",
+    "prompt": "Within this subject, identify the precise term for the following concept: describes absent values whose missingness is independent of observed and unobserved data?",
+    "choices": [
+      "Missingness mechanism MCAR",
+      "Winsorization",
+      "Hashing trick",
+      "Currency normalization"
+    ],
+    "answer": "Missingness mechanism MCAR"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Missingness mechanism MAR",
+    "prompt": "Within this subject, identify the precise term for the following concept: describes missingness explainable by variables that are observed?",
+    "choices": [
+      "Missingness mechanism MAR",
+      "Robust scaling",
+      "Unicode normalization",
+      "Unit standardization"
+    ],
+    "answer": "Missingness mechanism MAR"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Missingness mechanism MNAR",
+    "prompt": "Within this subject, identify the precise term for the following concept: describes missingness associated with an unobserved missing value itself?",
+    "choices": [
+      "Missingness mechanism MNAR",
+      "Ordinal encoding",
+      "Whitespace normalization",
+      "Schema evolution"
+    ],
+    "answer": "Missingness mechanism MNAR"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Median imputation",
+    "prompt": "Within this subject, identify the precise term for the following concept: fills missing numeric values with the observed middle value?",
+    "choices": [
+      "Median imputation",
+      "Label encoding",
+      "Case folding",
+      "Primary key violation"
+    ],
+    "answer": "Median imputation"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Forward fill",
+    "prompt": "Within this subject, identify the precise term for the following concept: replaces missing ordered observations with the most recent prior known observation?",
+    "choices": [
+      "Forward fill",
+      "Target encoding",
+      "Date parsing",
+      "Functional dependency"
+    ],
+    "answer": "Forward fill"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Backward fill",
+    "prompt": "Within this subject, identify the precise term for the following concept: replaces missing ordered observations using the next known observation?",
+    "choices": [
+      "Backward fill",
+      "Frequency encoding",
+      "Timezone conversion",
+      "Fuzzy matching"
+    ],
+    "answer": "Backward fill"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Interpolation",
+    "prompt": "Within this subject, identify the precise term for the following concept: estimates intermediate missing values from nearby known values?",
+    "choices": [
+      "Interpolation",
+      "Hashing trick",
+      "Currency normalization",
+      "Record linkage"
+    ],
+    "answer": "Interpolation"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Winsorization",
+    "prompt": "Within this subject, identify the precise term for the following concept: caps extreme values at selected lower and upper quantiles?",
+    "choices": [
+      "Winsorization",
+      "Unicode normalization",
+      "Unit standardization",
+      "Survivorship rule"
+    ],
+    "answer": "Winsorization"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Robust scaling",
+    "prompt": "Within this subject, identify the precise term for the following concept: centers and scales features using resistant statistics such as median and interquartile range?",
+    "choices": [
+      "Robust scaling",
+      "Whitespace normalization",
+      "Schema evolution",
+      "Null sentinel"
+    ],
+    "answer": "Robust scaling"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Ordinal encoding",
+    "prompt": "Within this subject, identify the precise term for the following concept: represents categories by assigned integer order labels?",
+    "choices": [
+      "Ordinal encoding",
+      "Case folding",
+      "Primary key violation",
+      "Missing-indicator feature"
+    ],
+    "answer": "Ordinal encoding"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Label encoding",
+    "prompt": "Within this subject, identify the precise term for the following concept: maps each categorical label to an integer code?",
+    "choices": [
+      "Label encoding",
+      "Date parsing",
+      "Functional dependency",
+      "Train test contamination"
+    ],
+    "answer": "Label encoding"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Target encoding",
+    "prompt": "Within this subject, identify the precise term for the following concept: represents a category using a target-derived statistical summary with leakage controls?",
+    "choices": [
+      "Target encoding",
+      "Timezone conversion",
+      "Fuzzy matching",
+      "Data profiling"
+    ],
+    "answer": "Target encoding"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Frequency encoding",
+    "prompt": "Within this subject, identify the precise term for the following concept: replaces a category with its observed frequency in the training data?",
+    "choices": [
+      "Frequency encoding",
+      "Currency normalization",
+      "Record linkage",
+      "Reconciliation"
+    ],
+    "answer": "Frequency encoding"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Hashing trick",
+    "prompt": "Within this subject, identify the precise term for the following concept: maps tokens or categories to fixed-width feature buckets with possible collisions?",
+    "choices": [
+      "Hashing trick",
+      "Unit standardization",
+      "Survivorship rule",
+      "Great Expectations"
+    ],
+    "answer": "Hashing trick"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Unicode normalization",
+    "prompt": "Within this subject, identify the precise term for the following concept: converts equivalent character representations into a consistent standard form?",
+    "choices": [
+      "Unicode normalization",
+      "Schema evolution",
+      "Null sentinel",
+      "Quarantine table"
+    ],
+    "answer": "Unicode normalization"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Whitespace normalization",
+    "prompt": "Within this subject, identify the precise term for the following concept: standardizes inconsistent spaces, tabs or newlines?",
+    "choices": [
+      "Whitespace normalization",
+      "Primary key violation",
+      "Missing-indicator feature",
+      "Incremental deduplication"
+    ],
+    "answer": "Whitespace normalization"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Case folding",
+    "prompt": "Within this subject, identify the precise term for the following concept: performs language-aware case normalization for consistent comparisons?",
+    "choices": [
+      "Case folding",
+      "Functional dependency",
+      "Train test contamination",
+      "Watermark"
+    ],
+    "answer": "Case folding"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Date parsing",
+    "prompt": "Within this subject, identify the precise term for the following concept: converts textual date representations into typed temporal values?",
+    "choices": [
+      "Date parsing",
+      "Fuzzy matching",
+      "Data profiling",
+      "Data contract"
+    ],
+    "answer": "Date parsing"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Timezone conversion",
+    "prompt": "Within this subject, identify the precise term for the following concept: translates timestamps between timezones while respecting time standards?",
+    "choices": [
+      "Timezone conversion",
+      "Record linkage",
+      "Reconciliation",
+      "Missingness mechanism MCAR"
+    ],
+    "answer": "Timezone conversion"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Currency normalization",
+    "prompt": "Within this subject, identify the precise term for the following concept: brings financial amounts into a consistent currency unit?",
+    "choices": [
+      "Currency normalization",
+      "Survivorship rule",
+      "Great Expectations",
+      "Missingness mechanism MAR"
+    ],
+    "answer": "Currency normalization"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Unit standardization",
+    "prompt": "Within this subject, identify the precise term for the following concept: converts mixed measurement units to one agreed unit?",
+    "choices": [
+      "Unit standardization",
+      "Null sentinel",
+      "Quarantine table",
+      "Missingness mechanism MNAR"
+    ],
+    "answer": "Unit standardization"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Schema evolution",
+    "prompt": "Within this subject, identify the precise term for the following concept: manages changes to field definitions over data pipeline versions?",
+    "choices": [
+      "Schema evolution",
+      "Missing-indicator feature",
+      "Incremental deduplication",
+      "Median imputation"
+    ],
+    "answer": "Schema evolution"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Primary key violation",
+    "prompt": "Within this subject, identify the precise term for the following concept: occurs when supposedly unique row identifiers repeat?",
+    "choices": [
+      "Primary key violation",
+      "Train test contamination",
+      "Watermark",
+      "Forward fill"
+    ],
+    "answer": "Primary key violation"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Functional dependency",
+    "prompt": "Within this subject, identify the precise term for the following concept: states that one set of attributes uniquely determines another set?",
+    "choices": [
+      "Functional dependency",
+      "Data profiling",
+      "Data contract",
+      "Backward fill"
+    ],
+    "answer": "Functional dependency"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Fuzzy matching",
+    "prompt": "Within this subject, identify the precise term for the following concept: compares approximately matching strings despite spelling variation?",
+    "choices": [
+      "Fuzzy matching",
+      "Reconciliation",
+      "Missingness mechanism MCAR",
+      "Interpolation"
+    ],
+    "answer": "Fuzzy matching"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Record linkage",
+    "prompt": "Within this subject, identify the precise term for the following concept: identifies rows across different sources that refer to the same real-world entity?",
+    "choices": [
+      "Record linkage",
+      "Great Expectations",
+      "Missingness mechanism MAR",
+      "Winsorization"
+    ],
+    "answer": "Record linkage"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Survivorship rule",
+    "prompt": "Within this subject, identify the precise term for the following concept: chooses which source value to keep when duplicate records disagree?",
+    "choices": [
+      "Survivorship rule",
+      "Quarantine table",
+      "Missingness mechanism MNAR",
+      "Robust scaling"
+    ],
+    "answer": "Survivorship rule"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Null sentinel",
+    "prompt": "Within this subject, identify the precise term for the following concept: uses a special marker for absent data when a format lacks true nulls?",
+    "choices": [
+      "Null sentinel",
+      "Incremental deduplication",
+      "Median imputation",
+      "Ordinal encoding"
+    ],
+    "answer": "Null sentinel"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Missing-indicator feature",
+    "prompt": "Within this subject, identify the precise term for the following concept: adds a flag indicating whether an input value was originally absent?",
+    "choices": [
+      "Missing-indicator feature",
+      "Watermark",
+      "Forward fill",
+      "Label encoding"
+    ],
+    "answer": "Missing-indicator feature"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Train test contamination",
+    "prompt": "Within this subject, identify the precise term for the following concept: occurs when data processing fits statistics using evaluation observations?",
+    "choices": [
+      "Train test contamination",
+      "Data contract",
+      "Backward fill",
+      "Target encoding"
+    ],
+    "answer": "Train test contamination"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Data profiling",
+    "prompt": "Within this subject, identify the precise term for the following concept: summarizes types, distributions, uniqueness and missingness before cleaning?",
+    "choices": [
+      "Data profiling",
+      "Missingness mechanism MCAR",
+      "Interpolation",
+      "Frequency encoding"
+    ],
+    "answer": "Data profiling"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Reconciliation",
+    "prompt": "Within this subject, identify the precise term for the following concept: checks transformed totals or record counts against source-system controls?",
+    "choices": [
+      "Reconciliation",
+      "Missingness mechanism MAR",
+      "Winsorization",
+      "Hashing trick"
+    ],
+    "answer": "Reconciliation"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Great Expectations",
+    "prompt": "Within this subject, identify the precise term for the following concept: defines executable expectations for dataset quality validations?",
+    "choices": [
+      "Great Expectations",
+      "Missingness mechanism MNAR",
+      "Robust scaling",
+      "Unicode normalization"
+    ],
+    "answer": "Great Expectations"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Quarantine table",
+    "prompt": "Within this subject, identify the precise term for the following concept: isolates malformed rows for review without silently losing them?",
+    "choices": [
+      "Quarantine table",
+      "Median imputation",
+      "Ordinal encoding",
+      "Whitespace normalization"
+    ],
+    "answer": "Quarantine table"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Incremental deduplication",
+    "prompt": "Within this subject, identify the precise term for the following concept: prevents duplicate events across repeated ingestion batches?",
+    "choices": [
+      "Incremental deduplication",
+      "Forward fill",
+      "Label encoding",
+      "Case folding"
+    ],
+    "answer": "Incremental deduplication"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Watermark",
+    "prompt": "Within this subject, identify the precise term for the following concept: records a progress boundary for incremental event processing?",
+    "choices": [
+      "Watermark",
+      "Backward fill",
+      "Target encoding",
+      "Date parsing"
+    ],
+    "answer": "Watermark"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Data contract",
+    "prompt": "Within this subject, identify the precise term for the following concept: specifies agreed field names, constraints and producer-consumer expectations?",
+    "choices": [
+      "Data contract",
+      "Interpolation",
+      "Frequency encoding",
+      "Timezone conversion"
+    ],
+    "answer": "Data contract"
+  },
+  {
+    "subject_id": 9,
+    "skill": "RDD",
+    "prompt": "Within this subject, identify the precise term for the following concept: provides an immutable partitioned collection with distributed transformations?",
+    "choices": [
+      "RDD",
+      "Executor process",
+      "DataFrame explode",
+      "Schema inference"
+    ],
+    "answer": "RDD"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark action",
+    "prompt": "Within this subject, identify the precise term for the following concept: triggers execution of a lazy computation to produce a result or side effect?",
+    "choices": [
+      "Spark action",
+      "SparkSession",
+      "DataFrame withColumn",
+      "Explicit StructType"
+    ],
+    "answer": "Spark action"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark transformation",
+    "prompt": "Within this subject, identify the precise term for the following concept: describes a deferred operation producing a new distributed dataset?",
+    "choices": [
+      "Spark transformation",
+      "DataFrame select",
+      "DataFrame alias",
+      "Columnar Parquet"
+    ],
+    "answer": "Spark transformation"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Narrow dependency",
+    "prompt": "Within this subject, identify the precise term for the following concept: requires only a subset of parent partitions for each output partition?",
+    "choices": [
+      "Narrow dependency",
+      "DataFrame filter",
+      "DataFrame distinct",
+      "Predicate pushdown"
+    ],
+    "answer": "Narrow dependency"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Wide dependency",
+    "prompt": "Within this subject, identify the precise term for the following concept: requires data redistribution across multiple parent partitions?",
+    "choices": [
+      "Wide dependency",
+      "DataFrame groupBy",
+      "DropDuplicates",
+      "Partition pruning"
+    ],
+    "answer": "Wide dependency"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark partition",
+    "prompt": "Within this subject, identify the precise term for the following concept: serves as the unit of parallel work for a dataset?",
+    "choices": [
+      "Spark partition",
+      "DataFrame join",
+      "UnionByName",
+      "AQE"
+    ],
+    "answer": "Spark partition"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Driver process",
+    "prompt": "Within this subject, identify the precise term for the following concept: coordinates Spark job planning and scheduling from an application entry point?",
+    "choices": [
+      "Driver process",
+      "DataFrame explode",
+      "Schema inference",
+      "Shuffle partition count"
+    ],
+    "answer": "Driver process"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Executor process",
+    "prompt": "Within this subject, identify the precise term for the following concept: runs distributed tasks and maintains cached data for an application?",
+    "choices": [
+      "Executor process",
+      "DataFrame withColumn",
+      "Explicit StructType",
+      "Skew join"
+    ],
+    "answer": "Executor process"
+  },
+  {
+    "subject_id": 9,
+    "skill": "SparkSession",
+    "prompt": "Within this subject, identify the precise term for the following concept: provides the central entry point for DataFrame and SQL operations?",
+    "choices": [
+      "SparkSession",
+      "DataFrame alias",
+      "Columnar Parquet",
+      "Salting"
+    ],
+    "answer": "SparkSession"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame select",
+    "prompt": "Within this subject, identify the precise term for the following concept: projects named columns or derived expressions from a table?",
+    "choices": [
+      "DataFrame select",
+      "DataFrame distinct",
+      "Predicate pushdown",
+      "Broadcast threshold"
+    ],
+    "answer": "DataFrame select"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame filter",
+    "prompt": "Within this subject, identify the precise term for the following concept: retains rows meeting a Boolean predicate?",
+    "choices": [
+      "DataFrame filter",
+      "DropDuplicates",
+      "Partition pruning",
+      "UDF"
+    ],
+    "answer": "DataFrame filter"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame groupBy",
+    "prompt": "Within this subject, identify the precise term for the following concept: organizes rows into key groups for aggregate computations?",
+    "choices": [
+      "DataFrame groupBy",
+      "UnionByName",
+      "AQE",
+      "Pandas UDF"
+    ],
+    "answer": "DataFrame groupBy"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame join",
+    "prompt": "Within this subject, identify the precise term for the following concept: combines columns from related relations according to join conditions?",
+    "choices": [
+      "DataFrame join",
+      "Schema inference",
+      "Shuffle partition count",
+      "Collect"
+    ],
+    "answer": "DataFrame join"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame explode",
+    "prompt": "Within this subject, identify the precise term for the following concept: expands each element of an array into separate output rows?",
+    "choices": [
+      "DataFrame explode",
+      "Explicit StructType",
+      "Skew join",
+      "Take"
+    ],
+    "answer": "DataFrame explode"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame withColumn",
+    "prompt": "Within this subject, identify the precise term for the following concept: adds or replaces a named column using a column expression?",
+    "choices": [
+      "DataFrame withColumn",
+      "Columnar Parquet",
+      "Salting",
+      "Explain plan"
+    ],
+    "answer": "DataFrame withColumn"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame alias",
+    "prompt": "Within this subject, identify the precise term for the following concept: assigns another relation name for disambiguating joins?",
+    "choices": [
+      "DataFrame alias",
+      "Predicate pushdown",
+      "Broadcast threshold",
+      "Persist storage level"
+    ],
+    "answer": "DataFrame alias"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame distinct",
+    "prompt": "Within this subject, identify the precise term for the following concept: eliminates duplicate complete rows in a relation?",
+    "choices": [
+      "DataFrame distinct",
+      "Partition pruning",
+      "UDF",
+      "Delta Lake MERGE"
+    ],
+    "answer": "DataFrame distinct"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DropDuplicates",
+    "prompt": "Within this subject, identify the precise term for the following concept: removes repeated records using a specified subset of key columns?",
+    "choices": [
+      "DropDuplicates",
+      "AQE",
+      "Pandas UDF",
+      "Structured Streaming"
+    ],
+    "answer": "DropDuplicates"
+  },
+  {
+    "subject_id": 9,
+    "skill": "UnionByName",
+    "prompt": "Within this subject, identify the precise term for the following concept: unions rows using column names to align compatible schemas?",
+    "choices": [
+      "UnionByName",
+      "Shuffle partition count",
+      "Collect",
+      "RDD"
+    ],
+    "answer": "UnionByName"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Schema inference",
+    "prompt": "Within this subject, identify the precise term for the following concept: deduces column types from input records during reading?",
+    "choices": [
+      "Schema inference",
+      "Skew join",
+      "Take",
+      "Spark action"
+    ],
+    "answer": "Schema inference"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Explicit StructType",
+    "prompt": "Within this subject, identify the precise term for the following concept: declares the desired input schema using named field definitions?",
+    "choices": [
+      "Explicit StructType",
+      "Salting",
+      "Explain plan",
+      "Spark transformation"
+    ],
+    "answer": "Explicit StructType"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Columnar Parquet",
+    "prompt": "Within this subject, identify the precise term for the following concept: stores structured fields in compressed columns for analytical scans?",
+    "choices": [
+      "Columnar Parquet",
+      "Broadcast threshold",
+      "Persist storage level",
+      "Narrow dependency"
+    ],
+    "answer": "Columnar Parquet"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Predicate pushdown",
+    "prompt": "Within this subject, identify the precise term for the following concept: moves supported filters into the underlying data reader?",
+    "choices": [
+      "Predicate pushdown",
+      "UDF",
+      "Delta Lake MERGE",
+      "Wide dependency"
+    ],
+    "answer": "Predicate pushdown"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Partition pruning",
+    "prompt": "Within this subject, identify the precise term for the following concept: avoids scanning data partitions excluded by filter predicates?",
+    "choices": [
+      "Partition pruning",
+      "Pandas UDF",
+      "Structured Streaming",
+      "Spark partition"
+    ],
+    "answer": "Partition pruning"
+  },
+  {
+    "subject_id": 9,
+    "skill": "AQE",
+    "prompt": "Within this subject, identify the precise term for the following concept: reoptimizes certain physical execution decisions using observed runtime statistics?",
+    "choices": [
+      "AQE",
+      "Collect",
+      "RDD",
+      "Driver process"
+    ],
+    "answer": "AQE"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Shuffle partition count",
+    "prompt": "Within this subject, identify the precise term for the following concept: sets the configured number of partitions used by many shuffle operations?",
+    "choices": [
+      "Shuffle partition count",
+      "Take",
+      "Spark action",
+      "Executor process"
+    ],
+    "answer": "Shuffle partition count"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Skew join",
+    "prompt": "Within this subject, identify the precise term for the following concept: suffers when a few keys hold much more data than other keys?",
+    "choices": [
+      "Skew join",
+      "Explain plan",
+      "Spark transformation",
+      "SparkSession"
+    ],
+    "answer": "Skew join"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Salting",
+    "prompt": "Within this subject, identify the precise term for the following concept: spreads heavy keys across artificial buckets to reduce data skew?",
+    "choices": [
+      "Salting",
+      "Persist storage level",
+      "Narrow dependency",
+      "DataFrame select"
+    ],
+    "answer": "Salting"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Broadcast threshold",
+    "prompt": "Within this subject, identify the precise term for the following concept: controls automatic choice of broadcast join for sufficiently small tables?",
+    "choices": [
+      "Broadcast threshold",
+      "Delta Lake MERGE",
+      "Wide dependency",
+      "DataFrame filter"
+    ],
+    "answer": "Broadcast threshold"
+  },
+  {
+    "subject_id": 9,
+    "skill": "UDF",
+    "prompt": "Within this subject, identify the precise term for the following concept: runs a user-defined function over Spark column data?",
+    "choices": [
+      "UDF",
+      "Structured Streaming",
+      "Spark partition",
+      "DataFrame groupBy"
+    ],
+    "answer": "UDF"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Pandas UDF",
+    "prompt": "Within this subject, identify the precise term for the following concept: uses Arrow-backed vectorized batches to run eligible Python functions?",
+    "choices": [
+      "Pandas UDF",
+      "RDD",
+      "Driver process",
+      "DataFrame join"
+    ],
+    "answer": "Pandas UDF"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Collect",
+    "prompt": "Within this subject, identify the precise term for the following concept: returns all dataset rows to driver memory?",
+    "choices": [
+      "Collect",
+      "Spark action",
+      "Executor process",
+      "DataFrame explode"
+    ],
+    "answer": "Collect"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Take",
+    "prompt": "Within this subject, identify the precise term for the following concept: returns only a requested number of rows to the driver?",
+    "choices": [
+      "Take",
+      "Spark transformation",
+      "SparkSession",
+      "DataFrame withColumn"
+    ],
+    "answer": "Take"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Explain plan",
+    "prompt": "Within this subject, identify the precise term for the following concept: prints a DataFrame execution plan for inspection?",
+    "choices": [
+      "Explain plan",
+      "Narrow dependency",
+      "DataFrame select",
+      "DataFrame alias"
+    ],
+    "answer": "Explain plan"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Persist storage level",
+    "prompt": "Within this subject, identify the precise term for the following concept: sets storage and memory policies for cached dataset partitions?",
+    "choices": [
+      "Persist storage level",
+      "Wide dependency",
+      "DataFrame filter",
+      "DataFrame distinct"
+    ],
+    "answer": "Persist storage level"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Delta Lake MERGE",
+    "prompt": "Within this subject, identify the precise term for the following concept: performs transactional inserts or updates into a compatible Delta table?",
+    "choices": [
+      "Delta Lake MERGE",
+      "Spark partition",
+      "DataFrame groupBy",
+      "DropDuplicates"
+    ],
+    "answer": "Delta Lake MERGE"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Structured Streaming",
+    "prompt": "Within this subject, identify the precise term for the following concept: runs continuous or microbatch processing over streaming DataFrames?",
+    "choices": [
+      "Structured Streaming",
+      "Driver process",
+      "DataFrame join",
+      "UnionByName"
+    ],
+    "answer": "Structured Streaming"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Input split",
+    "prompt": "Within this subject, identify the precise term for the following concept: defines a chunk of source input assigned to a map task?",
+    "choices": [
+      "Input split",
+      "Distributed cache",
+      "MapReduce job counter",
+      "InputFormat"
+    ],
+    "answer": "Input split"
+  },
+  {
+    "subject_id": 10,
+    "skill": "RecordReader",
+    "prompt": "Within this subject, identify the precise term for the following concept: converts an input split into key-value records for mappers?",
+    "choices": [
+      "RecordReader",
+      "HDFS block",
+      "Partition skew",
+      "OutputFormat"
+    ],
+    "answer": "RecordReader"
+  },
+  {
+    "subject_id": 10,
+    "skill": "InputFormat",
+    "prompt": "Within this subject, identify the precise term for the following concept: selects how source files are split and parsed for a map job?",
+    "choices": [
+      "InputFormat",
+      "Block replication",
+      "YARN ApplicationMaster",
+      "Shuffle and sort"
+    ],
+    "answer": "InputFormat"
+  },
+  {
+    "subject_id": 10,
+    "skill": "OutputFormat",
+    "prompt": "Within this subject, identify the precise term for the following concept: specifies how reducer or mapper output is written?",
+    "choices": [
+      "OutputFormat",
+      "Rack awareness",
+      "Hadoop Streaming",
+      "Secondary sort"
+    ],
+    "answer": "OutputFormat"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Shuffle and sort",
+    "prompt": "Within this subject, identify the precise term for the following concept: groups intermediate records by key before reduction?",
+    "choices": [
+      "Shuffle and sort",
+      "Heartbeat",
+      "Input split",
+      "TotalOrderPartitioner"
+    ],
+    "answer": "Shuffle and sort"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Secondary sort",
+    "prompt": "Within this subject, identify the precise term for the following concept: orders values within a reducer's group using a composite key strategy?",
+    "choices": [
+      "Secondary sort",
+      "Checkpoint node",
+      "RecordReader",
+      "Distributed cache"
+    ],
+    "answer": "Secondary sort"
+  },
+  {
+    "subject_id": 10,
+    "skill": "TotalOrderPartitioner",
+    "prompt": "Within this subject, identify the precise term for the following concept: partitions ordered keys to create globally range-ordered reducer outputs?",
+    "choices": [
+      "TotalOrderPartitioner",
+      "MapReduce job counter",
+      "InputFormat",
+      "HDFS block"
+    ],
+    "answer": "TotalOrderPartitioner"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Distributed cache",
+    "prompt": "Within this subject, identify the precise term for the following concept: makes small shared resources available to worker tasks?",
+    "choices": [
+      "Distributed cache",
+      "Partition skew",
+      "OutputFormat",
+      "Block replication"
+    ],
+    "answer": "Distributed cache"
+  },
+  {
+    "subject_id": 10,
+    "skill": "HDFS block",
+    "prompt": "Within this subject, identify the precise term for the following concept: stores a fragment of a larger file as a replication unit?",
+    "choices": [
+      "HDFS block",
+      "YARN ApplicationMaster",
+      "Shuffle and sort",
+      "Rack awareness"
+    ],
+    "answer": "HDFS block"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Block replication",
+    "prompt": "Within this subject, identify the precise term for the following concept: stores extra block copies to survive DataNode failures?",
+    "choices": [
+      "Block replication",
+      "Hadoop Streaming",
+      "Secondary sort",
+      "Heartbeat"
+    ],
+    "answer": "Block replication"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Rack awareness",
+    "prompt": "Within this subject, identify the precise term for the following concept: places replicas across failure domains to improve durability?",
+    "choices": [
+      "Rack awareness",
+      "Input split",
+      "TotalOrderPartitioner",
+      "Checkpoint node"
+    ],
+    "answer": "Rack awareness"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Heartbeat",
+    "prompt": "Within this subject, identify the precise term for the following concept: lets worker nodes periodically report liveness to cluster management?",
+    "choices": [
+      "Heartbeat",
+      "RecordReader",
+      "Distributed cache",
+      "MapReduce job counter"
+    ],
+    "answer": "Heartbeat"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Checkpoint node",
+    "prompt": "Within this subject, identify the precise term for the following concept: helps consolidate HDFS namespace state files for recovery?",
+    "choices": [
+      "Checkpoint node",
+      "InputFormat",
+      "HDFS block",
+      "Partition skew"
+    ],
+    "answer": "Checkpoint node"
+  },
+  {
+    "subject_id": 10,
+    "skill": "MapReduce job counter",
+    "prompt": "Within this subject, identify the precise term for the following concept: tracks runtime counts such as records processed and failed tasks?",
+    "choices": [
+      "MapReduce job counter",
+      "OutputFormat",
+      "Block replication",
+      "YARN ApplicationMaster"
+    ],
+    "answer": "MapReduce job counter"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Partition skew",
+    "prompt": "Within this subject, identify the precise term for the following concept: causes some reducer tasks to receive substantially more data than others?",
+    "choices": [
+      "Partition skew",
+      "Shuffle and sort",
+      "Rack awareness",
+      "Hadoop Streaming"
+    ],
+    "answer": "Partition skew"
+  },
+  {
+    "subject_id": 10,
+    "skill": "YARN ApplicationMaster",
+    "prompt": "Within this subject, identify the precise term for the following concept: negotiates and monitors resources for one submitted application?",
+    "choices": [
+      "YARN ApplicationMaster",
+      "Secondary sort",
+      "Heartbeat",
+      "Input split"
+    ],
+    "answer": "YARN ApplicationMaster"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Hadoop Streaming",
+    "prompt": "Within this subject, identify the precise term for the following concept: runs map and reduce executables that communicate using standard input and output?",
+    "choices": [
+      "Hadoop Streaming",
+      "TotalOrderPartitioner",
+      "Checkpoint node",
+      "RecordReader"
+    ],
+    "answer": "Hadoop Streaming"
+  }
+]

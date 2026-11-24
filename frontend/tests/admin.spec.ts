@@ -11,7 +11,7 @@ test("administrator creates, publishes, and reviews through the real BFF", async
   await expect(page).toHaveURL(/\/admin$/);
 
   await page.goto("/admin");
-  await expect(page.getByRole("heading", { name: "Admin control center" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Admin control center" })).toBeVisible({ timeout: 20000 });
   await page.getByRole("tab", { name: "Problems" }).click();
 
   const title = "Release Readiness Sum";

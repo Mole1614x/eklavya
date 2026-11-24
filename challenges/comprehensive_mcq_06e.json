@@ -1,0 +1,2186 @@
+[
+  {
+    "subject_id": 33,
+    "skill": "Shortest-job-first scheduling",
+    "prompt": "Which operating-system concept is described here: selects the ready CPU job with the smallest estimated execution burst?",
+    "choices": [
+      "Shortest-job-first scheduling",
+      "Scheduling time quantum",
+      "Reader writer lock",
+      "Deadlock mutual exclusion"
+    ],
+    "answer": "Shortest-job-first scheduling"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Shortest-remaining-time scheduling",
+    "prompt": "Which operating-system concept is described here: preempts running work when a new ready job has less remaining execution time?",
+    "choices": [
+      "Shortest-remaining-time scheduling",
+      "Preemptive scheduler",
+      "Condition variable",
+      "Deadlock hold and wait"
+    ],
+    "answer": "Shortest-remaining-time scheduling"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Priority scheduling",
+    "prompt": "Which operating-system concept is described here: chooses ready work according to assigned scheduling priorities?",
+    "choices": [
+      "Priority scheduling",
+      "Nonpreemptive scheduler",
+      "Barrier synchronization",
+      "Deadlock no preemption"
+    ],
+    "answer": "Priority scheduling"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Scheduling starvation",
+    "prompt": "Which operating-system concept is described here: causes a waiting process to be delayed indefinitely by scheduling preferences?",
+    "choices": [
+      "Scheduling starvation",
+      "Critical section",
+      "Atomic operation",
+      "Deadlock circular wait"
+    ],
+    "answer": "Scheduling starvation"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Priority aging",
+    "prompt": "Which operating-system concept is described here: gradually increases the priority of long-waiting tasks to avoid starvation?",
+    "choices": [
+      "Priority aging",
+      "Race condition",
+      "Compare and swap",
+      "Banker's algorithm"
+    ],
+    "answer": "Priority aging"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Scheduling time quantum",
+    "prompt": "Which operating-system concept is described here: defines the maximum CPU duration a round-robin task receives before preemption?",
+    "choices": [
+      "Scheduling time quantum",
+      "Spinlock",
+      "Deadlock mutual exclusion",
+      "Virtual address"
+    ],
+    "answer": "Scheduling time quantum"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Preemptive scheduler",
+    "prompt": "Which operating-system concept is described here: can interrupt an executing task to run another eligible task?",
+    "choices": [
+      "Preemptive scheduler",
+      "Reader writer lock",
+      "Deadlock hold and wait",
+      "Page table"
+    ],
+    "answer": "Preemptive scheduler"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Nonpreemptive scheduler",
+    "prompt": "Which operating-system concept is described here: continues a selected task until it blocks or voluntarily yields?",
+    "choices": [
+      "Nonpreemptive scheduler",
+      "Condition variable",
+      "Deadlock no preemption",
+      "Translation lookaside buffer"
+    ],
+    "answer": "Nonpreemptive scheduler"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Critical section",
+    "prompt": "Which operating-system concept is described here: contains instructions that must be protected from conflicting concurrent execution?",
+    "choices": [
+      "Critical section",
+      "Barrier synchronization",
+      "Deadlock circular wait",
+      "Demand paging"
+    ],
+    "answer": "Critical section"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Race condition",
+    "prompt": "Which operating-system concept is described here: occurs when a program result depends on uncontrolled thread interleaving?",
+    "choices": [
+      "Race condition",
+      "Atomic operation",
+      "Banker's algorithm",
+      "LRU page replacement"
+    ],
+    "answer": "Race condition"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Spinlock",
+    "prompt": "Which operating-system concept is described here: busy-waits while repeatedly checking whether a lock becomes available?",
+    "choices": [
+      "Spinlock",
+      "Compare and swap",
+      "Virtual address",
+      "FIFO page replacement"
+    ],
+    "answer": "Spinlock"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Reader writer lock",
+    "prompt": "Which operating-system concept is described here: allows multiple concurrent readers while restricting concurrent writers?",
+    "choices": [
+      "Reader writer lock",
+      "Deadlock mutual exclusion",
+      "Page table",
+      "Clock page replacement"
+    ],
+    "answer": "Reader writer lock"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Condition variable",
+    "prompt": "Which operating-system concept is described here: lets threads wait until a shared-state predicate is signaled and reevaluated?",
+    "choices": [
+      "Condition variable",
+      "Deadlock hold and wait",
+      "Translation lookaside buffer",
+      "Internal fragmentation"
+    ],
+    "answer": "Condition variable"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Barrier synchronization",
+    "prompt": "Which operating-system concept is described here: blocks participating threads until all required participants arrive?",
+    "choices": [
+      "Barrier synchronization",
+      "Deadlock no preemption",
+      "Demand paging",
+      "External fragmentation"
+    ],
+    "answer": "Barrier synchronization"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Atomic operation",
+    "prompt": "Which operating-system concept is described here: executes an indivisible state transition with respect to concurrent observers?",
+    "choices": [
+      "Atomic operation",
+      "Deadlock circular wait",
+      "LRU page replacement",
+      "File descriptor"
+    ],
+    "answer": "Atomic operation"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Compare and swap",
+    "prompt": "Which operating-system concept is described here: updates memory only when the current value matches an expected value?",
+    "choices": [
+      "Compare and swap",
+      "Banker's algorithm",
+      "FIFO page replacement",
+      "Inode"
+    ],
+    "answer": "Compare and swap"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Deadlock mutual exclusion",
+    "prompt": "Which operating-system concept is described here: describes a condition where at least one resource cannot be shared simultaneously?",
+    "choices": [
+      "Deadlock mutual exclusion",
+      "Virtual address",
+      "Clock page replacement",
+      "Hard link"
+    ],
+    "answer": "Deadlock mutual exclusion"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Deadlock hold and wait",
+    "prompt": "Which operating-system concept is described here: describes waiting for resources while retaining resources already allocated?",
+    "choices": [
+      "Deadlock hold and wait",
+      "Page table",
+      "Internal fragmentation",
+      "Symbolic link"
+    ],
+    "answer": "Deadlock hold and wait"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Deadlock no preemption",
+    "prompt": "Which operating-system concept is described here: describes resources that cannot be forcibly taken from their owners?",
+    "choices": [
+      "Deadlock no preemption",
+      "Translation lookaside buffer",
+      "External fragmentation",
+      "System call"
+    ],
+    "answer": "Deadlock no preemption"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Deadlock circular wait",
+    "prompt": "Which operating-system concept is described here: describes a cycle of processes each waiting for a resource held by another?",
+    "choices": [
+      "Deadlock circular wait",
+      "Demand paging",
+      "File descriptor",
+      "Kernel mode"
+    ],
+    "answer": "Deadlock circular wait"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Banker's algorithm",
+    "prompt": "Which operating-system concept is described here: avoids unsafe resource allocations using declared maximum resource claims?",
+    "choices": [
+      "Banker's algorithm",
+      "LRU page replacement",
+      "Inode",
+      "Zombie process"
+    ],
+    "answer": "Banker's algorithm"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Virtual address",
+    "prompt": "Which operating-system concept is described here: names a memory location in a process's logical address space?",
+    "choices": [
+      "Virtual address",
+      "FIFO page replacement",
+      "Hard link",
+      "Shortest-job-first scheduling"
+    ],
+    "answer": "Virtual address"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Page table",
+    "prompt": "Which operating-system concept is described here: maps virtual page numbers to physical memory frames and permissions?",
+    "choices": [
+      "Page table",
+      "Clock page replacement",
+      "Symbolic link",
+      "Shortest-remaining-time scheduling"
+    ],
+    "answer": "Page table"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Translation lookaside buffer",
+    "prompt": "Which operating-system concept is described here: caches recent virtual-to-physical address translations?",
+    "choices": [
+      "Translation lookaside buffer",
+      "Internal fragmentation",
+      "System call",
+      "Priority scheduling"
+    ],
+    "answer": "Translation lookaside buffer"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Demand paging",
+    "prompt": "Which operating-system concept is described here: brings virtual memory pages into RAM only when accessed?",
+    "choices": [
+      "Demand paging",
+      "External fragmentation",
+      "Kernel mode",
+      "Scheduling starvation"
+    ],
+    "answer": "Demand paging"
+  },
+  {
+    "subject_id": 33,
+    "skill": "LRU page replacement",
+    "prompt": "Which operating-system concept is described here: evicts the page that has gone unused for the longest time?",
+    "choices": [
+      "LRU page replacement",
+      "File descriptor",
+      "Zombie process",
+      "Priority aging"
+    ],
+    "answer": "LRU page replacement"
+  },
+  {
+    "subject_id": 33,
+    "skill": "FIFO page replacement",
+    "prompt": "Which operating-system concept is described here: evicts the page that entered physical memory earliest?",
+    "choices": [
+      "FIFO page replacement",
+      "Inode",
+      "Shortest-job-first scheduling",
+      "Scheduling time quantum"
+    ],
+    "answer": "FIFO page replacement"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Clock page replacement",
+    "prompt": "Which operating-system concept is described here: approximates recency-based eviction through a circular reference-bit scan?",
+    "choices": [
+      "Clock page replacement",
+      "Hard link",
+      "Shortest-remaining-time scheduling",
+      "Preemptive scheduler"
+    ],
+    "answer": "Clock page replacement"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Internal fragmentation",
+    "prompt": "Which operating-system concept is described here: wastes allocated space inside fixed-size memory blocks?",
+    "choices": [
+      "Internal fragmentation",
+      "Symbolic link",
+      "Priority scheduling",
+      "Nonpreemptive scheduler"
+    ],
+    "answer": "Internal fragmentation"
+  },
+  {
+    "subject_id": 33,
+    "skill": "External fragmentation",
+    "prompt": "Which operating-system concept is described here: leaves available memory separated into unusably small free regions?",
+    "choices": [
+      "External fragmentation",
+      "System call",
+      "Scheduling starvation",
+      "Critical section"
+    ],
+    "answer": "External fragmentation"
+  },
+  {
+    "subject_id": 33,
+    "skill": "File descriptor",
+    "prompt": "Which operating-system concept is described here: identifies an open file or I/O resource within a process?",
+    "choices": [
+      "File descriptor",
+      "Kernel mode",
+      "Priority aging",
+      "Race condition"
+    ],
+    "answer": "File descriptor"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Inode",
+    "prompt": "Which operating-system concept is described here: stores filesystem metadata and pointers describing a file's stored data?",
+    "choices": [
+      "Inode",
+      "Zombie process",
+      "Scheduling time quantum",
+      "Spinlock"
+    ],
+    "answer": "Inode"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Hard link",
+    "prompt": "Which operating-system concept is described here: creates another directory entry referring to the same filesystem inode?",
+    "choices": [
+      "Hard link",
+      "Shortest-job-first scheduling",
+      "Preemptive scheduler",
+      "Reader writer lock"
+    ],
+    "answer": "Hard link"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Symbolic link",
+    "prompt": "Which operating-system concept is described here: stores a path reference that can point to another filesystem entry?",
+    "choices": [
+      "Symbolic link",
+      "Shortest-remaining-time scheduling",
+      "Nonpreemptive scheduler",
+      "Condition variable"
+    ],
+    "answer": "Symbolic link"
+  },
+  {
+    "subject_id": 33,
+    "skill": "System call",
+    "prompt": "Which operating-system concept is described here: transfers control from an application into the operating system to request a privileged service?",
+    "choices": [
+      "System call",
+      "Priority scheduling",
+      "Critical section",
+      "Barrier synchronization"
+    ],
+    "answer": "System call"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Kernel mode",
+    "prompt": "Which operating-system concept is described here: permits operating-system code to access privileged CPU instructions and resources?",
+    "choices": [
+      "Kernel mode",
+      "Scheduling starvation",
+      "Race condition",
+      "Atomic operation"
+    ],
+    "answer": "Kernel mode"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Zombie process",
+    "prompt": "Which operating-system concept is described here: has exited but retains an entry until its parent reaps its termination status?",
+    "choices": [
+      "Zombie process",
+      "Priority aging",
+      "Spinlock",
+      "Compare and swap"
+    ],
+    "answer": "Zombie process"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSI physical layer",
+    "prompt": "Which networking concept is described here: moves raw bits over physical communication media?",
+    "choices": [
+      "OSI physical layer",
+      "Network switch",
+      "MTU",
+      "TCP flow control"
+    ],
+    "answer": "OSI physical layer"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSI data link layer",
+    "prompt": "Which networking concept is described here: frames local-network messages and uses link-layer addressing?",
+    "choices": [
+      "OSI data link layer",
+      "Network router",
+      "MSS",
+      "TCP congestion control"
+    ],
+    "answer": "OSI data link layer"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSI network layer",
+    "prompt": "Which networking concept is described here: forwards packets using logical network addresses?",
+    "choices": [
+      "OSI network layer",
+      "Default gateway",
+      "IP TTL",
+      "Sliding window"
+    ],
+    "answer": "OSI network layer"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSI transport layer",
+    "prompt": "Which networking concept is described here: provides end-to-end process communication services?",
+    "choices": [
+      "OSI transport layer",
+      "Subnet mask",
+      "TCP three-way handshake",
+      "DNS recursive resolver"
+    ],
+    "answer": "OSI transport layer"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSI application layer",
+    "prompt": "Which networking concept is described here: offers network protocols directly used by application software?",
+    "choices": [
+      "OSI application layer",
+      "MAC address",
+      "TCP retransmission",
+      "DNS authoritative server"
+    ],
+    "answer": "OSI application layer"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Network switch",
+    "prompt": "Which networking concept is described here: forwards Ethernet frames based on learned MAC address entries?",
+    "choices": [
+      "Network switch",
+      "VLAN",
+      "TCP flow control",
+      "DNS A record"
+    ],
+    "answer": "Network switch"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Network router",
+    "prompt": "Which networking concept is described here: forwards IP packets between separate network prefixes?",
+    "choices": [
+      "Network router",
+      "MTU",
+      "TCP congestion control",
+      "DNS AAAA record"
+    ],
+    "answer": "Network router"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Default gateway",
+    "prompt": "Which networking concept is described here: provides the next hop when a destination is outside the host's local network?",
+    "choices": [
+      "Default gateway",
+      "MSS",
+      "Sliding window",
+      "DNS CNAME record"
+    ],
+    "answer": "Default gateway"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Subnet mask",
+    "prompt": "Which networking concept is described here: distinguishes network prefix bits from host bits in an IPv4 address?",
+    "choices": [
+      "Subnet mask",
+      "IP TTL",
+      "DNS recursive resolver",
+      "DNS MX record"
+    ],
+    "answer": "Subnet mask"
+  },
+  {
+    "subject_id": 34,
+    "skill": "MAC address",
+    "prompt": "Which networking concept is described here: identifies a network interface at the link layer?",
+    "choices": [
+      "MAC address",
+      "TCP three-way handshake",
+      "DNS authoritative server",
+      "IPv4 loopback"
+    ],
+    "answer": "MAC address"
+  },
+  {
+    "subject_id": 34,
+    "skill": "VLAN",
+    "prompt": "Which networking concept is described here: logically separates Ethernet broadcast domains on shared network infrastructure?",
+    "choices": [
+      "VLAN",
+      "TCP retransmission",
+      "DNS A record",
+      "IPv6 loopback"
+    ],
+    "answer": "VLAN"
+  },
+  {
+    "subject_id": 34,
+    "skill": "MTU",
+    "prompt": "Which networking concept is described here: specifies the maximum packet size carried by a network link without link fragmentation?",
+    "choices": [
+      "MTU",
+      "TCP flow control",
+      "DNS AAAA record",
+      "IPv6 address"
+    ],
+    "answer": "MTU"
+  },
+  {
+    "subject_id": 34,
+    "skill": "MSS",
+    "prompt": "Which networking concept is described here: limits TCP segment payload size negotiated for a connection?",
+    "choices": [
+      "MSS",
+      "TCP congestion control",
+      "DNS CNAME record",
+      "Private IPv4 addressing"
+    ],
+    "answer": "MSS"
+  },
+  {
+    "subject_id": 34,
+    "skill": "IP TTL",
+    "prompt": "Which networking concept is described here: reduces a packet's remaining hop allowance to prevent indefinite forwarding loops?",
+    "choices": [
+      "IP TTL",
+      "Sliding window",
+      "DNS MX record",
+      "Port address translation"
+    ],
+    "answer": "IP TTL"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP three-way handshake",
+    "prompt": "Which networking concept is described here: establishes a transport connection by exchanging SYN SYN-ACK and ACK?",
+    "choices": [
+      "TCP three-way handshake",
+      "DNS recursive resolver",
+      "IPv4 loopback",
+      "Ping utility"
+    ],
+    "answer": "TCP three-way handshake"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP retransmission",
+    "prompt": "Which networking concept is described here: resends unacknowledged segments to recover from packet loss?",
+    "choices": [
+      "TCP retransmission",
+      "DNS authoritative server",
+      "IPv6 loopback",
+      "Traceroute utility"
+    ],
+    "answer": "TCP retransmission"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP flow control",
+    "prompt": "Which networking concept is described here: prevents a sender from exceeding the receiver's advertised capacity?",
+    "choices": [
+      "TCP flow control",
+      "DNS A record",
+      "IPv6 address",
+      "TLS certificate"
+    ],
+    "answer": "TCP flow control"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP congestion control",
+    "prompt": "Which networking concept is described here: adjusts sending rate to avoid overwhelming a shared network path?",
+    "choices": [
+      "TCP congestion control",
+      "DNS AAAA record",
+      "Private IPv4 addressing",
+      "Reverse proxy"
+    ],
+    "answer": "TCP congestion control"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Sliding window",
+    "prompt": "Which networking concept is described here: permits multiple sequence-numbered packets to remain outstanding?",
+    "choices": [
+      "Sliding window",
+      "DNS CNAME record",
+      "Port address translation",
+      "Forward proxy"
+    ],
+    "answer": "Sliding window"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS recursive resolver",
+    "prompt": "Which networking concept is described here: queries other name servers to find answers on behalf of clients?",
+    "choices": [
+      "DNS recursive resolver",
+      "DNS MX record",
+      "Ping utility",
+      "Packet capture"
+    ],
+    "answer": "DNS recursive resolver"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS authoritative server",
+    "prompt": "Which networking concept is described here: provides final configured records for a domain's zone?",
+    "choices": [
+      "DNS authoritative server",
+      "IPv4 loopback",
+      "Traceroute utility",
+      "Quality of service"
+    ],
+    "answer": "DNS authoritative server"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS A record",
+    "prompt": "Which networking concept is described here: maps a domain hostname to an IPv4 address?",
+    "choices": [
+      "DNS A record",
+      "IPv6 loopback",
+      "TLS certificate",
+      "OSI physical layer"
+    ],
+    "answer": "DNS A record"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS AAAA record",
+    "prompt": "Which networking concept is described here: maps a domain hostname to an IPv6 address?",
+    "choices": [
+      "DNS AAAA record",
+      "IPv6 address",
+      "Reverse proxy",
+      "OSI data link layer"
+    ],
+    "answer": "DNS AAAA record"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS CNAME record",
+    "prompt": "Which networking concept is described here: declares an alias pointing to another canonical hostname?",
+    "choices": [
+      "DNS CNAME record",
+      "Private IPv4 addressing",
+      "Forward proxy",
+      "OSI network layer"
+    ],
+    "answer": "DNS CNAME record"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS MX record",
+    "prompt": "Which networking concept is described here: identifies the mail servers responsible for a domain?",
+    "choices": [
+      "DNS MX record",
+      "Port address translation",
+      "Packet capture",
+      "OSI transport layer"
+    ],
+    "answer": "DNS MX record"
+  },
+  {
+    "subject_id": 34,
+    "skill": "IPv4 loopback",
+    "prompt": "Which networking concept is described here: uses an address in 127.0.0.0/8 for local host communication?",
+    "choices": [
+      "IPv4 loopback",
+      "Ping utility",
+      "Quality of service",
+      "OSI application layer"
+    ],
+    "answer": "IPv4 loopback"
+  },
+  {
+    "subject_id": 34,
+    "skill": "IPv6 loopback",
+    "prompt": "Which networking concept is described here: uses the ::1 address to communicate with the same IPv6 host?",
+    "choices": [
+      "IPv6 loopback",
+      "Traceroute utility",
+      "OSI physical layer",
+      "Network switch"
+    ],
+    "answer": "IPv6 loopback"
+  },
+  {
+    "subject_id": 34,
+    "skill": "IPv6 address",
+    "prompt": "Which networking concept is described here: uses a 128-bit logical network addressing format?",
+    "choices": [
+      "IPv6 address",
+      "TLS certificate",
+      "OSI data link layer",
+      "Network router"
+    ],
+    "answer": "IPv6 address"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Private IPv4 addressing",
+    "prompt": "Which networking concept is described here: uses ranges reserved for internal networks rather than direct global routing?",
+    "choices": [
+      "Private IPv4 addressing",
+      "Reverse proxy",
+      "OSI network layer",
+      "Default gateway"
+    ],
+    "answer": "Private IPv4 addressing"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Port address translation",
+    "prompt": "Which networking concept is described here: multiplexes many internal flows through a shared translated public address with different ports?",
+    "choices": [
+      "Port address translation",
+      "Forward proxy",
+      "OSI transport layer",
+      "Subnet mask"
+    ],
+    "answer": "Port address translation"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Ping utility",
+    "prompt": "Which networking concept is described here: sends ICMP echo requests to test host reachability?",
+    "choices": [
+      "Ping utility",
+      "Packet capture",
+      "OSI application layer",
+      "MAC address"
+    ],
+    "answer": "Ping utility"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Traceroute utility",
+    "prompt": "Which networking concept is described here: discovers network hops by varying packet hop limits?",
+    "choices": [
+      "Traceroute utility",
+      "Quality of service",
+      "Network switch",
+      "VLAN"
+    ],
+    "answer": "Traceroute utility"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TLS certificate",
+    "prompt": "Which networking concept is described here: binds a public key to an asserted identity using a certificate chain?",
+    "choices": [
+      "TLS certificate",
+      "OSI physical layer",
+      "Network router",
+      "MTU"
+    ],
+    "answer": "TLS certificate"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Reverse proxy",
+    "prompt": "Which networking concept is described here: receives client requests and forwards them to upstream service instances?",
+    "choices": [
+      "Reverse proxy",
+      "OSI data link layer",
+      "Default gateway",
+      "MSS"
+    ],
+    "answer": "Reverse proxy"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Forward proxy",
+    "prompt": "Which networking concept is described here: makes requests to destination services on behalf of client systems?",
+    "choices": [
+      "Forward proxy",
+      "OSI network layer",
+      "Subnet mask",
+      "IP TTL"
+    ],
+    "answer": "Forward proxy"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Packet capture",
+    "prompt": "Which networking concept is described here: records observed network frames or packets for traffic inspection?",
+    "choices": [
+      "Packet capture",
+      "OSI transport layer",
+      "MAC address",
+      "TCP three-way handshake"
+    ],
+    "answer": "Packet capture"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Quality of service",
+    "prompt": "Which networking concept is described here: prioritizes or shapes selected network traffic classes?",
+    "choices": [
+      "Quality of service",
+      "OSI application layer",
+      "VLAN",
+      "TCP retransmission"
+    ],
+    "answer": "Quality of service"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Cryptographic hash",
+    "prompt": "Which security concept is described here: maps data to a fixed-length digest designed to resist collisions and preimage discovery?",
+    "choices": [
+      "Cryptographic hash",
+      "Elliptic curve Diffie Hellman",
+      "Insecure direct object reference",
+      "Content Security Policy"
+    ],
+    "answer": "Cryptographic hash"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Password salt",
+    "prompt": "Which security concept is described here: adds a unique random value before password hashing to hinder precomputed attacks?",
+    "choices": [
+      "Password salt",
+      "HMAC",
+      "XML external entity attack",
+      "SameSite cookie attribute"
+    ],
+    "answer": "Password salt"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Key derivation function",
+    "prompt": "Which security concept is described here: derives cryptographic keys from secret input material under controlled parameters?",
+    "choices": [
+      "Key derivation function",
+      "Digital signature",
+      "OS command injection",
+      "Secure cookie attribute"
+    ],
+    "answer": "Key derivation function"
+  },
+  {
+    "subject_id": 35,
+    "skill": "AES",
+    "prompt": "Which security concept is described here: provides symmetric-key block encryption using 128-bit data blocks?",
+    "choices": [
+      "AES",
+      "Public key infrastructure",
+      "Path traversal",
+      "HttpOnly cookie attribute"
+    ],
+    "answer": "AES"
+  },
+  {
+    "subject_id": 35,
+    "skill": "RSA",
+    "prompt": "Which security concept is described here: supports public-key encryption or signatures based on integer factorization hardness?",
+    "choices": [
+      "RSA",
+      "Certificate authority",
+      "Clickjacking",
+      "Session fixation"
+    ],
+    "answer": "RSA"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Elliptic curve Diffie Hellman",
+    "prompt": "Which security concept is described here: establishes a shared secret using elliptic-curve key exchange?",
+    "choices": [
+      "Elliptic curve Diffie Hellman",
+      "Server side request forgery",
+      "Content Security Policy",
+      "Credential stuffing"
+    ],
+    "answer": "Elliptic curve Diffie Hellman"
+  },
+  {
+    "subject_id": 35,
+    "skill": "HMAC",
+    "prompt": "Which security concept is described here: authenticates a message using a secret key and cryptographic hash?",
+    "choices": [
+      "HMAC",
+      "Insecure direct object reference",
+      "SameSite cookie attribute",
+      "Brute force attack"
+    ],
+    "answer": "HMAC"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Digital signature",
+    "prompt": "Which security concept is described here: lets a verifier check signed-message authenticity using a public verification key?",
+    "choices": [
+      "Digital signature",
+      "XML external entity attack",
+      "Secure cookie attribute",
+      "Role based access control"
+    ],
+    "answer": "Digital signature"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Public key infrastructure",
+    "prompt": "Which security concept is described here: manages trust relationships through certificates and certificate authorities?",
+    "choices": [
+      "Public key infrastructure",
+      "OS command injection",
+      "HttpOnly cookie attribute",
+      "Attribute based access control"
+    ],
+    "answer": "Public key infrastructure"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Certificate authority",
+    "prompt": "Which security concept is described here: signs digital certificates that bind subjects to public keys?",
+    "choices": [
+      "Certificate authority",
+      "Path traversal",
+      "Session fixation",
+      "Mandatory access control"
+    ],
+    "answer": "Certificate authority"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Server side request forgery",
+    "prompt": "Which security concept is described here: tricks an application into fetching attacker-chosen internal or external URLs?",
+    "choices": [
+      "Server side request forgery",
+      "Clickjacking",
+      "Credential stuffing",
+      "Discretionary access control"
+    ],
+    "answer": "Server side request forgery"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Insecure direct object reference",
+    "prompt": "Which security concept is described here: allows unauthorized access to objects through insufficient object-level authorization?",
+    "choices": [
+      "Insecure direct object reference",
+      "Content Security Policy",
+      "Brute force attack",
+      "Vulnerability scanning"
+    ],
+    "answer": "Insecure direct object reference"
+  },
+  {
+    "subject_id": 35,
+    "skill": "XML external entity attack",
+    "prompt": "Which security concept is described here: abuses XML parser external entity resolution to read unintended resources?",
+    "choices": [
+      "XML external entity attack",
+      "SameSite cookie attribute",
+      "Role based access control",
+      "Penetration test"
+    ],
+    "answer": "XML external entity attack"
+  },
+  {
+    "subject_id": 35,
+    "skill": "OS command injection",
+    "prompt": "Which security concept is described here: causes unsafe user-controlled input to change an executed system command?",
+    "choices": [
+      "OS command injection",
+      "Secure cookie attribute",
+      "Attribute based access control",
+      "CVE identifier"
+    ],
+    "answer": "OS command injection"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Path traversal",
+    "prompt": "Which security concept is described here: uses crafted relative file paths to escape an intended directory boundary?",
+    "choices": [
+      "Path traversal",
+      "HttpOnly cookie attribute",
+      "Mandatory access control",
+      "CVSS score"
+    ],
+    "answer": "Path traversal"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Clickjacking",
+    "prompt": "Which security concept is described here: tricks a user into interacting with a hidden or misleading framed interface?",
+    "choices": [
+      "Clickjacking",
+      "Session fixation",
+      "Discretionary access control",
+      "Zero day vulnerability"
+    ],
+    "answer": "Clickjacking"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Content Security Policy",
+    "prompt": "Which security concept is described here: restricts which resource sources a web browser may execute or display?",
+    "choices": [
+      "Content Security Policy",
+      "Credential stuffing",
+      "Vulnerability scanning",
+      "Security information and event management"
+    ],
+    "answer": "Content Security Policy"
+  },
+  {
+    "subject_id": 35,
+    "skill": "SameSite cookie attribute",
+    "prompt": "Which security concept is described here: limits when browsers attach cookies to certain cross-site requests?",
+    "choices": [
+      "SameSite cookie attribute",
+      "Brute force attack",
+      "Penetration test",
+      "Endpoint detection and response"
+    ],
+    "answer": "SameSite cookie attribute"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Secure cookie attribute",
+    "prompt": "Which security concept is described here: instructs browsers to send a cookie only over secure transport?",
+    "choices": [
+      "Secure cookie attribute",
+      "Role based access control",
+      "CVE identifier",
+      "Web application firewall"
+    ],
+    "answer": "Secure cookie attribute"
+  },
+  {
+    "subject_id": 35,
+    "skill": "HttpOnly cookie attribute",
+    "prompt": "Which security concept is described here: prevents browser JavaScript from directly reading a marked cookie?",
+    "choices": [
+      "HttpOnly cookie attribute",
+      "Attribute based access control",
+      "CVSS score",
+      "Intrusion detection system"
+    ],
+    "answer": "HttpOnly cookie attribute"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Session fixation",
+    "prompt": "Which security concept is described here: causes a victim to authenticate using a session identifier known to an attacker?",
+    "choices": [
+      "Session fixation",
+      "Mandatory access control",
+      "Zero day vulnerability",
+      "Intrusion prevention system"
+    ],
+    "answer": "Session fixation"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Credential stuffing",
+    "prompt": "Which security concept is described here: tries stolen username-password pairs against other services?",
+    "choices": [
+      "Credential stuffing",
+      "Discretionary access control",
+      "Security information and event management",
+      "Cryptographic hash"
+    ],
+    "answer": "Credential stuffing"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Brute force attack",
+    "prompt": "Which security concept is described here: systematically attempts many possible credential combinations?",
+    "choices": [
+      "Brute force attack",
+      "Vulnerability scanning",
+      "Endpoint detection and response",
+      "Password salt"
+    ],
+    "answer": "Brute force attack"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Role based access control",
+    "prompt": "Which security concept is described here: grants permissions according to roles assigned to identities?",
+    "choices": [
+      "Role based access control",
+      "Penetration test",
+      "Web application firewall",
+      "Key derivation function"
+    ],
+    "answer": "Role based access control"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Attribute based access control",
+    "prompt": "Which security concept is described here: makes authorization decisions from subject resource and context attributes?",
+    "choices": [
+      "Attribute based access control",
+      "CVE identifier",
+      "Intrusion detection system",
+      "AES"
+    ],
+    "answer": "Attribute based access control"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Mandatory access control",
+    "prompt": "Which security concept is described here: uses centrally enforced access labels and policy rules?",
+    "choices": [
+      "Mandatory access control",
+      "CVSS score",
+      "Intrusion prevention system",
+      "RSA"
+    ],
+    "answer": "Mandatory access control"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Discretionary access control",
+    "prompt": "Which security concept is described here: allows resource owners to grant access under system policy?",
+    "choices": [
+      "Discretionary access control",
+      "Zero day vulnerability",
+      "Cryptographic hash",
+      "Elliptic curve Diffie Hellman"
+    ],
+    "answer": "Discretionary access control"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Vulnerability scanning",
+    "prompt": "Which security concept is described here: automates detection of known weaknesses or suspicious configurations?",
+    "choices": [
+      "Vulnerability scanning",
+      "Security information and event management",
+      "Password salt",
+      "HMAC"
+    ],
+    "answer": "Vulnerability scanning"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Penetration test",
+    "prompt": "Which security concept is described here: performs authorized simulated exploitation to assess realistic security impact?",
+    "choices": [
+      "Penetration test",
+      "Endpoint detection and response",
+      "Key derivation function",
+      "Digital signature"
+    ],
+    "answer": "Penetration test"
+  },
+  {
+    "subject_id": 35,
+    "skill": "CVE identifier",
+    "prompt": "Which security concept is described here: provides a public identifier for a disclosed security vulnerability?",
+    "choices": [
+      "CVE identifier",
+      "Web application firewall",
+      "AES",
+      "Public key infrastructure"
+    ],
+    "answer": "CVE identifier"
+  },
+  {
+    "subject_id": 35,
+    "skill": "CVSS score",
+    "prompt": "Which security concept is described here: expresses standardized vulnerability severity assessment factors?",
+    "choices": [
+      "CVSS score",
+      "Intrusion detection system",
+      "RSA",
+      "Certificate authority"
+    ],
+    "answer": "CVSS score"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Zero day vulnerability",
+    "prompt": "Which security concept is described here: is exploited or disclosed before a vendor has a ready fix?",
+    "choices": [
+      "Zero day vulnerability",
+      "Intrusion prevention system",
+      "Elliptic curve Diffie Hellman",
+      "Server side request forgery"
+    ],
+    "answer": "Zero day vulnerability"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Security information and event management",
+    "prompt": "Which security concept is described here: correlates logged security events to support alerting and investigation?",
+    "choices": [
+      "Security information and event management",
+      "Cryptographic hash",
+      "HMAC",
+      "Insecure direct object reference"
+    ],
+    "answer": "Security information and event management"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Endpoint detection and response",
+    "prompt": "Which security concept is described here: monitors endpoints to identify and respond to suspicious behavior?",
+    "choices": [
+      "Endpoint detection and response",
+      "Password salt",
+      "Digital signature",
+      "XML external entity attack"
+    ],
+    "answer": "Endpoint detection and response"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Web application firewall",
+    "prompt": "Which security concept is described here: filters HTTP requests to protect web-facing application endpoints?",
+    "choices": [
+      "Web application firewall",
+      "Key derivation function",
+      "Public key infrastructure",
+      "OS command injection"
+    ],
+    "answer": "Web application firewall"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Intrusion detection system",
+    "prompt": "Which security concept is described here: monitors activity and alerts on possible intrusions?",
+    "choices": [
+      "Intrusion detection system",
+      "AES",
+      "Certificate authority",
+      "Path traversal"
+    ],
+    "answer": "Intrusion detection system"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Intrusion prevention system",
+    "prompt": "Which security concept is described here: can actively block suspected harmful traffic according to policies?",
+    "choices": [
+      "Intrusion prevention system",
+      "RSA",
+      "Server side request forgery",
+      "Clickjacking"
+    ],
+    "answer": "Intrusion prevention system"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Service replication",
+    "prompt": "Which distributed-system concept is described here: runs redundant copies of a service for capacity or availability?",
+    "choices": [
+      "Service replication",
+      "Split brain",
+      "Range partitioning",
+      "Request coalescing"
+    ],
+    "answer": "Service replication"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Leader follower replication",
+    "prompt": "Which distributed-system concept is described here: directs writes through a leader and replicates changes to followers?",
+    "choices": [
+      "Leader follower replication",
+      "Strong consistency",
+      "Hash partitioning",
+      "Content delivery network"
+    ],
+    "answer": "Leader follower replication"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Read replica",
+    "prompt": "Which distributed-system concept is described here: serves selected reads from a copy of a primary database?",
+    "choices": [
+      "Read replica",
+      "Linearizability",
+      "Hot partition",
+      "API gateway"
+    ],
+    "answer": "Read replica"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Quorum read",
+    "prompt": "Which distributed-system concept is described here: requires agreement from a configured number of data replicas before accepting a read?",
+    "choices": [
+      "Quorum read",
+      "Partition tolerance",
+      "Cache invalidation",
+      "Event sourcing"
+    ],
+    "answer": "Quorum read"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Quorum write",
+    "prompt": "Which distributed-system concept is described here: requires confirmation from a configured number of replicas before acknowledging a write?",
+    "choices": [
+      "Quorum write",
+      "Load shedding",
+      "Cache penetration",
+      "CQRS"
+    ],
+    "answer": "Quorum write"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Split brain",
+    "prompt": "Which distributed-system concept is described here: occurs when separate nodes each believe they control the same exclusive leadership role?",
+    "choices": [
+      "Split brain",
+      "Database sharding",
+      "Request coalescing",
+      "Saga pattern"
+    ],
+    "answer": "Split brain"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Strong consistency",
+    "prompt": "Which distributed-system concept is described here: ensures operations meet a defined single-copy consistency guarantee?",
+    "choices": [
+      "Strong consistency",
+      "Range partitioning",
+      "Content delivery network",
+      "Transactional outbox"
+    ],
+    "answer": "Strong consistency"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Linearizability",
+    "prompt": "Which distributed-system concept is described here: makes concurrent operations appear to take effect atomically between invocation and response?",
+    "choices": [
+      "Linearizability",
+      "Hash partitioning",
+      "API gateway",
+      "Materialized view"
+    ],
+    "answer": "Linearizability"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Partition tolerance",
+    "prompt": "Which distributed-system concept is described here: keeps distributed components functioning despite lost communication among nodes?",
+    "choices": [
+      "Partition tolerance",
+      "Hot partition",
+      "Event sourcing",
+      "Bloom filter"
+    ],
+    "answer": "Partition tolerance"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Load shedding",
+    "prompt": "Which distributed-system concept is described here: rejects or discards some incoming work when capacity is exhausted?",
+    "choices": [
+      "Load shedding",
+      "Cache invalidation",
+      "CQRS",
+      "Write ahead log"
+    ],
+    "answer": "Load shedding"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Database sharding",
+    "prompt": "Which distributed-system concept is described here: distributes records across separate storage partitions by a shard key?",
+    "choices": [
+      "Database sharding",
+      "Cache penetration",
+      "Saga pattern",
+      "Tail latency"
+    ],
+    "answer": "Database sharding"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Range partitioning",
+    "prompt": "Which distributed-system concept is described here: splits keys into ordered intervals for distribution or indexing?",
+    "choices": [
+      "Range partitioning",
+      "Request coalescing",
+      "Transactional outbox",
+      "Service replication"
+    ],
+    "answer": "Range partitioning"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Hash partitioning",
+    "prompt": "Which distributed-system concept is described here: distributes rows using the hash of a chosen key?",
+    "choices": [
+      "Hash partitioning",
+      "Content delivery network",
+      "Materialized view",
+      "Leader follower replication"
+    ],
+    "answer": "Hash partitioning"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Hot partition",
+    "prompt": "Which distributed-system concept is described here: receives disproportionately high traffic or data relative to other partitions?",
+    "choices": [
+      "Hot partition",
+      "API gateway",
+      "Bloom filter",
+      "Read replica"
+    ],
+    "answer": "Hot partition"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Cache invalidation",
+    "prompt": "Which distributed-system concept is described here: removes or refreshes entries when authoritative data changes?",
+    "choices": [
+      "Cache invalidation",
+      "Event sourcing",
+      "Write ahead log",
+      "Quorum read"
+    ],
+    "answer": "Cache invalidation"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Cache penetration",
+    "prompt": "Which distributed-system concept is described here: repeatedly queries missing keys that bypass caching and hit backing storage?",
+    "choices": [
+      "Cache penetration",
+      "CQRS",
+      "Tail latency",
+      "Quorum write"
+    ],
+    "answer": "Cache penetration"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Request coalescing",
+    "prompt": "Which distributed-system concept is described here: combines concurrent requests for the same work into one backend operation?",
+    "choices": [
+      "Request coalescing",
+      "Saga pattern",
+      "Service replication",
+      "Split brain"
+    ],
+    "answer": "Request coalescing"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Content delivery network",
+    "prompt": "Which distributed-system concept is described here: caches content near users through geographically distributed edge nodes?",
+    "choices": [
+      "Content delivery network",
+      "Transactional outbox",
+      "Leader follower replication",
+      "Strong consistency"
+    ],
+    "answer": "Content delivery network"
+  },
+  {
+    "subject_id": 36,
+    "skill": "API gateway",
+    "prompt": "Which distributed-system concept is described here: provides a common entry point for routing and securing backend APIs?",
+    "choices": [
+      "API gateway",
+      "Materialized view",
+      "Read replica",
+      "Linearizability"
+    ],
+    "answer": "API gateway"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Event sourcing",
+    "prompt": "Which distributed-system concept is described here: stores a sequence of state-changing events rather than only current state?",
+    "choices": [
+      "Event sourcing",
+      "Bloom filter",
+      "Quorum read",
+      "Partition tolerance"
+    ],
+    "answer": "Event sourcing"
+  },
+  {
+    "subject_id": 36,
+    "skill": "CQRS",
+    "prompt": "Which distributed-system concept is described here: separates the models used for querying data from those used for changing data?",
+    "choices": [
+      "CQRS",
+      "Write ahead log",
+      "Quorum write",
+      "Load shedding"
+    ],
+    "answer": "CQRS"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Saga pattern",
+    "prompt": "Which distributed-system concept is described here: coordinates a distributed transaction using local steps and compensating actions?",
+    "choices": [
+      "Saga pattern",
+      "Tail latency",
+      "Split brain",
+      "Database sharding"
+    ],
+    "answer": "Saga pattern"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Transactional outbox",
+    "prompt": "Which distributed-system concept is described here: writes pending integration events in the same transaction as domain state?",
+    "choices": [
+      "Transactional outbox",
+      "Service replication",
+      "Strong consistency",
+      "Range partitioning"
+    ],
+    "answer": "Transactional outbox"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Materialized view",
+    "prompt": "Which distributed-system concept is described here: persists precalculated query results for faster repeated reads?",
+    "choices": [
+      "Materialized view",
+      "Leader follower replication",
+      "Linearizability",
+      "Hash partitioning"
+    ],
+    "answer": "Materialized view"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Bloom filter",
+    "prompt": "Which distributed-system concept is described here: uses a probabilistic data structure to rule out set membership with no false negatives?",
+    "choices": [
+      "Bloom filter",
+      "Read replica",
+      "Partition tolerance",
+      "Hot partition"
+    ],
+    "answer": "Bloom filter"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Write ahead log",
+    "prompt": "Which distributed-system concept is described here: records intended storage changes before applying them to durable data pages?",
+    "choices": [
+      "Write ahead log",
+      "Quorum read",
+      "Load shedding",
+      "Cache invalidation"
+    ],
+    "answer": "Write ahead log"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Tail latency",
+    "prompt": "Which distributed-system concept is described here: captures response time experienced by the slowest fraction of requests?",
+    "choices": [
+      "Tail latency",
+      "Quorum write",
+      "Database sharding",
+      "Cache penetration"
+    ],
+    "answer": "Tail latency"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test fixture",
+    "prompt": "Which testing concept is described here: provides a controlled reusable environment or set of inputs for testing?",
+    "choices": [
+      "Test fixture",
+      "Test fake",
+      "Black box testing",
+      "Equivalence partitioning"
+    ],
+    "answer": "Test fixture"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test setup",
+    "prompt": "Which testing concept is described here: creates necessary preconditions before each selected test?",
+    "choices": [
+      "Test setup",
+      "Test spy",
+      "White box testing",
+      "Pairwise testing"
+    ],
+    "answer": "Test setup"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test teardown",
+    "prompt": "Which testing concept is described here: cleans up resources or state after a test finishes?",
+    "choices": [
+      "Test teardown",
+      "Smoke test",
+      "Statement coverage",
+      "Static analysis"
+    ],
+    "answer": "Test teardown"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Assertion",
+    "prompt": "Which testing concept is described here: checks that a program outcome matches an expected invariant or value?",
+    "choices": [
+      "Assertion",
+      "Sanity test",
+      "Branch coverage",
+      "Linter"
+    ],
+    "answer": "Assertion"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test stub",
+    "prompt": "Which testing concept is described here: returns predefined dependency outputs without implementing real behavior?",
+    "choices": [
+      "Test stub",
+      "End to end test",
+      "Condition coverage",
+      "Debugger breakpoint"
+    ],
+    "answer": "Test stub"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test fake",
+    "prompt": "Which testing concept is described here: provides a simplified working implementation for testing?",
+    "choices": [
+      "Test fake",
+      "Acceptance test",
+      "Equivalence partitioning",
+      "Stack trace"
+    ],
+    "answer": "Test fake"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test spy",
+    "prompt": "Which testing concept is described here: records how a dependency was invoked for later assertions?",
+    "choices": [
+      "Test spy",
+      "Black box testing",
+      "Pairwise testing",
+      "Root cause analysis"
+    ],
+    "answer": "Test spy"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Smoke test",
+    "prompt": "Which testing concept is described here: checks a small set of critical functions to determine basic build viability?",
+    "choices": [
+      "Smoke test",
+      "White box testing",
+      "Static analysis",
+      "Chaos experiment"
+    ],
+    "answer": "Smoke test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Sanity test",
+    "prompt": "Which testing concept is described here: checks a narrow area after a focused change or fix?",
+    "choices": [
+      "Sanity test",
+      "Statement coverage",
+      "Linter",
+      "Load test"
+    ],
+    "answer": "Sanity test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "End to end test",
+    "prompt": "Which testing concept is described here: verifies a user journey through multiple connected application layers?",
+    "choices": [
+      "End to end test",
+      "Branch coverage",
+      "Debugger breakpoint",
+      "Stress test"
+    ],
+    "answer": "End to end test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Acceptance test",
+    "prompt": "Which testing concept is described here: checks an implementation against stakeholder-defined acceptance criteria?",
+    "choices": [
+      "Acceptance test",
+      "Condition coverage",
+      "Stack trace",
+      "Soak test"
+    ],
+    "answer": "Acceptance test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Black box testing",
+    "prompt": "Which testing concept is described here: tests externally observable behavior without relying on internal implementation?",
+    "choices": [
+      "Black box testing",
+      "Equivalence partitioning",
+      "Root cause analysis",
+      "Test fixture"
+    ],
+    "answer": "Black box testing"
+  },
+  {
+    "subject_id": 37,
+    "skill": "White box testing",
+    "prompt": "Which testing concept is described here: uses knowledge of internal code paths and state to design tests?",
+    "choices": [
+      "White box testing",
+      "Pairwise testing",
+      "Chaos experiment",
+      "Test setup"
+    ],
+    "answer": "White box testing"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Statement coverage",
+    "prompt": "Which testing concept is described here: measures the proportion of executable statements run by tests?",
+    "choices": [
+      "Statement coverage",
+      "Static analysis",
+      "Load test",
+      "Test teardown"
+    ],
+    "answer": "Statement coverage"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Branch coverage",
+    "prompt": "Which testing concept is described here: measures the proportion of control-flow branches exercised by tests?",
+    "choices": [
+      "Branch coverage",
+      "Linter",
+      "Stress test",
+      "Assertion"
+    ],
+    "answer": "Branch coverage"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Condition coverage",
+    "prompt": "Which testing concept is described here: checks the truth and falsehood of individual Boolean conditions?",
+    "choices": [
+      "Condition coverage",
+      "Debugger breakpoint",
+      "Soak test",
+      "Test stub"
+    ],
+    "answer": "Condition coverage"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Equivalence partitioning",
+    "prompt": "Which testing concept is described here: groups test inputs expected to trigger similar behavior?",
+    "choices": [
+      "Equivalence partitioning",
+      "Stack trace",
+      "Test fixture",
+      "Test fake"
+    ],
+    "answer": "Equivalence partitioning"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Pairwise testing",
+    "prompt": "Which testing concept is described here: selects input combinations so every pair of selected parameter values is covered?",
+    "choices": [
+      "Pairwise testing",
+      "Root cause analysis",
+      "Test setup",
+      "Test spy"
+    ],
+    "answer": "Pairwise testing"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Static analysis",
+    "prompt": "Which testing concept is described here: finds potential defects by inspecting source code without executing it?",
+    "choices": [
+      "Static analysis",
+      "Chaos experiment",
+      "Test teardown",
+      "Smoke test"
+    ],
+    "answer": "Static analysis"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Linter",
+    "prompt": "Which testing concept is described here: detects style violations and selected code-quality issues automatically?",
+    "choices": [
+      "Linter",
+      "Load test",
+      "Assertion",
+      "Sanity test"
+    ],
+    "answer": "Linter"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Debugger breakpoint",
+    "prompt": "Which testing concept is described here: pauses program execution at a designated point for inspection?",
+    "choices": [
+      "Debugger breakpoint",
+      "Stress test",
+      "Test stub",
+      "End to end test"
+    ],
+    "answer": "Debugger breakpoint"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Stack trace",
+    "prompt": "Which testing concept is described here: lists active call frames associated with an error or execution point?",
+    "choices": [
+      "Stack trace",
+      "Soak test",
+      "Test fake",
+      "Acceptance test"
+    ],
+    "answer": "Stack trace"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Root cause analysis",
+    "prompt": "Which testing concept is described here: investigates the underlying reason a defect occurred?",
+    "choices": [
+      "Root cause analysis",
+      "Test fixture",
+      "Test spy",
+      "Black box testing"
+    ],
+    "answer": "Root cause analysis"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Chaos experiment",
+    "prompt": "Which testing concept is described here: deliberately injects controlled infrastructure failures to assess resilience?",
+    "choices": [
+      "Chaos experiment",
+      "Test setup",
+      "Smoke test",
+      "White box testing"
+    ],
+    "answer": "Chaos experiment"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Load test",
+    "prompt": "Which testing concept is described here: measures application behavior under expected or representative concurrent demand?",
+    "choices": [
+      "Load test",
+      "Test teardown",
+      "Sanity test",
+      "Statement coverage"
+    ],
+    "answer": "Load test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Stress test",
+    "prompt": "Which testing concept is described here: increases load past normal limits to find failure thresholds?",
+    "choices": [
+      "Stress test",
+      "Assertion",
+      "End to end test",
+      "Branch coverage"
+    ],
+    "answer": "Stress test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Soak test",
+    "prompt": "Which testing concept is described here: runs sustained traffic for a long interval to reveal cumulative degradation?",
+    "choices": [
+      "Soak test",
+      "Test stub",
+      "Acceptance test",
+      "Condition coverage"
+    ],
+    "answer": "Soak test"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Singleton pattern",
+    "prompt": "Which software-design concept is described here: restricts a component to one shared instance in its configured scope?",
+    "choices": [
+      "Singleton pattern",
+      "Flyweight pattern",
+      "Memento pattern",
+      "Unit of work"
+    ],
+    "answer": "Singleton pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Builder pattern",
+    "prompt": "Which software-design concept is described here: separates construction of a complex object from its final representation?",
+    "choices": [
+      "Builder pattern",
+      "Proxy pattern",
+      "State pattern",
+      "Singleton pattern"
+    ],
+    "answer": "Builder pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Prototype pattern",
+    "prompt": "Which software-design concept is described here: creates new objects by cloning existing prototype instances?",
+    "choices": [
+      "Prototype pattern",
+      "Chain of responsibility",
+      "Visitor pattern",
+      "Builder pattern"
+    ],
+    "answer": "Prototype pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Bridge pattern",
+    "prompt": "Which software-design concept is described here: separates an abstraction from its implementation so each can evolve independently?",
+    "choices": [
+      "Bridge pattern",
+      "Command pattern",
+      "Interpreter pattern",
+      "Prototype pattern"
+    ],
+    "answer": "Bridge pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Composite pattern",
+    "prompt": "Which software-design concept is described here: treats individual objects and hierarchical object groups through one interface?",
+    "choices": [
+      "Composite pattern",
+      "Iterator pattern",
+      "Object pool",
+      "Bridge pattern"
+    ],
+    "answer": "Composite pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Flyweight pattern",
+    "prompt": "Which software-design concept is described here: shares repeated immutable state among many lightweight objects?",
+    "choices": [
+      "Flyweight pattern",
+      "Mediator pattern",
+      "Unit of work",
+      "Composite pattern"
+    ],
+    "answer": "Flyweight pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Proxy pattern",
+    "prompt": "Which software-design concept is described here: controls access to another object through a stand-in interface?",
+    "choices": [
+      "Proxy pattern",
+      "Memento pattern",
+      "Singleton pattern",
+      "Flyweight pattern"
+    ],
+    "answer": "Proxy pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Chain of responsibility",
+    "prompt": "Which software-design concept is described here: passes a request through an ordered sequence of potential handlers?",
+    "choices": [
+      "Chain of responsibility",
+      "State pattern",
+      "Builder pattern",
+      "Proxy pattern"
+    ],
+    "answer": "Chain of responsibility"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Command pattern",
+    "prompt": "Which software-design concept is described here: encapsulates a request as an object that can be queued or undone?",
+    "choices": [
+      "Command pattern",
+      "Visitor pattern",
+      "Prototype pattern",
+      "Chain of responsibility"
+    ],
+    "answer": "Command pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Iterator pattern",
+    "prompt": "Which software-design concept is described here: exposes sequential access to collection elements without exposing its internals?",
+    "choices": [
+      "Iterator pattern",
+      "Interpreter pattern",
+      "Bridge pattern",
+      "Command pattern"
+    ],
+    "answer": "Iterator pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Mediator pattern",
+    "prompt": "Which software-design concept is described here: centralizes coordination among interacting components?",
+    "choices": [
+      "Mediator pattern",
+      "Object pool",
+      "Composite pattern",
+      "Iterator pattern"
+    ],
+    "answer": "Mediator pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Memento pattern",
+    "prompt": "Which software-design concept is described here: captures and restores selected internal state without exposing representation?",
+    "choices": [
+      "Memento pattern",
+      "Unit of work",
+      "Flyweight pattern",
+      "Mediator pattern"
+    ],
+    "answer": "Memento pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "State pattern",
+    "prompt": "Which software-design concept is described here: changes behavior by delegating to an object representing current state?",
+    "choices": [
+      "State pattern",
+      "Singleton pattern",
+      "Proxy pattern",
+      "Memento pattern"
+    ],
+    "answer": "State pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Visitor pattern",
+    "prompt": "Which software-design concept is described here: separates operations from an object structure by dispatching on element types?",
+    "choices": [
+      "Visitor pattern",
+      "Builder pattern",
+      "Chain of responsibility",
+      "State pattern"
+    ],
+    "answer": "Visitor pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Interpreter pattern",
+    "prompt": "Which software-design concept is described here: represents a simple language grammar with evaluation objects?",
+    "choices": [
+      "Interpreter pattern",
+      "Prototype pattern",
+      "Command pattern",
+      "Visitor pattern"
+    ],
+    "answer": "Interpreter pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Object pool",
+    "prompt": "Which software-design concept is described here: reuses previously created objects to reduce repeated construction costs?",
+    "choices": [
+      "Object pool",
+      "Bridge pattern",
+      "Iterator pattern",
+      "Interpreter pattern"
+    ],
+    "answer": "Object pool"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Unit of work",
+    "prompt": "Which software-design concept is described here: tracks related persistence changes and commits them as one coordinated transaction?",
+    "choices": [
+      "Unit of work",
+      "Composite pattern",
+      "Mediator pattern",
+      "Object pool"
+    ],
+    "answer": "Unit of work"
+  }
+]

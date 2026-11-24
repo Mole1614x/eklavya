@@ -1,0 +1,2270 @@
+[
+  {
+    "subject_id": 26,
+    "skill": "In-sync replica set",
+    "prompt": "Identify the correct Kafka term for this behavior: contains partition replicas sufficiently caught up with the leader?",
+    "choices": [
+      "In-sync replica set",
+      "Consumer rebalance",
+      "Producer batching",
+      "Tombstone record"
+    ],
+    "answer": "In-sync replica set"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Partition leader",
+    "prompt": "Identify the correct Kafka term for this behavior: handles reads and writes for a Kafka partition in its current epoch?",
+    "choices": [
+      "Partition leader",
+      "Consumer lag",
+      "Linger time",
+      "Transactional ID"
+    ],
+    "answer": "Partition leader"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Follower replica",
+    "prompt": "Identify the correct Kafka term for this behavior: replicates partition records from its current leader?",
+    "choices": [
+      "Follower replica",
+      "Committed offset",
+      "Record key",
+      "Kafka Connect"
+    ],
+    "answer": "Follower replica"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka broker",
+    "prompt": "Identify the correct Kafka term for this behavior: stores partition replicas and serves producer or consumer requests?",
+    "choices": [
+      "Kafka broker",
+      "Auto offset reset",
+      "Retention policy",
+      "Source connector"
+    ],
+    "answer": "Kafka broker"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Controller quorum",
+    "prompt": "Identify the correct Kafka term for this behavior: coordinates metadata updates and broker or partition management?",
+    "choices": [
+      "Controller quorum",
+      "Producer acknowledgement",
+      "Log segment",
+      "Sink connector"
+    ],
+    "answer": "Controller quorum"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Consumer rebalance",
+    "prompt": "Identify the correct Kafka term for this behavior: redistributes assigned partitions when consumer-group membership changes?",
+    "choices": [
+      "Consumer rebalance",
+      "Minimum in-sync replicas",
+      "Tombstone record",
+      "Kafka Streams"
+    ],
+    "answer": "Consumer rebalance"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Consumer lag",
+    "prompt": "Identify the correct Kafka term for this behavior: measures how far a consumer position trails the partition log end?",
+    "choices": [
+      "Consumer lag",
+      "Producer batching",
+      "Transactional ID",
+      "Stream table join"
+    ],
+    "answer": "Consumer lag"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Committed offset",
+    "prompt": "Identify the correct Kafka term for this behavior: records the consumer group's saved position for resuming processing?",
+    "choices": [
+      "Committed offset",
+      "Linger time",
+      "Kafka Connect",
+      "Windowed aggregation"
+    ],
+    "answer": "Committed offset"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Auto offset reset",
+    "prompt": "Identify the correct Kafka term for this behavior: selects a starting position when no valid committed consumer offset exists?",
+    "choices": [
+      "Auto offset reset",
+      "Record key",
+      "Source connector",
+      "Event time"
+    ],
+    "answer": "Auto offset reset"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Producer acknowledgement",
+    "prompt": "Identify the correct Kafka term for this behavior: specifies how much broker replication confirmation a producer requests?",
+    "choices": [
+      "Producer acknowledgement",
+      "Retention policy",
+      "Sink connector",
+      "Late arriving record"
+    ],
+    "answer": "Producer acknowledgement"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Minimum in-sync replicas",
+    "prompt": "Identify the correct Kafka term for this behavior: sets the replica quorum required for some acknowledged writes?",
+    "choices": [
+      "Minimum in-sync replicas",
+      "Log segment",
+      "Kafka Streams",
+      "Schema compatibility"
+    ],
+    "answer": "Minimum in-sync replicas"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Producer batching",
+    "prompt": "Identify the correct Kafka term for this behavior: groups several records into requests to reduce per-record overhead?",
+    "choices": [
+      "Producer batching",
+      "Tombstone record",
+      "Stream table join",
+      "In-sync replica set"
+    ],
+    "answer": "Producer batching"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Linger time",
+    "prompt": "Identify the correct Kafka term for this behavior: allows a producer brief batching delay before sending records?",
+    "choices": [
+      "Linger time",
+      "Transactional ID",
+      "Windowed aggregation",
+      "Partition leader"
+    ],
+    "answer": "Linger time"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Record key",
+    "prompt": "Identify the correct Kafka term for this behavior: determines partition selection and preserves order within a selected key's partition?",
+    "choices": [
+      "Record key",
+      "Kafka Connect",
+      "Event time",
+      "Follower replica"
+    ],
+    "answer": "Record key"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Retention policy",
+    "prompt": "Identify the correct Kafka term for this behavior: removes records after configured age or size limits on delete-cleanup topics?",
+    "choices": [
+      "Retention policy",
+      "Source connector",
+      "Late arriving record",
+      "Kafka broker"
+    ],
+    "answer": "Retention policy"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Log segment",
+    "prompt": "Identify the correct Kafka term for this behavior: stores a bounded physical portion of a Kafka partition log?",
+    "choices": [
+      "Log segment",
+      "Sink connector",
+      "Schema compatibility",
+      "Controller quorum"
+    ],
+    "answer": "Log segment"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Tombstone record",
+    "prompt": "Identify the correct Kafka term for this behavior: represents a key deletion in a log-compacted topic?",
+    "choices": [
+      "Tombstone record",
+      "Kafka Streams",
+      "In-sync replica set",
+      "Consumer rebalance"
+    ],
+    "answer": "Tombstone record"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Transactional ID",
+    "prompt": "Identify the correct Kafka term for this behavior: identifies a producer transaction identity across sessions?",
+    "choices": [
+      "Transactional ID",
+      "Stream table join",
+      "Partition leader",
+      "Consumer lag"
+    ],
+    "answer": "Transactional ID"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka Connect",
+    "prompt": "Identify the correct Kafka term for this behavior: provides a framework for moving data between Kafka and external systems?",
+    "choices": [
+      "Kafka Connect",
+      "Windowed aggregation",
+      "Follower replica",
+      "Committed offset"
+    ],
+    "answer": "Kafka Connect"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Source connector",
+    "prompt": "Identify the correct Kafka term for this behavior: imports records from an external system into Kafka topics?",
+    "choices": [
+      "Source connector",
+      "Event time",
+      "Kafka broker",
+      "Auto offset reset"
+    ],
+    "answer": "Source connector"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Sink connector",
+    "prompt": "Identify the correct Kafka term for this behavior: exports records from Kafka topics into an external system?",
+    "choices": [
+      "Sink connector",
+      "Late arriving record",
+      "Controller quorum",
+      "Producer acknowledgement"
+    ],
+    "answer": "Sink connector"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka Streams",
+    "prompt": "Identify the correct Kafka term for this behavior: provides an embedded library for building stream processing applications?",
+    "choices": [
+      "Kafka Streams",
+      "Schema compatibility",
+      "Consumer rebalance",
+      "Minimum in-sync replicas"
+    ],
+    "answer": "Kafka Streams"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Stream table join",
+    "prompt": "Identify the correct Kafka term for this behavior: joins event streams with a changing keyed state table?",
+    "choices": [
+      "Stream table join",
+      "In-sync replica set",
+      "Consumer lag",
+      "Producer batching"
+    ],
+    "answer": "Stream table join"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Windowed aggregation",
+    "prompt": "Identify the correct Kafka term for this behavior: groups stream events into time-bounded aggregation windows?",
+    "choices": [
+      "Windowed aggregation",
+      "Partition leader",
+      "Committed offset",
+      "Linger time"
+    ],
+    "answer": "Windowed aggregation"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Event time",
+    "prompt": "Identify the correct Kafka term for this behavior: represents when an event actually occurred rather than when it was processed?",
+    "choices": [
+      "Event time",
+      "Follower replica",
+      "Auto offset reset",
+      "Record key"
+    ],
+    "answer": "Event time"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Late arriving record",
+    "prompt": "Identify the correct Kafka term for this behavior: reaches a streaming processor after the event-time window has advanced?",
+    "choices": [
+      "Late arriving record",
+      "Kafka broker",
+      "Producer acknowledgement",
+      "Retention policy"
+    ],
+    "answer": "Late arriving record"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Schema compatibility",
+    "prompt": "Identify the correct Kafka term for this behavior: constrains schema evolution so existing producers or consumers remain supported?",
+    "choices": [
+      "Schema compatibility",
+      "Controller quorum",
+      "Minimum in-sync replicas",
+      "Log segment"
+    ],
+    "answer": "Schema compatibility"
+  },
+  {
+    "subject_id": 27,
+    "skill": "DAG run",
+    "prompt": "Identify the correct Airflow term for this behavior: represents one scheduled or manually triggered execution of a workflow?",
+    "choices": [
+      "DAG run",
+      "Branch operator",
+      "Variable",
+      "Execution timeout"
+    ],
+    "answer": "DAG run"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Logical date",
+    "prompt": "Identify the correct Airflow term for this behavior: identifies the timetable interval associated with a run, not necessarily its wall-clock start?",
+    "choices": [
+      "Logical date",
+      "Short circuit operator",
+      "DAG parameter",
+      "CeleryExecutor"
+    ],
+    "answer": "Logical date"
+  },
+  {
+    "subject_id": 27,
+    "skill": "DagRun conf",
+    "prompt": "Identify the correct Airflow term for this behavior: carries JSON configuration attached to one explicitly created Airflow DAG run?",
+    "choices": [
+      "DagRun conf",
+      "Triggerer",
+      "Jinja templating",
+      "KubernetesExecutor"
+    ],
+    "answer": "DagRun conf"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Timetable",
+    "prompt": "Identify the correct Airflow term for this behavior: defines how a DAG schedules runs and determines their data intervals?",
+    "choices": [
+      "Timetable",
+      "Deferrable operator",
+      "Task retry",
+      "LocalExecutor"
+    ],
+    "answer": "Timetable"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Task group",
+    "prompt": "Identify the correct Airflow term for this behavior: organizes related tasks in the user interface without changing their dependency rules?",
+    "choices": [
+      "Task group",
+      "Pool",
+      "Retry delay",
+      "Asset aware scheduling"
+    ],
+    "answer": "Task group"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Branch operator",
+    "prompt": "Identify the correct Airflow term for this behavior: chooses a subset of downstream tasks to execute based on branching logic?",
+    "choices": [
+      "Branch operator",
+      "Connection",
+      "Execution timeout",
+      "Task callback"
+    ],
+    "answer": "Branch operator"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Short circuit operator",
+    "prompt": "Identify the correct Airflow term for this behavior: skips downstream tasks when an evaluated condition is false?",
+    "choices": [
+      "Short circuit operator",
+      "Variable",
+      "CeleryExecutor",
+      "XCom backend"
+    ],
+    "answer": "Short circuit operator"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Triggerer",
+    "prompt": "Identify the correct Airflow term for this behavior: runs asynchronous triggers that allow deferred tasks to free worker slots?",
+    "choices": [
+      "Triggerer",
+      "DAG parameter",
+      "KubernetesExecutor",
+      "DAG serialization"
+    ],
+    "answer": "Triggerer"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Deferrable operator",
+    "prompt": "Identify the correct Airflow term for this behavior: suspends while waiting for external conditions and resumes after a trigger fires?",
+    "choices": [
+      "Deferrable operator",
+      "Jinja templating",
+      "LocalExecutor",
+      "DAG parsing"
+    ],
+    "answer": "Deferrable operator"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Pool",
+    "prompt": "Identify the correct Airflow term for this behavior: limits the number of task slots available to selected workloads?",
+    "choices": [
+      "Pool",
+      "Task retry",
+      "Asset aware scheduling",
+      "Concurrency limit"
+    ],
+    "answer": "Pool"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Connection",
+    "prompt": "Identify the correct Airflow term for this behavior: stores configuration for connecting tasks to an external service?",
+    "choices": [
+      "Connection",
+      "Retry delay",
+      "Task callback",
+      "SLA miss callback"
+    ],
+    "answer": "Connection"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Variable",
+    "prompt": "Identify the correct Airflow term for this behavior: stores shared runtime configuration values accessible to DAG tasks?",
+    "choices": [
+      "Variable",
+      "Execution timeout",
+      "XCom backend",
+      "DAG run"
+    ],
+    "answer": "Variable"
+  },
+  {
+    "subject_id": 27,
+    "skill": "DAG parameter",
+    "prompt": "Identify the correct Airflow term for this behavior: accepts typed configurable values for a DAG run?",
+    "choices": [
+      "DAG parameter",
+      "CeleryExecutor",
+      "DAG serialization",
+      "Logical date"
+    ],
+    "answer": "DAG parameter"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Jinja templating",
+    "prompt": "Identify the correct Airflow term for this behavior: substitutes context values into supported task fields at runtime?",
+    "choices": [
+      "Jinja templating",
+      "KubernetesExecutor",
+      "DAG parsing",
+      "DagRun conf"
+    ],
+    "answer": "Jinja templating"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Task retry",
+    "prompt": "Identify the correct Airflow term for this behavior: attempts an unsuccessful task again under configured retry rules?",
+    "choices": [
+      "Task retry",
+      "LocalExecutor",
+      "Concurrency limit",
+      "Timetable"
+    ],
+    "answer": "Task retry"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Retry delay",
+    "prompt": "Identify the correct Airflow term for this behavior: sets the interval between eligible task attempts?",
+    "choices": [
+      "Retry delay",
+      "Asset aware scheduling",
+      "SLA miss callback",
+      "Task group"
+    ],
+    "answer": "Retry delay"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Execution timeout",
+    "prompt": "Identify the correct Airflow term for this behavior: limits how long a task attempt is permitted to run?",
+    "choices": [
+      "Execution timeout",
+      "Task callback",
+      "DAG run",
+      "Branch operator"
+    ],
+    "answer": "Execution timeout"
+  },
+  {
+    "subject_id": 27,
+    "skill": "CeleryExecutor",
+    "prompt": "Identify the correct Airflow term for this behavior: runs queued tasks using distributed Celery workers?",
+    "choices": [
+      "CeleryExecutor",
+      "XCom backend",
+      "Logical date",
+      "Short circuit operator"
+    ],
+    "answer": "CeleryExecutor"
+  },
+  {
+    "subject_id": 27,
+    "skill": "KubernetesExecutor",
+    "prompt": "Identify the correct Airflow term for this behavior: launches task execution inside Kubernetes-managed worker pods?",
+    "choices": [
+      "KubernetesExecutor",
+      "DAG serialization",
+      "DagRun conf",
+      "Triggerer"
+    ],
+    "answer": "KubernetesExecutor"
+  },
+  {
+    "subject_id": 27,
+    "skill": "LocalExecutor",
+    "prompt": "Identify the correct Airflow term for this behavior: runs tasks in parallel processes on one worker host?",
+    "choices": [
+      "LocalExecutor",
+      "DAG parsing",
+      "Timetable",
+      "Deferrable operator"
+    ],
+    "answer": "LocalExecutor"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Asset aware scheduling",
+    "prompt": "Identify the correct Airflow term for this behavior: triggers workflows when declared upstream data assets are updated?",
+    "choices": [
+      "Asset aware scheduling",
+      "Concurrency limit",
+      "Task group",
+      "Pool"
+    ],
+    "answer": "Asset aware scheduling"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Task callback",
+    "prompt": "Identify the correct Airflow term for this behavior: runs custom behavior in response to selected task events?",
+    "choices": [
+      "Task callback",
+      "SLA miss callback",
+      "Branch operator",
+      "Connection"
+    ],
+    "answer": "Task callback"
+  },
+  {
+    "subject_id": 27,
+    "skill": "XCom backend",
+    "prompt": "Identify the correct Airflow term for this behavior: stores values passed between task executions using a selected persistence implementation?",
+    "choices": [
+      "XCom backend",
+      "DAG run",
+      "Short circuit operator",
+      "Variable"
+    ],
+    "answer": "XCom backend"
+  },
+  {
+    "subject_id": 27,
+    "skill": "DAG serialization",
+    "prompt": "Identify the correct Airflow term for this behavior: stores parsed DAG structure in a form usable by scheduler and web components?",
+    "choices": [
+      "DAG serialization",
+      "Logical date",
+      "Triggerer",
+      "DAG parameter"
+    ],
+    "answer": "DAG serialization"
+  },
+  {
+    "subject_id": 27,
+    "skill": "DAG parsing",
+    "prompt": "Identify the correct Airflow term for this behavior: imports Python workflow definitions to construct task and dependency objects?",
+    "choices": [
+      "DAG parsing",
+      "DagRun conf",
+      "Deferrable operator",
+      "Jinja templating"
+    ],
+    "answer": "DAG parsing"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Concurrency limit",
+    "prompt": "Identify the correct Airflow term for this behavior: caps simultaneous task instances for an execution scope?",
+    "choices": [
+      "Concurrency limit",
+      "Timetable",
+      "Pool",
+      "Task retry"
+    ],
+    "answer": "Concurrency limit"
+  },
+  {
+    "subject_id": 27,
+    "skill": "SLA miss callback",
+    "prompt": "Identify the correct Airflow term for this behavior: reports tasks that exceed a defined expected schedule deadline in Airflow versions supporting SLAs?",
+    "choices": [
+      "SLA miss callback",
+      "Task group",
+      "Connection",
+      "Retry delay"
+    ],
+    "answer": "SLA miss callback"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 200",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates a successful request that generally includes a response representation?",
+    "choices": [
+      "HTTP 200",
+      "HTTP 422",
+      "Accept header",
+      "Refresh token"
+    ],
+    "answer": "HTTP 200"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 204",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates success with no response message body?",
+    "choices": [
+      "HTTP 204",
+      "HTTP 429",
+      "Authorization header",
+      "Path parameter"
+    ],
+    "answer": "HTTP 204"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 400",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates a malformed or invalid client request?",
+    "choices": [
+      "HTTP 400",
+      "HTTP 500",
+      "Bearer token",
+      "Query parameter"
+    ],
+    "answer": "HTTP 400"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 410",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: reports that a requested resource has intentionally been permanently removed?",
+    "choices": [
+      "HTTP 410",
+      "HTTP 502",
+      "JWT",
+      "Request body"
+    ],
+    "answer": "HTTP 410"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 409",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates a conflict with the resource's current state?",
+    "choices": [
+      "HTTP 409",
+      "HTTP 503",
+      "OAuth 2.0",
+      "Keyset pagination"
+    ],
+    "answer": "HTTP 409"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 422",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates semantically invalid request content on APIs that use this status?",
+    "choices": [
+      "HTTP 422",
+      "Content-Type",
+      "Refresh token",
+      "Cursor pagination"
+    ],
+    "answer": "HTTP 422"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 429",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates request volume has exceeded a rate-limit policy?",
+    "choices": [
+      "HTTP 429",
+      "Accept header",
+      "Path parameter",
+      "Offset pagination"
+    ],
+    "answer": "HTTP 429"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 500",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates an unexpected server-side failure?",
+    "choices": [
+      "HTTP 500",
+      "Authorization header",
+      "Query parameter",
+      "Conditional request"
+    ],
+    "answer": "HTTP 500"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 502",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates a gateway received an invalid upstream response?",
+    "choices": [
+      "HTTP 502",
+      "Bearer token",
+      "Request body",
+      "If-Match"
+    ],
+    "answer": "HTTP 502"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 503",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates the service is temporarily unable to handle the request?",
+    "choices": [
+      "HTTP 503",
+      "JWT",
+      "Keyset pagination",
+      "Cache-Control"
+    ],
+    "answer": "HTTP 503"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Content-Type",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: declares the media type of transmitted representation content?",
+    "choices": [
+      "Content-Type",
+      "OAuth 2.0",
+      "Cursor pagination",
+      "CORS preflight"
+    ],
+    "answer": "Content-Type"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Accept header",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: declares which response media types the client can process?",
+    "choices": [
+      "Accept header",
+      "Refresh token",
+      "Offset pagination",
+      "HTTP middleware"
+    ],
+    "answer": "Accept header"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Authorization header",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: carries client authorization credentials or schemes for a request?",
+    "choices": [
+      "Authorization header",
+      "Path parameter",
+      "Conditional request",
+      "Input validation"
+    ],
+    "answer": "Authorization header"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Bearer token",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: is presented as an access credential under the HTTP Bearer authentication scheme?",
+    "choices": [
+      "Bearer token",
+      "Query parameter",
+      "If-Match",
+      "Dependency injection"
+    ],
+    "answer": "Bearer token"
+  },
+  {
+    "subject_id": 28,
+    "skill": "JWT",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: encodes signed or encrypted claims in a compact token representation?",
+    "choices": [
+      "JWT",
+      "Request body",
+      "Cache-Control",
+      "Idempotent endpoint"
+    ],
+    "answer": "JWT"
+  },
+  {
+    "subject_id": 28,
+    "skill": "OAuth 2.0",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: provides an authorization framework for delegated access?",
+    "choices": [
+      "OAuth 2.0",
+      "Keyset pagination",
+      "CORS preflight",
+      "Rate limit"
+    ],
+    "answer": "OAuth 2.0"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Refresh token",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: obtains replacement access credentials without repeating full user authentication?",
+    "choices": [
+      "Refresh token",
+      "Cursor pagination",
+      "HTTP middleware",
+      "Request correlation ID"
+    ],
+    "answer": "Refresh token"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Path parameter",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: identifies a variable segment of a resource URL route?",
+    "choices": [
+      "Path parameter",
+      "Offset pagination",
+      "Input validation",
+      "Webhook"
+    ],
+    "answer": "Path parameter"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Query parameter",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: passes optional request modifiers after the URL question mark?",
+    "choices": [
+      "Query parameter",
+      "Conditional request",
+      "Dependency injection",
+      "HMAC signature"
+    ],
+    "answer": "Query parameter"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Request body",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: carries data submitted as the content of an HTTP request?",
+    "choices": [
+      "Request body",
+      "If-Match",
+      "Idempotent endpoint",
+      "Health endpoint"
+    ],
+    "answer": "Request body"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Keyset pagination",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: retrieves the next page using ordered key comparisons from the last returned row?",
+    "choices": [
+      "Keyset pagination",
+      "Cache-Control",
+      "Rate limit",
+      "Readiness endpoint"
+    ],
+    "answer": "Keyset pagination"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Cursor pagination",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: uses an opaque continuation position to fetch subsequent result pages?",
+    "choices": [
+      "Cursor pagination",
+      "CORS preflight",
+      "Request correlation ID",
+      "HTTP 200"
+    ],
+    "answer": "Cursor pagination"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Offset pagination",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: uses starting row offsets and page sizes to traverse a result set?",
+    "choices": [
+      "Offset pagination",
+      "HTTP middleware",
+      "Webhook",
+      "HTTP 204"
+    ],
+    "answer": "Offset pagination"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Conditional request",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: uses version validators to avoid overwriting or refetching unchanged resources?",
+    "choices": [
+      "Conditional request",
+      "Input validation",
+      "HMAC signature",
+      "HTTP 400"
+    ],
+    "answer": "Conditional request"
+  },
+  {
+    "subject_id": 28,
+    "skill": "If-Match",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: requires a target representation version to match before applying a modification?",
+    "choices": [
+      "If-Match",
+      "Dependency injection",
+      "Health endpoint",
+      "HTTP 410"
+    ],
+    "answer": "If-Match"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Cache-Control",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: directs HTTP caches through freshness and storage directives?",
+    "choices": [
+      "Cache-Control",
+      "Idempotent endpoint",
+      "Readiness endpoint",
+      "HTTP 409"
+    ],
+    "answer": "Cache-Control"
+  },
+  {
+    "subject_id": 28,
+    "skill": "CORS preflight",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: uses an OPTIONS request to check cross-origin permission for a later request?",
+    "choices": [
+      "CORS preflight",
+      "Rate limit",
+      "HTTP 200",
+      "HTTP 422"
+    ],
+    "answer": "CORS preflight"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP middleware",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: intercepts request and response processing for cross-cutting behavior?",
+    "choices": [
+      "HTTP middleware",
+      "Request correlation ID",
+      "HTTP 204",
+      "HTTP 429"
+    ],
+    "answer": "HTTP middleware"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Input validation",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: rejects request data that violates expected types or business constraints?",
+    "choices": [
+      "Input validation",
+      "Webhook",
+      "HTTP 400",
+      "HTTP 500"
+    ],
+    "answer": "Input validation"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Dependency injection",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: provides route handlers with reusable services or request-scoped resources?",
+    "choices": [
+      "Dependency injection",
+      "HMAC signature",
+      "HTTP 410",
+      "HTTP 502"
+    ],
+    "answer": "Dependency injection"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Idempotent endpoint",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: supports repeated identical requests without additional intended state changes?",
+    "choices": [
+      "Idempotent endpoint",
+      "Health endpoint",
+      "HTTP 409",
+      "HTTP 503"
+    ],
+    "answer": "Idempotent endpoint"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Rate limit",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: caps allowed request volume during a configured interval?",
+    "choices": [
+      "Rate limit",
+      "Readiness endpoint",
+      "HTTP 422",
+      "Content-Type"
+    ],
+    "answer": "Rate limit"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Request correlation ID",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: links distributed logs and traces associated with one request journey?",
+    "choices": [
+      "Request correlation ID",
+      "HTTP 200",
+      "HTTP 429",
+      "Accept header"
+    ],
+    "answer": "Request correlation ID"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Webhook",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: delivers an HTTP request to notify another application of a new event?",
+    "choices": [
+      "Webhook",
+      "HTTP 204",
+      "HTTP 500",
+      "Authorization header"
+    ],
+    "answer": "Webhook"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HMAC signature",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: authenticates webhook payload integrity using a shared secret key?",
+    "choices": [
+      "HMAC signature",
+      "HTTP 400",
+      "HTTP 502",
+      "Bearer token"
+    ],
+    "answer": "HMAC signature"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Health endpoint",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: reports whether a service process is functioning?",
+    "choices": [
+      "Health endpoint",
+      "HTTP 410",
+      "HTTP 503",
+      "JWT"
+    ],
+    "answer": "Health endpoint"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Readiness endpoint",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: reports whether a service can currently handle application traffic?",
+    "choices": [
+      "Readiness endpoint",
+      "HTTP 409",
+      "Content-Type",
+      "OAuth 2.0"
+    ],
+    "answer": "Readiness endpoint"
+  },
+  {
+    "subject_id": 29,
+    "skill": "BSON",
+    "prompt": "Identify the correct MongoDB term for this behavior: encodes typed documents in the binary format used by MongoDB?",
+    "choices": [
+      "BSON",
+      "ReplaceOne",
+      "Project pipeline stage",
+      "Limit pipeline stage"
+    ],
+    "answer": "BSON"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Collection",
+    "prompt": "Identify the correct MongoDB term for this behavior: groups logically related document records inside a document database?",
+    "choices": [
+      "Collection",
+      "DeleteMany",
+      "Unwind pipeline stage",
+      "Unique index"
+    ],
+    "answer": "Collection"
+  },
+  {
+    "subject_id": 29,
+    "skill": "ObjectId",
+    "prompt": "Identify the correct MongoDB term for this behavior: provides a common 12-byte MongoDB document identifier format?",
+    "choices": [
+      "ObjectId",
+      "Find query",
+      "Lookup pipeline stage",
+      "Sparse index"
+    ],
+    "answer": "ObjectId"
+  },
+  {
+    "subject_id": 29,
+    "skill": "InsertOne",
+    "prompt": "Identify the correct MongoDB term for this behavior: writes one new document into a MongoDB collection?",
+    "choices": [
+      "InsertOne",
+      "Projection",
+      "Facet pipeline stage",
+      "Wildcard index"
+    ],
+    "answer": "InsertOne"
+  },
+  {
+    "subject_id": 29,
+    "skill": "UpdateOne",
+    "prompt": "Identify the correct MongoDB term for this behavior: modifies the first document matching a selected filter?",
+    "choices": [
+      "UpdateOne",
+      "Match pipeline stage",
+      "Sort pipeline stage",
+      "Geospatial index"
+    ],
+    "answer": "UpdateOne"
+  },
+  {
+    "subject_id": 29,
+    "skill": "ReplaceOne",
+    "prompt": "Identify the correct MongoDB term for this behavior: replaces the matched document's nonidentifier fields with a new document?",
+    "choices": [
+      "ReplaceOne",
+      "Group pipeline stage",
+      "Limit pipeline stage",
+      "Text index"
+    ],
+    "answer": "ReplaceOne"
+  },
+  {
+    "subject_id": 29,
+    "skill": "DeleteMany",
+    "prompt": "Identify the correct MongoDB term for this behavior: removes every document matching a specified deletion filter?",
+    "choices": [
+      "DeleteMany",
+      "Project pipeline stage",
+      "Unique index",
+      "Covered query"
+    ],
+    "answer": "DeleteMany"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Find query",
+    "prompt": "Identify the correct MongoDB term for this behavior: returns matching documents from a MongoDB collection?",
+    "choices": [
+      "Find query",
+      "Unwind pipeline stage",
+      "Sparse index",
+      "Write concern"
+    ],
+    "answer": "Find query"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Projection",
+    "prompt": "Identify the correct MongoDB term for this behavior: selects which fields appear in query results?",
+    "choices": [
+      "Projection",
+      "Lookup pipeline stage",
+      "Wildcard index",
+      "Read concern"
+    ],
+    "answer": "Projection"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Match pipeline stage",
+    "prompt": "Identify the correct MongoDB term for this behavior: filters aggregation documents using specified query predicates?",
+    "choices": [
+      "Match pipeline stage",
+      "Facet pipeline stage",
+      "Geospatial index",
+      "Shard key"
+    ],
+    "answer": "Match pipeline stage"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Group pipeline stage",
+    "prompt": "Identify the correct MongoDB term for this behavior: aggregates records by a computed grouping key?",
+    "choices": [
+      "Group pipeline stage",
+      "Sort pipeline stage",
+      "Text index",
+      "Hashed sharding"
+    ],
+    "answer": "Group pipeline stage"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Project pipeline stage",
+    "prompt": "Identify the correct MongoDB term for this behavior: reshapes fields and computes expressions in pipeline output?",
+    "choices": [
+      "Project pipeline stage",
+      "Limit pipeline stage",
+      "Covered query",
+      "BSON"
+    ],
+    "answer": "Project pipeline stage"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Unwind pipeline stage",
+    "prompt": "Identify the correct MongoDB term for this behavior: expands array elements into separate documents?",
+    "choices": [
+      "Unwind pipeline stage",
+      "Unique index",
+      "Write concern",
+      "Collection"
+    ],
+    "answer": "Unwind pipeline stage"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Lookup pipeline stage",
+    "prompt": "Identify the correct MongoDB term for this behavior: joins documents with records from another collection?",
+    "choices": [
+      "Lookup pipeline stage",
+      "Sparse index",
+      "Read concern",
+      "ObjectId"
+    ],
+    "answer": "Lookup pipeline stage"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Facet pipeline stage",
+    "prompt": "Identify the correct MongoDB term for this behavior: runs parallel subpipelines and combines their outputs?",
+    "choices": [
+      "Facet pipeline stage",
+      "Wildcard index",
+      "Shard key",
+      "InsertOne"
+    ],
+    "answer": "Facet pipeline stage"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Sort pipeline stage",
+    "prompt": "Identify the correct MongoDB term for this behavior: orders documents by selected field values?",
+    "choices": [
+      "Sort pipeline stage",
+      "Geospatial index",
+      "Hashed sharding",
+      "UpdateOne"
+    ],
+    "answer": "Sort pipeline stage"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Limit pipeline stage",
+    "prompt": "Identify the correct MongoDB term for this behavior: restricts the maximum number of returned documents?",
+    "choices": [
+      "Limit pipeline stage",
+      "Text index",
+      "BSON",
+      "ReplaceOne"
+    ],
+    "answer": "Limit pipeline stage"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Unique index",
+    "prompt": "Identify the correct MongoDB term for this behavior: prevents duplicate indexed key values under configured uniqueness rules?",
+    "choices": [
+      "Unique index",
+      "Covered query",
+      "Collection",
+      "DeleteMany"
+    ],
+    "answer": "Unique index"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Sparse index",
+    "prompt": "Identify the correct MongoDB term for this behavior: indexes only documents containing the indexed field?",
+    "choices": [
+      "Sparse index",
+      "Write concern",
+      "ObjectId",
+      "Find query"
+    ],
+    "answer": "Sparse index"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Wildcard index",
+    "prompt": "Identify the correct MongoDB term for this behavior: supports flexible indexing of many dynamically named document fields?",
+    "choices": [
+      "Wildcard index",
+      "Read concern",
+      "InsertOne",
+      "Projection"
+    ],
+    "answer": "Wildcard index"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Geospatial index",
+    "prompt": "Identify the correct MongoDB term for this behavior: accelerates eligible location and geometric queries?",
+    "choices": [
+      "Geospatial index",
+      "Shard key",
+      "UpdateOne",
+      "Match pipeline stage"
+    ],
+    "answer": "Geospatial index"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Text index",
+    "prompt": "Identify the correct MongoDB term for this behavior: supports lexical search queries over specified textual fields?",
+    "choices": [
+      "Text index",
+      "Hashed sharding",
+      "ReplaceOne",
+      "Group pipeline stage"
+    ],
+    "answer": "Text index"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Covered query",
+    "prompt": "Identify the correct MongoDB term for this behavior: returns required information directly from indexes without fetching documents?",
+    "choices": [
+      "Covered query",
+      "BSON",
+      "DeleteMany",
+      "Project pipeline stage"
+    ],
+    "answer": "Covered query"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Write concern",
+    "prompt": "Identify the correct MongoDB term for this behavior: specifies the acknowledgement level required for a MongoDB write?",
+    "choices": [
+      "Write concern",
+      "Collection",
+      "Find query",
+      "Unwind pipeline stage"
+    ],
+    "answer": "Write concern"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Read concern",
+    "prompt": "Identify the correct MongoDB term for this behavior: controls the consistency and isolation guarantees for read operations?",
+    "choices": [
+      "Read concern",
+      "ObjectId",
+      "Projection",
+      "Lookup pipeline stage"
+    ],
+    "answer": "Read concern"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Shard key",
+    "prompt": "Identify the correct MongoDB term for this behavior: determines how sharded collection records are distributed?",
+    "choices": [
+      "Shard key",
+      "InsertOne",
+      "Match pipeline stage",
+      "Facet pipeline stage"
+    ],
+    "answer": "Shard key"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Hashed sharding",
+    "prompt": "Identify the correct MongoDB term for this behavior: distributes documents using the hash of a designated shard key?",
+    "choices": [
+      "Hashed sharding",
+      "UpdateOne",
+      "Group pipeline stage",
+      "Sort pipeline stage"
+    ],
+    "answer": "Hashed sharding"
+  },
+  {
+    "subject_id": 30,
+    "skill": "SET NX",
+    "prompt": "Identify the correct Redis term for this behavior: stores a key only if it does not already exist?",
+    "choices": [
+      "SET NX",
+      "RPUSH",
+      "MULTI EXEC",
+      "Redis ACL"
+    ],
+    "answer": "SET NX"
+  },
+  {
+    "subject_id": 30,
+    "skill": "EXPIRE",
+    "prompt": "Identify the correct Redis term for this behavior: sets a key's expiration duration in seconds?",
+    "choices": [
+      "EXPIRE",
+      "XADD",
+      "Pipeline",
+      "SET NX"
+    ],
+    "answer": "EXPIRE"
+  },
+  {
+    "subject_id": 30,
+    "skill": "PTTL",
+    "prompt": "Identify the correct Redis term for this behavior: returns the remaining expiration time of a key in milliseconds?",
+    "choices": [
+      "PTTL",
+      "XREADGROUP",
+      "Lua script",
+      "EXPIRE"
+    ],
+    "answer": "PTTL"
+  },
+  {
+    "subject_id": 30,
+    "skill": "HSET",
+    "prompt": "Identify the correct Redis term for this behavior: writes one or more fields within a Redis hash?",
+    "choices": [
+      "HSET",
+      "ZADD",
+      "Maxmemory policy",
+      "PTTL"
+    ],
+    "answer": "HSET"
+  },
+  {
+    "subject_id": 30,
+    "skill": "LPUSH",
+    "prompt": "Identify the correct Redis term for this behavior: adds one or more values to the left end of a Redis list?",
+    "choices": [
+      "LPUSH",
+      "ZRANGE",
+      "Redis Sentinel",
+      "HSET"
+    ],
+    "answer": "LPUSH"
+  },
+  {
+    "subject_id": 30,
+    "skill": "RPUSH",
+    "prompt": "Identify the correct Redis term for this behavior: adds one or more values to the right end of a Redis list?",
+    "choices": [
+      "RPUSH",
+      "INCR",
+      "Redis ACL",
+      "LPUSH"
+    ],
+    "answer": "RPUSH"
+  },
+  {
+    "subject_id": 30,
+    "skill": "XADD",
+    "prompt": "Identify the correct Redis term for this behavior: appends a new entry to a Redis Stream?",
+    "choices": [
+      "XADD",
+      "MULTI EXEC",
+      "SET NX",
+      "RPUSH"
+    ],
+    "answer": "XADD"
+  },
+  {
+    "subject_id": 30,
+    "skill": "XREADGROUP",
+    "prompt": "Identify the correct Redis term for this behavior: reads stream messages through a named consumer group?",
+    "choices": [
+      "XREADGROUP",
+      "Pipeline",
+      "EXPIRE",
+      "XADD"
+    ],
+    "answer": "XREADGROUP"
+  },
+  {
+    "subject_id": 30,
+    "skill": "ZADD",
+    "prompt": "Identify the correct Redis term for this behavior: adds members to a sorted set with numeric scores?",
+    "choices": [
+      "ZADD",
+      "Lua script",
+      "PTTL",
+      "XREADGROUP"
+    ],
+    "answer": "ZADD"
+  },
+  {
+    "subject_id": 30,
+    "skill": "ZRANGE",
+    "prompt": "Identify the correct Redis term for this behavior: returns sorted-set members from a requested index range?",
+    "choices": [
+      "ZRANGE",
+      "Maxmemory policy",
+      "HSET",
+      "ZADD"
+    ],
+    "answer": "ZRANGE"
+  },
+  {
+    "subject_id": 30,
+    "skill": "INCR",
+    "prompt": "Identify the correct Redis term for this behavior: increments an integer-valued key atomically?",
+    "choices": [
+      "INCR",
+      "Redis Sentinel",
+      "LPUSH",
+      "ZRANGE"
+    ],
+    "answer": "INCR"
+  },
+  {
+    "subject_id": 30,
+    "skill": "MULTI EXEC",
+    "prompt": "Identify the correct Redis term for this behavior: queues Redis commands and runs them as one atomic transaction block?",
+    "choices": [
+      "MULTI EXEC",
+      "Redis ACL",
+      "RPUSH",
+      "INCR"
+    ],
+    "answer": "MULTI EXEC"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Pipeline",
+    "prompt": "Identify the correct Redis term for this behavior: batches client commands to reduce network round trips?",
+    "choices": [
+      "Pipeline",
+      "SET NX",
+      "XADD",
+      "MULTI EXEC"
+    ],
+    "answer": "Pipeline"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Lua script",
+    "prompt": "Identify the correct Redis term for this behavior: executes a script atomically inside the Redis server?",
+    "choices": [
+      "Lua script",
+      "EXPIRE",
+      "XREADGROUP",
+      "Pipeline"
+    ],
+    "answer": "Lua script"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Maxmemory policy",
+    "prompt": "Identify the correct Redis term for this behavior: determines which keys are evicted when Redis reaches a configured memory ceiling?",
+    "choices": [
+      "Maxmemory policy",
+      "PTTL",
+      "ZADD",
+      "Lua script"
+    ],
+    "answer": "Maxmemory policy"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis Sentinel",
+    "prompt": "Identify the correct Redis term for this behavior: monitors master replicas and coordinates automated failover?",
+    "choices": [
+      "Redis Sentinel",
+      "HSET",
+      "ZRANGE",
+      "Maxmemory policy"
+    ],
+    "answer": "Redis Sentinel"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis ACL",
+    "prompt": "Identify the correct Redis term for this behavior: defines user-specific command and key-access permissions?",
+    "choices": [
+      "Redis ACL",
+      "LPUSH",
+      "INCR",
+      "Redis Sentinel"
+    ],
+    "answer": "Redis ACL"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud region",
+    "prompt": "Identify the correct cloud term for this behavior: groups cloud facilities in one broad geographic area?",
+    "choices": [
+      "Cloud region",
+      "NAT gateway",
+      "Edge location",
+      "Autoscaling group"
+    ],
+    "answer": "Cloud region"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Virtual private cloud",
+    "prompt": "Identify the correct cloud term for this behavior: isolates logically configured private networking for cloud resources?",
+    "choices": [
+      "Virtual private cloud",
+      "Security group",
+      "API gateway",
+      "Launch template"
+    ],
+    "answer": "Virtual private cloud"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Subnet",
+    "prompt": "Identify the correct cloud term for this behavior: allocates part of a network address space within a specified routing domain?",
+    "choices": [
+      "Subnet",
+      "Network ACL",
+      "Managed database",
+      "Cold start"
+    ],
+    "answer": "Subnet"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Route table",
+    "prompt": "Identify the correct cloud term for this behavior: determines which network destinations go through which gateways or interfaces?",
+    "choices": [
+      "Route table",
+      "Private IP",
+      "Cloud queue",
+      "Object versioning"
+    ],
+    "answer": "Route table"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Internet gateway",
+    "prompt": "Identify the correct cloud term for this behavior: allows compatible public traffic to reach resources in a virtual network?",
+    "choices": [
+      "Internet gateway",
+      "Elastic IP",
+      "Cloud event bus",
+      "Customer managed key"
+    ],
+    "answer": "Internet gateway"
+  },
+  {
+    "subject_id": 31,
+    "skill": "NAT gateway",
+    "prompt": "Identify the correct cloud term for this behavior: enables selected private subnet hosts to initiate outbound connections?",
+    "choices": [
+      "NAT gateway",
+      "Content delivery network",
+      "Autoscaling group",
+      "Encryption at rest"
+    ],
+    "answer": "NAT gateway"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Security group",
+    "prompt": "Identify the correct cloud term for this behavior: applies stateful allow rules around selected cloud network interfaces?",
+    "choices": [
+      "Security group",
+      "Edge location",
+      "Launch template",
+      "Encryption in transit"
+    ],
+    "answer": "Security group"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Network ACL",
+    "prompt": "Identify the correct cloud term for this behavior: applies stateless subnet-level traffic rules in supported cloud services?",
+    "choices": [
+      "Network ACL",
+      "API gateway",
+      "Cold start",
+      "Recovery time objective"
+    ],
+    "answer": "Network ACL"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Private IP",
+    "prompt": "Identify the correct cloud term for this behavior: identifies an endpoint on a network address space not globally routed on the internet?",
+    "choices": [
+      "Private IP",
+      "Managed database",
+      "Object versioning",
+      "Recovery point objective"
+    ],
+    "answer": "Private IP"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Elastic IP",
+    "prompt": "Identify the correct cloud term for this behavior: assigns a stable public IPv4 address from the provider allocation pool?",
+    "choices": [
+      "Elastic IP",
+      "Cloud queue",
+      "Customer managed key",
+      "Multi-region deployment"
+    ],
+    "answer": "Elastic IP"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Content delivery network",
+    "prompt": "Identify the correct cloud term for this behavior: serves cached static or edge-accelerated content near clients?",
+    "choices": [
+      "Content delivery network",
+      "Cloud event bus",
+      "Encryption at rest",
+      "Cloud cost budget"
+    ],
+    "answer": "Content delivery network"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Edge location",
+    "prompt": "Identify the correct cloud term for this behavior: hosts caching or compute resources close to end-user networks?",
+    "choices": [
+      "Edge location",
+      "Autoscaling group",
+      "Encryption in transit",
+      "Cloud region"
+    ],
+    "answer": "Edge location"
+  },
+  {
+    "subject_id": 31,
+    "skill": "API gateway",
+    "prompt": "Identify the correct cloud term for this behavior: routes client API traffic and applies configured API policies?",
+    "choices": [
+      "API gateway",
+      "Launch template",
+      "Recovery time objective",
+      "Virtual private cloud"
+    ],
+    "answer": "API gateway"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Managed database",
+    "prompt": "Identify the correct cloud term for this behavior: delegates database provisioning and routine maintenance to a cloud platform?",
+    "choices": [
+      "Managed database",
+      "Cold start",
+      "Recovery point objective",
+      "Subnet"
+    ],
+    "answer": "Managed database"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud queue",
+    "prompt": "Identify the correct cloud term for this behavior: buffers asynchronous messages so producers and consumers can operate independently?",
+    "choices": [
+      "Cloud queue",
+      "Object versioning",
+      "Multi-region deployment",
+      "Route table"
+    ],
+    "answer": "Cloud queue"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud event bus",
+    "prompt": "Identify the correct cloud term for this behavior: routes published events to selected subscribers or destinations?",
+    "choices": [
+      "Cloud event bus",
+      "Customer managed key",
+      "Cloud cost budget",
+      "Internet gateway"
+    ],
+    "answer": "Cloud event bus"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Autoscaling group",
+    "prompt": "Identify the correct cloud term for this behavior: manages an adjustable fleet of virtual compute instances?",
+    "choices": [
+      "Autoscaling group",
+      "Encryption at rest",
+      "Cloud region",
+      "NAT gateway"
+    ],
+    "answer": "Autoscaling group"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Launch template",
+    "prompt": "Identify the correct cloud term for this behavior: specifies an instance configuration used for automated virtual machine launches?",
+    "choices": [
+      "Launch template",
+      "Encryption in transit",
+      "Virtual private cloud",
+      "Security group"
+    ],
+    "answer": "Launch template"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cold start",
+    "prompt": "Identify the correct cloud term for this behavior: adds startup latency when an on-demand runtime has no warm execution environment?",
+    "choices": [
+      "Cold start",
+      "Recovery time objective",
+      "Subnet",
+      "Network ACL"
+    ],
+    "answer": "Cold start"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Object versioning",
+    "prompt": "Identify the correct cloud term for this behavior: retains multiple historical versions of an object-storage key?",
+    "choices": [
+      "Object versioning",
+      "Recovery point objective",
+      "Route table",
+      "Private IP"
+    ],
+    "answer": "Object versioning"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Customer managed key",
+    "prompt": "Identify the correct cloud term for this behavior: gives users control over configured encryption key lifecycle and policies?",
+    "choices": [
+      "Customer managed key",
+      "Multi-region deployment",
+      "Internet gateway",
+      "Elastic IP"
+    ],
+    "answer": "Customer managed key"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Encryption at rest",
+    "prompt": "Identify the correct cloud term for this behavior: protects stored data by encrypting persisted bytes?",
+    "choices": [
+      "Encryption at rest",
+      "Cloud cost budget",
+      "NAT gateway",
+      "Content delivery network"
+    ],
+    "answer": "Encryption at rest"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Encryption in transit",
+    "prompt": "Identify the correct cloud term for this behavior: protects data while moving between endpoints over communication links?",
+    "choices": [
+      "Encryption in transit",
+      "Cloud region",
+      "Security group",
+      "Edge location"
+    ],
+    "answer": "Encryption in transit"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Recovery time objective",
+    "prompt": "Identify the correct cloud term for this behavior: specifies the tolerated time to restore service after a disruption?",
+    "choices": [
+      "Recovery time objective",
+      "Virtual private cloud",
+      "Network ACL",
+      "API gateway"
+    ],
+    "answer": "Recovery time objective"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Recovery point objective",
+    "prompt": "Identify the correct cloud term for this behavior: specifies the maximum tolerated age of data loss after recovery?",
+    "choices": [
+      "Recovery point objective",
+      "Subnet",
+      "Private IP",
+      "Managed database"
+    ],
+    "answer": "Recovery point objective"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Multi-region deployment",
+    "prompt": "Identify the correct cloud term for this behavior: places workload resources in more than one geographic cloud region?",
+    "choices": [
+      "Multi-region deployment",
+      "Route table",
+      "Elastic IP",
+      "Cloud queue"
+    ],
+    "answer": "Multi-region deployment"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud cost budget",
+    "prompt": "Identify the correct cloud term for this behavior: tracks projected spending against configured financial limits?",
+    "choices": [
+      "Cloud cost budget",
+      "Internet gateway",
+      "Content delivery network",
+      "Cloud event bus"
+    ],
+    "answer": "Cloud cost budget"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Offline feature store",
+    "prompt": "Identify the correct MLOps term for this behavior: serves historical feature values for reproducible model training?",
+    "choices": [
+      "Offline feature store",
+      "Online inference",
+      "Continuous delivery",
+      "SHAP values"
+    ],
+    "answer": "Offline feature store"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Online feature store",
+    "prompt": "Identify the correct MLOps term for this behavior: serves low-latency recent feature values for production predictions?",
+    "choices": [
+      "Online feature store",
+      "Model signature",
+      "Continuous training",
+      "Inference latency p95"
+    ],
+    "answer": "Online feature store"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Feature freshness",
+    "prompt": "Identify the correct MLOps term for this behavior: measures how recently a feature value was updated relative to its usefulness?",
+    "choices": [
+      "Feature freshness",
+      "Data versioning",
+      "Model calibration drift",
+      "Inference throughput"
+    ],
+    "answer": "Feature freshness"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Feature pipeline",
+    "prompt": "Identify the correct MLOps term for this behavior: computes and materializes consistent predictors for training or inference?",
+    "choices": [
+      "Feature pipeline",
+      "MLflow tracking",
+      "Fairness monitoring",
+      "Serving autoscaling"
+    ],
+    "answer": "Feature pipeline"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Batch inference",
+    "prompt": "Identify the correct MLOps term for this behavior: generates predictions for accumulated data in scheduled jobs?",
+    "choices": [
+      "Batch inference",
+      "DVC",
+      "Model explainability",
+      "Model lineage"
+    ],
+    "answer": "Batch inference"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Online inference",
+    "prompt": "Identify the correct MLOps term for this behavior: computes predictions on demand for incoming application requests?",
+    "choices": [
+      "Online inference",
+      "Continuous integration",
+      "SHAP values",
+      "Feature leakage check"
+    ],
+    "answer": "Online inference"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model signature",
+    "prompt": "Identify the correct MLOps term for this behavior: declares expected input and output schemas for a deployed model?",
+    "choices": [
+      "Model signature",
+      "Continuous delivery",
+      "Inference latency p95",
+      "Schema compatibility test"
+    ],
+    "answer": "Model signature"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Data versioning",
+    "prompt": "Identify the correct MLOps term for this behavior: records immutable dataset identities so experiments can be reproduced?",
+    "choices": [
+      "Data versioning",
+      "Continuous training",
+      "Inference throughput",
+      "Inference request batching"
+    ],
+    "answer": "Data versioning"
+  },
+  {
+    "subject_id": 32,
+    "skill": "MLflow tracking",
+    "prompt": "Identify the correct MLOps term for this behavior: logs experiment parameters metrics and artifacts through MLflow?",
+    "choices": [
+      "MLflow tracking",
+      "Model calibration drift",
+      "Serving autoscaling",
+      "ONNX format"
+    ],
+    "answer": "MLflow tracking"
+  },
+  {
+    "subject_id": 32,
+    "skill": "DVC",
+    "prompt": "Identify the correct MLOps term for this behavior: versions data and model artifact pointers alongside source-control metadata?",
+    "choices": [
+      "DVC",
+      "Fairness monitoring",
+      "Model lineage",
+      "Serving container"
+    ],
+    "answer": "DVC"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Continuous integration",
+    "prompt": "Identify the correct MLOps term for this behavior: checks software and pipeline changes using automated tests?",
+    "choices": [
+      "Continuous integration",
+      "Model explainability",
+      "Feature leakage check",
+      "Prediction logging"
+    ],
+    "answer": "Continuous integration"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Continuous delivery",
+    "prompt": "Identify the correct MLOps term for this behavior: prepares validated model or application releases for deployment?",
+    "choices": [
+      "Continuous delivery",
+      "SHAP values",
+      "Schema compatibility test",
+      "Offline feature store"
+    ],
+    "answer": "Continuous delivery"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Continuous training",
+    "prompt": "Identify the correct MLOps term for this behavior: automatically retrains models in response to selected triggers?",
+    "choices": [
+      "Continuous training",
+      "Inference latency p95",
+      "Inference request batching",
+      "Online feature store"
+    ],
+    "answer": "Continuous training"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model calibration drift",
+    "prompt": "Identify the correct MLOps term for this behavior: occurs when observed event frequencies no longer match predicted probabilities?",
+    "choices": [
+      "Model calibration drift",
+      "Inference throughput",
+      "ONNX format",
+      "Feature freshness"
+    ],
+    "answer": "Model calibration drift"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Fairness monitoring",
+    "prompt": "Identify the correct MLOps term for this behavior: checks production model results for problematic group-level outcome gaps?",
+    "choices": [
+      "Fairness monitoring",
+      "Serving autoscaling",
+      "Serving container",
+      "Feature pipeline"
+    ],
+    "answer": "Fairness monitoring"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model explainability",
+    "prompt": "Identify the correct MLOps term for this behavior: describes how inputs influence predictions under a selected explanation method?",
+    "choices": [
+      "Model explainability",
+      "Model lineage",
+      "Prediction logging",
+      "Batch inference"
+    ],
+    "answer": "Model explainability"
+  },
+  {
+    "subject_id": 32,
+    "skill": "SHAP values",
+    "prompt": "Identify the correct MLOps term for this behavior: attribute a prediction to features using a Shapley-value-inspired framework?",
+    "choices": [
+      "SHAP values",
+      "Feature leakage check",
+      "Offline feature store",
+      "Online inference"
+    ],
+    "answer": "SHAP values"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Inference latency p95",
+    "prompt": "Identify the correct MLOps term for this behavior: marks the delay threshold at or below which 95 percent of responses complete?",
+    "choices": [
+      "Inference latency p95",
+      "Schema compatibility test",
+      "Online feature store",
+      "Model signature"
+    ],
+    "answer": "Inference latency p95"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Inference throughput",
+    "prompt": "Identify the correct MLOps term for this behavior: counts prediction requests processed per unit time?",
+    "choices": [
+      "Inference throughput",
+      "Inference request batching",
+      "Feature freshness",
+      "Data versioning"
+    ],
+    "answer": "Inference throughput"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Serving autoscaling",
+    "prompt": "Identify the correct MLOps term for this behavior: changes inference replicas when load or performance signals cross thresholds?",
+    "choices": [
+      "Serving autoscaling",
+      "ONNX format",
+      "Feature pipeline",
+      "MLflow tracking"
+    ],
+    "answer": "Serving autoscaling"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model lineage",
+    "prompt": "Identify the correct MLOps term for this behavior: links a model release to its training data code configurations and experiments?",
+    "choices": [
+      "Model lineage",
+      "Serving container",
+      "Batch inference",
+      "DVC"
+    ],
+    "answer": "Model lineage"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Feature leakage check",
+    "prompt": "Identify the correct MLOps term for this behavior: detects training predictors that depend on target information unavailable at inference?",
+    "choices": [
+      "Feature leakage check",
+      "Prediction logging",
+      "Online inference",
+      "Continuous integration"
+    ],
+    "answer": "Feature leakage check"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Schema compatibility test",
+    "prompt": "Identify the correct MLOps term for this behavior: checks that serving inputs match the model's expected field types?",
+    "choices": [
+      "Schema compatibility test",
+      "Offline feature store",
+      "Model signature",
+      "Continuous delivery"
+    ],
+    "answer": "Schema compatibility test"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Inference request batching",
+    "prompt": "Identify the correct MLOps term for this behavior: combines compatible inputs into one model execution for efficiency?",
+    "choices": [
+      "Inference request batching",
+      "Online feature store",
+      "Data versioning",
+      "Continuous training"
+    ],
+    "answer": "Inference request batching"
+  },
+  {
+    "subject_id": 32,
+    "skill": "ONNX format",
+    "prompt": "Identify the correct MLOps term for this behavior: provides a portable representation for supported machine learning computation graphs?",
+    "choices": [
+      "ONNX format",
+      "Feature freshness",
+      "MLflow tracking",
+      "Model calibration drift"
+    ],
+    "answer": "ONNX format"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Serving container",
+    "prompt": "Identify the correct MLOps term for this behavior: packages a model runtime and dependencies into a reproducible container image?",
+    "choices": [
+      "Serving container",
+      "Feature pipeline",
+      "DVC",
+      "Fairness monitoring"
+    ],
+    "answer": "Serving container"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Prediction logging",
+    "prompt": "Identify the correct MLOps term for this behavior: records selected inputs predictions and metadata for permitted downstream evaluation?",
+    "choices": [
+      "Prediction logging",
+      "Batch inference",
+      "Continuous integration",
+      "Model explainability"
+    ],
+    "answer": "Prediction logging"
+  }
+]
