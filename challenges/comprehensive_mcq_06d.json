@@ -349,15 +349,15 @@
   },
   {
     "subject_id": 27,
-    "skill": "Data interval",
-    "prompt": "Identify the correct Airflow term for this behavior: specifies the beginning and end of the input period a scheduled DAG run represents?",
+    "skill": "DagRun conf",
+    "prompt": "Identify the correct Airflow term for this behavior: carries JSON configuration attached to one explicitly created Airflow DAG run?",
     "choices": [
-      "Data interval",
+      "DagRun conf",
       "Triggerer",
       "Jinja templating",
       "KubernetesExecutor"
     ],
-    "answer": "Data interval"
+    "answer": "DagRun conf"
   },
   {
     "subject_id": 27,
@@ -487,7 +487,7 @@
       "Jinja templating",
       "KubernetesExecutor",
       "DAG parsing",
-      "Data interval"
+      "DagRun conf"
     ],
     "answer": "Jinja templating"
   },
@@ -546,7 +546,7 @@
     "choices": [
       "KubernetesExecutor",
       "DAG serialization",
-      "Data interval",
+      "DagRun conf",
       "Triggerer"
     ],
     "answer": "KubernetesExecutor"
@@ -617,7 +617,7 @@
     "prompt": "Identify the correct Airflow term for this behavior: imports Python workflow definitions to construct task and dependency objects?",
     "choices": [
       "DAG parsing",
-      "Data interval",
+      "DagRun conf",
       "Deferrable operator",
       "Jinja templating"
     ],
@@ -685,15 +685,15 @@
   },
   {
     "subject_id": 28,
-    "skill": "HTTP 404",
-    "prompt": "Identify the correct HTTP/backend term for this behavior: indicates the requested resource representation was not found?",
+    "skill": "HTTP 410",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: reports that a requested resource has intentionally been permanently removed?",
     "choices": [
-      "HTTP 404",
+      "HTTP 410",
       "HTTP 502",
       "JWT",
       "Request body"
     ],
-    "answer": "HTTP 404"
+    "answer": "HTTP 410"
   },
   {
     "subject_id": 28,
@@ -703,7 +703,7 @@
       "HTTP 409",
       "HTTP 503",
       "OAuth 2.0",
-      "Pagination"
+      "Keyset pagination"
     ],
     "answer": "HTTP 409"
   },
@@ -762,7 +762,7 @@
     "choices": [
       "HTTP 503",
       "JWT",
-      "Pagination",
+      "Keyset pagination",
       "Cache-Control"
     ],
     "answer": "HTTP 503"
@@ -833,7 +833,7 @@
     "prompt": "Identify the correct HTTP/backend term for this behavior: provides an authorization framework for delegated access?",
     "choices": [
       "OAuth 2.0",
-      "Pagination",
+      "Keyset pagination",
       "CORS preflight",
       "Rate limit"
     ],
@@ -889,15 +889,15 @@
   },
   {
     "subject_id": 28,
-    "skill": "Pagination",
-    "prompt": "Identify the correct HTTP/backend term for this behavior: divides large resource collections into bounded response pages?",
+    "skill": "Keyset pagination",
+    "prompt": "Identify the correct HTTP/backend term for this behavior: retrieves the next page using ordered key comparisons from the last returned row?",
     "choices": [
-      "Pagination",
+      "Keyset pagination",
       "Cache-Control",
       "Rate limit",
       "Readiness endpoint"
     ],
-    "answer": "Pagination"
+    "answer": "Keyset pagination"
   },
   {
     "subject_id": 28,
@@ -943,7 +943,7 @@
       "If-Match",
       "Dependency injection",
       "Health endpoint",
-      "HTTP 404"
+      "HTTP 410"
     ],
     "answer": "If-Match"
   },
@@ -1002,7 +1002,7 @@
     "choices": [
       "Dependency injection",
       "HMAC signature",
-      "HTTP 404",
+      "HTTP 410",
       "HTTP 502"
     ],
     "answer": "Dependency injection"
@@ -1073,7 +1073,7 @@
     "prompt": "Identify the correct HTTP/backend term for this behavior: reports whether a service process is functioning?",
     "choices": [
       "Health endpoint",
-      "HTTP 404",
+      "HTTP 410",
       "HTTP 503",
       "JWT"
     ],
