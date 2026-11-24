@@ -19,7 +19,7 @@ test("authenticated session rotates across BFF routes and protects profile data"
   await expect(page.locator(".lp-hero")).toBeVisible();
   await expect(page.locator(".lp-stat")).toHaveCount(4);
   await expect(page.getByRole("heading", { name: "Submission activity" })).toBeVisible();
-  await expect(page.locator(".lp-heatmap .lp-day")).toHaveCount(98);
+  await expect(page.locator(".lp-heatmap .lp-day")).toHaveCount(371);
   const profileGrid = page.locator(".lp-profile-layout");
   await expect(profileGrid).toHaveCSS("display", "grid");
   await page.setViewportSize({ width: 390, height: 844 });
