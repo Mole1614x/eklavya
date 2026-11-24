@@ -1,0 +1,407 @@
+[
+  {
+    "subject_id": 24,
+    "skill": "kubectl rollout status",
+    "description": "Observing whether the desired Deployment rollout has completed successfully"
+  },
+  {
+    "subject_id": 24,
+    "skill": "kubectl describe",
+    "description": "Displaying detailed resource state and recent cluster events"
+  },
+  {
+    "subject_id": 24,
+    "skill": "kubectl logs",
+    "description": "Fetching standard output and error logs from container processes in a Pod"
+  },
+  {
+    "subject_id": 24,
+    "skill": "kubectl port-forward",
+    "description": "Creating a local tunnel to a Pod or Service port"
+  },
+  {
+    "subject_id": 24,
+    "skill": "kubectl scale",
+    "description": "Changing the requested replica count of a scalable workload"
+  },
+  {
+    "subject_id": 24,
+    "skill": "kubectl top",
+    "description": "Reporting resource consumption metrics when the cluster supports metrics collection"
+  },
+  {
+    "subject_id": 24,
+    "skill": "kubectl drain",
+    "description": "Preparing a node for maintenance by evicting eligible workloads"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Kimball bus matrix",
+    "description": "A planning matrix linking business processes and shared conformed dimensions"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Fact table additive measure",
+    "description": "A metric that can be meaningfully summed across all relevant dimensions"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Semi additive measure",
+    "description": "A fact that can be aggregated over some dimensions but not others such as account balance over time"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Nonadditive measure",
+    "description": "A measure such as a rate or ratio not directly summable across dimensions"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Mini dimension",
+    "description": "A separate dimension used for rapidly changing attribute combinations"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Role playing dimension",
+    "description": "One dimension reused in multiple roles such as order date and shipping date"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Fact table surrogate key",
+    "description": "An artificial identifier sometimes added to uniquely identify fact records"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Unknown dimension member",
+    "description": "A surrogate dimension record representing missing or unresolved source keys"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Early arriving fact",
+    "description": "A fact arriving before all required dimension lookup data are available"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Late arriving dimension",
+    "description": "Dimension information appearing after facts dependent on that dimension"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Degenerate transaction ID",
+    "description": "A business identifier stored directly in a fact row without a dimension record"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Drill across",
+    "description": "Combining metrics from separate fact tables using shared dimensions at consistent grain"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data mart",
+    "description": "A subject-oriented analytical store intended for a defined business domain"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Operational data store",
+    "description": "An integrated current-state store supporting operational reporting and integration"
+  },
+  {
+    "subject_id": 25,
+    "skill": "ELT staging layer",
+    "description": "An intermediate landing area preserving raw or minimally transformed incoming data"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Bronze layer",
+    "description": "Raw or lightly normalized source data retained for audit and reprocessing"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Silver layer",
+    "description": "Cleaned validated and conformed data prepared for downstream use"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Gold layer",
+    "description": "Business-ready aggregates or curated domain models for reporting and decision making"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Semantic layer",
+    "description": "A governed interface defining business metrics and relationships consistently for consumers"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Materialized view",
+    "description": "A stored result of a query refreshed according to a chosen maintenance policy"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka headers",
+    "description": "Optional message metadata fields transmitted alongside a record's key and value"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka producer batch",
+    "description": "A group of buffered records sent together to improve throughput"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka linger ms",
+    "description": "A producer setting controlling how long to wait for additional records before sending a batch"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka compression type",
+    "description": "A producer setting selecting a compression codec for record batches"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka message timestamp",
+    "description": "A record timestamp based on event creation or broker log append configuration"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka producer retries",
+    "description": "Automatic resend attempts for records after transient delivery failures"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka max in flight",
+    "description": "A limit on unacknowledged requests that a producer may maintain simultaneously"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka consumer isolation level",
+    "description": "A setting deciding whether to expose uncommitted transactional records"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka consumer auto offset reset",
+    "description": "A policy for selecting a starting position when a valid committed offset is absent"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka group coordinator",
+    "description": "A broker component managing membership and partition assignments of consumer groups"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka cooperative rebalance",
+    "description": "An incremental partition reassignment strategy designed to reduce unnecessary revocation"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka partition reassignment",
+    "description": "Moving replica ownership or storage responsibilities among brokers"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka min ISR",
+    "description": "A topic configuration setting the minimum in-sync replicas required for certain acknowledged writes"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka leader epoch",
+    "description": "A monotonically changing leader generation identifier used to detect stale metadata"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka log segment",
+    "description": "A physical partition log file that stores a contiguous portion of the record sequence"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka schema compatibility",
+    "description": "Rules assessing whether evolved message schemas can work with previous producers or consumers"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka producer transaction ID",
+    "description": "A stable identifier enabling transactional producer state and fencing of stale producer instances"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow connections",
+    "description": "Centralized records describing external service endpoints and authentication parameters"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow variables",
+    "description": "Global configuration values stored in Airflow metadata for workflow runtime access"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow Params",
+    "description": "Typed or validated values supplied when a DAG run is triggered"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow timezone setting",
+    "description": "Configuration governing how logical run times are interpreted and displayed"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow pools slots",
+    "description": "A finite concurrency budget assigned across tasks using the same pool"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow task timeout",
+    "description": "A maximum allowed execution duration for a task instance"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow exponential retry delay",
+    "description": "Increasing wait periods between retries according to an exponential schedule"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow on failure callback",
+    "description": "A callable triggered when a workflow component enters a failure state"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow SLA notification",
+    "description": "An operational alert associated with exceeding an expected completion threshold in supported versions"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow asset event",
+    "description": "A notification used to coordinate workflows around data asset changes"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow task group",
+    "description": "A visual and logical grouping of related tasks within a DAG"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow branch operator",
+    "description": "A task choosing which downstream execution paths should proceed"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow short circuit",
+    "description": "A task mechanism that skips downstream tasks when a condition is false"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow task clearing",
+    "description": "Resetting a task instance state so it can be scheduled for execution again"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow scheduler heartbeat",
+    "description": "A periodic health signal indicating the scheduler is actively processing work"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow rendered template",
+    "description": "A task field whose template expressions are resolved in the run context"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Airflow remote logging",
+    "description": "Writing task logs to an external storage backend for distributed access"
+  },
+  {
+    "subject_id": 28,
+    "skill": "API gateway",
+    "description": "A single entry layer for routing, authentication or traffic controls across backend APIs"
+  },
+  {
+    "subject_id": 28,
+    "skill": "OAuth authorization code",
+    "description": "A delegated authorization flow exchanging an authorization grant for access tokens"
+  },
+  {
+    "subject_id": 28,
+    "skill": "OAuth PKCE",
+    "description": "A proof key challenge protecting authorization-code exchange from interception"
+  },
+  {
+    "subject_id": 28,
+    "skill": "OpenID Connect",
+    "description": "An authentication identity layer built on OAuth 2.0"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Opaque access token",
+    "description": "An access credential whose meaning the resource server obtains from trusted validation rather than parsing local claims"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Refresh token rotation",
+    "description": "Issuing a replacement refresh credential on each eligible refresh to reduce replay risk"
+  },
+  {
+    "subject_id": 28,
+    "skill": "API request schema",
+    "description": "A machine-checkable definition of accepted request fields and types"
+  },
+  {
+    "subject_id": 28,
+    "skill": "API response schema",
+    "description": "A contract describing permitted output fields and value types"
+  },
+  {
+    "subject_id": 28,
+    "skill": "API versioning",
+    "description": "Maintaining multiple interface revisions while minimizing breaking consumer changes"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Backward compatible API change",
+    "description": "A modification that existing supported clients can accept without altering their use"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Breaking API change",
+    "description": "A modification requiring consumers to update their requests or response handling"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Optimistic concurrency control",
+    "description": "Rejecting updates when a version precondition no longer matches current state"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Pessimistic lock",
+    "description": "Coordinating access by locking a resource before modifications"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Webhook signature",
+    "description": "A cryptographic digest allowing receivers to verify message authenticity and integrity"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Webhook retry",
+    "description": "Re-delivering an event callback after transient downstream failure"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Request correlation ID",
+    "description": "A traceable identifier linking logs for one request across services"
+  },
+  {
+    "subject_id": 28,
+    "skill": "API latency percentile",
+    "description": "A statistic describing the time below which a selected fraction of requests complete"
+  },
+  {
+    "subject_id": 28,
+    "skill": "API schema validation",
+    "description": "Checking message structure and types against an expected contract"
+  },
+  {
+    "subject_id": 28,
+    "skill": "API backward pagination",
+    "description": "Reading list items in the reverse direction using compatible cursor boundaries"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Streaming HTTP response",
+    "description": "Sending response content incrementally before the entire result is computed"
+  }
+]
