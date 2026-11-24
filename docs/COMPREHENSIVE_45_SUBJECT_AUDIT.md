@@ -1,125 +1,119 @@
-# EKLAVYA — 45-Subject Implementation Audit
+# EKLAVYA — 45-Subject Question Bank Coverage Audit
 
 Updated: 24 November 2026
 
-## Status and scope
+## Audited completion of subject question counts
 
-The source plan lists 45 minimums totaling **2,500**, although its printed total is **2,560**.
-These are different figures; the discrepancy of 60 has not been allocated to a subject.
+The original request's **45 minimums sum to 2,500**, although a headline
+in the source document says 2,560. This release satisfies **every one of
+the 45 individual minima** and therefore the mathematically grounded
+2,500-question target. It does not claim to have allocated the discrepancy
+of 60 to additional subjects.
 
-This PR adds **135 original answer-validated multiple-choice checks** (three per subject),
-a browsable 45-subject registry, existing-question mapping, 45 learning paths,
-and secure backend subject filters. There are no fabricated practice runtimes.
+**Before this change:** 372 published seed questions, including 135 original
+MCQs and 237 earlier practice exercises.
 
-Before this PR, the seed contained **237** published problems. After it, the
-expected seed count is **372**. Of the prior 237, **224** can be directly matched
-to this taxonomy: 102 distinct logic problems (including two earlier pattern
-problems), 51 NumPy, 52 Pandas, 15 Practical Data Analysis, one PySpark, two
-Machine Learning and one Deep Learning challenge. Another **13
-legacy items** remain unclassified in the new taxonomy; these are preserved,
-not deleted or relabeled without review.
+**This change:** 2,155 new, separately authored conceptual multiple-choice
+questions about distinct topics and skills. The corpus is additive and
+preserves the 372 existing problem slugs, submissions and assessment results.
 
-The table's zero* means **not yet classified**, not necessarily zero existing
-content or zero knowledge of the subject.
+**After this change:**
+- **2,527** total seeded questions
+- **2,514** mapped to the 45-subject taxonomy (14 above minimums because
+  Programming, NumPy and Pandas were already over target)
+- **13** earlier questions retained without a new subject taxonomy assignment
+- **2,290** MCQs in the subject tracks (135 prior + 2,155 new)
+- **Zero** missing questions against any of the 45 individual minimums
 
-| ID | Subject | Target | Audited legacy | New | Mapped published | Mapped gap | Execution |
-|---:|---|---:|---:|---:|---:|---:|---|
-| 1 | Programming Foundations and Logic Building | 100 | 102 | 3 | 105 | 0 | Knowledge checks; existing practice |
-| 2 | Data Structures and Algorithms | 150 | 0* | 3 | 3 | 147 | Knowledge checks |
-| 3 | Object-Oriented Programming | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 4 | SQL and Database Engineering | 120 | 0* | 3 | 3 | 117 | Knowledge checks |
-| 5 | NumPy | 50 | 51 | 3 | 54 | 0 | Knowledge checks; existing practice |
-| 6 | Pandas | 50 | 52 | 3 | 55 | 0 | Knowledge checks; existing practice |
-| 7 | Practical Data Analysis | 50 | 15 | 3 | 18 | 32 | Knowledge checks; existing practice |
-| 8 | Data Cleaning and Transformation | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 9 | PySpark | 50 | 1 | 3 | 4 | 46 | Knowledge checks; existing practice |
-| 10 | Hadoop and MapReduce | 30 | 0* | 3 | 3 | 27 | Knowledge checks |
-| 11 | Machine Learning | 100 | 2 | 3 | 5 | 95 | Knowledge checks; existing practice |
-| 12 | Deep Learning | 60 | 1 | 3 | 4 | 56 | Knowledge checks; existing practice |
-| 13 | LLM and Generative AI | 60 | 0* | 3 | 3 | 57 | Knowledge checks |
-| 14 | Computer Vision | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 15 | Natural Language Processing | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 16 | Microsoft Excel | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 17 | Tableau | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 18 | Microsoft Power BI and DAX | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 19 | Statistics and Probability | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 20 | Mathematics for AI/ML | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 21 | Linux Commands and Shell Scripting | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 22 | Git and GitHub | 30 | 0* | 3 | 3 | 27 | Knowledge checks |
-| 23 | Docker and Containerization | 30 | 0* | 3 | 3 | 27 | Knowledge checks |
-| 24 | Kubernetes Fundamentals | 30 | 0* | 3 | 3 | 27 | Knowledge checks |
-| 25 | Data Warehousing and ETL | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 26 | Apache Kafka | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
-| 27 | Apache Airflow | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
-| 28 | REST APIs and Backend Development | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 29 | NoSQL and MongoDB | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
-| 30 | Redis and Caching | 30 | 0* | 3 | 3 | 27 | Knowledge checks |
-| 31 | Cloud Computing Fundamentals | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
-| 32 | MLOps and Model Deployment | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
-| 33 | Operating Systems | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 34 | Computer Networks | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 35 | Cybersecurity Fundamentals | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 36 | System Design | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
-| 37 | Software Testing and Debugging | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
-| 38 | Design Patterns and SOLID Principles | 30 | 0* | 3 | 3 | 27 | Knowledge checks |
-| 39 | Quantitative Aptitude | 100 | 0* | 3 | 3 | 97 | Knowledge checks |
-| 40 | Logical Reasoning | 100 | 0* | 3 | 3 | 97 | Knowledge checks |
-| 41 | English and Verbal Ability | 100 | 0* | 3 | 3 | 97 | Knowledge checks |
-| 42 | Web Development | 60 | 0* | 3 | 3 | 57 | Knowledge checks |
-| 43 | Business Analytics and Case Studies | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 44 | Data Visualization | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
-| 45 | AI Agents and Agentic Workflows | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
+## Complete per-subject tally
 
-- Sum of uniquely classified published problems: **359**.
-- Unclassified existing legacy problems: **13**.
-- Total published seeded problems expected: **372**.
-- New question count: **135**, all four-choice MCQs with one private answer
-  fixture and a server-side `multiple_choice` evaluator.
-- Existing NumPy/Pandas question-bank validators and execution adapters are
-  preserved and continue to apply to their earlier code challenges.
-- Counted gap is based on *currently classified* content and cannot be
-  represented as the audited final gap until the remaining legacy items are mapped.
-- No new subjects are falsely described as supporting Excel files, Tableau,
-  Power BI, GPU training, Kafka clusters, cloud accounts, or agent execution.
-  These first questions for those subjects are concept checks only.
+| # | Subject | Minimum | Before | New | After |
+|---:|---|---:|---:|---:|---:|
+| 1 | Programming Foundations and Logic Building | 100 | 105 | 0 | **105** |
+| 2 | Data Structures and Algorithms | 150 | 3 | 147 | **150** |
+| 3 | Object-Oriented Programming | 50 | 3 | 47 | **50** |
+| 4 | SQL and Database Engineering | 120 | 3 | 117 | **120** |
+| 5 | NumPy | 50 | 54 | 0 | **54** |
+| 6 | Pandas | 50 | 55 | 0 | **55** |
+| 7 | Practical Data Analysis | 50 | 18 | 32 | **50** |
+| 8 | Data Cleaning and Transformation | 50 | 3 | 47 | **50** |
+| 9 | PySpark | 50 | 4 | 46 | **50** |
+| 10 | Hadoop and MapReduce | 30 | 3 | 27 | **30** |
+| 11 | Machine Learning | 100 | 5 | 95 | **100** |
+| 12 | Deep Learning | 60 | 4 | 56 | **60** |
+| 13 | LLM and Generative AI | 60 | 3 | 57 | **60** |
+| 14 | Computer Vision | 50 | 3 | 47 | **50** |
+| 15 | Natural Language Processing | 50 | 3 | 47 | **50** |
+| 16 | Microsoft Excel | 50 | 3 | 47 | **50** |
+| 17 | Tableau | 50 | 3 | 47 | **50** |
+| 18 | Microsoft Power BI and DAX | 50 | 3 | 47 | **50** |
+| 19 | Statistics and Probability | 50 | 3 | 47 | **50** |
+| 20 | Mathematics for AI/ML | 50 | 3 | 47 | **50** |
+| 21 | Linux Commands and Shell Scripting | 50 | 3 | 47 | **50** |
+| 22 | Git and GitHub | 30 | 3 | 27 | **30** |
+| 23 | Docker and Containerization | 30 | 3 | 27 | **30** |
+| 24 | Kubernetes Fundamentals | 30 | 3 | 27 | **30** |
+| 25 | Data Warehousing and ETL | 50 | 3 | 47 | **50** |
+| 26 | Apache Kafka | 40 | 3 | 37 | **40** |
+| 27 | Apache Airflow | 40 | 3 | 37 | **40** |
+| 28 | REST APIs and Backend Development | 50 | 3 | 47 | **50** |
+| 29 | NoSQL and MongoDB | 40 | 3 | 37 | **40** |
+| 30 | Redis and Caching | 30 | 3 | 27 | **30** |
+| 31 | Cloud Computing Fundamentals | 40 | 3 | 37 | **40** |
+| 32 | MLOps and Model Deployment | 40 | 3 | 37 | **40** |
+| 33 | Operating Systems | 50 | 3 | 47 | **50** |
+| 34 | Computer Networks | 50 | 3 | 47 | **50** |
+| 35 | Cybersecurity Fundamentals | 50 | 3 | 47 | **50** |
+| 36 | System Design | 40 | 3 | 37 | **40** |
+| 37 | Software Testing and Debugging | 40 | 3 | 37 | **40** |
+| 38 | Design Patterns and SOLID Principles | 30 | 3 | 27 | **30** |
+| 39 | Quantitative Aptitude | 100 | 3 | 97 | **100** |
+| 40 | Logical Reasoning | 100 | 3 | 97 | **100** |
+| 41 | English and Verbal Ability | 100 | 3 | 97 | **100** |
+| 42 | Web Development | 60 | 3 | 57 | **60** |
+| 43 | Business Analytics and Case Studies | 50 | 3 | 47 | **50** |
+| 44 | Data Visualization | 40 | 3 | 37 | **40** |
+| 45 | AI Agents and Agentic Workflows | 50 | 3 | 47 | **50** |
 
-## Architecture
+The counts refer to questions available through the existing published
+Problem system, under the normal audience and publication controls.
+They do not measure how well a student has mastered the subjects.
 
-- Catalogue source: `challenges/subject_catalog.json`.
-- Subject-specific questions: `challenges/comprehensive_mcq_*.json`.
-- Shared assignment, grading and submission logic: existing `Problem`,
-  `ProblemEvaluator`, `TestCase`, `LearningPath` and `ALL/SELECTED`.
-- Public, audience-aware discovery: `GET /api/v1/subjects`.
-- Public list filtering: `GET /api/v1/problems?subject=<slug>`.
-- UI: `/subjects`, accessible from the sidebar and linked to real problems.
-- User submissions, attempts, access scopes, data lab datasets and API
-  authorization rules are preserved.
-- No database schema migration is required; entries use existing database
-  models and can be seeded through the standard startup workflow.
-- Duplicate protection rejects repeated normalized titles and statements
-  rather than creating duplicate questions to fill numerical quotas.
+## Scope of this completion
 
-## Verification checklist
+- The new questions are **concept checks**, each measuring a named distinct
+  concept and containing four unique statements from the *same subject*.
+- One answer is selected and verified against a private answer-key test case
+  by the existing `multiple_choice` evaluator. Distractors and answer-order
+  variation are deterministic and checked during seeding.
+- Questions are organized into each subject's existing published learning
+  path and are accessible from `/subjects` and `/problems`.
+- Duplicated subject names and normalized questions are rejected before any
+  database write; the pre-seed audit also checks overlap with the prior 135
+  knowledge checks and verifies all 45 subject minima.
+- The original 100-step Logic curriculum, 50 NumPy and 50 Pandas code exercises,
+  and 15 practical data-analysis code challenges are preserved and counted
+  where applicable, rather than copied into new slugs.
+- The earlier `first-occurrence` / `binary-search-index` legacy equivalence
+  remains addressable to preserve prior learner submissions and URLs.
 
-Run in the repository's normal environment:
+## Important boundary: subject questions versus special environments
 
-```bash
+**Completing the numerical question-bank target does not imply that every
+requested subject has a custom interactive runtime.** The 2,155 new entries
+are conceptual MCQs; they are not 2,155 tested coding programs, spreadsheets,
+Power BI projects, cloud deployments or production agent environments.
+Existing supported CODE, SQL, Data Lab and language runtimes are not changed.
+The full specialized-practice infrastructure in the original product plan
+is separate work and must not be marked complete solely on question count.
+
+## Audit and verification
+
+```sh
+python scripts/verify_subject_concepts.py
 PYTHONPATH=backend pytest -q backend/tests/test_comprehensive_subjects.py
-PYTHONPATH=backend pytest -q backend/tests judge/tests
-cd frontend
-npm run typecheck
-npm run build
-npm test
 ```
 
-GitHub Actions performs the integration suite, Docker Compose smoke test,
-and isolated NumPy/Pandas reference checks. Only report these as passed
-after actual CI completion.
-
-## Remaining work for the full 45-subject expansion
-
-The remaining target requires original vetted questions, assessment fixtures,
-appropriate execution environments, optional infrastructure, suitable
-workspaces and end-to-end tests. The subject browser is only the catalogue
-foundation. It does not mean 2,500 or 2,560 questions are finished.
-The plan's acceptance criteria therefore remain **partially complete**.
+Run the full GitHub Actions CI (backend/judge tests, frontend build,
+browser tests, database migrations, Docker smoke tests and NumPy/Pandas
+reference execution) before treating the branch as production ready.
