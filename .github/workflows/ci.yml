@@ -133,9 +133,20 @@ jobs:
         run: |
           docker compose up --build -d --wait --wait-timeout 120 db redis migrate backend frontend
           curl --fail --silent --show-error http://127.0.0.1:8011/api/v1/health/ready
-          curl --fail --silent --show-error 'http://127.0.0.1:8011/api/v1/problems?limit=1' | jq -e '.total == 122'
+          curl --fail --silent --show-error 'http://127.0.0.1:8011/api/v1/problems?limit=1' | jq -e '.total == 237'
           curl --fail --silent --show-error http://127.0.0.1:3011/problems/parity-check | grep -F 'Parity Check' > /dev/null
           curl --fail --silent --show-error -o /dev/null http://127.0.0.1:3011/monaco/vs/loader.js
+
+      - name: Check all Pandas and NumPy reference exercises
+        run: |
+          docker build --file judge/images/data.Dockerfile --tag eklavya-data-runner:latest .
+          docker run --rm --network none --read-only --cap-drop ALL \
+            --tmpfs /tmp:rw,nosuid,size=16m,mode=1777 \
+            --security-opt no-new-privileges \
+            --volume "$PWD/challenges:/work/challenges:ro" \
+            --volume "$PWD/scripts:/work/scripts:ro" \
+            --workdir /work eklavya-data-runner:latest \
+            python scripts/verify_data_practice_references.py
 
       - name: Show service logs on failure
         if: failure()

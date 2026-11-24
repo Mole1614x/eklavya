@@ -44,12 +44,13 @@ def test_catalog_preserves_domain_coverage(client):
     response = client.get("/api/v1/problems", params={"limit": 100})
     assert response.status_code == 200
     payload = response.json()
-    assert payload["total"] == 122
+    assert payload["total"] == 237
     remainder = client.get("/api/v1/problems", params={"offset": 100, "limit": 100}).json()["items"]
-    items = payload["items"] + remainder
-    assert len(items) == 122
+    third = client.get("/api/v1/problems", params={"offset": 200, "limit": 100}).json()["items"]
+    items = payload["items"] + remainder + third
+    assert len(items) == 237
     assert Counter(item["category"] for item in items) == {
-        "foundations": 47, "code": 56, "data": 6, "statistics": 3,
+        "foundations": 47, "code": 56, "data": 121, "statistics": 3,
         "big-data": 2, "ai": 3, "linux": 2, "excel": 1, "tableau": 2,
     }
     assert {item["format"] for item in items} == {
@@ -80,8 +81,8 @@ def test_detail_exposes_only_public_examples_and_starters(client):
 
 
 def test_seed_can_run_twice(db):
-    assert seed(db) == 122
-    assert len(db.scalars(select(Problem)).all()) == 122
+    assert seed(db) == 237
+    assert len(db.scalars(select(Problem)).all()) == 237
     assert len(db.get(Problem, "parity-check").starters) == 4
 
 

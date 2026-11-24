@@ -1,0 +1,5822 @@
+[
+  {
+    "number": 1,
+    "slug": "analysis-monthly-revenue",
+    "title": "Monthly sales revenue",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Return records [{'month': 'YYYY-MM', 'revenue': number}] from data['orders'], grouped by order month and sorted chronologically. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 1",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['orders']); df['month']=pd.to_datetime(df['OrderDate']).dt.strftime('%Y-%m'); return df.groupby('month',sort=True)['Amount'].sum().reset_index(name='revenue').to_dict(orient='records')\n"
+  },
+  {
+    "number": 2,
+    "slug": "analysis-top-customers",
+    "title": "Top five customers by purchases",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Return up to five records {'Customer_ID', 'total_purchases'} in descending spend order with Customer_ID as ascending tie-break. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 1",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['orders']); result=df.groupby('Customer_ID',sort=True)['Amount'].sum().reset_index(name='total_purchases'); return result.sort_values(['total_purchases','Customer_ID'],ascending=[False,True]).head(5).to_dict(orient='records')\n"
+  },
+  {
+    "number": 3,
+    "slug": "analysis-mom-growth",
+    "title": "Month-over-month revenue growth",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Return chronological records {'month','growth_percent'}; the first month (or after a zero previous month) has null growth. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 1",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['orders']); df['month']=pd.to_datetime(df['OrderDate']).dt.strftime('%Y-%m'); rev=df.groupby('month',sort=True)['Amount'].sum(); prior=rev.shift(1); return [{'month':month,'growth_percent':(float((value-old)/old*100) if pd.notna(old) and old!=0 else None)} for month,value,old in zip(rev.index,rev,prior)]\n"
+  },
+  {
+    "number": 4,
+    "slug": "analysis-customers-no-orders",
+    "title": "Customers with no orders",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Return customers from data['customers'] who have no matching Customer_ID in data['orders']; preserve customer list order. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 1",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    customers=pd.DataFrame(data['customers']); orders=pd.DataFrame(data['orders']); return customers.loc[~customers['Customer_ID'].isin(orders['Customer_ID'])].to_dict(orient='records')\n"
+  },
+  {
+    "number": 5,
+    "slug": "analysis-seven-day-average",
+    "title": "Seven-day moving average",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Aggregate orders per calendar day, create the full inclusive daily date range, fill missing days with zero revenue, then return [{'date','moving_average'}] with a 7-day trailing mean (min_periods=1). Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 1",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['orders']); df['day']=pd.to_datetime(df['OrderDate']).dt.normalize(); revenue=df.groupby('day')['Amount'].sum(); days=pd.date_range(revenue.index.min(),revenue.index.max()); daily=revenue.reindex(days,fill_value=0); avg=daily.rolling(7,min_periods=1).mean(); return [{'date':day.strftime('%Y-%m-%d'),'moving_average':float(value)} for day,value in avg.items()]\n"
+  },
+  {
+    "number": 6,
+    "slug": "analysis-salary-experience-correlation",
+    "title": "Salary experience correlation",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Return Pearson correlation between nonmissing Salary and Experience from data['employees']. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 2",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    return float(pd.DataFrame(data['employees'])[['Salary','Experience']].corr().loc['Salary','Experience'])\n"
+  },
+  {
+    "number": 7,
+    "slug": "analysis-zscore-outliers",
+    "title": "Remove Z-score outliers",
+    "description": "Implement solve(data) using Pandas and/or NumPy. For employee salary, compute population z-scores from nonmissing values, remove rows with abs(z)>3; preserve null salary rows and original order. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 2",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['employees']); mean=df['Salary'].mean(); std=df['Salary'].std(ddof=0); good=(df['Salary']-mean).abs()<=3*std if std else pd.Series(True,index=df.index); return df.loc[good|df['Salary'].isna()].to_dict(orient='records')\n"
+  },
+  {
+    "number": 8,
+    "slug": "analysis-department-imputation",
+    "title": "Fill department-wise salaries",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Fill missing Salary entries with their department's nonmissing salary average, leaving other values intact. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 2",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['employees']); df['Salary']=df['Salary'].fillna(df.groupby('Department')['Salary'].transform('mean')); return df.to_dict(orient='records')\n"
+  },
+  {
+    "number": 9,
+    "slug": "analysis-city-onehot-encoding",
+    "title": "One-hot encode cities",
+    "description": "Implement solve(data) using Pandas and/or NumPy. One-hot encode City from data['employees'] using pd.get_dummies with prefix City, integer 0/1; return records, retaining all other columns. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 2",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    return pd.get_dummies(pd.DataFrame(data['employees']),columns=['City'],prefix='City',dtype=int).to_dict(orient='records')\n"
+  },
+  {
+    "number": 10,
+    "slug": "analysis-combine-csv-files",
+    "title": "Combine CSV files",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Read every CSV text from data['csv_files'] with pandas and vertically concatenate, returning records. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 2",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    return pd.concat([pd.read_csv(io.StringIO(part)) for part in data['csv_files']],ignore_index=True).to_dict(orient='records')\n"
+  },
+  {
+    "number": 11,
+    "slug": "analysis-date-components",
+    "title": "Extract year month day",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Return records {'Order_ID','year','month','day'} from OrderDate, original order, components as integers. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 3",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['orders']); dates=pd.to_datetime(df['OrderDate']); return [{'Order_ID':identifier,'year':int(dt.year),'month':int(dt.month),'day':int(dt.day)} for identifier,dt in zip(df['Order_ID'],dates)]\n"
+  },
+  {
+    "number": 12,
+    "slug": "analysis-top-product-monthly",
+    "title": "Monthly best-selling product",
+    "description": "Implement solve(data) using Pandas and/or NumPy. For each month, sum Quantity by Product; return {'month','Product','quantity'} ordered by month, breaking ties by Product alphabetical order. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 3",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['orders']); df['month']=pd.to_datetime(df['OrderDate']).dt.strftime('%Y-%m'); totals=df.groupby(['month','Product'],sort=True)['Quantity'].sum().reset_index(name='quantity'); return totals.sort_values(['month','quantity','Product'],ascending=[True,False,True]).drop_duplicates('month')[['month','Product','quantity']].to_dict(orient='records')\n"
+  },
+  {
+    "number": 13,
+    "slug": "analysis-customer-running-revenue",
+    "title": "Cumulative revenue per customer",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Sort orders by Customer_ID then OrderDate then Order_ID, compute each customer's running sum, return {'Order_ID','Customer_ID','cumulative_revenue'}. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 3",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['orders']).sort_values(['Customer_ID','OrderDate','Order_ID']); df['cumulative_revenue']=df.groupby('Customer_ID')['Amount'].cumsum(); return df[['Order_ID','Customer_ID','cumulative_revenue']].to_dict(orient='records')\n"
+  },
+  {
+    "number": 14,
+    "slug": "analysis-repeat-customers",
+    "title": "Customers with more than three orders",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Return sorted list of Customer_ID values that appear more than three times in data['orders']. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 3",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    counts=pd.DataFrame(data['orders']).groupby('Customer_ID').size(); return sorted(counts.index[counts>3].tolist())\n"
+  },
+  {
+    "number": 15,
+    "slug": "analysis-cleaning-pipeline",
+    "title": "Complete data cleaning pipeline",
+    "description": "Implement solve(data) using Pandas and/or NumPy. Given raw employee records, strip Name, drop exact duplicates, fill missing Age with overall median, fill missing Salary with its department mean, then return cleaned records preserving first-occurrence order. Input JSON contains 'orders', 'customers', 'employees', and 'csv_files' where applicable. Return a JSON-compatible value; do not print.",
+    "category": "data",
+    "topic": "Practical Data Analysis · Level 3",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "Data Analyst",
+      "Pandas",
+      "NumPy",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data).",
+      "Use the exact output shape and tie-breaking rules stated.",
+      "Handle the included missing values without returning JSON NaN."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import pandas as pd\nimport numpy as np\n\ndef solve(data):\n    # Data: orders, customers, employees, csv_files\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      },
+      {
+        "orders": [
+          {
+            "Order_ID": 1,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-01",
+            "Amount": 100,
+            "Product": "Pencil",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 2,
+            "Customer_ID": 2,
+            "OrderDate": "2026-01-02",
+            "Amount": 200,
+            "Product": "Pen",
+            "Quantity": 3
+          },
+          {
+            "Order_ID": 3,
+            "Customer_ID": 1,
+            "OrderDate": "2026-01-04",
+            "Amount": 50,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 4,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-04",
+            "Amount": 120,
+            "Product": "Notebook",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 5,
+            "Customer_ID": 2,
+            "OrderDate": "2026-02-06",
+            "Amount": 80,
+            "Product": "Pen",
+            "Quantity": 2
+          },
+          {
+            "Order_ID": 6,
+            "Customer_ID": 1,
+            "OrderDate": "2026-02-07",
+            "Amount": 30,
+            "Product": "Pencil",
+            "Quantity": 1
+          },
+          {
+            "Order_ID": 7,
+            "Customer_ID": 3,
+            "OrderDate": "2026-03-01",
+            "Amount": 400,
+            "Product": "Notebook",
+            "Quantity": 5
+          },
+          {
+            "Order_ID": 8,
+            "Customer_ID": 1,
+            "OrderDate": "2026-03-02",
+            "Amount": 70,
+            "Product": "Pen",
+            "Quantity": 1
+          }
+        ],
+        "customers": [
+          {
+            "Customer_ID": 1,
+            "Customer_Name": "Amit"
+          },
+          {
+            "Customer_ID": 2,
+            "Customer_Name": "Neha"
+          },
+          {
+            "Customer_ID": 3,
+            "Customer_Name": "Rahul"
+          },
+          {
+            "Customer_ID": 4,
+            "Customer_Name": "Pooja"
+          }
+        ],
+        "employees": [
+          {
+            "Employee_ID": 101,
+            "Name": " Amit ",
+            "Department": "IT",
+            "Age": 25,
+            "Salary": 45000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 102,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 103,
+            "Name": "Rahul",
+            "Department": "IT",
+            "Age": 30,
+            "Salary": 60000,
+            "Experience": 5,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 104,
+            "Name": "Priya",
+            "Department": "Finance",
+            "Age": 26,
+            "Salary": 55000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 105,
+            "Name": "Ravi",
+            "Department": "HR",
+            "Age": null,
+            "Salary": 38000,
+            "Experience": 1,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 106,
+            "Name": "Sneha",
+            "Department": "IT",
+            "Age": 29,
+            "Salary": null,
+            "Experience": 4,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 107,
+            "Name": "Karan",
+            "Department": "Finance",
+            "Age": 35,
+            "Salary": 75000,
+            "Experience": 8,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 108,
+            "Name": "Pooja",
+            "Department": "HR",
+            "Age": 24,
+            "Salary": 42000,
+            "Experience": 2,
+            "City": "Bangalore"
+          },
+          {
+            "Employee_ID": 109,
+            "Name": "Arjun",
+            "Department": "IT",
+            "Age": 32,
+            "Salary": 68000,
+            "Experience": 6,
+            "City": "Mumbai"
+          },
+          {
+            "Employee_ID": 110,
+            "Name": "Simran",
+            "Department": "Finance",
+            "Age": 27,
+            "Salary": 50000,
+            "Experience": 3,
+            "City": "Delhi"
+          },
+          {
+            "Employee_ID": 111,
+            "Name": "Neha",
+            "Department": "HR",
+            "Age": 28,
+            "Salary": 40000,
+            "Experience": 3,
+            "City": "Delhi"
+          }
+        ],
+        "csv_files": [
+          "Name,Score\nAmit,8\nNeha,9\n",
+          "Name,Score\nRahul,7\nPooja,10\n"
+        ]
+      }
+    ],
+    "reference_source": "import io\nimport pandas as pd\nimport numpy as np\n\ndef solve(data):\n    df=pd.DataFrame(data['employees']); df['Name']=df['Name'].str.strip(); df=df.drop_duplicates(); df['Age']=df['Age'].fillna(df['Age'].median()); df['Salary']=df['Salary'].fillna(df.groupby('Department')['Salary'].transform('mean')); return df.to_dict(orient='records')\n"
+  }
+]

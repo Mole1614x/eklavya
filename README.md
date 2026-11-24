@@ -253,3 +253,10 @@ recursion, and interview questions. It reuses four existing problems and adds
 ## Timed assessment scheduling
 
 Administrators can create assessments without editing JSON, choose immediate or scheduled availability, and reschedule existing assessments before the first attempt. Server timers, access scope and attempt limits remain enforced. See [Assessment Scheduling](docs/ASSESSMENT_SCHEDULING.md).
+
+
+## NumPy and Pandas practice (115 questions)
+
+The Data module contains 50 NumPy, 50 Pandas, and 15 practical data-analysis
+`solve(data)` exercises, with 13 ordered learning paths and isolated, reference-graded
+execution. See [NumPy and Pandas Practice](docs/NUMPY_PANDAS_PRACTICE.md).

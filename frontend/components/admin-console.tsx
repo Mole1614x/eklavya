@@ -54,6 +54,17 @@ async function advancedApi<T>(path: string, init?: RequestInit): Promise<T> {
   return data as T;
 }
 
+async function allAdminProblems(): Promise<Problem[]> {
+  const items: Problem[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 2000; offset += limit) {
+    const batch = await api<Problem[]>(`problems?limit=${limit}&offset=${offset}`);
+    items.push(...batch);
+    if (batch.length < limit) break;
+  }
+  return items;
+}
+
 function formatDate(value: string | null | undefined) {
   return value ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(value)) : "Never";
 }
@@ -161,7 +172,7 @@ export function AdminConsole() {
 
   const load = useCallback(async () => {
     const results = await Promise.all([
-      api<Overview>("overview"), api<Problem[]>("problems?limit=100"), api<Dataset[]>("datasets?limit=100"),
+      api<Overview>("overview"), allAdminProblems(), api<Dataset[]>("datasets?limit=100"),
       api<User[]>("users?limit=100"), api<Contest[]>("contests"), api<Path[]>("paths"),
       api<Achievement[]>("achievements"), api<Audit[]>("audit-logs?limit=100"),
       api<Ledger[]>("xp-transactions?limit=100"), api<Ledger[]>("rank-history?limit=100"),
