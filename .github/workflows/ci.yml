@@ -133,7 +133,7 @@ jobs:
         run: |
           docker compose up --build -d --wait --wait-timeout 120 db redis migrate backend frontend
           curl --fail --silent --show-error http://127.0.0.1:8011/api/v1/health/ready
-          curl --fail --silent --show-error 'http://127.0.0.1:8011/api/v1/problems?limit=1' | jq -e '.total == 237'
+          curl --fail --silent --show-error 'http://127.0.0.1:8011/api/v1/problems?limit=1' | jq -e '.total == 372'
           curl --fail --silent --show-error http://127.0.0.1:3011/problems/parity-check | grep -F 'Parity Check' > /dev/null
           curl --fail --silent --show-error -o /dev/null http://127.0.0.1:3011/monaco/vs/loader.js
 
