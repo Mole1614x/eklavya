@@ -20,8 +20,9 @@ gap audit and validated content expansion remain separate work.
 2. For new content, reject same normalized title within the same execution
    family and question format. Ignore cosmetic punctuation, capitalization,
    or extra whitespace.
-3. Also reject near-identical descriptions when they share the same execution
-   family and format. Different technologies (e.g. raw Python vs NumPy vs
+3. Also reject **identical** normalized descriptions within the same execution
+   family and format. Similar statements with different numbers or operations
+   must remain distinct. Different technologies (e.g. raw Python vs NumPy vs
    Pandas) are allowed to have legitimately different programming tasks.
 4. Before creating a question in Content Studio, inspect
    `GET /api/v1/admin/problems/duplicate-check` using `title`, `category`,
@@ -49,7 +50,7 @@ gap audit and validated content expansion remain separate work.
 ## Limitations
 
 The detector is deliberately conservative. It catches exact normalized
-titles, near-verbatim statements, and one verified legacy equivalence. It
+titles, identical normalized statements, and one verified legacy equivalence. It
 **does not claim** to infer all semantic equivalences or guarantee a
 duplicate-free 2,500+ catalog. Future imports require a human-reviewed
 similarity report and validated reference results, especially when identical
