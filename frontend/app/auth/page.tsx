@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, ChartNoAxesCombined, Code2, Layers3, Sparkles, Trophy } from "lucide-react";
+import { ArrowUpRight, ChartNoAxesCombined, Code2, Sparkles, Trophy } from "lucide-react";
 import { AuthForm } from "@/components/auth-form";
 
 export const metadata = { title: "Sign in or create account" };
