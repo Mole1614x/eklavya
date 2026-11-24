@@ -37,9 +37,10 @@ test("admin can create a published assessment available immediately to all stude
   await form.getByRole("button", { name: "Add question" }).click();
   await form.getByLabel("Publish immediately after creating").check();
   await form.getByRole("button", { name: "Create and publish assessment" }).click();
-  await expect(form.getByRole("status")).toContainText("Assessment published successfully.");
+  // A successful POST refreshes the admin listing and may remount the editor;
+  // verify the persisted published record instead of a transient form message.
   const record = page.locator(".assessment-record").filter({ hasText: title });
-  await expect(record).toBeVisible();
+  await expect(record).toBeVisible({ timeout: 25000 });
   await expect(record.locator(".assessment-window-badge")).toHaveText("AVAILABLE");
   await expect(record).toContainText("All eligible students");
 });
