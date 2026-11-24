@@ -6,7 +6,6 @@ not necessarily duplicates when their input contract or technology differs.
 from __future__ import annotations
 
 import re
-from difflib import SequenceMatcher
 from typing import Any, Iterable
 
 
@@ -50,12 +49,12 @@ def duplicate_reason(candidate: Any, existing: Any) -> str | None:
     if title_left and title_left == title_right:
         return "same normalized title and question type"
 
-    # Completely identical prompts with cosmetic punctuation differences.
+    # Only exact normalized statements are safe to block automatically:
+    # "create ten ones" and "create ten zeros" are NOT the same task.
     description_left = normalized(field(candidate, "description"))
     description_right = normalized(field(existing, "description"))
-    if len(description_left) >= 65 and len(description_right) >= 65:
-        if SequenceMatcher(None, description_left, description_right).ratio() >= .97:
-            return "near-identical problem statement"
+    if len(description_left) >= 65 and description_left == description_right:
+        return "identical normalized problem statement"
 
     # First Occurrence and Binary Search are already the same first-index
     # objective and input contract. This pair is audited as legacy.
