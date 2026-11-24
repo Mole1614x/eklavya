@@ -4,16 +4,19 @@ from sqlalchemy.orm import Session
 from .access_control import audience_filter
 from .models import Problem, User
 from .schemas import Catalog, Category, Difficulty, ProblemSummary
+from .subject_catalog import subject_clause
 
 
 def list_problems(
     db: Session, search: str, category: Category | None, difficulty: Difficulty | None,
-    topic: str | None, limit: int, offset: int, viewer: User | None = None,
+    topic: str | None, limit: int, offset: int, viewer: User | None = None, subject: str | None = None,
 ) -> Catalog:
     filters = [Problem.status == "PUBLISHED", audience_filter(Problem, "problem", viewer)]
     if category:
         filters.append(Problem.category == category)
     topics = db.scalars(select(Problem.topic).where(*filters).distinct().order_by(Problem.topic)).all()
+    if subject:
+        filters.append(subject_clause(subject))
     if difficulty:
         filters.append(Problem.difficulty == difficulty)
     if topic:

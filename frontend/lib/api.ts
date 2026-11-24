@@ -41,3 +41,21 @@ export async function getCatalog(filters: Record<string, string> = {}) {
 export function getProblem(slug: string) {
   return request<ProblemDetail>(`/problems/${encodeURIComponent(slug)}`);
 }
+
+export type SubjectCoverage = {
+  id: number; slug: string; name: string; target: number; category: string;
+  published_questions: number; remaining_to_target: number; execution_status: string;
+};
+export type SubjectCatalog = {
+  subjects: SubjectCoverage[];
+  target_total: number;
+  classified_published: number;
+  published_catalog_total: number;
+  classification_note: string;
+};
+
+export async function getSubjects() {
+  const response = await request<SubjectCatalog>("/subjects");
+  if (!response) throw new Error("The subject catalogue is unavailable.");
+  return response;
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "subject_id": 31,
+    "skill": "Elasticity",
+    "prompt": "In cloud computing, what does elasticity refer to?",
+    "choices": [
+      "Adjusting capacity to changing demand",
+      "Encrypting every file with one key",
+      "Always using the same number of servers",
+      "Running all programs locally"
+    ],
+    "answer": "Adjusting capacity to changing demand"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Object storage",
+    "prompt": "Which workload best matches object storage?",
+    "choices": [
+      "Storing large blobs addressed by keys",
+      "Executing individual CPU instructions",
+      "Replacing kernel memory",
+      "Managing individual SQL row locks"
+    ],
+    "answer": "Storing large blobs addressed by keys"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Availability zones",
+    "prompt": "Why distribute replicas across separate availability zones?",
+    "choices": [
+      "Reduce correlated failure risk within a region",
+      "Guarantee zero network delay",
+      "Avoid all storage expenses",
+      "Disable all monitoring"
+    ],
+    "answer": "Reduce correlated failure risk within a region"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Training-serving skew",
+    "prompt": "What is training-serving skew?",
+    "choices": [
+      "A mismatch between features or processing at training and inference",
+      "A difference in GPU clock rates alone",
+      "A model with no test dataset",
+      "A fixed confidence threshold"
+    ],
+    "answer": "A mismatch between features or processing at training and inference"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model registry",
+    "prompt": "What does a model registry principally manage?",
+    "choices": [
+      "Versioned model artifacts and associated metadata",
+      "Only raw HTTP sessions",
+      "Linux user permissions",
+      "Browser passwords"
+    ],
+    "answer": "Versioned model artifacts and associated metadata"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Canary rollout",
+    "prompt": "Why deploy a model to a small traffic share first?",
+    "choices": [
+      "Observe live behavior and limit the impact of defects",
+      "Guarantee the model needs no validation",
+      "Disable rollback",
+      "Replace monitoring with training metrics"
+    ],
+    "answer": "Observe live behavior and limit the impact of defects"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Process vs thread",
+    "prompt": "What is ordinarily shared by threads of the same process?",
+    "choices": [
+      "Their virtual address space",
+      "Their instruction pointer value",
+      "Their individual stacks",
+      "Their unique thread identifiers"
+    ],
+    "answer": "Their virtual address space"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Deadlock condition",
+    "prompt": "Which condition is one of the Coffman necessary conditions for deadlock?",
+    "choices": [
+      "Circular wait",
+      "Sorted scheduling queue",
+      "Single-core processor",
+      "Demand paging"
+    ],
+    "answer": "Circular wait"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Page fault",
+    "prompt": "What causes a page fault?",
+    "choices": [
+      "Access to a virtual page not currently mapped with required permissions",
+      "A duplicate filename",
+      "A DNS response timeout",
+      "A zero CPU register"
+    ],
+    "answer": "Access to a virtual page not currently mapped with required permissions"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP transport",
+    "prompt": "Which property distinguishes TCP from UDP?",
+    "choices": [
+      "A reliable ordered byte-stream abstraction",
+      "Every packet is independently broadcast",
+      "Always lower latency regardless of conditions",
+      "An absence of connection state"
+    ],
+    "answer": "A reliable ordered byte-stream abstraction"
+  },
+  {
+    "subject_id": 34,
+    "skill": "CIDR prefix",
+    "prompt": "What does /24 mean in IPv4 CIDR notation?",
+    "choices": [
+      "The network prefix is 24 bits long",
+      "The network has 24 physical switches",
+      "Every host uses port 24",
+      "The subnet has 24 DNS records"
+    ],
+    "answer": "The network prefix is 24 bits long"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS lookup",
+    "prompt": "What is the main purpose of DNS resolution?",
+    "choices": [
+      "Map domain names to relevant resource records such as addresses",
+      "Compress application payloads",
+      "Assign CPU priorities",
+      "Encrypt all SQL queries"
+    ],
+    "answer": "Map domain names to relevant resource records such as addresses"
+  },
+  {
+    "subject_id": 35,
+    "skill": "CIA triad",
+    "prompt": "Which property in the CIA triad means data remains accurate and unaltered without authorization?",
+    "choices": [
+      "Integrity",
+      "Availability",
+      "Authentication",
+      "Replication"
+    ],
+    "answer": "Integrity"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Least privilege",
+    "prompt": "What is the principle of least privilege?",
+    "choices": [
+      "Grant only the access needed for assigned tasks",
+      "Give every account administrator rights",
+      "Share root passwords across teams",
+      "Disable audit logs"
+    ],
+    "answer": "Grant only the access needed for assigned tasks"
+  },
+  {
+    "subject_id": 35,
+    "skill": "SQL injection mitigation",
+    "prompt": "Which practice most directly prevents SQL injection in values?",
+    "choices": [
+      "Parameterized queries",
+      "Concatenating user input into SQL strings",
+      "Hiding the database table name",
+      "Base64-encoding SQL queries"
+    ],
+    "answer": "Parameterized queries"
+  }
+]

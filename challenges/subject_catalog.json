@@ -1,0 +1,317 @@
+[
+  {
+    "id": 1,
+    "slug": "programming-foundations-and-logic-building",
+    "name": "Programming Foundations and Logic Building",
+    "target": 100,
+    "category": "foundations"
+  },
+  {
+    "id": 2,
+    "slug": "data-structures-and-algorithms",
+    "name": "Data Structures and Algorithms",
+    "target": 150,
+    "category": "code"
+  },
+  {
+    "id": 3,
+    "slug": "object-oriented-programming",
+    "name": "Object-Oriented Programming",
+    "target": 50,
+    "category": "code"
+  },
+  {
+    "id": 4,
+    "slug": "sql-and-database-engineering",
+    "name": "SQL and Database Engineering",
+    "target": 120,
+    "category": "data"
+  },
+  {
+    "id": 5,
+    "slug": "numpy",
+    "name": "NumPy",
+    "target": 50,
+    "category": "data"
+  },
+  {
+    "id": 6,
+    "slug": "pandas",
+    "name": "Pandas",
+    "target": 50,
+    "category": "data"
+  },
+  {
+    "id": 7,
+    "slug": "practical-data-analysis",
+    "name": "Practical Data Analysis",
+    "target": 50,
+    "category": "data"
+  },
+  {
+    "id": 8,
+    "slug": "data-cleaning-and-transformation",
+    "name": "Data Cleaning and Transformation",
+    "target": 50,
+    "category": "data"
+  },
+  {
+    "id": 9,
+    "slug": "pyspark",
+    "name": "PySpark",
+    "target": 50,
+    "category": "big-data"
+  },
+  {
+    "id": 10,
+    "slug": "hadoop-and-mapreduce",
+    "name": "Hadoop and MapReduce",
+    "target": 30,
+    "category": "big-data"
+  },
+  {
+    "id": 11,
+    "slug": "machine-learning",
+    "name": "Machine Learning",
+    "target": 100,
+    "category": "ai"
+  },
+  {
+    "id": 12,
+    "slug": "deep-learning",
+    "name": "Deep Learning",
+    "target": 60,
+    "category": "ai"
+  },
+  {
+    "id": 13,
+    "slug": "llm-and-generative-ai",
+    "name": "LLM and Generative AI",
+    "target": 60,
+    "category": "ai"
+  },
+  {
+    "id": 14,
+    "slug": "computer-vision",
+    "name": "Computer Vision",
+    "target": 50,
+    "category": "ai"
+  },
+  {
+    "id": 15,
+    "slug": "natural-language-processing",
+    "name": "Natural Language Processing",
+    "target": 50,
+    "category": "ai"
+  },
+  {
+    "id": 16,
+    "slug": "microsoft-excel",
+    "name": "Microsoft Excel",
+    "target": 50,
+    "category": "excel"
+  },
+  {
+    "id": 17,
+    "slug": "tableau",
+    "name": "Tableau",
+    "target": 50,
+    "category": "tableau"
+  },
+  {
+    "id": 18,
+    "slug": "microsoft-power-bi-and-dax",
+    "name": "Microsoft Power BI and DAX",
+    "target": 50,
+    "category": "data"
+  },
+  {
+    "id": 19,
+    "slug": "statistics-and-probability",
+    "name": "Statistics and Probability",
+    "target": 50,
+    "category": "statistics"
+  },
+  {
+    "id": 20,
+    "slug": "mathematics-for-ai-ml",
+    "name": "Mathematics for AI/ML",
+    "target": 50,
+    "category": "statistics"
+  },
+  {
+    "id": 21,
+    "slug": "linux-commands-and-shell-scripting",
+    "name": "Linux Commands and Shell Scripting",
+    "target": 50,
+    "category": "linux"
+  },
+  {
+    "id": 22,
+    "slug": "git-and-github",
+    "name": "Git and GitHub",
+    "target": 30,
+    "category": "code"
+  },
+  {
+    "id": 23,
+    "slug": "docker-and-containerization",
+    "name": "Docker and Containerization",
+    "target": 30,
+    "category": "code"
+  },
+  {
+    "id": 24,
+    "slug": "kubernetes-fundamentals",
+    "name": "Kubernetes Fundamentals",
+    "target": 30,
+    "category": "code"
+  },
+  {
+    "id": 25,
+    "slug": "data-warehousing-and-etl",
+    "name": "Data Warehousing and ETL",
+    "target": 50,
+    "category": "data"
+  },
+  {
+    "id": 26,
+    "slug": "apache-kafka",
+    "name": "Apache Kafka",
+    "target": 40,
+    "category": "big-data"
+  },
+  {
+    "id": 27,
+    "slug": "apache-airflow",
+    "name": "Apache Airflow",
+    "target": 40,
+    "category": "big-data"
+  },
+  {
+    "id": 28,
+    "slug": "rest-apis-and-backend-development",
+    "name": "REST APIs and Backend Development",
+    "target": 50,
+    "category": "code"
+  },
+  {
+    "id": 29,
+    "slug": "nosql-and-mongodb",
+    "name": "NoSQL and MongoDB",
+    "target": 40,
+    "category": "data"
+  },
+  {
+    "id": 30,
+    "slug": "redis-and-caching",
+    "name": "Redis and Caching",
+    "target": 30,
+    "category": "code"
+  },
+  {
+    "id": 31,
+    "slug": "cloud-computing-fundamentals",
+    "name": "Cloud Computing Fundamentals",
+    "target": 40,
+    "category": "code"
+  },
+  {
+    "id": 32,
+    "slug": "mlops-and-model-deployment",
+    "name": "MLOps and Model Deployment",
+    "target": 40,
+    "category": "ai"
+  },
+  {
+    "id": 33,
+    "slug": "operating-systems",
+    "name": "Operating Systems",
+    "target": 50,
+    "category": "code"
+  },
+  {
+    "id": 34,
+    "slug": "computer-networks",
+    "name": "Computer Networks",
+    "target": 50,
+    "category": "code"
+  },
+  {
+    "id": 35,
+    "slug": "cybersecurity-fundamentals",
+    "name": "Cybersecurity Fundamentals",
+    "target": 50,
+    "category": "code"
+  },
+  {
+    "id": 36,
+    "slug": "system-design",
+    "name": "System Design",
+    "target": 40,
+    "category": "code"
+  },
+  {
+    "id": 37,
+    "slug": "software-testing-and-debugging",
+    "name": "Software Testing and Debugging",
+    "target": 40,
+    "category": "code"
+  },
+  {
+    "id": 38,
+    "slug": "design-patterns-and-solid-principles",
+    "name": "Design Patterns and SOLID Principles",
+    "target": 30,
+    "category": "code"
+  },
+  {
+    "id": 39,
+    "slug": "quantitative-aptitude",
+    "name": "Quantitative Aptitude",
+    "target": 100,
+    "category": "statistics"
+  },
+  {
+    "id": 40,
+    "slug": "logical-reasoning",
+    "name": "Logical Reasoning",
+    "target": 100,
+    "category": "statistics"
+  },
+  {
+    "id": 41,
+    "slug": "english-and-verbal-ability",
+    "name": "English and Verbal Ability",
+    "target": 100,
+    "category": "statistics"
+  },
+  {
+    "id": 42,
+    "slug": "web-development",
+    "name": "Web Development",
+    "target": 60,
+    "category": "code"
+  },
+  {
+    "id": 43,
+    "slug": "business-analytics-and-case-studies",
+    "name": "Business Analytics and Case Studies",
+    "target": 50,
+    "category": "data"
+  },
+  {
+    "id": 44,
+    "slug": "data-visualization",
+    "name": "Data Visualization",
+    "target": 40,
+    "category": "data"
+  },
+  {
+    "id": 45,
+    "slug": "ai-agents-and-agentic-workflows",
+    "name": "AI Agents and Agentic Workflows",
+    "target": 50,
+    "category": "ai"
+  }
+]

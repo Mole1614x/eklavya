@@ -1,0 +1,182 @@
+[
+  {
+    "subject_id": 26,
+    "skill": "Partition ordering",
+    "prompt": "Within a Kafka partition, how are records ordered for reading?",
+    "choices": [
+      "By their offset within that partition",
+      "Globally across all partitions",
+      "Alphabetically by key",
+      "By consumer startup time"
+    ],
+    "answer": "By their offset within that partition"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Consumer group allocation",
+    "prompt": "Within one Kafka consumer group, who can consume a given partition at one time?",
+    "choices": [
+      "At most one active consumer in the group",
+      "All consumers simultaneously",
+      "Only the producer",
+      "The broker leader only"
+    ],
+    "answer": "At most one active consumer in the group"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka offset",
+    "prompt": "What does a Kafka record offset identify?",
+    "choices": [
+      "A position in a particular partition",
+      "A wall-clock timestamp for the cluster",
+      "A database primary key in every application",
+      "A consumer's network address"
+    ],
+    "answer": "A position in a particular partition"
+  },
+  {
+    "subject_id": 27,
+    "skill": "DAG concept",
+    "prompt": "What does an Airflow DAG represent?",
+    "choices": [
+      "A collection of tasks with declared dependencies",
+      "A persistent Kafka partition",
+      "A SQL result set",
+      "A versioned model artifact only"
+    ],
+    "answer": "A collection of tasks with declared dependencies"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Retry safety",
+    "prompt": "Why should an Airflow task ideally be idempotent?",
+    "choices": [
+      "A retry should not duplicate or corrupt its logical result",
+      "Retries are then forbidden",
+      "Tasks no longer need dependencies",
+      "Idempotence encrypts logs"
+    ],
+    "answer": "A retry should not duplicate or corrupt its logical result"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Backfill",
+    "prompt": "What does backfill mean in Airflow?",
+    "choices": [
+      "Run workflow intervals from earlier dates",
+      "Erase all historical run metadata",
+      "Convert every DAG to streaming",
+      "Disable scheduling permanently"
+    ],
+    "answer": "Run workflow intervals from earlier dates"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP PUT",
+    "prompt": "What property is intended for identical repeated HTTP PUT requests?",
+    "choices": [
+      "Idempotent intended effect",
+      "Unique new resource each time",
+      "No request body permitted",
+      "Always return a redirect"
+    ],
+    "answer": "Idempotent intended effect"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 404",
+    "prompt": "What does HTTP response 404 mean?",
+    "choices": [
+      "Target resource is not found",
+      "Resource has been created",
+      "Authentication completed successfully",
+      "Server deliberately shut down"
+    ],
+    "answer": "Target resource is not found"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Pagination",
+    "prompt": "What is the main advantage of paginating an API list?",
+    "choices": [
+      "Bound the size and work of individual responses",
+      "Guarantee no underlying data changes",
+      "Avoid all database queries",
+      "Disable unauthorized access automatically"
+    ],
+    "answer": "Bound the size and work of individual responses"
+  },
+  {
+    "subject_id": 29,
+    "skill": "BSON documents",
+    "prompt": "What kind of records are stored in a MongoDB collection?",
+    "choices": [
+      "BSON documents",
+      "Kafka consumer offsets",
+      "Relational query plans",
+      "Filesystem inodes"
+    ],
+    "answer": "BSON documents"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Secondary indexes",
+    "prompt": "What is a common cost of adding an index to a MongoDB collection?",
+    "choices": [
+      "More storage and write maintenance",
+      "Zero cost in every workload",
+      "Automatic deletion of duplicate rows",
+      "Inability to query numeric fields"
+    ],
+    "answer": "More storage and write maintenance"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Embedding",
+    "prompt": "Why may a document database embed frequently read related fields?",
+    "choices": [
+      "To optimize common reads and avoid separate lookups",
+      "To guarantee global transactions for all writes",
+      "To eliminate every duplicated value",
+      "To prevent schema changes"
+    ],
+    "answer": "To optimize common reads and avoid separate lookups"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Cache expiration",
+    "prompt": "Which Redis command sets an expiration time in seconds on a key?",
+    "choices": [
+      "EXPIRE",
+      "HGETALL",
+      "LPUSH",
+      "PUBLISH"
+    ],
+    "answer": "EXPIRE"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Cache miss",
+    "prompt": "What is a cache miss?",
+    "choices": [
+      "A requested item is not available in the cache",
+      "A successful disk backup",
+      "A cache value that is guaranteed current",
+      "A network packet with no checksum"
+    ],
+    "answer": "A requested item is not available in the cache"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis INCR",
+    "prompt": "What does Redis INCR do for a key containing an integer?",
+    "choices": [
+      "Atomically increments the integer by one",
+      "Adds a list element at the end",
+      "Deletes the key",
+      "Starts a database transaction on a remote SQL server"
+    ],
+    "answer": "Atomically increments the integer by one"
+  }
+]

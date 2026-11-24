@@ -63,7 +63,7 @@ def test_data_science_curriculum_has_115_distinct_runnable_items(db):
             ).order_by(LearningPathProblem.position)))
             assert len(members) == 5 if pack == "data_analysis" else len(members) == 10
     assert len(observed) == 115
-    assert seed(db) == 237
+    assert seed(db) == 372
 
 
 def test_data_practice_is_not_exposed_through_problem_detail(db):

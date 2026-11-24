@@ -1,0 +1,542 @@
+[
+  {
+    "subject_id": 1,
+    "skill": "Operator precedence",
+    "prompt": "What does 2 + 3 * 4 evaluate to using normal arithmetic precedence?",
+    "choices": [
+      "14",
+      "20",
+      "24",
+      "9"
+    ],
+    "answer": "14"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Leap-year century rule",
+    "prompt": "Which year is a leap year under the Gregorian calendar?",
+    "choices": [
+      "2000",
+      "1900",
+      "2100",
+      "1800"
+    ],
+    "answer": "2000"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Zero factorial",
+    "prompt": "What is the value of 0 factorial?",
+    "choices": [
+      "1",
+      "0",
+      "Undefined",
+      "-1"
+    ],
+    "answer": "1"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Binary-search complexity",
+    "prompt": "What is the worst-case time complexity of binary search on a sorted array?",
+    "choices": [
+      "O(log n)",
+      "O(n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": "O(log n)"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Queue discipline",
+    "prompt": "Which ordering rule defines a standard queue?",
+    "choices": [
+      "First in, first out",
+      "Last in, first out",
+      "Smallest first",
+      "Random order"
+    ],
+    "answer": "First in, first out"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Cycle detection",
+    "prompt": "Which graph traversal technique can detect cycles in a directed graph using a recursion stack?",
+    "choices": [
+      "Depth-first search",
+      "Binary search",
+      "Selection sort",
+      "Heapify"
+    ],
+    "answer": "Depth-first search"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Encapsulation purpose",
+    "prompt": "What is the primary purpose of encapsulation in object-oriented design?",
+    "choices": [
+      "Control access to object state",
+      "Ensure every method is static",
+      "Eliminate all constructors",
+      "Automatically parallelize calls"
+    ],
+    "answer": "Control access to object state"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Method override",
+    "prompt": "When a subclass provides an implementation of an inherited overridable method, this is called what?",
+    "choices": [
+      "Overriding",
+      "Overloading",
+      "Serialization",
+      "Aggregation"
+    ],
+    "answer": "Overriding"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Abstract interface",
+    "prompt": "What benefit does programming against an interface primarily provide?",
+    "choices": [
+      "Reduced coupling to implementations",
+      "Guaranteed faster execution",
+      "Automatic database indexing",
+      "Removal of all runtime errors"
+    ],
+    "answer": "Reduced coupling to implementations"
+  },
+  {
+    "subject_id": 4,
+    "skill": "GROUP BY purpose",
+    "prompt": "What does SQL GROUP BY do?",
+    "choices": [
+      "Collect rows into groups for aggregation",
+      "Sort rows alphabetically",
+      "Delete duplicate table rows",
+      "Rename the database"
+    ],
+    "answer": "Collect rows into groups for aggregation"
+  },
+  {
+    "subject_id": 4,
+    "skill": "LEFT JOIN nulls",
+    "prompt": "In a SQL LEFT JOIN, what happens when a left-side row has no matching right-side row?",
+    "choices": [
+      "The row remains with NULL right-side fields",
+      "The row is deleted",
+      "The query must fail",
+      "A random right-side row is chosen"
+    ],
+    "answer": "The row remains with NULL right-side fields"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SQL COUNT null behavior",
+    "prompt": "What does COUNT(column_name) exclude in standard SQL?",
+    "choices": [
+      "NULL values",
+      "Zero values",
+      "Negative values",
+      "Duplicate values"
+    ],
+    "answer": "NULL values"
+  },
+  {
+    "subject_id": 5,
+    "skill": "NumPy broadcasting",
+    "prompt": "What condition permits NumPy broadcasting between two dimensions?",
+    "choices": [
+      "They are equal or one is 1",
+      "They must both be prime",
+      "They must both be greater than 10",
+      "They must always be equal"
+    ],
+    "answer": "They are equal or one is 1"
+  },
+  {
+    "subject_id": 5,
+    "skill": "NumPy dtype",
+    "prompt": "Which NumPy attribute reports an array's element data type?",
+    "choices": [
+      "dtype",
+      "shape",
+      "ndim",
+      "size"
+    ],
+    "answer": "dtype"
+  },
+  {
+    "subject_id": 5,
+    "skill": "NumPy axis zero",
+    "prompt": "For a two-dimensional array, sum(axis=0) reduces which dimension?",
+    "choices": [
+      "Rows, producing column totals",
+      "Columns, producing row totals",
+      "Both dimensions to one scalar",
+      "Neither dimension"
+    ],
+    "answer": "Rows, producing column totals"
+  },
+  {
+    "subject_id": 6,
+    "skill": "Pandas loc",
+    "prompt": "What does df.loc primarily use to select rows?",
+    "choices": [
+      "Index labels",
+      "Raw byte offsets",
+      "Column dtypes",
+      "Memory addresses"
+    ],
+    "answer": "Index labels"
+  },
+  {
+    "subject_id": 6,
+    "skill": "Pandas missing values",
+    "prompt": "Which Pandas method identifies missing values?",
+    "choices": [
+      "isna()",
+      "sort_values()",
+      "head()",
+      "rename()"
+    ],
+    "answer": "isna()"
+  },
+  {
+    "subject_id": 6,
+    "skill": "Pandas group aggregation",
+    "prompt": "Which expression finds mean salary by department?",
+    "choices": [
+      "df.groupby('dept')['salary'].mean()",
+      "df.drop('dept')['salary']",
+      "df.sort_values('salary').count()",
+      "df['dept'].astype(float)"
+    ],
+    "answer": "df.groupby('dept')['salary'].mean()"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Data analyst KPI",
+    "prompt": "Which measure is most directly a conversion rate?",
+    "choices": [
+      "Purchases divided by eligible visits",
+      "Purchases plus visits",
+      "Average product price",
+      "Total server requests"
+    ],
+    "answer": "Purchases divided by eligible visits"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Revenue grouping",
+    "prompt": "To report revenue by month from order timestamps, what is needed first?",
+    "choices": [
+      "Derive a consistent month bucket",
+      "Delete every duplicate product",
+      "Convert revenue into strings",
+      "Sort customers by first name"
+    ],
+    "answer": "Derive a consistent month bucket"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Cohort retention",
+    "prompt": "In a retention analysis, what does a cohort usually represent?",
+    "choices": [
+      "Users grouped by a common start period",
+      "All active sessions across years",
+      "A random page sample",
+      "Every event with the same price"
+    ],
+    "answer": "Users grouped by a common start period"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Missing-data leakage",
+    "prompt": "Why must an imputer be fitted only on the training split?",
+    "choices": [
+      "To prevent test-set information leaking into training",
+      "To guarantee zero missing values forever",
+      "To maximize row count",
+      "To turn classification into regression"
+    ],
+    "answer": "To prevent test-set information leaking into training"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Wide-to-long reshape",
+    "prompt": "Which operation converts columns representing time periods into rows?",
+    "choices": [
+      "Melt or unpivot",
+      "Pivot wider",
+      "Outer join",
+      "Drop duplicates"
+    ],
+    "answer": "Melt or unpivot"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Deduplication key",
+    "prompt": "Why should a data-cleaning pipeline specify a business key before deduplicating?",
+    "choices": [
+      "Rows can differ while referring to the same business entity",
+      "All records have identical storage addresses",
+      "Pandas cannot detect literal duplicate rows",
+      "Business keys force every column to be numeric"
+    ],
+    "answer": "Rows can differ while referring to the same business entity"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark lazy transformation",
+    "prompt": "Which PySpark operation is typically a lazy transformation rather than an action?",
+    "choices": [
+      "filter()",
+      "count()",
+      "collect()",
+      "show()"
+    ],
+    "answer": "filter()"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark shuffle cost",
+    "prompt": "Which operation often triggers a shuffle in Spark?",
+    "choices": [
+      "groupBy() followed by aggregation",
+      "select() of existing columns",
+      "limit() on a local Python list",
+      "Rename a Python variable"
+    ],
+    "answer": "groupBy() followed by aggregation"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark partitions",
+    "prompt": "Why can very many tiny Spark partitions reduce performance?",
+    "choices": [
+      "Scheduling overhead can dominate useful work",
+      "They guarantee all tasks run on one core",
+      "They disable serialization",
+      "They prevent all network traffic"
+    ],
+    "answer": "Scheduling overhead can dominate useful work"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Map phase",
+    "prompt": "In MapReduce word count, what does the mapper emit per token?",
+    "choices": [
+      "A word and count one",
+      "A word and the final global total",
+      "Only a sorted report",
+      "A HDFS block identifier"
+    ],
+    "answer": "A word and count one"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Combiner role",
+    "prompt": "What is the purpose of a safe local combiner in MapReduce word count?",
+    "choices": [
+      "Reduce intermediate data sent across the network",
+      "Replace the final output directory",
+      "Change every key to the same value",
+      "Force input to one machine"
+    ],
+    "answer": "Reduce intermediate data sent across the network"
+  },
+  {
+    "subject_id": 10,
+    "skill": "HDFS replication",
+    "prompt": "What is the main reason HDFS replicates data blocks?",
+    "choices": [
+      "Fault tolerance when a node fails",
+      "Make file formats relational",
+      "Avoid all checksums",
+      "Guarantee zero network use"
+    ],
+    "answer": "Fault tolerance when a node fails"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Classification metric",
+    "prompt": "Which metric equals TP divided by TP plus FP?",
+    "choices": [
+      "Precision",
+      "Recall",
+      "Specificity",
+      "Accuracy"
+    ],
+    "answer": "Precision"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Cross-validation",
+    "prompt": "Why use stratified folds for an imbalanced classification problem?",
+    "choices": [
+      "Preserve approximate class proportions in folds",
+      "Turn labels into continuous numbers",
+      "Make every fold identical in all features",
+      "Guarantee perfect accuracy"
+    ],
+    "answer": "Preserve approximate class proportions in folds"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Overfitting symptom",
+    "prompt": "Which pattern most strongly suggests model overfitting?",
+    "choices": [
+      "Training accuracy high but validation accuracy low",
+      "Training and validation both low",
+      "Training and validation both high",
+      "Validation error is always exactly zero"
+    ],
+    "answer": "Training accuracy high but validation accuracy low"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Backpropagation",
+    "prompt": "What does backpropagation compute in neural-network training?",
+    "choices": [
+      "Gradients of a loss with respect to parameters",
+      "The labels for unlabeled data",
+      "The number of GPUs available",
+      "A database query plan"
+    ],
+    "answer": "Gradients of a loss with respect to parameters"
+  },
+  {
+    "subject_id": 12,
+    "skill": "ReLU activation",
+    "prompt": "What is ReLU(x) for a negative input x?",
+    "choices": [
+      "0",
+      "x squared",
+      "1",
+      "Negative infinity"
+    ],
+    "answer": "0"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Dropout behavior",
+    "prompt": "During training, what does dropout do?",
+    "choices": [
+      "Randomly disable some activations",
+      "Sort the training examples",
+      "Change every weight to 1",
+      "Increase input image resolution"
+    ],
+    "answer": "Randomly disable some activations"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Autoregressive generation",
+    "prompt": "In an autoregressive language model, the next token is predicted using what context?",
+    "choices": [
+      "Previously generated tokens and the prompt",
+      "Only the final output length",
+      "The model's training optimizer state",
+      "A fixed table row"
+    ],
+    "answer": "Previously generated tokens and the prompt"
+  },
+  {
+    "subject_id": 13,
+    "skill": "RAG purpose",
+    "prompt": "What does retrieval-augmented generation add at inference time?",
+    "choices": [
+      "Retrieved external context relevant to a query",
+      "A guarantee of factual correctness",
+      "Direct changes to model weights",
+      "Unlimited context length"
+    ],
+    "answer": "Retrieved external context relevant to a query"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Temperature effect",
+    "prompt": "In token sampling, a lower temperature generally makes outputs what?",
+    "choices": [
+      "More concentrated on high-probability tokens",
+      "Always longer",
+      "Independent of logits",
+      "Guaranteed perfectly factual"
+    ],
+    "answer": "More concentrated on high-probability tokens"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Convolution filter",
+    "prompt": "What does a convolutional kernel do to an image tensor?",
+    "choices": [
+      "Apply a local spatial operation across positions",
+      "Shuffle labels between classes",
+      "Convert RGB directly into audio",
+      "Delete the training set"
+    ],
+    "answer": "Apply a local spatial operation across positions"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Precision recall tradeoff",
+    "prompt": "For an object detector, lowering the confidence threshold often does what?",
+    "choices": [
+      "Increase recall while potentially reducing precision",
+      "Always raise both precision and recall",
+      "Reduce predicted boxes to zero",
+      "Change input image size automatically"
+    ],
+    "answer": "Increase recall while potentially reducing precision"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Image segmentation",
+    "prompt": "What is the goal of semantic image segmentation?",
+    "choices": [
+      "Assign a semantic class to each pixel",
+      "Produce one label per entire dataset",
+      "Only find bounding-box centers",
+      "Convert every image to grayscale"
+    ],
+    "answer": "Assign a semantic class to each pixel"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Tokenization",
+    "prompt": "What does tokenization do in an NLP pipeline?",
+    "choices": [
+      "Convert text into units for subsequent processing",
+      "Guarantee no unknown words",
+      "Translate every sentence to English",
+      "Remove all punctuation without exception"
+    ],
+    "answer": "Convert text into units for subsequent processing"
+  },
+  {
+    "subject_id": 15,
+    "skill": "NER example",
+    "prompt": "Which task extracts person and organization names from text?",
+    "choices": [
+      "Named entity recognition",
+      "Image denoising",
+      "Sequence sorting",
+      "Audio compression"
+    ],
+    "answer": "Named entity recognition"
+  },
+  {
+    "subject_id": 15,
+    "skill": "TF IDF",
+    "prompt": "What does inverse document frequency down-weight?",
+    "choices": [
+      "Words occurring in many documents",
+      "Every rare term",
+      "Terms only in one document",
+      "All numbers regardless of frequency"
+    ],
+    "answer": "Words occurring in many documents"
+  }
+]

@@ -71,6 +71,44 @@ def seed(db: DatabaseSession) -> int:
             practice_levels[pack_name].setdefault(level, []).append(slug)
             source.append({key: value for key, value in item.items()
                            if key not in {"number", "test_inputs", "reference_source"}})
+    from hashlib import sha256
+    # Verified conceptual checks use the existing MULTIPLE_CHOICE evaluator.
+    # One genuine answer per question; never seed placeholder test cases.
+    from .subject_catalog import SUBJECTS
+    subject_by_id = {subject["id"]: subject for subject in SUBJECTS}
+    subject_questions: dict[str, list[str]] = {s["slug"]: [] for s in SUBJECTS}
+    for pack in sorted(settings().seed_file.parent.glob("comprehensive_mcq_*.json")):
+        for item in json.loads(pack.read_text(encoding="utf-8")):
+            subject = subject_by_id[item["subject_id"]]
+            slug = "knowledge-" + subject["slug"][:55].rstrip("-") + "-" + str(len(subject_questions[subject["slug"]]) + 1).zfill(2)
+            if slug in seen:
+                raise ValueError(f"Duplicate comprehensive question slug: {slug}")
+            answer = item["answer"]
+            choices = item["choices"]
+            if len(choices) != 4 or len(set(choices)) != 4 or answer not in choices:
+                raise ValueError(f"Invalid answer/options for {slug}")
+            if not item["prompt"].strip() or not item["skill"].strip():
+                raise ValueError(f"Missing meaningful question statement: {slug}")
+            seen.add(slug)
+            subject_questions[subject["slug"]].append(slug)
+            # Shuffle positions reproducibly; correct answers must not always
+            # be option A. The actual expected answer is kept in a hidden test.
+            arranged_choices = sorted(
+                choices, key=lambda choice: sha256(f"{slug}:{choice}".encode()).hexdigest()
+            )
+            source.append({
+                "slug": slug, "title": f'{subject["name"]}: {item["skill"]}',
+                "category": subject["category"], "difficulty": "Easy",
+                "format": "MULTIPLE_CHOICE", "topic": subject["name"],
+                "tags": [f'Subject:{subject["slug"]}', "Knowledge Check"],
+                "description": item["prompt"], "constraints": ["Select exactly one correct answer."],
+                "examples": [], "starters": [], "choices": arranged_choices,
+            })
+            test_cases[slug] = [{
+                "input_data": "{}", "expected_output": json.dumps(answer),
+                "is_hidden": True, "position": 0,
+            }]
+            data_practice[slug] = {"kind": "multiple_choice", "config": {}}
     check_seed_duplicates(source)
     entries = [ProblemDetail.model_validate(item) for item in source]
     evaluators = json.loads(settings().evaluator_seed_file.read_text()) if settings().evaluator_seed_file.exists() else {}
@@ -123,6 +161,22 @@ def seed(db: DatabaseSession) -> int:
             db.merge(LearningPathProblem(
                 path_slug=slug, problem_slug=problem_ids[item_number],
                 position=index, milestone="Level complete" if index == len(sequence) else None,
+            ))
+    # One subject knowledge-check path per domain, using the existing access controls.
+    for subject in SUBJECTS:
+        slugs = subject_questions[subject["slug"]]
+        if not slugs:
+            continue
+        path_slug = "subject-" + subject["slug"][:65]
+        db.merge(LearningPath(
+            slug=path_slug, title=f'{subject["name"]} — Knowledge Checks',
+            description=f'Foundational concept checks in {subject["name"]}; more evaluated exercises are being developed.',
+            prerequisites=[], status="PUBLISHED", access_scope="ALL",
+        ))
+        for position, problem_slug in enumerate(slugs, 1):
+            db.merge(LearningPathProblem(
+                path_slug=path_slug, problem_slug=problem_slug, position=position,
+                milestone="Knowledge check complete" if position == len(slugs) else None,
             ))
     # Series of topic-specific study paths; no extra student-targeting logic.
     for name, title in (("numpy", "NumPy"), ("pandas", "Pandas"),

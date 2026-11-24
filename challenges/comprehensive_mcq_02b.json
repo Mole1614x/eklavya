@@ -1,0 +1,182 @@
+[
+  {
+    "subject_id": 21,
+    "skill": "chmod 755",
+    "prompt": "What permission does chmod 755 normally assign to a file?",
+    "choices": [
+      "Owner rwx, group and others r-x",
+      "Everyone rwx",
+      "Owner read-only, others writable",
+      "No permissions for the owner"
+    ],
+    "answer": "Owner rwx, group and others r-x"
+  },
+  {
+    "subject_id": 21,
+    "skill": "Shell pipeline",
+    "prompt": "In a shell pipeline, what does | connect?",
+    "choices": [
+      "One command's standard output to another command's standard input",
+      "Two filesystem directories",
+      "A file directly to a network socket",
+      "Two Git commits"
+    ],
+    "answer": "One command's standard output to another command's standard input"
+  },
+  {
+    "subject_id": 21,
+    "skill": "Exit status zero",
+    "prompt": "What does exit status 0 normally indicate in a POSIX shell?",
+    "choices": [
+      "Successful completion",
+      "Command not found",
+      "Permission denied",
+      "Syntax error"
+    ],
+    "answer": "Successful completion"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Git commit",
+    "prompt": "Which description best matches a Git commit?",
+    "choices": [
+      "A snapshot with metadata and parent references",
+      "A mandatory remote deployment",
+      "An issue tracker item",
+      "Only an untracked local file"
+    ],
+    "answer": "A snapshot with metadata and parent references"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Rebasing history",
+    "prompt": "What happens to commit identifiers when unpublished commits are rebased?",
+    "choices": [
+      "They normally change because new commits are made",
+      "They become all zeros",
+      "They are guaranteed unchanged",
+      "The repository is deleted"
+    ],
+    "answer": "They normally change because new commits are made"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Pull request review",
+    "prompt": "Why open a pull request in GitHub?",
+    "choices": [
+      "Propose and review a code change before merging",
+      "Guarantee bug-free software",
+      "Replace Git commits",
+      "Run a production database"
+    ],
+    "answer": "Propose and review a code change before merging"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Container instance",
+    "prompt": "What is a Docker container relative to its image?",
+    "choices": [
+      "A runtime instance of the image",
+      "A Git branch",
+      "A physical server",
+      "A YAML schema"
+    ],
+    "answer": "A runtime instance of the image"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Image cache",
+    "prompt": "Why put relatively stable dependency steps early in a Dockerfile?",
+    "choices": [
+      "Unchanged build layers can be cached",
+      "It removes the need for base images",
+      "It guarantees no dependencies",
+      "It disables all security checks"
+    ],
+    "answer": "Unchanged build layers can be cached"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Named volume",
+    "prompt": "What is the purpose of a named Docker volume?",
+    "choices": [
+      "Persist data separately from the lifecycle of a container",
+      "Replace all container images",
+      "Compile Java code",
+      "Store only network ports"
+    ],
+    "answer": "Persist data separately from the lifecycle of a container"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Smallest deployable unit",
+    "prompt": "What is the smallest deployable Kubernetes scheduling unit?",
+    "choices": [
+      "Pod",
+      "Cluster",
+      "Namespace",
+      "Node"
+    ],
+    "answer": "Pod"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Service discovery",
+    "prompt": "What does a Kubernetes Service typically offer?",
+    "choices": [
+      "Stable networking and discovery for a group of Pods",
+      "Permanent disk storage for every pod",
+      "SQL migration automation",
+      "An image registry replacement"
+    ],
+    "answer": "Stable networking and discovery for a group of Pods"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Readiness probe",
+    "prompt": "What does a Kubernetes readiness probe help decide?",
+    "choices": [
+      "Whether a container should receive serving traffic",
+      "Whether code follows a formatter",
+      "Whether backups are encrypted",
+      "Whether a pod image was committed to Git"
+    ],
+    "answer": "Whether a container should receive serving traffic"
+  },
+  {
+    "subject_id": 25,
+    "skill": "SCD Type 2",
+    "prompt": "Why is a Type 2 slowly changing dimension used?",
+    "choices": [
+      "Keep past dimension versions for history",
+      "Always overwrite old dimension rows",
+      "Remove all surrogate keys",
+      "Turn every dimension into a fact"
+    ],
+    "answer": "Keep past dimension versions for history"
+  },
+  {
+    "subject_id": 25,
+    "skill": "ELT order",
+    "prompt": "Which workflow best describes ELT?",
+    "choices": [
+      "Extract, load, then transform in the target system",
+      "Extract, test, then log",
+      "Only transform, never load",
+      "Load before extracting"
+    ],
+    "answer": "Extract, load, then transform in the target system"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Fact grain",
+    "prompt": "What does a fact table's grain specify?",
+    "choices": [
+      "What a single fact row represents",
+      "Its physical disk-sector size",
+      "Only its number of dimensions",
+      "Its encryption algorithm"
+    ],
+    "answer": "What a single fact row represents"
+  }
+]

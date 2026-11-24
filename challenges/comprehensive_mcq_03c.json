@@ -1,0 +1,182 @@
+[
+  {
+    "subject_id": 41,
+    "skill": "Subject-verb agreement",
+    "prompt": "Choose the grammatically correct sentence.",
+    "choices": [
+      "Each of the students has a notebook.",
+      "Each of the students have a notebook.",
+      "Each of the student have a notebook.",
+      "Each of the students having a notebook."
+    ],
+    "answer": "Each of the students has a notebook."
+  },
+  {
+    "subject_id": 41,
+    "skill": "Conditional clause",
+    "prompt": "Choose the grammatically correct second conditional sentence.",
+    "choices": [
+      "If I were you, I would revise the report.",
+      "If I am you, I would revised the report.",
+      "If I was you, I will revised the report.",
+      "If I were you, I will revised the report."
+    ],
+    "answer": "If I were you, I would revise the report."
+  },
+  {
+    "subject_id": 41,
+    "skill": "Concise wording",
+    "prompt": "Which is the clearest replacement for 'due to the fact that'?",
+    "choices": [
+      "because",
+      "in view of the circumstance that",
+      "the reason being that",
+      "inasmuch as the fact is that"
+    ],
+    "answer": "because"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Semantic HTML",
+    "prompt": "Which HTML element should normally contain a page's primary navigation links?",
+    "choices": [
+      "nav",
+      "span",
+      "strong",
+      "code"
+    ],
+    "answer": "nav"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTTP caching",
+    "prompt": "What does a Cache-Control: no-store directive tell caches?",
+    "choices": [
+      "Do not store the response",
+      "Store indefinitely",
+      "Convert the response to JSON",
+      "Only serve stale data"
+    ],
+    "answer": "Do not store the response"
+  },
+  {
+    "subject_id": 42,
+    "skill": "XSS defense",
+    "prompt": "Which practice helps prevent DOM-based XSS when rendering untrusted text?",
+    "choices": [
+      "Use textContent instead of parsing untrusted text as HTML",
+      "Insert user input into innerHTML unsanitized",
+      "Disable TLS",
+      "Trust all URL fragments"
+    ],
+    "answer": "Use textContent instead of parsing untrusted text as HTML"
+  },
+  {
+    "subject_id": 43,
+    "skill": "CAC calculation",
+    "prompt": "If 5000 is spent on acquisition and 100 new customers are acquired, what is CAC?",
+    "choices": [
+      "50",
+      "5",
+      "500",
+      "5100"
+    ],
+    "answer": "50"
+  },
+  {
+    "subject_id": 43,
+    "skill": "North-star metric",
+    "prompt": "What is a useful characteristic of a product north-star metric?",
+    "choices": [
+      "It reflects durable value delivered to customers",
+      "It is guaranteed to rise every week",
+      "It is unrelated to product goals",
+      "It is always the count of page views"
+    ],
+    "answer": "It reflects durable value delivered to customers"
+  },
+  {
+    "subject_id": 43,
+    "skill": "A/B sample ratio",
+    "prompt": "What might a large unexplained sample ratio mismatch indicate in an A/B test?",
+    "choices": [
+      "Assignment or instrumentation problems",
+      "Guaranteed treatment success",
+      "Automatic statistical significance",
+      "A need to delete the control group"
+    ],
+    "answer": "Assignment or instrumentation problems"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Categorical comparison",
+    "prompt": "Which chart is generally appropriate to compare values across unordered categories?",
+    "choices": [
+      "Bar chart",
+      "Connected line chart without ordered axis",
+      "Scatterplot of one categorical code only",
+      "Pie chart with 500 slices"
+    ],
+    "answer": "Bar chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Truncated bar axis",
+    "prompt": "Why can a truncated bar-chart y-axis mislead?",
+    "choices": [
+      "It exaggerates visual differences in bar lengths",
+      "It makes numeric labels more precise",
+      "It guarantees a causal inference",
+      "It always improves accessibility"
+    ],
+    "answer": "It exaggerates visual differences in bar lengths"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Color accessibility",
+    "prompt": "What improves accessibility for color-coded categorical charts?",
+    "choices": [
+      "Use shapes or labels as well as distinguishable colors",
+      "Convey meaning by color alone",
+      "Make all text smaller",
+      "Use nearly identical shades"
+    ],
+    "answer": "Use shapes or labels as well as distinguishable colors"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool calling",
+    "prompt": "Why does an AI agent call a tool instead of simply generating text?",
+    "choices": [
+      "To obtain external data or perform bounded permitted actions",
+      "To guarantee any action is correct",
+      "To eliminate authentication requirements",
+      "To train new model weights during every call"
+    ],
+    "answer": "To obtain external data or perform bounded permitted actions"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent checkpointing",
+    "prompt": "What is a benefit of durable checkpoints in a multi-step agent workflow?",
+    "choices": [
+      "Recover or resume state after interruption",
+      "Automatically grant administrator permissions",
+      "Guarantee every action is reversible",
+      "Remove the need to log errors"
+    ],
+    "answer": "Recover or resume state after interruption"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Human-in-the-loop",
+    "prompt": "When is an explicit human approval step especially appropriate?",
+    "choices": [
+      "Before a high-impact irreversible external action",
+      "Before every harmless string operation",
+      "Only after a delete has succeeded",
+      "Never, because agents need no oversight"
+    ],
+    "answer": "Before a high-impact irreversible external action"
+  }
+]
