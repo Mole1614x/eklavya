@@ -59,7 +59,7 @@ def test_catalog_preserves_domain_coverage(client):
 
 def test_filters_and_pagination(client):
     response = client.get("/api/v1/problems", params={
-        "q": "star-staircase", "category": "foundations", "difficulty": "Beginner", "topic": "Patterns",
+        "q": "Star Staircase", "category": "foundations", "difficulty": "Beginner", "topic": "Patterns",
     })
     assert response.status_code == 200
     assert [item["slug"] for item in response.json()["items"]] == ["star-staircase"]
