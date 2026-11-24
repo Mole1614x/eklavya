@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 21,
+    "skill": "grep -E",
+    "description": "Searching text using extended regular expressions in a Unix-like shell"
+  },
+  {
+    "subject_id": 21,
+    "skill": "find -type f",
+    "description": "Finding regular filesystem entries recursively using predicates"
+  },
+  {
+    "subject_id": 21,
+    "skill": "awk field processing",
+    "description": "Processing text records with pattern-action statements and field references"
+  },
+  {
+    "subject_id": 21,
+    "skill": "sed substitution",
+    "description": "Replacing text matched by a pattern within a stream of lines"
+  },
+  {
+    "subject_id": 21,
+    "skill": "chmod symbolic mode",
+    "description": "Changing permissions using user/group/other targets and symbolic operations"
+  },
+  {
+    "subject_id": 21,
+    "skill": "chown",
+    "description": "Changing the owner and optionally group of filesystem entries"
+  },
+  {
+    "subject_id": 21,
+    "skill": "umask",
+    "description": "Setting bits that are excluded from default new-file permissions"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ln -s",
+    "description": "Creating a symbolic link pointing to another path"
+  },
+  {
+    "subject_id": 21,
+    "skill": "df",
+    "description": "Reporting filesystem capacity and available space"
+  },
+  {
+    "subject_id": 21,
+    "skill": "du",
+    "description": "Estimating disk usage for files and directories"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ps aux",
+    "description": "Displaying process information including running process IDs"
+  },
+  {
+    "subject_id": 21,
+    "skill": "kill -TERM",
+    "description": "Requesting graceful process termination with the TERM signal"
+  },
+  {
+    "subject_id": 21,
+    "skill": "nohup",
+    "description": "Running a command while ignoring hangup signals"
+  },
+  {
+    "subject_id": 21,
+    "skill": "systemctl status",
+    "description": "Inspecting the state of a systemd-managed service"
+  },
+  {
+    "subject_id": 21,
+    "skill": "journalctl",
+    "description": "Viewing event logs maintained by systemd-journald"
+  },
+  {
+    "subject_id": 21,
+    "skill": "crontab",
+    "description": "Configuring scheduled command execution using cron expressions"
+  },
+  {
+    "subject_id": 21,
+    "skill": "set -e",
+    "description": "Requesting that a shell exit on many uncaught nonzero statuses"
+  },
+  {
+    "subject_id": 21,
+    "skill": "set -u",
+    "description": "Treating an unset shell variable as an error during expansion"
+  },
+  {
+    "subject_id": 21,
+    "skill": "set -o pipefail",
+    "description": "Making a pipeline report the last nonzero command status rather than only the final command"
+  },
+  {
+    "subject_id": 21,
+    "skill": "here document",
+    "description": "Supplying a block of inline text to a command as standard input"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git fetch",
+    "description": "Downloading remote object and reference updates without automatically merging them"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git reflog",
+    "description": "Viewing recent changes to local reference pointers for recovery"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git bisect",
+    "description": "Binary searching commit history to locate a change that introduced a regression"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git cherry-pick",
+    "description": "Reapplying changes represented by an existing commit onto the current branch"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git revert",
+    "description": "Creating a new commit that reverses an earlier commit's effects"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git reset --soft",
+    "description": "Moving the current branch pointer while preserving staged file changes"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git reset --hard",
+    "description": "Moving the current branch pointer and resetting index and working tree to a chosen commit"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git stash",
+    "description": "Temporarily saving uncommitted modifications outside the active working tree"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git worktree",
+    "description": "Checking out additional working directories linked to one repository"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git blame",
+    "description": "Showing the most recent commit responsible for each displayed source line"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git diff --cached",
+    "description": "Comparing staged changes against the current HEAD snapshot"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git log --graph",
+    "description": "Rendering commit history with a text representation of branching"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git merge --ff-only",
+    "description": "Updating a branch only when no merge commit or divergence resolution is required"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Protected branch",
+    "description": "A repository branch subject to rules limiting pushes or requiring reviews and checks"
+  },
+  {
+    "subject_id": 22,
+    "skill": "CODEOWNERS",
+    "description": "A configuration assigning default reviewers to designated paths"
+  },
+  {
+    "subject_id": 22,
+    "skill": "GitHub Actions workflow",
+    "description": "An automated workflow described in a repository YAML file under .github/workflows"
+  },
+  {
+    "subject_id": 22,
+    "skill": "GitHub Actions matrix",
+    "description": "A strategy launching related jobs over multiple parameter combinations"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Pull request conflict",
+    "description": "Changes on two branches that cannot be automatically combined without reconciliation"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Squash merge",
+    "description": "Combining a pull request's changes into a single target-branch commit"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Signed commit",
+    "description": "A commit carrying cryptographic evidence associated with its signer"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Multi-stage build",
+    "description": "A Dockerfile with multiple FROM stages used to separate build-time and runtime dependencies"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Build context",
+    "description": "The directory or archive of files available to a Docker build"
+  },
+  {
+    "subject_id": 23,
+    "skill": ".dockerignore",
+    "description": "A file excluding paths from the Docker build context"
+  },
+  {
+    "subject_id": 23,
+    "skill": "ENTRYPOINT",
+    "description": "A Dockerfile instruction defining the default executable for a container"
+  },
+  {
+    "subject_id": 23,
+    "skill": "CMD",
+    "description": "A Dockerfile instruction supplying default command arguments or executable"
+  },
+  {
+    "subject_id": 23,
+    "skill": "ARG",
+    "description": "A variable available during image build, not automatically a runtime environment setting"
+  },
+  {
+    "subject_id": 23,
+    "skill": "ENV",
+    "description": "A Dockerfile instruction defining environment variables in built images"
+  },
+  {
+    "subject_id": 23,
+    "skill": "EXPOSE",
+    "description": "Documentation that a container process is expected to listen on a specified port"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Port publishing",
+    "description": "Mapping a host port to a container port to expose a service"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Bridge network",
+    "description": "A Docker network allowing containers to communicate over a virtual network"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Bind mount",
+    "description": "Mounting a host filesystem path inside a container"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Named volume",
+    "description": "Docker-managed persistent storage independent of individual container lifecycles"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Healthcheck",
+    "description": "A container diagnostic command Docker uses to report service health"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker Compose profile",
+    "description": "A label controlling whether optional services participate in a Compose deployment"
+  },
+  {
+    "subject_id": 23,
+    "skill": "restart policy",
+    "description": "Configuration defining when Docker restarts an exited container"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Image digest",
+    "description": "A content-addressed identifier for a specific image manifest"
+  },
+  {
+    "subject_id": 23,
+    "skill": "BuildKit",
+    "description": "Docker's modern build subsystem with improved caching and graph execution"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Rootless container",
+    "description": "A container launched with a daemon or runtime configured without root-level privileges"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Read-only root filesystem",
+    "description": "A container security setting preventing writes to its root filesystem"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Container resource limit",
+    "description": "A constraint on CPU, memory, or other resources available to a container"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Deployment",
+    "description": "A Kubernetes object reconciling desired replicas and rollout strategy for Pods"
+  },
+  {
+    "subject_id": 24,
+    "skill": "StatefulSet",
+    "description": "A Kubernetes workload controller providing stable identity and ordered lifecycle semantics"
+  },
+  {
+    "subject_id": 24,
+    "skill": "DaemonSet",
+    "description": "A controller ensuring a matching Pod runs on selected cluster nodes"
+  },
+  {
+    "subject_id": 24,
+    "skill": "ReplicaSet",
+    "description": "A controller keeping a desired count of Pods alive under a selector"
+  },
+  {
+    "subject_id": 24,
+    "skill": "ConfigMap",
+    "description": "An object containing nonsecret configuration values for Pods"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Secret",
+    "description": "A Kubernetes object intended to hold sensitive configuration with access controls"
+  },
+  {
+    "subject_id": 24,
+    "skill": "PersistentVolumeClaim",
+    "description": "A storage request matched to an available provisioned persistent volume"
+  },
+  {
+    "subject_id": 24,
+    "skill": "StorageClass",
+    "description": "A template defining classes and provisioning parameters for persistent storage"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Ingress",
+    "description": "A resource describing HTTP routing from external requests to Services"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Gateway API",
+    "description": "Kubernetes APIs for expressing more flexible network traffic routing"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Namespace",
+    "description": "A logical partition for grouping namespaced resources in a cluster"
+  },
+  {
+    "subject_id": 24,
+    "skill": "ServiceAccount",
+    "description": "An identity used by workloads when contacting the Kubernetes API"
+  },
+  {
+    "subject_id": 24,
+    "skill": "RoleBinding",
+    "description": "Granting namespaced role permissions to specified users or service accounts"
+  },
+  {
+    "subject_id": 24,
+    "skill": "NetworkPolicy",
+    "description": "Rules controlling allowed network flows to and from selected Pods where supported"
+  },
+  {
+    "subject_id": 24,
+    "skill": "HorizontalPodAutoscaler",
+    "description": "A controller that changes replica counts according to observed metrics"
+  },
+  {
+    "subject_id": 24,
+    "skill": "PodDisruptionBudget",
+    "description": "A policy limiting voluntarily disrupted healthy replicas during maintenance"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Liveness probe",
+    "description": "A diagnostic used to decide whether an unhealthy container should be restarted"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Resource requests",
+    "description": "CPU or memory amounts considered for scheduling workload Pods"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Resource limits",
+    "description": "Upper CPU or memory constraints imposed on a running workload container"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Rolling update",
+    "description": "Incrementally replacing old workload replicas with new versions"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Dimensional modeling",
+    "description": "Designing analytical schemas around measurable facts and descriptive dimensions"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Star schema",
+    "description": "A data model with a central fact table linked to denormalized dimensions"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Snowflake schema",
+    "description": "A warehouse design with dimensions further normalized into related tables"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Surrogate dimension key",
+    "description": "A warehouse-generated identifier connecting fact records to dimension versions"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Conformed dimension",
+    "description": "A shared dimension with consistent meaning across several fact tables"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Degenerate dimension",
+    "description": "A business identifier kept in a fact table without a separate dimension table"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Junk dimension",
+    "description": "A compact dimension combining low-cardinality flags or indicators"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Factless fact table",
+    "description": "A fact table recording events or conditions without additive numeric measures"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Accumulating snapshot",
+    "description": "A fact table tracking progress through a multistep lifecycle"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Periodic snapshot",
+    "description": "A fact table recording the state of measures at regular intervals"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Transaction fact",
+    "description": "A fact row representing an individual business event at a defined grain"
+  },
+  {
+    "subject_id": 25,
+    "skill": "SCD Type 1",
+    "description": "Updating a dimension attribute in place without preserving its previous value"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Bridge table",
+    "description": "A table resolving a many-to-many relationship between dimensions or entities"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Surrogate key lookup",
+    "description": "Resolving a source business identifier to the proper dimension version for a fact"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Late arriving fact",
+    "description": "A fact event loaded after its expected processing time or dimension arrival"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Change data capture",
+    "description": "Capturing incremental database modifications for downstream replication or processing"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data vault hub",
+    "description": "A structure representing unique business keys in Data Vault modeling"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data vault link",
+    "description": "A structure representing relationships among business keys in Data Vault modeling"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data vault satellite",
+    "description": "A structure storing descriptive attributes and historical changes associated with hubs or links"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Incremental refresh",
+    "description": "Updating only changed or recent partitions rather than reloading the entire analytical dataset"
+  }
+]
