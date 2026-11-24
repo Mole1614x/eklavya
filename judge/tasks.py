@@ -65,7 +65,10 @@ def evaluate(self, submission_id: str) -> None:
                 elif evaluator.kind in {"numpy_ai_function", "python_ai_function", "torch_function"}:
                     result = execute_ai(evaluator.kind, submission.source_code, case.input_data, evaluator.config)
                 else:
-                    result = execute_data(evaluator.kind, submission.source_code, case.input_data, evaluator.config)
+                    public_config = dict(evaluator.config or {})
+                    if evaluator.kind == "data_practice_function":
+                        public_config.pop("reference_source", None)
+                    result = execute_data(evaluator.kind, submission.source_code, case.input_data, public_config)
                 total_ms += result.execution_ms
                 db.refresh(submission, attribute_names=["status", "cancel_requested_at"])
                 if submission.cancel_requested_at is not None or submission.status == "CANCELLED":
