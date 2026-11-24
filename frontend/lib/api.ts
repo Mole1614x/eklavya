@@ -42,6 +42,21 @@ export function getProblem(slug: string) {
   return request<ProblemDetail>(`/problems/${encodeURIComponent(slug)}`);
 }
 
+export type ProblemNavigation = {
+  previous: string | null;
+  next: string | null;
+  position: number;
+  total: number;
+};
+
+/** Context-aware neighbors in the same title/slug order as the problem catalog. */
+export function getProblemNavigation(slug: string, filters: Record<string, string> = {}) {
+  const query = new URLSearchParams(filters);
+  return request<ProblemNavigation>(
+    `/problems/${encodeURIComponent(slug)}/navigation${query.size ? `?${query}` : ""}`
+  );
+}
+
 export type SubjectCoverage = {
   id: number; slug: string; name: string; target: number; category: string;
   published_questions: number; remaining_to_target: number; execution_status: string;

@@ -13,7 +13,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from .access_control import can_access
 from .auth import OptionalUser
-from .catalog import list_problems
+from .catalog import list_problems, problem_neighbors
 from .cache import cache_key, get_public, set_public
 from .config import settings
 from .auth_routes import router as auth_router
@@ -163,6 +163,24 @@ def problems(
     catalog = list_problems(db, q, category, difficulty, topic, limit, offset, viewer, subject=subject)
     if viewer is None: set_public(key, catalog.model_dump(mode="json"))
     return catalog
+
+
+@router.get("/problems/{slug}/navigation")
+def problem_navigation(
+    slug: str, db: DB,
+    q: Annotated[str, Query(max_length=100)] = "",
+    category: Category | None = None,
+    difficulty: Difficulty | None = None,
+    topic: Annotated[str | None, Query(max_length=80)] = None,
+    subject: Annotated[str | None, Query(max_length=100)] = None,
+    viewer: OptionalUser = None,
+) -> dict[str, str | int | None]:
+    if subject and subject not in BY_SLUG:
+        raise HTTPException(status_code=422, detail="Unknown subject filter")
+    neighbors = problem_neighbors(db, slug, q, category, difficulty, topic, viewer, subject)
+    if neighbors is None:
+        raise HTTPException(status_code=404, detail="Problem not found in this catalog view")
+    return neighbors
 
 
 @router.get("/problems/{slug}", response_model=ProblemDetail)
