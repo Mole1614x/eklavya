@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 14,
+    "skill": "Harris corner detector",
+    "description": "A detector identifying image locations with large intensity variation in two directions"
+  },
+  {
+    "subject_id": 14,
+    "skill": "SIFT keypoint",
+    "description": "A scale-invariant local feature used for matching image regions across changes in scale and rotation"
+  },
+  {
+    "subject_id": 14,
+    "skill": "ORB feature",
+    "description": "An efficient oriented binary feature descriptor and detector for image matching"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Canny edge detector",
+    "description": "A multistage edge detector using smoothing, gradients, nonmaximum suppression and hysteresis"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Hough transform",
+    "description": "A voting procedure for detecting parametric shapes such as lines and circles"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Morphological erosion",
+    "description": "Shrinking foreground regions according to a structuring element"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Morphological dilation",
+    "description": "Expanding foreground regions according to a structuring element"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Morphological opening",
+    "description": "Erosion followed by dilation, often removing small bright noise"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Morphological closing",
+    "description": "Dilation followed by erosion, often filling small dark gaps"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Adaptive thresholding",
+    "description": "Selecting local threshold values using image neighborhood statistics"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Otsu threshold",
+    "description": "Selecting a global image threshold by optimizing separation between intensity classes"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Connected components",
+    "description": "Groups of adjacent foreground pixels connected under a chosen neighborhood rule"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Contour extraction",
+    "description": "Tracing boundaries of connected image regions"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Perspective transform",
+    "description": "Mapping planar image positions through projective coordinates"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Camera calibration",
+    "description": "Estimating intrinsic and distortion parameters from known geometric observations"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Epipolar geometry",
+    "description": "Constraints linking corresponding image points in different camera views"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Depth estimation",
+    "description": "Inferring scene distance from image or sensor information"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Object tracking",
+    "description": "Associating target identities across consecutive video frames"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Track intersection over union",
+    "description": "A matching heuristic associating boxes based on their overlap between frames"
+  },
+  {
+    "subject_id": 14,
+    "skill": "Kalman filter tracking",
+    "description": "Predicting and correcting target state estimates under a dynamic noise model"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Character n gram",
+    "description": "A contiguous sequence of n characters used as a text feature"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Word n gram",
+    "description": "A contiguous sequence of n word tokens used for lexical modeling"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Unigram language model",
+    "description": "A probability model estimating token frequency without conditioning on prior tokens"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Bigram language model",
+    "description": "A model predicting tokens conditioned on the immediately preceding token"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Markov assumption",
+    "description": "Approximating future-state dependence using a limited recent history"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Hidden Markov model",
+    "description": "A probabilistic sequence model with unobserved states emitting observed symbols"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Viterbi decoding",
+    "description": "Dynamic programming that finds the most probable state sequence in a hidden Markov model"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Forward backward algorithm",
+    "description": "Computing posterior state probabilities by combining forward and reverse probability messages"
+  },
+  {
+    "subject_id": 15,
+    "skill": "CRF sequence model",
+    "description": "A discriminative sequence model of labels with structured dependencies"
+  },
+  {
+    "subject_id": 15,
+    "skill": "BIO tagging",
+    "description": "A labeling convention marking beginning, inside and outside spans"
+  },
+  {
+    "subject_id": 15,
+    "skill": "SentencePiece",
+    "description": "A subword tokenization library that operates directly on raw Unicode text"
+  },
+  {
+    "subject_id": 15,
+    "skill": "WordPiece",
+    "description": "A subword tokenization strategy using learned vocabulary pieces to represent words"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Byte level tokenizer",
+    "description": "A tokenizer representing text through underlying byte sequences for broad character coverage"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Subword regularization",
+    "description": "Sampling alternative segmentations during training to improve robustness"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Document chunking",
+    "description": "Dividing longer text into context-sized passages for retrieval or modeling"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Text entailment",
+    "description": "Determining whether a hypothesis follows from a provided premise"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Paraphrase detection",
+    "description": "Recognizing two sentences with equivalent or closely related meaning"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Question answering span",
+    "description": "Extracting an answer as a contiguous text span from supplied context"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Intent classification",
+    "description": "Assigning a user's utterance to a predefined action or purpose category"
+  },
+  {
+    "subject_id": 15,
+    "skill": "Slot filling",
+    "description": "Extracting structured argument values needed to fulfill an intent"
+  },
+  {
+    "subject_id": 16,
+    "skill": "CHOOSE function",
+    "description": "Selecting a value from a supplied list using an integer index"
+  },
+  {
+    "subject_id": 16,
+    "skill": "OFFSET function",
+    "description": "Returning a reference shifted by specified row and column offsets"
+  },
+  {
+    "subject_id": 16,
+    "skill": "INDIRECT function",
+    "description": "Constructing a cell or range reference from a text expression"
+  },
+  {
+    "subject_id": 16,
+    "skill": "MATCH function",
+    "description": "Returning a lookup value's position within a one-dimensional range"
+  },
+  {
+    "subject_id": 16,
+    "skill": "HLOOKUP",
+    "description": "Looking across the first row of a table and returning a value from a selected row"
+  },
+  {
+    "subject_id": 16,
+    "skill": "VLOOKUP approximate match",
+    "description": "Finding the nearest qualifying ordered lookup key when approximate matching is enabled"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SUMPRODUCT",
+    "description": "Summing products of corresponding array entries"
+  },
+  {
+    "subject_id": 16,
+    "skill": "AGGREGATE",
+    "description": "Performing aggregations with options to ignore specified errors or hidden rows"
+  },
+  {
+    "subject_id": 16,
+    "skill": "IFERROR",
+    "description": "Replacing any formula error result with a specified alternative value"
+  },
+  {
+    "subject_id": 16,
+    "skill": "IFS function",
+    "description": "Returning the value associated with the first true condition in a sequence"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SWITCH function",
+    "description": "Comparing an expression against candidates to choose a matching result"
+  },
+  {
+    "subject_id": 16,
+    "skill": "WORKDAY",
+    "description": "Calculating a date after a number of working days while optionally skipping holidays"
+  },
+  {
+    "subject_id": 16,
+    "skill": "YEARFRAC",
+    "description": "Estimating the fraction of a year between two dates under a selected basis"
+  },
+  {
+    "subject_id": 16,
+    "skill": "DATEDIF",
+    "description": "Computing elapsed complete intervals such as years or months between dates"
+  },
+  {
+    "subject_id": 16,
+    "skill": "EDATE",
+    "description": "Returning a date shifted by a specified number of months"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SEQUENCE function",
+    "description": "Generating an array of regularly incrementing numbers"
+  },
+  {
+    "subject_id": 16,
+    "skill": "TAKE function",
+    "description": "Selecting a chosen number of leading or trailing array rows or columns"
+  },
+  {
+    "subject_id": 16,
+    "skill": "DROP function",
+    "description": "Removing a chosen number of leading or trailing array rows or columns"
+  },
+  {
+    "subject_id": 16,
+    "skill": "HSTACK function",
+    "description": "Combining array expressions side by side"
+  },
+  {
+    "subject_id": 16,
+    "skill": "VSTACK function",
+    "description": "Combining array expressions vertically"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Dimension filter",
+    "description": "A Tableau filter applied to dimension members at the designated order-of-operations stage"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Measure filter",
+    "description": "A Tableau filter applied to aggregated measure results"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Extract filter",
+    "description": "A filter used to restrict data stored in a Tableau extract"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Data source filter",
+    "description": "A filter that limits data available from a chosen Tableau data source"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Top N filter",
+    "description": "A selection restricting a dimension to the highest or lowest ranked members by a measure"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Relative date filter",
+    "description": "A date filter selecting periods in relation to a reference point such as today"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Discrete field",
+    "description": "A pill treated as a set of distinct category headers in a Tableau view"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Continuous field",
+    "description": "A pill treated as a range and commonly displayed as an axis"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Calculated field",
+    "description": "A user-defined expression evaluated from existing fields or functions"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Table calculation filter",
+    "description": "A filter applied after table calculations without changing earlier aggregation inputs"
+  },
+  {
+    "subject_id": 17,
+    "skill": "LOD expression granularity",
+    "description": "The dimensional grouping at which an expression's aggregate is calculated"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Percent of total table calculation",
+    "description": "Comparing each mark's measure to the relevant partition total"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Moving average table calculation",
+    "description": "Averaging a measure over a selected range of surrounding positions"
+  },
+  {
+    "subject_id": 17,
+    "skill": "WINDOW_AVG",
+    "description": "A Tableau function computing an average over a table-calculation window"
+  },
+  {
+    "subject_id": 17,
+    "skill": "PREVIOUS_VALUE",
+    "description": "Returning the preceding result of the current table calculation for iterative calculations"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Tableau set",
+    "description": "A defined subset of dimension members usable in analysis or visual encoding"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Tableau hierarchy",
+    "description": "A drill-down ordering among dimensions such as region then state then city"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Dashboard device layout",
+    "description": "A layout variant tailored to a selected device size"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Viz in tooltip",
+    "description": "A miniature worksheet view embedded within an interactive tooltip"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Tableau relationship",
+    "description": "A logical data-model link between tables that maintains their distinct levels of detail"
+  },
+  {
+    "subject_id": 18,
+    "skill": "FILTER function DAX",
+    "description": "Returning rows of a table that meet a Boolean expression"
+  },
+  {
+    "subject_id": 18,
+    "skill": "VALUES function",
+    "description": "Returning distinct column values under the current filter context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DISTINCT function",
+    "description": "Returning distinct values from a selected table or column expression"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ALLNOBLANKROW",
+    "description": "Removing specified filters while excluding the synthetic blank row in relevant relationship contexts"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ISINSCOPE",
+    "description": "Testing whether a column is being grouped within the current query hierarchy"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ISFILTERED",
+    "description": "Checking whether a table or column has direct filters applied"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ISCROSSFILTERED",
+    "description": "Checking whether a column or table is filtered directly or through relationships"
+  },
+  {
+    "subject_id": 18,
+    "skill": "RANKX",
+    "description": "Computing ranks by evaluating an expression over the rows of a supplied table"
+  },
+  {
+    "subject_id": 18,
+    "skill": "TOPN",
+    "description": "Returning the top ranked rows of a table by expression-defined ordering"
+  },
+  {
+    "subject_id": 18,
+    "skill": "CONCATENATEX",
+    "description": "Iterating a table and concatenating expression results with a delimiter"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SUMMARIZE",
+    "description": "Returning a grouped summary table based on chosen columns and expressions"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SUMMARIZECOLUMNS",
+    "description": "Creating grouped query results with filter context and named measures"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ADDCOLUMNS",
+    "description": "Extending a table expression with computed row-context columns"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SELECTCOLUMNS",
+    "description": "Constructing a table from selected and evaluated expression columns"
+  },
+  {
+    "subject_id": 18,
+    "skill": "GENERATE",
+    "description": "Evaluating a table expression per input row and combining the resulting rows"
+  },
+  {
+    "subject_id": 18,
+    "skill": "CROSSJOIN",
+    "description": "Creating a Cartesian product of table expressions"
+  },
+  {
+    "subject_id": 18,
+    "skill": "NATURALINNERJOIN",
+    "description": "Joining DAX tables using equally named compatible columns present in both"
+  },
+  {
+    "subject_id": 18,
+    "skill": "CALENDARAUTO",
+    "description": "Producing a contiguous calendar table covering date values found in model data"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ENDOFMONTH",
+    "description": "Returning the last date of the month from a set of dates in current context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DATEADD",
+    "description": "Shifting a date column's current date set by a chosen interval"
+  }
+]
