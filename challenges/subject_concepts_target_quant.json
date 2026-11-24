@@ -1,0 +1,287 @@
+[
+  {
+    "subject_id": 39,
+    "skill": "Number of positive divisors",
+    "description": "Multiplying one plus each prime exponent in a positive integer's prime factorization"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Sum of positive divisors",
+    "description": "Multiplying the geometric series of powers for each distinct prime factor"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Trailing zeros of factorial",
+    "description": "Counting factors of five contributed by integers from one through n"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Digital root",
+    "description": "The repeated digit sum of a nonnegative integer until only one digit remains"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Divisibility by eleven",
+    "description": "Alternating sum of decimal digits must be a multiple of eleven"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Sum of first n odd numbers",
+    "description": "The square of the number of terms"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Sum of first n squares",
+    "description": "The expression n(n+1)(2n+1) divided by six"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Sum of first n cubes",
+    "description": "The square of n(n+1) divided by two"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Nth arithmetic term",
+    "description": "Initial term plus n minus one times the common difference"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Nth geometric term",
+    "description": "Initial term multiplied by the common ratio to the power n minus one"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Geometric progression convergence",
+    "description": "An infinite geometric sum has a finite value when the magnitude of the ratio is below one"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Successive percentage change",
+    "description": "Multiplying change factors rather than adding the raw percentage rates"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Equivalent discount",
+    "description": "The single discount rate that gives the same price as successive discounts"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Percentage base reversal",
+    "description": "Reconstructing the original total by dividing a part by its fractional share"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Ratio scaling",
+    "description": "Preserving proportions by multiplying every part by one common factor"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Inverse proportion",
+    "description": "A relationship where one quantity grows in inverse proportion to the other"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Direct proportion",
+    "description": "A relationship where two quantities grow or shrink by the same factor"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Weighted mixture target",
+    "description": "Solving the amounts of components needed to achieve a chosen mean"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Average of combined groups",
+    "description": "Computing total sum divided by total observations across groups"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Replacement mixture",
+    "description": "Repeatedly removing and replacing a fixed fraction of a uniformly mixed quantity"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Relative change in area",
+    "description": "Applying proportional changes to each dimension before computing the resulting area factor"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit margin versus markup",
+    "description": "Margin divides by selling price whereas markup divides by cost"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Cost price from gain",
+    "description": "Dividing selling price by one plus the fractional gain"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Cost price from loss",
+    "description": "Dividing selling price by one minus the fractional loss"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Depreciation compound factor",
+    "description": "Applying a multiplicative retained-value factor for each depreciation period"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Compound interest installment",
+    "description": "Discounting future cash payments using the applicable periodic interest rate"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Annuity present value",
+    "description": "Summing discounted equally spaced future fixed cash flows"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Break even units",
+    "description": "Dividing fixed costs by contribution per unit when contribution is positive"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Work efficiency comparison",
+    "description": "Comparing completed job fractions per unit time for different workers"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Remaining work fraction",
+    "description": "Subtracting completed work from one complete job"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Work shared proportionality",
+    "description": "Dividing total contribution according to individual productive rates and time"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Upstream current speed",
+    "description": "Boat speed in still water minus stream speed"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Downstream current speed",
+    "description": "Boat speed in still water plus stream speed"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Average speed unequal distances",
+    "description": "Total traveled distance divided by total journey time"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Train relative motion",
+    "description": "Computing crossing time from total effective length and relative speed"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Rectangle diagonal",
+    "description": "The square root of the sum of squares of the rectangle's side lengths"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Square diagonal",
+    "description": "Side length multiplied by the square root of two"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Parallelogram area",
+    "description": "Base length multiplied by perpendicular height"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Trapezium area",
+    "description": "Half the sum of parallel side lengths multiplied by perpendicular height"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Rhombus area",
+    "description": "Half the product of the lengths of its two diagonals"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Heron formula",
+    "description": "Square root of s(s-a)(s-b)(s-c) for triangle side lengths a,b,c and semiperimeter s"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Equilateral triangle area",
+    "description": "Square root of three divided by four times side length squared"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Circumradius of right triangle",
+    "description": "Half the length of the hypotenuse"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Circle circumference",
+    "description": "Two times pi times the radius"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Circle sector area",
+    "description": "The chosen central angle fraction of a full turn multiplied by circle area"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Circular arc length",
+    "description": "The central angle in radians multiplied by the circle radius"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Cylinder curved surface",
+    "description": "Two times pi times the radius multiplied by its height"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Cone slant height",
+    "description": "Square root of radius squared plus height squared for a right circular cone"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Sphere surface area",
+    "description": "Four times pi times radius squared"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Hemisphere volume",
+    "description": "Two thirds times pi times radius cubed"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Cube space diagonal",
+    "description": "Cube side length multiplied by square root of three"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Cuboid space diagonal",
+    "description": "Square root of the sum of squares of its length width and height"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Circular permutations",
+    "description": "Arranging n distinct objects around a circle up to rotation in (n-1) factorial ways"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Repeated-item arrangements",
+    "description": "Dividing n factorial by factorials of repeated-item multiplicities"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Combination with repetition",
+    "description": "Selecting r unordered items from n types with repeats in choose(n+r-1,r) ways"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Complement probability",
+    "description": "Probability of an event subtracted from one to find its complement"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Union probability",
+    "description": "Adding event probabilities and subtracting their intersection probability"
+  }
+]
