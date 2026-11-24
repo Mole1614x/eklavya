@@ -115,22 +115,31 @@ def seed(db: DatabaseSession) -> int:
     # Three existing tracks have already met their minimum, so new content
     # targets only the 42 subjects with verified outstanding question gaps.
     from .problem_uniqueness import normalized
+    from .subject_catalog import matched_subject_ids
+    existing_subject_count: dict[int, int] = {subject["id"]: 0 for subject in SUBJECTS}
+    for existing in source:
+        for sid in matched_subject_ids(existing):
+            existing_subject_count[sid] += 1
+    needed: dict[int, int] = {
+        item["id"]: max(0, item["target"] - existing_subject_count[item["id"]])
+        for item in SUBJECTS
+    }
     concept_rows: list[dict] = []
     for pack in sorted(settings().seed_file.parent.glob("subject_concepts_*.json")):
         concept_rows.extend(json.loads(pack.read_text(encoding="utf-8")))
     by_subject: dict[int, list[dict]] = {}
     for item in concept_rows:
         sid = item["subject_id"]
-        if sid not in subject_by_id or sid in {1, 5, 6}:
+        if sid not in subject_by_id or needed[sid] == 0:
             raise ValueError(f"Concept assigned to completed or unknown subject: {sid}")
         if len(item["skill"].strip()) < 3 or len(item["description"].strip()) < 30:
             raise ValueError(f"Concept lacks a meaningful description: {item}")
         by_subject.setdefault(sid, []).append(item)
-    if len(concept_rows) != 840 or len(by_subject) != 42:
-        raise ValueError("Subject concept bank must cover 42 remaining subjects with 20 unique concepts each")
+    if len(concept_rows) != sum(needed.values()) or set(by_subject) != {sid for sid, count in needed.items() if count}:
+        raise ValueError("Concept packs do not exactly fill audited per-subject target gaps")
     for sid, concepts in sorted(by_subject.items()):
-        if len(concepts) != 20:
-            raise ValueError(f"Expected 20 concepts for subject {sid}, got {len(concepts)}")
+        if len(concepts) != needed[sid]:
+            raise ValueError(f"Expected {needed[sid]} original concepts for subject {sid}, got {len(concepts)}")
         existing_skills = {
             normalized(entry["title"].split(": ", 1)[-1])
             for entry in source if entry["topic"] == subject_by_id[sid]["name"]
