@@ -379,7 +379,7 @@
       "Deployment",
       "ConfigMap",
       "Horizontal Pod Autoscaler",
-      "Readiness probe"
+      "Liveness probe"
     ],
     "answer": "Deployment"
   },
@@ -414,7 +414,7 @@
     "choices": [
       "Secret",
       "Horizontal Pod Autoscaler",
-      "Readiness probe",
+      "Liveness probe",
       "Service"
     ],
     "answer": "Secret"
@@ -449,7 +449,7 @@
     "prompt": "In Kubernetes Fundamentals, which term best matches this description: requests persistent storage for a workload?",
     "choices": [
       "PersistentVolumeClaim",
-      "Readiness probe",
+      "Liveness probe",
       "Service",
       "Ingress"
     ],
@@ -469,15 +469,15 @@
   },
   {
     "subject_id": 24,
-    "skill": "Readiness probe",
-    "prompt": "In Kubernetes Fundamentals, which term best matches this description: indicates whether a running pod is ready to receive traffic?",
+    "skill": "Liveness probe",
+    "prompt": "In Kubernetes Fundamentals, which term best matches this description: detects when Kubernetes should restart a container because it is not healthy?",
     "choices": [
-      "Readiness probe",
+      "Liveness probe",
       "Deployment",
       "Secret",
       "PersistentVolumeClaim"
     ],
-    "answer": "Readiness probe"
+    "answer": "Liveness probe"
   },
   {
     "subject_id": 25,
@@ -750,7 +750,7 @@
     "choices": [
       "Scheduler",
       "XCom",
-      "Backfill",
+      "Data interval",
       "DAG"
     ],
     "answer": "Scheduler"
@@ -785,7 +785,7 @@
     "prompt": "In Apache Airflow, which term best matches this description: waits for an external state or condition before proceeding?",
     "choices": [
       "Sensor",
-      "Backfill",
+      "Data interval",
       "DAG",
       "Task instance"
     ],
@@ -805,15 +805,15 @@
   },
   {
     "subject_id": 27,
-    "skill": "Backfill",
-    "prompt": "In Apache Airflow, which term best matches this description: runs workflows for an explicitly selected historical interval?",
+    "skill": "Data interval",
+    "prompt": "In Apache Airflow, which term best matches this description: defines the period of data a scheduled DAG run is responsible for processing?",
     "choices": [
-      "Backfill",
+      "Data interval",
       "Dynamic task mapping",
       "Scheduler",
       "Sensor"
     ],
-    "answer": "Backfill"
+    "answer": "Data interval"
   },
   {
     "subject_id": 27,
@@ -835,7 +835,7 @@
       "Dynamic task mapping",
       "Operator",
       "XCom",
-      "Backfill"
+      "Data interval"
     ],
     "answer": "Dynamic task mapping"
   },
@@ -973,15 +973,15 @@
   },
   {
     "subject_id": 29,
-    "skill": "Embedding",
-    "prompt": "In NoSQL and MongoDB, which term best matches this description: nests related data within a single document?",
+    "skill": "Partial index",
+    "prompt": "In NoSQL and MongoDB, which term best matches this description: indexes only collection documents matching a specified filter expression?",
     "choices": [
-      "Embedding",
+      "Partial index",
       "Compound index",
       "Replica set",
       "Upsert"
     ],
-    "answer": "Embedding"
+    "answer": "Partial index"
   },
   {
     "subject_id": 29,
@@ -1003,7 +1003,7 @@
       "Compound index",
       "Sharding",
       "Change streams",
-      "Embedding"
+      "Partial index"
     ],
     "answer": "Compound index"
   },
@@ -1038,7 +1038,7 @@
     "choices": [
       "Replica set",
       "Change streams",
-      "Embedding",
+      "Partial index",
       "Aggregation pipeline"
     ],
     "answer": "Replica set"
@@ -1073,7 +1073,7 @@
     "prompt": "In NoSQL and MongoDB, which term best matches this description: inserts a new document when an update filter finds no match?",
     "choices": [
       "Upsert",
-      "Embedding",
+      "Partial index",
       "Aggregation pipeline",
       "TTL index"
     ],
@@ -1206,7 +1206,7 @@
     "choices": [
       "Infrastructure as a Service",
       "Software as a Service",
-      "Object storage",
+      "Block storage",
       "Identity and access management"
     ],
     "answer": "Infrastructure as a Service"
@@ -1241,7 +1241,7 @@
     "prompt": "In Cloud Computing Fundamentals, which term best matches this description: provides a separate fault-domain deployment location within a cloud region?",
     "choices": [
       "Availability zone",
-      "Object storage",
+      "Block storage",
       "Identity and access management",
       "Platform as a Service"
     ],
@@ -1261,15 +1261,15 @@
   },
   {
     "subject_id": 31,
-    "skill": "Object storage",
-    "prompt": "In Cloud Computing Fundamentals, which term best matches this description: stores durable blobs accessed using key-based APIs?",
+    "skill": "Block storage",
+    "prompt": "In Cloud Computing Fundamentals, which term best matches this description: exposes persistent storage as addressable blocks for filesystems and databases?",
     "choices": [
-      "Object storage",
+      "Block storage",
       "Serverless function",
       "Infrastructure as a Service",
       "Availability zone"
     ],
-    "answer": "Object storage"
+    "answer": "Block storage"
   },
   {
     "subject_id": 31,
@@ -1291,7 +1291,7 @@
       "Serverless function",
       "Shared responsibility model",
       "Software as a Service",
-      "Object storage"
+      "Block storage"
     ],
     "answer": "Serverless function"
   },
@@ -1321,15 +1321,15 @@
   },
   {
     "subject_id": 32,
-    "skill": "Model registry",
-    "prompt": "In MLOps and Model Deployment, which term best matches this description: stores versioned models and associated lifecycle metadata?",
+    "skill": "Champion-challenger evaluation",
+    "prompt": "In MLOps and Model Deployment, which term best matches this description: compares a deployed incumbent model against a candidate before promotion?",
     "choices": [
-      "Model registry",
+      "Champion-challenger evaluation",
       "Data drift",
       "Canary deployment",
       "Reproducible pipeline"
     ],
-    "answer": "Model registry"
+    "answer": "Champion-challenger evaluation"
   },
   {
     "subject_id": 32,
@@ -1351,7 +1351,7 @@
       "Data drift",
       "Shadow deployment",
       "Experiment tracking",
-      "Model registry"
+      "Champion-challenger evaluation"
     ],
     "answer": "Data drift"
   },
@@ -1386,7 +1386,7 @@
     "choices": [
       "Canary deployment",
       "Experiment tracking",
-      "Model registry",
+      "Champion-challenger evaluation",
       "Concept drift"
     ],
     "answer": "Canary deployment"
@@ -1421,7 +1421,7 @@
     "prompt": "In MLOps and Model Deployment, which term best matches this description: recreates training results from versioned data, code and environment?",
     "choices": [
       "Reproducible pipeline",
-      "Model registry",
+      "Champion-challenger evaluation",
       "Concept drift",
       "Model monitoring"
     ],
@@ -1458,7 +1458,7 @@
     "choices": [
       "Thread",
       "Semaphore",
-      "Page fault",
+      "Copy-on-write",
       "Thrashing"
     ],
     "answer": "Thread"
@@ -1493,7 +1493,7 @@
     "prompt": "In Operating Systems, which term best matches this description: grants mutual exclusion for a protected critical section?",
     "choices": [
       "Mutex",
-      "Page fault",
+      "Copy-on-write",
       "Thrashing",
       "Deadlock"
     ],
@@ -1513,15 +1513,15 @@
   },
   {
     "subject_id": 33,
-    "skill": "Page fault",
-    "prompt": "In Operating Systems, which term best matches this description: occurs when a referenced virtual page needs intervention by the memory manager?",
+    "skill": "Copy-on-write",
+    "prompt": "In Operating Systems, which term best matches this description: delays copying shared memory pages until one process modifies a page?",
     "choices": [
-      "Page fault",
+      "Copy-on-write",
       "Context switch",
       "Thread",
       "Mutex"
     ],
-    "answer": "Page fault"
+    "answer": "Copy-on-write"
   },
   {
     "subject_id": 33,
@@ -1543,7 +1543,7 @@
       "Context switch",
       "Process",
       "Semaphore",
-      "Page fault"
+      "Copy-on-write"
     ],
     "answer": "Context switch"
   },
@@ -1697,7 +1697,7 @@
     "prompt": "In Cybersecurity Fundamentals, which term best matches this description: protects data against unauthorized or undetected alteration?",
     "choices": [
       "Integrity",
-      "Least privilege",
+      "Password spraying",
       "Cross-site scripting",
       "Zero Trust"
     ],
@@ -1717,15 +1717,15 @@
   },
   {
     "subject_id": 35,
-    "skill": "Least privilege",
-    "prompt": "In Cybersecurity Fundamentals, which term best matches this description: limits an identity to the minimal permissions required for its work?",
+    "skill": "Password spraying",
+    "prompt": "In Cybersecurity Fundamentals, which term best matches this description: tries one or a few common passwords against many different accounts?",
     "choices": [
-      "Least privilege",
+      "Password spraying",
       "SQL injection",
       "Multi-factor authentication",
       "Integrity"
     ],
-    "answer": "Least privilege"
+    "answer": "Password spraying"
   },
   {
     "subject_id": 35,
@@ -1747,7 +1747,7 @@
       "SQL injection",
       "CSRF",
       "Confidentiality",
-      "Least privilege"
+      "Password spraying"
     ],
     "answer": "SQL injection"
   },
@@ -1782,7 +1782,7 @@
     "choices": [
       "Multi-factor authentication",
       "Confidentiality",
-      "Least privilege",
+      "Password spraying",
       "Cross-site scripting"
     ],
     "answer": "Multi-factor authentication"
@@ -1801,15 +1801,15 @@
   },
   {
     "subject_id": 36,
-    "skill": "Horizontal scaling",
-    "prompt": "In System Design, which term best matches this description: adds more service instances to increase capacity?",
+    "skill": "Capacity planning",
+    "prompt": "In System Design, which term best matches this description: projects service resources needed for forecast workloads and reliability goals?",
     "choices": [
-      "Horizontal scaling",
+      "Capacity planning",
       "Consistent hashing",
       "Eventual consistency",
       "Idempotency"
     ],
-    "answer": "Horizontal scaling"
+    "answer": "Capacity planning"
   },
   {
     "subject_id": 36,
@@ -1817,7 +1817,7 @@
     "prompt": "In System Design, which term best matches this description: increases resources available to an individual instance?",
     "choices": [
       "Vertical scaling",
-      "Circuit breaker",
+      "Retry with jitter",
       "Rate limiting",
       "Message queue"
     ],
@@ -1831,21 +1831,21 @@
       "Consistent hashing",
       "Bulkhead isolation",
       "Backpressure",
-      "Horizontal scaling"
+      "Capacity planning"
     ],
     "answer": "Consistent hashing"
   },
   {
     "subject_id": 36,
-    "skill": "Circuit breaker",
-    "prompt": "In System Design, which term best matches this description: temporarily blocks calls to a failing dependency to prevent cascades?",
+    "skill": "Retry with jitter",
+    "prompt": "In System Design, which term best matches this description: adds randomized delays between retry attempts to prevent synchronized overload?",
     "choices": [
-      "Circuit breaker",
+      "Retry with jitter",
       "Eventual consistency",
       "Idempotency",
       "Vertical scaling"
     ],
-    "answer": "Circuit breaker"
+    "answer": "Retry with jitter"
   },
   {
     "subject_id": 36,
@@ -1866,8 +1866,8 @@
     "choices": [
       "Eventual consistency",
       "Backpressure",
-      "Horizontal scaling",
-      "Circuit breaker"
+      "Capacity planning",
+      "Retry with jitter"
     ],
     "answer": "Eventual consistency"
   },
@@ -1901,8 +1901,8 @@
     "prompt": "In System Design, which term best matches this description: makes repeated applications of the same operation have no additional effect?",
     "choices": [
       "Idempotency",
-      "Horizontal scaling",
-      "Circuit breaker",
+      "Capacity planning",
+      "Retry with jitter",
       "Rate limiting"
     ],
     "answer": "Idempotency"
@@ -1925,7 +1925,7 @@
     "prompt": "In Software Testing and Debugging, which term best matches this description: checks a small independently isolated unit of behavior?",
     "choices": [
       "Unit test",
-      "Regression test",
+      "Contract test",
       "Code coverage",
       "Fuzz testing"
     ],
@@ -1945,15 +1945,15 @@
   },
   {
     "subject_id": 37,
-    "skill": "Regression test",
-    "prompt": "In Software Testing and Debugging, which term best matches this description: verifies previously working behavior after a change?",
+    "skill": "Contract test",
+    "prompt": "In Software Testing and Debugging, which term best matches this description: checks that independently developed service interfaces obey agreed request-response expectations?",
     "choices": [
-      "Regression test",
+      "Contract test",
       "Mutation testing",
       "Boundary-value analysis",
       "Unit test"
     ],
-    "answer": "Regression test"
+    "answer": "Contract test"
   },
   {
     "subject_id": 37,
@@ -1975,7 +1975,7 @@
       "Mutation testing",
       "Mock",
       "Binary-search debugging",
-      "Regression test"
+      "Contract test"
     ],
     "answer": "Mutation testing"
   },
@@ -2010,7 +2010,7 @@
     "choices": [
       "Boundary-value analysis",
       "Binary-search debugging",
-      "Regression test",
+      "Contract test",
       "Code coverage"
     ],
     "answer": "Boundary-value analysis"
@@ -2045,7 +2045,7 @@
     "prompt": "In Design Patterns and SOLID Principles, which term best matches this description: delegates instance creation to an overridable method?",
     "choices": [
       "Factory method",
-      "Strategy pattern",
+      "Template method",
       "Adapter pattern",
       "Open-closed principle"
     ],
@@ -2065,15 +2065,15 @@
   },
   {
     "subject_id": 38,
-    "skill": "Strategy pattern",
-    "prompt": "In Design Patterns and SOLID Principles, which term best matches this description: encapsulates interchangeable algorithms behind a common interface?",
+    "skill": "Template method",
+    "prompt": "In Design Patterns and SOLID Principles, which term best matches this description: defines the overall algorithm skeleton while allowing subclasses to override selected steps?",
     "choices": [
-      "Strategy pattern",
+      "Template method",
       "Decorator pattern",
-      "Dependency inversion",
+      "Dependency injection container",
       "Factory method"
     ],
-    "answer": "Strategy pattern"
+    "answer": "Template method"
   },
   {
     "subject_id": 38,
@@ -2095,7 +2095,7 @@
       "Decorator pattern",
       "Facade pattern",
       "Interface segregation",
-      "Strategy pattern"
+      "Template method"
     ],
     "answer": "Decorator pattern"
   },
@@ -2105,7 +2105,7 @@
     "prompt": "In Design Patterns and SOLID Principles, which term best matches this description: translates one interface into another expected by a client?",
     "choices": [
       "Adapter pattern",
-      "Dependency inversion",
+      "Dependency injection container",
       "Factory method",
       "Observer pattern"
     ],
@@ -2125,15 +2125,15 @@
   },
   {
     "subject_id": 38,
-    "skill": "Dependency inversion",
-    "prompt": "In Design Patterns and SOLID Principles, which term best matches this description: requires high-level policy to depend on abstractions rather than concrete details?",
+    "skill": "Dependency injection container",
+    "prompt": "In Design Patterns and SOLID Principles, which term best matches this description: builds and provides object dependencies according to registered configuration?",
     "choices": [
-      "Dependency inversion",
+      "Dependency injection container",
       "Interface segregation",
-      "Strategy pattern",
+      "Template method",
       "Adapter pattern"
     ],
-    "answer": "Dependency inversion"
+    "answer": "Dependency injection container"
   },
   {
     "subject_id": 38,
@@ -2155,7 +2155,7 @@
       "Interface segregation",
       "Abstract factory",
       "Decorator pattern",
-      "Dependency inversion"
+      "Dependency injection container"
     ],
     "answer": "Interface segregation"
   },
@@ -2190,7 +2190,7 @@
     "choices": [
       "Speed-distance-time",
       "Weighted average",
-      "Ratio proportion",
+      "Inverse proportion",
       "Simple interest"
     ],
     "answer": "Speed-distance-time"
@@ -2225,7 +2225,7 @@
     "prompt": "In Quantitative Aptitude, which term best matches this description: expresses gain relative to the original cost price?",
     "choices": [
       "Profit percentage",
-      "Ratio proportion",
+      "Inverse proportion",
       "Simple interest",
       "Work-rate addition"
     ],
@@ -2245,15 +2245,15 @@
   },
   {
     "subject_id": 39,
-    "skill": "Ratio proportion",
-    "prompt": "In Quantitative Aptitude, which term best matches this description: equates relationships between pairs of quantities?",
+    "skill": "Inverse proportion",
+    "prompt": "In Quantitative Aptitude, which term best matches this description: describes quantities whose product stays constant as either quantity changes?",
     "choices": [
-      "Ratio proportion",
+      "Inverse proportion",
       "Combination",
       "Speed-distance-time",
       "Profit percentage"
     ],
-    "answer": "Ratio proportion"
+    "answer": "Inverse proportion"
   },
   {
     "subject_id": 39,
@@ -2275,7 +2275,7 @@
       "Combination",
       "Compound interest",
       "Weighted average",
-      "Ratio proportion"
+      "Inverse proportion"
     ],
     "answer": "Combination"
   },
@@ -2299,7 +2299,7 @@
       "Coding-decoding",
       "Blood relations",
       "Analogy",
-      "Logical deduction"
+      "Necessary condition"
     ],
     "answer": "Coding-decoding"
   },
@@ -2334,7 +2334,7 @@
     "choices": [
       "Direction sense",
       "Analogy",
-      "Logical deduction",
+      "Necessary condition",
       "Number series"
     ],
     "answer": "Direction sense"
@@ -2369,7 +2369,7 @@
     "prompt": "In Logical Reasoning, which term best matches this description: finds a member that does not follow a shared rule?",
     "choices": [
       "Classification",
-      "Logical deduction",
+      "Necessary condition",
       "Number series",
       "Seating arrangement"
     ],
@@ -2389,15 +2389,15 @@
   },
   {
     "subject_id": 40,
-    "skill": "Logical deduction",
-    "prompt": "In Logical Reasoning, which term best matches this description: derives conclusions that must follow from given conditions?",
+    "skill": "Necessary condition",
+    "prompt": "In Logical Reasoning, which term best matches this description: states a requirement that must hold whenever an outcome occurs?",
     "choices": [
-      "Logical deduction",
+      "Necessary condition",
       "Coding-decoding",
       "Direction sense",
       "Classification"
     ],
-    "answer": "Logical deduction"
+    "answer": "Necessary condition"
   },
   {
     "subject_id": 41,
@@ -2418,7 +2418,7 @@
     "choices": [
       "Active voice",
       "Synonym",
-      "Parallel structure",
+      "Dangling modifier",
       "Reported speech"
     ],
     "answer": "Active voice"
@@ -2453,7 +2453,7 @@
     "prompt": "In English and Verbal Ability, which term best matches this description: identifies a word with opposite meaning?",
     "choices": [
       "Antonym",
-      "Parallel structure",
+      "Dangling modifier",
       "Reported speech",
       "Passive voice"
     ],
@@ -2473,15 +2473,15 @@
   },
   {
     "subject_id": 41,
-    "skill": "Parallel structure",
-    "prompt": "In English and Verbal Ability, which term best matches this description: uses matching grammatical forms for coordinated elements?",
+    "skill": "Dangling modifier",
+    "prompt": "In English and Verbal Ability, which term best matches this description: describes a modifier whose grammatical placement attaches it to the wrong subject?",
     "choices": [
-      "Parallel structure",
+      "Dangling modifier",
       "Conditional sentence",
       "Active voice",
       "Antonym"
     ],
-    "answer": "Parallel structure"
+    "answer": "Dangling modifier"
   },
   {
     "subject_id": 41,
@@ -2503,7 +2503,7 @@
       "Conditional sentence",
       "Subject-verb agreement",
       "Synonym",
-      "Parallel structure"
+      "Dangling modifier"
     ],
     "answer": "Conditional sentence"
   },
@@ -2549,7 +2549,7 @@
     "prompt": "In Web Development, which term best matches this description: arranges content in two-dimensional rows and columns?",
     "choices": [
       "CSS Grid",
-      "CORS",
+      "Same-origin policy",
       "Service worker",
       "Semantic HTML"
     ],
@@ -2569,15 +2569,15 @@
   },
   {
     "subject_id": 42,
-    "skill": "CORS",
-    "prompt": "In Web Development, which term best matches this description: uses response headers to control which web origins can read cross-origin responses?",
+    "skill": "Same-origin policy",
+    "prompt": "In Web Development, which term best matches this description: restricts how scripts from one web origin interact with documents from another origin?",
     "choices": [
-      "CORS",
+      "Same-origin policy",
       "WebSocket",
       "Content Security Policy",
       "CSS Grid"
     ],
-    "answer": "CORS"
+    "answer": "Same-origin policy"
   },
   {
     "subject_id": 42,
@@ -2599,7 +2599,7 @@
       "WebSocket",
       "Debouncing",
       "CSS Flexbox",
-      "CORS"
+      "Same-origin policy"
     ],
     "answer": "WebSocket"
   },
@@ -2634,7 +2634,7 @@
     "choices": [
       "Content Security Policy",
       "CSS Flexbox",
-      "CORS",
+      "Same-origin policy",
       "Service worker"
     ],
     "answer": "Content Security Policy"
@@ -2881,15 +2881,15 @@
   },
   {
     "subject_id": 45,
-    "skill": "Tool calling",
-    "prompt": "In AI Agents and Agentic Workflows, which term best matches this description: allows an agent to invoke a named external function with structured arguments?",
+    "skill": "Tool result validation",
+    "prompt": "In AI Agents and Agentic Workflows, which term best matches this description: checks external tool output against expected structure and trust constraints before agent use?",
     "choices": [
-      "Tool calling",
+      "Tool result validation",
       "Memory store",
       "Retrieval tool",
       "Guardrail"
     ],
-    "answer": "Tool calling"
+    "answer": "Tool result validation"
   },
   {
     "subject_id": 45,
@@ -2911,7 +2911,7 @@
       "Memory store",
       "Human-in-the-loop approval",
       "State machine",
-      "Tool calling"
+      "Tool result validation"
     ],
     "answer": "Memory store"
   },
@@ -2946,7 +2946,7 @@
     "choices": [
       "Retrieval tool",
       "State machine",
-      "Tool calling",
+      "Tool result validation",
       "Reflection loop"
     ],
     "answer": "Retrieval tool"
@@ -2981,7 +2981,7 @@
     "prompt": "In AI Agents and Agentic Workflows, which term best matches this description: enforces safety or correctness constraints on agent inputs and outputs?",
     "choices": [
       "Guardrail",
-      "Tool calling",
+      "Tool result validation",
       "Reflection loop",
       "Agent orchestration"
     ],
