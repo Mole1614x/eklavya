@@ -45,9 +45,9 @@ QUANT_EASY = (
 # Advanced terminology typically requires prior specialist study but the
 # definition-to-term format is still recognition, not full hard-level work.
 SPECIALIST_TERMS = re.compile(
-    r"\b(?:bellman.ford|amortiz|segment tree|disjoint.set|topological|"
-    r"eigen|hessian|jacobian|gradient accumulation|adamw|lora|qlora|"
-    r"quantiz|variational|diffusion|transformer|attention|"
+    r"\b(?:bellman.ford|amortiz\\w*|segment tree|disjoint.set|topological|"
+    r"eigen\\w*|hessian|jacobian|gradient accumulation|adamw|lora|qlora|"
+    r"quantiz\\w*|variational|diffusion|transformer|attention|"
     r"vector clock|exactly.once|distributed transaction|"
     r"two.phase commit|sharding|eventual consistency|"
     r"backpropagation|cross.entropy|bayesian|"
@@ -55,7 +55,7 @@ SPECIALIST_TERMS = re.compile(
     r"window function|recursive cte|isolation level|"
     r"cap theorem|raft|paxos|kalman|"
     r"causal inference|counterfactual|monte carlo|"
-    r"homomorph|elliptic curve|zero.knowledge|"
+    r"homomorph\\w*|elliptic curve|zero.knowledge|"
     r"fixed lod|include lod|exclude lod|"
     r"graph neural|mixed precision|"
     r"system design|circuit breaker|idempotency)\b",
@@ -69,7 +69,7 @@ BASIC_TERMS = re.compile(
     r"text classification|string|integer|list|tuple|"
     r"loop|variable|constructor|encapsulation|inheritance|"
     r"sum|count|minimum|maximum|file|directory|"
-    r"simple present|verb agreement|phrasal verb)",
+    r"simple present|verb agreement|phrasal verb)\\b",
     re.IGNORECASE,
 )
 
