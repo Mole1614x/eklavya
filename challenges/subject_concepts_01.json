@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 1,
+    "skill": "Boolean short-circuiting",
+    "description": "A logical operator may skip evaluation of the right operand when the left determines the result"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Sentinel-controlled loop",
+    "description": "A loop that stops when a designated input value is encountered"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Accumulator variable",
+    "description": "A variable updated repeatedly to collect a running total or aggregate"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Loop invariant",
+    "description": "A statement preserved before and after each loop iteration"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Off-by-one error",
+    "description": "A boundary mistake that performs one too many or too few iterations"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Integer division",
+    "description": "Division that discards the fractional portion according to the language's integer arithmetic rules"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Modulus operator",
+    "description": "An operation yielding a remainder from integer division"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Recursion base case",
+    "description": "A condition that stops recursive calls without making another recursive call"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Tail recursion",
+    "description": "A recursive function whose final operation is the recursive call itself"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Pure function",
+    "description": "A function whose result depends only on its inputs and which has no observable side effects"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Mutable data",
+    "description": "A value or object whose contents can change after creation"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Variable scope",
+    "description": "The region of a program where a binding is accessible by its name"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Lexical scope",
+    "description": "Name resolution determined by the nesting structure of source code"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Parameter passing",
+    "description": "The mechanism by which arguments become accessible inside a called function"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Exception propagation",
+    "description": "An unhandled error traveling outward through calling functions"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Input validation",
+    "description": "Checking whether incoming data satisfy an expected format and constraints"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Guard clause",
+    "description": "An early return or exit that handles an exceptional or edge case before the main logic"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Nested loop",
+    "description": "A loop placed inside the body of another loop"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Stable output formatting",
+    "description": "Producing the precise whitespace and value representation required by an interface"
+  },
+  {
+    "subject_id": 1,
+    "skill": "Boundary condition",
+    "description": "An input at the edge of the specified valid domain"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Amortized complexity",
+    "description": "Average cost per operation over a sequence including occasional expensive operations"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Hash collision",
+    "description": "Two distinct keys mapping to the same hash-table bucket or code"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Load factor",
+    "description": "The ratio of stored hash-table entries to available buckets"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Open addressing",
+    "description": "Resolving hash collisions by searching alternative positions in the same table"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Separate chaining",
+    "description": "Resolving hash collisions with a collection of entries per bucket"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Binary search tree invariant",
+    "description": "Keys in a node's left subtree compare smaller and right-subtree keys compare larger"
+  },
+  {
+    "subject_id": 2,
+    "skill": "AVL balance factor",
+    "description": "The difference between the heights of a node's left and right subtrees"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Heap invariant",
+    "description": "Each parent is ordered relative to its children according to min-heap or max-heap rules"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Topological ordering",
+    "description": "An ordering of DAG vertices where every directed edge points forward"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Dijkstra algorithm",
+    "description": "Finding shortest paths from one source when edge weights are nonnegative"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bellman-Ford algorithm",
+    "description": "Computing single-source shortest paths while permitting negative edge weights and detecting reachable negative cycles"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Kruskal algorithm",
+    "description": "Building a minimum spanning forest by adding safe edges in ascending weight order"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Disjoint-set union",
+    "description": "A structure supporting find-representative and merging components efficiently"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Trie data structure",
+    "description": "A prefix tree that stores strings by paths of characters or symbols"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sliding window",
+    "description": "Maintaining a contiguous range while incrementally updating its state"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Two-pointer technique",
+    "description": "Using indices that move through a sequence according to comparison conditions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Kadane algorithm",
+    "description": "Finding the maximum sum of a nonempty contiguous subarray in linear time"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Floyd-Warshall algorithm",
+    "description": "Dynamic programming that computes shortest paths between all pairs of vertices"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Memoization",
+    "description": "Caching results of function calls so overlapping subproblems are not recomputed"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Dynamic programming tabulation",
+    "description": "Solving smaller states first in a table to compute larger states"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Composition over inheritance",
+    "description": "Preferring object relationships and delegation when subclassing is unnecessary"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Polymorphic dispatch",
+    "description": "Selecting an implementation at runtime based on the receiving object's type"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Constructor injection",
+    "description": "Supplying an object's dependencies as constructor arguments"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Interface segregation",
+    "description": "Dividing large contracts into focused interfaces clients actually need"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Liskov substitution",
+    "description": "Requiring replacement of a base instance by a subtype without violating expected behavior"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Open-closed principle",
+    "description": "Designing modules to allow extension without modifying established behavior"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Cohesion",
+    "description": "The degree to which a module's responsibilities belong together"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Coupling",
+    "description": "The extent to which one module depends on other modules"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Value object",
+    "description": "An object identified by its values rather than a persistent identity"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Entity object",
+    "description": "An object whose identity remains meaningful across state changes"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Method overloading",
+    "description": "Multiple methods sharing a name but differing in accepted parameter signatures where supported"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Information hiding",
+    "description": "Keeping implementation details inaccessible through public contracts"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Immutable object",
+    "description": "An object whose observable state cannot be modified after construction"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Abstract factory",
+    "description": "A construction pattern that creates related families of objects without naming concrete classes"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Dependency injection",
+    "description": "Supplying collaborators from outside instead of instantiating them internally"
+  },
+  {
+    "subject_id": 3,
+    "skill": "UML association",
+    "description": "A structural relationship between instances of classes in a model"
+  },
+  {
+    "subject_id": 3,
+    "skill": "UML aggregation",
+    "description": "A whole-part relationship where parts may exist independently of the whole"
+  },
+  {
+    "subject_id": 3,
+    "skill": "UML composition",
+    "description": "Strong whole-part ownership in which part lifecycle is linked to the whole"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Static method",
+    "description": "A method associated with a class or namespace rather than a particular instance"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Class invariant",
+    "description": "A property intended to remain true for all valid observable states of an object"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Candidate key",
+    "description": "A minimal set of attributes that uniquely identifies each row in a relation"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Surrogate key",
+    "description": "An artificial identifier chosen for uniqueness rather than business meaning"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Composite key",
+    "description": "A key formed from more than one column"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Foreign key constraint",
+    "description": "A rule requiring referencing values to match a candidate key or permitted null in the referenced relation"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Functional dependency",
+    "description": "A relation where one attribute set determines another attribute set"
+  },
+  {
+    "subject_id": 4,
+    "skill": "First normal form",
+    "description": "A relational design requirement that attribute values are atomic within the chosen domain"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Second normal form",
+    "description": "First normal form plus no non-key attribute dependent on a proper subset of a candidate key"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Third normal form",
+    "description": "A normalization condition that removes specified transitive dependencies of non-prime attributes on keys"
+  },
+  {
+    "subject_id": 4,
+    "skill": "BCNF",
+    "description": "A relation is in Boyce-Codd normal form when every nontrivial functional dependency has a superkey determinant"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Window function",
+    "description": "A calculation over rows related to each current row without collapsing them to a single group row"
+  },
+  {
+    "subject_id": 4,
+    "skill": "CTE",
+    "description": "A named query expression defined with WITH for use within a SQL statement"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Correlated subquery",
+    "description": "A nested query that refers to columns from its outer query"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Covering index",
+    "description": "An index containing the columns required to satisfy a query without fetching base rows"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Clustered index",
+    "description": "An index that determines or corresponds to the physical organization of table rows in some database systems"
+  },
+  {
+    "subject_id": 4,
+    "skill": "MVCC",
+    "description": "Multiversion concurrency control that allows transactions to observe appropriate row versions"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Dirty read",
+    "description": "Reading a value written by another transaction before that transaction commits"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Phantom read",
+    "description": "A repeated query encountering new or missing matching rows due to concurrent transactions"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Write-ahead logging",
+    "description": "Recording changes in a recovery log before they are applied to persistent data pages"
+  },
+  {
+    "subject_id": 4,
+    "skill": "EXPLAIN plan",
+    "description": "A database engine's description of how it intends to execute a query"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Upsert",
+    "description": "An operation that inserts a missing row or updates a row on a conflict"
+  },
+  {
+    "subject_id": 5,
+    "skill": "Broadcasting rules",
+    "description": "Dimension compatibility requires matching lengths or a dimension of size one"
+  },
+  {
+    "subject_id": 5,
+    "skill": "View versus copy",
+    "description": "A view may share memory with its original array whereas a copy owns distinct storage"
+  },
+  {
+    "subject_id": 5,
+    "skill": "Boolean mask",
+    "description": "An array of truth values used to select elements conditionally"
+  },
+  {
+    "subject_id": 5,
+    "skill": "Fancy indexing",
+    "description": "Selecting elements using arrays of integer indices"
+  },
+  {
+    "subject_id": 5,
+    "skill": "C-order flattening",
+    "description": "Flattening a multidimensional array in row-major order"
+  },
+  {
+    "subject_id": 5,
+    "skill": "Fortran-order flattening",
+    "description": "Flattening a multidimensional array in column-major order"
+  },
+  {
+    "subject_id": 5,
+    "skill": "Stride",
+    "description": "The number of bytes stepped when moving one element along a particular array axis"
+  },
+  {
+    "subject_id": 5,
+    "skill": "Memory contiguity",
+    "description": "Whether array elements are laid out in a contiguous order according to a memory convention"
+  },
+  {
+    "subject_id": 5,
+    "skill": "Vectorization",
+    "description": "Expressing bulk operations as array operations rather than explicit Python loops"
+  },
+  {
+    "subject_id": 5,
+    "skill": "einsum",
+    "description": "A notation-based array contraction function for sums and products across dimensions"
+  },
+  {
+    "subject_id": 5,
+    "skill": "take_along_axis",
+    "description": "Gathering array values using index arrays aligned to a specified axis"
+  },
+  {
+    "subject_id": 5,
+    "skill": "lexsort",
+    "description": "Indirect stable sorting by a sequence of keys with the last key primary"
+  },
+  {
+    "subject_id": 5,
+    "skill": "searchsorted",
+    "description": "Finding insertion positions that preserve an array's sorted order"
+  },
+  {
+    "subject_id": 5,
+    "skill": "nanmean",
+    "description": "Computing an arithmetic mean while ignoring NaN entries"
+  },
+  {
+    "subject_id": 5,
+    "skill": "clip",
+    "description": "Limiting numeric array values to specified lower and upper bounds"
+  },
+  {
+    "subject_id": 5,
+    "skill": "where",
+    "description": "Selecting array values conditionally from two candidate expressions"
+  },
+  {
+    "subject_id": 5,
+    "skill": "meshgrid",
+    "description": "Creating coordinate matrices from one-dimensional coordinate arrays"
+  },
+  {
+    "subject_id": 5,
+    "skill": "tensordot",
+    "description": "Computing a generalized tensor contraction across designated axes"
+  },
+  {
+    "subject_id": 5,
+    "skill": "linalg_svd",
+    "description": "Singular value decomposition of a matrix into orthogonal factors and singular values"
+  },
+  {
+    "subject_id": 5,
+    "skill": "default_rng",
+    "description": "Constructing a modern NumPy random number generator with independent generator state"
+  }
+]
