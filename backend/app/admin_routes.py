@@ -34,6 +34,7 @@ from .schemas_admin import (
     AdminXPTransactionRead, AuditLogRead, ContestStatusUpdate, DatasetStatusUpdate, DatasetUpload,
     JudgeRecoveryRead, ProblemStatusUpdate, StudentAccessWrite, UserStatusUpdate,
 )
+from .problem_uniqueness import find_duplicates
 from .contest_routes import calculate_standings
 
 router = APIRouter(prefix="/admin", tags=["administration"])
@@ -257,6 +258,27 @@ def admin_problems(
     return [problem_summary(problem, db) for problem in problems]
 
 
+@router.get("/problems/duplicate-check")
+def check_problem_duplicate(
+    db: DB, admin: Admin,
+    title: Annotated[str, Query(min_length=1, max_length=160)],
+    category: Annotated[str, Query(min_length=1, max_length=24)],
+    format: Annotated[str, Query(min_length=1, max_length=24)],
+    topic: Annotated[str, Query(max_length=80)] = "",
+    description: Annotated[str, Query(max_length=1000)] = "",
+    exclude_slug: Annotated[str, Query(max_length=100)] = "",
+) -> dict:
+    """Conservative matches only. A shared learning path must reference existing slugs."""
+    del admin
+    categories = ["foundations", "code"] if category in {"foundations", "code"} else [category]
+    candidates = db.scalars(select(Problem).where(Problem.category.in_(categories))).all()
+    proposal = {
+        "slug": exclude_slug, "title": title, "category": category,
+        "format": format, "topic": topic, "description": description,
+    }
+    return {"duplicates": find_duplicates(proposal, candidates)}
+
+
 @router.get("/problems/{slug}", response_model=AdminProblemDetail)
 def admin_problem(slug: str, db: DB, admin: Admin) -> dict:
     del admin
@@ -283,6 +305,35 @@ def save_problem(slug: str, payload: AdminProblemWrite, request: Request, db: DB
     problem = db.get(Problem, slug)
     if problem is not None:
         prevent_unconfirmed_inline_change(db, problem, "problem", payload.model_fields_set, payload.access_scope, payload.assigned_user_ids)
+    if problem is None or any(
+        field in payload.model_fields_set
+        for field in ("title", "description", "category", "topic", "format")
+    ):
+        categories = ["foundations", "code"] if payload.category in {"foundations", "code"} else [payload.category]
+        candidates = db.scalars(select(Problem).where(Problem.category.in_(categories))).all()
+        proposal = payload.model_dump() | {"slug": slug}
+        duplicates = find_duplicates(proposal, candidates)
+        # Edits to the existing grandfathered legacy pair are permitted only
+        # when the question's identity is unchanged.
+        if problem is not None and {
+            "title": payload.title, "description": payload.description,
+            "category": payload.category, "topic": payload.topic, "format": payload.format,
+        } == {
+            "title": problem.title, "description": problem.description,
+            "category": problem.category, "topic": problem.topic, "format": problem.format,
+        }:
+            duplicates = []
+        if duplicates:
+            conflict = duplicates[0]
+            raise HTTPException(
+                status_code=409,
+                detail={
+                    "message": "This question already exists. Edit or reuse the existing problem instead of creating a duplicate.",
+                    "existing_slug": conflict["slug"],
+                    "existing_title": conflict["title"],
+                    "reason": conflict["reason"],
+                },
+            )
     action = "problem.update" if problem else "problem.create"
     values = payload.model_dump(exclude={"starters", "test_cases", "evaluator", "assigned_user_ids"})
     if problem is not None and "access_scope" not in payload.model_fields_set:
