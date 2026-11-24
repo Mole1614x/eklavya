@@ -240,3 +240,44 @@ def test_stuck_judge_recovery_is_audited_and_idempotent(admin_client):
     with Session(engine) as db:
         assert db.get(Submission, "stuck-admin-recovery").status == "QUEUED"
         assert db.scalar(select(AuditLog.id).where(AuditLog.action == "judge.recover_stuck")) is not None
+
+
+def test_duplicate_detection_reuses_existing_problem_instead_of_creating_copy(admin_client):
+    client, engine, headers, _ = admin_client
+    original = problem_payload()
+    first = client.put("/api/v1/admin/problems/admin-managed-sum",
+                       headers=headers["admin"], json=original)
+    assert first.status_code == 200, first.text
+
+    candidate = {**original, "title": "Admin: managed SUM!"}
+    duplicate = client.put("/api/v1/admin/problems/admin-managed-sum-copy",
+                           headers=headers["admin"], json=candidate)
+    assert duplicate.status_code == 409, duplicate.text
+    assert duplicate.json()["detail"]["existing_slug"] == "admin-managed-sum"
+    assert client.get("/api/v1/admin/problems/admin-managed-sum-copy",
+                      headers=headers["admin"]).status_code == 404
+
+    check = client.get("/api/v1/admin/problems/duplicate-check",
+                       params={"title": "Admin managed sum", "category": "foundations",
+                               "topic": "Administration", "format": "CODE"},
+                       headers=headers["admin"])
+    assert check.status_code == 200, check.text
+    assert check.json()["duplicates"][0]["slug"] == "admin-managed-sum"
+
+    forbidden = client.get("/api/v1/admin/problems/duplicate-check",
+                           params={"title": "Admin managed sum", "category": "foundations",
+                                   "format": "CODE"}, headers=headers["learner"])
+    assert forbidden.status_code == 403
+
+    edited = client.put("/api/v1/admin/problems/admin-managed-sum",
+                        headers=headers["admin"], json=original | {
+                            "description": "Read two integers and print their exact arithmetic sum."
+                        })
+    assert edited.status_code == 200, edited.text
+
+    distinct = client.put("/api/v1/admin/problems/unique-even-sum",
+                          headers=headers["admin"], json=original | {
+                              "title": "Sum of Positive Even Numbers",
+                              "description": "Read N and sum strictly positive even integers up to N.",
+                          })
+    assert distinct.status_code == 200, distinct.text
