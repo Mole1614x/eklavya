@@ -101,3 +101,50 @@ def test_database_outage_returns_generic_error():
         assert response.json()["request_id"] == response.headers["x-request-id"]
     finally:
         app.dependency_overrides.pop(get_db)
+
+
+def test_problem_navigation_uses_catalog_order_and_page_boundaries(client):
+    first_page = client.get("/api/v1/problems", params={"limit": 2}).json()
+    first, second = first_page["items"]
+    first_nav = client.get(f"/api/v1/problems/{first['slug']}/navigation")
+    assert first_nav.status_code == 200
+    assert first_nav.json() == {
+        "previous": None, "next": second["slug"], "position": 1, "total": 2531,
+    }
+    second_nav = client.get(f"/api/v1/problems/{second['slug']}/navigation")
+    assert second_nav.json()["previous"] == first["slug"]
+    assert second_nav.json()["position"] == 2
+
+    # Navigation continues across 50-question catalogue pages.
+    last_of_page = client.get("/api/v1/problems", params={"limit": 1, "offset": 49}).json()["items"][0]
+    first_of_next = client.get("/api/v1/problems", params={"limit": 1, "offset": 50}).json()["items"][0]
+    assert client.get(f"/api/v1/problems/{last_of_page['slug']}/navigation").json()["next"] == first_of_next["slug"]
+    assert client.get(f"/api/v1/problems/{first_of_next['slug']}/navigation").json()["previous"] == last_of_page["slug"]
+
+    last = client.get("/api/v1/problems", params={"limit": 1, "offset": 2530}).json()["items"][0]
+    last_nav = client.get(f"/api/v1/problems/{last['slug']}/navigation").json()
+    assert last_nav["next"] is None
+    assert last_nav["position"] == 2531
+    assert last_nav["total"] == 2531
+
+
+def test_problem_navigation_respects_filters_and_does_not_leak_unknown_problems(client):
+    single = client.get("/api/v1/problems/star-staircase/navigation", params={
+        "category": "foundations", "difficulty": "Beginner", "topic": "Patterns",
+        "q": "Star Staircase",
+    })
+    assert single.status_code == 200
+    assert single.json() == {"previous": None, "next": None, "position": 1, "total": 1}
+
+    # The same slug can be viewed directly but is not part of unrelated filtered results.
+    assert client.get("/api/v1/problems/parity-check/navigation", params={"q": "Star Staircase"}).status_code == 404
+    assert client.get("/api/v1/problems/does-not-exist/navigation").status_code == 404
+    assert client.get("/api/v1/problems/parity-check/navigation", params={"subject": "not-a-subject"}).status_code == 422
+
+    subjects = client.get("/api/v1/problems", params={"subject": "numpy", "limit": 2}).json()
+    assert len(subjects["items"]) == 2
+    first, second = subjects["items"]
+    neighbors = client.get(f"/api/v1/problems/{first['slug']}/navigation", params={"subject": "numpy"}).json()
+    assert neighbors["previous"] is None
+    assert neighbors["next"] == second["slug"]
+    assert neighbors["total"] == subjects["total"]
