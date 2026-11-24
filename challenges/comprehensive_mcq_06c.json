@@ -941,7 +941,7 @@
     "prompt": "Which technical term accurately matches this description: tests whether a column has exactly one distinct visible value?",
     "choices": [
       "HASONEVALUE",
-      "KEEPFILTERS",
+      "ISINSCOPE",
       "GENERATE",
       "TOTALYTD"
     ],
@@ -997,15 +997,15 @@
   },
   {
     "subject_id": 18,
-    "skill": "KEEPFILTERS",
-    "prompt": "Which technical term accurately matches this description: adds a DAX filter constraint without replacing existing constraints?",
+    "skill": "ISINSCOPE",
+    "prompt": "Which technical term accurately matches this description: tests whether a model column is active at the current level of a visual grouping hierarchy?",
     "choices": [
-      "KEEPFILTERS",
+      "ISINSCOPE",
       "ADDCOLUMNS",
       "TOTALYTD",
       "RELATEDTABLE"
     ],
-    "answer": "KEEPFILTERS"
+    "answer": "ISINSCOPE"
   },
   {
     "subject_id": 18,
@@ -1255,7 +1255,7 @@
       "Inactive relationship",
       "DirectQuery",
       "HASONEVALUE",
-      "KEEPFILTERS"
+      "ISINSCOPE"
     ],
     "answer": "Inactive relationship"
   },
@@ -1314,7 +1314,7 @@
     "choices": [
       "DirectQuery",
       "SELECTEDVALUE",
-      "KEEPFILTERS",
+      "ISINSCOPE",
       "ADDCOLUMNS"
     ],
     "answer": "DirectQuery"
@@ -2442,7 +2442,7 @@
     "choices": [
       "Bronze layer",
       "Snapshot fact table",
-      "Fact grain",
+      "Semi-additive measure",
       "Data validation rule"
     ],
     "answer": "Bronze layer"
@@ -2513,7 +2513,7 @@
     "prompt": "Which technical term accurately matches this description: tracks milestone dates and statuses for a process lifecycle?",
     "choices": [
       "Accumulating snapshot",
-      "Fact grain",
+      "Semi-additive measure",
       "Reject table",
       "Soft delete"
     ],
@@ -2569,15 +2569,15 @@
   },
   {
     "subject_id": 25,
-    "skill": "Fact grain",
-    "prompt": "Which technical term accurately matches this description: specifies exactly what one row of a fact table represents?",
+    "skill": "Semi-additive measure",
+    "prompt": "Which technical term accurately matches this description: can be summed across some dimensions but not others such as time?",
     "choices": [
-      "Fact grain",
+      "Semi-additive measure",
       "Data validation rule",
       "Soft delete",
       "Reprocessing window"
     ],
-    "answer": "Fact grain"
+    "answer": "Semi-additive measure"
   },
   {
     "subject_id": 25,
@@ -2827,7 +2827,7 @@
       "Kimball dimensional model",
       "Bronze layer",
       "Accumulating snapshot",
-      "Fact grain"
+      "Semi-additive measure"
     ],
     "answer": "Kimball dimensional model"
   }
