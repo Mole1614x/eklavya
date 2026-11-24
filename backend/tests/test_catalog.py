@@ -8,8 +8,10 @@ from sqlalchemy.orm import Session
 
 from app.database import Base
 from app.main import app, get_db
-from app.models import Problem
+from app.models import Problem, Profile, Submission, User
 from app.seed import seed
+from app.catalog import list_problems
+from app.knowledge_difficulty import knowledge_difficulty
 
 
 @pytest.fixture
@@ -148,3 +150,91 @@ def test_problem_navigation_respects_filters_and_does_not_leak_unknown_problems(
     assert neighbors["previous"] is None
     assert neighbors["next"] == second["slug"]
     assert neighbors["total"] == subjects["total"]
+
+
+
+def test_catalog_orders_beginner_easy_medium_hard_and_navigation_matches(client):
+    levels = {"Beginner": 0, "Easy": 1, "Medium": 2, "Hard": 3}
+    first = client.get("/api/v1/problems", params={"limit": 100}).json()["items"]
+    next_page = client.get("/api/v1/problems", params={"limit": 100, "offset": 100}).json()["items"]
+    scores = [levels[item["difficulty"]] for item in first + next_page]
+    assert scores == sorted(scores)
+
+    # Both listing and navigation agree even across a difficulty-tier boundary.
+    expected = []
+    for offset in range(0, 2531, 100):
+        expected.extend(client.get("/api/v1/problems", params={"limit": 100, "offset": offset}).json()["items"])
+    assert len(expected) == 2531
+    assert set(item["difficulty"] for item in expected) == set(levels)
+    assert [levels[item["difficulty"]] for item in expected] == sorted(
+        levels[item["difficulty"]] for item in expected
+    )
+    for index in (0, 49, 50, 200, 201, 500, 1000, 1500, 2000, 2530):
+        current = expected[index]
+        neighbors = client.get(f"/api/v1/problems/{current['slug']}/navigation").json()
+        assert neighbors["position"] == index + 1
+        assert neighbors["previous"] == (expected[index - 1]["slug"] if index else None)
+        assert neighbors["next"] == (expected[index + 1]["slug"] if index + 1 < len(expected) else None)
+
+
+def test_knowledge_check_difficulty_comes_from_skill_not_hardcoded_easy(db):
+    levels = set(db.scalars(select(Problem.difficulty).where(Problem.format == "MULTIPLE_CHOICE")).all())
+    assert levels == {"Beginner", "Easy", "Medium", "Hard"}
+    assert knowledge_difficulty(
+        {"skill": "Array left-rotation 5", "prompt": "An array is rotated left twice."},
+        "comprehensive_mcq_05_calculated.json",
+    ) == "Beginner"
+    assert knowledge_difficulty(
+        {"skill": "F1 calculation 21", "prompt": "Calculate F1 using precision and recall."},
+        "comprehensive_mcq_05_calculated.json",
+    ) == "Hard"
+    assert knowledge_difficulty(
+        {"skill": "AdamW optimizer", "prompt": "Identify the technique."},
+        "comprehensive_mcq_06b.json",
+    ) == "Medium"
+    assert knowledge_difficulty(
+        {"skill": "Operator precedence", "prompt": "2 + 3 * 4?", "difficulty": "Hard"},
+        "comprehensive_mcq_01.json",
+    ) == "Hard"
+
+
+def test_solved_badges_require_own_accepted_finished_submit(db):
+    user = User(
+        email="solves@example.com", username="solves", password_hash="unused",
+        profile=Profile(display_name="Solves"),
+    )
+    another = User(
+        email="other@example.com", username="other", password_hash="unused",
+        profile=Profile(display_name="Other"),
+    )
+    db.add_all([user, another])
+    db.flush()
+    db.add_all([
+        Submission(id="solved-parity", user_id=user.id, problem_slug="parity-check",
+                   language="python", source_code="pass", mode="SUBMIT",
+                   status="FINISHED", verdict="ACCEPTED"),
+        Submission(id="only-run", user_id=user.id, problem_slug="star-staircase",
+                   language="python", source_code="", mode="RUN",
+                   status="FINISHED", verdict="ACCEPTED"),
+        Submission(id="failed-submit", user_id=user.id, problem_slug="sum-of-digits",
+                   language="python", source_code="", mode="SUBMIT",
+                   status="FINISHED", verdict="WRONG_ANSWER"),
+        Submission(id="queued-submit", user_id=user.id, problem_slug="hollow-square",
+                   language="python", source_code="", mode="SUBMIT",
+                   status="QUEUED", verdict=None),
+        Submission(id="other-users-solve", user_id=another.id, problem_slug="star-staircase",
+                   language="python", source_code="", mode="SUBMIT",
+                   status="FINISHED", verdict="ACCEPTED"),
+    ])
+    db.flush()
+    for name, should_be_solved in (
+        ("parity-check", True), ("star-staircase", False),
+        ("sum-of-digits", False), ("hollow-square", False),
+    ):
+        result = list_problems(
+            db, search=name.replace("-", " "), category=None,
+            difficulty=None, topic=None, limit=50, offset=0, viewer=user,
+        )
+        assert (name in result.solved_slugs) is should_be_solved
+    public = list_problems(db, "", None, None, None, 100, 0)
+    assert public.solved_slugs == []
