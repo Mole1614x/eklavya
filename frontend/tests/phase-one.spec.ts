@@ -15,7 +15,7 @@ test("navigation reaches every Phase 1 section", async ({ page }) => {
 
 test("catalog filtering opens a working Monaco editor and honest statuses", async ({ page }) => {
   await page.goto("/problems");
-  await expect(page.getByRole("heading", { name: "1212 problems" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "2527 problems" })).toBeVisible();
   await page.getByRole("searchbox").fill("Star Staircase");
   await page.getByLabel("Category").selectOption("foundations");
   await page.getByLabel("Difficulty").selectOption("Beginner");
