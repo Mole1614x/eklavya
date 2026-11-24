@@ -1,0 +1,332 @@
+[
+  {
+    "subject_id": 25,
+    "skill": "Data freshness SLA",
+    "description": "A service expectation defining how recently source changes must appear in downstream analytical tables"
+  },
+  {
+    "subject_id": 25,
+    "skill": "CDC watermark offset",
+    "description": "A progress marker recording the most recently replicated source change"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Source row hash",
+    "description": "A digest of selected record fields used to detect changes or mismatches"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Record count reconciliation",
+    "description": "Comparing expected and actual record totals across ingestion stages"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Reverse ETL",
+    "description": "Sending curated warehouse data back into operational business applications"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Schema on read",
+    "description": "Interpreting stored data structure when it is queried rather than enforcing it during ingestion"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Schema on write",
+    "description": "Validating and shaping incoming data into a fixed schema before storage"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP PATCH",
+    "description": "Applying a partial modification to a resource according to the request's patch format"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP OPTIONS",
+    "description": "Discovering supported communication options or preflight permissions for a resource"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP DELETE idempotence",
+    "description": "The intended resource deletion effect remains the same across identical repeated requests"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 429",
+    "description": "A response status indicating a client has exceeded an applicable request rate limit"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP Retry After",
+    "description": "A response field suggesting how long a client should wait before a subsequent attempt"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 503",
+    "description": "A response status indicating the server is temporarily unable to handle the request"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP problem details",
+    "description": "A standardized structured representation of machine-readable API error information"
+  },
+  {
+    "subject_id": 33,
+    "skill": "NUMA memory architecture",
+    "description": "A multi-processor memory layout with different access latencies to local and remote memory"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Page cache",
+    "description": "Kernel-managed memory holding recently used filesystem data to reduce physical I/O"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Memory mapped file",
+    "description": "A file whose contents are exposed through a process virtual address range"
+  },
+  {
+    "subject_id": 33,
+    "skill": "epoll",
+    "description": "A Linux event notification interface for efficiently monitoring many file descriptors"
+  },
+  {
+    "subject_id": 33,
+    "skill": "File descriptor limit",
+    "description": "A per-process or system-wide cap on simultaneously open handles"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Asynchronous I/O",
+    "description": "I/O operations whose completion can be collected separately from request initiation"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Kernel scheduler affinity",
+    "description": "Restricting which CPU cores may execute a selected thread or process"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNSSEC",
+    "description": "Cryptographic signatures verifying authenticity of selected DNS responses"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS CNAME record",
+    "description": "A DNS alias record mapping one domain name to another canonical name"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS MX record",
+    "description": "A DNS record specifying mail exchange servers for a domain"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TLS SNI",
+    "description": "A TLS extension communicating the requested hostname during connection setup"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP window scaling",
+    "description": "A negotiated option allowing receive windows larger than the original header field"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Explicit congestion notification",
+    "description": "Signaling network congestion through packet markings rather than solely through drops"
+  },
+  {
+    "subject_id": 34,
+    "skill": "HTTP 3",
+    "description": "An HTTP protocol version transported over QUIC instead of TCP"
+  },
+  {
+    "subject_id": 35,
+    "skill": "HSTS",
+    "description": "A browser security policy requiring HTTPS for eligible future connections to a host"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Content security policy header",
+    "description": "A browser-enforced restriction on permitted script and resource sources"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Security headers",
+    "description": "HTTP response fields configuring browser defenses against selected web attacks"
+  },
+  {
+    "subject_id": 35,
+    "skill": "OAuth scope enforcement",
+    "description": "Limiting an access token's effective operations to its granted permissions"
+  },
+  {
+    "subject_id": 35,
+    "skill": "JWT signature validation",
+    "description": "Checking a signed token's authenticity before trusting its claims"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Object level authorization",
+    "description": "Verifying that a user may access the specific requested record rather than only the endpoint"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Security rate limiting",
+    "description": "Restricting abusive request volumes to protect authentication and service resources"
+  },
+  {
+    "subject_id": 42,
+    "skill": "IntersectionObserver",
+    "description": "A browser API delivering callbacks when an element's intersection with a root viewport changes"
+  },
+  {
+    "subject_id": 42,
+    "skill": "ResizeObserver",
+    "description": "A browser API reporting changes in an observed element's rendered size"
+  },
+  {
+    "subject_id": 42,
+    "skill": "MutationObserver",
+    "description": "A browser API reporting selected changes to DOM tree structure or attributes"
+  },
+  {
+    "subject_id": 42,
+    "skill": "RequestAnimationFrame",
+    "description": "A browser scheduling method aligning visual updates with rendering frames"
+  },
+  {
+    "subject_id": 42,
+    "skill": "AbortController",
+    "description": "An API for signaling cancellation to compatible asynchronous operations"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Fetch API",
+    "description": "A promise-based browser interface for making HTTP requests"
+  },
+  {
+    "subject_id": 42,
+    "skill": "History API",
+    "description": "An interface for manipulating the active browser session history without full navigation"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Web Storage localStorage",
+    "description": "Persistent same-origin key-value storage accessible through synchronous browser APIs"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Web Storage sessionStorage",
+    "description": "Per-tab session-scoped same-origin key-value storage"
+  },
+  {
+    "subject_id": 42,
+    "skill": "IndexedDB",
+    "description": "An asynchronous transactional database for structured data in browsers"
+  },
+  {
+    "subject_id": 42,
+    "skill": "BroadcastChannel",
+    "description": "A browser API sending messages among browsing contexts on the same origin"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Web Worker",
+    "description": "A script running off the main UI thread with message-based communication"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Web Components custom elements",
+    "description": "A browser feature defining reusable elements with custom behavior"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Shadow DOM slot",
+    "description": "A placeholder enabling light-DOM content to appear within a shadow component's composed tree"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CustomEvent",
+    "description": "A browser event type allowing applications to carry custom event detail values"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Pointer events",
+    "description": "A unified event model for mouse, pen and touch pointer interactions"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Web performance navigation timing",
+    "description": "Browser measurements recording navigation and page loading event timings"
+  },
+  {
+    "subject_id": 43,
+    "skill": "AARRR framework",
+    "description": "A product growth model examining acquisition, activation, retention, referral and revenue"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Conversion lift",
+    "description": "Relative change in conversion rate between two compared experiences"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Marketing mix modeling",
+    "description": "A statistical approach estimating contributions of marketing channels to aggregate outcomes"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Marginal ROI",
+    "description": "The return attributable to one additional unit of investment"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Cross sell rate",
+    "description": "The share of eligible customers purchasing a complementary product"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Upsell rate",
+    "description": "The share of eligible customers upgrading to a higher-value offering"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Retention cohort quality",
+    "description": "Comparing persistence of customer groups acquired during different starting periods"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent memory retrieval",
+    "description": "Selecting relevant stored context rather than replaying every past interaction"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent plan validator",
+    "description": "Checking whether a proposed action sequence satisfies prerequisites and constraints"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent tool whitelist",
+    "description": "An explicit list restricting which external operations a workflow may invoke"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent secret boundary",
+    "description": "Controls preventing tool or model access to credentials beyond its permitted scope"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent interrupt resume",
+    "description": "Pausing execution safely and restoring approved work from a checkpoint"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent state schema",
+    "description": "A typed definition of fields carried across workflow nodes"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent execution audit",
+    "description": "A durable record of actions and authorizations enabling accountability"
+  }
+]
