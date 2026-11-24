@@ -178,8 +178,17 @@ def test_catalog_orders_beginner_easy_medium_hard_and_navigation_matches(client)
 
 
 def test_knowledge_check_difficulty_comes_from_skill_not_hardcoded_easy(db):
-    levels = set(db.scalars(select(Problem.difficulty).where(Problem.format == "MULTIPLE_CHOICE")).all())
-    assert levels == {"Beginner", "Easy", "Medium", "Hard"}
+    generated = db.scalars(select(Problem.difficulty).where(
+        Problem.slug.like("knowledge-%"), Problem.format == "MULTIPLE_CHOICE",
+    )).all()
+    assert len(generated) == 2294
+    # Check *generated* knowledge questions, not just the original authored
+    # programming exercises that already had varied difficulty metadata.
+    levels = Counter(generated)
+    assert set(levels) == {"Beginner", "Easy", "Medium", "Hard"}
+    assert levels["Beginner"] > 20
+    assert levels["Medium"] > 20
+    assert levels["Hard"] > 20
     assert knowledge_difficulty(
         {"skill": "Array left-rotation 5", "prompt": "An array is rotated left twice."},
         "comprehensive_mcq_05_calculated.json",
