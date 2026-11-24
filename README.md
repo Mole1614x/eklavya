@@ -239,3 +239,12 @@ Existing restricted assessments are preserved by migration. The admin panel
 provides a searchable reusable learner selector and requires confirmation
 before changing a published audience. See
 [Student access and assignment documentation](docs/STUDENT_ACCESS.md).
+
+
+## Logic-building curriculum
+
+EKLAVYA includes a structured **100-question logic-building roadmap** covering
+basic programming, number logic, pattern programming, strings, arrays, sorting,
+recursion, and interview questions. It reuses four existing problems and adds
+96 judge-backed problems under seven published learning paths. See
+[Logic Building Curriculum](docs/LOGIC_BUILDING_CURRICULUM.md).
