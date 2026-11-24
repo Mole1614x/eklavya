@@ -13,7 +13,19 @@ test("authenticated session rotates across BFF routes and protects profile data"
   await page.getByRole("button", { name: "Create account" }).click();
 
   await expect(page).toHaveURL(/\/dashboard$/);
-  await page.goto("/profile");
+  const accountMenuButton = page.getByRole("button", { name: "Account menu" });
+  await expect(accountMenuButton).toBeVisible();
+  await accountMenuButton.click();
+  const accountOptions = page.getByRole("navigation", { name: "Account options" });
+  await expect(accountMenuButton).toHaveAttribute("aria-expanded", "true");
+  await expect(accountOptions.getByRole("link", { name: "My Profile" })).toBeVisible();
+  await expect(accountOptions.getByRole("button", { name: "Log out" })).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(accountMenuButton).toHaveAttribute("aria-expanded", "false");
+  await expect(accountOptions).toHaveCount(0);
+  await accountMenuButton.click();
+  await accountOptions.getByRole("link", { name: "My Profile" }).click();
+  await expect(page).toHaveURL(/\/profile$/);
   await expect(page.getByRole("heading", { name: displayName })).toBeVisible();
   await expect(page.locator('[data-profile-design="studio-glass-v2"]')).toBeVisible();
   await expect(page.locator(".lp-hero")).toBeVisible();
@@ -58,8 +70,11 @@ test("authenticated session rotates across BFF routes and protects profile data"
   await expect(restricted).toContainText("restricted to administrators");
   await page.goto("/profile");
 
-  await page.getByRole("button", { name: "Sign out" }).click();
+  await accountMenuButton.click();
+  await expect(accountOptions.getByRole("button", { name: "Log out" })).toBeVisible();
+  await accountOptions.getByRole("button", { name: "Log out" }).click();
   await expect(page).toHaveURL(/\/auth$/);
+  await expect(page.getByRole("link", { name: "Sign in" })).toBeVisible();
   await page.goto("/profile");
   await expect(page).toHaveURL(/\/auth$/);
 });
