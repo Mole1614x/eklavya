@@ -642,3 +642,28 @@ h1, h2, h3 { color: #f8fafb; }
   .assessment-library-heading { align-items: stretch; flex-direction: column; }
   .assessment-record { padding: 14px; }
 }
+
+
+/* 45-subject catalogue: live coverage without implying unsupported engines. */
+.subject-catalogue { display: grid; gap: 25px; min-width: 0; }
+.subject-metrics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+.subject-metrics .card { display: grid; gap: 6px; padding: 18px; }
+.subject-metrics strong { color: #c6ff3d; font-size: clamp(22px,2.4vw,32px); letter-spacing: -.03em; }
+.subject-metrics span { color: #9cabb7; font-size: 12px; }
+.subject-catalogue-note { display: flex; align-items: flex-start; gap: 10px; color: #c8d4d9; font-size: 12px; line-height: 1.6; }
+.subject-catalogue-note svg { flex: 0 0 auto; color: #c6ff3d; }
+.subject-card-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
+.subject-card { padding: 18px; display: flex; flex-direction: column; min-width: 0; gap: 11px; }
+.subject-card-top { display: flex; align-items: center; justify-content: space-between; color: #a9bcb5; }
+.subject-card-top span { font-size: 10px; font-weight: 750; letter-spacing: .09em; }
+.subject-card h2 { font-size: 15px; line-height: 1.4; letter-spacing: -.01em; margin: 0; }
+.subject-card p { color: #93a3a9; font-size: 12px; }
+.subject-progress { width: 100%; height: 6px; border-radius: 30px; overflow: hidden; background: #303b41; }
+.subject-progress > div { background: #c6ff3d; height: 100%; border-radius: inherit; }
+.subject-card-counts { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 11px; }
+.subject-card-counts strong { font-weight: 700; color: #e6ede7; }
+.subject-card-counts span { color: #96a4ad; }
+.subject-card a { display: flex; align-items: center; gap: 6px; color: #c6ff3d; font-size: 12px; font-weight: 750; margin-top: auto; padding-top: 6px; }
+.subject-unavailable { font-size: 11px; color: #9eadaf; }
+@media (max-width: 1150px) { .subject-card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 700px) { .subject-card-grid { grid-template-columns: 1fr; } .subject-metrics { grid-template-columns: repeat(2,minmax(0,1fr)); } }
