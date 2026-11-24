@@ -36,7 +36,7 @@ export default async function SubjectsPage() {
         <div className="subject-card-counts"><strong>{subject.published_questions} published in this track</strong>
           <span>Target {subject.target}</span></div>
         {subject.published_questions > 0
-          ? <Link href={`/problems?topic=${encodeURIComponent(subject.name)}`}>
+          ? <Link href={`/problems?subject=${encodeURIComponent(subject.slug)}`}>
             Explore questions <ArrowUpRight size={16} />
           </Link>
           : <span className="subject-unavailable">No evaluated questions in this track yet</span>}
