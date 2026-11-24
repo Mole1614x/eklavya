@@ -20,6 +20,7 @@ from .auth_routes import router as auth_router
 from .main_dependencies import get_db
 from .models import Problem, Submission
 from .schemas import Catalog, Category, Difficulty, ProblemDetail
+from .subject_catalog import BY_SLUG
 from .submission_routes import router as submission_router
 from .gamification_routes import router as gamification_router
 from .learning_routes import router as learning_router
@@ -151,13 +152,15 @@ def problems(
     db: DB, q: Annotated[str, Query(max_length=100)] = "", category: Category | None = None,
     difficulty: Difficulty | None = None, topic: Annotated[str | None, Query(max_length=80)] = None,
     limit: Annotated[int, Query(ge=1, le=100)] = 50, offset: Annotated[int, Query(ge=0)] = 0,
-    viewer: OptionalUser = None,
+    viewer: OptionalUser = None, subject: Annotated[str | None, Query(max_length=100)] = None,
 ) -> Catalog:
-    key = cache_key("catalog", q.strip().lower(), category, difficulty, topic, limit, offset)
+    if subject and subject not in BY_SLUG:
+        raise HTTPException(status_code=422, detail="Unknown subject filter")
+    key = cache_key("catalog", q.strip().lower(), category, difficulty, topic, subject, limit, offset)
     cached = get_public(key) if viewer is None else None
     if cached is not None:
         return Catalog.model_validate(cached)
-    catalog = list_problems(db, q, category, difficulty, topic, limit, offset, viewer)
+    catalog = list_problems(db, q, category, difficulty, topic, limit, offset, viewer, subject=subject)
     if viewer is None: set_public(key, catalog.model_dump(mode="json"))
     return catalog
 
