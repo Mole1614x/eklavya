@@ -1,0 +1,407 @@
+[
+  {
+    "subject_id": 34,
+    "skill": "IPv4 private address",
+    "description": "An address in designated nonpublic ranges used inside private networks"
+  },
+  {
+    "subject_id": 34,
+    "skill": "IPv6 link local address",
+    "description": "An automatically scoped address used only on the local IPv6 network segment"
+  },
+  {
+    "subject_id": 34,
+    "skill": "IPv6 SLAAC",
+    "description": "Assigning IPv6 configuration from router advertisements without a stateful address server"
+  },
+  {
+    "subject_id": 34,
+    "skill": "IPv6 neighbor discovery",
+    "description": "ICMPv6 operations for address resolution, router discovery and reachability"
+  },
+  {
+    "subject_id": 34,
+    "skill": "MAC address",
+    "description": "A link-layer identifier associated with a network interface"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Ethernet frame",
+    "description": "A link-layer unit containing destination and source addresses, a type field and payload"
+  },
+  {
+    "subject_id": 34,
+    "skill": "VLAN tag",
+    "description": "A link-layer header identifying a virtual LAN membership"
+  },
+  {
+    "subject_id": 34,
+    "skill": "802.1Q trunk",
+    "description": "A link carrying frames assigned to more than one VLAN using tags"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Spanning tree protocol",
+    "description": "A mechanism blocking redundant layer-two paths to prevent bridging loops"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSPF",
+    "description": "A link-state routing protocol that computes shortest paths within an autonomous system"
+  },
+  {
+    "subject_id": 34,
+    "skill": "BGP",
+    "description": "An interdomain routing protocol exchanging reachability and policy information between autonomous systems"
+  },
+  {
+    "subject_id": 34,
+    "skill": "RIP",
+    "description": "A distance-vector routing protocol using hop counts as its metric"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Longest prefix match",
+    "description": "The router rule selecting the most specific matching route for a destination"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Traceroute",
+    "description": "Diagnosing network paths by observing responses to packets with constrained hop limits"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Packet fragmentation",
+    "description": "Splitting an IP datagram into smaller packets where protocol rules permit"
+  },
+  {
+    "subject_id": 34,
+    "skill": "PMTU discovery",
+    "description": "Discovering the usable packet size along a path to reduce fragmentation"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP retransmission",
+    "description": "Sending previously transmitted bytes again when loss or missing acknowledgment is detected"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP slow start",
+    "description": "Increasing a sender's congestion window rapidly from an initial value until a threshold or congestion signal"
+  },
+  {
+    "subject_id": 34,
+    "skill": "QUIC",
+    "description": "A UDP-based encrypted transport supporting multiplexed streams and connection migration"
+  },
+  {
+    "subject_id": 34,
+    "skill": "HTTP 2 multiplexing",
+    "description": "Carrying multiple logical request-response streams over one transport connection"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Symmetric encryption",
+    "description": "Encryption using the same secret key or equivalent shared secret for encryption and decryption"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Asymmetric encryption",
+    "description": "Encryption using related public and private cryptographic keys"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Authenticated encryption",
+    "description": "A cryptographic construction protecting both confidentiality and integrity of ciphertext"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Digital signature",
+    "description": "A public-key primitive verifying message authenticity and integrity with a signing key"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Hash collision resistance",
+    "description": "Difficulty of finding two distinct messages having the same digest"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Preimage resistance",
+    "description": "Difficulty of finding an input matching a chosen hash digest"
+  },
+  {
+    "subject_id": 35,
+    "skill": "HMAC",
+    "description": "A message authentication code constructed using a shared secret and cryptographic hash"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Key derivation function",
+    "description": "A cryptographic process deriving one or more keys from secret input material"
+  },
+  {
+    "subject_id": 35,
+    "skill": "PBKDF2",
+    "description": "A password-based key derivation method applying a pseudorandom function iteratively"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Argon2id",
+    "description": "A memory-hard password-hashing algorithm combining data-dependent and data-independent access"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Certificate authority",
+    "description": "An entity that signs digital certificates binding identities to public keys"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Certificate revocation",
+    "description": "Signaling that a previously issued certificate should no longer be trusted"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Perfect forward secrecy",
+    "description": "A property that protects past session traffic if a long-term key is later compromised"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Security misconfiguration",
+    "description": "An insecure default or configuration change that exposes a service unnecessarily"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Broken access control",
+    "description": "A defect allowing users to perform operations beyond their authorized permissions"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Insecure direct object reference",
+    "description": "A flaw exposing objects when identifiers are used without checking object-level authorization"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Supply chain attack",
+    "description": "Compromising software through dependencies, build systems or distribution channels"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Dependency vulnerability scan",
+    "description": "Inspecting third-party components against known vulnerability information"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Penetration testing",
+    "description": "Authorized attempts to exploit weaknesses in a defined target environment"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Security information and event management",
+    "description": "A system correlating security logs and alerts to support detection and response"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Read through cache",
+    "description": "A cache layer automatically retrieving missing values from an authoritative data source"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Request hedging",
+    "description": "Sending additional speculative requests to reduce long-tail latency under controlled conditions"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Tail latency",
+    "description": "The response time experienced by the slowest percentile of requests"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Service level indicator",
+    "description": "A measured quantity describing some aspect of service reliability"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Service level objective",
+    "description": "A target value or range for a service reliability indicator"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Service level agreement",
+    "description": "A contract specifying service expectations and possible consequences of missed performance"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Availability budget",
+    "description": "The expected proportion of time or requests a service may fail within its reliability target"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Retry storm",
+    "description": "Many clients repeatedly retrying a failing dependency and increasing overload"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Exponential backoff",
+    "description": "Increasing wait times between failed attempts according to an exponential schedule"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Jittered retry",
+    "description": "Adding randomness to retry timing to reduce synchronization among callers"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Request coalescing",
+    "description": "Combining concurrent equivalent operations into one shared backend request"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Distributed lock",
+    "description": "A coordination mechanism granting bounded exclusive access across separate processes"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Leader fencing token",
+    "description": "A monotonically changing value used to reject work from a stale leader"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Consensus quorum",
+    "description": "Enough participants to agree on a decision under a distributed protocol"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Raft log replication",
+    "description": "A consensus mechanism maintaining consistent replicated command logs through elected leaders"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Paxos",
+    "description": "A family of quorum-based consensus algorithms tolerating certain node failures"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Event sourcing",
+    "description": "Persisting state changes as an ordered sequence of events from which state can be rebuilt"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Smoke test",
+    "description": "A quick test establishing that basic application functions work after a build or deployment"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Sanity test",
+    "description": "A focused check that a changed feature behaves plausibly before broader testing"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Acceptance test",
+    "description": "A check demonstrating a system satisfies agreed stakeholder behavior criteria"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Load test",
+    "description": "A test measuring system behavior under expected or increased concurrent demand"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Stress test",
+    "description": "A test pushing a system beyond normal capacity to observe failure and recovery"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Soak test",
+    "description": "A long-duration workload test looking for degradation or resource leaks"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Chaos experiment",
+    "description": "An intentionally introduced failure used to study system resilience"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Penetration test",
+    "description": "A controlled security assessment attempting exploitation within authorized boundaries"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Fuzz testing",
+    "description": "Supplying malformed or diverse generated inputs to uncover robustness defects"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Differential testing",
+    "description": "Comparing outputs from independent implementations for equivalent inputs"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Metamorphic testing",
+    "description": "Checking relations between outputs under meaning-preserving or predictable input transformations"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test isolation",
+    "description": "Preventing shared state or environment from causing one test to affect another"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Hermetic test",
+    "description": "A test whose behavior depends only on controlled inputs and dependencies"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Flaky-test quarantine",
+    "description": "Temporarily separating unreliable tests while their nondeterminism is investigated"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test pyramid",
+    "description": "A testing strategy emphasizing many small fast tests supported by fewer broad integration tests"
+  },
+  {
+    "subject_id": 37,
+    "skill": "API contract fixture",
+    "description": "A stored request and response example used to verify interface compatibility"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Test coverage threshold",
+    "description": "A minimum measured coverage value required by a quality gate"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Interpreter pattern",
+    "description": "Representing a simple language grammar as a set of composable evaluators"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Null object pattern",
+    "description": "Providing a harmless implementation of an interface in place of a missing reference"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Object pool pattern",
+    "description": "Reusing a bounded collection of initialized objects to reduce creation overhead"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Repository pattern",
+    "description": "Hiding data-access details behind a collection-like domain interface"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Unit of work pattern",
+    "description": "Coordinating changes to several domain objects in one transaction boundary"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Event bus pattern",
+    "description": "Routing published events to interested components through a shared abstraction"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Service locator antipattern",
+    "description": "Hiding dependencies behind global lookup rather than explicit interfaces"
+  }
+]
