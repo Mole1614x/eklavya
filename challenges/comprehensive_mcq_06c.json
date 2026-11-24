@@ -1,0 +1,2834 @@
+[
+  {
+    "subject_id": 16,
+    "skill": "INDEX",
+    "prompt": "Which technical term accurately matches this description: returns a value at a specified row or column position in a reference?",
+    "choices": [
+      "INDEX",
+      "IF",
+      "TEXTJOIN",
+      "LEN"
+    ],
+    "answer": "INDEX"
+  },
+  {
+    "subject_id": 16,
+    "skill": "MATCH",
+    "prompt": "Which technical term accurately matches this description: finds a matching value's relative position inside a lookup range?",
+    "choices": [
+      "MATCH",
+      "IFS",
+      "CONCAT",
+      "TRIM"
+    ],
+    "answer": "MATCH"
+  },
+  {
+    "subject_id": 16,
+    "skill": "XMATCH",
+    "prompt": "Which technical term accurately matches this description: searches for a value's position with configurable match and search modes?",
+    "choices": [
+      "XMATCH",
+      "IFERROR",
+      "LEFT",
+      "SUBSTITUTE"
+    ],
+    "answer": "XMATCH"
+  },
+  {
+    "subject_id": 16,
+    "skill": "VLOOKUP",
+    "prompt": "Which technical term accurately matches this description: searches the first column of a range and returns a value from another column?",
+    "choices": [
+      "VLOOKUP",
+      "SUMPRODUCT",
+      "RIGHT",
+      "TEXT"
+    ],
+    "answer": "VLOOKUP"
+  },
+  {
+    "subject_id": 16,
+    "skill": "HLOOKUP",
+    "prompt": "Which technical term accurately matches this description: searches a table's first row and returns a corresponding cell from a specified lower row?",
+    "choices": [
+      "HLOOKUP",
+      "COUNTBLANK",
+      "MID",
+      "DATE"
+    ],
+    "answer": "HLOOKUP"
+  },
+  {
+    "subject_id": 16,
+    "skill": "IF",
+    "prompt": "Which technical term accurately matches this description: chooses between two calculation outputs using a Boolean condition?",
+    "choices": [
+      "IF",
+      "AVERAGEIFS",
+      "LEN",
+      "EOMONTH"
+    ],
+    "answer": "IF"
+  },
+  {
+    "subject_id": 16,
+    "skill": "IFS",
+    "prompt": "Which technical term accurately matches this description: tests several conditions in sequence and returns the result for the first true condition?",
+    "choices": [
+      "IFS",
+      "TEXTJOIN",
+      "TRIM",
+      "NETWORKDAYS"
+    ],
+    "answer": "IFS"
+  },
+  {
+    "subject_id": 16,
+    "skill": "IFERROR",
+    "prompt": "Which technical term accurately matches this description: replaces formula errors with a specified fallback value?",
+    "choices": [
+      "IFERROR",
+      "CONCAT",
+      "SUBSTITUTE",
+      "WORKDAY"
+    ],
+    "answer": "IFERROR"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SUMPRODUCT",
+    "prompt": "Which technical term accurately matches this description: adds products of corresponding elements from equal-sized arrays?",
+    "choices": [
+      "SUMPRODUCT",
+      "LEFT",
+      "TEXT",
+      "UNIQUE"
+    ],
+    "answer": "SUMPRODUCT"
+  },
+  {
+    "subject_id": 16,
+    "skill": "COUNTBLANK",
+    "prompt": "Which technical term accurately matches this description: counts empty cells in a specified range?",
+    "choices": [
+      "COUNTBLANK",
+      "RIGHT",
+      "DATE",
+      "SORT"
+    ],
+    "answer": "COUNTBLANK"
+  },
+  {
+    "subject_id": 16,
+    "skill": "AVERAGEIFS",
+    "prompt": "Which technical term accurately matches this description: averages numeric cells that satisfy several criteria ranges?",
+    "choices": [
+      "AVERAGEIFS",
+      "MID",
+      "EOMONTH",
+      "SORTBY"
+    ],
+    "answer": "AVERAGEIFS"
+  },
+  {
+    "subject_id": 16,
+    "skill": "TEXTJOIN",
+    "prompt": "Which technical term accurately matches this description: concatenates text values using a delimiter while optionally skipping empty items?",
+    "choices": [
+      "TEXTJOIN",
+      "LEN",
+      "NETWORKDAYS",
+      "SEQUENCE"
+    ],
+    "answer": "TEXTJOIN"
+  },
+  {
+    "subject_id": 16,
+    "skill": "CONCAT",
+    "prompt": "Which technical term accurately matches this description: joins text from multiple ranges or values without a chosen delimiter?",
+    "choices": [
+      "CONCAT",
+      "TRIM",
+      "WORKDAY",
+      "TRANSPOSE"
+    ],
+    "answer": "CONCAT"
+  },
+  {
+    "subject_id": 16,
+    "skill": "LEFT",
+    "prompt": "Which technical term accurately matches this description: returns a specified number of characters from the start of a string?",
+    "choices": [
+      "LEFT",
+      "SUBSTITUTE",
+      "UNIQUE",
+      "CHOOSECOLS"
+    ],
+    "answer": "LEFT"
+  },
+  {
+    "subject_id": 16,
+    "skill": "RIGHT",
+    "prompt": "Which technical term accurately matches this description: returns a specified number of characters from the end of a string?",
+    "choices": [
+      "RIGHT",
+      "TEXT",
+      "SORT",
+      "CHOSEROWS"
+    ],
+    "answer": "RIGHT"
+  },
+  {
+    "subject_id": 16,
+    "skill": "MID",
+    "prompt": "Which technical term accurately matches this description: extracts characters starting at a chosen one-based string position?",
+    "choices": [
+      "MID",
+      "DATE",
+      "SORTBY",
+      "TAKE"
+    ],
+    "answer": "MID"
+  },
+  {
+    "subject_id": 16,
+    "skill": "LEN",
+    "prompt": "Which technical term accurately matches this description: returns the character count of a text value?",
+    "choices": [
+      "LEN",
+      "EOMONTH",
+      "SEQUENCE",
+      "DROP"
+    ],
+    "answer": "LEN"
+  },
+  {
+    "subject_id": 16,
+    "skill": "TRIM",
+    "prompt": "Which technical term accurately matches this description: removes extra spaces from a text value under spreadsheet whitespace rules?",
+    "choices": [
+      "TRIM",
+      "NETWORKDAYS",
+      "TRANSPOSE",
+      "Power Pivot"
+    ],
+    "answer": "TRIM"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SUBSTITUTE",
+    "prompt": "Which technical term accurately matches this description: replaces specified matching text within a string?",
+    "choices": [
+      "SUBSTITUTE",
+      "WORKDAY",
+      "CHOOSECOLS",
+      "Slicer"
+    ],
+    "answer": "SUBSTITUTE"
+  },
+  {
+    "subject_id": 16,
+    "skill": "TEXT",
+    "prompt": "Which technical term accurately matches this description: formats a numeric value as text using an explicit format string?",
+    "choices": [
+      "TEXT",
+      "UNIQUE",
+      "CHOSEROWS",
+      "Named range"
+    ],
+    "answer": "TEXT"
+  },
+  {
+    "subject_id": 16,
+    "skill": "DATE",
+    "prompt": "Which technical term accurately matches this description: constructs a spreadsheet serial date from year month and day components?",
+    "choices": [
+      "DATE",
+      "SORT",
+      "TAKE",
+      "Structured reference"
+    ],
+    "answer": "DATE"
+  },
+  {
+    "subject_id": 16,
+    "skill": "EOMONTH",
+    "prompt": "Which technical term accurately matches this description: returns the last date in a month relative to a supplied month offset?",
+    "choices": [
+      "EOMONTH",
+      "SORTBY",
+      "DROP",
+      "INDEX"
+    ],
+    "answer": "EOMONTH"
+  },
+  {
+    "subject_id": 16,
+    "skill": "NETWORKDAYS",
+    "prompt": "Which technical term accurately matches this description: counts working days between two dates using weekend and optional holiday exclusions?",
+    "choices": [
+      "NETWORKDAYS",
+      "SEQUENCE",
+      "Power Pivot",
+      "MATCH"
+    ],
+    "answer": "NETWORKDAYS"
+  },
+  {
+    "subject_id": 16,
+    "skill": "WORKDAY",
+    "prompt": "Which technical term accurately matches this description: returns a date after stepping a chosen number of working days?",
+    "choices": [
+      "WORKDAY",
+      "TRANSPOSE",
+      "Slicer",
+      "XMATCH"
+    ],
+    "answer": "WORKDAY"
+  },
+  {
+    "subject_id": 16,
+    "skill": "UNIQUE",
+    "prompt": "Which technical term accurately matches this description: spills distinct items from a given array or range?",
+    "choices": [
+      "UNIQUE",
+      "CHOOSECOLS",
+      "Named range",
+      "VLOOKUP"
+    ],
+    "answer": "UNIQUE"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SORT",
+    "prompt": "Which technical term accurately matches this description: returns an array reordered by selected ascending or descending sort keys?",
+    "choices": [
+      "SORT",
+      "CHOSEROWS",
+      "Structured reference",
+      "HLOOKUP"
+    ],
+    "answer": "SORT"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SORTBY",
+    "prompt": "Which technical term accurately matches this description: sorts an array using values from another compatible array?",
+    "choices": [
+      "SORTBY",
+      "TAKE",
+      "INDEX",
+      "IF"
+    ],
+    "answer": "SORTBY"
+  },
+  {
+    "subject_id": 16,
+    "skill": "SEQUENCE",
+    "prompt": "Which technical term accurately matches this description: generates a dynamic array containing a requested arithmetic sequence?",
+    "choices": [
+      "SEQUENCE",
+      "DROP",
+      "MATCH",
+      "IFS"
+    ],
+    "answer": "SEQUENCE"
+  },
+  {
+    "subject_id": 16,
+    "skill": "TRANSPOSE",
+    "prompt": "Which technical term accurately matches this description: swaps an array's rows and columns?",
+    "choices": [
+      "TRANSPOSE",
+      "Power Pivot",
+      "XMATCH",
+      "IFERROR"
+    ],
+    "answer": "TRANSPOSE"
+  },
+  {
+    "subject_id": 16,
+    "skill": "CHOOSECOLS",
+    "prompt": "Which technical term accurately matches this description: selects specified columns from an array into a new array?",
+    "choices": [
+      "CHOOSECOLS",
+      "Slicer",
+      "VLOOKUP",
+      "SUMPRODUCT"
+    ],
+    "answer": "CHOOSECOLS"
+  },
+  {
+    "subject_id": 16,
+    "skill": "CHOSEROWS",
+    "prompt": "Which technical term accurately matches this description: selects specified rows from an array into a new array?",
+    "choices": [
+      "CHOSEROWS",
+      "Named range",
+      "HLOOKUP",
+      "COUNTBLANK"
+    ],
+    "answer": "CHOSEROWS"
+  },
+  {
+    "subject_id": 16,
+    "skill": "TAKE",
+    "prompt": "Which technical term accurately matches this description: returns a requested number of leading or trailing array rows or columns?",
+    "choices": [
+      "TAKE",
+      "Structured reference",
+      "IF",
+      "AVERAGEIFS"
+    ],
+    "answer": "TAKE"
+  },
+  {
+    "subject_id": 16,
+    "skill": "DROP",
+    "prompt": "Which technical term accurately matches this description: removes a chosen number of leading or trailing rows or columns?",
+    "choices": [
+      "DROP",
+      "INDEX",
+      "IFS",
+      "TEXTJOIN"
+    ],
+    "answer": "DROP"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Power Pivot",
+    "prompt": "Which technical term accurately matches this description: manages related tabular data and analytical measures in Excel's data model?",
+    "choices": [
+      "Power Pivot",
+      "MATCH",
+      "IFERROR",
+      "CONCAT"
+    ],
+    "answer": "Power Pivot"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Slicer",
+    "prompt": "Which technical term accurately matches this description: provides interactive buttons for filtering PivotTables or compatible tables?",
+    "choices": [
+      "Slicer",
+      "XMATCH",
+      "SUMPRODUCT",
+      "LEFT"
+    ],
+    "answer": "Slicer"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Named range",
+    "prompt": "Which technical term accurately matches this description: assigns a reusable readable identifier to a workbook range?",
+    "choices": [
+      "Named range",
+      "VLOOKUP",
+      "COUNTBLANK",
+      "RIGHT"
+    ],
+    "answer": "Named range"
+  },
+  {
+    "subject_id": 16,
+    "skill": "Structured reference",
+    "prompt": "Which technical term accurately matches this description: refers to table columns by field names instead of ordinary cell coordinates?",
+    "choices": [
+      "Structured reference",
+      "HLOOKUP",
+      "AVERAGEIFS",
+      "MID"
+    ],
+    "answer": "Structured reference"
+  },
+  {
+    "subject_id": 17,
+    "skill": "LOD expression",
+    "prompt": "Which technical term accurately matches this description: specifies the granularity at which an aggregation should be calculated?",
+    "choices": [
+      "LOD expression",
+      "Calculated dimension",
+      "FIRST",
+      "IFNULL"
+    ],
+    "answer": "LOD expression"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Dimension",
+    "prompt": "Which technical term accurately matches this description: categorizes records used to group or divide visualization marks?",
+    "choices": [
+      "Dimension",
+      "Quick table calculation",
+      "LAST",
+      "DATEPART"
+    ],
+    "answer": "Dimension"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Measure",
+    "prompt": "Which technical term accurately matches this description: provides a numeric field normally aggregated in Tableau views?",
+    "choices": [
+      "Measure",
+      "WINDOW_SUM",
+      "RANK",
+      "DATETRUNC"
+    ],
+    "answer": "Measure"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Discrete field",
+    "prompt": "Which technical term accurately matches this description: creates distinct headers and categorical boundaries in a visualization?",
+    "choices": [
+      "Discrete field",
+      "RUNNING_SUM",
+      "ATTR",
+      "DATEDIFF"
+    ],
+    "answer": "Discrete field"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Continuous field",
+    "prompt": "Which technical term accurately matches this description: creates an axis representing a numeric or temporal continuum?",
+    "choices": [
+      "Continuous field",
+      "LOOKUP",
+      "ZN",
+      "COUNTD"
+    ],
+    "answer": "Continuous field"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Calculated dimension",
+    "prompt": "Which technical term accurately matches this description: derives grouping categories from a Tableau expression?",
+    "choices": [
+      "Calculated dimension",
+      "INDEX",
+      "IFNULL",
+      "WINDOW_AVG"
+    ],
+    "answer": "Calculated dimension"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Quick table calculation",
+    "prompt": "Which technical term accurately matches this description: applies common post-aggregation calculations such as running totals?",
+    "choices": [
+      "Quick table calculation",
+      "FIRST",
+      "DATEPART",
+      "Set"
+    ],
+    "answer": "Quick table calculation"
+  },
+  {
+    "subject_id": 17,
+    "skill": "WINDOW_SUM",
+    "prompt": "Which technical term accurately matches this description: sums values across a specified table-calculation window?",
+    "choices": [
+      "WINDOW_SUM",
+      "LAST",
+      "DATETRUNC",
+      "Set action"
+    ],
+    "answer": "WINDOW_SUM"
+  },
+  {
+    "subject_id": 17,
+    "skill": "RUNNING_SUM",
+    "prompt": "Which technical term accurately matches this description: accumulates a measure across the addressing direction of table marks?",
+    "choices": [
+      "RUNNING_SUM",
+      "RANK",
+      "DATEDIFF",
+      "Group"
+    ],
+    "answer": "RUNNING_SUM"
+  },
+  {
+    "subject_id": 17,
+    "skill": "LOOKUP",
+    "prompt": "Which technical term accurately matches this description: references a measure value at an offset within the table calculation partition?",
+    "choices": [
+      "LOOKUP",
+      "ATTR",
+      "COUNTD",
+      "Hierarchy"
+    ],
+    "answer": "LOOKUP"
+  },
+  {
+    "subject_id": 17,
+    "skill": "INDEX",
+    "prompt": "Which technical term accurately matches this description: returns a mark's one-based position within the table calculation partition?",
+    "choices": [
+      "INDEX",
+      "ZN",
+      "WINDOW_AVG",
+      "Data blend"
+    ],
+    "answer": "INDEX"
+  },
+  {
+    "subject_id": 17,
+    "skill": "FIRST",
+    "prompt": "Which technical term accurately matches this description: calculates the relative offset to the first mark in a table-calculation partition?",
+    "choices": [
+      "FIRST",
+      "IFNULL",
+      "Set",
+      "Relationship"
+    ],
+    "answer": "FIRST"
+  },
+  {
+    "subject_id": 17,
+    "skill": "LAST",
+    "prompt": "Which technical term accurately matches this description: calculates the relative offset to the last mark in a partition?",
+    "choices": [
+      "LAST",
+      "DATEPART",
+      "Set action",
+      "Physical join"
+    ],
+    "answer": "LAST"
+  },
+  {
+    "subject_id": 17,
+    "skill": "RANK",
+    "prompt": "Which technical term accurately matches this description: assigns an ordering rank based on a measure within a partition?",
+    "choices": [
+      "RANK",
+      "DATETRUNC",
+      "Group",
+      "Dashboard container"
+    ],
+    "answer": "RANK"
+  },
+  {
+    "subject_id": 17,
+    "skill": "ATTR",
+    "prompt": "Which technical term accurately matches this description: returns a shared value for a field or a special multiple-values indicator?",
+    "choices": [
+      "ATTR",
+      "DATEDIFF",
+      "Hierarchy",
+      "Story point"
+    ],
+    "answer": "ATTR"
+  },
+  {
+    "subject_id": 17,
+    "skill": "ZN",
+    "prompt": "Which technical term accurately matches this description: converts a null numeric result into zero?",
+    "choices": [
+      "ZN",
+      "COUNTD",
+      "Data blend",
+      "Highlight action"
+    ],
+    "answer": "ZN"
+  },
+  {
+    "subject_id": 17,
+    "skill": "IFNULL",
+    "prompt": "Which technical term accurately matches this description: substitutes a fallback whenever an expression evaluates to null?",
+    "choices": [
+      "IFNULL",
+      "WINDOW_AVG",
+      "Relationship",
+      "URL action"
+    ],
+    "answer": "IFNULL"
+  },
+  {
+    "subject_id": 17,
+    "skill": "DATEPART",
+    "prompt": "Which technical term accurately matches this description: extracts a specified date component as a number?",
+    "choices": [
+      "DATEPART",
+      "Set",
+      "Physical join",
+      "Filter action"
+    ],
+    "answer": "DATEPART"
+  },
+  {
+    "subject_id": 17,
+    "skill": "DATETRUNC",
+    "prompt": "Which technical term accurately matches this description: rounds a date down to a specified calendar granularity?",
+    "choices": [
+      "DATETRUNC",
+      "Set action",
+      "Dashboard container",
+      "Reference line"
+    ],
+    "answer": "DATETRUNC"
+  },
+  {
+    "subject_id": 17,
+    "skill": "DATEDIFF",
+    "prompt": "Which technical term accurately matches this description: returns the difference between dates in a requested date unit?",
+    "choices": [
+      "DATEDIFF",
+      "Group",
+      "Story point",
+      "Forecast"
+    ],
+    "answer": "DATEDIFF"
+  },
+  {
+    "subject_id": 17,
+    "skill": "COUNTD",
+    "prompt": "Which technical term accurately matches this description: counts distinct nonnull values in an expression?",
+    "choices": [
+      "COUNTD",
+      "Hierarchy",
+      "Highlight action",
+      "Data source filter"
+    ],
+    "answer": "COUNTD"
+  },
+  {
+    "subject_id": 17,
+    "skill": "WINDOW_AVG",
+    "prompt": "Which technical term accurately matches this description: averages numeric results across a table-calculation frame?",
+    "choices": [
+      "WINDOW_AVG",
+      "Data blend",
+      "URL action",
+      "LOD expression"
+    ],
+    "answer": "WINDOW_AVG"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Set",
+    "prompt": "Which technical term accurately matches this description: defines a reusable subset of dimension members based on conditions or selection?",
+    "choices": [
+      "Set",
+      "Relationship",
+      "Filter action",
+      "Dimension"
+    ],
+    "answer": "Set"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Set action",
+    "prompt": "Which technical term accurately matches this description: changes membership of a set using user interaction?",
+    "choices": [
+      "Set action",
+      "Physical join",
+      "Reference line",
+      "Measure"
+    ],
+    "answer": "Set action"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Group",
+    "prompt": "Which technical term accurately matches this description: combines selected dimension values into named categories?",
+    "choices": [
+      "Group",
+      "Dashboard container",
+      "Forecast",
+      "Discrete field"
+    ],
+    "answer": "Group"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Hierarchy",
+    "prompt": "Which technical term accurately matches this description: organizes nested dimensions for drill-down and drill-up?",
+    "choices": [
+      "Hierarchy",
+      "Story point",
+      "Data source filter",
+      "Continuous field"
+    ],
+    "answer": "Hierarchy"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Data blend",
+    "prompt": "Which technical term accurately matches this description: combines results of separately queried sources through matching linking fields?",
+    "choices": [
+      "Data blend",
+      "Highlight action",
+      "LOD expression",
+      "Calculated dimension"
+    ],
+    "answer": "Data blend"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Relationship",
+    "prompt": "Which technical term accurately matches this description: specifies logical table connections without forcing a fixed physical join?",
+    "choices": [
+      "Relationship",
+      "URL action",
+      "Dimension",
+      "Quick table calculation"
+    ],
+    "answer": "Relationship"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Physical join",
+    "prompt": "Which technical term accurately matches this description: combines rows from selected tables using explicit join logic?",
+    "choices": [
+      "Physical join",
+      "Filter action",
+      "Measure",
+      "WINDOW_SUM"
+    ],
+    "answer": "Physical join"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Dashboard container",
+    "prompt": "Which technical term accurately matches this description: controls layout arrangement of elements inside a dashboard?",
+    "choices": [
+      "Dashboard container",
+      "Reference line",
+      "Discrete field",
+      "RUNNING_SUM"
+    ],
+    "answer": "Dashboard container"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Story point",
+    "prompt": "Which technical term accurately matches this description: represents one saved narrative step in a Tableau Story?",
+    "choices": [
+      "Story point",
+      "Forecast",
+      "Continuous field",
+      "LOOKUP"
+    ],
+    "answer": "Story point"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Highlight action",
+    "prompt": "Which technical term accurately matches this description: visually emphasizes related marks after a user interaction?",
+    "choices": [
+      "Highlight action",
+      "Data source filter",
+      "Calculated dimension",
+      "INDEX"
+    ],
+    "answer": "Highlight action"
+  },
+  {
+    "subject_id": 17,
+    "skill": "URL action",
+    "prompt": "Which technical term accurately matches this description: opens a destination link using values from selected visual marks?",
+    "choices": [
+      "URL action",
+      "LOD expression",
+      "Quick table calculation",
+      "FIRST"
+    ],
+    "answer": "URL action"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Filter action",
+    "prompt": "Which technical term accurately matches this description: uses selected marks from one sheet to filter another sheet?",
+    "choices": [
+      "Filter action",
+      "Dimension",
+      "WINDOW_SUM",
+      "LAST"
+    ],
+    "answer": "Filter action"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Reference line",
+    "prompt": "Which technical term accurately matches this description: adds a computed or fixed baseline such as a target or average?",
+    "choices": [
+      "Reference line",
+      "Measure",
+      "RUNNING_SUM",
+      "RANK"
+    ],
+    "answer": "Reference line"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Forecast",
+    "prompt": "Which technical term accurately matches this description: projects a time series into future periods using available historical patterns?",
+    "choices": [
+      "Forecast",
+      "Discrete field",
+      "LOOKUP",
+      "ATTR"
+    ],
+    "answer": "Forecast"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Data source filter",
+    "prompt": "Which technical term accurately matches this description: restricts records exposed by a particular Tableau data source?",
+    "choices": [
+      "Data source filter",
+      "Continuous field",
+      "INDEX",
+      "ZN"
+    ],
+    "answer": "Data source filter"
+  },
+  {
+    "subject_id": 18,
+    "skill": "FILTER",
+    "prompt": "Which technical term accurately matches this description: returns a subset of a DAX table that satisfies a Boolean condition?",
+    "choices": [
+      "FILTER",
+      "ISFILTERED",
+      "CROSSFILTER",
+      "TOPN"
+    ],
+    "answer": "FILTER"
+  },
+  {
+    "subject_id": 18,
+    "skill": "VALUES",
+    "prompt": "Which technical term accurately matches this description: returns distinct visible values of one specified DAX column?",
+    "choices": [
+      "VALUES",
+      "REMOVEFILTERS",
+      "SUMMARIZE",
+      "RANKX"
+    ],
+    "answer": "VALUES"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DISTINCT",
+    "prompt": "Which technical term accurately matches this description: returns unique rows or values from a DAX table expression?",
+    "choices": [
+      "DISTINCT",
+      "ALLEXCEPT",
+      "SUMMARIZECOLUMNS",
+      "DIVIDE"
+    ],
+    "answer": "DISTINCT"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SELECTEDVALUE",
+    "prompt": "Which technical term accurately matches this description: returns one selected value when a column has exactly one visible value?",
+    "choices": [
+      "SELECTEDVALUE",
+      "ALLSELECTED",
+      "ADDCOLUMNS",
+      "COALESCE"
+    ],
+    "answer": "SELECTEDVALUE"
+  },
+  {
+    "subject_id": 18,
+    "skill": "HASONEVALUE",
+    "prompt": "Which technical term accurately matches this description: tests whether a column has exactly one distinct visible value?",
+    "choices": [
+      "HASONEVALUE",
+      "KEEPFILTERS",
+      "GENERATE",
+      "TOTALYTD"
+    ],
+    "answer": "HASONEVALUE"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ISFILTERED",
+    "prompt": "Which technical term accurately matches this description: tests whether a column or table is directly affected by filters?",
+    "choices": [
+      "ISFILTERED",
+      "TREATAS",
+      "TOPN",
+      "SAMEPERIODLASTYEAR"
+    ],
+    "answer": "ISFILTERED"
+  },
+  {
+    "subject_id": 18,
+    "skill": "REMOVEFILTERS",
+    "prompt": "Which technical term accurately matches this description: clears filters from specified DAX tables or columns?",
+    "choices": [
+      "REMOVEFILTERS",
+      "CROSSFILTER",
+      "RANKX",
+      "DATEADD"
+    ],
+    "answer": "REMOVEFILTERS"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ALLEXCEPT",
+    "prompt": "Which technical term accurately matches this description: removes many filters while preserving filters on specified columns?",
+    "choices": [
+      "ALLEXCEPT",
+      "SUMMARIZE",
+      "DIVIDE",
+      "DATESINPERIOD"
+    ],
+    "answer": "ALLEXCEPT"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ALLSELECTED",
+    "prompt": "Which technical term accurately matches this description: retains external selection context while removing some internal visual filters?",
+    "choices": [
+      "ALLSELECTED",
+      "SUMMARIZECOLUMNS",
+      "COALESCE",
+      "DATESYTD"
+    ],
+    "answer": "ALLSELECTED"
+  },
+  {
+    "subject_id": 18,
+    "skill": "KEEPFILTERS",
+    "prompt": "Which technical term accurately matches this description: adds a DAX filter constraint without replacing existing constraints?",
+    "choices": [
+      "KEEPFILTERS",
+      "ADDCOLUMNS",
+      "TOTALYTD",
+      "RELATEDTABLE"
+    ],
+    "answer": "KEEPFILTERS"
+  },
+  {
+    "subject_id": 18,
+    "skill": "TREATAS",
+    "prompt": "Which technical term accurately matches this description: applies values from a table expression as filters to unrelated columns?",
+    "choices": [
+      "TREATAS",
+      "GENERATE",
+      "SAMEPERIODLASTYEAR",
+      "USERPRINCIPALNAME"
+    ],
+    "answer": "TREATAS"
+  },
+  {
+    "subject_id": 18,
+    "skill": "CROSSFILTER",
+    "prompt": "Which technical term accurately matches this description: temporarily changes relationship filter direction or activation in an expression?",
+    "choices": [
+      "CROSSFILTER",
+      "TOPN",
+      "DATEADD",
+      "Calculated table"
+    ],
+    "answer": "CROSSFILTER"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SUMMARIZE",
+    "prompt": "Which technical term accurately matches this description: creates grouped rows from selected model columns?",
+    "choices": [
+      "SUMMARIZE",
+      "RANKX",
+      "DATESINPERIOD",
+      "Bidirectional relationship"
+    ],
+    "answer": "SUMMARIZE"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SUMMARIZECOLUMNS",
+    "prompt": "Which technical term accurately matches this description: builds a grouped result using columns with supplied filters and measures?",
+    "choices": [
+      "SUMMARIZECOLUMNS",
+      "DIVIDE",
+      "DATESYTD",
+      "Bridge table"
+    ],
+    "answer": "SUMMARIZECOLUMNS"
+  },
+  {
+    "subject_id": 18,
+    "skill": "ADDCOLUMNS",
+    "prompt": "Which technical term accurately matches this description: adds calculated expressions to rows of a DAX table?",
+    "choices": [
+      "ADDCOLUMNS",
+      "COALESCE",
+      "RELATEDTABLE",
+      "Inactive relationship"
+    ],
+    "answer": "ADDCOLUMNS"
+  },
+  {
+    "subject_id": 18,
+    "skill": "GENERATE",
+    "prompt": "Which technical term accurately matches this description: combines each row from a first table with rows from a second table expression?",
+    "choices": [
+      "GENERATE",
+      "TOTALYTD",
+      "USERPRINCIPALNAME",
+      "Filter context"
+    ],
+    "answer": "GENERATE"
+  },
+  {
+    "subject_id": 18,
+    "skill": "TOPN",
+    "prompt": "Which technical term accurately matches this description: returns the highest-ranked n rows according to specified sort expressions?",
+    "choices": [
+      "TOPN",
+      "SAMEPERIODLASTYEAR",
+      "Calculated table",
+      "Row context"
+    ],
+    "answer": "TOPN"
+  },
+  {
+    "subject_id": 18,
+    "skill": "RANKX",
+    "prompt": "Which technical term accurately matches this description: assigns rank by evaluating an expression over rows of a table?",
+    "choices": [
+      "RANKX",
+      "DATEADD",
+      "Bidirectional relationship",
+      "Context transition"
+    ],
+    "answer": "RANKX"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DIVIDE",
+    "prompt": "Which technical term accurately matches this description: handles division with a defined alternate result for a zero denominator?",
+    "choices": [
+      "DIVIDE",
+      "DATESINPERIOD",
+      "Bridge table",
+      "VertiPaq"
+    ],
+    "answer": "DIVIDE"
+  },
+  {
+    "subject_id": 18,
+    "skill": "COALESCE",
+    "prompt": "Which technical term accurately matches this description: returns the first expression that does not evaluate to blank?",
+    "choices": [
+      "COALESCE",
+      "DATESYTD",
+      "Inactive relationship",
+      "DirectQuery"
+    ],
+    "answer": "COALESCE"
+  },
+  {
+    "subject_id": 18,
+    "skill": "TOTALYTD",
+    "prompt": "Which technical term accurately matches this description: calculates a year-to-date running aggregate using a date context?",
+    "choices": [
+      "TOTALYTD",
+      "RELATEDTABLE",
+      "Filter context",
+      "Incremental refresh"
+    ],
+    "answer": "TOTALYTD"
+  },
+  {
+    "subject_id": 18,
+    "skill": "SAMEPERIODLASTYEAR",
+    "prompt": "Which technical term accurately matches this description: returns corresponding dates shifted one year earlier?",
+    "choices": [
+      "SAMEPERIODLASTYEAR",
+      "USERPRINCIPALNAME",
+      "Row context",
+      "FILTER"
+    ],
+    "answer": "SAMEPERIODLASTYEAR"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DATEADD",
+    "prompt": "Which technical term accurately matches this description: shifts a table of dates by an indicated number of intervals?",
+    "choices": [
+      "DATEADD",
+      "Calculated table",
+      "Context transition",
+      "VALUES"
+    ],
+    "answer": "DATEADD"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DATESINPERIOD",
+    "prompt": "Which technical term accurately matches this description: returns dates within a selected rolling interval?",
+    "choices": [
+      "DATESINPERIOD",
+      "Bidirectional relationship",
+      "VertiPaq",
+      "DISTINCT"
+    ],
+    "answer": "DATESINPERIOD"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DATESYTD",
+    "prompt": "Which technical term accurately matches this description: returns dates from a year's start through the current context?",
+    "choices": [
+      "DATESYTD",
+      "Bridge table",
+      "DirectQuery",
+      "SELECTEDVALUE"
+    ],
+    "answer": "DATESYTD"
+  },
+  {
+    "subject_id": 18,
+    "skill": "RELATEDTABLE",
+    "prompt": "Which technical term accurately matches this description: returns rows related to the current table row through model relationships?",
+    "choices": [
+      "RELATEDTABLE",
+      "Inactive relationship",
+      "Incremental refresh",
+      "HASONEVALUE"
+    ],
+    "answer": "RELATEDTABLE"
+  },
+  {
+    "subject_id": 18,
+    "skill": "USERPRINCIPALNAME",
+    "prompt": "Which technical term accurately matches this description: returns the current user's account identifier for security calculations?",
+    "choices": [
+      "USERPRINCIPALNAME",
+      "Filter context",
+      "FILTER",
+      "ISFILTERED"
+    ],
+    "answer": "USERPRINCIPALNAME"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Calculated table",
+    "prompt": "Which technical term accurately matches this description: materializes a DAX table expression into the tabular model?",
+    "choices": [
+      "Calculated table",
+      "Row context",
+      "VALUES",
+      "REMOVEFILTERS"
+    ],
+    "answer": "Calculated table"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Bidirectional relationship",
+    "prompt": "Which technical term accurately matches this description: allows filter propagation in both directions across an eligible relationship?",
+    "choices": [
+      "Bidirectional relationship",
+      "Context transition",
+      "DISTINCT",
+      "ALLEXCEPT"
+    ],
+    "answer": "Bidirectional relationship"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Bridge table",
+    "prompt": "Which technical term accurately matches this description: represents mappings between entities in a many-to-many relationship?",
+    "choices": [
+      "Bridge table",
+      "VertiPaq",
+      "SELECTEDVALUE",
+      "ALLSELECTED"
+    ],
+    "answer": "Bridge table"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Inactive relationship",
+    "prompt": "Which technical term accurately matches this description: exists in the model but does not filter by default?",
+    "choices": [
+      "Inactive relationship",
+      "DirectQuery",
+      "HASONEVALUE",
+      "KEEPFILTERS"
+    ],
+    "answer": "Inactive relationship"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Filter context",
+    "prompt": "Which technical term accurately matches this description: defines which rows are visible when a DAX measure evaluates?",
+    "choices": [
+      "Filter context",
+      "Incremental refresh",
+      "ISFILTERED",
+      "TREATAS"
+    ],
+    "answer": "Filter context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Row context",
+    "prompt": "Which technical term accurately matches this description: provides access to columns in a current row during iteration or calculated-column evaluation?",
+    "choices": [
+      "Row context",
+      "FILTER",
+      "REMOVEFILTERS",
+      "CROSSFILTER"
+    ],
+    "answer": "Row context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Context transition",
+    "prompt": "Which technical term accurately matches this description: converts a row context into equivalent filters when CALCULATE is evaluated?",
+    "choices": [
+      "Context transition",
+      "VALUES",
+      "ALLEXCEPT",
+      "SUMMARIZE"
+    ],
+    "answer": "Context transition"
+  },
+  {
+    "subject_id": 18,
+    "skill": "VertiPaq",
+    "prompt": "Which technical term accurately matches this description: stores imported tabular data using compressed in-memory columnar structures?",
+    "choices": [
+      "VertiPaq",
+      "DISTINCT",
+      "ALLSELECTED",
+      "SUMMARIZECOLUMNS"
+    ],
+    "answer": "VertiPaq"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DirectQuery",
+    "prompt": "Which technical term accurately matches this description: sends queries to external data sources instead of fully importing them?",
+    "choices": [
+      "DirectQuery",
+      "SELECTEDVALUE",
+      "KEEPFILTERS",
+      "ADDCOLUMNS"
+    ],
+    "answer": "DirectQuery"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Incremental refresh",
+    "prompt": "Which technical term accurately matches this description: reprocesses only changing partitions of an otherwise retained historical dataset?",
+    "choices": [
+      "Incremental refresh",
+      "HASONEVALUE",
+      "TREATAS",
+      "GENERATE"
+    ],
+    "answer": "Incremental refresh"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ls -la",
+    "prompt": "Which technical term accurately matches this description: lists directory entries including hidden names with long-format metadata?",
+    "choices": [
+      "ls -la",
+      "mv",
+      "cut",
+      "du -sh"
+    ],
+    "answer": "ls -la"
+  },
+  {
+    "subject_id": 21,
+    "skill": "pwd",
+    "prompt": "Which technical term accurately matches this description: prints the current shell working directory?",
+    "choices": [
+      "pwd",
+      "rm -r",
+      "tr",
+      "ps aux"
+    ],
+    "answer": "pwd"
+  },
+  {
+    "subject_id": 21,
+    "skill": "cd",
+    "prompt": "Which technical term accurately matches this description: changes the shell's current working directory?",
+    "choices": [
+      "cd",
+      "head",
+      "wc -l",
+      "top"
+    ],
+    "answer": "cd"
+  },
+  {
+    "subject_id": 21,
+    "skill": "mkdir -p",
+    "prompt": "Which technical term accurately matches this description: creates a directory and missing parent directories?",
+    "choices": [
+      "mkdir -p",
+      "tail -f",
+      "tee",
+      "kill"
+    ],
+    "answer": "mkdir -p"
+  },
+  {
+    "subject_id": 21,
+    "skill": "cp -r",
+    "prompt": "Which technical term accurately matches this description: copies directories and their contents recursively?",
+    "choices": [
+      "cp -r",
+      "sort",
+      "df -h",
+      "pkill"
+    ],
+    "answer": "cp -r"
+  },
+  {
+    "subject_id": 21,
+    "skill": "mv",
+    "prompt": "Which technical term accurately matches this description: renames or relocates files or directories?",
+    "choices": [
+      "mv",
+      "uniq -c",
+      "du -sh",
+      "nohup"
+    ],
+    "answer": "mv"
+  },
+  {
+    "subject_id": 21,
+    "skill": "rm -r",
+    "prompt": "Which technical term accurately matches this description: removes directory trees recursively?",
+    "choices": [
+      "rm -r",
+      "cut",
+      "ps aux",
+      "jobs"
+    ],
+    "answer": "rm -r"
+  },
+  {
+    "subject_id": 21,
+    "skill": "head",
+    "prompt": "Which technical term accurately matches this description: prints the first lines of a text stream or file?",
+    "choices": [
+      "head",
+      "tr",
+      "top",
+      "bg"
+    ],
+    "answer": "head"
+  },
+  {
+    "subject_id": 21,
+    "skill": "tail -f",
+    "prompt": "Which technical term accurately matches this description: continues displaying newly appended file lines?",
+    "choices": [
+      "tail -f",
+      "wc -l",
+      "kill",
+      "fg"
+    ],
+    "answer": "tail -f"
+  },
+  {
+    "subject_id": 21,
+    "skill": "sort",
+    "prompt": "Which technical term accurately matches this description: orders input lines according to configured sort keys?",
+    "choices": [
+      "sort",
+      "tee",
+      "pkill",
+      "export"
+    ],
+    "answer": "sort"
+  },
+  {
+    "subject_id": 21,
+    "skill": "uniq -c",
+    "prompt": "Which technical term accurately matches this description: counts adjacent repeated lines after inputs are appropriately grouped?",
+    "choices": [
+      "uniq -c",
+      "df -h",
+      "nohup",
+      "source"
+    ],
+    "answer": "uniq -c"
+  },
+  {
+    "subject_id": 21,
+    "skill": "cut",
+    "prompt": "Which technical term accurately matches this description: selects delimited fields or character positions from each input line?",
+    "choices": [
+      "cut",
+      "du -sh",
+      "jobs",
+      "env"
+    ],
+    "answer": "cut"
+  },
+  {
+    "subject_id": 21,
+    "skill": "tr",
+    "prompt": "Which technical term accurately matches this description: translates or deletes selected character classes in a stream?",
+    "choices": [
+      "tr",
+      "ps aux",
+      "bg",
+      "which"
+    ],
+    "answer": "tr"
+  },
+  {
+    "subject_id": 21,
+    "skill": "wc -l",
+    "prompt": "Which technical term accurately matches this description: counts newline characters in a text stream?",
+    "choices": [
+      "wc -l",
+      "top",
+      "fg",
+      "type"
+    ],
+    "answer": "wc -l"
+  },
+  {
+    "subject_id": 21,
+    "skill": "tee",
+    "prompt": "Which technical term accurately matches this description: writes standard input both to a file and to standard output?",
+    "choices": [
+      "tee",
+      "kill",
+      "export",
+      "ln -s"
+    ],
+    "answer": "tee"
+  },
+  {
+    "subject_id": 21,
+    "skill": "df -h",
+    "prompt": "Which technical term accurately matches this description: reports mounted filesystem space usage with human-readable units?",
+    "choices": [
+      "df -h",
+      "pkill",
+      "source",
+      "stat"
+    ],
+    "answer": "df -h"
+  },
+  {
+    "subject_id": 21,
+    "skill": "du -sh",
+    "prompt": "Which technical term accurately matches this description: estimates the total disk space occupied by a file or directory?",
+    "choices": [
+      "du -sh",
+      "nohup",
+      "env",
+      "file"
+    ],
+    "answer": "du -sh"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ps aux",
+    "prompt": "Which technical term accurately matches this description: displays a broad snapshot of processes and their metadata?",
+    "choices": [
+      "ps aux",
+      "jobs",
+      "which",
+      "diff -u"
+    ],
+    "answer": "ps aux"
+  },
+  {
+    "subject_id": 21,
+    "skill": "top",
+    "prompt": "Which technical term accurately matches this description: shows an updating view of process and resource utilization?",
+    "choices": [
+      "top",
+      "bg",
+      "type",
+      "sha256sum"
+    ],
+    "answer": "top"
+  },
+  {
+    "subject_id": 21,
+    "skill": "kill",
+    "prompt": "Which technical term accurately matches this description: sends a signal to a process identifier?",
+    "choices": [
+      "kill",
+      "fg",
+      "ln -s",
+      "find -mtime"
+    ],
+    "answer": "kill"
+  },
+  {
+    "subject_id": 21,
+    "skill": "pkill",
+    "prompt": "Which technical term accurately matches this description: signals processes selected by names or matching criteria?",
+    "choices": [
+      "pkill",
+      "export",
+      "stat",
+      "test -f"
+    ],
+    "answer": "pkill"
+  },
+  {
+    "subject_id": 21,
+    "skill": "nohup",
+    "prompt": "Which technical term accurately matches this description: ignores hangup signals so a command can continue after a terminal disconnect?",
+    "choices": [
+      "nohup",
+      "source",
+      "file",
+      "ls -la"
+    ],
+    "answer": "nohup"
+  },
+  {
+    "subject_id": 21,
+    "skill": "jobs",
+    "prompt": "Which technical term accurately matches this description: lists jobs tracked by the current interactive shell?",
+    "choices": [
+      "jobs",
+      "env",
+      "diff -u",
+      "pwd"
+    ],
+    "answer": "jobs"
+  },
+  {
+    "subject_id": 21,
+    "skill": "bg",
+    "prompt": "Which technical term accurately matches this description: resumes a suspended shell job in the background?",
+    "choices": [
+      "bg",
+      "which",
+      "sha256sum",
+      "cd"
+    ],
+    "answer": "bg"
+  },
+  {
+    "subject_id": 21,
+    "skill": "fg",
+    "prompt": "Which technical term accurately matches this description: moves a tracked shell job to the foreground?",
+    "choices": [
+      "fg",
+      "type",
+      "find -mtime",
+      "mkdir -p"
+    ],
+    "answer": "fg"
+  },
+  {
+    "subject_id": 21,
+    "skill": "export",
+    "prompt": "Which technical term accurately matches this description: marks a shell variable for inheritance by child processes?",
+    "choices": [
+      "export",
+      "ln -s",
+      "test -f",
+      "cp -r"
+    ],
+    "answer": "export"
+  },
+  {
+    "subject_id": 21,
+    "skill": "source",
+    "prompt": "Which technical term accurately matches this description: executes a file's shell commands in the current shell environment?",
+    "choices": [
+      "source",
+      "stat",
+      "ls -la",
+      "mv"
+    ],
+    "answer": "source"
+  },
+  {
+    "subject_id": 21,
+    "skill": "env",
+    "prompt": "Which technical term accurately matches this description: prints the environment or runs a command with modified environment values?",
+    "choices": [
+      "env",
+      "file",
+      "pwd",
+      "rm -r"
+    ],
+    "answer": "env"
+  },
+  {
+    "subject_id": 21,
+    "skill": "which",
+    "prompt": "Which technical term accurately matches this description: locates executable commands on the search path?",
+    "choices": [
+      "which",
+      "diff -u",
+      "cd",
+      "head"
+    ],
+    "answer": "which"
+  },
+  {
+    "subject_id": 21,
+    "skill": "type",
+    "prompt": "Which technical term accurately matches this description: reports how the shell resolves a command name?",
+    "choices": [
+      "type",
+      "sha256sum",
+      "mkdir -p",
+      "tail -f"
+    ],
+    "answer": "type"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ln -s",
+    "prompt": "Which technical term accurately matches this description: creates a symbolic link pointing to a target path?",
+    "choices": [
+      "ln -s",
+      "find -mtime",
+      "cp -r",
+      "sort"
+    ],
+    "answer": "ln -s"
+  },
+  {
+    "subject_id": 21,
+    "skill": "stat",
+    "prompt": "Which technical term accurately matches this description: displays filesystem metadata about a file?",
+    "choices": [
+      "stat",
+      "test -f",
+      "mv",
+      "uniq -c"
+    ],
+    "answer": "stat"
+  },
+  {
+    "subject_id": 21,
+    "skill": "file",
+    "prompt": "Which technical term accurately matches this description: guesses the type of a file from its contents or metadata?",
+    "choices": [
+      "file",
+      "ls -la",
+      "rm -r",
+      "cut"
+    ],
+    "answer": "file"
+  },
+  {
+    "subject_id": 21,
+    "skill": "diff -u",
+    "prompt": "Which technical term accurately matches this description: produces unified-format differences between two text files?",
+    "choices": [
+      "diff -u",
+      "pwd",
+      "head",
+      "tr"
+    ],
+    "answer": "diff -u"
+  },
+  {
+    "subject_id": 21,
+    "skill": "sha256sum",
+    "prompt": "Which technical term accurately matches this description: computes a SHA-256 digest for file contents?",
+    "choices": [
+      "sha256sum",
+      "cd",
+      "tail -f",
+      "wc -l"
+    ],
+    "answer": "sha256sum"
+  },
+  {
+    "subject_id": 21,
+    "skill": "find -mtime",
+    "prompt": "Which technical term accurately matches this description: selects filesystem entries by modification age?",
+    "choices": [
+      "find -mtime",
+      "mkdir -p",
+      "sort",
+      "tee"
+    ],
+    "answer": "find -mtime"
+  },
+  {
+    "subject_id": 21,
+    "skill": "test -f",
+    "prompt": "Which technical term accurately matches this description: checks whether a specified path exists as a regular file?",
+    "choices": [
+      "test -f",
+      "cp -r",
+      "uniq -c",
+      "df -h"
+    ],
+    "answer": "test -f"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Git staging area",
+    "prompt": "Which technical term accurately matches this description: holds a snapshot of changes selected for the next commit?",
+    "choices": [
+      "Git staging area",
+      "Merge conflict",
+      "Git commit object",
+      "Squash merge"
+    ],
+    "answer": "Git staging area"
+  },
+  {
+    "subject_id": 22,
+    "skill": "HEAD",
+    "prompt": "Which technical term accurately matches this description: identifies the currently checked-out commit or a symbolic branch reference?",
+    "choices": [
+      "HEAD",
+      "Upstream branch",
+      ".gitignore",
+      "Git staging area"
+    ],
+    "answer": "HEAD"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Detached HEAD",
+    "prompt": "Which technical term accurately matches this description: checks out a commit without moving a normal local branch pointer?",
+    "choices": [
+      "Detached HEAD",
+      "Git remote",
+      "Git LFS",
+      "HEAD"
+    ],
+    "answer": "Detached HEAD"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Fast-forward merge",
+    "prompt": "Which technical term accurately matches this description: advances a branch pointer when its history is already an ancestor of the target?",
+    "choices": [
+      "Fast-forward merge",
+      "Git object",
+      "Signed commit",
+      "Detached HEAD"
+    ],
+    "answer": "Fast-forward merge"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Three-way merge",
+    "prompt": "Which technical term accurately matches this description: combines changes using a common base commit and two branch tips?",
+    "choices": [
+      "Three-way merge",
+      "Git tree object",
+      "Protected branch",
+      "Fast-forward merge"
+    ],
+    "answer": "Three-way merge"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Merge conflict",
+    "prompt": "Which technical term accurately matches this description: requires manual resolution when Git cannot safely combine competing changes?",
+    "choices": [
+      "Merge conflict",
+      "Git blob object",
+      "Squash merge",
+      "Three-way merge"
+    ],
+    "answer": "Merge conflict"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Upstream branch",
+    "prompt": "Which technical term accurately matches this description: records the remote branch a local branch is configured to track?",
+    "choices": [
+      "Upstream branch",
+      "Git commit object",
+      "Git staging area",
+      "Merge conflict"
+    ],
+    "answer": "Upstream branch"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Git remote",
+    "prompt": "Which technical term accurately matches this description: names a repository location used for fetching or pushing?",
+    "choices": [
+      "Git remote",
+      ".gitignore",
+      "HEAD",
+      "Upstream branch"
+    ],
+    "answer": "Git remote"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Git object",
+    "prompt": "Which technical term accurately matches this description: stores versioned contents or metadata in content-addressed repository storage?",
+    "choices": [
+      "Git object",
+      "Git LFS",
+      "Detached HEAD",
+      "Git remote"
+    ],
+    "answer": "Git object"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Git tree object",
+    "prompt": "Which technical term accurately matches this description: maps filenames to blobs and subtrees in a repository snapshot?",
+    "choices": [
+      "Git tree object",
+      "Signed commit",
+      "Fast-forward merge",
+      "Git object"
+    ],
+    "answer": "Git tree object"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Git blob object",
+    "prompt": "Which technical term accurately matches this description: stores the contents of a versioned file?",
+    "choices": [
+      "Git blob object",
+      "Protected branch",
+      "Three-way merge",
+      "Git tree object"
+    ],
+    "answer": "Git blob object"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Git commit object",
+    "prompt": "Which technical term accurately matches this description: records a tree snapshot plus parent and authorship metadata?",
+    "choices": [
+      "Git commit object",
+      "Squash merge",
+      "Merge conflict",
+      "Git blob object"
+    ],
+    "answer": "Git commit object"
+  },
+  {
+    "subject_id": 22,
+    "skill": ".gitignore",
+    "prompt": "Which technical term accurately matches this description: lists patterns for intentionally untracked files to ignore?",
+    "choices": [
+      ".gitignore",
+      "Git staging area",
+      "Upstream branch",
+      "Git commit object"
+    ],
+    "answer": ".gitignore"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Git LFS",
+    "prompt": "Which technical term accurately matches this description: stores pointers to large file contents managed outside normal Git blobs?",
+    "choices": [
+      "Git LFS",
+      "HEAD",
+      "Git remote",
+      ".gitignore"
+    ],
+    "answer": "Git LFS"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Signed commit",
+    "prompt": "Which technical term accurately matches this description: attaches a cryptographic signature to commit metadata?",
+    "choices": [
+      "Signed commit",
+      "Detached HEAD",
+      "Git object",
+      "Git LFS"
+    ],
+    "answer": "Signed commit"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Protected branch",
+    "prompt": "Which technical term accurately matches this description: applies repository policies restricting direct updates or merges?",
+    "choices": [
+      "Protected branch",
+      "Fast-forward merge",
+      "Git tree object",
+      "Signed commit"
+    ],
+    "answer": "Protected branch"
+  },
+  {
+    "subject_id": 22,
+    "skill": "Squash merge",
+    "prompt": "Which technical term accurately matches this description: combines a pull request's changes into one new target-branch commit?",
+    "choices": [
+      "Squash merge",
+      "Three-way merge",
+      "Git blob object",
+      "Protected branch"
+    ],
+    "answer": "Squash merge"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Container namespace",
+    "prompt": "Which technical term accurately matches this description: isolates a process view of resources such as network or process identifiers?",
+    "choices": [
+      "Container namespace",
+      "Docker layer cache",
+      "RUN",
+      "Docker restart policy"
+    ],
+    "answer": "Container namespace"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Linux cgroup",
+    "prompt": "Which technical term accurately matches this description: limits or accounts for process resource consumption?",
+    "choices": [
+      "Linux cgroup",
+      "EXPOSE",
+      "CMD",
+      "Container namespace"
+    ],
+    "answer": "Linux cgroup"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Overlay filesystem",
+    "prompt": "Which technical term accurately matches this description: assembles read-only image layers with a writable container layer?",
+    "choices": [
+      "Overlay filesystem",
+      "WORKDIR",
+      "USER",
+      "Linux cgroup"
+    ],
+    "answer": "Overlay filesystem"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker build context",
+    "prompt": "Which technical term accurately matches this description: supplies accessible files from a selected directory to an image build?",
+    "choices": [
+      "Docker build context",
+      "ARG",
+      "Docker registry",
+      "Overlay filesystem"
+    ],
+    "answer": "Docker build context"
+  },
+  {
+    "subject_id": 23,
+    "skill": ".dockerignore",
+    "prompt": "Which technical term accurately matches this description: excludes selected local files from an image build context?",
+    "choices": [
+      ".dockerignore",
+      "ENV",
+      "Rootless Docker",
+      "Docker build context"
+    ],
+    "answer": ".dockerignore"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker layer cache",
+    "prompt": "Which technical term accurately matches this description: reuses unchanged image-build steps to reduce repeated work?",
+    "choices": [
+      "Docker layer cache",
+      "COPY",
+      "Docker restart policy",
+      ".dockerignore"
+    ],
+    "answer": "Docker layer cache"
+  },
+  {
+    "subject_id": 23,
+    "skill": "EXPOSE",
+    "prompt": "Which technical term accurately matches this description: documents intended listening ports in a Docker image definition?",
+    "choices": [
+      "EXPOSE",
+      "RUN",
+      "Container namespace",
+      "Docker layer cache"
+    ],
+    "answer": "EXPOSE"
+  },
+  {
+    "subject_id": 23,
+    "skill": "WORKDIR",
+    "prompt": "Which technical term accurately matches this description: sets the working directory for later image instructions and runtime defaults?",
+    "choices": [
+      "WORKDIR",
+      "CMD",
+      "Linux cgroup",
+      "EXPOSE"
+    ],
+    "answer": "WORKDIR"
+  },
+  {
+    "subject_id": 23,
+    "skill": "ARG",
+    "prompt": "Which technical term accurately matches this description: defines a variable available at image build time?",
+    "choices": [
+      "ARG",
+      "USER",
+      "Overlay filesystem",
+      "WORKDIR"
+    ],
+    "answer": "ARG"
+  },
+  {
+    "subject_id": 23,
+    "skill": "ENV",
+    "prompt": "Which technical term accurately matches this description: defines an environment variable preserved in the image configuration?",
+    "choices": [
+      "ENV",
+      "Docker registry",
+      "Docker build context",
+      "ARG"
+    ],
+    "answer": "ENV"
+  },
+  {
+    "subject_id": 23,
+    "skill": "COPY",
+    "prompt": "Which technical term accurately matches this description: adds files from the build context to the image filesystem?",
+    "choices": [
+      "COPY",
+      "Rootless Docker",
+      ".dockerignore",
+      "ENV"
+    ],
+    "answer": "COPY"
+  },
+  {
+    "subject_id": 23,
+    "skill": "RUN",
+    "prompt": "Which technical term accurately matches this description: executes a command while building a Docker image layer?",
+    "choices": [
+      "RUN",
+      "Docker restart policy",
+      "Docker layer cache",
+      "COPY"
+    ],
+    "answer": "RUN"
+  },
+  {
+    "subject_id": 23,
+    "skill": "CMD",
+    "prompt": "Which technical term accurately matches this description: sets a default command that may be overridden at container start?",
+    "choices": [
+      "CMD",
+      "Container namespace",
+      "EXPOSE",
+      "RUN"
+    ],
+    "answer": "CMD"
+  },
+  {
+    "subject_id": 23,
+    "skill": "USER",
+    "prompt": "Which technical term accurately matches this description: selects the user identity used for subsequent image or runtime commands?",
+    "choices": [
+      "USER",
+      "Linux cgroup",
+      "WORKDIR",
+      "CMD"
+    ],
+    "answer": "USER"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker registry",
+    "prompt": "Which technical term accurately matches this description: stores image repositories and tags for distribution?",
+    "choices": [
+      "Docker registry",
+      "Overlay filesystem",
+      "ARG",
+      "USER"
+    ],
+    "answer": "Docker registry"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Rootless Docker",
+    "prompt": "Which technical term accurately matches this description: runs container management without a privileged root daemon?",
+    "choices": [
+      "Rootless Docker",
+      "Docker build context",
+      "ENV",
+      "Docker registry"
+    ],
+    "answer": "Rootless Docker"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker restart policy",
+    "prompt": "Which technical term accurately matches this description: controls automatic container restarts after termination?",
+    "choices": [
+      "Docker restart policy",
+      ".dockerignore",
+      "COPY",
+      "Rootless Docker"
+    ],
+    "answer": "Docker restart policy"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Namespace resource",
+    "prompt": "Which technical term accurately matches this description: groups Kubernetes objects into a scoped administrative partition?",
+    "choices": [
+      "Namespace resource",
+      "Sidecar container",
+      "Toleration",
+      "NetworkPolicy"
+    ],
+    "answer": "Namespace resource"
+  },
+  {
+    "subject_id": 24,
+    "skill": "StatefulSet",
+    "prompt": "Which technical term accurately matches this description: manages stable identities and ordered lifecycle for persistent application replicas?",
+    "choices": [
+      "StatefulSet",
+      "Resource request",
+      "Pod disruption budget",
+      "Namespace resource"
+    ],
+    "answer": "StatefulSet"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Job",
+    "prompt": "Which technical term accurately matches this description: runs a batch workload until the required completions succeed?",
+    "choices": [
+      "Job",
+      "Resource limit",
+      "Rolling update",
+      "StatefulSet"
+    ],
+    "answer": "Job"
+  },
+  {
+    "subject_id": 24,
+    "skill": "CronJob",
+    "prompt": "Which technical term accurately matches this description: creates Kubernetes batch Jobs according to a recurring schedule?",
+    "choices": [
+      "CronJob",
+      "Node selector",
+      "ClusterIP Service",
+      "Job"
+    ],
+    "answer": "CronJob"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Init container",
+    "prompt": "Which technical term accurately matches this description: runs setup work before an application container starts?",
+    "choices": [
+      "Init container",
+      "Node affinity",
+      "NodePort Service",
+      "CronJob"
+    ],
+    "answer": "Init container"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Sidecar container",
+    "prompt": "Which technical term accurately matches this description: runs supporting behavior alongside a primary application container?",
+    "choices": [
+      "Sidecar container",
+      "Taint",
+      "NetworkPolicy",
+      "Init container"
+    ],
+    "answer": "Sidecar container"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Resource request",
+    "prompt": "Which technical term accurately matches this description: reserves scheduling capacity for a container's expected needs?",
+    "choices": [
+      "Resource request",
+      "Toleration",
+      "Namespace resource",
+      "Sidecar container"
+    ],
+    "answer": "Resource request"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Resource limit",
+    "prompt": "Which technical term accurately matches this description: sets an upper bound on a container's allowed resource use?",
+    "choices": [
+      "Resource limit",
+      "Pod disruption budget",
+      "StatefulSet",
+      "Resource request"
+    ],
+    "answer": "Resource limit"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Node selector",
+    "prompt": "Which technical term accurately matches this description: restricts pod scheduling to nodes with matching labels?",
+    "choices": [
+      "Node selector",
+      "Rolling update",
+      "Job",
+      "Resource limit"
+    ],
+    "answer": "Node selector"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Node affinity",
+    "prompt": "Which technical term accurately matches this description: expresses required or preferred scheduling constraints based on node labels?",
+    "choices": [
+      "Node affinity",
+      "ClusterIP Service",
+      "CronJob",
+      "Node selector"
+    ],
+    "answer": "Node affinity"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Taint",
+    "prompt": "Which technical term accurately matches this description: marks a node to repel pods that lack corresponding tolerations?",
+    "choices": [
+      "Taint",
+      "NodePort Service",
+      "Init container",
+      "Node affinity"
+    ],
+    "answer": "Taint"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Toleration",
+    "prompt": "Which technical term accurately matches this description: allows a pod to schedule onto a node with a matching taint?",
+    "choices": [
+      "Toleration",
+      "NetworkPolicy",
+      "Sidecar container",
+      "Taint"
+    ],
+    "answer": "Toleration"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Pod disruption budget",
+    "prompt": "Which technical term accurately matches this description: limits simultaneous voluntary disruption of healthy workload replicas?",
+    "choices": [
+      "Pod disruption budget",
+      "Namespace resource",
+      "Resource request",
+      "Toleration"
+    ],
+    "answer": "Pod disruption budget"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Rolling update",
+    "prompt": "Which technical term accurately matches this description: replaces deployment replicas gradually while respecting availability constraints?",
+    "choices": [
+      "Rolling update",
+      "StatefulSet",
+      "Resource limit",
+      "Pod disruption budget"
+    ],
+    "answer": "Rolling update"
+  },
+  {
+    "subject_id": 24,
+    "skill": "ClusterIP Service",
+    "prompt": "Which technical term accurately matches this description: exposes an internal stable virtual IP for a group of pods?",
+    "choices": [
+      "ClusterIP Service",
+      "Job",
+      "Node selector",
+      "Rolling update"
+    ],
+    "answer": "ClusterIP Service"
+  },
+  {
+    "subject_id": 24,
+    "skill": "NodePort Service",
+    "prompt": "Which technical term accurately matches this description: maps a service port to a port reachable on eligible cluster nodes?",
+    "choices": [
+      "NodePort Service",
+      "CronJob",
+      "Node affinity",
+      "ClusterIP Service"
+    ],
+    "answer": "NodePort Service"
+  },
+  {
+    "subject_id": 24,
+    "skill": "NetworkPolicy",
+    "prompt": "Which technical term accurately matches this description: specifies allowed ingress or egress connections for selected pods?",
+    "choices": [
+      "NetworkPolicy",
+      "Init container",
+      "Taint",
+      "NodePort Service"
+    ],
+    "answer": "NetworkPolicy"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Staging area",
+    "prompt": "Which technical term accurately matches this description: temporarily stores extracted data before cleaning and loading final analytical tables?",
+    "choices": [
+      "Staging area",
+      "Silver layer",
+      "Transaction fact table",
+      "Late arriving dimension"
+    ],
+    "answer": "Staging area"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Source-to-target mapping",
+    "prompt": "Which technical term accurately matches this description: documents how source columns are converted into destination fields?",
+    "choices": [
+      "Source-to-target mapping",
+      "Gold layer",
+      "Junk dimension",
+      "Early arriving fact"
+    ],
+    "answer": "Source-to-target mapping"
+  },
+  {
+    "subject_id": 25,
+    "skill": "ETL orchestration",
+    "prompt": "Which technical term accurately matches this description: coordinates extraction transformation and loading tasks with dependencies?",
+    "choices": [
+      "ETL orchestration",
+      "SCD Type 1",
+      "Conformed dimension",
+      "Inferred member"
+    ],
+    "answer": "ETL orchestration"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Landing zone",
+    "prompt": "Which technical term accurately matches this description: holds ingested source data before quality and standardization steps?",
+    "choices": [
+      "Landing zone",
+      "SCD Type 3",
+      "Degenerate dimension",
+      "Surrogate key lookup"
+    ],
+    "answer": "Landing zone"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Bronze layer",
+    "prompt": "Which technical term accurately matches this description: retains source-like raw records in a multilevel lakehouse architecture?",
+    "choices": [
+      "Bronze layer",
+      "Snapshot fact table",
+      "Fact grain",
+      "Data validation rule"
+    ],
+    "answer": "Bronze layer"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Silver layer",
+    "prompt": "Which technical term accurately matches this description: stores cleaned and conformed records intended for broad reuse?",
+    "choices": [
+      "Silver layer",
+      "Accumulating snapshot",
+      "Late arriving dimension",
+      "Reject table"
+    ],
+    "answer": "Silver layer"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Gold layer",
+    "prompt": "Which technical term accurately matches this description: stores business-ready curated aggregates or entities for consumption?",
+    "choices": [
+      "Gold layer",
+      "Transaction fact table",
+      "Early arriving fact",
+      "Audit column"
+    ],
+    "answer": "Gold layer"
+  },
+  {
+    "subject_id": 25,
+    "skill": "SCD Type 1",
+    "prompt": "Which technical term accurately matches this description: overwrites changed dimension attributes without keeping historical versions?",
+    "choices": [
+      "SCD Type 1",
+      "Junk dimension",
+      "Inferred member",
+      "Load watermark"
+    ],
+    "answer": "SCD Type 1"
+  },
+  {
+    "subject_id": 25,
+    "skill": "SCD Type 3",
+    "prompt": "Which technical term accurately matches this description: stores selected prior attribute values in extra dimension columns?",
+    "choices": [
+      "SCD Type 3",
+      "Conformed dimension",
+      "Surrogate key lookup",
+      "Upsert load"
+    ],
+    "answer": "SCD Type 3"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Snapshot fact table",
+    "prompt": "Which technical term accurately matches this description: captures measurements at regular points in time?",
+    "choices": [
+      "Snapshot fact table",
+      "Degenerate dimension",
+      "Data validation rule",
+      "Delete detection"
+    ],
+    "answer": "Snapshot fact table"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Accumulating snapshot",
+    "prompt": "Which technical term accurately matches this description: tracks milestone dates and statuses for a process lifecycle?",
+    "choices": [
+      "Accumulating snapshot",
+      "Fact grain",
+      "Reject table",
+      "Soft delete"
+    ],
+    "answer": "Accumulating snapshot"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Transaction fact table",
+    "prompt": "Which technical term accurately matches this description: records individual business events at the chosen grain?",
+    "choices": [
+      "Transaction fact table",
+      "Late arriving dimension",
+      "Audit column",
+      "CDC log-based capture"
+    ],
+    "answer": "Transaction fact table"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Junk dimension",
+    "prompt": "Which technical term accurately matches this description: combines several low-cardinality flags into a compact dimension?",
+    "choices": [
+      "Junk dimension",
+      "Early arriving fact",
+      "Load watermark",
+      "Batch window"
+    ],
+    "answer": "Junk dimension"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Conformed dimension",
+    "prompt": "Which technical term accurately matches this description: provides shared descriptive attributes across multiple fact processes?",
+    "choices": [
+      "Conformed dimension",
+      "Inferred member",
+      "Upsert load",
+      "Microbatch"
+    ],
+    "answer": "Conformed dimension"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Degenerate dimension",
+    "prompt": "Which technical term accurately matches this description: stores a business identifier in a fact row without a separate dimension table?",
+    "choices": [
+      "Degenerate dimension",
+      "Surrogate key lookup",
+      "Delete detection",
+      "Data quality scorecard"
+    ],
+    "answer": "Degenerate dimension"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Fact grain",
+    "prompt": "Which technical term accurately matches this description: specifies exactly what one row of a fact table represents?",
+    "choices": [
+      "Fact grain",
+      "Data validation rule",
+      "Soft delete",
+      "Reprocessing window"
+    ],
+    "answer": "Fact grain"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Late arriving dimension",
+    "prompt": "Which technical term accurately matches this description: appears after the fact records that reference it were ingested?",
+    "choices": [
+      "Late arriving dimension",
+      "Reject table",
+      "CDC log-based capture",
+      "Schema drift"
+    ],
+    "answer": "Late arriving dimension"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Early arriving fact",
+    "prompt": "Which technical term accurately matches this description: is loaded before its corresponding dimension attributes are fully available?",
+    "choices": [
+      "Early arriving fact",
+      "Audit column",
+      "Batch window",
+      "Data vault hub"
+    ],
+    "answer": "Early arriving fact"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Inferred member",
+    "prompt": "Which technical term accurately matches this description: provides a temporary placeholder dimension row until full attributes arrive?",
+    "choices": [
+      "Inferred member",
+      "Load watermark",
+      "Microbatch",
+      "Data vault link"
+    ],
+    "answer": "Inferred member"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Surrogate key lookup",
+    "prompt": "Which technical term accurately matches this description: resolves a source natural key to the destination dimension key?",
+    "choices": [
+      "Surrogate key lookup",
+      "Upsert load",
+      "Data quality scorecard",
+      "Data vault satellite"
+    ],
+    "answer": "Surrogate key lookup"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data validation rule",
+    "prompt": "Which technical term accurately matches this description: checks dataset properties such as uniqueness completeness and range?",
+    "choices": [
+      "Data validation rule",
+      "Delete detection",
+      "Reprocessing window",
+      "Kimball dimensional model"
+    ],
+    "answer": "Data validation rule"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Reject table",
+    "prompt": "Which technical term accurately matches this description: captures records that failed required integration validations?",
+    "choices": [
+      "Reject table",
+      "Soft delete",
+      "Schema drift",
+      "Staging area"
+    ],
+    "answer": "Reject table"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Audit column",
+    "prompt": "Which technical term accurately matches this description: records operational metadata such as ingestion timestamp or source file?",
+    "choices": [
+      "Audit column",
+      "CDC log-based capture",
+      "Data vault hub",
+      "Source-to-target mapping"
+    ],
+    "answer": "Audit column"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Load watermark",
+    "prompt": "Which technical term accurately matches this description: stores the last safely processed time or identifier for incremental ingestion?",
+    "choices": [
+      "Load watermark",
+      "Batch window",
+      "Data vault link",
+      "ETL orchestration"
+    ],
+    "answer": "Load watermark"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Upsert load",
+    "prompt": "Which technical term accurately matches this description: inserts new destination rows and updates matching existing rows?",
+    "choices": [
+      "Upsert load",
+      "Microbatch",
+      "Data vault satellite",
+      "Landing zone"
+    ],
+    "answer": "Upsert load"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Delete detection",
+    "prompt": "Which technical term accurately matches this description: identifies source deletions that downstream stores must propagate?",
+    "choices": [
+      "Delete detection",
+      "Data quality scorecard",
+      "Kimball dimensional model",
+      "Bronze layer"
+    ],
+    "answer": "Delete detection"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Soft delete",
+    "prompt": "Which technical term accurately matches this description: marks a record inactive rather than physically deleting it?",
+    "choices": [
+      "Soft delete",
+      "Reprocessing window",
+      "Staging area",
+      "Silver layer"
+    ],
+    "answer": "Soft delete"
+  },
+  {
+    "subject_id": 25,
+    "skill": "CDC log-based capture",
+    "prompt": "Which technical term accurately matches this description: reads database change logs instead of querying full source tables?",
+    "choices": [
+      "CDC log-based capture",
+      "Schema drift",
+      "Source-to-target mapping",
+      "Gold layer"
+    ],
+    "answer": "CDC log-based capture"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Batch window",
+    "prompt": "Which technical term accurately matches this description: specifies the period of records included in a scheduled processing run?",
+    "choices": [
+      "Batch window",
+      "Data vault hub",
+      "ETL orchestration",
+      "SCD Type 1"
+    ],
+    "answer": "Batch window"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Microbatch",
+    "prompt": "Which technical term accurately matches this description: processes small bounded groups of arriving records repeatedly?",
+    "choices": [
+      "Microbatch",
+      "Data vault link",
+      "Landing zone",
+      "SCD Type 3"
+    ],
+    "answer": "Microbatch"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data quality scorecard",
+    "prompt": "Which technical term accurately matches this description: tracks quality indicators across important dimensions?",
+    "choices": [
+      "Data quality scorecard",
+      "Data vault satellite",
+      "Bronze layer",
+      "Snapshot fact table"
+    ],
+    "answer": "Data quality scorecard"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Reprocessing window",
+    "prompt": "Which technical term accurately matches this description: replays selected earlier ingestion intervals after discovering a defect?",
+    "choices": [
+      "Reprocessing window",
+      "Kimball dimensional model",
+      "Silver layer",
+      "Accumulating snapshot"
+    ],
+    "answer": "Reprocessing window"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Schema drift",
+    "prompt": "Which technical term accurately matches this description: occurs when arriving data fields or types differ from the agreed structure?",
+    "choices": [
+      "Schema drift",
+      "Staging area",
+      "Gold layer",
+      "Transaction fact table"
+    ],
+    "answer": "Schema drift"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data vault hub",
+    "prompt": "Which technical term accurately matches this description: stores distinct core business keys in a Data Vault model?",
+    "choices": [
+      "Data vault hub",
+      "Source-to-target mapping",
+      "SCD Type 1",
+      "Junk dimension"
+    ],
+    "answer": "Data vault hub"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data vault link",
+    "prompt": "Which technical term accurately matches this description: records associations among core business keys?",
+    "choices": [
+      "Data vault link",
+      "ETL orchestration",
+      "SCD Type 3",
+      "Conformed dimension"
+    ],
+    "answer": "Data vault link"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data vault satellite",
+    "prompt": "Which technical term accurately matches this description: stores descriptive and historical attributes for hubs or links?",
+    "choices": [
+      "Data vault satellite",
+      "Landing zone",
+      "Snapshot fact table",
+      "Degenerate dimension"
+    ],
+    "answer": "Data vault satellite"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Kimball dimensional model",
+    "prompt": "Which technical term accurately matches this description: organizes analytical storage around business processes, facts and dimensions?",
+    "choices": [
+      "Kimball dimensional model",
+      "Bronze layer",
+      "Accumulating snapshot",
+      "Fact grain"
+    ],
+    "answer": "Kimball dimensional model"
+  }
+]
