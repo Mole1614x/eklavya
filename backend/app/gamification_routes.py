@@ -65,7 +65,7 @@ def achievements(user: CurrentUser, db: DB) -> list[dict]:
 def insights(user: CurrentUser, db: DB) -> dict:
     daily = db.execute(select(func.date(Submission.created_at).label("day"), func.count().label("count")).where(
         Submission.user_id == user.id,
-    ).group_by(func.date(Submission.created_at)).order_by(func.date(Submission.created_at).desc()).limit(30)).all()
+    ).group_by(func.date(Submission.created_at)).order_by(func.date(Submission.created_at).desc()).limit(91)).all()
     xp = db.execute(select(func.date(XPTransaction.created_at).label("day"), func.sum(XPTransaction.amount).label("amount")).where(
         XPTransaction.user_id == user.id,
     ).group_by(func.date(XPTransaction.created_at)).order_by(func.date(XPTransaction.created_at))).all()
