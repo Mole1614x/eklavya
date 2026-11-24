@@ -57,10 +57,15 @@ async function advancedApi<T>(path: string, init?: RequestInit): Promise<T> {
 async function allAdminProblems(): Promise<Problem[]> {
   const items: Problem[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 10000; offset += limit) {
-    const batch = await api<Problem[]>(`problems?limit=${limit}&offset=${offset}`);
-    items.push(...batch);
-    if (batch.length < limit) break;
+  const concurrency = 4;
+  for (let offset = 0; offset < 10000; offset += limit * concurrency) {
+    const pages = await Promise.all(
+      Array.from({ length: concurrency }, (_, i) =>
+        api<Problem[]>(`problems?limit=${limit}&offset=${offset + i * limit}`),
+      ),
+    );
+    for (const page of pages) items.push(...page);
+    if (pages.some((page) => page.length < limit)) break;
   }
   return items;
 }
@@ -152,6 +157,7 @@ export function AdminConsole() {
   const [denied, setDenied] = useState(false);
   const [overview, setOverview] = useState<Overview | null>(null);
   const [problems, setProblems] = useState<Problem[]>([]);
+  const [catalogRevision, setCatalogRevision] = useState(0);
   const [datasets, setDatasets] = useState<Dataset[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   const [contests, setContests] = useState<Contest[]>([]);
@@ -172,7 +178,7 @@ export function AdminConsole() {
 
   const load = useCallback(async () => {
     const results = await Promise.all([
-      api<Overview>("overview"), allAdminProblems(), api<Dataset[]>("datasets?limit=100"),
+      api<Overview>("overview"), api<Problem[]>("problems?limit=100"), api<Dataset[]>("datasets?limit=100"),
       api<User[]>("users?limit=100"), api<Contest[]>("contests"), api<Path[]>("paths"),
       api<Achievement[]>("achievements"), api<Audit[]>("audit-logs?limit=100"),
       api<Ledger[]>("xp-transactions?limit=100"), api<Ledger[]>("rank-history?limit=100"),
@@ -183,6 +189,7 @@ export function AdminConsole() {
     setOverview(results[0]); setProblems(results[1]); setDatasets(results[2]); setUsers(results[3]);
     setContests(results[4]); setPaths(results[5]); setAchievements(results[6]); setAudits(results[7]);
     setXp(results[8]); setRanks(results[9]); setAssessments(results[10]); setPracticeDatasets(results[11]); setGroups(results[12]);
+    setCatalogRevision((revision) => revision + 1);
   }, []);
 
   useEffect(() => {
@@ -194,6 +201,20 @@ export function AdminConsole() {
       setStatus("");
     }).catch((error) => { setDenied(true); setStatus(error instanceof Error ? error.message : "Access denied"); });
   }, [load]);
+
+  // Do not block the Admin overview on 26+ pages of questions.
+  // Load the complete question bank only when the editor or assessment picker
+  // is visible. Reload it after edits, preserving a responsive initial screen.
+  useEffect(() => {
+    if (section !== "problems" && section !== "assessments") return;
+    let active = true;
+    void allAdminProblems().then((items) => {
+      if (active) setProblems(items);
+    }).catch((error) => {
+      if (active) setStatus(error instanceof Error ? error.message : "Cannot load all questions");
+    });
+    return () => { active = false; };
+  }, [section, catalogRevision]);
 
   async function act(path: string, body: unknown, message: string) {
     try {
