@@ -23,10 +23,10 @@ function ActivityHeatmap({ entries }: { entries: Insights["daily_activity"] }) {
     const today = new Date();
     const latest = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
     const start = new Date(latest);
-    start.setUTCDate(start.getUTCDate() - 90);
+    start.setUTCDate(start.getUTCDate() - 364);
     // Match calendar columns to Sunday through Saturday.
     start.setUTCDate(start.getUTCDate() - start.getUTCDay());
-    return Array.from({ length: 98 }, (_, index) => {
+    return Array.from({ length: 371 }, (_, index) => {
       const date = new Date(start);
       date.setUTCDate(start.getUTCDate() + index);
       const key = date.toISOString().slice(0, 10);
@@ -35,7 +35,7 @@ function ActivityHeatmap({ entries }: { entries: Insights["daily_activity"] }) {
   }, [entries]);
 
   return <div className="lp-heatmap-wrap">
-    <div className="lp-heatmap" role="img" aria-label="Submission activity heatmap for the last 13 weeks">
+    <div className="lp-heatmap" role="img" aria-label="Submission activity heatmap for the last 12 months">
       {days.map(day => <span key={day.key} title={`${day.key}: ${day.count} submissions`}
         className={`lp-day ${day.future ? "lp-day-future" : day.count === 0 ? "" : day.count === 1 ? "lp-day-1" : day.count < 4 ? "lp-day-2" : "lp-day-3"}`}/>)}
     </div>
@@ -188,7 +188,7 @@ export function ProfilePanel() {
 
         <section className="lp-glass lp-activity">
           <div className="lp-section-heading">
-            <div><div className="lp-section-title"><CalendarDays size={19}/><h2>Submission activity</h2></div><p>Daily contributions across the last 13 weeks</p></div>
+            <div><div className="lp-section-title"><CalendarDays size={19}/><h2>Submission activity</h2></div><p>Daily contributions across the last 12 months</p></div>
             <span className="lp-activity-total">{insights ? totalActivity.toLocaleString() : "—"} submissions</span>
           </div>
           <ActivityHeatmap entries={insights?.daily_activity ?? []}/>
