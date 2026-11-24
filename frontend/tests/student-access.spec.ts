@@ -53,7 +53,7 @@ test("Content Studio checks existing questions and blocks duplicate publication"
   await page.getByRole("tab", { name: "Problems / Question Management" }).click();
   const editor = page.locator("form.admin-editor").first();
   await editor.getByLabel("Unique slug").fill("duplicate-parity-new");
-  await editor.getByLabel("Title").fill("Parity Check");
+  await editor.getByLabel("Title", { exact: true }).fill("Parity Check");
   await editor.getByRole("button", { name: "Check for duplicates" }).click();
   await expect(editor.getByText("Potential existing questions")).toBeVisible();
   await expect(editor.locator(".duplicate-matches")).toContainText("parity-check");
