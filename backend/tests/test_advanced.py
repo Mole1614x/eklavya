@@ -171,3 +171,66 @@ def test_safe_excel_tableau_and_multi_tool_graders(advanced_client):
         "challenge_key": "sales-by-region", "technology": "SQL", "answer": "SELECT Region, SUM(Sales) FROM Orders GROUP BY Region",
     }).json()
     assert multi["passed"] is True
+
+
+def test_admin_can_correct_assessment_schedule_before_any_attempts(advanced_client):
+    client, engine, headers, ids, _ = advanced_client
+    payload = assessment_payload(ids["learner"])
+    payload["opens_at"] = (datetime.now(timezone.utc) + timedelta(hours=2)).isoformat()
+    payload["closes_at"] = (datetime.now(timezone.utc) + timedelta(hours=3)).isoformat()
+    response = client.post("/api/v1/advanced/admin/assessments", headers=headers["admin"], json=payload)
+    assert response.status_code == 201, response.text
+    identifier = response.json()["id"]
+    assert client.post(f"/api/v1/advanced/assessments/{identifier}/start", headers=headers["learner"]).status_code == 409
+
+    now = datetime.now(timezone.utc)
+    proposed = {
+        "opens_at": (now - timedelta(minutes=2)).isoformat(),
+        "closes_at": (now + timedelta(hours=1)).isoformat(),
+        "duration_minutes": 25,
+        "reason": "Allow practice to start now",
+    }
+    assert client.patch(f"/api/v1/advanced/admin/assessments/{identifier}/schedule",
+                        headers=headers["learner"], json=proposed).status_code == 403
+    invalid = client.patch(f"/api/v1/advanced/admin/assessments/{identifier}/schedule",
+                           headers=headers["admin"], json={**proposed, "closes_at": proposed["opens_at"]})
+    assert invalid.status_code == 422
+    fixed = client.patch(f"/api/v1/advanced/admin/assessments/{identifier}/schedule",
+                         headers=headers["admin"], json=proposed)
+    assert fixed.status_code == 200, fixed.text
+    assert fixed.json()["duration_minutes"] == 25
+    assert fixed.json()["status"] == "PUBLISHED"
+    attempt = client.post(f"/api/v1/advanced/assessments/{identifier}/start", headers=headers["learner"])
+    assert attempt.status_code == 201, attempt.text
+
+    locked = client.patch(f"/api/v1/advanced/admin/assessments/{identifier}/schedule",
+                          headers=headers["admin"], json=proposed)
+    assert locked.status_code == 409
+    with Session(engine) as db:
+        item = db.get(AssessmentAttempt, attempt.json()["id"])
+        assert item.assessment_id == identifier
+
+
+def test_assessment_window_rejects_future_and_expired_even_when_all_students(advanced_client):
+    client, _, headers, ids, _ = advanced_client
+    payload = assessment_payload(ids["learner"])
+    payload["access_scope"] = "ALL"
+    payload["assigned_user_ids"] = []
+    now = datetime.now(timezone.utc)
+    payload["opens_at"] = (now + timedelta(hours=1)).isoformat()
+    payload["closes_at"] = (now + timedelta(hours=2)).isoformat()
+    response = client.post("/api/v1/advanced/admin/assessments", headers=headers["admin"], json=payload)
+    assert response.status_code == 201, response.text
+    identifier = response.json()["id"]
+    assert client.post(f"/api/v1/advanced/assessments/{identifier}/start",
+                       headers=headers["other"]).status_code == 409
+    closed = {
+        "opens_at": (now - timedelta(hours=2)).isoformat(),
+        "closes_at": (now - timedelta(hours=1)).isoformat(),
+        "duration_minutes": 30,
+        "reason": "Verify expired window enforcement",
+    }
+    assert client.patch(f"/api/v1/advanced/admin/assessments/{identifier}/schedule",
+                        headers=headers["admin"], json=closed).status_code == 200
+    assert client.post(f"/api/v1/advanced/assessments/{identifier}/start",
+                       headers=headers["other"]).status_code == 409
