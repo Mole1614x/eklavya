@@ -8,7 +8,7 @@ test("Phase 17 assessment, Data Lab, expression, and multi-tool journeys", async
   await page.getByLabel("Email or username").fill(identity);
   await page.getByLabel("Password").fill(password);
   await page.getByRole("button", { name: "Sign in" }).click();
-  await expect(page).toHaveURL(/\/profile$/);
+  await expect(page).toHaveURL(/\/admin$/);
 
   const me = await (await page.request.get("/api/auth/me")).json();
   const suffix = Date.now().toString(36);
