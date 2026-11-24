@@ -45,7 +45,7 @@ export function StudioDashboard() {
       jsonOrNull<History>("/api/learning/daily/history"),
       jsonOrNull<Path[]>("/api/learning/paths"),
       jsonOrNull<Submission[]>("/api/submissions?limit=15"),
-      jsonOrNull<Catalogue>("/api/advanced/subjects"),
+      jsonOrNull<Catalogue>("/api/catalog-summary"),
     ]).then(([user, progress, insights, daily, history, paths, submissions, catalogue]) => {
       if (alive) {
         setData({ user, progress, insights, daily, history, paths: paths ?? [], submissions: submissions ?? [], catalogue });
