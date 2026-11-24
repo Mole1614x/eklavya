@@ -847,7 +847,7 @@
       "Logistic regression",
       "K-means clustering",
       "Support vector machine",
-      "Cross-validation"
+      "Nested cross-validation"
     ],
     "answer": "Logistic regression"
   },
@@ -870,7 +870,7 @@
     "choices": [
       "Gradient boosting",
       "Support vector machine",
-      "Cross-validation",
+      "Nested cross-validation",
       "Calibration"
     ],
     "answer": "Gradient boosting"
@@ -893,7 +893,7 @@
     "prompt": "In Machine Learning, which concept is best described as follows: finds dense clusters while identifying sparse-region noise?",
     "choices": [
       "DBSCAN",
-      "Cross-validation",
+      "Nested cross-validation",
       "Calibration",
       "Random forest"
     ],
@@ -925,15 +925,15 @@
   },
   {
     "subject_id": 11,
-    "skill": "Cross-validation",
-    "prompt": "In Machine Learning, which concept is best described as follows: repeats fit and evaluation over designated training-validation splits?",
+    "skill": "Nested cross-validation",
+    "prompt": "In Machine Learning, which concept is best described as follows: uses an outer validation loop to estimate performance while an inner loop selects hyperparameters?",
     "choices": [
-      "Cross-validation",
+      "Nested cross-validation",
       "Logistic regression",
       "Gradient boosting",
       "DBSCAN"
     ],
-    "answer": "Cross-validation"
+    "answer": "Nested cross-validation"
   },
   {
     "subject_id": 11,
@@ -961,15 +961,15 @@
   },
   {
     "subject_id": 12,
-    "skill": "Backpropagation",
-    "prompt": "In Deep Learning, which concept is best described as follows: computes neural-network gradients by reverse application of the chain rule?",
+    "skill": "Vanishing gradient",
+    "prompt": "In Deep Learning, which concept is best described as follows: describes gradients shrinking through layers so early parameters learn very slowly?",
     "choices": [
-      "Backpropagation",
+      "Vanishing gradient",
       "Residual connection",
       "Self-attention",
       "Early stopping"
     ],
-    "answer": "Backpropagation"
+    "answer": "Vanishing gradient"
   },
   {
     "subject_id": 12,
@@ -1003,7 +1003,7 @@
       "Residual connection",
       "Gradient clipping",
       "Learning-rate scheduler",
-      "Backpropagation"
+      "Vanishing gradient"
     ],
     "answer": "Residual connection"
   },
@@ -1026,7 +1026,7 @@
     "choices": [
       "Self-attention",
       "Learning-rate scheduler",
-      "Backpropagation",
+      "Vanishing gradient",
       "Batch normalization"
     ],
     "answer": "Self-attention"
@@ -1049,7 +1049,7 @@
     "prompt": "In Deep Learning, which concept is best described as follows: halts training based on a chosen validation criterion?",
     "choices": [
       "Early stopping",
-      "Backpropagation",
+      "Vanishing gradient",
       "Batch normalization",
       "Convolution"
     ],
@@ -1207,7 +1207,7 @@
       "Canny edge detector",
       "Nonmaximum suppression",
       "Morphological erosion",
-      "Image segmentation"
+      "Semantic segmentation metric mIoU"
     ],
     "answer": "Canny edge detector"
   },
@@ -1230,7 +1230,7 @@
     "choices": [
       "Intersection over union",
       "Morphological erosion",
-      "Image segmentation",
+      "Semantic segmentation metric mIoU",
       "Data augmentation"
     ],
     "answer": "Intersection over union"
@@ -1253,7 +1253,7 @@
     "prompt": "In Computer Vision, which concept is best described as follows: estimates apparent pixel motion between video frames?",
     "choices": [
       "Optical flow",
-      "Image segmentation",
+      "Semantic segmentation metric mIoU",
       "Data augmentation",
       "Histogram equalization"
     ],
@@ -1285,15 +1285,15 @@
   },
   {
     "subject_id": 14,
-    "skill": "Image segmentation",
-    "prompt": "In Computer Vision, which concept is best described as follows: assigns semantic or instance regions to image pixels?",
+    "skill": "Semantic segmentation metric mIoU",
+    "prompt": "In Computer Vision, which concept is best described as follows: averages intersection-over-union scores across the semantic classes being evaluated?",
     "choices": [
-      "Image segmentation",
+      "Semantic segmentation metric mIoU",
       "Canny edge detector",
       "Intersection over union",
       "Optical flow"
     ],
-    "answer": "Image segmentation"
+    "answer": "Semantic segmentation metric mIoU"
   },
   {
     "subject_id": 14,
@@ -1447,7 +1447,7 @@
       "XLOOKUP",
       "PivotTable",
       "Conditional formatting",
-      "Absolute reference"
+      "Mixed reference"
     ],
     "answer": "XLOOKUP"
   },
@@ -1470,7 +1470,7 @@
     "choices": [
       "COUNTIFS",
       "Conditional formatting",
-      "Absolute reference",
+      "Mixed reference",
       "LET"
     ],
     "answer": "COUNTIFS"
@@ -1493,7 +1493,7 @@
     "prompt": "In Microsoft Excel, which concept is best described as follows: imports and transforms data using refreshable query steps?",
     "choices": [
       "Power Query",
-      "Absolute reference",
+      "Mixed reference",
       "LET",
       "SUMIFS"
     ],
@@ -1525,15 +1525,15 @@
   },
   {
     "subject_id": 16,
-    "skill": "Absolute reference",
-    "prompt": "In Microsoft Excel, which concept is best described as follows: keeps both row and column fixed when a formula is copied?",
+    "skill": "Mixed reference",
+    "prompt": "In Microsoft Excel, which concept is best described as follows: locks only the row or only the column when a spreadsheet formula is copied?",
     "choices": [
-      "Absolute reference",
+      "Mixed reference",
       "XLOOKUP",
       "COUNTIFS",
       "Power Query"
     ],
-    "answer": "Absolute reference"
+    "answer": "Mixed reference"
   },
   {
     "subject_id": 16,
@@ -1561,15 +1561,15 @@
   },
   {
     "subject_id": 17,
-    "skill": "FIXED LOD",
-    "prompt": "In Tableau, which concept is best described as follows: calculates an aggregation at explicitly declared dimensions independent of most view dimensions?",
+    "skill": "ATTR aggregate",
+    "prompt": "In Tableau, which concept is best described as follows: returns the displayed dimension value when all contributing records agree, otherwise an asterisk?",
     "choices": [
-      "FIXED LOD",
+      "ATTR aggregate",
       "Table calculation",
       "Parameter",
       "Dual-axis chart"
     ],
-    "answer": "FIXED LOD"
+    "answer": "ATTR aggregate"
   },
   {
     "subject_id": 17,
@@ -1603,7 +1603,7 @@
       "Table calculation",
       "Calculated field",
       "Dashboard action",
-      "FIXED LOD"
+      "ATTR aggregate"
     ],
     "answer": "Table calculation"
   },
@@ -1626,7 +1626,7 @@
     "choices": [
       "Parameter",
       "Dashboard action",
-      "FIXED LOD",
+      "ATTR aggregate",
       "EXCLUDE LOD"
     ],
     "answer": "Parameter"
@@ -1649,7 +1649,7 @@
     "prompt": "In Tableau, which concept is best described as follows: layers two measures on separate synchronized or independent axes?",
     "choices": [
       "Dual-axis chart",
-      "FIXED LOD",
+      "ATTR aggregate",
       "EXCLUDE LOD",
       "Context filter"
     ],
@@ -1681,15 +1681,15 @@
   },
   {
     "subject_id": 18,
-    "skill": "CALCULATE",
-    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: evaluates a DAX expression under a modified filter context?",
+    "skill": "KEEPFILTERS",
+    "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: intersects new DAX filter conditions with existing filters instead of replacing them?",
     "choices": [
-      "CALCULATE",
+      "KEEPFILTERS",
       "ALL",
       "Calculated column",
       "Power Query"
     ],
-    "answer": "CALCULATE"
+    "answer": "KEEPFILTERS"
   },
   {
     "subject_id": 18,
@@ -1723,7 +1723,7 @@
       "ALL",
       "Star schema",
       "Row-level security",
-      "CALCULATE"
+      "KEEPFILTERS"
     ],
     "answer": "ALL"
   },
@@ -1746,7 +1746,7 @@
     "choices": [
       "Calculated column",
       "Row-level security",
-      "CALCULATE",
+      "KEEPFILTERS",
       "RELATED"
     ],
     "answer": "Calculated column"
@@ -1769,7 +1769,7 @@
     "prompt": "In Microsoft Power BI and DAX, which concept is best described as follows: performs import-time query shaping before model loading?",
     "choices": [
       "Power Query",
-      "CALCULATE",
+      "KEEPFILTERS",
       "RELATED",
       "Measure"
     ],
@@ -1801,15 +1801,15 @@
   },
   {
     "subject_id": 19,
-    "skill": "Standard deviation",
-    "prompt": "In Statistics and Probability, which concept is best described as follows: quantifies typical dispersion around a distribution mean?",
+    "skill": "Interquartile range",
+    "prompt": "In Statistics and Probability, which concept is best described as follows: measures dispersion as the difference between the third and first quartiles?",
     "choices": [
-      "Standard deviation",
+      "Interquartile range",
       "Type I error",
       "Central limit theorem",
       "Binomial distribution"
     ],
-    "answer": "Standard deviation"
+    "answer": "Interquartile range"
   },
   {
     "subject_id": 19,
@@ -1843,7 +1843,7 @@
       "Type I error",
       "Poisson distribution",
       "Covariance",
-      "Standard deviation"
+      "Interquartile range"
     ],
     "answer": "Type I error"
   },
@@ -1866,7 +1866,7 @@
     "choices": [
       "Central limit theorem",
       "Covariance",
-      "Standard deviation",
+      "Interquartile range",
       "Bayes theorem"
     ],
     "answer": "Central limit theorem"
@@ -1889,7 +1889,7 @@
     "prompt": "In Statistics and Probability, which concept is best described as follows: models successes in a fixed number of independent Bernoulli trials?",
     "choices": [
       "Binomial distribution",
-      "Standard deviation",
+      "Interquartile range",
       "Bayes theorem",
       "Type II error"
     ],
@@ -1926,7 +1926,7 @@
     "choices": [
       "Eigenvector",
       "Dot product",
-      "Matrix rank",
+      "Null space",
       "Chain rule"
     ],
     "answer": "Eigenvector"
@@ -1949,7 +1949,7 @@
     "prompt": "In Mathematics for AI/ML, which concept is best described as follows: organizes second partial derivatives of a scalar function into a matrix?",
     "choices": [
       "Hessian",
-      "Matrix rank",
+      "Null space",
       "Chain rule",
       "Partial derivative"
     ],
@@ -1981,15 +1981,15 @@
   },
   {
     "subject_id": 20,
-    "skill": "Matrix rank",
-    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: counts linearly independent columns or rows?",
+    "skill": "Null space",
+    "prompt": "In Mathematics for AI/ML, which concept is best described as follows: collects the input vectors that a matrix transforms into the zero vector?",
     "choices": [
-      "Matrix rank",
+      "Null space",
       "Convex function",
       "Eigenvector",
       "Hessian"
     ],
-    "answer": "Matrix rank"
+    "answer": "Null space"
   },
   {
     "subject_id": 20,
@@ -2023,7 +2023,7 @@
       "Convex function",
       "Gradient",
       "Dot product",
-      "Matrix rank"
+      "Null space"
     ],
     "answer": "Convex function"
   },
