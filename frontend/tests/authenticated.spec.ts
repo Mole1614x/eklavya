@@ -36,6 +36,7 @@ test("authenticated session rotates across BFF routes and protects profile data"
 
   await page.reload();
   await expect(page.getByRole("heading", { name: displayName })).toBeVisible();
+  await page.getByRole("button", { name: "Edit profile" }).click();
   await page.getByLabel("Bio").fill("Verified integration journey");
   await page.getByRole("button", { name: "Save profile" }).click();
   await expect(page.getByRole("status")).toContainText("Profile saved.");
