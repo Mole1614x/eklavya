@@ -21,15 +21,18 @@ LOGIC_TOPICS = {
 LOGIC_EXISTING = {"parity-check", "sum-of-digits", "pair-indices", "balanced-delimiters"}
 
 
-def matched_subject_ids(problem: Problem) -> set[int]:
-    ids = {subject["id"] for subject in SUBJECTS if problem.topic == subject["name"]}
-    if problem.topic in LOGIC_TOPICS or problem.slug in LOGIC_EXISTING:
+def matched_subject_ids(problem: Problem | dict) -> set[int]:
+    """Apply one mapping to persisted rows and pre-commit seed dictionaries."""
+    topic = problem["topic"] if isinstance(problem, dict) else problem.topic
+    slug = problem["slug"] if isinstance(problem, dict) else problem.slug
+    ids = {subject["id"] for subject in SUBJECTS if topic == subject["name"]}
+    if topic in LOGIC_TOPICS or slug in LOGIC_EXISTING:
         ids.add(1)
-    if problem.topic.startswith("NumPy · Level "):
+    if topic.startswith("NumPy · Level "):
         ids.add(5)
-    if problem.topic.startswith("Pandas · Level "):
+    if topic.startswith("Pandas · Level "):
         ids.add(6)
-    if problem.topic.startswith("Practical Data Analysis · Level "):
+    if topic.startswith("Practical Data Analysis · Level "):
         ids.add(7)
     return ids
 
