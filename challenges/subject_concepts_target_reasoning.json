@@ -1,0 +1,287 @@
+[
+  {
+    "subject_id": 40,
+    "skill": "Modus ponens",
+    "description": "From if P then Q and P, infer Q"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Modus tollens",
+    "description": "From if P then Q and not Q, infer not P"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Hypothetical syllogism",
+    "description": "From P implies Q and Q implies R, infer P implies R"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Disjunctive syllogism",
+    "description": "From P or Q and not P, infer Q"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Conjunction introduction",
+    "description": "From P and Q as separately established premises, infer P and Q together"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Conjunction elimination",
+    "description": "From P and Q, infer either P or Q individually"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Double negation",
+    "description": "A principle equating a proposition with its negation applied twice in classical logic"
+  },
+  {
+    "subject_id": 40,
+    "skill": "De Morgan law for AND",
+    "description": "Negation of a conjunction is equivalent to a disjunction of negations"
+  },
+  {
+    "subject_id": 40,
+    "skill": "De Morgan law for OR",
+    "description": "Negation of a disjunction is equivalent to a conjunction of negations"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Material implication",
+    "description": "The classical connective false only when the antecedent is true and consequent false"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Biconditional",
+    "description": "A connective true when its two propositions have the same truth value"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Tautology",
+    "description": "A proposition true under every assignment of its Boolean variables"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Contradiction statement",
+    "description": "A proposition false under every assignment of its Boolean variables"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Contingent proposition",
+    "description": "A proposition true on some valuations and false on others"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Satisfiable formula",
+    "description": "A logical formula true under at least one assignment of its variables"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Unsatisfiable formula",
+    "description": "A logical formula with no assignment that makes it true"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Logical equivalence",
+    "description": "A relationship where two formulas have matching truth values under every interpretation"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Resolution rule",
+    "description": "Inferring a new clause by eliminating complementary literals from clauses"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Universal instantiation",
+    "description": "Deriving an instance of a universally quantified statement for a selected domain element"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Existential generalization",
+    "description": "Deriving that some element has a property from a proof about one specific element"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Universal quantifier scope",
+    "description": "The portion of a formula governed by a statement about every element of a domain"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Existential quantifier scope",
+    "description": "The portion of a formula governed by a statement about at least one domain element"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Vacuous implication",
+    "description": "An implication true in classical logic because its antecedent is false"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Contradiction between premises",
+    "description": "A set of premises that cannot all hold simultaneously"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Logic grid puzzle",
+    "description": "A deduction puzzle matching categories by eliminating combinations with clues"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Circular seating constraint",
+    "description": "A restriction about neighbors or relative positions around a circle"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Linear seating constraint",
+    "description": "A restriction on left-right ordering of people in a row"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Floor arrangement puzzle",
+    "description": "Deducing occupancy of building levels from positional clues"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Box stacking puzzle",
+    "description": "Deducing vertical order of items from relative placement statements"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Scheduling puzzle",
+    "description": "Assigning events to times while satisfying precedence and exclusion conditions"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Adjacent seat relation",
+    "description": "A condition requiring two entities to occupy neighboring positions"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Opposite seat relation",
+    "description": "A condition matching locations across the center in an even-sized circular arrangement"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Relative ranking",
+    "description": "Determining an item's position from comparisons against other items"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Dual-side ranking formula",
+    "description": "For a single person ranked from both ends, the total equals left rank plus right rank minus one"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Direction coordinate model",
+    "description": "Representing north south east and west steps as signed coordinate changes"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Net displacement",
+    "description": "The vector from starting point to ending point regardless of path length"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Manhattan distance",
+    "description": "Sum of absolute coordinate differences along orthogonal dimensions"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Clockwise rotation",
+    "description": "A turn progressing in the direction followed by clock hands"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Anticlockwise rotation",
+    "description": "A turn progressing opposite the direction followed by clock hands"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Mirror image reasoning",
+    "description": "Inferring a reflected arrangement across a specified symmetry axis"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Water image reasoning",
+    "description": "Inferring a reflection across a horizontal plane or line"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Alphabet position encoding",
+    "description": "Converting letters into their ordinal positions in the alphabet"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Reverse alphabet encoding",
+    "description": "Mapping each letter to the alphabet letter in its mirrored position"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Caesar shift",
+    "description": "Replacing letters with alphabet characters at a fixed cyclic offset"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Symbol substitution",
+    "description": "Applying a consistent replacement mapping between tokens"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Number matrix pattern",
+    "description": "Inferring relations among numbers placed in an array of cells"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Letter series pattern",
+    "description": "Inferring transformations across an ordered sequence of alphabetic symbols"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Odd one out",
+    "description": "Identifying the item that fails a property shared by the remaining items"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Pair analogy",
+    "description": "Inferring a relation shared by two ordered pairs"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Rule based classification",
+    "description": "Assigning items to groups from a stated membership rule"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Knights and knaves",
+    "description": "A logic puzzle where speaker types are constrained to truthfulness or lying"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Cryptarithm",
+    "description": "A puzzle assigning distinct digits to symbols in an arithmetic expression"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Balance scale puzzle",
+    "description": "Determining relative weights through constrained comparisons on a balance"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Parity invariant",
+    "description": "A property based on evenness or oddness preserved by allowed transformations"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Extremal argument",
+    "description": "Proving a property by considering a minimal or maximal element"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Exhaustive case analysis",
+    "description": "Proving a conclusion by examining all distinct possibilities"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Constraint propagation",
+    "description": "Eliminating assignments that violate known partial constraints"
+  }
+]
