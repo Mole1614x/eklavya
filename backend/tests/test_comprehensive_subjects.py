@@ -78,11 +78,17 @@ def test_subject_catalogue_api_respects_public_audience(client):
     payload = response.json()
     assert payload["target_total"] == 2500
     assert len(payload["subjects"]) == 45
-    assert payload["classified_published"] == 135
+    assert payload["classified_published"] == 350
     assert payload["published_catalog_total"] == 372
-    assert sum(entry["published_questions"] for entry in payload["subjects"]) == 135
+    assert sum(entry["published_questions"] for entry in payload["subjects"]) == 350
     assert all(entry["remaining_to_target"] >= 0 for entry in payload["subjects"])
-    assert all(entry["execution_status"] == "Knowledge checks" for entry in payload["subjects"])
+    assert payload["unclassified_legacy"] == 22
+    indexed = {s["id"]: s for s in payload["subjects"]}
+    assert indexed[1]["published_questions"] == 103
+    assert indexed[5]["published_questions"] == 53
+    assert indexed[6]["published_questions"] == 53
+    assert indexed[7]["published_questions"] == 18
+    assert indexed[1]["remaining_to_target"] == 0
 
 
 def test_no_repeated_new_titles_or_quiz_statements(db):
