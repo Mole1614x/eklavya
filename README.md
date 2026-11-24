@@ -269,4 +269,17 @@ Content Studio and seed imports detect strong duplicate-question matches and req
 
 ## Complete subject catalogue — phased expansion
 
-EKLAVYA now has a **45-subject catalogue** at `/subjects` with live, permission-aware published question counts, links to original subject practice, and an initial set of 135 original graded MCQs. The source plan's 45 minimums total **2,500** questions (rather than the printed 2,560). The current seeded platform is expected to contain **372** problems, not the entire target. We do not claim unimplemented specialized execution engines are available. See [Comprehensive Subject Audit](docs/COMPREHENSIVE_45_SUBJECT_AUDIT.md) for the per-subject coverage, duplication strategy and remaining work.
+EKLAVYA now has a **45-subject catalogue** at `/subjects` with live, permission-aware published question counts, links to original subject practice, and an initial set of 135 original graded MCQs. The source plan's 45 minimums total **2,500** questions (rather than the printed 2,560). The question bank now contains **2,527** seeded problems and meets every individual minimum in the 45-subject plan. This count includes **2,155 new subject-specific conceptual MCQs**; it does not mean every topic has a specialized interactive runtime. We do not claim unimplemented specialized execution engines are available. See [Comprehensive Subject Audit](docs/COMPREHENSIVE_45_SUBJECT_AUDIT.md) for the per-subject coverage, duplication strategy and remaining work.
+
+
+## 45-subject question-bank completion (2,527 seeded questions)
+
+The 45 subject minima in the original plan sum to 2,500. The completed
+question catalogue has **2,527 published seed questions**, including 2,155
+new distinct conceptual MCQs, 135 original subject checks, and the 237
+previously verified programming and data challenges. All 45 subject minimums
+are met. The platform reuses existing questions rather than cloning them,
+and the question bank runs through the existing evaluator and learning paths.
+See [subject-by-subject audit](docs/COMPREHENSIVE_45_SUBJECT_AUDIT.md).
+**Scope:** these new questions are conceptual MCQs; specialized Power BI,
+Tableau, cluster, or cloud execution infrastructure is not implied.
