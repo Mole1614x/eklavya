@@ -12,9 +12,10 @@ a browsable 45-subject registry, existing-question mapping, 45 learning paths,
 and secure backend subject filters. There are no fabricated practice runtimes.
 
 Before this PR, the seed contained **237** published problems. After it, the
-expected seed count is **372**. Of the prior 237, **217** can be directly matched
+expected seed count is **372**. Of the prior 237, **224** can be directly matched
 to this taxonomy: 102 distinct logic problems (including two earlier pattern
-problems), 50 NumPy, 50 Pandas and 15 Practical Data Analysis. Another **20
+problems), 51 NumPy, 52 Pandas, 15 Practical Data Analysis, one PySpark, two
+Machine Learning and one Deep Learning challenge. Another **13
 legacy items** remain unclassified in the new taxonomy; these are preserved,
 not deleted or relabeled without review.
 
@@ -27,14 +28,14 @@ content or zero knowledge of the subject.
 | 2 | Data Structures and Algorithms | 150 | 0* | 3 | 3 | 147 | Knowledge checks |
 | 3 | Object-Oriented Programming | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
 | 4 | SQL and Database Engineering | 120 | 0* | 3 | 3 | 117 | Knowledge checks |
-| 5 | NumPy | 50 | 50 | 3 | 53 | 0 | Knowledge checks; existing practice |
-| 6 | Pandas | 50 | 50 | 3 | 53 | 0 | Knowledge checks; existing practice |
+| 5 | NumPy | 50 | 51 | 3 | 54 | 0 | Knowledge checks; existing practice |
+| 6 | Pandas | 50 | 52 | 3 | 55 | 0 | Knowledge checks; existing practice |
 | 7 | Practical Data Analysis | 50 | 15 | 3 | 18 | 32 | Knowledge checks; existing practice |
 | 8 | Data Cleaning and Transformation | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
-| 9 | PySpark | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
+| 9 | PySpark | 50 | 1 | 3 | 4 | 46 | Knowledge checks; existing practice |
 | 10 | Hadoop and MapReduce | 30 | 0* | 3 | 3 | 27 | Knowledge checks |
-| 11 | Machine Learning | 100 | 0* | 3 | 3 | 97 | Knowledge checks |
-| 12 | Deep Learning | 60 | 0* | 3 | 3 | 57 | Knowledge checks |
+| 11 | Machine Learning | 100 | 2 | 3 | 5 | 95 | Knowledge checks; existing practice |
+| 12 | Deep Learning | 60 | 1 | 3 | 4 | 56 | Knowledge checks; existing practice |
 | 13 | LLM and Generative AI | 60 | 0* | 3 | 3 | 57 | Knowledge checks |
 | 14 | Computer Vision | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
 | 15 | Natural Language Processing | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
@@ -69,8 +70,8 @@ content or zero knowledge of the subject.
 | 44 | Data Visualization | 40 | 0* | 3 | 3 | 37 | Knowledge checks |
 | 45 | AI Agents and Agentic Workflows | 50 | 0* | 3 | 3 | 47 | Knowledge checks |
 
-- Sum of uniquely classified published problems: **352**.
-- Unclassified existing legacy problems: **20**.
+- Sum of uniquely classified published problems: **359**.
+- Unclassified existing legacy problems: **13**.
 - Total published seeded problems expected: **372**.
 - New question count: **135**, all four-choice MCQs with one private answer
   fixture and a server-side `multiple_choice` evaluator.
