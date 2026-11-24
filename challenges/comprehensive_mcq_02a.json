@@ -1,0 +1,182 @@
+[
+  {
+    "subject_id": 16,
+    "skill": "Absolute reference",
+    "prompt": "Which Excel reference keeps both column and row fixed when copied?",
+    "choices": [
+      "$A$1",
+      "A1",
+      "$A1",
+      "A$1"
+    ],
+    "answer": "$A$1"
+  },
+  {
+    "subject_id": 16,
+    "skill": "XLOOKUP return",
+    "prompt": "What does XLOOKUP return by default upon finding an exact match?",
+    "choices": [
+      "Corresponding value from the return array",
+      "Row's physical disk location",
+      "Total number of worksheet rows",
+      "An SQL query"
+    ],
+    "answer": "Corresponding value from the return array"
+  },
+  {
+    "subject_id": 16,
+    "skill": "COUNTIF purpose",
+    "prompt": "Which Excel function counts cells satisfying one criterion?",
+    "choices": [
+      "COUNTIF",
+      "CONCAT",
+      "LEFT",
+      "TRANSPOSE"
+    ],
+    "answer": "COUNTIF"
+  },
+  {
+    "subject_id": 17,
+    "skill": "FIXED LOD",
+    "prompt": "What does a Tableau FIXED level-of-detail expression calculate?",
+    "choices": [
+      "An aggregate at specified dimensions independent of view dimensions",
+      "A row number only",
+      "An index on the underlying database",
+      "Only a date filter"
+    ],
+    "answer": "An aggregate at specified dimensions independent of view dimensions"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Context filters",
+    "prompt": "Why can a Tableau context filter affect FIXED LOD results?",
+    "choices": [
+      "Context filters run before FIXED LOD evaluation",
+      "FIXED expressions always ignore context filters",
+      "Context filters delete source tables",
+      "FIXED cannot run without context"
+    ],
+    "answer": "Context filters run before FIXED LOD evaluation"
+  },
+  {
+    "subject_id": 17,
+    "skill": "Running totals",
+    "prompt": "What controls the partitioning of a Tableau running total?",
+    "choices": [
+      "The table calculation's addressing and partitioning settings",
+      "The workbook filename",
+      "Only the data source password",
+      "The OS version"
+    ],
+    "answer": "The table calculation's addressing and partitioning settings"
+  },
+  {
+    "subject_id": 18,
+    "skill": "CALCULATE",
+    "prompt": "What does CALCULATE primarily do to a DAX measure expression?",
+    "choices": [
+      "Evaluate it in modified filter context",
+      "Always create a physical column",
+      "Automatically index all tables",
+      "Delete relationships"
+    ],
+    "answer": "Evaluate it in modified filter context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "DAX measure",
+    "prompt": "How is a Power BI measure usually evaluated?",
+    "choices": [
+      "Within the active filter context",
+      "Only once when the file is saved",
+      "In a separate Excel workbook",
+      "Only at database creation"
+    ],
+    "answer": "Within the active filter context"
+  },
+  {
+    "subject_id": 18,
+    "skill": "Star relationship",
+    "prompt": "Why is a relationship between dimension and fact tables important?",
+    "choices": [
+      "Dimension filters can affect matching fact rows",
+      "It prevents every duplicate automatically",
+      "All facts become strings",
+      "Measures stop evaluating"
+    ],
+    "answer": "Dimension filters can affect matching fact rows"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Standard deviation",
+    "prompt": "Which measure expresses dispersion in the original data units?",
+    "choices": [
+      "Standard deviation",
+      "Variance",
+      "Sample size",
+      "Squared mean"
+    ],
+    "answer": "Standard deviation"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Disjoint events",
+    "prompt": "For mutually exclusive events A and B, what is P(A intersection B)?",
+    "choices": [
+      "0",
+      "1",
+      "P(A)+P(B)",
+      "Always 0.5"
+    ],
+    "answer": "0"
+  },
+  {
+    "subject_id": 19,
+    "skill": "Frequentist interval",
+    "prompt": "What is the repeated-sampling meaning of a 95% confidence interval method?",
+    "choices": [
+      "95% of intervals constructed by the procedure contain the true parameter",
+      "A fixed parameter has a 95% random chance of changing",
+      "95% of raw observations must fall in each interval",
+      "The dataset is 95% error-free"
+    ],
+    "answer": "95% of intervals constructed by the procedure contain the true parameter"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Gradient direction",
+    "prompt": "Which direction locally increases a differentiable function most quickly?",
+    "choices": [
+      "The direction of the positive gradient",
+      "Negative gradient direction",
+      "Any perpendicular direction",
+      "An arbitrary zero vector"
+    ],
+    "answer": "The direction of the positive gradient"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Matrix rank",
+    "prompt": "What is the rank of a matrix?",
+    "choices": [
+      "Number of linearly independent rows or columns",
+      "Largest matrix entry",
+      "Total number of entries",
+      "Number of diagonal entries"
+    ],
+    "answer": "Number of linearly independent rows or columns"
+  },
+  {
+    "subject_id": 20,
+    "skill": "Bayes theorem",
+    "prompt": "When P(E) is positive, what equals P(H given E)?",
+    "choices": [
+      "P(E given H) times P(H) divided by P(E)",
+      "P(H) plus P(E)",
+      "P(E) divided by P(H)",
+      "P(H) times P(E)"
+    ],
+    "answer": "P(E given H) times P(H) divided by P(E)"
+  }
+]
