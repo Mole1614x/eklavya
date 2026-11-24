@@ -138,8 +138,8 @@ def test_problem_access_scopes_guard_details_catalog_and_judge_without_deleting_
     assert client.get(f"/api/v1/problems/{slug}").status_code == 404
     assert client.get(f"/api/v1/problems/{slug}", headers=headers["bob"]).status_code == 404
     assert client.get(f"/api/v1/problems/{slug}", headers=headers["alice"]).status_code == 200
-    visible = client.get("/api/v1/problems", headers=headers["alice"]).json()["items"]
-    hidden = client.get("/api/v1/problems", headers=headers["bob"]).json()["items"]
+    visible = client.get("/api/v1/problems", params={"q": "Parity Check"}, headers=headers["alice"]).json()["items"]
+    hidden = client.get("/api/v1/problems", params={"q": "Parity Check"}, headers=headers["bob"]).json()["items"]
     assert slug in [item["slug"] for item in visible]
     assert slug not in [item["slug"] for item in hidden]
     payload = {"language": "python", "source_code": "print('Even')", "mode": "SUBMIT"}
