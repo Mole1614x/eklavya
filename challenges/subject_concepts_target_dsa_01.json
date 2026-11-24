@@ -1,0 +1,252 @@
+[
+  {
+    "subject_id": 2,
+    "skill": "Counting sort",
+    "description": "Sorting integer keys by their occurrence counts within a bounded value range"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Radix sort",
+    "description": "Sorting records by processing digit or symbol positions with a stable inner sort"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bucket sort",
+    "description": "Distributing values into ordered buckets and sorting their contents"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Shell sort",
+    "description": "Generalizing insertion sort using decreasing gaps between compared elements"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Heap sort",
+    "description": "Sorting by repeatedly extracting an extremum from a heap structure"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Introsort",
+    "description": "Combining quicksort with a fallback such as heapsort to bound worst-case complexity"
+  },
+  {
+    "subject_id": 2,
+    "skill": "TimSort",
+    "description": "A stable hybrid sorting algorithm exploiting existing ordered runs"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Cycle sort",
+    "description": "Minimizing writes by placing elements into their final cycle positions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Pigeonhole sort",
+    "description": "Sorting integer keys by placing them in slots indexed by values within a small range"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Comb sort",
+    "description": "Improving bubble-style swaps by comparing elements separated by a shrinking gap"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Quickselect",
+    "description": "Selecting an order statistic using partition operations without fully sorting the input"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Median of medians",
+    "description": "A deterministic pivot selection method enabling worst-case linear-time selection"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Dutch national flag partition",
+    "description": "Separating an array into three value groups in a single traversal"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Stable partition",
+    "description": "Reorganizing elements by a predicate while preserving the original order within groups"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Inversion count",
+    "description": "Counting pairs of positions where an earlier element exceeds a later one"
+  },
+  {
+    "subject_id": 2,
+    "skill": "External merge sort",
+    "description": "Sorting datasets larger than memory by merging ordered disk-resident runs"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Replacement selection",
+    "description": "Building long sorted runs from a limited memory buffer in external sorting"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Tournament tree",
+    "description": "A tree retaining winners of pairwise comparisons to support repeated minimum selection"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Monotonic stack",
+    "description": "A stack whose contents remain ordered for nearest-greater or nearest-smaller queries"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Monotonic deque",
+    "description": "A deque maintaining ordered candidates for sliding-window extrema"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Circular buffer",
+    "description": "A fixed-capacity queue that reuses storage positions modulo its capacity"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Double ended queue",
+    "description": "A sequential collection supporting insertions and removals at both ends"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Skip list",
+    "description": "A randomized layered linked structure providing expected logarithmic searches"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Treap",
+    "description": "A randomized search tree combining binary-search ordering and heap priority ordering"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Cartesian tree",
+    "description": "A binary tree satisfying in-order sequence and heap priority constraints"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Order statistic tree",
+    "description": "A search tree augmented with subtree sizes to support rank and selection"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Interval tree",
+    "description": "A structure supporting searches for intervals overlapping a query"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Range minimum query",
+    "description": "Finding the smallest value within specified index boundaries"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Range update lazy propagation",
+    "description": "Deferring segment-tree updates to avoid touching every covered element"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Persistent data structure",
+    "description": "A structure preserving access to earlier versions after updates"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Suffix array",
+    "description": "An array listing the starting indices of all suffixes in sorted lexical order"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Suffix tree",
+    "description": "A compressed trie representing every suffix of a sequence"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Suffix automaton",
+    "description": "A compact state machine representing distinct substrings of a string"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Aho Corasick",
+    "description": "A multi-pattern matching automaton built from a trie and failure links"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Manacher algorithm",
+    "description": "Computing longest palindromic substring radii around all centers in linear time"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Rolling hash",
+    "description": "Updating a substring hash incrementally when the window slides"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Double hashing",
+    "description": "Reducing accidental substring hash collisions by using two independent hash functions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Polynomial string hash",
+    "description": "Representing a string as a weighted sum of character codes modulo a number"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Palindrome tree",
+    "description": "A structure maintaining distinct palindromic substrings of a growing string"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Lyndon factorization",
+    "description": "Decomposing a string into an ordered sequence of lexicographically minimal words"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bitmask dynamic programming",
+    "description": "Representing subsets as bitsets when computing state transitions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Subset sum DP",
+    "description": "Determining reachable totals by combining selected input values"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Knapsack DP",
+    "description": "Finding optimal selections under a capacity constraint using dynamic programming"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Longest increasing subsequence",
+    "description": "Finding the longest subsequence with strictly increasing values"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Longest common subsequence",
+    "description": "Finding the longest ordered sequence appearing in two inputs"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Edit distance DP",
+    "description": "Finding a minimum-cost sequence of insertions, deletions or substitutions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Matrix chain multiplication",
+    "description": "Choosing multiplication parenthesization to minimize scalar operations"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Interval DP",
+    "description": "Dynamic programming using subarray or interval boundaries as state dimensions"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Digit DP",
+    "description": "Counting or optimizing numbers by processing decimal digits under prefix constraints"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Tree DP",
+    "description": "Computing state transitions over rooted tree subproblems"
+  }
+]
