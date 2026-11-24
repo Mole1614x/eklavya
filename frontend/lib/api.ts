@@ -20,7 +20,7 @@ export type ProblemDetail = Problem & {
   choices: string[];
 };
 
-export type Catalog = { items: Problem[]; total: number; topics: string[] };
+export type Catalog = { items: Problem[]; total: number; topics: string[]; solved_slugs: string[] };
 
 async function request<T>(path: string): Promise<T | null> {
   const access = (await cookies()).get("eklavya_access")?.value;
