@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 31,
+    "skill": "Infrastructure as a Service",
+    "description": "Renting compute, network and storage resources while managing the guest OS and applications"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Platform as a Service",
+    "description": "A managed application runtime that abstracts operating system and infrastructure maintenance"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Software as a Service",
+    "description": "A ready-to-use application delivered as an online managed service"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Shared responsibility model",
+    "description": "A division of security duties between cloud service provider and customer"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Region",
+    "description": "A geographically defined cloud infrastructure area containing one or more availability zones"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Availability zone",
+    "description": "An independently operated failure domain within a cloud region"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Virtual private cloud",
+    "description": "A logically isolated virtual network configured inside a cloud provider's infrastructure"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Security group",
+    "description": "A virtual firewall rule set commonly associated with cloud network interfaces"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Network ACL",
+    "description": "A subnet-level set of network traffic allow or deny rules in many cloud networks"
+  },
+  {
+    "subject_id": 31,
+    "skill": "IAM policy",
+    "description": "A document defining allowed or denied operations for identities or resources"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Role assumption",
+    "description": "Obtaining temporary permission through an authorized identity role"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Object versioning",
+    "description": "Preserving multiple versions of objects in a storage bucket"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Presigned URL",
+    "description": "A limited-use link granting scoped temporary access to a specific object operation"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Serverless function",
+    "description": "Event-driven code execution where infrastructure scaling is managed by the provider"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cold start",
+    "description": "Initial startup latency when a fresh compute runtime must be prepared"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Autoscaling group",
+    "description": "A controller that adjusts the number of active compute instances against policy or demand"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Load balancer",
+    "description": "A service distributing incoming requests across multiple healthy backends"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Managed relational database",
+    "description": "A database service where the provider handles substantial operations such as provisioning or backups"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Cloud cost tagging",
+    "description": "Attaching metadata to resources so spending can be allocated and analyzed"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Disaster recovery RPO",
+    "description": "The maximum amount of data loss expressed as a tolerated recovery time window"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Feature store",
+    "description": "A managed facility providing consistent reusable feature definitions and values for training and inference"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Experiment tracker",
+    "description": "A service recording parameters, code versions, evaluation metrics and model artifacts"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model artifact",
+    "description": "A serialized trained model and supporting data needed for inference"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model versioning",
+    "description": "Tracking successive model implementations and metadata as separately addressable versions"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model lineage",
+    "description": "Provenance linking a deployed model to source data, code and training runs"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Reproducible training",
+    "description": "A training process producing comparable results from controlled code, inputs, seeds and environments"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model serving",
+    "description": "Hosting trained model predictions behind a callable interface or batch execution"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Shadow deployment",
+    "description": "Evaluating a new model on copied production traffic without returning its predictions to users"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Blue-green deployment",
+    "description": "Switching traffic between separate active and candidate environments"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Canary deployment",
+    "description": "Gradually directing a small portion of production requests to a candidate version"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Feature drift",
+    "description": "A change in the distribution of model inputs over time"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Concept drift",
+    "description": "A change in the relationship between inputs and the target outcome"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Prediction monitoring",
+    "description": "Tracking model outputs for statistical shifts and abnormal operation"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Ground truth delay",
+    "description": "The time between a prediction and receiving its verified target label"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Data validation gate",
+    "description": "A pipeline step rejecting or quarantining training data that violate agreed constraints"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Training pipeline orchestration",
+    "description": "Coordinating data processing, training, evaluation and registration as repeatable stages"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Inference latency SLO",
+    "description": "A service-level objective specifying an acceptable prediction response time"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model rollback",
+    "description": "Restoring a previous known-good deployed model after detecting a regression"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model card",
+    "description": "Documentation describing training, intended uses, limitations and evaluation properties"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Champion challenger",
+    "description": "Comparing an established production model against a candidate under consistent evaluation"
+  },
+  {
+    "subject_id": 33,
+    "skill": "User mode",
+    "description": "A processor privilege level with restricted access to privileged instructions and memory"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Kernel mode",
+    "description": "A privileged processor execution mode for operating system code"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Context switch",
+    "description": "Changing CPU execution from one process or thread context to another"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Preemptive scheduling",
+    "description": "A scheduling policy that can interrupt a running task to allocate CPU time elsewhere"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Round robin",
+    "description": "A scheduling algorithm rotating runnable tasks through fixed or bounded timeslices"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Priority inversion",
+    "description": "A high-priority task blocked by lower-priority work holding a needed resource"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Semaphore",
+    "description": "A synchronization counter controlling concurrent access to shared resources"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Mutex",
+    "description": "A mutual-exclusion synchronization mechanism allowing one owner of a critical section"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Race condition",
+    "description": "Incorrect or timing-dependent behavior caused by unsynchronized concurrent operations"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Starvation",
+    "description": "A process failing to obtain resources or execution for an unbounded period"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Critical section",
+    "description": "Code accessing shared state that requires coordination to avoid races"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Demand paging",
+    "description": "Loading a virtual memory page only when a process references it"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Page replacement",
+    "description": "Choosing a memory page to evict when physical frames are insufficient"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Thrashing",
+    "description": "Excessive memory paging that leaves little useful computation time"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Copy on write",
+    "description": "Sharing data pages until a modification causes a private copy to be created"
+  },
+  {
+    "subject_id": 33,
+    "skill": "System call",
+    "description": "A controlled request from user code to a kernel service"
+  },
+  {
+    "subject_id": 33,
+    "skill": "File descriptor",
+    "description": "An integer process-local handle used to identify an open file or similar resource"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Inode",
+    "description": "Filesystem metadata identifying a file object and its storage attributes in many Unix filesystems"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Deadlock avoidance",
+    "description": "A resource allocation policy that avoids entering unsafe states"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Working set",
+    "description": "The set of memory pages a process has actively referenced over a recent interval"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSI data link layer",
+    "description": "The layer responsible for local link framing and medium access"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSI network layer",
+    "description": "The layer responsible for packet forwarding across network boundaries"
+  },
+  {
+    "subject_id": 34,
+    "skill": "OSI transport layer",
+    "description": "The layer responsible for endpoint-to-endpoint transport services"
+  },
+  {
+    "subject_id": 34,
+    "skill": "ARP",
+    "description": "A protocol resolving local IPv4 addresses to link-layer hardware addresses"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DHCP",
+    "description": "A protocol allocating IP configuration parameters to client devices"
+  },
+  {
+    "subject_id": 34,
+    "skill": "ICMP",
+    "description": "A protocol transporting network-control messages such as error or echo information"
+  },
+  {
+    "subject_id": 34,
+    "skill": "NAT",
+    "description": "Translating network addresses or ports as packets traverse a boundary"
+  },
+  {
+    "subject_id": 34,
+    "skill": "CIDR",
+    "description": "Classless notation identifying a network prefix using a bit length"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Subnet mask",
+    "description": "A bitmask distinguishing network and host portions of an IP address"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP three-way handshake",
+    "description": "Establishing TCP connection state using SYN, SYN-ACK, and ACK messages"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP congestion window",
+    "description": "A sender-side limit on unacknowledged data based on congestion control"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP flow control",
+    "description": "Receiver-advertised constraints that prevent the sender from overwhelming receive buffers"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TLS handshake",
+    "description": "Negotiating authenticated security parameters and shared keys for an encrypted connection"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS recursive resolver",
+    "description": "A service that performs lookups through DNS infrastructure on behalf of clients"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS TTL",
+    "description": "A time-to-live value limiting caching duration for DNS resource records"
+  },
+  {
+    "subject_id": 34,
+    "skill": "HTTP keepalive",
+    "description": "Reusing an established transport connection for multiple application requests"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Reverse proxy",
+    "description": "An intermediary handling client requests and forwarding them to backend services"
+  },
+  {
+    "subject_id": 34,
+    "skill": "Load balancing",
+    "description": "Distributing network requests across several eligible service instances"
+  },
+  {
+    "subject_id": 34,
+    "skill": "VPN tunnel",
+    "description": "Encapsulating traffic between endpoints to provide private logical connectivity"
+  },
+  {
+    "subject_id": 34,
+    "skill": "MTU",
+    "description": "The largest packet or frame payload supported on a specified link layer"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Confidentiality",
+    "description": "Protecting information from unauthorized disclosure"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Integrity control",
+    "description": "Detecting or preventing unauthorized alteration of data"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Availability protection",
+    "description": "Keeping systems and information usable by authorized parties"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Threat modeling",
+    "description": "Identifying possible attacks and prioritizing mitigations based on system design"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Attack surface",
+    "description": "The collection of entry points and interfaces an attacker could target"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Vulnerability",
+    "description": "A weakness that could be exploited to compromise a system"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Exploit",
+    "description": "A technique or code that takes advantage of a security weakness"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Risk assessment",
+    "description": "Evaluating likelihood and potential impact of harmful security events"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Defense in depth",
+    "description": "Layering complementary controls so one failure does not remove all protection"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Zero trust",
+    "description": "Requiring explicit verification of access rather than trusting network location alone"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Multi factor authentication",
+    "description": "Authenticating with evidence from at least two independent factor categories"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Password hashing",
+    "description": "Storing one-way password digests designed to resist guessing attacks"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Salt",
+    "description": "A per-password random value included before password hashing to defeat shared-precomputation attacks"
+  },
+  {
+    "subject_id": 35,
+    "skill": "CSRF",
+    "description": "An attack causing a user's browser to submit an unintended authenticated request"
+  },
+  {
+    "subject_id": 35,
+    "skill": "XSS",
+    "description": "Injecting untrusted script or markup into another user's browser context"
+  },
+  {
+    "subject_id": 35,
+    "skill": "SSRF",
+    "description": "Causing a server to make unintended network requests to attacker-influenced destinations"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Least privilege",
+    "description": "Giving an identity only permissions required for its authorized tasks"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Principle of secure defaults",
+    "description": "Choosing deny-by-default configurations that require explicit authorization"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Audit logging",
+    "description": "Recording security-relevant events for accountability and investigation"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Incident response",
+    "description": "A coordinated process for detecting, containing, investigating and recovering from security incidents"
+  }
+]
