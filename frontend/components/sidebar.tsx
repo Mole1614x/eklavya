@@ -45,7 +45,7 @@ export function Sidebar() {
         {nav("/assessments", "Assessments", <BookOpen size={18} />, pathname.startsWith("/assessments"))}
         {nav("/vidya-paths", "Career Paths", <BookOpen size={18} />, pathname.startsWith("/vidya-paths"))}
         {nav("/progress-insights", "Progress", <LayoutDashboard size={18} />, pathname.startsWith("/progress-insights"))}
-        {nav("/leaderboard", "Leaderboard", <UserCircle size={18} />, pathname.startsWith("/leaderboard"))}
+        {nav("/rankings", "Leaderboard", <UserCircle size={18} />, pathname.startsWith("/leaderboard"))}
         {nav("/arena", "Community", <UserCircle size={18} />, pathname.startsWith("/arena"))}
         {administrator && nav("/admin", "Admin control center", <ShieldCheck size={18} />, pathname.startsWith("/admin"))}
         <p className="nav-label">Practice tracks</p>
