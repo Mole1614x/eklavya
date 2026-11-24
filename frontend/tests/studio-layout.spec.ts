@@ -41,3 +41,19 @@ test("Minimal Glass dashboard keeps an accessible mobile navigation", async ({ p
   await nav.getByRole("link", { name: "Practice", exact: true }).click();
   await expect(page).toHaveURL(/\/problems$/);
 });
+
+
+test("primary destinations appear only in glass top navigation on desktop", async ({ page }) => {
+  await page.setViewportSize({ width: 1600, height: 900 });
+  await page.goto("/dashboard");
+  const header = page.locator(".studio-header");
+  const sidebar = page.locator(".sidebar");
+  for (const name of ["Dashboard", "Practice", "Learn", "Assessments", "Career Paths", "Community"]) {
+    await expect(header.getByRole("link", { name, exact: true })).toHaveCount(1);
+    await expect(sidebar.getByRole("link", { name, exact: true })).toHaveCount(0);
+  }
+  await expect(sidebar.getByRole("link", { name: "Progress insights" })).toBeVisible();
+  await expect(sidebar.getByRole("link", { name: "Foundations" })).toBeVisible();
+  await expect(header).toHaveCSS("backdrop-filter", /blur/);
+  await expect(header).toHaveCSS("background-image", /linear-gradient/);
+});
