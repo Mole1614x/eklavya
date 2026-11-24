@@ -260,3 +260,8 @@ Administrators can create assessments without editing JSON, choose immediate or 
 The Data module contains 50 NumPy, 50 Pandas, and 15 practical data-analysis
 `solve(data)` exercises, with 13 ordered learning paths and isolated, reference-graded
 execution. See [NumPy and Pandas Practice](docs/NUMPY_PANDAS_PRACTICE.md).
+
+
+## Duplicate-free question authoring
+
+Content Studio and seed imports detect strong duplicate-question matches and require reuse of canonical slugs rather than cloning problems. Existing learner submissions are preserved. See [Question Bank Deduplication](docs/QUESTION_BANK_DEDUPLICATION.md).
