@@ -30,7 +30,7 @@ from .models import (
     AssessmentResult, AuditLog, DatasetPracticeRun, LearnerGroup, LearnerGroupMember, MultiToolProgress, PracticeDataset, Problem, Submission, TestCase, User,
 )
 from .schemas_advanced import (
-    AnalyticsRead, AnswerWrite, AssessmentRead, AssessmentStatusWrite, AssessmentTemplateCreate, AssessmentWrite, AttemptRead,
+    AnalyticsRead, AnswerWrite, AssessmentRead, AssessmentScheduleWrite, AssessmentStatusWrite, AssessmentTemplateCreate, AssessmentWrite, AttemptRead,
     DatasetPracticeRead, DatasetPracticeWrite, DatasetRead, DatasetTransform, DatasetUpload, EvaluationRead, ExpressionSubmission, LearnerGroupWrite, MultiToolSubmission, WorkbookSubmission,
 )
 from .schemas_submissions import SubmissionCreate, SubmissionRead
@@ -194,6 +194,41 @@ def _replace_assessment_children(db: Session, item: Assessment, payload: Assessm
     db.add_all(AssessmentAssignment(assessment_id=item.id, user_id=user_id) for user_id in payload.assigned_user_ids)
     db.add_all(AssessmentGroupAssignment(assessment_id=item.id, group_id=group_id) for group_id in payload.assigned_group_ids)
     db.flush()
+
+
+@router.patch("/admin/assessments/{assessment_id}/schedule", response_model=AssessmentRead)
+def update_assessment_schedule(
+    assessment_id: str, payload: AssessmentScheduleWrite, request: Request, db: DB, admin: Admin,
+) -> dict:
+    item = db.get(Assessment, assessment_id)
+    if item is None:
+        raise HTTPException(status_code=404, detail="Assessment not found")
+    if item.status == "ARCHIVED":
+        raise HTTPException(status_code=409, detail="Archived assessments cannot be rescheduled")
+    if db.scalar(select(AssessmentAttempt.id).where(
+        AssessmentAttempt.assessment_id == assessment_id
+    ).limit(1)) is not None:
+        raise HTTPException(
+            status_code=409,
+            detail="Assessments with started attempts cannot be rescheduled; create a new assessment instead",
+        )
+    previous = {
+        "opens_at": aware(item.opens_at).isoformat(),
+        "closes_at": aware(item.closes_at).isoformat(),
+        "duration_minutes": item.duration_minutes,
+    }
+    item.opens_at = payload.opens_at
+    item.closes_at = payload.closes_at
+    item.duration_minutes = payload.duration_minutes
+    audit(db, request, admin, "assessment.schedule", "assessment", item.id, {
+        "previous": previous,
+        "opens_at": payload.opens_at.isoformat(),
+        "closes_at": payload.closes_at.isoformat(),
+        "duration_minutes": payload.duration_minutes,
+        "reason": payload.reason,
+    })
+    db.commit()
+    return assessment_read(db, item)
 
 
 @router.patch("/admin/assessments/{assessment_id}/status", response_model=AssessmentRead)
