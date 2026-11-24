@@ -108,7 +108,7 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
       description: String(payload.description ?? "").slice(0, 1000),
       exclude_slug: slug.trim(),
     });
-    if (!params.get("title").trim()) throw new Error("Enter a question title before checking for duplicates.");
+    if (!String(payload.title ?? "").trim()) throw new Error("Enter a question title before checking for duplicates.");
     setDuplicateLoading(true);
     try {
       const result = await api<{ duplicates: Array<{ slug: string; title: string; reason: string }> }>(
