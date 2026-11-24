@@ -43,3 +43,22 @@ test("admin can create a published assessment available immediately to all stude
   await expect(record.locator(".assessment-window-badge")).toHaveText("AVAILABLE");
   await expect(record).toContainText("All eligible students");
 });
+
+
+test("Content Studio checks existing questions and blocks duplicate publication", async ({ page }) => {
+  await page.goto("/auth");
+  await page.getByLabel("Email or username").fill(identity);
+  await page.getByLabel("Password", { exact: true }).fill(password);
+  await page.getByRole("button", { name: "Sign in" }).click();
+  await expect(page).toHaveURL(/\/admin$/);
+  await page.getByRole("tab", { name: "Problems" }).click();
+  const editor = page.locator("form.admin-editor").first();
+  await editor.getByLabel("Unique slug").fill("duplicate-parity-new");
+  await editor.getByLabel("Title", { exact: true }).fill("Parity Check");
+  await editor.getByRole("button", { name: "Check for duplicates" }).click();
+  await expect(editor.getByText("Potential existing questions")).toBeVisible();
+  await expect(editor.locator(".duplicate-matches")).toContainText("parity-check");
+  await editor.getByRole("button", { name: "Save changes" }).click();
+  await expect(editor.getByRole("status")).toContainText("Existing question found", { timeout: 25000 });
+  await expect(page.locator("tr").filter({ hasText: "duplicate-parity-new" })).toHaveCount(0);
+});
