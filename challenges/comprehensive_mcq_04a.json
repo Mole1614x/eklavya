@@ -1337,7 +1337,7 @@
     "prompt": "In Natural Language Processing, which concept is best described as follows: assigns grammatical labels to text tokens?",
     "choices": [
       "Part-of-speech tagging",
-      "TF-IDF",
+      "Byte pair encoding",
       "Dependency parsing",
       "Perplexity"
     ],
@@ -1369,15 +1369,15 @@
   },
   {
     "subject_id": 15,
-    "skill": "TF-IDF",
-    "prompt": "In Natural Language Processing, which concept is best described as follows: weights terms by within-document frequency and inverse collection frequency?",
+    "skill": "Byte pair encoding",
+    "prompt": "In Natural Language Processing, which subword-tokenization technique repeatedly merges the most frequent adjacent symbol pairs during vocabulary construction?",
     "choices": [
-      "TF-IDF",
+      "Byte pair encoding",
       "BLEU",
       "Coreference resolution",
       "Part-of-speech tagging"
     ],
-    "answer": "TF-IDF"
+    "answer": "Byte pair encoding"
   },
   {
     "subject_id": 15,
@@ -1411,7 +1411,7 @@
       "BLEU",
       "Named entity recognition",
       "Lemmatization",
-      "TF-IDF"
+      "Byte pair encoding"
     ],
     "answer": "BLEU"
   },
@@ -1434,7 +1434,7 @@
     "choices": [
       "Coreference resolution",
       "Lemmatization",
-      "TF-IDF",
+      "Byte pair encoding",
       "Dependency parsing"
     ],
     "answer": "Coreference resolution"
