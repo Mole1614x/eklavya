@@ -642,3 +642,17 @@ h1, h2, h3 { color: #f8fafb; }
   .assessment-library-heading { align-items: stretch; flex-direction: column; }
   .assessment-record { padding: 14px; }
 }
+
+
+/* Content Studio duplicate preview: readable without blocking ordinary editing. */
+.duplicate-check-field { margin: 12px 0; padding: 13px; border: 1px solid #40514c; border-radius: 12px; background: #18241f; }
+.duplicate-check-field-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+.duplicate-check-field-row span { font-size: 12px; font-weight: 700; }
+.duplicate-check-field-row .button { font-size: 12px; }
+.duplicate-matches { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #42534c; }
+.duplicate-matches > strong { color: #f5d5a7; font-size: 12px; }
+.duplicate-matches > div { display: grid; gap: 3px; background: #242b28; border-radius: 8px; padding: 10px; overflow-wrap: anywhere; }
+.duplicate-matches a { color: #c6ff3d; font-weight: 700; font-size: 13px; }
+.duplicate-matches code { font-size: 11px; color: #b7c7c3; }
+.duplicate-matches small { color: #b6c2bb; line-height: 1.5; }
+.duplicate-clear { margin: 10px 0 0; font-size: 12px; color: #c6edca; line-height: 1.4; }
