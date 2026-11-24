@@ -57,12 +57,19 @@ async function advancedApi<T>(path: string, init?: RequestInit): Promise<T> {
 async function allAdminProblems(): Promise<Problem[]> {
   const items: Problem[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 2000; offset += limit) {
-    const batch = await api<Problem[]>(`problems?limit=${limit}&offset=${offset}`);
-    items.push(...batch);
-    if (batch.length < limit) break;
+  const pagesPerBatch = 5;
+  // Read bounded groups in parallel. Do not silently truncate the catalog
+  // at 2,000 rows now that the 45-subject question bank exceeds that size.
+  for (let offset = 0; offset < 10000; offset += limit * pagesPerBatch) {
+    const batches = await Promise.all(
+      Array.from({ length: pagesPerBatch }, (_, index) =>
+        api<Problem[]>(`problems?limit=${limit}&offset=${offset + index * limit}`)
+      )
+    );
+    for (const batch of batches) items.push(...batch);
+    if (batches.some((batch) => batch.length < limit)) return items;
   }
-  return items;
+  throw new Error("Administrator problem catalog exceeds its safety pagination limit.");
 }
 
 function formatDate(value: string | null | undefined) {
