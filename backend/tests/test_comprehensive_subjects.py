@@ -1,9 +1,39 @@
 """The 45 subject catalogue is real, safely scoped and accurately counted."""
 import json
-from collections import Counter
-from sqlalchemy import select
+import pytest
+from fastapi.testclient import TestClient
+from sqlalchemy import create_engine, select
+from sqlalchemy.orm import Session
+from app.database import Base
+from app.main import app, get_db
+from app.seed import seed
 from app.models import LearningPath, LearningPathProblem, Problem, ProblemEvaluator, TestCase
 from app.subject_catalog import SUBJECTS
+
+
+@pytest.fixture
+def db(tmp_path):
+    engine = create_engine(f"sqlite:///{tmp_path / 'subjects.db'}")
+    Base.metadata.create_all(engine)
+    try:
+        with Session(engine) as session:
+            seed(session)
+            yield session
+    finally:
+        engine.dispose()
+
+
+@pytest.fixture
+def client(db):
+    def override():
+        with Session(db.get_bind()) as session:
+            yield session
+    app.dependency_overrides[get_db] = override
+    try:
+        with TestClient(app) as test_client:
+            yield test_client
+    finally:
+        app.dependency_overrides.pop(get_db, None)
 
 
 def test_source_catalogue_is_complete_and_targets_are_auditable():
