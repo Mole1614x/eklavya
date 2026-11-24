@@ -57,7 +57,7 @@ async function advancedApi<T>(path: string, init?: RequestInit): Promise<T> {
 async function allAdminProblems(): Promise<Problem[]> {
   const items: Problem[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 2000; offset += limit) {
+  for (let offset = 0; offset < 10000; offset += limit) {
     const batch = await api<Problem[]>(`problems?limit=${limit}&offset=${offset}`);
     items.push(...batch);
     if (batch.length < limit) break;
