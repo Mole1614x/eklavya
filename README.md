@@ -265,3 +265,8 @@ execution. See [NumPy and Pandas Practice](docs/NUMPY_PANDAS_PRACTICE.md).
 ## Duplicate-free question authoring
 
 Content Studio and seed imports detect strong duplicate-question matches and require reuse of canonical slugs rather than cloning problems. Existing learner submissions are preserved. See [Question Bank Deduplication](docs/QUESTION_BANK_DEDUPLICATION.md).
+
+
+## Complete subject catalogue — phased expansion
+
+EKLAVYA now has a **45-subject catalogue** at `/subjects` with live, permission-aware published question counts, links to original subject practice, and an initial set of 135 original graded MCQs. The source plan's 45 minimums total **2,500** questions (rather than the printed 2,560). The current seeded platform is expected to contain **372** problems, not the entire target. We do not claim unimplemented specialized execution engines are available. See [Comprehensive Subject Audit](docs/COMPREHENSIVE_45_SUBJECT_AUDIT.md) for the per-subject coverage, duplication strategy and remaining work.
