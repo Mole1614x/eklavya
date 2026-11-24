@@ -1,8 +1,8 @@
 [
   {
     "subject_id": 41,
-    "skill": "Subject verb agreement",
-    "description": "Matching a finite verb's grammatical number and person to its subject"
+    "skill": "Dangling participle",
+    "description": "A participial phrase without an unambiguous grammatical subject in its sentence"
   },
   {
     "subject_id": 41,
@@ -116,8 +116,8 @@
   },
   {
     "subject_id": 42,
-    "skill": "Semantic HTML",
-    "description": "Choosing elements based on meaning and structure instead of visual appearance"
+    "skill": "Shadow DOM",
+    "description": "An encapsulated DOM subtree attached to an element with scoped styling and markup boundaries"
   },
   {
     "subject_id": 42,
@@ -216,8 +216,8 @@
   },
   {
     "subject_id": 43,
-    "skill": "North star metric",
-    "description": "A leading measure intended to reflect sustained customer value from a product"
+    "skill": "Unit economics",
+    "description": "An analysis of revenue and variable costs at the level of one customer, unit or transaction"
   },
   {
     "subject_id": 43,
