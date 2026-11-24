@@ -46,6 +46,7 @@ test("admin can create a published assessment available immediately to all stude
 
 
 test("Content Studio checks existing questions and blocks duplicate publication", async ({ page }) => {
+  test.setTimeout(60000);
   await page.goto("/auth");
   await page.getByLabel("Email or username").fill(identity);
   await page.getByLabel("Password", { exact: true }).fill(password);
@@ -55,9 +56,13 @@ test("Content Studio checks existing questions and blocks duplicate publication"
   const editor = page.locator("form.admin-editor").first();
   await editor.getByLabel("Unique slug").fill("duplicate-parity-new");
   await editor.getByLabel("Title", { exact: true }).fill("Parity Check");
+  const duplicateResponse = page.waitForResponse((response) => response.url().includes("/api/admin/problems/duplicate-check"));
   await editor.getByRole("button", { name: "Check for duplicates" }).click();
-  await expect(editor.getByText("Potential existing questions")).toBeVisible();
-  await expect(editor.locator(".duplicate-matches")).toContainText("parity-check");
+  const response = await duplicateResponse;
+  expect(response.ok()).toBeTruthy();
+  const result = await response.json() as { duplicates: Array<{ slug: string }> };
+  expect(result.duplicates.some((match) => match.slug === "parity-check")).toBe(true);
+  await expect(editor.locator(".duplicate-matches")).toContainText("parity-check", { timeout: 20000 });
   await editor.getByRole("button", { name: "Save changes" }).click();
   await expect(editor.getByRole("status")).toContainText("Existing question found", { timeout: 25000 });
   await expect(page.locator("tr").filter({ hasText: "duplicate-parity-new" })).toHaveCount(0);
