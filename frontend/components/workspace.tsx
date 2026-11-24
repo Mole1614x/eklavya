@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import type { OnMount } from "@monaco-editor/react";
-import { Play, Send } from "lucide-react";
+import { Code2, Play, Send } from "lucide-react";
 import type { ProblemDetail } from "@/lib/api";
 
 const Editor = dynamic(() => import("@monaco-editor/react").then((module) => module.default), {
@@ -79,11 +79,12 @@ export function Workspace({ problem, contestSlug }: { problem: ProblemDetail; co
     <section className="card workspace" aria-label="Practice workspace">
       {contestSlug && <div className="contest-workspace">Arena submission · Runs do not affect contest standings</div>}
       <div className="workspace-toolbar">
+        <span className="workspace-mode"><Code2 size={16}/> CODE WORKSPACE</span>
         {language ? <label>Language <select value={language} onChange={(event) => setLanguage(event.target.value)}>{problem.starters.map((entry) => <option key={entry.language} value={entry.language}>{languages[entry.language] ?? entry.language}</option>)}</select></label> : <strong>Your answer</strong>}
         <div><button className="button secondary" disabled={pending} onClick={() => void act("Run")}><Play size={15} /> Run</button><button className="button" disabled={pending} onClick={() => void act("Submit")}><Send size={15} /> Submit</button>{pending && result && <button className="button secondary" onClick={() => void cancel()}>Cancel</button>}</div>
       </div>
       {language && !editorUnavailable
-        ? <Editor height="360px" path={`${problem.slug}.${language}`} language={language} value={code} theme="vs-dark" loading={<p role="status">Loading editor…</p>} options={{ minimap: { enabled: false }, fontSize: 14, padding: { top: 14 }, ariaLabel: "Solution editor", scrollBeyondLastLine: false }} onMount={mountEditor} onChange={(value) => updateDraft(value ?? "")} />
+        ? <Editor height="480px" path={`${problem.slug}.${language}`} language={language} value={code} theme="vs-dark" loading={<p role="status">Loading editor…</p>} options={{ minimap: { enabled: false }, fontSize: 14, lineHeight: 23, fontLigatures: true, padding: { top: 20, bottom: 20 }, ariaLabel: "Solution editor", scrollBeyondLastLine: false }} onMount={mountEditor} onChange={(value) => updateDraft(value ?? "")} />
         : <div className="answer">{editorUnavailable && <p role="status">Monaco could not load. You can still draft your code below.</p>}{problem.format === "MULTIPLE_CHOICE" ? (
           <fieldset className="answer-options"><legend>Choose one answer</legend>{problem.choices.map((choice) => <label key={choice}><input type="radio" name="answer" value={choice} checked={code === choice} onChange={(event) => updateDraft(event.target.value)} />{choice}</label>)}</fieldset>
         ) : problem.format === "NUMERICAL" ? (
