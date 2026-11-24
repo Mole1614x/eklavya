@@ -15,17 +15,25 @@ function navigationButtons({ navigation, context, placement }: {
   context: string;
   placement: "top" | "bottom";
 }) {
-  const href = (slug: string) => `/problems/${encodeURIComponent(slug)}${context ? `?${context}` : ""}`;
+  const href = (slug: string, direction: -1 | 1) => {
+    const params = new URLSearchParams(context);
+    // Crossing the 50-question page boundary also updates "Back to catalog".
+    const page = Math.ceil(((navigation?.position ?? 1) + direction) / 50);
+    if (page > 1) params.set("page", String(page));
+    else params.delete("page");
+    const search = params.toString();
+    return `/problems/${encodeURIComponent(slug)}${search ? `?${search}` : ""}`;
+  };
   return (
     <nav className="problem-navigation" aria-label={placement === "top" ? "Question navigation" : "Question navigation at bottom"}>
       <span className="problem-navigation-position" aria-live="polite">
         {navigation ? `Question ${navigation.position.toLocaleString()} of ${navigation.total.toLocaleString()}` : "Navigation unavailable"}
       </span>
       {navigation?.previous
-        ? <Link className="problem-navigation-button" href={href(navigation.previous)} rel="prev"><ChevronLeft size={17}/> Previous</Link>
+        ? <Link className="problem-navigation-button" href={href(navigation.previous, -1)} rel="prev"><ChevronLeft size={17}/> Previous</Link>
         : <button type="button" className="problem-navigation-button" disabled><ChevronLeft size={17}/> Previous</button>}
       {navigation?.next
-        ? <Link className="problem-navigation-button problem-navigation-next" href={href(navigation.next)} rel="next">Next <ChevronRight size={17}/></Link>
+        ? <Link className="problem-navigation-button problem-navigation-next" href={href(navigation.next, 1)} rel="next">Next <ChevronRight size={17}/></Link>
         : <button type="button" className="problem-navigation-button problem-navigation-next" disabled>Next <ChevronRight size={17}/></button>}
     </nav>
   );
@@ -52,24 +60,25 @@ export default async function ProblemPage({
   const listingPage = Number.isSafeInteger(page) && page > 1 && page <= 1000000 ? page : 1;
   const section = typeof query.section === "string" && modules.some(item => item.slug === query.section)
     && filters.category === query.section ? query.section : null;
-  const contextQuery = new URLSearchParams({
-    ...filters,
-    ...(section ? { section } : {}),
-    ...(listingPage > 1 ? { page: String(listingPage) } : {}),
-  });
-  const catalogQuery = new URLSearchParams(filters);
-  if (section) catalogQuery.delete("category");
-  if (listingPage > 1) catalogQuery.set("page", String(listingPage));
-  const backPath = section ? `/${section}` : "/problems";
-  const backHref = contest
-    ? `/arena/${encodeURIComponent(contest)}`
-    : `${backPath}${catalogQuery.size ? `?${catalogQuery}` : ""}`;
-
   const [problem, navigation] = await Promise.all([
     getProblem(slug),
     contest ? Promise.resolve(null) : getProblemNavigation(slug, filters).catch(() => null),
   ]);
   if (!problem) notFound();
+
+  const currentPage = navigation ? Math.ceil(navigation.position / 50) : listingPage;
+  const contextQuery = new URLSearchParams({
+    ...filters,
+    ...(section ? { section } : {}),
+    ...(currentPage > 1 ? { page: String(currentPage) } : {}),
+  });
+  const catalogQuery = new URLSearchParams(filters);
+  if (section) catalogQuery.delete("category");
+  if (currentPage > 1) catalogQuery.set("page", String(currentPage));
+  const backPath = section ? `/${section}` : "/problems";
+  const backHref = contest
+    ? `/arena/${encodeURIComponent(contest)}`
+    : `${backPath}${catalogQuery.size ? `?${catalogQuery}` : ""}`;
 
   return (
     <>
