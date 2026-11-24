@@ -177,7 +177,7 @@ function JsonEditor({ title, initial, endpoint, onSaved }: { title: string; init
           {duplicateLoading ? "Checking…" : "Check for duplicates"}
         </button>
       </div>
-      {duplicateChecked && <div role="status">
+      {duplicateChecked && <div>
         {duplicates.length ? <div className="duplicate-matches">
           <strong>Potential existing questions ({duplicates.length})</strong>
           {duplicates.map((item) => <div key={item.slug}>
