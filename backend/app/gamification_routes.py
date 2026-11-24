@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta, timezone
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query
@@ -63,9 +64,12 @@ def achievements(user: CurrentUser, db: DB) -> list[dict]:
 
 @router.get("/insights")
 def insights(user: CurrentUser, db: DB) -> dict:
+    # Calendar-year profile contribution graph: only recent activity, not
+    # a lifetime limit of 91 active dates presented as a 13-week heatmap.
+    cutoff = datetime.now(timezone.utc) - timedelta(days=365)
     daily = db.execute(select(func.date(Submission.created_at).label("day"), func.count().label("count")).where(
-        Submission.user_id == user.id,
-    ).group_by(func.date(Submission.created_at)).order_by(func.date(Submission.created_at).desc()).limit(91)).all()
+        Submission.user_id == user.id, Submission.created_at >= cutoff,
+    ).group_by(func.date(Submission.created_at)).order_by(func.date(Submission.created_at).desc()).limit(366)).all()
     xp = db.execute(select(func.date(XPTransaction.created_at).label("day"), func.sum(XPTransaction.amount).label("amount")).where(
         XPTransaction.user_id == user.id,
     ).group_by(func.date(XPTransaction.created_at)).order_by(func.date(XPTransaction.created_at))).all()
