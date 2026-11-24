@@ -1,0 +1,1542 @@
+[
+  {
+    "number": 46,
+    "slug": "reverse-a-string",
+    "title": "Reverse a String",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read one line and print its characters in reverse order.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "hello",
+        "output": "olleh"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "hello\n",
+        "expected_output": "olleh\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "abcd\n",
+        "expected_output": "dcba\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 47,
+    "slug": "string-palindrome",
+    "title": "String Palindrome",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a single case-sensitive string without spaces. Print YES if it is palindromic, otherwise NO.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "level",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "level\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "hello\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 48,
+    "slug": "vowel-consonant-count",
+    "title": "Count Vowels and Consonants",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read one line. Count English vowel and consonant letters ignoring case and nonletters. Print vowel_count consonant_count.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "Hello World",
+        "output": "3 7"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "Hello World\n",
+        "expected_output": "3 7\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "123 aE!\n",
+        "expected_output": "2 0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 49,
+    "slug": "character-count-without-len",
+    "title": "Count Characters Without len",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a line including possible spaces. Print the number of characters, excluding the newline. Do not use len().",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "hi there",
+        "output": "8"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "hi there\n",
+        "expected_output": "8\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "abc\n",
+        "expected_output": "3\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 50,
+    "slug": "word-count-in-sentence",
+    "title": "Word Count in Sentence",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a line. Count maximal runs of non-whitespace characters; print the word count.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "hello world again",
+        "output": "3"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "hello world again\n",
+        "expected_output": "3\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "one\n",
+        "expected_output": "1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 51,
+    "slug": "character-frequency",
+    "title": "Character Frequency",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a nonempty string without spaces. For each distinct character in ascending Unicode codepoint order, print character:count on its own line.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "aabca",
+        "output": "a:3\nb:1\nc:1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "aabca\n",
+        "expected_output": "a:3\nb:1\nc:1\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "zzz\n",
+        "expected_output": "z:3\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 52,
+    "slug": "remove-duplicate-characters",
+    "title": "Remove Duplicate Characters",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read one string without spaces. Print each character once, keeping its first-appearance order.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "banana",
+        "output": "ban"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "banana\n",
+        "expected_output": "ban\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "abca\n",
+        "expected_output": "abc\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 53,
+    "slug": "first-nonrepeating-character",
+    "title": "First Non-Repeating Character",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a nonempty string without spaces. Print the first character appearing exactly once, or NONE.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "swiss",
+        "output": "w"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "swiss\n",
+        "expected_output": "w\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "aabb\n",
+        "expected_output": "NONE\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 54,
+    "slug": "first-repeating-character",
+    "title": "First Repeating Character",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a nonempty string without spaces. Print the first character whose second occurrence is encountered earliest while scanning left to right, or NONE.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "abcaab",
+        "output": "a"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "abcaab\n",
+        "expected_output": "a\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "abcd\n",
+        "expected_output": "NONE\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 55,
+    "slug": "anagram-strings",
+    "title": "Check Two Strings Are Anagrams",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read two lines of lowercase strings without spaces. Print YES if they contain identical character multisets; otherwise NO.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "listen\nsilent",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "listen\nsilent\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "apple\napples\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 56,
+    "slug": "swap-letter-case",
+    "title": "Swap Upper and Lower Case",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a line. Replace each uppercase ASCII letter with lowercase and vice versa; keep other characters unchanged.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "AbC 12",
+        "output": "aBc 12"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "AbC 12\n",
+        "expected_output": "aBc 12\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "Hello\n",
+        "expected_output": "hELLO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 57,
+    "slug": "remove-all-spaces",
+    "title": "Remove Spaces from a String",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read one line. Remove ASCII space characters only, preserving all remaining character order.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "a b c",
+        "output": "abc"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "a b c\n",
+        "expected_output": "abc\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "hello world\n",
+        "expected_output": "helloworld\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 58,
+    "slug": "longest-word-in-sentence",
+    "title": "Longest Word in a Sentence",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a sentence containing one or more whitespace-separated words. Print the longest word; in a tie print the first.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "I love programming",
+        "output": "programming"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "I love programming\n",
+        "expected_output": "programming\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "cat dog\n",
+        "expected_output": "cat\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 59,
+    "slug": "reverse-each-word",
+    "title": "Reverse Each Word",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read whitespace-separated words. Reverse each word without changing their word order; print one space between words.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "hello world",
+        "output": "olleh dlrow"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "hello world\n",
+        "expected_output": "olleh dlrow\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "abc xyz\n",
+        "expected_output": "cba zyx\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 60,
+    "slug": "run-length-string-compression",
+    "title": "String Compression",
+    "category": "code",
+    "topic": "String Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 4"
+    ],
+    "description": "Read a nonempty string without whitespace. For each maximal consecutive run, print its character followed by its count, including 1.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "aaabbc",
+        "output": "a3b2c1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "aaabbc\n",
+        "expected_output": "a3b2c1\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "aaaa\n",
+        "expected_output": "a4\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 61,
+    "slug": "array-maximum",
+    "title": "Largest Array Element",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n on first line then n space-separated integers. Print the largest value.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5\n3 9 1 7 2",
+        "output": "9"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n3 9 1 7 2\n",
+        "expected_output": "9\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n-5 -2 -8\n",
+        "expected_output": "-2\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 62,
+    "slug": "array-minimum",
+    "title": "Smallest Array Element",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print the smallest value.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5\n3 9 1 7 2",
+        "output": "1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n3 9 1 7 2\n",
+        "expected_output": "1\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n-5 -2 -8\n",
+        "expected_output": "-8\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 63,
+    "slug": "second-largest-distinct",
+    "title": "Second Largest Distinct Element",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print the second largest distinct value, or NONE if fewer than two distinct values.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5\n4 1 4 3 2",
+        "output": "3"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n4 1 4 3 2\n",
+        "expected_output": "3\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n2 2 2\n",
+        "expected_output": "NONE\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 64,
+    "slug": "second-smallest-distinct",
+    "title": "Second Smallest Distinct Element",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print second smallest distinct value, or NONE if absent.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5\n4 1 4 3 2",
+        "output": "2"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n4 1 4 3 2\n",
+        "expected_output": "2\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n2 2 2\n",
+        "expected_output": "NONE\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 65,
+    "slug": "reverse-array-no-slicing",
+    "title": "Reverse List Without Slicing",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Reverse without slicing. Print space-separated elements.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "4\n1 2 3 4",
+        "output": "4 3 2 1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4\n1 2 3 4\n",
+        "expected_output": "4 3 2 1\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "1\n7\n",
+        "expected_output": "7\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 66,
+    "slug": "array-sum-average",
+    "title": "Array Sum and Average",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print sum as integer on first line and arithmetic mean formatted to two decimal places on second.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "4\n1 2 3 4",
+        "output": "10\n2.50"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4\n1 2 3 4\n",
+        "expected_output": "10\n2.50\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n-1 1\n",
+        "expected_output": "0\n0.00\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 67,
+    "slug": "unique-array-elements",
+    "title": "Remove Duplicate Elements",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print unique values in first-appearance order separated by spaces.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "7\n1 2 1 3 2 4 3",
+        "output": "1 2 3 4"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "7\n1 2 1 3 2 4 3\n",
+        "expected_output": "1 2 3 4\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n5 5 5\n",
+        "expected_output": "5\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 68,
+    "slug": "array-element-frequencies",
+    "title": "Array Element Frequency",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print one line value:count per distinct integer in ascending numeric order.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5\n2 1 2 3 1",
+        "output": "1:2\n2:2\n3:1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n2 1 2 3 1\n",
+        "expected_output": "1:2\n2:2\n3:1\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n-1 -1 2\n",
+        "expected_output": "-1:2\n2:1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 69,
+    "slug": "missing-in-one-to-n",
+    "title": "Missing Number From 1 to N",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read N then N-1 distinct integers drawn from 1..N. Print the single missing integer.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5\n1 2 4 5",
+        "output": "3"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n1 2 4 5\n",
+        "expected_output": "3\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n2\n",
+        "expected_output": "1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 70,
+    "slug": "array-duplicates",
+    "title": "Find Duplicate Elements",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print each element that occurs at least twice in ascending order, or NONE.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "7\n4 2 4 3 2 1 2",
+        "output": "2 4"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "7\n4 2 4 3 2 1 2\n",
+        "expected_output": "2 4\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "4\n1 2 3 4\n",
+        "expected_output": "NONE\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 71,
+    "slug": "move-zeros-to-end",
+    "title": "Move Zeros to End",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Keep nonzero elements in their relative order and move all zeros to the end.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "6\n0 1 0 2 3 0",
+        "output": "1 2 3 0 0 0"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "6\n0 1 0 2 3 0\n",
+        "expected_output": "1 2 3 0 0 0\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n0 0 2\n",
+        "expected_output": "2 0 0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 72,
+    "slug": "partition-even-and-odd",
+    "title": "Separate Even and Odd Elements",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print even values in original order on first line, odd values in original order on second. Print NONE for an empty group.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5\n1 2 3 4 6",
+        "output": "2 4 6\n1 3"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n1 2 3 4 6\n",
+        "expected_output": "2 4 6\n1 3\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n2 8\n",
+        "expected_output": "2 8\nNONE\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 73,
+    "slug": "merge-two-sorted-arrays",
+    "title": "Merge Two Sorted Arrays",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n m on first line, n sorted integers on second and m sorted integers on third. Print stable merged sequence.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "3 3\n1 4 8\n2 4 9",
+        "output": "1 2 4 4 8 9"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "3 3\n1 4 8\n2 4 9\n",
+        "expected_output": "1 2 4 4 8 9\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2 1\n-3 5\n0\n",
+        "expected_output": "-3 0 5\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 74,
+    "slug": "array-intersection-distinct",
+    "title": "Array Intersection",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n m then two integer arrays on separate lines. Print distinct common values in ascending order; NONE if empty.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "4 4\n1 2 2 3\n2 3 4 4",
+        "output": "2 3"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4 4\n1 2 2 3\n2 3 4 4\n",
+        "expected_output": "2 3\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2 2\n1 2\n3 4\n",
+        "expected_output": "NONE\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 75,
+    "slug": "array-union-distinct",
+    "title": "Array Union",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n m then two arrays. Print all distinct elements in ascending numeric order.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "3 3\n3 1 2\n2 4 4",
+        "output": "1 2 3 4"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "3 3\n3 1 2\n2 4 4\n",
+        "expected_output": "1 2 3 4\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2 2\n-1 0\n0 1\n",
+        "expected_output": "-1 0 1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 76,
+    "slug": "left-rotate-array",
+    "title": "Rotate Array Left",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n k then n integers. Rotate sequence k positions left (k may exceed n). Print result.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5 2\n1 2 3 4 5",
+        "output": "3 4 5 1 2"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5 2\n1 2 3 4 5\n",
+        "expected_output": "3 4 5 1 2\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3 4\n7 8 9\n",
+        "expected_output": "8 9 7\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 77,
+    "slug": "right-rotate-array",
+    "title": "Rotate Array Right",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n k then n integers. Rotate sequence k positions right (k may exceed n). Print result.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5 2\n1 2 3 4 5",
+        "output": "4 5 1 2 3"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5 2\n1 2 3 4 5\n",
+        "expected_output": "4 5 1 2 3\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3 4\n7 8 9\n",
+        "expected_output": "9 7 8\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 78,
+    "slug": "is-array-sorted",
+    "title": "Check Sorted Array",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print YES if values are in nondecreasing order; otherwise NO.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "5\n1 2 2 3 4",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n1 2 2 3 4\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n3 1 2\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 79,
+    "slug": "pair-values-with-target-sum",
+    "title": "Pair With Given Sum",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n target then n integers. Print YES if distinct positions sum to target; otherwise NO.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "4 9\n2 7 5 1",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4 9\n2 7 5 1\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3 10\n1 3 4\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 80,
+    "slug": "maximum-contiguous-subarray-sum",
+    "title": "Maximum Subarray Sum",
+    "category": "code",
+    "topic": "Arrays and Lists",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 5"
+    ],
+    "description": "Read n then n integers. Print maximum sum of a nonempty contiguous subarray.",
+    "constraints": [
+      "Read input according to the stated format.",
+      "Print only the result, without labels or prompts."
+    ],
+    "examples": [
+      {
+        "input": "8\n-2 1 -3 4 -1 2 1 -5",
+        "output": "6"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read input and implement the requested logic.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "8\n-2 1 -3 4 -1 2 1 -5\n",
+        "expected_output": "6\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "3\n-8 -2 -5\n",
+        "expected_output": "-2\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  }
+]

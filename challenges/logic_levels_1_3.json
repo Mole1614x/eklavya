@@ -1,0 +1,1894 @@
+[
+  {
+    "number": 2,
+    "slug": "positive-negative-zero",
+    "title": "Positive Negative or Zero",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Print Positive, Negative or Zero for the input integer.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "5",
+        "output": "Positive"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n",
+        "expected_output": "Positive\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "-8\n",
+        "expected_output": "Negative\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "slug": "largest-of-two",
+    "title": "Largest of Two",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Print the maximum of two space-separated integers.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "4 9",
+        "output": "9"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4 9\n",
+        "expected_output": "9\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "-2 -5\n",
+        "expected_output": "-2\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "slug": "largest-of-three",
+    "title": "Largest of Three",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Print the maximum of three space-separated integers.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "5 9 3",
+        "output": "9"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5 9 3\n",
+        "expected_output": "9\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "-4 -9 -1\n",
+        "expected_output": "-1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "slug": "swap-without-temporary",
+    "title": "Swap Without Temporary Variable",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read two integers. Swap without using a temporary variable. Print them separated by a space.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "3 8",
+        "output": "8 3"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "3 8\n",
+        "expected_output": "8 3\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "-1 0\n",
+        "expected_output": "0 -1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "slug": "leap-year-check",
+    "title": "Leap Year",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read a Gregorian calendar year. Print YES for leap year, otherwise NO.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "2000",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "2000\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "1900\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "slug": "vowel-or-consonant",
+    "title": "Vowel or Consonant",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read one English letter. Print Vowel or Consonant, case-insensitively.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "E",
+        "output": "Vowel"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "E\n",
+        "expected_output": "Vowel\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "z\n",
+        "expected_output": "Consonant\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "slug": "count-up-to-n",
+    "title": "Print 1 to N",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Print integers from 1 to n inclusive in one space-separated line.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "5",
+        "output": "1 2 3 4 5"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n",
+        "expected_output": "1 2 3 4 5\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "1\n",
+        "expected_output": "1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "slug": "count-down-from-n",
+    "title": "Print N to 1",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Print integers from n down to 1 in one space-separated line.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "4 3 2 1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4\n",
+        "expected_output": "4 3 2 1\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "1\n",
+        "expected_output": "1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "slug": "natural-number-sum",
+    "title": "Sum of First N Natural Numbers",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read nonnegative n and print 1+2+...+n.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "5",
+        "output": "15"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n",
+        "expected_output": "15\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0\n",
+        "expected_output": "0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "slug": "multiplication-table",
+    "title": "Multiplication Table",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read integer n. Print exactly ten lines formatted n x i = result, i from 1 through 10.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "2",
+        "output": "2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "2\n",
+        "expected_output": "2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "1\n",
+        "expected_output": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "slug": "even-odd-sums",
+    "title": "Separate Even and Odd Sums",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read n and print sums of even and odd numbers from 1 to n, in that order.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "5",
+        "output": "6 9"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n",
+        "expected_output": "6 9\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "6\n",
+        "expected_output": "12 9\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "slug": "factorial-iterative",
+    "title": "Factorial of a Number",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read n in 0..20. Print n!, with 0! = 1.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "5",
+        "output": "120"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5\n",
+        "expected_output": "120\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0\n",
+        "expected_output": "1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 14,
+    "slug": "power-by-loop",
+    "title": "Power Without **",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read base and nonnegative exponent. Print their power without exponentiation operators or built-in pow.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "2 5",
+        "output": "32"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "2 5\n",
+        "expected_output": "32\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "-3 3\n",
+        "expected_output": "-27\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "slug": "simple-four-operation-calculator",
+    "title": "Simple Calculator",
+    "category": "foundations",
+    "topic": "Basic Programming",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 1"
+    ],
+    "description": "Read two integers and an operator separated by spaces. +, -, * print integer results; / prints two decimal places, or ERROR for zero divisor.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "8 2 /",
+        "output": "4.00"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "8 2 /\n",
+        "expected_output": "4.00\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "5 0 /\n",
+        "expected_output": "ERROR\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 16,
+    "slug": "digit-count",
+    "title": "Count Digits",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print the number of decimal digits in absolute integer n; zero counts as one digit.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "5021",
+        "output": "4"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "5021\n",
+        "expected_output": "4\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0\n",
+        "expected_output": "1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 18,
+    "slug": "digit-product",
+    "title": "Product of Digits",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print product of decimal digits of nonnegative n; zero has product zero.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "234",
+        "output": "24"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "234\n",
+        "expected_output": "24\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "105\n",
+        "expected_output": "0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 19,
+    "slug": "reverse-digits",
+    "title": "Reverse a Number",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Reverse digits of nonnegative n; omit leading zeros in the result.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "1200",
+        "output": "21"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "1200\n",
+        "expected_output": "21\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0\n",
+        "expected_output": "0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 20,
+    "slug": "number-palindrome",
+    "title": "Palindrome Number",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print YES if decimal representation of n is palindromic; otherwise NO.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "1221",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "1221\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "123\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 21,
+    "slug": "prime-number-check",
+    "title": "Prime Number Check",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print YES if integer n is prime; numbers below 2 are not prime.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "17",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "17\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "1\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 22,
+    "slug": "primes-in-range",
+    "title": "Prime Numbers in a Range",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Read L R, L <= R; print all primes in range ascending separated by spaces; NONE if empty.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "10 20",
+        "output": "11 13 17 19"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "10 20\n",
+        "expected_output": "11 13 17 19\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0 1\n",
+        "expected_output": "NONE\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 23,
+    "slug": "fibonacci-first-n",
+    "title": "Fibonacci Series",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print first n Fibonacci values beginning with 0 1 separated by spaces; for n=0 print NONE.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "7",
+        "output": "0 1 1 2 3 5 8"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "7\n",
+        "expected_output": "0 1 1 2 3 5 8\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "1\n",
+        "expected_output": "0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 24,
+    "slug": "armstrong-number",
+    "title": "Armstrong Number",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print YES if n equals the sum of its digits raised to its number of digits; otherwise NO.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "153",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "153\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "154\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 25,
+    "slug": "perfect-number",
+    "title": "Perfect Number",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print YES if the sum of positive divisors strictly smaller than n is n; otherwise NO.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "28",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "28\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "12\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 26,
+    "slug": "strong-number",
+    "title": "Strong Number",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print YES if n equals the sum of factorials of its decimal digits; otherwise NO.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "145",
+        "output": "YES"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "145\n",
+        "expected_output": "YES\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "123\n",
+        "expected_output": "NO\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 27,
+    "slug": "greatest-common-divisor",
+    "title": "Greatest Common Divisor",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Read nonnegative a b, not both zero. Print gcd(a,b).",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "24 18",
+        "output": "6"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "24 18\n",
+        "expected_output": "6\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0 7\n",
+        "expected_output": "7\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 28,
+    "slug": "least-common-multiple",
+    "title": "Least Common Multiple",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Read nonnegative a b. Print lcm(a,b), zero if either operand is zero.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "12 18",
+        "output": "36"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "12 18\n",
+        "expected_output": "36\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0 5\n",
+        "expected_output": "0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 29,
+    "slug": "largest-decimal-digit",
+    "title": "Largest Digit",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print largest decimal digit in absolute integer n.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "9072",
+        "output": "9"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "9072\n",
+        "expected_output": "9\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "-104\n",
+        "expected_output": "4\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 30,
+    "slug": "smallest-decimal-digit",
+    "title": "Smallest Digit",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print smallest decimal digit in absolute integer n.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "9072",
+        "output": "0"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "9072\n",
+        "expected_output": "0\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "-135\n",
+        "expected_output": "1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 31,
+    "slug": "count-even-odd-digits",
+    "title": "Count Even and Odd Digits",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print counts of even then odd decimal digits. Zero counts as one even digit.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "12340",
+        "output": "3 2"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "12340\n",
+        "expected_output": "3 2\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0\n",
+        "expected_output": "1 0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 32,
+    "slug": "digit-frequencies",
+    "title": "Digit Frequency Table",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print ten counts for digits 0 through 9 separated by spaces.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "1002",
+        "output": "2 1 1 0 0 0 0 0 0 0"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "1002\n",
+        "expected_output": "2 1 1 0 0 0 0 0 0 0\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0\n",
+        "expected_output": "1 0 0 0 0 0 0 0 0 0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 33,
+    "slug": "decimal-to-binary",
+    "title": "Decimal to Binary",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print binary digits of nonnegative decimal n without prefix; zero is 0.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "13",
+        "output": "1101"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "13\n",
+        "expected_output": "1101\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0\n",
+        "expected_output": "0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 34,
+    "slug": "binary-to-decimal",
+    "title": "Binary to Decimal",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Read a nonempty binary string and print its decimal value.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "1011",
+        "output": "11"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "1011\n",
+        "expected_output": "11\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "0\n",
+        "expected_output": "0\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 35,
+    "slug": "positive-factors",
+    "title": "All Positive Factors",
+    "category": "foundations",
+    "topic": "Number Logic",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 2"
+    ],
+    "description": "Print all positive divisors of n in increasing order, separated by spaces.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "12",
+        "output": "1 2 3 4 6 12"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "12\n",
+        "expected_output": "1 2 3 4 6 12\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "13\n",
+        "expected_output": "1 13\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 36,
+    "slug": "right-aligned-star-triangle",
+    "title": "Right Aligned Star Triangle",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Read n; row i has n-i leading spaces then i stars.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "   *\n  **\n ***\n****"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4\n",
+        "expected_output": "   *\n  **\n ***\n****\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": " *\n**\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 37,
+    "slug": "inverted-star-triangle",
+    "title": "Inverted Star Triangle",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Print rows of n stars down to one star, one fewer per row.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "****\n***\n**\n*"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4\n",
+        "expected_output": "****\n***\n**\n*\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": "**\n*\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 38,
+    "slug": "centered-star-pyramid",
+    "title": "Centered Star Pyramid",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Row i has n-i leading spaces followed by 2*i-1 stars.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "  *\n ***\n*****"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "3\n",
+        "expected_output": "  *\n ***\n*****\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": " *\n***\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 39,
+    "slug": "inverted-star-pyramid",
+    "title": "Inverted Star Pyramid",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Row i has i-1 leading spaces followed by 2*(n-i)+1 stars.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "*****\n ***\n  *"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "3\n",
+        "expected_output": "*****\n ***\n  *\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": "***\n *\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 40,
+    "slug": "diamond-star-pattern",
+    "title": "Diamond Star Pattern",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Print n centered star-pyramid rows and then their mirror without repeating the widest row.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "  *\n ***\n*****\n ***\n  *"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "3\n",
+        "expected_output": "  *\n ***\n*****\n ***\n  *\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": " *\n***\n *\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 41,
+    "slug": "number-staircase-pattern",
+    "title": "Number Staircase Pattern",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Row i prints 1 through i separated by spaces.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "1\n1 2\n1 2 3\n1 2 3 4"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4\n",
+        "expected_output": "1\n1 2\n1 2 3\n1 2 3 4\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": "1\n1 2\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 42,
+    "slug": "repeated-number-triangle",
+    "title": "Repeated Number Triangle",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Row i prints i exactly i times, with spaces.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "1\n2 2\n3 3 3"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "3\n",
+        "expected_output": "1\n2 2\n3 3 3\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": "1\n2 2\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 43,
+    "slug": "floyd-triangle-pattern",
+    "title": "Floyd Triangle",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Print consecutive integers starting at 1 in rows of lengths 1,2,...,n.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "1\n2 3\n4 5 6"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "3\n",
+        "expected_output": "1\n2 3\n4 5 6\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": "1\n2 3\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 44,
+    "slug": "binary-alternating-triangle",
+    "title": "Binary Alternating Triangle",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Print i digits on row i; digit j is 1 when i+j is even, otherwise 0; indices are 1-based.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "1\n01\n101\n0101"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4\n",
+        "expected_output": "1\n01\n101\n0101\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": "1\n01\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  },
+  {
+    "number": 45,
+    "slug": "pascal-triangle-pattern",
+    "title": "Pascal Triangle",
+    "category": "foundations",
+    "topic": "Patterns",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "Logic Building",
+      "Level 3"
+    ],
+    "description": "Print first n rows of Pascal triangle with one space between consecutive numbers.",
+    "constraints": [
+      "Read standard input exactly as described.",
+      "Print only the required result; no prompts or extra labels."
+    ],
+    "examples": [
+      {
+        "input": "4",
+        "output": "1\n1 1\n1 2 1\n1 3 3 1"
+      }
+    ],
+    "starters": [
+      {
+        "language": "python",
+        "code": "# Read from standard input and print your result.\n"
+      }
+    ],
+    "test_cases": [
+      {
+        "input_data": "4\n",
+        "expected_output": "1\n1 1\n1 2 1\n1 3 3 1\n",
+        "is_hidden": false,
+        "position": 0
+      },
+      {
+        "input_data": "2\n",
+        "expected_output": "1\n1 1\n",
+        "is_hidden": true,
+        "position": 1
+      }
+    ]
+  }
+]
