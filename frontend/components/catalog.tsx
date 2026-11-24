@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Check, Search } from "lucide-react";
 import { getCatalog } from "@/lib/api";
 import { modules } from "@/lib/navigation";
 
@@ -23,7 +23,8 @@ export async function CatalogView({ query, fixedCategory }: { query: Query; fixe
   const values = { category, difficulty, topic, q, subject };
   const filters = Object.fromEntries(Object.entries(values).filter(([, value]) => value));
   const path = fixedCategory ? `/${fixedCategory}` : "/problems";
-  const { items, total, topics } = await getCatalog({ ...filters, offset: String((page - 1) * 50) });
+  const { items, total, topics, solved_slugs } = await getCatalog({ ...filters, offset: String((page - 1) * 50) });
+  const solved = new Set(solved_slugs);
   const pageHref = (index: number) => `${path}?${new URLSearchParams({ ...filters, page: String(index) })}`;
   // Pass the current listing context into each question, including when it
   // originated from a subject track or a later catalog page.
@@ -48,11 +49,21 @@ export async function CatalogView({ query, fixedCategory }: { query: Query; fixe
       <div className="section-heading result-count"><h2>{total} {total === 1 ? "problem" : "problems"}</h2></div>
       {items.length > 0 ? (
         <ul className="card problem-list">
-          {items.map((item) => (
-            <li key={item.slug}>
+          {items.map((item, index) => (
+            <li key={item.slug} className={solved.has(item.slug) ? "problem-solved" : undefined}>
               <Link href={questionHref(item.slug)}>
-                <div><strong>{item.title}</strong><p>{item.topic} · {formats[item.format]}</p></div>
-                <span className={`difficulty ${item.difficulty.toLowerCase()}`}>{item.difficulty}</span><ArrowRight size={16} />
+                <span className="problem-index" aria-label={`Question ${(page - 1) * 50 + index + 1}`}>
+                  {String((page - 1) * 50 + index + 1).padStart(3, "0")}
+                </span>
+                <div className="problem-list-info">
+                  <div className="problem-title-line">
+                    <strong>{item.title}</strong>
+                    {solved.has(item.slug) && <span className="problem-solved-tick" aria-label="Solved" title="Solved"><Check size={13} strokeWidth={3}/></span>}
+                  </div>
+                  <p>{item.topic} · {formats[item.format]}</p>
+                </div>
+                <span className={`difficulty ${item.difficulty.toLowerCase()}`}>{item.difficulty}</span>
+                <ArrowRight size={16}/>
               </Link>
             </li>
           ))}

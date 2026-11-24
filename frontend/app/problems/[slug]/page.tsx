@@ -92,6 +92,7 @@ export default async function ProblemPage({
         <p className="eyebrow"><span className="signal"/> PRACTICE / CHALLENGE</p>
         <h1>{problem.title}</h1>
         <div className="problem-tags">
+          {!contest && navigation && <span className="pill problem-number-pill">#{String(navigation.position).padStart(3, "0")}</span>}
           <span className={`difficulty ${problem.difficulty.toLowerCase()}`}>{problem.difficulty}</span>
           <span className="pill">{problem.topic}</span>
           <span className="pill">{formats[problem.format]}</span>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 import type { OnMount } from "@monaco-editor/react";
 import { Code2, Play, Send } from "lucide-react";
 import type { ProblemDetail } from "@/lib/api";
@@ -14,6 +15,7 @@ const languages: Record<string, string> = { python: "Python", java: "Java", c: "
 type Result = { id: string; status: string; verdict: string | null; output: string | null; passed_tests: number; total_tests: number; execution_ms: number | null };
 
 export function Workspace({ problem, contestSlug }: { problem: ProblemDetail; contestSlug?: string }) {
+  const router = useRouter();
   const [language, setLanguage] = useState(problem.starters[0]?.language ?? "");
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const [tab, setTab] = useState("Test cases");
@@ -59,7 +61,16 @@ export function Workspace({ problem, contestSlug }: { problem: ProblemDetail; co
       const current: Result = await poll.json();
       setResult(current);
       setStatus(current.status === "RUNNING" ? "Running isolated tests…" : "Queued for evaluation…");
-      if (["FINISHED", "SYSTEM_ERROR", "CANCELLED"].includes(current.status)) { setPending(false); setStatus(""); return; }
+      if (["FINISHED", "SYSTEM_ERROR", "CANCELLED"].includes(current.status)) {
+        setPending(false);
+        setStatus("");
+        // Drop prefetched catalog data after a verified solve so the green
+        // completion tick appears when returning to the question list.
+        if (action === "Submit" && current.status === "FINISHED" && current.verdict === "ACCEPTED") {
+          router.refresh();
+        }
+        return;
+      }
     }
     setPending(false); setStatus("The judge is still working. This result remains in your submission history.");
   }

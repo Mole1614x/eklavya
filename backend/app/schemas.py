@@ -59,3 +59,4 @@ class Catalog(BaseModel):
     items: list[ProblemSummary]
     total: int
     topics: list[str]
+    solved_slugs: list[str] = Field(default_factory=list)

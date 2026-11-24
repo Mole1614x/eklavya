@@ -156,7 +156,7 @@ def problems(
 ) -> Catalog:
     if subject and subject not in BY_SLUG:
         raise HTTPException(status_code=422, detail="Unknown subject filter")
-    key = cache_key("catalog", q.strip().lower(), category, difficulty, topic, subject, limit, offset)
+    key = cache_key("catalog-difficulty-v2", q.strip().lower(), category, difficulty, topic, subject, limit, offset)
     cached = get_public(key) if viewer is None else None
     if cached is not None:
         return Catalog.model_validate(cached)

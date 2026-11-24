@@ -8,6 +8,7 @@ from .database import Session
 from .models import Achievement, Contest, ContestProblem, DailyChallenge, LearningPath, LearningPathProblem, Problem, ProblemEvaluator, RankLevel, StarterCode, TestCase
 from .schemas import ProblemDetail
 from .problem_uniqueness import check_seed_duplicates
+from .knowledge_difficulty import knowledge_difficulty
 
 
 def seed(db: DatabaseSession) -> int:
@@ -98,7 +99,7 @@ def seed(db: DatabaseSession) -> int:
             )
             source.append({
                 "slug": slug, "title": f'{subject["name"]}: {item["skill"]}',
-                "category": subject["category"], "difficulty": "Easy",
+                "category": subject["category"], "difficulty": knowledge_difficulty(item, pack.name),
                 "format": "MULTIPLE_CHOICE", "topic": subject["name"],
                 "tags": [f'Subject:{subject["slug"]}', "Knowledge Check"],
                 "description": item["prompt"], "constraints": ["Select exactly one correct answer."],
