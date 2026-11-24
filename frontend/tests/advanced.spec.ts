@@ -6,7 +6,7 @@ const password = process.env.UAT_ADMIN_PASSWORD ?? "UatAdminPass123!";
 test("Phase 17 assessment, Data Lab, expression, and multi-tool journeys", async ({ page }) => {
   await page.goto("/auth");
   await page.getByLabel("Email or username").fill(identity);
-  await page.getByLabel("Password").fill(password);
+  await page.getByLabel("Password", { exact: true }).fill(password);
   await page.getByRole("button", { name: "Sign in" }).click();
   await expect(page).toHaveURL(/\/admin$/);
 
