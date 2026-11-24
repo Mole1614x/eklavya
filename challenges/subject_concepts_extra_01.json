@@ -1,0 +1,462 @@
+[
+  {
+    "subject_id": 2,
+    "skill": "B tree",
+    "description": "A balanced multiway search tree designed for block-oriented storage and efficient range search"
+  },
+  {
+    "subject_id": 2,
+    "skill": "B plus tree",
+    "description": "A balanced index tree storing search keys in internal nodes and data references primarily at leaves"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Red black tree",
+    "description": "A binary search tree maintaining color invariants to keep its height logarithmic"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Splay tree",
+    "description": "A self-adjusting binary search tree moving recently accessed nodes toward the root"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Fenwick tree",
+    "description": "A binary indexed tree supporting prefix sums and point updates efficiently"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Segment tree",
+    "description": "A tree representing intervals for efficient range queries and updates"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Sparse table",
+    "description": "A precomputed structure supporting fast immutable range queries for idempotent operations"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Binary lifting",
+    "description": "Precomputing ancestor jumps at powers of two for fast tree queries"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Lowest common ancestor",
+    "description": "The deepest node that is an ancestor of each of two nodes in a rooted tree"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Euler tour",
+    "description": "A traversal encoding the entrance and exit structure of a rooted tree"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Tarjan SCC algorithm",
+    "description": "A DFS-based procedure for finding strongly connected components in a directed graph"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Kosaraju algorithm",
+    "description": "Finding strongly connected components using DFS orders on a graph and its reverse"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Articulation point",
+    "description": "A vertex whose removal increases the number of connected components in an undirected graph"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bridge edge",
+    "description": "An undirected edge whose removal increases the number of connected components"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Bipartite graph",
+    "description": "A graph whose vertices can be split into two sets with edges only between the sets"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Maximum bipartite matching",
+    "description": "Selecting the largest collection of edges with no shared endpoints between graph sides"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Edmonds Karp",
+    "description": "A maximum-flow algorithm using breadth-first search to find augmenting paths"
+  },
+  {
+    "subject_id": 2,
+    "skill": "KMP prefix function",
+    "description": "A table recording border lengths used to skip redundant comparisons in string matching"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Rabin Karp",
+    "description": "A string-search algorithm comparing rolling hash values of candidate windows"
+  },
+  {
+    "subject_id": 2,
+    "skill": "Z algorithm",
+    "description": "Linear-time computation of longest prefix matches starting at each string position"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Protected member",
+    "description": "A class member whose accessibility permits designated subclass access according to language rules"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Private member",
+    "description": "A class member hidden from ordinary external access according to its language's visibility model"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Public API",
+    "description": "The operations and data deliberately exposed for use by external clients"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Virtual method",
+    "description": "A method eligible for runtime polymorphic dispatch in languages that distinguish virtual calls"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Final method",
+    "description": "A method designated as not overridable by subclasses"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Sealed class",
+    "description": "A class that restricts which other types may inherit from it"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Multiple inheritance",
+    "description": "Creating a class that directly derives from more than one parent class"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Mixin",
+    "description": "A reusable behavior provider intended to be composed with other classes"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Diamond problem",
+    "description": "Ambiguity arising when inheritance paths rejoin at a common base type"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Method resolution order",
+    "description": "The order a language uses to select inherited methods across a class hierarchy"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Class variable",
+    "description": "State associated with the class rather than independently assigned for each instance"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Instance variable",
+    "description": "State stored separately for each object instance"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Property accessor",
+    "description": "An interface that exposes attribute-like access while applying method logic"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Copy constructor",
+    "description": "A constructor initializing an object from an existing object of the same class"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Shallow copy",
+    "description": "Copying an outer object while reusing references to nested objects"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Deep copy",
+    "description": "Recursively creating separate copies of nested referenced objects as specified"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Operator overloading",
+    "description": "Defining behavior for language operators on user-defined types"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Generic type",
+    "description": "A type parameterized by one or more other types"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Covariant return type",
+    "description": "An override return type that is a compatible subtype of the base method return type"
+  },
+  {
+    "subject_id": 3,
+    "skill": "Runtime type identification",
+    "description": "Inspecting an object's dynamic type while a program is executing"
+  },
+  {
+    "subject_id": 4,
+    "skill": "CROSS JOIN",
+    "description": "A relational join yielding the Cartesian product of rows from two inputs"
+  },
+  {
+    "subject_id": 4,
+    "skill": "FULL OUTER JOIN",
+    "description": "A join retaining unmatched rows from both inputs with missing-side null fields"
+  },
+  {
+    "subject_id": 4,
+    "skill": "SELF JOIN",
+    "description": "A join in which the same table participates more than once under different aliases"
+  },
+  {
+    "subject_id": 4,
+    "skill": "LATERAL JOIN",
+    "description": "A join permitting a right-hand subquery to reference values of preceding FROM items"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Recursive CTE",
+    "description": "A WITH query that repeatedly applies a recursive term until no new results are produced"
+  },
+  {
+    "subject_id": 4,
+    "skill": "ROLLUP aggregation",
+    "description": "Producing hierarchical subtotal rows across ordered grouping columns"
+  },
+  {
+    "subject_id": 4,
+    "skill": "CUBE aggregation",
+    "description": "Producing aggregations for every combination of supplied grouping columns"
+  },
+  {
+    "subject_id": 4,
+    "skill": "GROUPING SETS",
+    "description": "Explicitly listing several groupings to aggregate within a single SQL query"
+  },
+  {
+    "subject_id": 4,
+    "skill": "RANK window function",
+    "description": "Assigning tied order positions while leaving gaps after ties"
+  },
+  {
+    "subject_id": 4,
+    "skill": "DENSE RANK",
+    "description": "Assigning tied positions without skipping subsequent rank values"
+  },
+  {
+    "subject_id": 4,
+    "skill": "ROW NUMBER",
+    "description": "Giving consecutive unique ordinals to rows within an ordered window partition"
+  },
+  {
+    "subject_id": 4,
+    "skill": "LAG window function",
+    "description": "Accessing a value from an earlier row within a window partition"
+  },
+  {
+    "subject_id": 4,
+    "skill": "LEAD window function",
+    "description": "Accessing a value from a later row within a window partition"
+  },
+  {
+    "subject_id": 4,
+    "skill": "NTILE window function",
+    "description": "Distributing ordered rows into a specified number of numbered buckets"
+  },
+  {
+    "subject_id": 4,
+    "skill": "PERCENT RANK",
+    "description": "Ranking rows using normalized rank positions with ties according to window rules"
+  },
+  {
+    "subject_id": 4,
+    "skill": "CUME DIST",
+    "description": "Measuring the fraction of rows with values no greater than the current ordering value"
+  },
+  {
+    "subject_id": 4,
+    "skill": "NULLIF",
+    "description": "Returning null when two SQL expressions are equal and otherwise returning the first value"
+  },
+  {
+    "subject_id": 4,
+    "skill": "COALESCE",
+    "description": "Returning the first nonnull expression from a list of arguments"
+  },
+  {
+    "subject_id": 4,
+    "skill": "CHECK constraint",
+    "description": "Enforcing a Boolean condition on data accepted into table rows"
+  },
+  {
+    "subject_id": 4,
+    "skill": "Partial index",
+    "description": "An index containing only rows satisfying a specified predicate"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Attribution model",
+    "description": "A rule assigning conversion credit among marketing or product touchpoints"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Last touch attribution",
+    "description": "Giving all assigned conversion credit to the final recognized touchpoint"
+  },
+  {
+    "subject_id": 7,
+    "skill": "First touch attribution",
+    "description": "Giving all assigned conversion credit to the earliest recognized touchpoint"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Holdout experiment",
+    "description": "A study that withholds an intervention from a comparison group"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Difference in differences",
+    "description": "Estimating a treatment effect using changes over time across intervention and comparison groups"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Synthetic control",
+    "description": "Building a weighted comparison from untreated units to approximate a treated unit's counterfactual"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Instrumental variable",
+    "description": "A variable used to isolate treatment variation under relevance and exclusion assumptions"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Regression discontinuity",
+    "description": "Estimating local causal effects around a threshold that assigns treatment"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Intent to treat",
+    "description": "Evaluating outcomes based on randomized assignment regardless of actual compliance"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Minimum detectable effect",
+    "description": "The smallest effect size a planned study has enough power to detect"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Sequential test",
+    "description": "A statistical procedure accounting for evidence inspected as observations arrive over time"
+  },
+  {
+    "subject_id": 7,
+    "skill": "Opportunity sizing",
+    "description": "Estimating addressable value or impact before committing resources to a proposed initiative"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Unicode normalization",
+    "description": "Converting text to a consistent Unicode composition or compatibility form"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Locale aware parsing",
+    "description": "Interpreting numbers or dates according to regional formatting conventions"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Date timezone normalization",
+    "description": "Converting timestamp values into an agreed time reference such as UTC"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Currency conversion",
+    "description": "Translating monetary values using time-appropriate exchange rates and precision rules"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Outlier annotation",
+    "description": "Marking suspicious numeric observations for review without necessarily deleting them"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Record linkage",
+    "description": "Matching records believed to describe the same real-world entity across data sources"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Fuzzy matching",
+    "description": "Comparing text with approximate similarity rather than exact equality"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Edit distance",
+    "description": "The minimum permitted character operations needed to transform one string into another"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Phonetic matching",
+    "description": "Comparing words by encoded pronunciation to identify possible spelling variants"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Duplicate cluster",
+    "description": "A group of records believed to refer to one underlying entity"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Golden record",
+    "description": "A consolidated representation selected from multiple source records for one entity"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Master data management",
+    "description": "Governance processes establishing consistent reference entities across systems"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Null sentinel collision",
+    "description": "A real value being confused with an artificial marker for missingness"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Schema contract",
+    "description": "A documented agreement on fields, types and validation requirements between data producers and consumers"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Data quality dimension accuracy",
+    "description": "The degree to which recorded values reflect the true underlying information"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Data quality dimension completeness",
+    "description": "The degree to which required expected information is present"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Data quality dimension timeliness",
+    "description": "Whether information arrives and remains usable within required time windows"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Data quality dimension consistency",
+    "description": "Whether related data representations agree across locations or records"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Data reconciliation",
+    "description": "Comparing sources and destinations to find missing, duplicated or altered records"
+  },
+  {
+    "subject_id": 8,
+    "skill": "Data profiling",
+    "description": "Summarizing a dataset's distributions, uniqueness, null rates and structural characteristics"
+  }
+]
