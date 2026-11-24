@@ -71,6 +71,7 @@ def seed(db: DatabaseSession) -> int:
             practice_levels[pack_name].setdefault(level, []).append(slug)
             source.append({key: value for key, value in item.items()
                            if key not in {"number", "test_inputs", "reference_source"}})
+    from hashlib import sha256
     # Verified conceptual checks use the existing MULTIPLE_CHOICE evaluator.
     # One genuine answer per question; never seed placeholder test cases.
     from .subject_catalog import SUBJECTS
@@ -90,13 +91,18 @@ def seed(db: DatabaseSession) -> int:
                 raise ValueError(f"Missing meaningful question statement: {slug}")
             seen.add(slug)
             subject_questions[subject["slug"]].append(slug)
+            # Shuffle positions reproducibly; correct answers must not always
+            # be option A. The actual expected answer is kept in a hidden test.
+            arranged_choices = sorted(
+                choices, key=lambda choice: sha256(f"{slug}:{choice}".encode()).hexdigest()
+            )
             source.append({
                 "slug": slug, "title": f'{subject["name"]}: {item["skill"]}',
                 "category": subject["category"], "difficulty": "Easy",
                 "format": "MULTIPLE_CHOICE", "topic": subject["name"],
                 "tags": [f'Subject:{subject["slug"]}', "Knowledge Check"],
                 "description": item["prompt"], "constraints": ["Select exactly one correct answer."],
-                "examples": [], "starters": [], "choices": choices,
+                "examples": [], "starters": [], "choices": arranged_choices,
             })
             test_cases[slug] = [{
                 "input_data": "{}", "expected_output": json.dumps(answer),
