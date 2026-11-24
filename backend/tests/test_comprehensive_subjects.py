@@ -98,3 +98,29 @@ def test_no_repeated_new_titles_or_quiz_statements(db):
     assert len(owned) == 135
     assert len({p.title.casefold() for p in owned}) == 135
     assert len({p.description.casefold() for p in owned}) == 135
+
+
+def test_subject_filter_includes_legacy_curriculum_not_just_new_mcqs(client):
+    numpy = client.get("/api/v1/problems", params={"subject": "numpy", "limit": 100})
+    assert numpy.status_code == 200
+    assert numpy.json()["total"] == 53
+    assert "numpy-create-array" in {item["slug"] for item in numpy.json()["items"]}
+    logic = client.get("/api/v1/problems", params={"subject": SUBJECTS[0]["slug"], "limit": 100})
+    assert logic.status_code == 200
+    assert logic.json()["total"] == 105
+    assert client.get("/api/v1/problems", params={"subject": "does-not-exist"}).status_code == 422
+
+
+def test_subject_counts_respect_selected_only_visibility(client, db):
+    slug = "knowledge-numpy-01"
+    item = db.get(Problem, slug)
+    assert item.status == "PUBLISHED" and item.access_scope == "ALL"
+    item.access_scope = "SELECTED"
+    db.commit()
+    response = client.get("/api/v1/subjects")
+    assert response.status_code == 200
+    numpy = next(subject for subject in response.json()["subjects"] if subject["id"] == 5)
+    assert numpy["published_questions"] == 52
+    filtered = client.get("/api/v1/problems", params={"subject": "numpy"})
+    assert filtered.json()["total"] == 52
+    assert client.get(f"/api/v1/problems/{slug}").status_code == 404
