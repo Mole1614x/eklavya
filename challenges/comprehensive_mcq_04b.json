@@ -1,0 +1,3002 @@
+[
+  {
+    "subject_id": 21,
+    "skill": "grep",
+    "prompt": "For the subject \"21\", which term best matches this precise description: searches lines for a pattern in files or standard input?",
+    "choices": [
+      "grep",
+      "chmod",
+      "sed",
+      "cron"
+    ],
+    "answer": "grep"
+  },
+  {
+    "subject_id": 21,
+    "skill": "find",
+    "prompt": "For the subject \"21\", which term best matches this precise description: walks directory trees and selects paths using predicates?",
+    "choices": [
+      "find",
+      "chown",
+      "tar",
+      "xargs"
+    ],
+    "answer": "find"
+  },
+  {
+    "subject_id": 21,
+    "skill": "chmod",
+    "prompt": "For the subject \"21\", which term best matches this precise description: changes file permission bits?",
+    "choices": [
+      "chmod",
+      "awk",
+      "ssh",
+      "grep"
+    ],
+    "answer": "chmod"
+  },
+  {
+    "subject_id": 21,
+    "skill": "chown",
+    "prompt": "For the subject \"21\", which term best matches this precise description: changes file owner or group?",
+    "choices": [
+      "chown",
+      "sed",
+      "cron",
+      "find"
+    ],
+    "answer": "chown"
+  },
+  {
+    "subject_id": 21,
+    "skill": "awk",
+    "prompt": "For the subject \"21\", which term best matches this precise description: processes structured text using pattern-action rules?",
+    "choices": [
+      "awk",
+      "tar",
+      "xargs",
+      "chmod"
+    ],
+    "answer": "awk"
+  },
+  {
+    "subject_id": 21,
+    "skill": "sed",
+    "prompt": "For the subject \"21\", which term best matches this precise description: edits text streams using scripted substitutions or commands?",
+    "choices": [
+      "sed",
+      "ssh",
+      "grep",
+      "chown"
+    ],
+    "answer": "sed"
+  },
+  {
+    "subject_id": 21,
+    "skill": "tar",
+    "prompt": "For the subject \"21\", which term best matches this precise description: bundles multiple filesystem entries into one archive?",
+    "choices": [
+      "tar",
+      "cron",
+      "find",
+      "awk"
+    ],
+    "answer": "tar"
+  },
+  {
+    "subject_id": 21,
+    "skill": "ssh",
+    "prompt": "For the subject \"21\", which term best matches this precise description: establishes an authenticated encrypted remote shell session?",
+    "choices": [
+      "ssh",
+      "xargs",
+      "chmod",
+      "sed"
+    ],
+    "answer": "ssh"
+  },
+  {
+    "subject_id": 21,
+    "skill": "cron",
+    "prompt": "For the subject \"21\", which term best matches this precise description: runs jobs according to configured recurring time schedules?",
+    "choices": [
+      "cron",
+      "grep",
+      "chown",
+      "tar"
+    ],
+    "answer": "cron"
+  },
+  {
+    "subject_id": 21,
+    "skill": "xargs",
+    "prompt": "For the subject \"21\", which term best matches this precise description: converts standard-input items into command-line arguments?",
+    "choices": [
+      "xargs",
+      "find",
+      "awk",
+      "ssh"
+    ],
+    "answer": "xargs"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git rebase",
+    "prompt": "For the subject \"22\", which term best matches this precise description: replays commits onto a different base commit?",
+    "choices": [
+      "git rebase",
+      "git stash",
+      "git reflog",
+      "git tag"
+    ],
+    "answer": "git rebase"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git cherry-pick",
+    "prompt": "For the subject \"22\", which term best matches this precise description: applies changes introduced by a selected existing commit?",
+    "choices": [
+      "git cherry-pick",
+      "git bisect",
+      "git revert",
+      "pull request"
+    ],
+    "answer": "git cherry-pick"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git stash",
+    "prompt": "For the subject \"22\", which term best matches this precise description: temporarily saves modifications in a local working tree?",
+    "choices": [
+      "git stash",
+      "git fetch",
+      "git merge",
+      "git rebase"
+    ],
+    "answer": "git stash"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git bisect",
+    "prompt": "For the subject \"22\", which term best matches this precise description: uses binary search over commits to locate a regression?",
+    "choices": [
+      "git bisect",
+      "git reflog",
+      "git tag",
+      "git cherry-pick"
+    ],
+    "answer": "git bisect"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git fetch",
+    "prompt": "For the subject \"22\", which term best matches this precise description: downloads remote objects and refs without integrating a branch?",
+    "choices": [
+      "git fetch",
+      "git revert",
+      "pull request",
+      "git stash"
+    ],
+    "answer": "git fetch"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git reflog",
+    "prompt": "For the subject \"22\", which term best matches this precise description: records local movements of branch tips and HEAD?",
+    "choices": [
+      "git reflog",
+      "git merge",
+      "git rebase",
+      "git bisect"
+    ],
+    "answer": "git reflog"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git revert",
+    "prompt": "For the subject \"22\", which term best matches this precise description: creates a new commit that reverses a previous commit's changes?",
+    "choices": [
+      "git revert",
+      "git tag",
+      "git cherry-pick",
+      "git fetch"
+    ],
+    "answer": "git revert"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git merge",
+    "prompt": "For the subject \"22\", which term best matches this precise description: integrates histories from two lines of development?",
+    "choices": [
+      "git merge",
+      "pull request",
+      "git stash",
+      "git reflog"
+    ],
+    "answer": "git merge"
+  },
+  {
+    "subject_id": 22,
+    "skill": "git tag",
+    "prompt": "For the subject \"22\", which term best matches this precise description: assigns a stable human-readable label to a commit?",
+    "choices": [
+      "git tag",
+      "git rebase",
+      "git bisect",
+      "git revert"
+    ],
+    "answer": "git tag"
+  },
+  {
+    "subject_id": 22,
+    "skill": "pull request",
+    "prompt": "For the subject \"22\", which term best matches this precise description: proposes branch changes for review before integration?",
+    "choices": [
+      "pull request",
+      "git cherry-pick",
+      "git fetch",
+      "git merge"
+    ],
+    "answer": "pull request"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Dockerfile",
+    "prompt": "For the subject \"23\", which term best matches this precise description: defines declarative image build instructions?",
+    "choices": [
+      "Dockerfile",
+      "Docker volume",
+      "Bind mount",
+      "Docker network"
+    ],
+    "answer": "Dockerfile"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker image",
+    "prompt": "For the subject \"23\", which term best matches this precise description: stores immutable layers and metadata for creating containers?",
+    "choices": [
+      "Docker image",
+      "Multi-stage build",
+      "ENTRYPOINT",
+      "Image digest"
+    ],
+    "answer": "Docker image"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker volume",
+    "prompt": "For the subject \"23\", which term best matches this precise description: persists application data independently from a container lifecycle?",
+    "choices": [
+      "Docker volume",
+      "Docker Compose",
+      "HEALTHCHECK",
+      "Dockerfile"
+    ],
+    "answer": "Docker volume"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Multi-stage build",
+    "prompt": "For the subject \"23\", which term best matches this precise description: uses multiple build stages to reduce final image size?",
+    "choices": [
+      "Multi-stage build",
+      "Bind mount",
+      "Docker network",
+      "Docker image"
+    ],
+    "answer": "Multi-stage build"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker Compose",
+    "prompt": "For the subject \"23\", which term best matches this precise description: defines related containers and their configuration as an application?",
+    "choices": [
+      "Docker Compose",
+      "ENTRYPOINT",
+      "Image digest",
+      "Docker volume"
+    ],
+    "answer": "Docker Compose"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Bind mount",
+    "prompt": "For the subject \"23\", which term best matches this precise description: maps a host filesystem path directly into a container?",
+    "choices": [
+      "Bind mount",
+      "HEALTHCHECK",
+      "Dockerfile",
+      "Multi-stage build"
+    ],
+    "answer": "Bind mount"
+  },
+  {
+    "subject_id": 23,
+    "skill": "ENTRYPOINT",
+    "prompt": "For the subject \"23\", which term best matches this precise description: configures a container's primary executable?",
+    "choices": [
+      "ENTRYPOINT",
+      "Docker network",
+      "Docker image",
+      "Docker Compose"
+    ],
+    "answer": "ENTRYPOINT"
+  },
+  {
+    "subject_id": 23,
+    "skill": "HEALTHCHECK",
+    "prompt": "For the subject \"23\", which term best matches this precise description: defines a command to assess container health?",
+    "choices": [
+      "HEALTHCHECK",
+      "Image digest",
+      "Docker volume",
+      "Bind mount"
+    ],
+    "answer": "HEALTHCHECK"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Docker network",
+    "prompt": "For the subject \"23\", which term best matches this precise description: connects containers using configured virtual networking?",
+    "choices": [
+      "Docker network",
+      "Dockerfile",
+      "Multi-stage build",
+      "ENTRYPOINT"
+    ],
+    "answer": "Docker network"
+  },
+  {
+    "subject_id": 23,
+    "skill": "Image digest",
+    "prompt": "For the subject \"23\", which term best matches this precise description: identifies exact image content with a cryptographic hash?",
+    "choices": [
+      "Image digest",
+      "Docker image",
+      "Docker Compose",
+      "HEALTHCHECK"
+    ],
+    "answer": "Image digest"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Pod",
+    "prompt": "For the subject \"24\", which term best matches this precise description: runs one or more closely coupled containers sharing network and storage context?",
+    "choices": [
+      "Pod",
+      "Service",
+      "Ingress",
+      "DaemonSet"
+    ],
+    "answer": "Pod"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Deployment",
+    "prompt": "For the subject \"24\", which term best matches this precise description: manages a desired number of interchangeable application replicas?",
+    "choices": [
+      "Deployment",
+      "ConfigMap",
+      "Horizontal Pod Autoscaler",
+      "Readiness probe"
+    ],
+    "answer": "Deployment"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Service",
+    "prompt": "For the subject \"24\", which term best matches this precise description: provides a stable network endpoint for selected pods?",
+    "choices": [
+      "Service",
+      "Secret",
+      "PersistentVolumeClaim",
+      "Pod"
+    ],
+    "answer": "Service"
+  },
+  {
+    "subject_id": 24,
+    "skill": "ConfigMap",
+    "prompt": "For the subject \"24\", which term best matches this precise description: stores nonsecret application configuration data?",
+    "choices": [
+      "ConfigMap",
+      "Ingress",
+      "DaemonSet",
+      "Deployment"
+    ],
+    "answer": "ConfigMap"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Secret",
+    "prompt": "For the subject \"24\", which term best matches this precise description: stores sensitive configuration values with access controls?",
+    "choices": [
+      "Secret",
+      "Horizontal Pod Autoscaler",
+      "Readiness probe",
+      "Service"
+    ],
+    "answer": "Secret"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Ingress",
+    "prompt": "For the subject \"24\", which term best matches this precise description: defines HTTP routing from outside the cluster to services?",
+    "choices": [
+      "Ingress",
+      "PersistentVolumeClaim",
+      "Pod",
+      "ConfigMap"
+    ],
+    "answer": "Ingress"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Horizontal Pod Autoscaler",
+    "prompt": "For the subject \"24\", which term best matches this precise description: adjusts replica counts based on observed metrics?",
+    "choices": [
+      "Horizontal Pod Autoscaler",
+      "DaemonSet",
+      "Deployment",
+      "Secret"
+    ],
+    "answer": "Horizontal Pod Autoscaler"
+  },
+  {
+    "subject_id": 24,
+    "skill": "PersistentVolumeClaim",
+    "prompt": "For the subject \"24\", which term best matches this precise description: requests persistent storage for a workload?",
+    "choices": [
+      "PersistentVolumeClaim",
+      "Readiness probe",
+      "Service",
+      "Ingress"
+    ],
+    "answer": "PersistentVolumeClaim"
+  },
+  {
+    "subject_id": 24,
+    "skill": "DaemonSet",
+    "prompt": "For the subject \"24\", which term best matches this precise description: schedules a pod copy on eligible cluster nodes?",
+    "choices": [
+      "DaemonSet",
+      "Pod",
+      "ConfigMap",
+      "Horizontal Pod Autoscaler"
+    ],
+    "answer": "DaemonSet"
+  },
+  {
+    "subject_id": 24,
+    "skill": "Readiness probe",
+    "prompt": "For the subject \"24\", which term best matches this precise description: indicates whether a running pod is ready to receive traffic?",
+    "choices": [
+      "Readiness probe",
+      "Deployment",
+      "Secret",
+      "PersistentVolumeClaim"
+    ],
+    "answer": "Readiness probe"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Slowly changing dimension Type 2",
+    "prompt": "For the subject \"25\", which term best matches this precise description: preserves historical attribute changes as additional versioned dimension rows?",
+    "choices": [
+      "Slowly changing dimension Type 2",
+      "Fact table",
+      "Change data capture",
+      "Data mart"
+    ],
+    "answer": "Slowly changing dimension Type 2"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Surrogate key",
+    "prompt": "For the subject \"25\", which term best matches this precise description: supplies an internally assigned identifier independent of source business keys?",
+    "choices": [
+      "Surrogate key",
+      "Dimension table",
+      "Data lineage",
+      "Medallion architecture"
+    ],
+    "answer": "Surrogate key"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Fact table",
+    "prompt": "For the subject \"25\", which term best matches this precise description: stores measurable business events at a declared grain?",
+    "choices": [
+      "Fact table",
+      "Incremental load",
+      "ELT",
+      "Slowly changing dimension Type 2"
+    ],
+    "answer": "Fact table"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Dimension table",
+    "prompt": "For the subject \"25\", which term best matches this precise description: stores descriptive attributes used to filter and group facts?",
+    "choices": [
+      "Dimension table",
+      "Change data capture",
+      "Data mart",
+      "Surrogate key"
+    ],
+    "answer": "Dimension table"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Incremental load",
+    "prompt": "For the subject \"25\", which term best matches this precise description: processes only new or modified records since a prior checkpoint?",
+    "choices": [
+      "Incremental load",
+      "Data lineage",
+      "Medallion architecture",
+      "Fact table"
+    ],
+    "answer": "Incremental load"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Change data capture",
+    "prompt": "For the subject \"25\", which term best matches this precise description: captures source row changes for downstream replication or integration?",
+    "choices": [
+      "Change data capture",
+      "ELT",
+      "Slowly changing dimension Type 2",
+      "Dimension table"
+    ],
+    "answer": "Change data capture"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data lineage",
+    "prompt": "For the subject \"25\", which term best matches this precise description: traces datasets through their upstream sources and transformations?",
+    "choices": [
+      "Data lineage",
+      "Data mart",
+      "Surrogate key",
+      "Incremental load"
+    ],
+    "answer": "Data lineage"
+  },
+  {
+    "subject_id": 25,
+    "skill": "ELT",
+    "prompt": "For the subject \"25\", which term best matches this precise description: loads raw data first and transforms it inside the destination system?",
+    "choices": [
+      "ELT",
+      "Medallion architecture",
+      "Fact table",
+      "Change data capture"
+    ],
+    "answer": "ELT"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Data mart",
+    "prompt": "For the subject \"25\", which term best matches this precise description: organizes subject-focused analytical data for a business area?",
+    "choices": [
+      "Data mart",
+      "Slowly changing dimension Type 2",
+      "Dimension table",
+      "Data lineage"
+    ],
+    "answer": "Data mart"
+  },
+  {
+    "subject_id": 25,
+    "skill": "Medallion architecture",
+    "prompt": "For the subject \"25\", which term best matches this precise description: organizes data through raw, refined and consumption-oriented layers?",
+    "choices": [
+      "Medallion architecture",
+      "Surrogate key",
+      "Incremental load",
+      "ELT"
+    ],
+    "answer": "Medallion architecture"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Kafka topic",
+    "prompt": "For the subject \"26\", which term best matches this precise description: names an append-only stream of partitioned records?",
+    "choices": [
+      "Kafka topic",
+      "Consumer group",
+      "Idempotent producer",
+      "Log compaction"
+    ],
+    "answer": "Kafka topic"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Partition",
+    "prompt": "For the subject \"26\", which term best matches this precise description: provides an ordered log segment within a topic?",
+    "choices": [
+      "Partition",
+      "Offset",
+      "Schema Registry",
+      "Exactly-once processing"
+    ],
+    "answer": "Partition"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Consumer group",
+    "prompt": "For the subject \"26\", which term best matches this precise description: coordinates consumers sharing topic partitions for parallel processing?",
+    "choices": [
+      "Consumer group",
+      "Replication factor",
+      "Dead-letter topic",
+      "Kafka topic"
+    ],
+    "answer": "Consumer group"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Offset",
+    "prompt": "For the subject \"26\", which term best matches this precise description: identifies a record position within a Kafka partition?",
+    "choices": [
+      "Offset",
+      "Idempotent producer",
+      "Log compaction",
+      "Partition"
+    ],
+    "answer": "Offset"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Replication factor",
+    "prompt": "For the subject \"26\", which term best matches this precise description: controls the number of partition replicas across brokers?",
+    "choices": [
+      "Replication factor",
+      "Schema Registry",
+      "Exactly-once processing",
+      "Consumer group"
+    ],
+    "answer": "Replication factor"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Idempotent producer",
+    "prompt": "For the subject \"26\", which term best matches this precise description: prevents duplicate records caused by producer retries within its guarantees?",
+    "choices": [
+      "Idempotent producer",
+      "Dead-letter topic",
+      "Kafka topic",
+      "Offset"
+    ],
+    "answer": "Idempotent producer"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Schema Registry",
+    "prompt": "For the subject \"26\", which term best matches this precise description: manages and validates schemas for serialized event payloads?",
+    "choices": [
+      "Schema Registry",
+      "Log compaction",
+      "Partition",
+      "Replication factor"
+    ],
+    "answer": "Schema Registry"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Dead-letter topic",
+    "prompt": "For the subject \"26\", which term best matches this precise description: collects messages that fail defined processing rules?",
+    "choices": [
+      "Dead-letter topic",
+      "Exactly-once processing",
+      "Consumer group",
+      "Idempotent producer"
+    ],
+    "answer": "Dead-letter topic"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Log compaction",
+    "prompt": "For the subject \"26\", which term best matches this precise description: retains the latest record per key within a topic cleanup policy?",
+    "choices": [
+      "Log compaction",
+      "Kafka topic",
+      "Offset",
+      "Schema Registry"
+    ],
+    "answer": "Log compaction"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Exactly-once processing",
+    "prompt": "For the subject \"26\", which term best matches this precise description: coordinates processing and output commits to avoid duplicated results under supported semantics?",
+    "choices": [
+      "Exactly-once processing",
+      "Partition",
+      "Replication factor",
+      "Dead-letter topic"
+    ],
+    "answer": "Exactly-once processing"
+  },
+  {
+    "subject_id": 27,
+    "skill": "DAG",
+    "prompt": "For the subject \"27\", which term best matches this precise description: represents an acyclic set of task dependencies?",
+    "choices": [
+      "DAG",
+      "Scheduler",
+      "Sensor",
+      "Trigger rule"
+    ],
+    "answer": "DAG"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Operator",
+    "prompt": "For the subject \"27\", which term best matches this precise description: defines one kind of task execution in a workflow?",
+    "choices": [
+      "Operator",
+      "Task instance",
+      "Catchup",
+      "Dynamic task mapping"
+    ],
+    "answer": "Operator"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Scheduler",
+    "prompt": "For the subject \"27\", which term best matches this precise description: creates and queues task instances according to DAG schedules and dependencies?",
+    "choices": [
+      "Scheduler",
+      "XCom",
+      "Backfill",
+      "DAG"
+    ],
+    "answer": "Scheduler"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Task instance",
+    "prompt": "For the subject \"27\", which term best matches this precise description: represents one task execution for a particular DAG run?",
+    "choices": [
+      "Task instance",
+      "Sensor",
+      "Trigger rule",
+      "Operator"
+    ],
+    "answer": "Task instance"
+  },
+  {
+    "subject_id": 27,
+    "skill": "XCom",
+    "prompt": "For the subject \"27\", which term best matches this precise description: exchanges small metadata values between workflow tasks?",
+    "choices": [
+      "XCom",
+      "Catchup",
+      "Dynamic task mapping",
+      "Scheduler"
+    ],
+    "answer": "XCom"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Sensor",
+    "prompt": "For the subject \"27\", which term best matches this precise description: waits for an external state or condition before proceeding?",
+    "choices": [
+      "Sensor",
+      "Backfill",
+      "DAG",
+      "Task instance"
+    ],
+    "answer": "Sensor"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Catchup",
+    "prompt": "For the subject \"27\", which term best matches this precise description: creates historical scheduled DAG runs for missed schedule intervals?",
+    "choices": [
+      "Catchup",
+      "Trigger rule",
+      "Operator",
+      "XCom"
+    ],
+    "answer": "Catchup"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Backfill",
+    "prompt": "For the subject \"27\", which term best matches this precise description: runs workflows for an explicitly selected historical interval?",
+    "choices": [
+      "Backfill",
+      "Dynamic task mapping",
+      "Scheduler",
+      "Sensor"
+    ],
+    "answer": "Backfill"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Trigger rule",
+    "prompt": "For the subject \"27\", which term best matches this precise description: controls when a task may run based on upstream task states?",
+    "choices": [
+      "Trigger rule",
+      "DAG",
+      "Task instance",
+      "Catchup"
+    ],
+    "answer": "Trigger rule"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Dynamic task mapping",
+    "prompt": "For the subject \"27\", which term best matches this precise description: expands tasks at runtime using input collections?",
+    "choices": [
+      "Dynamic task mapping",
+      "Operator",
+      "XCom",
+      "Backfill"
+    ],
+    "answer": "Dynamic task mapping"
+  },
+  {
+    "subject_id": 28,
+    "skill": "GET",
+    "prompt": "For the subject \"28\", which term best matches this precise description: retrieves a resource representation without requesting a state mutation?",
+    "choices": [
+      "GET",
+      "PUT",
+      "HTTP 401",
+      "ETag"
+    ],
+    "answer": "GET"
+  },
+  {
+    "subject_id": 28,
+    "skill": "POST",
+    "prompt": "For the subject \"28\", which term best matches this precise description: submits data to create a resource or invoke server-side processing?",
+    "choices": [
+      "POST",
+      "PATCH",
+      "HTTP 403",
+      "OpenAPI"
+    ],
+    "answer": "POST"
+  },
+  {
+    "subject_id": 28,
+    "skill": "PUT",
+    "prompt": "For the subject \"28\", which term best matches this precise description: replaces the target resource representation with supplied state?",
+    "choices": [
+      "PUT",
+      "HTTP 201",
+      "Idempotency key",
+      "GET"
+    ],
+    "answer": "PUT"
+  },
+  {
+    "subject_id": 28,
+    "skill": "PATCH",
+    "prompt": "For the subject \"28\", which term best matches this precise description: applies a partial modification to a target resource?",
+    "choices": [
+      "PATCH",
+      "HTTP 401",
+      "ETag",
+      "POST"
+    ],
+    "answer": "PATCH"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 201",
+    "prompt": "For the subject \"28\", which term best matches this precise description: reports successful creation of a new resource?",
+    "choices": [
+      "HTTP 201",
+      "HTTP 403",
+      "OpenAPI",
+      "PUT"
+    ],
+    "answer": "HTTP 201"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 401",
+    "prompt": "For the subject \"28\", which term best matches this precise description: reports that valid authentication credentials are required?",
+    "choices": [
+      "HTTP 401",
+      "Idempotency key",
+      "GET",
+      "PATCH"
+    ],
+    "answer": "HTTP 401"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 403",
+    "prompt": "For the subject \"28\", which term best matches this precise description: reports refusal of a request despite recognized credentials or identity?",
+    "choices": [
+      "HTTP 403",
+      "ETag",
+      "POST",
+      "HTTP 201"
+    ],
+    "answer": "HTTP 403"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Idempotency key",
+    "prompt": "For the subject \"28\", which term best matches this precise description: helps a server recognize repeated client requests representing the same intended operation?",
+    "choices": [
+      "Idempotency key",
+      "OpenAPI",
+      "PUT",
+      "HTTP 401"
+    ],
+    "answer": "Idempotency key"
+  },
+  {
+    "subject_id": 28,
+    "skill": "ETag",
+    "prompt": "For the subject \"28\", which term best matches this precise description: identifies a resource representation version for conditional HTTP requests?",
+    "choices": [
+      "ETag",
+      "GET",
+      "PATCH",
+      "HTTP 403"
+    ],
+    "answer": "ETag"
+  },
+  {
+    "subject_id": 28,
+    "skill": "OpenAPI",
+    "prompt": "For the subject \"28\", which term best matches this precise description: describes REST API operations and schemas in a machine-readable format?",
+    "choices": [
+      "OpenAPI",
+      "POST",
+      "HTTP 201",
+      "Idempotency key"
+    ],
+    "answer": "OpenAPI"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Document database",
+    "prompt": "For the subject \"29\", which term best matches this precise description: stores records as self-contained JSON-like documents?",
+    "choices": [
+      "Document database",
+      "Reference",
+      "Sharding",
+      "Change streams"
+    ],
+    "answer": "Document database"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Embedding",
+    "prompt": "For the subject \"29\", which term best matches this precise description: nests related data within a single document?",
+    "choices": [
+      "Embedding",
+      "Compound index",
+      "Replica set",
+      "Upsert"
+    ],
+    "answer": "Embedding"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Reference",
+    "prompt": "For the subject \"29\", which term best matches this precise description: stores an identifier linking a document to another document?",
+    "choices": [
+      "Reference",
+      "Aggregation pipeline",
+      "TTL index",
+      "Document database"
+    ],
+    "answer": "Reference"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Compound index",
+    "prompt": "For the subject \"29\", which term best matches this precise description: indexes multiple fields in a defined order?",
+    "choices": [
+      "Compound index",
+      "Sharding",
+      "Change streams",
+      "Embedding"
+    ],
+    "answer": "Compound index"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Aggregation pipeline",
+    "prompt": "For the subject \"29\", which term best matches this precise description: transforms documents using staged operations?",
+    "choices": [
+      "Aggregation pipeline",
+      "Replica set",
+      "Upsert",
+      "Reference"
+    ],
+    "answer": "Aggregation pipeline"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Sharding",
+    "prompt": "For the subject \"29\", which term best matches this precise description: distributes collection data across multiple machines by shard key?",
+    "choices": [
+      "Sharding",
+      "TTL index",
+      "Document database",
+      "Compound index"
+    ],
+    "answer": "Sharding"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Replica set",
+    "prompt": "For the subject \"29\", which term best matches this precise description: maintains redundant copies of database data with failover support?",
+    "choices": [
+      "Replica set",
+      "Change streams",
+      "Embedding",
+      "Aggregation pipeline"
+    ],
+    "answer": "Replica set"
+  },
+  {
+    "subject_id": 29,
+    "skill": "TTL index",
+    "prompt": "For the subject \"29\", which term best matches this precise description: automatically expires documents after a time condition?",
+    "choices": [
+      "TTL index",
+      "Upsert",
+      "Reference",
+      "Sharding"
+    ],
+    "answer": "TTL index"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Change streams",
+    "prompt": "For the subject \"29\", which term best matches this precise description: expose ongoing database mutations to subscribers?",
+    "choices": [
+      "Change streams",
+      "Document database",
+      "Compound index",
+      "Replica set"
+    ],
+    "answer": "Change streams"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Upsert",
+    "prompt": "For the subject \"29\", which term best matches this precise description: inserts a new document when an update filter finds no match?",
+    "choices": [
+      "Upsert",
+      "Embedding",
+      "Aggregation pipeline",
+      "TTL index"
+    ],
+    "answer": "Upsert"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Cache-aside",
+    "prompt": "For the subject \"30\", which term best matches this precise description: loads a missing value from the primary store and explicitly populates the cache?",
+    "choices": [
+      "Cache-aside",
+      "Write-behind cache",
+      "Redis Stream",
+      "Cache stampede"
+    ],
+    "answer": "Cache-aside"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Write-through cache",
+    "prompt": "For the subject \"30\", which term best matches this precise description: writes data to the primary store along with an update to the cache?",
+    "choices": [
+      "Write-through cache",
+      "TTL",
+      "Redis pub/sub",
+      "Distributed lock"
+    ],
+    "answer": "Write-through cache"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Write-behind cache",
+    "prompt": "For the subject \"30\", which term best matches this precise description: buffers writes in the cache for later propagation to storage?",
+    "choices": [
+      "Write-behind cache",
+      "LRU eviction",
+      "Redis sorted set",
+      "Cache-aside"
+    ],
+    "answer": "Write-behind cache"
+  },
+  {
+    "subject_id": 30,
+    "skill": "TTL",
+    "prompt": "For the subject \"30\", which term best matches this precise description: defines when a cached key automatically expires?",
+    "choices": [
+      "TTL",
+      "Redis Stream",
+      "Cache stampede",
+      "Write-through cache"
+    ],
+    "answer": "TTL"
+  },
+  {
+    "subject_id": 30,
+    "skill": "LRU eviction",
+    "prompt": "For the subject \"30\", which term best matches this precise description: removes the least recently accessed cache item under pressure?",
+    "choices": [
+      "LRU eviction",
+      "Redis pub/sub",
+      "Distributed lock",
+      "Write-behind cache"
+    ],
+    "answer": "LRU eviction"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis Stream",
+    "prompt": "For the subject \"30\", which term best matches this precise description: provides an append-only log abstraction with consumer-group support?",
+    "choices": [
+      "Redis Stream",
+      "Redis sorted set",
+      "Cache-aside",
+      "TTL"
+    ],
+    "answer": "Redis Stream"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis pub/sub",
+    "prompt": "For the subject \"30\", which term best matches this precise description: pushes ephemeral published messages to connected subscribers?",
+    "choices": [
+      "Redis pub/sub",
+      "Cache stampede",
+      "Write-through cache",
+      "LRU eviction"
+    ],
+    "answer": "Redis pub/sub"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis sorted set",
+    "prompt": "For the subject \"30\", which term best matches this precise description: stores unique members ordered by numeric scores?",
+    "choices": [
+      "Redis sorted set",
+      "Distributed lock",
+      "Write-behind cache",
+      "Redis Stream"
+    ],
+    "answer": "Redis sorted set"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Cache stampede",
+    "prompt": "For the subject \"30\", which term best matches this precise description: occurs when many clients recompute the same expired expensive value?",
+    "choices": [
+      "Cache stampede",
+      "Cache-aside",
+      "TTL",
+      "Redis pub/sub"
+    ],
+    "answer": "Cache stampede"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Distributed lock",
+    "prompt": "For the subject \"30\", which term best matches this precise description: coordinates exclusive work across multiple processes using shared state?",
+    "choices": [
+      "Distributed lock",
+      "Write-through cache",
+      "LRU eviction",
+      "Redis sorted set"
+    ],
+    "answer": "Distributed lock"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Infrastructure as a Service",
+    "prompt": "For the subject \"31\", which term best matches this precise description: provides configurable virtual compute, network and storage resources?",
+    "choices": [
+      "Infrastructure as a Service",
+      "Software as a Service",
+      "Object storage",
+      "Identity and access management"
+    ],
+    "answer": "Infrastructure as a Service"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Platform as a Service",
+    "prompt": "For the subject \"31\", which term best matches this precise description: provides a managed application runtime without users managing most infrastructure?",
+    "choices": [
+      "Platform as a Service",
+      "Availability zone",
+      "Autoscaling",
+      "Shared responsibility model"
+    ],
+    "answer": "Platform as a Service"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Software as a Service",
+    "prompt": "For the subject \"31\", which term best matches this precise description: delivers a complete hosted application to end users?",
+    "choices": [
+      "Software as a Service",
+      "Load balancer",
+      "Serverless function",
+      "Infrastructure as a Service"
+    ],
+    "answer": "Software as a Service"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Availability zone",
+    "prompt": "For the subject \"31\", which term best matches this precise description: provides a separate fault-domain deployment location within a cloud region?",
+    "choices": [
+      "Availability zone",
+      "Object storage",
+      "Identity and access management",
+      "Platform as a Service"
+    ],
+    "answer": "Availability zone"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Load balancer",
+    "prompt": "For the subject \"31\", which term best matches this precise description: distributes incoming traffic across healthy service instances?",
+    "choices": [
+      "Load balancer",
+      "Autoscaling",
+      "Shared responsibility model",
+      "Software as a Service"
+    ],
+    "answer": "Load balancer"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Object storage",
+    "prompt": "For the subject \"31\", which term best matches this precise description: stores durable blobs accessed using key-based APIs?",
+    "choices": [
+      "Object storage",
+      "Serverless function",
+      "Infrastructure as a Service",
+      "Availability zone"
+    ],
+    "answer": "Object storage"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Autoscaling",
+    "prompt": "For the subject \"31\", which term best matches this precise description: changes compute capacity automatically in response to policy or demand?",
+    "choices": [
+      "Autoscaling",
+      "Identity and access management",
+      "Platform as a Service",
+      "Load balancer"
+    ],
+    "answer": "Autoscaling"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Serverless function",
+    "prompt": "For the subject \"31\", which term best matches this precise description: runs event-driven code without provisioning dedicated servers?",
+    "choices": [
+      "Serverless function",
+      "Shared responsibility model",
+      "Software as a Service",
+      "Object storage"
+    ],
+    "answer": "Serverless function"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Identity and access management",
+    "prompt": "For the subject \"31\", which term best matches this precise description: controls principals, roles and permissions for cloud resources?",
+    "choices": [
+      "Identity and access management",
+      "Infrastructure as a Service",
+      "Availability zone",
+      "Autoscaling"
+    ],
+    "answer": "Identity and access management"
+  },
+  {
+    "subject_id": 31,
+    "skill": "Shared responsibility model",
+    "prompt": "For the subject \"31\", which term best matches this precise description: divides security duties between cloud provider and customer?",
+    "choices": [
+      "Shared responsibility model",
+      "Platform as a Service",
+      "Load balancer",
+      "Serverless function"
+    ],
+    "answer": "Shared responsibility model"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model registry",
+    "prompt": "For the subject \"32\", which term best matches this precise description: stores versioned models and associated lifecycle metadata?",
+    "choices": [
+      "Model registry",
+      "Data drift",
+      "Canary deployment",
+      "Reproducible pipeline"
+    ],
+    "answer": "Model registry"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Feature store",
+    "prompt": "For the subject \"32\", which term best matches this precise description: serves reusable consistently defined model input features?",
+    "choices": [
+      "Feature store",
+      "Concept drift",
+      "Model monitoring",
+      "Model rollback"
+    ],
+    "answer": "Feature store"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Data drift",
+    "prompt": "For the subject \"32\", which term best matches this precise description: describes changes in production feature distributions over time?",
+    "choices": [
+      "Data drift",
+      "Shadow deployment",
+      "Experiment tracking",
+      "Model registry"
+    ],
+    "answer": "Data drift"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Concept drift",
+    "prompt": "For the subject \"32\", which term best matches this precise description: describes changes in the relationship between features and targets?",
+    "choices": [
+      "Concept drift",
+      "Canary deployment",
+      "Reproducible pipeline",
+      "Feature store"
+    ],
+    "answer": "Concept drift"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Shadow deployment",
+    "prompt": "For the subject \"32\", which term best matches this precise description: runs a candidate model alongside production without acting on its predictions?",
+    "choices": [
+      "Shadow deployment",
+      "Model monitoring",
+      "Model rollback",
+      "Data drift"
+    ],
+    "answer": "Shadow deployment"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Canary deployment",
+    "prompt": "For the subject \"32\", which term best matches this precise description: routes a small fraction of production requests to a new model version?",
+    "choices": [
+      "Canary deployment",
+      "Experiment tracking",
+      "Model registry",
+      "Concept drift"
+    ],
+    "answer": "Canary deployment"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model monitoring",
+    "prompt": "For the subject \"32\", which term best matches this precise description: tracks production quality, latency and operational behavior?",
+    "choices": [
+      "Model monitoring",
+      "Reproducible pipeline",
+      "Feature store",
+      "Shadow deployment"
+    ],
+    "answer": "Model monitoring"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Experiment tracking",
+    "prompt": "For the subject \"32\", which term best matches this precise description: records training parameters, metrics and artifacts for reproducibility?",
+    "choices": [
+      "Experiment tracking",
+      "Model rollback",
+      "Data drift",
+      "Canary deployment"
+    ],
+    "answer": "Experiment tracking"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Reproducible pipeline",
+    "prompt": "For the subject \"32\", which term best matches this precise description: recreates training results from versioned data, code and environment?",
+    "choices": [
+      "Reproducible pipeline",
+      "Model registry",
+      "Concept drift",
+      "Model monitoring"
+    ],
+    "answer": "Reproducible pipeline"
+  },
+  {
+    "subject_id": 32,
+    "skill": "Model rollback",
+    "prompt": "For the subject \"32\", which term best matches this precise description: restores a prior working model version after a problematic release?",
+    "choices": [
+      "Model rollback",
+      "Feature store",
+      "Shadow deployment",
+      "Experiment tracking"
+    ],
+    "answer": "Model rollback"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Process",
+    "prompt": "For the subject \"33\", which term best matches this precise description: represents an executing program with its own virtual address space?",
+    "choices": [
+      "Process",
+      "Deadlock",
+      "Paging",
+      "Context switch"
+    ],
+    "answer": "Process"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Thread",
+    "prompt": "For the subject \"33\", which term best matches this precise description: represents a schedulable execution sequence within a process?",
+    "choices": [
+      "Thread",
+      "Semaphore",
+      "Page fault",
+      "Thrashing"
+    ],
+    "answer": "Thread"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Deadlock",
+    "prompt": "For the subject \"33\", which term best matches this precise description: occurs when processes are stuck waiting for resources in a circular dependency?",
+    "choices": [
+      "Deadlock",
+      "Mutex",
+      "Round-robin scheduling",
+      "Process"
+    ],
+    "answer": "Deadlock"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Semaphore",
+    "prompt": "For the subject \"33\", which term best matches this precise description: controls access to shared resources using an integer synchronization counter?",
+    "choices": [
+      "Semaphore",
+      "Paging",
+      "Context switch",
+      "Thread"
+    ],
+    "answer": "Semaphore"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Mutex",
+    "prompt": "For the subject \"33\", which term best matches this precise description: grants mutual exclusion for a protected critical section?",
+    "choices": [
+      "Mutex",
+      "Page fault",
+      "Thrashing",
+      "Deadlock"
+    ],
+    "answer": "Mutex"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Paging",
+    "prompt": "For the subject \"33\", which term best matches this precise description: maps virtual memory pages to physical memory frames?",
+    "choices": [
+      "Paging",
+      "Round-robin scheduling",
+      "Process",
+      "Semaphore"
+    ],
+    "answer": "Paging"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Page fault",
+    "prompt": "For the subject \"33\", which term best matches this precise description: occurs when a referenced virtual page needs intervention by the memory manager?",
+    "choices": [
+      "Page fault",
+      "Context switch",
+      "Thread",
+      "Mutex"
+    ],
+    "answer": "Page fault"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Round-robin scheduling",
+    "prompt": "For the subject \"33\", which term best matches this precise description: allocates bounded CPU time slices to runnable processes?",
+    "choices": [
+      "Round-robin scheduling",
+      "Thrashing",
+      "Deadlock",
+      "Paging"
+    ],
+    "answer": "Round-robin scheduling"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Context switch",
+    "prompt": "For the subject \"33\", which term best matches this precise description: saves and restores execution state when switching scheduled work?",
+    "choices": [
+      "Context switch",
+      "Process",
+      "Semaphore",
+      "Page fault"
+    ],
+    "answer": "Context switch"
+  },
+  {
+    "subject_id": 33,
+    "skill": "Thrashing",
+    "prompt": "For the subject \"33\", which term best matches this precise description: occurs when excessive paging prevents useful CPU progress?",
+    "choices": [
+      "Thrashing",
+      "Thread",
+      "Mutex",
+      "Round-robin scheduling"
+    ],
+    "answer": "Thrashing"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TCP",
+    "prompt": "For the subject \"34\", which term best matches this precise description: provides an ordered reliable connection-oriented transport byte stream?",
+    "choices": [
+      "TCP",
+      "DNS",
+      "CIDR",
+      "BGP"
+    ],
+    "answer": "TCP"
+  },
+  {
+    "subject_id": 34,
+    "skill": "UDP",
+    "prompt": "For the subject \"34\", which term best matches this precise description: provides connectionless datagram transport without built-in delivery guarantees?",
+    "choices": [
+      "UDP",
+      "ARP",
+      "TLS",
+      "ICMP"
+    ],
+    "answer": "UDP"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DNS",
+    "prompt": "For the subject \"34\", which term best matches this precise description: resolves domain names into resource records such as IP addresses?",
+    "choices": [
+      "DNS",
+      "NAT",
+      "DHCP",
+      "TCP"
+    ],
+    "answer": "DNS"
+  },
+  {
+    "subject_id": 34,
+    "skill": "ARP",
+    "prompt": "For the subject \"34\", which term best matches this precise description: maps an IPv4 address to a link-layer address on a local network?",
+    "choices": [
+      "ARP",
+      "CIDR",
+      "BGP",
+      "UDP"
+    ],
+    "answer": "ARP"
+  },
+  {
+    "subject_id": 34,
+    "skill": "NAT",
+    "prompt": "For the subject \"34\", which term best matches this precise description: rewrites network addresses or ports when packets cross a translation boundary?",
+    "choices": [
+      "NAT",
+      "TLS",
+      "ICMP",
+      "DNS"
+    ],
+    "answer": "NAT"
+  },
+  {
+    "subject_id": 34,
+    "skill": "CIDR",
+    "prompt": "For the subject \"34\", which term best matches this precise description: represents address prefixes using slash-length notation?",
+    "choices": [
+      "CIDR",
+      "DHCP",
+      "TCP",
+      "ARP"
+    ],
+    "answer": "CIDR"
+  },
+  {
+    "subject_id": 34,
+    "skill": "TLS",
+    "prompt": "For the subject \"34\", which term best matches this precise description: encrypts and authenticates application communication over a network?",
+    "choices": [
+      "TLS",
+      "BGP",
+      "UDP",
+      "NAT"
+    ],
+    "answer": "TLS"
+  },
+  {
+    "subject_id": 34,
+    "skill": "DHCP",
+    "prompt": "For the subject \"34\", which term best matches this precise description: automatically leases network addressing configuration to clients?",
+    "choices": [
+      "DHCP",
+      "ICMP",
+      "DNS",
+      "CIDR"
+    ],
+    "answer": "DHCP"
+  },
+  {
+    "subject_id": 34,
+    "skill": "BGP",
+    "prompt": "For the subject \"34\", which term best matches this precise description: exchanges interdomain route reachability information between autonomous systems?",
+    "choices": [
+      "BGP",
+      "TCP",
+      "ARP",
+      "TLS"
+    ],
+    "answer": "BGP"
+  },
+  {
+    "subject_id": 34,
+    "skill": "ICMP",
+    "prompt": "For the subject \"34\", which term best matches this precise description: carries network control and error messages such as destination-unreachable?",
+    "choices": [
+      "ICMP",
+      "UDP",
+      "NAT",
+      "DHCP"
+    ],
+    "answer": "ICMP"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Confidentiality",
+    "prompt": "For the subject \"35\", which term best matches this precise description: protects information from disclosure to unauthorized parties?",
+    "choices": [
+      "Confidentiality",
+      "Availability",
+      "SQL injection",
+      "Multi-factor authentication"
+    ],
+    "answer": "Confidentiality"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Integrity",
+    "prompt": "For the subject \"35\", which term best matches this precise description: protects data against unauthorized or undetected alteration?",
+    "choices": [
+      "Integrity",
+      "Least privilege",
+      "Cross-site scripting",
+      "Zero Trust"
+    ],
+    "answer": "Integrity"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Availability",
+    "prompt": "For the subject \"35\", which term best matches this precise description: ensures information and services remain accessible when needed?",
+    "choices": [
+      "Availability",
+      "Defense in depth",
+      "CSRF",
+      "Confidentiality"
+    ],
+    "answer": "Availability"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Least privilege",
+    "prompt": "For the subject \"35\", which term best matches this precise description: limits an identity to the minimal permissions required for its work?",
+    "choices": [
+      "Least privilege",
+      "SQL injection",
+      "Multi-factor authentication",
+      "Integrity"
+    ],
+    "answer": "Least privilege"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Defense in depth",
+    "prompt": "For the subject \"35\", which term best matches this precise description: uses multiple independent security controls to resist compromise?",
+    "choices": [
+      "Defense in depth",
+      "Cross-site scripting",
+      "Zero Trust",
+      "Availability"
+    ],
+    "answer": "Defense in depth"
+  },
+  {
+    "subject_id": 35,
+    "skill": "SQL injection",
+    "prompt": "For the subject \"35\", which term best matches this precise description: uses untrusted query input to alter the intended database command?",
+    "choices": [
+      "SQL injection",
+      "CSRF",
+      "Confidentiality",
+      "Least privilege"
+    ],
+    "answer": "SQL injection"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Cross-site scripting",
+    "prompt": "For the subject \"35\", which term best matches this precise description: injects attacker-controlled script into pages viewed by another user?",
+    "choices": [
+      "Cross-site scripting",
+      "Multi-factor authentication",
+      "Integrity",
+      "Defense in depth"
+    ],
+    "answer": "Cross-site scripting"
+  },
+  {
+    "subject_id": 35,
+    "skill": "CSRF",
+    "prompt": "For the subject \"35\", which term best matches this precise description: tricks an authenticated browser into performing an unwanted state-changing request?",
+    "choices": [
+      "CSRF",
+      "Zero Trust",
+      "Availability",
+      "SQL injection"
+    ],
+    "answer": "CSRF"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Multi-factor authentication",
+    "prompt": "For the subject \"35\", which term best matches this precise description: requires evidence from more than one independent authentication factor?",
+    "choices": [
+      "Multi-factor authentication",
+      "Confidentiality",
+      "Least privilege",
+      "Cross-site scripting"
+    ],
+    "answer": "Multi-factor authentication"
+  },
+  {
+    "subject_id": 35,
+    "skill": "Zero Trust",
+    "prompt": "For the subject \"35\", which term best matches this precise description: requires explicit verification rather than assuming network location implies trust?",
+    "choices": [
+      "Zero Trust",
+      "Integrity",
+      "Defense in depth",
+      "CSRF"
+    ],
+    "answer": "Zero Trust"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Horizontal scaling",
+    "prompt": "For the subject \"36\", which term best matches this precise description: adds more service instances to increase capacity?",
+    "choices": [
+      "Horizontal scaling",
+      "Consistent hashing",
+      "Eventual consistency",
+      "Idempotency"
+    ],
+    "answer": "Horizontal scaling"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Vertical scaling",
+    "prompt": "For the subject \"36\", which term best matches this precise description: increases resources available to an individual instance?",
+    "choices": [
+      "Vertical scaling",
+      "Circuit breaker",
+      "Rate limiting",
+      "Message queue"
+    ],
+    "answer": "Vertical scaling"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Consistent hashing",
+    "prompt": "For the subject \"36\", which term best matches this precise description: limits key remapping when members of a distributed hash ring change?",
+    "choices": [
+      "Consistent hashing",
+      "Bulkhead isolation",
+      "Backpressure",
+      "Horizontal scaling"
+    ],
+    "answer": "Consistent hashing"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Circuit breaker",
+    "prompt": "For the subject \"36\", which term best matches this precise description: temporarily blocks calls to a failing dependency to prevent cascades?",
+    "choices": [
+      "Circuit breaker",
+      "Eventual consistency",
+      "Idempotency",
+      "Vertical scaling"
+    ],
+    "answer": "Circuit breaker"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Bulkhead isolation",
+    "prompt": "For the subject \"36\", which term best matches this precise description: limits failure propagation by partitioning resource pools?",
+    "choices": [
+      "Bulkhead isolation",
+      "Rate limiting",
+      "Message queue",
+      "Consistent hashing"
+    ],
+    "answer": "Bulkhead isolation"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Eventual consistency",
+    "prompt": "For the subject \"36\", which term best matches this precise description: allows replicas to converge after a period of temporary divergence?",
+    "choices": [
+      "Eventual consistency",
+      "Backpressure",
+      "Horizontal scaling",
+      "Circuit breaker"
+    ],
+    "answer": "Eventual consistency"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Rate limiting",
+    "prompt": "For the subject \"36\", which term best matches this precise description: restricts request volume over a defined time or quota?",
+    "choices": [
+      "Rate limiting",
+      "Idempotency",
+      "Vertical scaling",
+      "Bulkhead isolation"
+    ],
+    "answer": "Rate limiting"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Backpressure",
+    "prompt": "For the subject \"36\", which term best matches this precise description: signals producers to slow when downstream components cannot keep up?",
+    "choices": [
+      "Backpressure",
+      "Message queue",
+      "Consistent hashing",
+      "Eventual consistency"
+    ],
+    "answer": "Backpressure"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Idempotency",
+    "prompt": "For the subject \"36\", which term best matches this precise description: makes repeated applications of the same operation have no additional effect?",
+    "choices": [
+      "Idempotency",
+      "Horizontal scaling",
+      "Circuit breaker",
+      "Rate limiting"
+    ],
+    "answer": "Idempotency"
+  },
+  {
+    "subject_id": 36,
+    "skill": "Message queue",
+    "prompt": "For the subject \"36\", which term best matches this precise description: buffers asynchronous work between producers and consumers?",
+    "choices": [
+      "Message queue",
+      "Vertical scaling",
+      "Bulkhead isolation",
+      "Backpressure"
+    ],
+    "answer": "Message queue"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Unit test",
+    "prompt": "For the subject \"37\", which term best matches this precise description: checks a small independently isolated unit of behavior?",
+    "choices": [
+      "Unit test",
+      "Regression test",
+      "Code coverage",
+      "Fuzz testing"
+    ],
+    "answer": "Unit test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Integration test",
+    "prompt": "For the subject \"37\", which term best matches this precise description: checks behavior across connected components or interfaces?",
+    "choices": [
+      "Integration test",
+      "Property-based testing",
+      "Mock",
+      "Binary-search debugging"
+    ],
+    "answer": "Integration test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Regression test",
+    "prompt": "For the subject \"37\", which term best matches this precise description: verifies previously working behavior after a change?",
+    "choices": [
+      "Regression test",
+      "Mutation testing",
+      "Boundary-value analysis",
+      "Unit test"
+    ],
+    "answer": "Regression test"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Property-based testing",
+    "prompt": "For the subject \"37\", which term best matches this precise description: generates many inputs to check invariants?",
+    "choices": [
+      "Property-based testing",
+      "Code coverage",
+      "Fuzz testing",
+      "Integration test"
+    ],
+    "answer": "Property-based testing"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Mutation testing",
+    "prompt": "For the subject \"37\", which term best matches this precise description: assesses test effectiveness by introducing small code defects?",
+    "choices": [
+      "Mutation testing",
+      "Mock",
+      "Binary-search debugging",
+      "Regression test"
+    ],
+    "answer": "Mutation testing"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Code coverage",
+    "prompt": "For the subject \"37\", which term best matches this precise description: measures how much program structure is exercised by tests?",
+    "choices": [
+      "Code coverage",
+      "Boundary-value analysis",
+      "Unit test",
+      "Property-based testing"
+    ],
+    "answer": "Code coverage"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Mock",
+    "prompt": "For the subject \"37\", which term best matches this precise description: provides controlled substitute behavior for a dependency?",
+    "choices": [
+      "Mock",
+      "Fuzz testing",
+      "Integration test",
+      "Mutation testing"
+    ],
+    "answer": "Mock"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Boundary-value analysis",
+    "prompt": "For the subject \"37\", which term best matches this precise description: chooses tests near the edges of an input range?",
+    "choices": [
+      "Boundary-value analysis",
+      "Binary-search debugging",
+      "Regression test",
+      "Code coverage"
+    ],
+    "answer": "Boundary-value analysis"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Fuzz testing",
+    "prompt": "For the subject \"37\", which term best matches this precise description: feeds automatically generated unexpected inputs to find failures?",
+    "choices": [
+      "Fuzz testing",
+      "Unit test",
+      "Property-based testing",
+      "Mock"
+    ],
+    "answer": "Fuzz testing"
+  },
+  {
+    "subject_id": 37,
+    "skill": "Binary-search debugging",
+    "prompt": "For the subject \"37\", which term best matches this precise description: narrows a regression to a small set of changes by testing midpoints?",
+    "choices": [
+      "Binary-search debugging",
+      "Integration test",
+      "Mutation testing",
+      "Boundary-value analysis"
+    ],
+    "answer": "Binary-search debugging"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Factory method",
+    "prompt": "For the subject \"38\", which term best matches this precise description: delegates instance creation to an overridable method?",
+    "choices": [
+      "Factory method",
+      "Strategy pattern",
+      "Adapter pattern",
+      "Open-closed principle"
+    ],
+    "answer": "Factory method"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Abstract factory",
+    "prompt": "For the subject \"38\", which term best matches this precise description: provides families of related objects without specifying concrete classes?",
+    "choices": [
+      "Abstract factory",
+      "Observer pattern",
+      "Facade pattern",
+      "Interface segregation"
+    ],
+    "answer": "Abstract factory"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Strategy pattern",
+    "prompt": "For the subject \"38\", which term best matches this precise description: encapsulates interchangeable algorithms behind a common interface?",
+    "choices": [
+      "Strategy pattern",
+      "Decorator pattern",
+      "Dependency inversion",
+      "Factory method"
+    ],
+    "answer": "Strategy pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Observer pattern",
+    "prompt": "For the subject \"38\", which term best matches this precise description: notifies subscribers when a subject changes?",
+    "choices": [
+      "Observer pattern",
+      "Adapter pattern",
+      "Open-closed principle",
+      "Abstract factory"
+    ],
+    "answer": "Observer pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Decorator pattern",
+    "prompt": "For the subject \"38\", which term best matches this precise description: adds behavior by wrapping an object with another object?",
+    "choices": [
+      "Decorator pattern",
+      "Facade pattern",
+      "Interface segregation",
+      "Strategy pattern"
+    ],
+    "answer": "Decorator pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Adapter pattern",
+    "prompt": "For the subject \"38\", which term best matches this precise description: translates one interface into another expected by a client?",
+    "choices": [
+      "Adapter pattern",
+      "Dependency inversion",
+      "Factory method",
+      "Observer pattern"
+    ],
+    "answer": "Adapter pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Facade pattern",
+    "prompt": "For the subject \"38\", which term best matches this precise description: provides a simplified interface over a subsystem?",
+    "choices": [
+      "Facade pattern",
+      "Open-closed principle",
+      "Abstract factory",
+      "Decorator pattern"
+    ],
+    "answer": "Facade pattern"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Dependency inversion",
+    "prompt": "For the subject \"38\", which term best matches this precise description: requires high-level policy to depend on abstractions rather than concrete details?",
+    "choices": [
+      "Dependency inversion",
+      "Interface segregation",
+      "Strategy pattern",
+      "Adapter pattern"
+    ],
+    "answer": "Dependency inversion"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Open-closed principle",
+    "prompt": "For the subject \"38\", which term best matches this precise description: favors extension of behavior without modifying stable implementation code?",
+    "choices": [
+      "Open-closed principle",
+      "Factory method",
+      "Observer pattern",
+      "Facade pattern"
+    ],
+    "answer": "Open-closed principle"
+  },
+  {
+    "subject_id": 38,
+    "skill": "Interface segregation",
+    "prompt": "For the subject \"38\", which term best matches this precise description: favors small focused interfaces rather than forcing irrelevant methods?",
+    "choices": [
+      "Interface segregation",
+      "Abstract factory",
+      "Decorator pattern",
+      "Dependency inversion"
+    ],
+    "answer": "Interface segregation"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Simple interest",
+    "prompt": "For the subject \"39\", which term best matches this precise description: calculates interest only on the original principal at a fixed rate?",
+    "choices": [
+      "Simple interest",
+      "Speed-distance-time",
+      "Profit percentage",
+      "Permutation"
+    ],
+    "answer": "Simple interest"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Compound interest",
+    "prompt": "For the subject \"39\", which term best matches this precise description: calculates interest on principal plus accumulated interest?",
+    "choices": [
+      "Compound interest",
+      "Work-rate addition",
+      "Discount percentage",
+      "Combination"
+    ],
+    "answer": "Compound interest"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Speed-distance-time",
+    "prompt": "For the subject \"39\", which term best matches this precise description: relates travel distance to speed multiplied by duration?",
+    "choices": [
+      "Speed-distance-time",
+      "Weighted average",
+      "Ratio proportion",
+      "Simple interest"
+    ],
+    "answer": "Speed-distance-time"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Work-rate addition",
+    "prompt": "For the subject \"39\", which term best matches this precise description: combines independent workers by summing their work per unit time?",
+    "choices": [
+      "Work-rate addition",
+      "Profit percentage",
+      "Permutation",
+      "Compound interest"
+    ],
+    "answer": "Work-rate addition"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Weighted average",
+    "prompt": "For the subject \"39\", which term best matches this precise description: averages values after accounting for assigned weights?",
+    "choices": [
+      "Weighted average",
+      "Discount percentage",
+      "Combination",
+      "Speed-distance-time"
+    ],
+    "answer": "Weighted average"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Profit percentage",
+    "prompt": "For the subject \"39\", which term best matches this precise description: expresses gain relative to the original cost price?",
+    "choices": [
+      "Profit percentage",
+      "Ratio proportion",
+      "Simple interest",
+      "Work-rate addition"
+    ],
+    "answer": "Profit percentage"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Discount percentage",
+    "prompt": "For the subject \"39\", which term best matches this precise description: expresses price reduction relative to the marked price?",
+    "choices": [
+      "Discount percentage",
+      "Permutation",
+      "Compound interest",
+      "Weighted average"
+    ],
+    "answer": "Discount percentage"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Ratio proportion",
+    "prompt": "For the subject \"39\", which term best matches this precise description: equates relationships between pairs of quantities?",
+    "choices": [
+      "Ratio proportion",
+      "Combination",
+      "Speed-distance-time",
+      "Profit percentage"
+    ],
+    "answer": "Ratio proportion"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Permutation",
+    "prompt": "For the subject \"39\", which term best matches this precise description: counts ordered arrangements of distinct selected items?",
+    "choices": [
+      "Permutation",
+      "Simple interest",
+      "Work-rate addition",
+      "Discount percentage"
+    ],
+    "answer": "Permutation"
+  },
+  {
+    "subject_id": 39,
+    "skill": "Combination",
+    "prompt": "For the subject \"39\", which term best matches this precise description: counts unordered selections of distinct items?",
+    "choices": [
+      "Combination",
+      "Compound interest",
+      "Weighted average",
+      "Ratio proportion"
+    ],
+    "answer": "Combination"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Syllogism",
+    "prompt": "For the subject \"40\", which term best matches this precise description: tests whether conclusions logically follow from quantified premises?",
+    "choices": [
+      "Syllogism",
+      "Number series",
+      "Seating arrangement",
+      "Ranking and order"
+    ],
+    "answer": "Syllogism"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Coding-decoding",
+    "prompt": "For the subject \"40\", which term best matches this precise description: infers symbol substitutions or transformations from examples?",
+    "choices": [
+      "Coding-decoding",
+      "Blood relations",
+      "Analogy",
+      "Logical deduction"
+    ],
+    "answer": "Coding-decoding"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Number series",
+    "prompt": "For the subject \"40\", which term best matches this precise description: identifies a rule connecting successive numerical terms?",
+    "choices": [
+      "Number series",
+      "Direction sense",
+      "Classification",
+      "Syllogism"
+    ],
+    "answer": "Number series"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Blood relations",
+    "prompt": "For the subject \"40\", which term best matches this precise description: deduces family relationships from stated kinship facts?",
+    "choices": [
+      "Blood relations",
+      "Seating arrangement",
+      "Ranking and order",
+      "Coding-decoding"
+    ],
+    "answer": "Blood relations"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Direction sense",
+    "prompt": "For the subject \"40\", which term best matches this precise description: tracks changes in orientation and position from movement instructions?",
+    "choices": [
+      "Direction sense",
+      "Analogy",
+      "Logical deduction",
+      "Number series"
+    ],
+    "answer": "Direction sense"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Seating arrangement",
+    "prompt": "For the subject \"40\", which term best matches this precise description: deduces order or placement from positional constraints?",
+    "choices": [
+      "Seating arrangement",
+      "Classification",
+      "Syllogism",
+      "Blood relations"
+    ],
+    "answer": "Seating arrangement"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Analogy",
+    "prompt": "For the subject \"40\", which term best matches this precise description: identifies the same relationship in another pair of terms?",
+    "choices": [
+      "Analogy",
+      "Ranking and order",
+      "Coding-decoding",
+      "Direction sense"
+    ],
+    "answer": "Analogy"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Classification",
+    "prompt": "For the subject \"40\", which term best matches this precise description: finds a member that does not follow a shared rule?",
+    "choices": [
+      "Classification",
+      "Logical deduction",
+      "Number series",
+      "Seating arrangement"
+    ],
+    "answer": "Classification"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Ranking and order",
+    "prompt": "For the subject \"40\", which term best matches this precise description: calculates relative position in an ordered group?",
+    "choices": [
+      "Ranking and order",
+      "Syllogism",
+      "Blood relations",
+      "Analogy"
+    ],
+    "answer": "Ranking and order"
+  },
+  {
+    "subject_id": 40,
+    "skill": "Logical deduction",
+    "prompt": "For the subject \"40\", which term best matches this precise description: derives conclusions that must follow from given conditions?",
+    "choices": [
+      "Logical deduction",
+      "Coding-decoding",
+      "Direction sense",
+      "Classification"
+    ],
+    "answer": "Logical deduction"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Subject-verb agreement",
+    "prompt": "For the subject \"41\", which term best matches this precise description: matches a finite verb to the number and person of its grammatical subject?",
+    "choices": [
+      "Subject-verb agreement",
+      "Passive voice",
+      "Reading comprehension",
+      "Conditional sentence"
+    ],
+    "answer": "Subject-verb agreement"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Active voice",
+    "prompt": "For the subject \"41\", which term best matches this precise description: uses the clause subject as the performer of the verb's action?",
+    "choices": [
+      "Active voice",
+      "Synonym",
+      "Parallel structure",
+      "Reported speech"
+    ],
+    "answer": "Active voice"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Passive voice",
+    "prompt": "For the subject \"41\", which term best matches this precise description: places the action recipient in the subject position?",
+    "choices": [
+      "Passive voice",
+      "Antonym",
+      "Preposition",
+      "Subject-verb agreement"
+    ],
+    "answer": "Passive voice"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Synonym",
+    "prompt": "For the subject \"41\", which term best matches this precise description: identifies a word with the same or similar meaning?",
+    "choices": [
+      "Synonym",
+      "Reading comprehension",
+      "Conditional sentence",
+      "Active voice"
+    ],
+    "answer": "Synonym"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Antonym",
+    "prompt": "For the subject \"41\", which term best matches this precise description: identifies a word with opposite meaning?",
+    "choices": [
+      "Antonym",
+      "Parallel structure",
+      "Reported speech",
+      "Passive voice"
+    ],
+    "answer": "Antonym"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Reading comprehension",
+    "prompt": "For the subject \"41\", which term best matches this precise description: derives justified answers from a written passage?",
+    "choices": [
+      "Reading comprehension",
+      "Preposition",
+      "Subject-verb agreement",
+      "Synonym"
+    ],
+    "answer": "Reading comprehension"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Parallel structure",
+    "prompt": "For the subject \"41\", which term best matches this precise description: uses matching grammatical forms for coordinated elements?",
+    "choices": [
+      "Parallel structure",
+      "Conditional sentence",
+      "Active voice",
+      "Antonym"
+    ],
+    "answer": "Parallel structure"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Preposition",
+    "prompt": "For the subject \"41\", which term best matches this precise description: expresses relationships such as time, place and direction?",
+    "choices": [
+      "Preposition",
+      "Reported speech",
+      "Passive voice",
+      "Reading comprehension"
+    ],
+    "answer": "Preposition"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Conditional sentence",
+    "prompt": "For the subject \"41\", which term best matches this precise description: expresses how an outcome depends on a stated condition?",
+    "choices": [
+      "Conditional sentence",
+      "Subject-verb agreement",
+      "Synonym",
+      "Parallel structure"
+    ],
+    "answer": "Conditional sentence"
+  },
+  {
+    "subject_id": 41,
+    "skill": "Reported speech",
+    "prompt": "For the subject \"41\", which term best matches this precise description: retells spoken content with appropriate changes in perspective or tense?",
+    "choices": [
+      "Reported speech",
+      "Active voice",
+      "Antonym",
+      "Preposition"
+    ],
+    "answer": "Reported speech"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Semantic HTML",
+    "prompt": "For the subject \"42\", which term best matches this precise description: uses elements whose built-in meanings describe content structure?",
+    "choices": [
+      "Semantic HTML",
+      "CSS Grid",
+      "HTTP cookie",
+      "Debouncing"
+    ],
+    "answer": "Semantic HTML"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS Flexbox",
+    "prompt": "For the subject \"42\", which term best matches this precise description: lays out items along a primary axis with alignment and flexible sizing?",
+    "choices": [
+      "CSS Flexbox",
+      "Event bubbling",
+      "WebSocket",
+      "Content Security Policy"
+    ],
+    "answer": "CSS Flexbox"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CSS Grid",
+    "prompt": "For the subject \"42\", which term best matches this precise description: arranges content in two-dimensional rows and columns?",
+    "choices": [
+      "CSS Grid",
+      "CORS",
+      "Service worker",
+      "Semantic HTML"
+    ],
+    "answer": "CSS Grid"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Event bubbling",
+    "prompt": "For the subject \"42\", which term best matches this precise description: propagates a DOM event from a target toward its ancestors?",
+    "choices": [
+      "Event bubbling",
+      "HTTP cookie",
+      "Debouncing",
+      "CSS Flexbox"
+    ],
+    "answer": "Event bubbling"
+  },
+  {
+    "subject_id": 42,
+    "skill": "CORS",
+    "prompt": "For the subject \"42\", which term best matches this precise description: uses response headers to control which web origins can read cross-origin responses?",
+    "choices": [
+      "CORS",
+      "WebSocket",
+      "Content Security Policy",
+      "CSS Grid"
+    ],
+    "answer": "CORS"
+  },
+  {
+    "subject_id": 42,
+    "skill": "HTTP cookie",
+    "prompt": "For the subject \"42\", which term best matches this precise description: stores small server-associated values that browsers send with matching requests?",
+    "choices": [
+      "HTTP cookie",
+      "Service worker",
+      "Semantic HTML",
+      "Event bubbling"
+    ],
+    "answer": "HTTP cookie"
+  },
+  {
+    "subject_id": 42,
+    "skill": "WebSocket",
+    "prompt": "For the subject \"42\", which term best matches this precise description: supports persistent bidirectional message exchange between client and server?",
+    "choices": [
+      "WebSocket",
+      "Debouncing",
+      "CSS Flexbox",
+      "CORS"
+    ],
+    "answer": "WebSocket"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Service worker",
+    "prompt": "For the subject \"42\", which term best matches this precise description: runs a browser-managed script that can intercept network requests and support offline behavior?",
+    "choices": [
+      "Service worker",
+      "Content Security Policy",
+      "CSS Grid",
+      "HTTP cookie"
+    ],
+    "answer": "Service worker"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Debouncing",
+    "prompt": "For the subject \"42\", which term best matches this precise description: delays a handler until a burst of events has stopped?",
+    "choices": [
+      "Debouncing",
+      "Semantic HTML",
+      "Event bubbling",
+      "WebSocket"
+    ],
+    "answer": "Debouncing"
+  },
+  {
+    "subject_id": 42,
+    "skill": "Content Security Policy",
+    "prompt": "For the subject \"42\", which term best matches this precise description: restricts allowed sources of scripts and other page resources?",
+    "choices": [
+      "Content Security Policy",
+      "CSS Flexbox",
+      "CORS",
+      "Service worker"
+    ],
+    "answer": "Content Security Policy"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Gross margin",
+    "prompt": "For the subject \"43\", which term best matches this precise description: measures revenue less cost of goods sold relative to revenue?",
+    "choices": [
+      "Gross margin",
+      "Lifetime value",
+      "Break-even point",
+      "Opportunity cost"
+    ],
+    "answer": "Gross margin"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Customer acquisition cost",
+    "prompt": "For the subject \"43\", which term best matches this precise description: divides acquisition spending by customers acquired?",
+    "choices": [
+      "Customer acquisition cost",
+      "Net promoter score",
+      "Market segmentation",
+      "Sensitivity analysis"
+    ],
+    "answer": "Customer acquisition cost"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Lifetime value",
+    "prompt": "For the subject \"43\", which term best matches this precise description: estimates a customer's total economic contribution over the relationship?",
+    "choices": [
+      "Lifetime value",
+      "Contribution margin",
+      "Cohort retention",
+      "Gross margin"
+    ],
+    "answer": "Lifetime value"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Net promoter score",
+    "prompt": "For the subject \"43\", which term best matches this precise description: subtracts detractor share from promoter share in a recommendation survey?",
+    "choices": [
+      "Net promoter score",
+      "Break-even point",
+      "Opportunity cost",
+      "Customer acquisition cost"
+    ],
+    "answer": "Net promoter score"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Contribution margin",
+    "prompt": "For the subject \"43\", which term best matches this precise description: measures revenue remaining after variable costs?",
+    "choices": [
+      "Contribution margin",
+      "Market segmentation",
+      "Sensitivity analysis",
+      "Lifetime value"
+    ],
+    "answer": "Contribution margin"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Break-even point",
+    "prompt": "For the subject \"43\", which term best matches this precise description: identifies sales volume where total revenue equals total cost?",
+    "choices": [
+      "Break-even point",
+      "Cohort retention",
+      "Gross margin",
+      "Net promoter score"
+    ],
+    "answer": "Break-even point"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Market segmentation",
+    "prompt": "For the subject \"43\", which term best matches this precise description: groups customers with similar needs or behavior?",
+    "choices": [
+      "Market segmentation",
+      "Opportunity cost",
+      "Customer acquisition cost",
+      "Contribution margin"
+    ],
+    "answer": "Market segmentation"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Cohort retention",
+    "prompt": "For the subject \"43\", which term best matches this precise description: compares repeat engagement among customers acquired in a shared period?",
+    "choices": [
+      "Cohort retention",
+      "Sensitivity analysis",
+      "Lifetime value",
+      "Break-even point"
+    ],
+    "answer": "Cohort retention"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Opportunity cost",
+    "prompt": "For the subject \"43\", which term best matches this precise description: represents the value forgone by choosing one alternative over another?",
+    "choices": [
+      "Opportunity cost",
+      "Gross margin",
+      "Net promoter score",
+      "Market segmentation"
+    ],
+    "answer": "Opportunity cost"
+  },
+  {
+    "subject_id": 43,
+    "skill": "Sensitivity analysis",
+    "prompt": "For the subject \"43\", which term best matches this precise description: tests how a modeled outcome changes when assumptions change?",
+    "choices": [
+      "Sensitivity analysis",
+      "Customer acquisition cost",
+      "Contribution margin",
+      "Cohort retention"
+    ],
+    "answer": "Sensitivity analysis"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Histogram",
+    "prompt": "For the subject \"44\", which term best matches this precise description: shows frequencies across intervals of a numeric variable?",
+    "choices": [
+      "Histogram",
+      "Scatter plot",
+      "Choropleth map",
+      "Colorblind-safe palette"
+    ],
+    "answer": "Histogram"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Box plot",
+    "prompt": "For the subject \"44\", which term best matches this precise description: summarizes distribution through quartiles, median and potential outliers?",
+    "choices": [
+      "Box plot",
+      "Line chart",
+      "Small multiples",
+      "Data-ink ratio"
+    ],
+    "answer": "Box plot"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Scatter plot",
+    "prompt": "For the subject \"44\", which term best matches this precise description: shows the relationship between two numerical variables?",
+    "choices": [
+      "Scatter plot",
+      "Heatmap",
+      "Logarithmic axis",
+      "Histogram"
+    ],
+    "answer": "Scatter plot"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Line chart",
+    "prompt": "For the subject \"44\", which term best matches this precise description: shows ordered changes in a measure, commonly over time?",
+    "choices": [
+      "Line chart",
+      "Choropleth map",
+      "Colorblind-safe palette",
+      "Box plot"
+    ],
+    "answer": "Line chart"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Heatmap",
+    "prompt": "For the subject \"44\", which term best matches this precise description: encodes values through cell colors in a matrix?",
+    "choices": [
+      "Heatmap",
+      "Small multiples",
+      "Data-ink ratio",
+      "Scatter plot"
+    ],
+    "answer": "Heatmap"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Choropleth map",
+    "prompt": "For the subject \"44\", which term best matches this precise description: shades geographic regions using associated quantitative values?",
+    "choices": [
+      "Choropleth map",
+      "Logarithmic axis",
+      "Histogram",
+      "Line chart"
+    ],
+    "answer": "Choropleth map"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Small multiples",
+    "prompt": "For the subject \"44\", which term best matches this precise description: repeats the same visual encoding across comparable subsets?",
+    "choices": [
+      "Small multiples",
+      "Colorblind-safe palette",
+      "Box plot",
+      "Heatmap"
+    ],
+    "answer": "Small multiples"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Logarithmic axis",
+    "prompt": "For the subject \"44\", which term best matches this precise description: spaces values by multiplicative rather than additive increments?",
+    "choices": [
+      "Logarithmic axis",
+      "Data-ink ratio",
+      "Scatter plot",
+      "Choropleth map"
+    ],
+    "answer": "Logarithmic axis"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Colorblind-safe palette",
+    "prompt": "For the subject \"44\", which term best matches this precise description: uses visually distinguishable encodings for people with common color-vision differences?",
+    "choices": [
+      "Colorblind-safe palette",
+      "Histogram",
+      "Line chart",
+      "Small multiples"
+    ],
+    "answer": "Colorblind-safe palette"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Data-ink ratio",
+    "prompt": "For the subject \"44\", which term best matches this precise description: describes the share of visual ink devoted to representing data?",
+    "choices": [
+      "Data-ink ratio",
+      "Box plot",
+      "Heatmap",
+      "Logarithmic axis"
+    ],
+    "answer": "Data-ink ratio"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool calling",
+    "prompt": "For the subject \"45\", which term best matches this precise description: allows an agent to invoke a named external function with structured arguments?",
+    "choices": [
+      "Tool calling",
+      "Memory store",
+      "Retrieval tool",
+      "Guardrail"
+    ],
+    "answer": "Tool calling"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Planner",
+    "prompt": "For the subject \"45\", which term best matches this precise description: decomposes a goal into ordered subgoals or actions?",
+    "choices": [
+      "Planner",
+      "Reflection loop",
+      "Agent orchestration",
+      "Trace"
+    ],
+    "answer": "Planner"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Memory store",
+    "prompt": "For the subject \"45\", which term best matches this precise description: retains selected facts or state for later steps?",
+    "choices": [
+      "Memory store",
+      "Human-in-the-loop approval",
+      "State machine",
+      "Tool calling"
+    ],
+    "answer": "Memory store"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Reflection loop",
+    "prompt": "For the subject \"45\", which term best matches this precise description: evaluates a draft result and revises it using feedback?",
+    "choices": [
+      "Reflection loop",
+      "Retrieval tool",
+      "Guardrail",
+      "Planner"
+    ],
+    "answer": "Reflection loop"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Human-in-the-loop approval",
+    "prompt": "For the subject \"45\", which term best matches this precise description: requires a person to authorize a consequential agent action?",
+    "choices": [
+      "Human-in-the-loop approval",
+      "Agent orchestration",
+      "Trace",
+      "Memory store"
+    ],
+    "answer": "Human-in-the-loop approval"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Retrieval tool",
+    "prompt": "For the subject \"45\", which term best matches this precise description: looks up relevant knowledge rather than relying only on model parameters?",
+    "choices": [
+      "Retrieval tool",
+      "State machine",
+      "Tool calling",
+      "Reflection loop"
+    ],
+    "answer": "Retrieval tool"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent orchestration",
+    "prompt": "For the subject \"45\", which term best matches this precise description: coordinates roles, transitions and dependencies among agent components?",
+    "choices": [
+      "Agent orchestration",
+      "Guardrail",
+      "Planner",
+      "Human-in-the-loop approval"
+    ],
+    "answer": "Agent orchestration"
+  },
+  {
+    "subject_id": 45,
+    "skill": "State machine",
+    "prompt": "For the subject \"45\", which term best matches this precise description: represents an agent workflow using explicit states and allowed transitions?",
+    "choices": [
+      "State machine",
+      "Trace",
+      "Memory store",
+      "Retrieval tool"
+    ],
+    "answer": "State machine"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Guardrail",
+    "prompt": "For the subject \"45\", which term best matches this precise description: enforces safety or correctness constraints on agent inputs and outputs?",
+    "choices": [
+      "Guardrail",
+      "Tool calling",
+      "Reflection loop",
+      "Agent orchestration"
+    ],
+    "answer": "Guardrail"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Trace",
+    "prompt": "For the subject \"45\", which term best matches this precise description: records stepwise agent execution for inspection and debugging?",
+    "choices": [
+      "Trace",
+      "Planner",
+      "Human-in-the-loop approval",
+      "State machine"
+    ],
+    "answer": "Trace"
+  }
+]
