@@ -56,9 +56,9 @@ jobs:
         env:
           READINESS_CHECK_REDIS: "true"
         run: |
+          python ../scripts/verify_subject_concepts.py
           pip install -r requirements-dev.txt
           python -m pip check
-          python ../scripts/verify_subject_concepts.py
           PYTHONPATH=.. pytest tests ../judge/tests
           alembic upgrade head
           alembic check
