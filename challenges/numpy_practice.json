@@ -1,0 +1,6792 @@
+[
+  {
+    "number": 1,
+    "slug": "numpy-create-array",
+    "title": "Create array from list",
+    "description": "Implement solve(data) in Python using NumPy. Return np.array(data['values']) as a Python list. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.asarray(data['values']).tolist()\n"
+  },
+  {
+    "number": 2,
+    "slug": "numpy-one-to-one-hundred",
+    "title": "Numbers 1 to 100",
+    "description": "Implement solve(data) in Python using NumPy. Return integers 1 through 100 as a list. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.arange(1,101).tolist()\n"
+  },
+  {
+    "number": 3,
+    "slug": "numpy-ten-zeros",
+    "title": "Ten zeros",
+    "description": "Implement solve(data) in Python using NumPy. Return ten integer zeros. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.zeros(10,dtype=int).tolist()\n"
+  },
+  {
+    "number": 4,
+    "slug": "numpy-ten-ones",
+    "title": "Ten ones",
+    "description": "Implement solve(data) in Python using NumPy. Return ten integer ones. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.ones(10,dtype=int).tolist()\n"
+  },
+  {
+    "number": 5,
+    "slug": "numpy-even-one-to-fifty",
+    "title": "Even numbers 1 to 50",
+    "description": "Implement solve(data) in Python using NumPy. Return even integers from 2 to 50 inclusive. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.arange(2,51,2).tolist()\n"
+  },
+  {
+    "number": 6,
+    "slug": "numpy-identity-three",
+    "title": "Three-by-three identity",
+    "description": "Implement solve(data) in Python using NumPy. Return a 3 x 3 integer identity matrix. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.eye(3,dtype=int).tolist()\n"
+  },
+  {
+    "number": 7,
+    "slug": "numpy-constant-five-matrix",
+    "title": "Four-by-four fives",
+    "description": "Implement solve(data) in Python using NumPy. Return a 4 x 4 integer matrix of fives. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.full((4,4),5,dtype=int).tolist()\n"
+  },
+  {
+    "number": 8,
+    "slug": "numpy-linspace-ten",
+    "title": "Ten linearly spaced numbers",
+    "description": "Implement solve(data) in Python using NumPy. Return ten equally spaced values between 0 and 1, inclusive. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.linspace(0,1,10).tolist()\n"
+  },
+  {
+    "number": 9,
+    "slug": "numpy-array-metadata",
+    "title": "Shape size dimensions dtype",
+    "description": "Implement solve(data) in Python using NumPy. For the numeric array in data['matrix'], return a dict with shape (as list), size, ndim and dtype string. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['matrix']); return {'shape':list(a.shape),'size':int(a.size),'ndim':int(a.ndim),'dtype':str(a.dtype)}\n"
+  },
+  {
+    "number": 10,
+    "slug": "numpy-cast-float",
+    "title": "Cast integers to float",
+    "description": "Implement solve(data) in Python using NumPy. Convert data['values'] to float64 and return its values. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 1",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 1"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.asarray(data['values'],dtype=float).tolist()\n"
+  },
+  {
+    "number": 11,
+    "slug": "numpy-first-last",
+    "title": "First and last element",
+    "description": "Implement solve(data) in Python using NumPy. Return first and last values as a two-element list. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values']); return [a[0].item(),a[-1].item()]\n"
+  },
+  {
+    "number": 12,
+    "slug": "numpy-reverse-slice",
+    "title": "Reverse array by slicing",
+    "description": "Implement solve(data) in Python using NumPy. Reverse data['values'] using slicing. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.asarray(data['values'])[::-1].tolist()\n"
+  },
+  {
+    "number": 13,
+    "slug": "numpy-alternate-elements",
+    "title": "Every alternate element",
+    "description": "Implement solve(data) in Python using NumPy. Return entries at indices 0,2,4,... Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.asarray(data['values'])[::2].tolist()\n"
+  },
+  {
+    "number": 14,
+    "slug": "numpy-filter-even",
+    "title": "Filter even values",
+    "description": "Implement solve(data) in Python using NumPy. Return even integers from data['values'] keeping order. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values']); return a[a%2==0].tolist()\n"
+  },
+  {
+    "number": 15,
+    "slug": "numpy-filter-above-fifty",
+    "title": "Filter values above fifty",
+    "description": "Implement solve(data) in Python using NumPy. Return elements strictly greater than 50. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values']); return a[a>50].tolist()\n"
+  },
+  {
+    "number": 16,
+    "slug": "numpy-clamp-negative",
+    "title": "Replace negatives with zero",
+    "description": "Implement solve(data) in Python using NumPy. Return values with each negative number replaced by 0. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values']); return np.where(a<0,0,a).tolist()\n"
+  },
+  {
+    "number": 17,
+    "slug": "numpy-replace-odd",
+    "title": "Replace odds with minus one",
+    "description": "Implement solve(data) in Python using NumPy. Return integer values with each odd number replaced by -1. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values']); return np.where(a%2!=0,-1,a).tolist()\n"
+  },
+  {
+    "number": 18,
+    "slug": "numpy-second-row",
+    "title": "Second matrix row",
+    "description": "Implement solve(data) in Python using NumPy. Return the second row (zero-based index 1) from data['matrix']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.asarray(data['matrix'])[1,:].tolist()\n"
+  },
+  {
+    "number": 19,
+    "slug": "numpy-third-column",
+    "title": "Third matrix column",
+    "description": "Implement solve(data) in Python using NumPy. Return the third column (zero-based index 2) from data['matrix']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.asarray(data['matrix'])[:,2].tolist()\n"
+  },
+  {
+    "number": 20,
+    "slug": "numpy-matrix-diagonal",
+    "title": "Matrix diagonal",
+    "description": "Implement solve(data) in Python using NumPy. Return the diagonal of the square matrix in data['matrix']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 2",
+    "category": "data",
+    "difficulty": "Beginner",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 2"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.diag(np.asarray(data['matrix'])).tolist()\n"
+  },
+  {
+    "number": 21,
+    "slug": "numpy-sum-mean",
+    "title": "Sum and mean",
+    "description": "Implement solve(data) in Python using NumPy. Return dict with sum and mean of data['values'] as numbers. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values'],dtype=float); return {'sum':float(a.sum()),'mean':float(a.mean())}\n"
+  },
+  {
+    "number": 22,
+    "slug": "numpy-max-min",
+    "title": "Array maximum and minimum",
+    "description": "Implement solve(data) in Python using NumPy. Return dict with max and min values. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values']); return {'max':a.max().item(),'min':a.min().item()}\n"
+  },
+  {
+    "number": 23,
+    "slug": "numpy-argmax-argmin",
+    "title": "Indices of maximum and minimum",
+    "description": "Implement solve(data) in Python using NumPy. Return first zero-based argmax and argmin indices. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values']); return {'argmax':int(a.argmax()),'argmin':int(a.argmin())}\n"
+  },
+  {
+    "number": 24,
+    "slug": "numpy-mean-median-std",
+    "title": "Mean median standard deviation",
+    "description": "Implement solve(data) in Python using NumPy. Return population mean, median and standard deviation (ddof=0). Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values'],dtype=float); return {'mean':float(a.mean()),'median':float(np.median(a)),'std':float(a.std(ddof=0))}\n"
+  },
+  {
+    "number": 25,
+    "slug": "numpy-variance",
+    "title": "Population variance",
+    "description": "Implement solve(data) in Python using NumPy. Calculate variance using ddof=0. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return float(np.var(np.asarray(data['values'],dtype=float),ddof=0))\n"
+  },
+  {
+    "number": 26,
+    "slug": "numpy-second-distinct",
+    "title": "Second largest distinct number",
+    "description": "Implement solve(data) in Python using NumPy. Return the second-largest distinct numeric element; null when absent. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.unique(np.asarray(data['values'])); return a[-2].item() if len(a)>1 else None\n"
+  },
+  {
+    "number": 27,
+    "slug": "numpy-cumulative-sum",
+    "title": "Cumulative sum",
+    "description": "Implement solve(data) in Python using NumPy. Return cumulative sums of data['values']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.cumsum(np.asarray(data['values'])).tolist()\n"
+  },
+  {
+    "number": 28,
+    "slug": "numpy-unique-counts",
+    "title": "Unique element frequencies",
+    "description": "Implement solve(data) in Python using NumPy. Return dict with ascending unique values and their frequencies. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    v,c=np.unique(np.asarray(data['values']),return_counts=True); return {'values':v.tolist(),'counts':c.tolist()}\n"
+  },
+  {
+    "number": 29,
+    "slug": "numpy-percentiles",
+    "title": "Quartiles",
+    "description": "Implement solve(data) in Python using NumPy. Return 25th, 50th, and 75th percentiles using NumPy's default linear interpolation. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.percentile(np.asarray(data['values'],dtype=float),[25,50,75]).tolist()\n"
+  },
+  {
+    "number": 30,
+    "slug": "numpy-minmax-normalize",
+    "title": "Min-max normalization",
+    "description": "Implement solve(data) in Python using NumPy. Scale data['values'] to [0,1]. Return zeros if all values are equal. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 3",
+    "category": "data",
+    "difficulty": "Easy",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 3"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values'],dtype=float); span=a.max()-a.min(); return ((a-a.min())/span).tolist() if span else np.zeros_like(a).tolist()\n"
+  },
+  {
+    "number": 31,
+    "slug": "numpy-reshape-three-four",
+    "title": "Reshape 12 into 3 by 4",
+    "description": "Implement solve(data) in Python using NumPy. Reshape integers 1..12 into three rows and four columns. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.arange(1,13).reshape(3,4).tolist()\n"
+  },
+  {
+    "number": 32,
+    "slug": "numpy-flatten-array",
+    "title": "Flatten multidimensional array",
+    "description": "Implement solve(data) in Python using NumPy. Return data['matrix'] flattened in C row-major order. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.asarray(data['matrix']).ravel().tolist()\n"
+  },
+  {
+    "number": 33,
+    "slug": "numpy-concatenate-arrays",
+    "title": "Concatenate arrays",
+    "description": "Implement solve(data) in Python using NumPy. Concatenate data['values'] and data['other'] preserving order. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.concatenate((np.asarray(data['values']),np.asarray(data['other']))).tolist()\n"
+  },
+  {
+    "number": 34,
+    "slug": "numpy-stack-arrays",
+    "title": "Horizontal and vertical stacking",
+    "description": "Implement solve(data) in Python using NumPy. For equally shaped matrices data['matrix'] and data['matrix_b'], return dict with hstack and vstack. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['matrix']); b=np.asarray(data['matrix_b']); return {'horizontal':np.hstack((a,b)).tolist(),'vertical':np.vstack((a,b)).tolist()}\n"
+  },
+  {
+    "number": 35,
+    "slug": "numpy-split-in-thirds",
+    "title": "Split array into thirds",
+    "description": "Implement solve(data) in Python using NumPy. Split data['values'] into exactly three equal arrays; length is divisible by three. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return [x.tolist() for x in np.split(np.asarray(data['values']),3)]\n"
+  },
+  {
+    "number": 36,
+    "slug": "numpy-transpose-matrix",
+    "title": "Matrix transpose",
+    "description": "Implement solve(data) in Python using NumPy. Return transposed data['matrix']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.asarray(data['matrix']).T.tolist()\n"
+  },
+  {
+    "number": 37,
+    "slug": "numpy-elementwise-product",
+    "title": "Elementwise matrix multiplication",
+    "description": "Implement solve(data) in Python using NumPy. Multiply data['matrix'] and data['matrix_b'] elementwise. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.multiply(np.asarray(data['matrix']),np.asarray(data['matrix_b'])).tolist()\n"
+  },
+  {
+    "number": 38,
+    "slug": "numpy-matrix-product",
+    "title": "Matrix multiplication",
+    "description": "Implement solve(data) in Python using NumPy. Multiply data['matrix'] and data['matrix_b'] as matrices. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.matmul(np.asarray(data['matrix']),np.asarray(data['matrix_b'])).tolist()\n"
+  },
+  {
+    "number": 39,
+    "slug": "numpy-determinant",
+    "title": "Matrix determinant",
+    "description": "Implement solve(data) in Python using NumPy. Return determinant of square matrix data['matrix']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return float(np.linalg.det(np.asarray(data['matrix'],dtype=float)))\n"
+  },
+  {
+    "number": 40,
+    "slug": "numpy-inverse-matrix",
+    "title": "Inverse of nonsingular matrix",
+    "description": "Implement solve(data) in Python using NumPy. Return inverse of nonsingular data['matrix'] with floating-point entries. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 4",
+    "category": "data",
+    "difficulty": "Medium",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 4"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.linalg.inv(np.asarray(data['matrix'],dtype=float)).tolist()\n"
+  },
+  {
+    "number": 41,
+    "slug": "numpy-random-integers",
+    "title": "Seeded random integers",
+    "description": "Implement solve(data) in Python using NumPy. Generate 100 random integers in [1,1000] using np.random.default_rng(data['seed']); return the list. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.random.default_rng(int(data['seed'])).integers(1,1001,size=100).tolist()\n"
+  },
+  {
+    "number": 42,
+    "slug": "numpy-unique-values",
+    "title": "Remove duplicate values",
+    "description": "Implement solve(data) in Python using NumPy. Return ascending unique values from data['values']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.unique(np.asarray(data['values'])).tolist()\n"
+  },
+  {
+    "number": 43,
+    "slug": "numpy-intersection",
+    "title": "Common values between arrays",
+    "description": "Implement solve(data) in Python using NumPy. Return ascending distinct values appearing in both data['values'] and data['other']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.intersect1d(np.asarray(data['values']),np.asarray(data['other'])).tolist()\n"
+  },
+  {
+    "number": 44,
+    "slug": "numpy-difference",
+    "title": "Set difference between arrays",
+    "description": "Implement solve(data) in Python using NumPy. Return ascending distinct values from data['values'] absent in data['other']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.setdiff1d(np.asarray(data['values']),np.asarray(data['other'])).tolist()\n"
+  },
+  {
+    "number": 45,
+    "slug": "numpy-top-three-distinct",
+    "title": "Three largest distinct values",
+    "description": "Implement solve(data) in Python using NumPy. Return the three largest distinct values descending; input has at least three unique values. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return np.sort(np.unique(np.asarray(data['values'])))[-3:][::-1].tolist()\n"
+  },
+  {
+    "number": 46,
+    "slug": "numpy-nan-mean-fill",
+    "title": "Replace NaNs with mean",
+    "description": "Implement solve(data) in Python using NumPy. Treat JSON nulls in data['values'] as NaN; fill them with mean of nonmissing values. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          2,
+          null,
+          6,
+          4,
+          10,
+          8
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          2,
+          null,
+          6,
+          4,
+          10,
+          8
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values'],dtype=float); return np.where(np.isnan(a),np.nanmean(a),a).tolist()\n"
+  },
+  {
+    "number": 47,
+    "slug": "numpy-sort-second-column",
+    "title": "Sort matrix by second column",
+    "description": "Implement solve(data) in Python using NumPy. Sort rows ascending by second column; ties retain initial row order. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['matrix']); return a[np.argsort(a[:,1],kind='stable')].tolist()\n"
+  },
+  {
+    "number": 48,
+    "slug": "numpy-maximum-row-sum",
+    "title": "Row with maximum sum",
+    "description": "Implement solve(data) in Python using NumPy. Return first zero-based row index of maximum total row sum. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    return int(np.asarray(data['matrix']).sum(axis=1).argmax())\n"
+  },
+  {
+    "number": 49,
+    "slug": "numpy-zscore-standardize",
+    "title": "Z-score standardization",
+    "description": "Implement solve(data) in Python using NumPy. Subtract population mean and divide by population std; return zeros for constant arrays. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values'],dtype=float); std=a.std(ddof=0); return ((a-a.mean())/std).tolist() if std else np.zeros_like(a).tolist()\n"
+  },
+  {
+    "number": 50,
+    "slug": "numpy-euclidean-distance",
+    "title": "Euclidean vector distance",
+    "description": "Implement solve(data) in Python using NumPy. Return Euclidean distance between data['values'] and data['other']. Input is a JSON object passed directly to your function. Return JSON-serializable data; do not print results.",
+    "topic": "NumPy · Level 5",
+    "category": "data",
+    "difficulty": "Hard",
+    "format": "CODE",
+    "tags": [
+      "NumPy",
+      "Data Science",
+      "Level 5"
+    ],
+    "constraints": [
+      "Define solve(data), receiving a Python dict decoded from JSON.",
+      "Return the answer; do not print it.",
+      "Numeric comparisons tolerate small floating-point differences."
+    ],
+    "examples": [],
+    "starters": [
+      {
+        "language": "python",
+        "code": "import numpy as np\n\ndef solve(data):\n    # Return your result.\n    pass\n"
+      }
+    ],
+    "test_inputs": [
+      {
+        "values": [
+          10,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          6,
+          5,
+          0
+        ],
+        "matrix": [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "seed": 42
+      },
+      {
+        "values": [
+          -1,
+          20,
+          50,
+          60,
+          70,
+          80
+        ],
+        "other": [
+          1,
+          4,
+          10,
+          3,
+          6,
+          7
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matrix_b": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "seed": 8
+      }
+    ],
+    "reference_source": "import numpy as np\nimport pandas as pd\n\ndef solve(data):\n    a=np.asarray(data['values'],dtype=float); b=np.asarray(data['other'],dtype=float); return float(np.linalg.norm(a-b))\n"
+  }
+]
