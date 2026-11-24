@@ -1,0 +1,187 @@
+[
+  {
+    "subject_id": 44,
+    "skill": "Ridgeline plot",
+    "description": "Stacked density distributions allowing comparison of numeric patterns across groups"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Hexbin plot",
+    "description": "A two-dimensional density display counting points within hexagonal spatial bins"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Density contour",
+    "description": "Lines linking positions of similar estimated two-dimensional data density"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Empirical CDF",
+    "description": "A stepwise curve giving the fraction of observations at or below each value"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Q Q plot",
+    "description": "A graph comparing sample quantiles against theoretical or reference distribution quantiles"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Waterfall chart",
+    "description": "A display of sequential positive and negative contributions to a final total"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Bullet chart",
+    "description": "A compact comparison of a measure against a target and qualitative ranges"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Treemap",
+    "description": "A space-filling hierarchical display using nested rectangles"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Sunburst chart",
+    "description": "A radial hierarchy visualization using nested concentric segments"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Sankey diagram",
+    "description": "A flow diagram using connection widths to encode quantity"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Chord diagram",
+    "description": "A circular display connecting entities with weighted curved ribbons"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Network graph",
+    "description": "A view showing entities as nodes and relationships as edges"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Biplot",
+    "description": "A joint visualization of observation scores and variable loadings in reduced dimensions"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Parallel coordinates",
+    "description": "A multivariate plot representing each record as a line across several variable axes"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Control chart",
+    "description": "A time-ordered measure with statistical control limits used to monitor process variation"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Tornado chart",
+    "description": "A ranked display of sensitivity contributions or scenario effects with horizontal bars"
+  },
+  {
+    "subject_id": 44,
+    "skill": "Calendar heatmap",
+    "description": "A matrix arranging color-coded daily values across weeks and months"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Workflow state machine",
+    "description": "A model of allowed workflow statuses and transitions between them"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent prompt template",
+    "description": "A parameterized instruction scaffold filled with context before execution"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool argument validation",
+    "description": "Checking a generated tool call against expected types and business constraints"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Tool result sanitization",
+    "description": "Removing or neutralizing untrusted instructions from returned tool information"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent authorization boundary",
+    "description": "A rule separating permitted actions from those requiring additional privilege"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent escalation",
+    "description": "A workflow step forwarding a decision to a human or higher-trust authority"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent fallback policy",
+    "description": "A predefined alternate behavior when a preferred tool or model becomes unavailable"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent timeout",
+    "description": "A deadline after which a workflow step must stop or fail rather than wait indefinitely"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent retry budget",
+    "description": "A cap on allowed repeat attempts after failed tool calls"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent budget accounting",
+    "description": "Tracking token, monetary or computation expenditure against predefined limits"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent goal decomposition",
+    "description": "Dividing a user request into independently actionable subtasks"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent plan revision",
+    "description": "Updating a workflow plan after receiving new results or constraints"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent parallel execution",
+    "description": "Running independent subtasks concurrently when no ordering dependency exists"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent dependency graph",
+    "description": "A graph representing ordering constraints among agent actions"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent observability",
+    "description": "Collecting logs, traces and metrics to understand agent behavior"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent evaluation dataset",
+    "description": "A reusable collection of tasks and ground truth criteria for checking behavior"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent success criterion",
+    "description": "An explicit measure or condition defining correct completion"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent approval checkpoint",
+    "description": "A pause where a permitted human must review a proposed sensitive operation"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent replay",
+    "description": "Reconstructing a past action sequence from stored inputs and tool results"
+  },
+  {
+    "subject_id": 45,
+    "skill": "Agent handoff",
+    "description": "Passing task context and responsibility from one specialized actor to another"
+  }
+]
