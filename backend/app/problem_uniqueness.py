@@ -73,17 +73,34 @@ def find_duplicates(candidate: Any, existing: Iterable[Any]) -> list[dict[str, s
 
 
 def check_seed_duplicates(items: list[Any]) -> None:
-    """Reject newly duplicated content before DB writes; allow identified legacy pairs."""
-    unique_slugs = set()
-    for i, item in enumerate(items):
+    """Linear-time exact duplicate guard for large seed packs.
+
+    Preserve the original strong-match rules without comparing every record to
+    every other one. Admin-side interactive searches still use find_duplicates.
+    """
+    slugs: set[str] = set()
+    by_title: dict[tuple[str, str, str], Any] = {}
+    by_statement: dict[tuple[str, str, str], Any] = {}
+    for item in items:
         slug = field(item, "slug")
-        if slug in unique_slugs:
+        if slug in slugs:
             raise ValueError(f"Repeated question slug in seed packs: {slug}")
-        unique_slugs.add(slug)
-        for collision in find_duplicates(item, items[:i]):
-            if frozenset({slug, collision["slug"]}) not in LEGACY_EQUIVALENTS:
+        slugs.add(slug)
+        base = (str(field(item, "format")), family(item))
+        title_key = normalized(str(field(item, "title")))
+        statement_key = normalized(str(field(item, "description")))
+        checks = []
+        if title_key:
+            checks.append((by_title, (*base, title_key), "same normalized title and question type"))
+        if len(statement_key) >= 65:
+            checks.append((by_statement, (*base, statement_key), "identical normalized problem statement"))
+        for index, key, reason in checks:
+            previous = index.get(key)
+            if previous is not None and frozenset({slug, field(previous, "slug")}) not in LEGACY_EQUIVALENTS:
                 raise ValueError(
-                    f"Question {slug} duplicates {collision['slug']}: {collision['reason']}. "
+                    f"Question {slug} duplicates {field(previous, 'slug')}: {reason}. "
                     "Reuse the existing question slug in the learning path, "
                     "or replace this proposed question with a distinct challenge."
                 )
+        for index, key, _ in checks:
+            index.setdefault(key, item)
