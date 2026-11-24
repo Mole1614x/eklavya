@@ -1,6 +1,9 @@
 """The Logic Building curriculum is real judge-backed content, not placeholder cards."""
 from collections import Counter
-from sqlalchemy import select
+import pytest
+from sqlalchemy import create_engine, select
+from sqlalchemy.orm import Session
+from app.database import Base
 from app.models import LearningPath, LearningPathProblem, Problem, TestCase
 from app.seed import seed
 
@@ -12,6 +15,18 @@ EXISTING_EQUIVALENTS = {
 }
 
 LEVEL_SIZES = {1: 15, 2: 20, 3: 10, 4: 15, 5: 20, 6: 10, 7: 10}
+
+
+@pytest.fixture
+def db(tmp_path):
+    engine = create_engine(f"sqlite:///{tmp_path / 'curriculum.db'}")
+    Base.metadata.create_all(engine)
+    try:
+        with Session(engine) as session:
+            seed(session)
+            yield session
+    finally:
+        engine.dispose()
 
 
 def test_logic_curriculum_has_seven_ordered_levels_and_real_judge_cases(db):
