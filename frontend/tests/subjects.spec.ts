@@ -6,7 +6,7 @@ test("all 45 subjects show truthful targets and lead to genuine questions", asyn
   await expect(page.locator(".subject-card")).toHaveCount(45);
   await expect(page.getByText("372", { exact: true })).toBeVisible();
   const numpy = page.locator(".subject-card").filter({ has: page.getByRole("heading", { name: "NumPy", exact: true }) });
-  await expect(numpy).toContainText("53 published in this track");
+  await expect(numpy).toContainText("54 published in this track");
   await expect(numpy).toContainText("Target 50");
   await numpy.getByRole("link", { name: "Explore questions" }).click();
   await expect(page).toHaveURL(/\/problems\?subject=numpy/);
