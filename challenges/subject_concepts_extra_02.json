@@ -1,0 +1,437 @@
+[
+  {
+    "subject_id": 9,
+    "skill": "pandas UDF",
+    "description": "A Spark user-defined operation that processes batches using Apache Arrow and Pandas"
+  },
+  {
+    "subject_id": 9,
+    "skill": "mapPartitions",
+    "description": "Applying one iterator function independently to each data partition"
+  },
+  {
+    "subject_id": 9,
+    "skill": "mapGroupsWithState",
+    "description": "Maintaining user-defined per-key state across streaming input records"
+  },
+  {
+    "subject_id": 9,
+    "skill": "foreachBatch",
+    "description": "Running custom batch processing for each microbatch of a structured stream"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Streaming watermark late data",
+    "description": "A rule governing how long events may arrive late for stateful event-time operations"
+  },
+  {
+    "subject_id": 9,
+    "skill": "State store",
+    "description": "Persisted state used by streaming aggregations or joins across microbatches"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Delta change data feed",
+    "description": "A feature exposing committed row-level changes from Delta tables"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Delta vacuum",
+    "description": "Removing unreferenced old table data files after configured retention"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Delta optimize",
+    "description": "Rewriting small files to improve read performance and reduce file counts"
+  },
+  {
+    "subject_id": 9,
+    "skill": "DataFrame cache",
+    "description": "Retaining the computed result of a DataFrame for potential repeated reuse"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark broadcast hint",
+    "description": "A suggestion to the optimizer to use a broadcast join for a chosen relation"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark explain",
+    "description": "Displaying an analyzed or physical execution plan for a query"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Skew join handling",
+    "description": "Strategies that split or otherwise mitigate tasks for disproportionately frequent join keys"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark adaptive coalescing",
+    "description": "Reducing many small shuffled partitions based on runtime information"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Checkpoint eager mode",
+    "description": "Materializing a DataFrame checkpoint immediately to break lineage"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Structured streaming output modes",
+    "description": "Append, update or complete output behavior for supported streaming queries"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark SQL temporary view",
+    "description": "A session-scoped named relation backed by a DataFrame"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Spark SQL global temporary view",
+    "description": "A view stored in a special database and shared across sessions in a Spark application"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Partition pruning",
+    "description": "Avoiding scanning data partitions known not to satisfy query predicates"
+  },
+  {
+    "subject_id": 9,
+    "skill": "Predicate pushdown",
+    "description": "Applying filtering as close to the data source as the optimizer and connector permit"
+  },
+  {
+    "subject_id": 10,
+    "skill": "HDFS balancer",
+    "description": "A maintenance tool redistributing stored blocks to improve disk utilization across DataNodes"
+  },
+  {
+    "subject_id": 10,
+    "skill": "HDFS safemode",
+    "description": "A NameNode state restricting namespace modifications during initialization or recovery"
+  },
+  {
+    "subject_id": 10,
+    "skill": "DistCp",
+    "description": "A Hadoop utility for parallel copying of large datasets between filesystems"
+  },
+  {
+    "subject_id": 10,
+    "skill": "YARN queue capacity",
+    "description": "Configuration controlling how cluster resources are allocated among scheduler queues"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Map task locality",
+    "description": "Assigning processing near the HDFS blocks containing its input when possible"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Reduce-side join",
+    "description": "Combining two datasets during the reducer phase after mapping and shuffle"
+  },
+  {
+    "subject_id": 10,
+    "skill": "Map-side join",
+    "description": "Joining datasets during mapping when their partitioning or size makes local lookup possible"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Logistic regression sigmoid",
+    "description": "Mapping a real-valued linear score into a binary-class probability"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Linear regression residual",
+    "description": "The observed outcome minus the prediction of a fitted linear model"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Ridge regression",
+    "description": "Linear regression trained with a squared-coefficient regularization penalty"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Lasso regression",
+    "description": "Linear regression using an absolute-coefficient penalty that can produce sparse coefficients"
+  },
+  {
+    "subject_id": 11,
+    "skill": "ElasticNet regression",
+    "description": "Regression combining squared and absolute coefficient penalties"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Decision tree split",
+    "description": "A feature threshold or categorical condition separating training examples into child nodes"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Information gain",
+    "description": "Reduction in entropy achieved by a candidate decision tree split"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Gini impurity",
+    "description": "The probability of label disagreement under random class draws from a node's distribution"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Random forest",
+    "description": "An ensemble of decorrelated decision trees trained using bootstrapping and feature subsampling"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Extra Trees",
+    "description": "A randomized tree ensemble that chooses highly randomized split thresholds"
+  },
+  {
+    "subject_id": 11,
+    "skill": "AdaBoost",
+    "description": "An ensemble that increases attention to previously misclassified samples across learners"
+  },
+  {
+    "subject_id": 11,
+    "skill": "XGBoost",
+    "description": "A regularized gradient-boosting implementation optimized for scalable tree ensembles"
+  },
+  {
+    "subject_id": 11,
+    "skill": "LightGBM",
+    "description": "A histogram-based gradient-boosting framework designed for efficient training"
+  },
+  {
+    "subject_id": 11,
+    "skill": "CatBoost",
+    "description": "Gradient boosting with special handling for categorical features and ordered statistics"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Support vector machine margin",
+    "description": "The separation margin maximized by a linear hard-margin classifier"
+  },
+  {
+    "subject_id": 11,
+    "skill": "RBF kernel",
+    "description": "A similarity function decreasing exponentially with squared Euclidean distance"
+  },
+  {
+    "subject_id": 11,
+    "skill": "k nearest neighbors",
+    "description": "A prediction method using labels or values from nearby stored examples"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Naive Bayes assumption",
+    "description": "Modeling feature likelihoods as conditionally independent given the class"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Gaussian mixture model",
+    "description": "A probabilistic density model combining several Gaussian components"
+  },
+  {
+    "subject_id": 11,
+    "skill": "Expectation maximization",
+    "description": "Alternating expected latent-variable assignment and parameter optimization steps"
+  },
+  {
+    "subject_id": 12,
+    "skill": "GRU reset gate",
+    "description": "A gated recurrent unit mechanism controlling how prior state influences candidate activation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "GRU update gate",
+    "description": "A gated recurrent unit mechanism balancing retention and replacement of hidden state"
+  },
+  {
+    "subject_id": 12,
+    "skill": "LSTM forget gate",
+    "description": "A gating mechanism controlling retention of previous cell memory"
+  },
+  {
+    "subject_id": 12,
+    "skill": "LSTM input gate",
+    "description": "A gating mechanism controlling additions of new information to memory"
+  },
+  {
+    "subject_id": 12,
+    "skill": "LSTM output gate",
+    "description": "A gating mechanism controlling exposure of cell state to hidden output"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Encoder decoder",
+    "description": "A neural architecture mapping an input representation into a generated output sequence"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Positional encoding",
+    "description": "Information added to attention inputs so token order can influence the computation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Rotary positional embedding",
+    "description": "Encoding relative positional information by rotating query and key representations"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Multihead attention",
+    "description": "Parallel attention projections whose outputs are combined to capture varied interactions"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Self attention",
+    "description": "Attention among positions within the same input representation"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Cross attention",
+    "description": "Attention where queries attend to key and value representations from another source"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Scaled dot product attention",
+    "description": "Softmax weighting derived from query-key dot products divided by a scale factor"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Causal self attention",
+    "description": "Self attention constrained to prevent attending to future sequence positions"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Depthwise convolution",
+    "description": "Applying a separate spatial convolution kernel per input channel"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Pointwise convolution",
+    "description": "A one-by-one convolution used to mix channel information"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Transposed convolution",
+    "description": "A learned convolution-like operator often used to increase spatial resolution"
+  },
+  {
+    "subject_id": 12,
+    "skill": "U Net skip connection",
+    "description": "Combining encoder feature maps with decoder features at corresponding resolutions"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Autoencoder bottleneck",
+    "description": "A lower-dimensional representation learned to reconstruct model inputs"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Variational autoencoder",
+    "description": "A generative latent-variable model trained with reconstruction and distribution-regularization terms"
+  },
+  {
+    "subject_id": 12,
+    "skill": "Contrastive learning",
+    "description": "Training representations to make selected positive pairs more similar than negative pairs"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Tokenizer vocabulary",
+    "description": "The finite set of token identifiers the model can consume or generate"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Special BOS token",
+    "description": "A marker indicating the beginning of a token sequence in some tokenization schemes"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Special EOS token",
+    "description": "A marker indicating the end of a generated or input token sequence"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Top k sampling",
+    "description": "Restricting candidate token sampling to the k highest-probability tokens"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Top p sampling",
+    "description": "Restricting token candidates to the smallest cumulative-probability set above a threshold"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Repetition penalty",
+    "description": "A decoding adjustment reducing repeated token selection according to configured rules"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Beam search",
+    "description": "Keeping several high-scoring partial sequences during sequence generation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Speculative decoding",
+    "description": "Using a smaller proposer and a verifier model to accelerate token generation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Prefix caching",
+    "description": "Reusing computed model state for an identical initial prompt segment"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Paged attention",
+    "description": "Managing attention key-value memory in paged blocks to reduce fragmentation"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Mixture of experts",
+    "description": "A model using a router to select among expert subnetworks for each input"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Expert routing",
+    "description": "Selecting which specialist subnetworks process a given token or sample"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Instruction hierarchy",
+    "description": "Rules establishing priority among system, developer, user and lower-trust instructions"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Prompt injection defense",
+    "description": "Treating retrieved or tool-provided text as data rather than privileged instructions"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Output guardrails",
+    "description": "Validation rules restricting generated results to accepted content or schemas"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Function call arguments",
+    "description": "Structured data supplied to a tool according to its declared signature"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Token budgeting",
+    "description": "Allocating the available context capacity among input, retrieval and generated output"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Retrieval chunk overlap",
+    "description": "Repeating limited adjacent document text across chunks to preserve boundary context"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Embedding dimensionality",
+    "description": "The number of numeric coordinates used to represent text or other items"
+  },
+  {
+    "subject_id": 13,
+    "skill": "Retrieval recall at k",
+    "description": "The fraction of relevant reference items retrieved within the top k positions"
+  }
+]
