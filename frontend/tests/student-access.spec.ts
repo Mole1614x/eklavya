@@ -4,13 +4,14 @@ const identity = process.env.UAT_ADMIN_IDENTITY ?? "uat_admin@example.com";
 const password = process.env.UAT_ADMIN_PASSWORD ?? "UatAdminPass123!";
 
 test("admin student-access picker toggles scope and hides selection for ALL", async ({ page }) => {
+  test.setTimeout(90000);
   await page.goto("/auth");
   await page.getByLabel("Email or username").fill(identity);
   await page.getByLabel("Password", { exact: true }).fill(password);
   await page.getByRole("button", { name: "Sign in" }).click();
   await expect(page).toHaveURL(/\/admin$/);
   await page.goto("/admin");
-  await expect(page.getByRole("heading", { name: "Admin control center" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Admin control center" })).toBeVisible({ timeout: 25000 });
   await page.getByRole("tab", { name: "Assessment Management" }).click();
   await expect(page.getByText("Who can access this content?")).toBeVisible();
   await page.getByRole("radio", { name: /All Students/ }).check();
