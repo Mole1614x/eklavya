@@ -85,6 +85,132 @@ make logs
 make down
 ```
 
+### Start, stop, and restart EKLAVYA on macOS (after the first setup)
+
+These are the **day-to-day commands** for a Mac where EKLAVYA was already installed. You do **not** need to clone the repository, reinstall dependencies, recreate the database, or rebuild Docker images every time.
+
+1. Open **Docker Desktop** and wait until its engine is running.
+2. Open **Terminal** and enter your EKLAVYA project directory. For example:
+
+   ~~~sh
+   cd ~/Desktop/DBDA/projects/eklavya
+   ~~~
+
+3. Start with **one** of the following options. Use the *same configuration* for subsequent status, stop, and restart commands.
+
+#### Option A — Web application only (no code execution)
+
+Use this if you want the dashboard, account features, problem browser, and APIs without the Docker execution worker:
+
+~~~sh
+docker compose -p eklavya up -d --wait
+~~~
+
+This starts the regular services without the optional **judge** profile. Submissions requiring the worker will not execute in this mode.
+
+#### Option B — Full application with local coding judge (Mac Docker Desktop)
+
+Use this when you want to **run and submit coding solutions** as well as browse the platform:
+
+~~~sh
+docker compose -p eklavya \
+  -f docker-compose.yml \
+  -f docker-compose.judge-local.yml \
+  --profile judge up -d --wait
+~~~
+
+The override gives the judge control of the local Docker daemon. **Trusted development machine only:** never use this override on shared, internet-facing, or production infrastructure. The initial full setup must already have built the evaluator images; if they are missing, use the first-run **--build** command in the Docker Desktop section above.
+
+#### Open the application
+
+- **Frontend:** <http://localhost:3000>
+- **Backend API docs:** <http://localhost:8000/docs> by default
+- **Backend health:** <http://localhost:8000/api/v1/health/ready> by default
+
+The URL ports can be changed in your root **.env** file using **FRONTEND_PORT** and **BACKEND_PORT**. For example, a local configuration with **BACKEND_PORT=8001** uses <http://localhost:8001/docs>.
+
+**Closing the browser or Terminal does not stop the containers** because the commands use detached mode (**-d**). To use the website again, reopen its URL while Docker Desktop and the containers are running.
+
+#### Stop EKLAVYA safely
+
+For **Option A**:
+
+~~~sh
+docker compose -p eklavya down
+~~~
+
+For **Option B**:
+
+~~~sh
+docker compose -p eklavya \
+  -f docker-compose.yml \
+  -f docker-compose.judge-local.yml \
+  --profile judge down
+~~~
+
+Both commands stop/remove the application containers and default network, **not** the named PostgreSQL, Redis, and dataset volumes. Your stored accounts, solutions, and application database persist. **Do not add --volumes or -v to down**, and do not delete Docker volumes unless you intend to erase persistent local data.
+
+#### Restart or check whether EKLAVYA is running
+
+For **Option A**:
+
+~~~sh
+docker compose -p eklavya restart
+docker compose -p eklavya ps
+docker compose -p eklavya logs --tail=100 backend frontend
+~~~
+
+For **Option B**:
+
+~~~sh
+docker compose -p eklavya \
+  -f docker-compose.yml -f docker-compose.judge-local.yml \
+  --profile judge restart
+
+docker compose -p eklavya \
+  -f docker-compose.yml -f docker-compose.judge-local.yml \
+  --profile judge ps
+
+docker compose -p eklavya \
+  -f docker-compose.yml -f docker-compose.judge-local.yml \
+  --profile judge logs --tail=100 backend frontend judge
+~~~
+
+**restart** restarts existing containers; it does not apply changed Compose settings or rebuild code. If you previously used **down**, start again with **up -d** (Option A or B) rather than **restart**.
+
+#### After pulling new code from GitHub
+
+Check and preserve local changes before updating:
+
+~~~sh
+cd ~/Desktop/DBDA/projects/eklavya
+git status --short
+git switch main
+git pull --ff-only origin main
+~~~
+
+Then rebuild/recreate the services with your chosen configuration:
+
+~~~sh
+# Option A — web application only
+docker compose -p eklavya up -d --build --wait
+
+# Option B — full local judge
+docker compose -p eklavya \
+  -f docker-compose.yml -f docker-compose.judge-local.yml \
+  --profile judge up -d --build --wait
+~~~
+
+Use the command for **one option**, not both. If Git reports local changes or refuses to switch branches, commit or stash your changes first; do not discard them just to pull. Reuse your existing **.env**; do not overwrite it with a fresh copy of **.env.example**.
+
+#### If EKLAVYA does not open
+
+- Confirm Docker Desktop is running, then check **docker compose -p eklavya ps**.
+- If the browser shows a connection error, inspect **docker compose -p eklavya logs --tail=100 backend frontend** (use the Option B configuration when checking the judge).
+- If port 3000 or the backend port is already in use, check **FRONTEND_PORT**/**BACKEND_PORT** in **.env** and stop any conflicting local service.
+- If code submissions stay queued, confirm you started **Option B**, inspect the judge logs, and read [Local judge setup](docs/LOCAL_JUDGE_DOCKER.md).
+- **start.bat** is for Windows. On macOS use these Terminal commands instead.
+
 Never use the example PostgreSQL password or development secret in an exposed environment.
 
 ### Provision an administrator
