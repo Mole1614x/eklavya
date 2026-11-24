@@ -1,0 +1,502 @@
+[
+  {
+    "subject_id": 26,
+    "skill": "Broker",
+    "description": "A Kafka server responsible for storing partitions and serving client requests"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Topic",
+    "description": "A named Kafka log category divided into partitions"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Partition leader",
+    "description": "The replica serving reads and writes for a partition under normal Kafka operation"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Follower replica",
+    "description": "A partition replica copying records from its current leader"
+  },
+  {
+    "subject_id": 26,
+    "skill": "ISR",
+    "description": "In-sync replica set containing replicas considered sufficiently caught up"
+  },
+  {
+    "subject_id": 26,
+    "skill": "acks all",
+    "description": "A producer durability option requiring acknowledgement under configured in-sync replica rules"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Producer idempotence",
+    "description": "A Kafka producer feature that deduplicates retries within its supported sequencing guarantees"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Transactional producer",
+    "description": "A producer that groups writes into atomic Kafka transactions under supported conditions"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Consumer poll",
+    "description": "A client operation fetching available records and participating in group coordination"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Offset commit",
+    "description": "Recording a consumer group's progress position for future consumption"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Retention time",
+    "description": "A topic configuration controlling how long log segments may be retained"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Log compaction",
+    "description": "Retaining the latest observed record per key subject to Kafka's compaction semantics"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Tombstone record",
+    "description": "A record with a key and null value that can represent a deletion during compaction"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Rebalance",
+    "description": "Reassigning topic partitions among consumers after membership or subscription changes"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Consumer lag",
+    "description": "The distance between a consumer's committed or processed offsets and newer partition records"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Dead letter topic",
+    "description": "A destination for events that repeatedly fail normal processing and require separate handling"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Schema Registry",
+    "description": "A service for managing versioned message schemas and compatibility checks"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Exactly once stream processing",
+    "description": "A Kafka Streams capability coordinating state updates and output writes transactionally"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Event key",
+    "description": "A message field commonly used to determine partition placement and related event ordering"
+  },
+  {
+    "subject_id": 26,
+    "skill": "Replication factor",
+    "description": "The number of broker replicas assigned to each partition"
+  },
+  {
+    "subject_id": 27,
+    "skill": "TaskInstance",
+    "description": "A scheduled occurrence of a particular Airflow task within a DAG run"
+  },
+  {
+    "subject_id": 27,
+    "skill": "DAG run",
+    "description": "A single execution instance of an Airflow workflow for a logical interval or trigger"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Logical date",
+    "description": "The datetime identifying an Airflow run's logical schedule position"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Data interval",
+    "description": "The time range of data a scheduled DAG run is intended to process"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Scheduler",
+    "description": "The Airflow component deciding which ready tasks should be queued"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Executor",
+    "description": "The Airflow subsystem sending runnable tasks to worker infrastructure"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Operator",
+    "description": "A template defining a unit of work in an Airflow DAG"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Sensor",
+    "description": "A task that waits until an external condition or resource is ready"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Deferrable operator",
+    "description": "A task implementation yielding worker resources while waiting for an asynchronous trigger"
+  },
+  {
+    "subject_id": 27,
+    "skill": "XCom",
+    "description": "Airflow's mechanism for sharing small messages between tasks"
+  },
+  {
+    "subject_id": 27,
+    "skill": "TaskFlow API",
+    "description": "Decorator-based authoring of Airflow workflows using Python task functions"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Dynamic task mapping",
+    "description": "Creating task instances at runtime from a collection of values"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Trigger rule",
+    "description": "A condition determining whether a task can run based on upstream task states"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Pool",
+    "description": "A limit on concurrent tasks competing for a named shared capacity"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Priority weight",
+    "description": "A scheduling weight used when deciding which queued tasks receive scarce worker slots"
+  },
+  {
+    "subject_id": 27,
+    "skill": "SLAs versus deadlines",
+    "description": "A monitoring distinction between expected completion timing and enforced execution timeouts"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Retries",
+    "description": "Re-running a task after a temporary failure according to configured attempts and delays"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Catchup",
+    "description": "Scheduling or creating runs for earlier intervals not yet processed"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Dataset scheduling",
+    "description": "Triggering workflows when declared data assets receive updates"
+  },
+  {
+    "subject_id": 27,
+    "skill": "Backfill",
+    "description": "Intentionally running a workflow over selected historical data intervals"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP content negotiation",
+    "description": "Selecting a representation according to client and server media-type preferences"
+  },
+  {
+    "subject_id": 28,
+    "skill": "ETag",
+    "description": "An HTTP response validator that can enable conditional caching or update checks"
+  },
+  {
+    "subject_id": 28,
+    "skill": "If Match",
+    "description": "A conditional request header preventing an update unless the resource version matches"
+  },
+  {
+    "subject_id": 28,
+    "skill": "If None Match",
+    "description": "A conditional request header supporting validation of cached representations"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 201",
+    "description": "A response status indicating that a resource was created"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 202",
+    "description": "A response status indicating acceptance for processing without promising completion"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 204",
+    "description": "A successful response that intentionally contains no response body"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 400",
+    "description": "A response status indicating a malformed or otherwise invalid client request"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 401",
+    "description": "A response status indicating missing or invalid authentication credentials"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 403",
+    "description": "A response status indicating access to a resource is forbidden"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 409",
+    "description": "A response status commonly used for a resource-state conflict"
+  },
+  {
+    "subject_id": 28,
+    "skill": "HTTP 422",
+    "description": "A response status often used when a syntactically valid body fails semantic validation"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Idempotency token",
+    "description": "A client-supplied identifier allowing a server to recognize logical retries"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Cursor pagination",
+    "description": "Listing results using an opaque continuation position rather than numerical offsets"
+  },
+  {
+    "subject_id": 28,
+    "skill": "OpenAPI document",
+    "description": "A machine-readable description of HTTP API operations and schemas"
+  },
+  {
+    "subject_id": 28,
+    "skill": "JWT",
+    "description": "A compact token format carrying signed or otherwise protected claims"
+  },
+  {
+    "subject_id": 28,
+    "skill": "CORS preflight",
+    "description": "An OPTIONS exchange checking permissions for certain cross-origin browser requests"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Rate limiting",
+    "description": "Restricting how many operations an actor can perform within a specified window"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Circuit breaker",
+    "description": "A stateful mechanism reducing calls to a dependency during persistent failures"
+  },
+  {
+    "subject_id": 28,
+    "skill": "Distributed tracing",
+    "description": "Linking request activity across services using propagated trace context"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Document embedding",
+    "description": "Storing related data inside one MongoDB document instead of separate references"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Document reference",
+    "description": "Keeping an identifier that points from one document to another"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Compound index",
+    "description": "An index covering multiple specified fields in a defined order"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Multikey index",
+    "description": "An index that can represent array elements in a document"
+  },
+  {
+    "subject_id": 29,
+    "skill": "TTL index",
+    "description": "An index configuration that expires eligible documents according to date values"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Unique index",
+    "description": "An index preventing multiple documents with the same indexed key value under its configuration"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Aggregation pipeline",
+    "description": "A sequence of stages that transforms and summarizes document streams"
+  },
+  {
+    "subject_id": 29,
+    "skill": "match stage",
+    "description": "An aggregation stage filtering documents by specified predicates"
+  },
+  {
+    "subject_id": 29,
+    "skill": "project stage",
+    "description": "An aggregation stage choosing or computing fields in output documents"
+  },
+  {
+    "subject_id": 29,
+    "skill": "group stage",
+    "description": "An aggregation stage collecting documents by a key and computing aggregates"
+  },
+  {
+    "subject_id": 29,
+    "skill": "lookup stage",
+    "description": "An aggregation stage joining records from another collection under supported conditions"
+  },
+  {
+    "subject_id": 29,
+    "skill": "unwind stage",
+    "description": "An aggregation stage emitting one document per array element"
+  },
+  {
+    "subject_id": 29,
+    "skill": "facet stage",
+    "description": "An aggregation stage processing a shared input through multiple parallel subpipelines"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Replica set",
+    "description": "A group of MongoDB servers maintaining replicated copies of data"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Primary node",
+    "description": "The replica set member accepting ordinary writes for replicated collections"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Read concern",
+    "description": "A configuration controlling consistency guarantees for reading MongoDB data"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Write concern",
+    "description": "A configuration determining acknowledgement requirements for write operations"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Sharding",
+    "description": "Partitioning MongoDB collection data across multiple shards for scalability"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Shard key",
+    "description": "Indexed document fields used to distribute records across shard chunks"
+  },
+  {
+    "subject_id": 29,
+    "skill": "Change streams",
+    "description": "Subscription interfaces exposing changes to collection or database data"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Cache aside",
+    "description": "An application strategy that loads missing cache values from a backing store on demand"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Write through cache",
+    "description": "A design where updates pass through a cache layer and backing store together"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Write behind cache",
+    "description": "A design that buffers writes in a cache before asynchronously persisting them"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Cache stampede",
+    "description": "Many requests simultaneously recomputing an expired or absent hot cache entry"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Cache penetration",
+    "description": "Repeated requests for nonexistent keys bypassing caching to hit a backing store"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Cache avalanche",
+    "description": "Many cached values expiring together and overwhelming a backing service"
+  },
+  {
+    "subject_id": 30,
+    "skill": "TTL jitter",
+    "description": "Adding randomized variation to expiration times to avoid synchronized expiry"
+  },
+  {
+    "subject_id": 30,
+    "skill": "LRU eviction",
+    "description": "Removing the least recently used item when memory pressure requires eviction"
+  },
+  {
+    "subject_id": 30,
+    "skill": "LFU eviction",
+    "description": "Removing the least frequently used item under the policy's counting logic"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis hash",
+    "description": "A data type storing field-value pairs under a key"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis sorted set",
+    "description": "A collection of unique members ordered by associated numeric scores"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis list",
+    "description": "An ordered sequence supporting push and pop operations on its ends"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis stream",
+    "description": "An append-oriented data structure supporting ordered entries and consumer groups"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis pubsub",
+    "description": "A fire-and-forget message distribution mechanism with active subscribers"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis transaction MULTI EXEC",
+    "description": "Grouping a sequence of commands for serial execution without ordinary interleaving"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis WATCH",
+    "description": "Optimistic concurrency checking of keys before a transaction executes"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis Lua script",
+    "description": "Server-side execution of a scripted sequence as one atomic operation"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis pipeline",
+    "description": "Batching multiple commands to reduce network round-trip overhead"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis persistence RDB",
+    "description": "Snapshot-based persistence saving an in-memory dataset to disk"
+  },
+  {
+    "subject_id": 30,
+    "skill": "Redis persistence AOF",
+    "description": "A persistence mechanism recording state-changing operations for replay"
+  }
+]
